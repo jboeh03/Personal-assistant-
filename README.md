@@ -38,6 +38,41 @@ To use the hook automations or the installer tooling, install the Node deps:
 npm install
 ```
 
+## MCP connectors
+
+A curated, project-scoped set of MCP servers is wired in [`.mcp.json`](./.mcp.json)
+(Claude Code prompts to approve project MCP servers on first use). The set is kept
+small on purpose — ECC's own guidance is to keep under ~10 enabled to preserve the
+context window. The full ~30-server catalog to pick more from lives in
+`.claude/mcp-configs/mcp-servers.json`.
+
+| Server | Needs a key? | Purpose |
+|--------|--------------|---------|
+| `sequential-thinking` | no | structured chain-of-thought reasoning |
+| `memory` | no | persistent memory across sessions |
+| `context7` | no | live library/framework docs lookup |
+| `parallel-search` | no (anon) | citation-backed web search |
+| `playwright` | no | browser automation |
+| `github` | `GITHUB_PERSONAL_ACCESS_TOKEN` | PRs, issues, repos |
+| `vercel` | OAuth (in-editor) | deployments & projects |
+| `supabase` | `SUPABASE_PROJECT_REF`, `SUPABASE_ACCESS_TOKEN` | database operations |
+
+### Secrets — set them in env, never in chat or git
+
+Keys go in a local `.env` (gitignored) or your hosting/web-environment secret
+config — **never pasted into chat and never committed**. Copy the template:
+
+```bash
+cp .env.example .env   # then fill in real values
+```
+
+`.mcp.json` references secrets as `${ENV_VAR}` placeholders, so no credential is
+ever hardcoded. See [`.env.example`](./.env.example) for the full list and where
+to obtain each value.
+
+> **Gemini / Anthropic** are LLM APIs, not MCP connectors — they belong in app
+> code / env vars (`GEMINI_API_KEY`, `ANTHROPIC_API_KEY`), not in `.mcp.json`.
+
 ## Enabling hooks (opt-in)
 
 Hooks are **intentionally not enabled** in `.claude/settings.json`. The upstream
