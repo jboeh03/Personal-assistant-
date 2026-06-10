@@ -4,6 +4,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Next.js (app at repo root)
+/.next/
+/out/
+/build
+*.tsbuildinfo
+next-env.d.ts
+
 # Environment files / secrets
 .env
 .env.local

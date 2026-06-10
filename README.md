@@ -25,23 +25,27 @@ the suite as a plugin or to your user directory:
 - `.claude-plugin/` — plugin & marketplace manifests
 - `scripts/` — cross-platform Node.js hook/install utilities
 - `install.sh` / `install.ps1` — ECC installers
-- `package.json` / `package-lock.json` — Node dependencies for the tooling
+- `package.ecc.json` / `package-lock.ecc.json` — the ECC tooling's Node manifests
+  (kept separate from the app's root `package.json`; the `.claude/` config above
+  works without installing them)
 
 ## Getting started
 
 Open this repo with Claude Code — the agents, skills, and slash commands under
 `.claude/` are available immediately. Try `/plan` or `/code-review`.
 
-To use the hook automations or the installer tooling, install the Node deps:
+The root `package.json` belongs to the **web app** (below). To use the ECC hook
+automations or installer tooling instead, install from the ECC manifest:
 
 ```bash
-npm install
+cp package.ecc.json package.json && npm install   # only if you want ECC tooling
 ```
 
-## Web app (`web/`)
+## Web app (the repo root)
 
 A Next.js (App Router, TypeScript, Tailwind) personal-assistant **chat app** lives
-in [`web/`](./web), kept separate from the ECC tooling at the repo root.
+at the **repo root** (`app/`, `lib/`, `middleware.ts`) so Vercel auto-detects it
+with no Root Directory configuration.
 
 - **Auth:** Supabase email/password (`@supabase/ssr`, session via middleware)
 - **Chat:** talk to **Claude** with a **Gemini** toggle; conversations & messages
@@ -53,22 +57,22 @@ in [`web/`](./web), kept separate from the ECC tooling at the repo root.
 ### Run locally
 
 ```bash
-cd web
 cp .env.local.example .env.local   # Supabase values pre-filled; add your LLM keys
 npm install
 npm run dev                        # http://localhost:3000
 ```
 
 `ANTHROPIC_API_KEY` and `GEMINI_API_KEY` are the only blanks to fill — set them in
-`web/.env.local` (gitignored) or your environment's secret config. Without them
-the UI and auth work, but a chat send returns a "key not set" error.
+`.env.local` (gitignored) or your environment's secret config. Without them the UI
+and auth work, but a chat send returns a "key not set" error.
 
 ### Deploy (Vercel)
 
-Set the Vercel project **Root Directory** to `web/`, add the four env vars
-(`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ANTHROPIC_API_KEY`,
-`GEMINI_API_KEY`) in Project Settings, and deploy. See `web/.env.local.example`
-for the full list.
+The app is at the repo root, so **no Root Directory setting is needed** — Vercel
+auto-detects Next.js. Add `ANTHROPIC_API_KEY` and `GEMINI_API_KEY` in Project
+Settings → Environment Variables and deploy (the Supabase values are baked in as
+env-overridable fallbacks). `.vercelignore` excludes the ECC tooling from the
+build. See `.env.local.example` for the full list.
 
 ## MCP connectors
 

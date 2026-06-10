@@ -1,0 +1,11 @@
+# Keep the deployment lean: the app at repo root doesn't need the vendored
+# Everything Claude Code config/tooling. Excluding it speeds up Vercel uploads
+# and builds (the app never imports from these paths).
+.claude/
+.claude-plugin/
+scripts/
+install.sh
+install.ps1
+package.ecc.json
+package-lock.ecc.json
+.mcp.json

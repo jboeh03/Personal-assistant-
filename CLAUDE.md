@@ -19,9 +19,10 @@ automatically at project scope:
 - `.claude/mcp-configs/` — MCP server configuration reference
 - `.claude/hooks/` — event-triggered automation templates (opt-in; see README)
 
-Repo-root tooling (`scripts/`, `install.sh`, `install.ps1`, `package.json`,
+Repo-root tooling (`scripts/`, `install.sh`, `install.ps1`, `package.ecc.json`,
 `.claude-plugin/`) is the upstream ECC machinery, kept intact so the suite can
-also be installed as a Claude Code plugin or to `~/.claude/`.
+also be installed as a Claude Code plugin or to `~/.claude/`. The root
+`package.json` belongs to the Next.js web app (see `README.md`).
 
 ## Rules
 
