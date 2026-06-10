@@ -32,11 +32,13 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Gate everything except the login page and auth/static assets.
+  // Gate pages, but let API routes handle their own auth (they return JSON,
+  // not a redirect). Login/auth/static assets stay public.
   const path = request.nextUrl.pathname;
   const isPublic =
     path.startsWith("/login") ||
     path.startsWith("/auth") ||
+    path.startsWith("/api") ||
     path.startsWith("/_next") ||
     path === "/favicon.ico";
 
