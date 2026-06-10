@@ -38,6 +38,38 @@ To use the hook automations or the installer tooling, install the Node deps:
 npm install
 ```
 
+## Web app (`web/`)
+
+A Next.js (App Router, TypeScript, Tailwind) personal-assistant **chat app** lives
+in [`web/`](./web), kept separate from the ECC tooling at the repo root.
+
+- **Auth:** Supabase email/password (`@supabase/ssr`, session via middleware)
+- **Chat:** talk to **Claude** with a **Gemini** toggle; conversations & messages
+  are persisted in Supabase Postgres with per-user Row Level Security
+- **Backend:** Supabase project `personal-assistant` (ref `ugrguxqdhsjflygkndkv`,
+  region `us-east-2`) — schema in `conversations` + `messages` tables
+- **LLM keys** are read from the environment server-side only (never `NEXT_PUBLIC_`)
+
+### Run locally
+
+```bash
+cd web
+cp .env.local.example .env.local   # Supabase values pre-filled; add your LLM keys
+npm install
+npm run dev                        # http://localhost:3000
+```
+
+`ANTHROPIC_API_KEY` and `GEMINI_API_KEY` are the only blanks to fill — set them in
+`web/.env.local` (gitignored) or your environment's secret config. Without them
+the UI and auth work, but a chat send returns a "key not set" error.
+
+### Deploy (Vercel)
+
+Set the Vercel project **Root Directory** to `web/`, add the four env vars
+(`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `ANTHROPIC_API_KEY`,
+`GEMINI_API_KEY`) in Project Settings, and deploy. See `web/.env.local.example`
+for the full list.
+
 ## MCP connectors
 
 A curated, project-scoped set of MCP servers is wired in [`.mcp.json`](./.mcp.json)
