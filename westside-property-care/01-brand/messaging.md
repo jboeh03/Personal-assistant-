@@ -441,6 +441,14 @@ you." `pricing.md` §3.
 **Never say:** a response window, a guaranteed turnaround, or "just call me any time."
 `service-catalog.md` §4.7, §4.11.
 
+**But do not strip the reply commitment when you strip the response window.** They are
+different promises and `voice.md` §8 splits them at items 14a and 14b. Promising that *work*
+gets done inside a stated period is banned — "within 24 hours," "same-day service." Promising
+that *he answers* is required wherever someone is left waiting, and it is said in his own
+hours with the failure case attached: *"I'll answer the same day or the next morning. If it's
+after Thursday, it might be Monday."* Answering a text costs him nothing he doesn't have; a
+route day does.
+
 **Source:** `service-catalog.md` §4.11 · `ideal-client.md` §5.4
 
 ---

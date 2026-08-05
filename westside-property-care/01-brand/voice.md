@@ -227,6 +227,14 @@ kitchen deep clean is **$249+**, a window well cleanout is **$49+**. Those are p
 starting prices and may appear anywhere. Every other project category is quoted after an
 on-site look with no published price (`pricing.md` §5.2).
 
+**One carve-out, and it is not an exception — it is a different kind of number.** A sourced
+market rate for work he *does not do* is a referral fact, not a quote. "Full weekly pool
+service on the west side runs about $121–142 a month with chemicals" (`service-catalog.md`
+§4.1, quoted in pair 5) is allowed as a range, because the range is honest — the variation is
+real, it belongs to an industry he is not in, and it is not his to resolve. The test is whether
+he could be held to it. Nobody can hold him to what a pool company charges. Attribute it to the
+category, never to himself, and never let it drift into "I could do that for about ___."
+
 **Worked — the finding that needs a quote he hasn't built yet.** This is where the leak
 happens, because he wants to give the homeowner something to hold onto.
 
@@ -958,23 +966,27 @@ agents' audits cite these numbers. Never renumber; split.
     yet? (`brand-brief.md` §4.3)
 13. Is the six-client cap stated as the real number, with the real count of open slots — and is
     every urgency phrase from §6.5 absent?
-14a. **Availability — must be absent.** Does the copy avoid promising an arrival time, a time
-    window, an operational response or turnaround commitment, or same-day service? Any promise
-    that *work* will be started, responded to, or completed inside a stated period is a false
-    availability claim — he works 1.5–2 days a week and cannot keep one. Banned in prose *and*
-    in structured data: "within 24 hours," "same-day service," "24-hour emergency response,"
-    "guaranteed turnaround," and an `openingHoursSpecification` of Mon–Fri 8–5 are all the same
-    defect. (`service-catalog.md` §4.7, §4.11; §3 non-prose surface rule; pair 17)
+14. **Availability and reply are two different promises. Check both.** One is banned, one is
+    required, and conflating them is how a surface ends up with either a lie or a dead end.
 
-14b. **Reply — must be present.** Where the surface leaves someone waiting to hear back, does
-    it say when he will answer, in his own hours, with the honest failure case attached? A
-    reply commitment is not a response window: answering a text is something he can do from a
-    phone on a Saturday, and clearing your window wells is not. The reference wording is live
-    on `02-website/site/thanks.html` — *"I'll answer the same day or the next morning. If it's
-    after Thursday, it might be Monday, and I'd rather tell you that than say 'within 24
-    hours.'"* Write every other reply commitment against that. A CTA that leaves someone
-    waiting and says nothing about when he answers is a defect here; a CTA that answers it with
-    an SLA is a worse defect under 14a. (§1 CTA rules; pair 17)
+    - **14a — Availability. Must be absent.** Does the copy avoid promising an arrival time, a
+      time window, an operational response or turnaround commitment, or same-day service? Any
+      promise that *work* will be started, responded to, or completed inside a stated period is
+      a false availability claim — he works 1.5–2 days a week and cannot keep one. Banned in
+      prose *and* in structured data: "we respond to service requests within 24 hours,"
+      "same-day service," "24-hour emergency response," "guaranteed turnaround," and an
+      `openingHoursSpecification` of Mon–Fri 8–5 are all the same defect wearing different
+      clothes. (`service-catalog.md` §4.7, §4.11; §3 non-prose surface rule; pair 17)
+    - **14b — Reply. Must be present.** Where the surface leaves someone waiting to hear back,
+      does it say when he will answer, in his own hours, with the honest failure case attached?
+      A reply commitment is not a response window: answering a text is something he can do from
+      a phone on a Saturday, and clearing your window wells is not. **The reference wording is
+      live on `02-website/site/thanks.html`** — *"I'll answer the same day or the next morning.
+      If it's after Thursday, it might be Monday, and I'd rather tell you that than say 'within
+      24 hours.'"* Write every other reply commitment against that one. A CTA that leaves
+      someone waiting and says nothing about when he answers is a defect here; a CTA that
+      answers it with an SLA is a worse defect under 14a. (§1 CTA rules; pair 17)
+
 15. Does it avoid any claim about pool water, chemistry, or clarity? (`service-catalog.md` §4.1)
 16. Does it avoid implying lawn or landscape service of any kind? (`service-catalog.md` §4.2)
 17. Are the exclusions present on any surface that states a price, and positioned *before* or
@@ -984,21 +996,25 @@ agents' audits cite these numbers. Never renumber; split.
 
 18. Are minutes per visit, visit duration, the 1.5-hour planning allowance, the $100/hour rate,
     the $149 trip floor, route hours, and every metric and revenue figure absent? (§3)
-19a. Are the internal quoting anchors from `pricing.md` §5.3 absent *as a published price
-    list*? (A specific number on a specific estimate for a specific job — "driveway and back
-    patio, $449" — is exactly what the anchors are for and is correct. A page listing "pressure
-    washing from $249" is not.)
+19. **The internal quoting anchors.** Two checks, and the second is the one that gets missed.
 
-19b. **Is every project number a single figure, on a specific job, after he has looked at it?**
-    A **range** is the §5.3 table read aloud with the labels removed — "$249–$449," "$249 to
-    $449," "somewhere in the $300s," "high threes" — and is a defect wherever it appears,
-    including in a service report, a text, or a call script, not only on a page. So is any
-    number offered *before* the on-site look, and any hedge that softens a flat price
-    ("likely," "probably," "typically runs," "in the ballpark of"). The correct move before he
-    has looked is to commit to the number's *arrival*, not its *size*: "I'll walk it and send
-    you a flat number tomorrow morning." Only two published starting prices are exempt: **$249+**
-    for a grill and outdoor kitchen deep clean and **$49+** for a window well cleanout
-    (`pricing.md` §5.1). (§3, the anchor-leak rule)
+    - **19a — Not as a list.** Are the anchors from `pricing.md` §5.3 absent *as a published
+      price list*? (A specific number on a specific estimate for a specific job — "driveway and
+      back patio, $449" — is exactly what the anchors are for and is correct. A page listing
+      "pressure washing from $249" is not.)
+    - **19b — Not as a range, and not before the look.** Is every project number a single
+      figure, on a specific job, after he has stood on the property? A **range** is the §5.3
+      table read aloud with the labels removed — "$249–$449," "$249 to $449," "somewhere in the
+      $300s," "high threes" — and is a defect **wherever it appears**, including in a service
+      report, a text, or a call script, not only on a web page. So is any number offered
+      *before* the on-site look, and any hedge that softens a flat price into a soft quote
+      ("likely," "probably," "typically runs," "in the ballpark of"). The correct move before
+      he has looked is to commit to the number's *arrival*, not its *size*: "I'll walk it and
+      send you a flat number tomorrow morning." Exempt: the two published starting prices,
+      **$249+** for a grill and outdoor kitchen deep clean and **$49+** for a window well
+      cleanout (`pricing.md` §5.1); and a sourced market rate for work he does not do — the
+      $121–142 pool company figure — which is a referral fact, not a quote. (§3, the
+      anchor-leak rule)
 
 **Winter and seasons**
 

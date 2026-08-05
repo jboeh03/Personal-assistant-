@@ -112,19 +112,19 @@ finding that becomes a scheduled project, quoted separately, not done on the spo
 > The back patio and the walkway out to the pool gate have gotten dark with algae and mildew
 > — it's been building for a couple of seasons and this visit isn't enough to touch it. I'd
 > want to pressure wash both properly rather than try to spot-clean it on a routine stop.
-> I'll walk it and send you a flat number tomorrow morning, likely somewhere in the
-> $249–$449 range depending on how much of the walkway needs it too — I'll confirm the exact
-> number before anything's scheduled. No obligation, and it doesn't affect your visits either
-> way if you'd rather pass.
+> I'll measure it this week and send you a flat number by tomorrow morning. No obligation,
+> and it doesn't affect your visits either way if you'd rather pass.
 >
 > Next visit: {{route_day}}, [date].
 >
 > {{owner}} · {{phone}} · WPC513
 
-**Why the number isn't final in the report itself.** `pricing.md` §7, rule 1: never quote a
-flat number from memory in the driveway — walk it, measure it, send the number the same day
-or the next morning. The report names the finding and gives an honest range; the estimate
-(see `estimate-templates.md`) carries the flat price.
+**Why there's no number in the report itself.** `pricing.md` §7, rule 1: never quote a flat
+number from memory in the driveway — walk it, measure it, send the number the same day or the
+next morning. The internal anchors in `pricing.md` §5.3 exist so he isn't starting from
+scratch once he's measured; they are not something to read aloud or narrow into a range
+before he's looked. The report names the finding and promises a flat number by a stated time;
+the estimate (see `estimate-templates.md`) is what actually carries the price.
 
 ---
 
