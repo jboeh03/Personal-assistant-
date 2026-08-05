@@ -319,20 +319,96 @@ of those reviews have happened.
 
 ---
 
+## Schedule A — Seasonal Task Lists
+
+Attached to and made part of this agreement. §5 refers to this schedule; this schedule does
+not change the price in §1, the exclusions in §6, or any other term above.
+
+**The rule that governs this whole schedule: not every item happens on every visit.** Each
+visit is spent on what the property actually needs that day, drawn from the applicable list
+below.
+
+**Green Season — April through October**
+
+Walk the property before starting and again before leaving. Look for storm damage, standing
+water, drainage problems, pool issues, outdoor kitchen problems, furniture damage, or
+anything else visibly out of place, and photograph anything worth documenting.
+
+If the property has a pool: skim the surface, empty the skimmer basket and the pump basket,
+clear debris from the pool deck and surround, and straighten and wipe down the pool
+furniture.
+
+Patio and outdoor living area: wipe down the patio furniture and table surfaces; straighten
+and reset furniture and cushions; blow the patio, the walkways, the pool deck, and the
+outdoor kitchen area clean.
+
+If the property has an outdoor kitchen: wipe down the countertops and stainless steel
+surfaces; empty the grease trap and drip tray on the grill or flat-top; clear debris from
+around and under the cooking area.
+
+Grounds within the outdoor living area: hand-collect loose leaves, sticks, and debris and
+empty it into the Member's own designated waste containers, up to their capacity; water
+flower pots and container plantings; spot-treat visible weeds in the hardscape joints, the
+walkway cracks, and along the bed edges.
+
+Before leaving: confirm gates are latched, confirm all equipment and supplies are removed
+from the property, and take after photos where useful. A service report is sent the same
+day.
+
+**Dormant Season — November through March**
+
+Water and freeze protection, the highest-value work of the season: check hose bibs and
+confirm they are shut off and drained; disconnect and store hoses; drain and store or cover
+exposed lines and fixtures; check the outdoor kitchen water lines, sinks, and shutoffs if the
+property has one; visually check the pool equipment pad if the property has a pool; confirm
+freeze-vulnerable items are covered, drained, or brought in.
+
+Gutters and drainage, checked from the ground only, not cleaned: visually inspect gutters and
+downspouts from the ground; confirm downspouts are discharging and extensions are in place;
+look for overflow staining, ice damming, standing water, and pooling at the foundation;
+report anything found (§6.4).
+
+Storm and debris: clear storm debris from the outdoor living area; hand-collect fallen limbs
+and branches within the volume limits in §6.6; clear drains, grates, and window wells of
+surface debris.
+
+Furniture and equipment: cover, store, or consolidate outdoor furniture and cushions at the
+season transition, and uncover and reset them in spring; cover and secure the grill and
+outdoor kitchen equipment; check that covers are still secure after high wind.
+
+Ice and hardscape: salt and clear ice from the outdoor living hardscape — the patio, the pool
+deck, and the walkway serving the outdoor living area — on scheduled visits.
+
+Inspection and planning: a full exterior inspection with a photo report, the fullest
+inspection of the year since the leaves are down; note and photograph anything for spring;
+the March visit's report includes what the property will need in April, priced.
+
+---
+
+*(Everything below this line is repo cross-reference material — not part of the printed
+document.)*
+
 ## Related files
 
 - `04-operations/membership-summary-sheet.md` — the one-page cover page signed together with
   this document; §15 states the two are one instrument
-- `00-model/service-catalog.md` — the source scope and exclusions this agreement is built
+- `00-model/service-catalog.md` §§2–3 — the source Schedule A above is drawn from; no longer
+  incorporated by reference into the signed packet, since a member cannot obtain this file —
+  Schedule A is the attached, member-facing version
+- `00-model/service-catalog.md` §4 — the source scope and exclusions this agreement is built
   from; §4's twelve clauses map one-to-one to §6.1–§6.12 above
 - `00-model/pricing.md` — every price quoted in this agreement, verbatim
 - `CANON.md` §3 — the presentation rule this agreement follows: configuration rows naming
-  the property, never the `+$60` / `+$40` module arithmetic, on any customer-facing surface
+  the property, never the `+$60` / `+$40` module arithmetic, on any customer-facing surface;
+  and lead with $329/$289 (§1's table and checkbox line follow that order)
 - `00-model/operating-model.md` §8 — why card on file, a signed agreement, insurance, and
   the LLC are required before the first paid visit
-- `01-brand/brand-brief.md` §1 — the legal name status this agreement's fill-in slot depends
-  on
+- `01-brand/brand-brief.md` §1 — the legal name status the Parties section's fill-in slot
+  depends on; not cited in the printed document itself, since a member cannot obtain this file
 - `04-operations/tooling.md` — the LLC, EIN, and insurance setup this agreement assumes is
-  in place
+  in place; not cited in §13 itself, since a member cannot obtain this file
+- `04-operations/estimate-templates.md` — the actual written estimate a §6.5 deep-clean quote
+  (or any other project quote) produces; not cited in §6.5 itself, since a member cannot
+  obtain this file
 - `04-operations/property-record-template.md` — where the module arithmetic (§3 of this
   agreement, in effect) is tracked internally

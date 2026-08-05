@@ -984,10 +984,21 @@ agents' audits cite these numbers. Never renumber; split.
 
 18. Are minutes per visit, visit duration, the 1.5-hour planning allowance, the $100/hour rate,
     the $149 trip floor, route hours, and every metric and revenue figure absent? (§3)
-19. Are the internal quoting anchors from `pricing.md` §5.3 absent *as a published price list*?
-    (A specific number on a specific estimate for a specific job — "driveway and back patio,
-    $449" — is exactly what the anchors are for and is correct. A page listing "pressure
+19a. Are the internal quoting anchors from `pricing.md` §5.3 absent *as a published price
+    list*? (A specific number on a specific estimate for a specific job — "driveway and back
+    patio, $449" — is exactly what the anchors are for and is correct. A page listing "pressure
     washing from $249" is not.)
+
+19b. **Is every project number a single figure, on a specific job, after he has looked at it?**
+    A **range** is the §5.3 table read aloud with the labels removed — "$249–$449," "$249 to
+    $449," "somewhere in the $300s," "high threes" — and is a defect wherever it appears,
+    including in a service report, a text, or a call script, not only on a page. So is any
+    number offered *before* the on-site look, and any hedge that softens a flat price
+    ("likely," "probably," "typically runs," "in the ballpark of"). The correct move before he
+    has looked is to commit to the number's *arrival*, not its *size*: "I'll walk it and send
+    you a flat number tomorrow morning." Only two published starting prices are exempt: **$249+**
+    for a grill and outdoor kitchen deep clean and **$49+** for a window well cleanout
+    (`pricing.md` §5.1). (§3, the anchor-leak rule)
 
 **Winter and seasons**
 
@@ -1012,6 +1023,29 @@ agents' audits cite these numbers. Never renumber; split.
     something other than "learn more"?
 29. If the book is full, is the only ask the waitlist plus the project offer, with the
     mechanism explained? (Pair 7)
+
+**Non-prose surfaces**
+
+*Numbered 31–34 because numbering is stable and never renumbered — item 30 is still the last
+test and is meant to be run last. Do not stop the audit when the prose passes; the last two
+defects found in this project were both here.*
+
+31. **Structured data.** Does every value in the JSON-LD assert only what the prose already
+    asserts and `00-model/` already supports — no hours implying a staffed week, no service
+    area beyond Green Township / Oak Hills / Delhi / Covedale, no `aggregateRating`, no
+    `review`, no `employee`, no price not in `pricing.md`? Where there is no honest value, is
+    the field **omitted** rather than filled? (§3 non-prose surface rule; `CANON.md` §3, §4)
+32. **Rendered case.** Do the status stamps — MEMBERSHIP FULL, GREEN SEASON, DORMANT SEASON,
+    the report header — actually render in caps, with `text-transform` present wherever the
+    stylesheet is carrying that rule, and is no lowercase text letterspaced? (§7 item 2;
+    `visual-direction.md` §3.4)
+33. **Alt text and labels.** Does every `alt` string name a specific object and locate it
+    (rules 2 and 3) rather than describing a category — "the two window wells on the south
+    side, cleared," not "property maintenance work"? Do button text, `aria-label`s, form
+    placeholders, and error messages pass §6 and the person rules, with no "we"?
+34. **Titles, meta, and social.** Do `<title>`, meta description, and Open Graph values pass
+    §6 in full — no banned phrases, no invented credentials, no urgency, sentence case — given
+    that these are frequently the first WPC copy anyone reads?
 
 **The last one, and it is the real test**
 
