@@ -59,8 +59,17 @@ customer-facing configurations:
 **The only four prices a customer ever sees: $229, $269, $289, $329.**
 Billed monthly, same price year-round, card on file, auto-charged on the 1st.
 
-Never present this as a menu of four plans. It is one membership priced by what the property
-has: *base, plus the pool, plus the outdoor kitchen.* Say it that way everywhere.
+**Presentation rule.** Never present this as a menu of four plans, and **never publish the
+`+$60` / `+$40` module arithmetic.** The modules are how the price is *derived* internally;
+they are not how it is *shown*. Publishing them invites a reader to do the arithmetic
+themselves and treat the result as a plan grid.
+
+Customer-facing, price appears as **independent configuration rows** naming the property,
+not the plan — "A property with a pool and an outdoor kitchen — $329/month." One membership,
+priced to the property in front of you.
+
+Internally — in `00-model/`, estimates, and the property record — the module arithmetic is
+the right way to reason about it. The rule is about the customer-facing surface only.
 
 > **Decision note.** An earlier version of this file locked the card at three prices and sent
 > outdoor-kitchen-without-pool properties to $229. That was wrong: the first members are most
