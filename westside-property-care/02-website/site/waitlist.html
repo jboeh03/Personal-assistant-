@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The waitlist is a real list — Westside Property Care</title>
+<title>The waitlist is a real list — Westside Property Care 513</title>
 <meta name="description" content="A written list with your street on it. When a spot opens it goes to whoever is closest to the route I'm already driving. Project work in the meantime.">
 <link rel="canonical" href="[URL]/waitlist.html">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-16.svg" type="image/svg+xml" sizes="16x16">
+<link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The waitlist is a real list — Westside Property Care">
+<meta property="og:title" content="The waitlist is a real list — Westside Property Care 513">
 <meta property="og:description" content="Written down, with your street on it. When a spot opens it goes to whoever is closest to the route.">
 <meta property="og:url" content="[URL]/waitlist.html">
 </head>
@@ -20,19 +22,33 @@
 <a class="skip" href="#main">Skip to the main content</a>
 
 <header class="strip-wrap">
+  <!-- The status strip is --navy in BOTH seasons. It carries the mark, and the
+       mark does not change with the calendar (visual-direction.md §4.2). -->
   <div class="strip">
     <div class="container strip__inner">
-      <a class="mark" href="index.html">
-        <span>Westside Property Care</span>
-        <span class="mark__short">WPC513</span>
+      <a class="lockup" href="index.html" aria-label="Westside Property Care 513 — home">
+        <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+        <span class="lockup__type">
+          <span class="lockup__word">WPC 513</span>
+          <span class="lockup__name">Westside Property Care</span>
+        </span>
       </a>
       <div class="season">
-        <span class="stamp season__stamp season__stamp--green">Green Season · Apr–Oct</span>
-        <span class="stamp season__stamp season__stamp--dormant">Dormant Season · Nov–Mar</span>
+        <!-- The three status stamps are IN SEASON, OFF SEASON and MEMBERSHIP
+             FULL. They are typographic objects, not emphasis, and they are
+             typed in caps here as well as being rendered in caps by
+             .stamp with text-transform: uppercase. -->
+        <span class="stamp season__stamp season__stamp--in">IN SEASON · MAR 1 – OCT 31</span>
+        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – FEB 28</span>
         <input type="checkbox" id="season-switch" class="visually-hidden">
         <label class="season__label" for="season-switch">
-          <span class="season__to-dormant">See Dormant Season</span>
-          <span class="season__to-green">See Green Season</span>
+          <span class="season__to-off">See off season</span>
+          <span class="season__to-in">See in season</span>
         </label>
       </div>
     </div>
@@ -63,16 +79,9 @@
 
       <!-- ══════════════════════════════════════════════════════════════════
            ENROLMENT STATE — the only block to edit when a slot opens or fills.
-           OPEN:  keep the line below as it is, with the true count.
-           FULL:  replace the whole <div class="slots"> with the MEMBERSHIP
-                  FULL stamp exactly as it appears in membership-full.html:
-                  <div class="slots">
-                    <p class="figure slots__full">Membership full</p>
-                    <p>All six spots are taken. That's the actual cap, not a
-                       sales line — six properties is twelve visits a month
-                       across four route days, and past that I'd be rushing
-                       somebody.</p>
-                  </div>
+           OPEN: keep the line below, with the true count.
+           FULL: replace the whole <div class="slots"> with the MEMBERSHIP FULL
+                 stamp exactly as it appears in membership-full.html.
            See site-spec.md §3.
            ══════════════════════════════════════════════════════════════════ -->
       <div class="slots">
@@ -90,8 +99,8 @@
         <div class="entry__body measure">
           <h2 id="why-h">Why there's a list at all</h2>
           <p>Two reasons, and they're both about the route.</p>
-          <p>Six properties is twelve visits a month across four route days. When those six are taken, that's the cap — past it I'd be hurrying at one house to get to another, and that's the one thing the whole schedule is built to prevent.</p>
-          <p>And a property that isn't near one of the two clusters goes on the list even when a slot is open. A house twenty-five minutes out of position costs me the same unpaid drive twice a month for as long as they're a member, and no price fixes distance. That's true at $329, and it's true if you want to start Monday.</p>
+          <p>Six properties is twelve visits a month across four route days, and routine visits only happen Monday and Friday. When those six are taken, that's the cap — past it I'd be hurrying at one house to get to another, and that's the one thing the whole schedule is built to prevent.</p>
+          <p>And a property that isn't near one of the two clusters goes on the list even when a slot is open. A house twenty-five minutes out of position costs me the same unpaid drive twice a month for as long as they're a member, and no price fixes distance.</p>
         </div>
       </div>
     </div>
@@ -103,7 +112,7 @@
         <p class="rail">What helps</p>
         <div class="entry__body measure">
           <h2 id="up-h">Two things move you up</h2>
-          <p>A spot opening near you. Or a neighbor of yours with a pool or an outdoor kitchen adding their name — if two of you are on the same street, that's a cluster, and it changes the math completely.</p>
+          <p>A spot opening near you. Or a neighbour of yours adding their name — if two of you are on the same street, that's a cluster, and it changes the math completely.</p>
           <p>That second one is the fastest way up the list in practice, and it's worth asking around.</p>
         </div>
       </div>
@@ -119,7 +128,7 @@
 
           <form class="form" action="[FORM_ENDPOINT]" method="post">
             <input type="hidden" name="_next" value="[URL]/thanks.html#waitlist">
-            <input type="hidden" name="_subject" value="Westside Property Care — waitlist">
+            <input type="hidden" name="_subject" value="Westside Property Care 513 — waitlist">
             <input type="hidden" name="list" value="waitlist">
 
             <!-- Honeypot. Real people never see it and never fill it in. -->
@@ -131,11 +140,10 @@
             <fieldset>
               <legend>Your details</legend>
 
-              <!-- Required fields say so in visible text, in the same
-                   field__hint pattern the cross street uses. The error
+              <!-- Required fields say so in visible text (SC 3.3.2). The error
                    sentence beneath each one is in the markup on every page
-                   load and is revealed, not injected — so the invalid state
-                   is never carried by the copper rule alone. -->
+                   load and is revealed, not injected — so the invalid state is
+                   never carried by the ember rule alone (SC 1.4.1). -->
               <div class="field">
                 <label for="name">Your name</label>
                 <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-hint name-error">
@@ -175,7 +183,7 @@
                   <label for="has-kitchen">An outdoor kitchen, a grill, or outdoor counters</label>
                 </div>
               </div>
-              <span class="field__hint">Check either, both, or neither. Neither is a real answer and it's a real price.</span>
+              <span class="field__hint">Check either, both, or neither. It doesn't change the price — $279 is $279. It changes how much of the two hours the property uses, which is how I work out whether it fits.</span>
             </fieldset>
 
             <div class="field">
@@ -206,11 +214,9 @@
         <div class="entry__body">
           <div class="measure">
             <h2 id="meanwhile-h">Project work doesn't need a slot</h2>
-            <p>Tuesday through Thursday I'm doing projects and estimates whether you're a member or not.</p>
+            <p>Tuesday through Thursday I'm doing projects and estimates whether you're a member or not, and project work runs year round.</p>
           </div>
 
-          <!-- Same markup contract as every other ledger on the site: <dl>,
-               one <div> per row, <dt> what it is, <dd> the price. -->
           <dl class="ledger">
             <div class="ledger__row ledger__row--lead">
               <dt class="ledger__what">Grill and outdoor kitchen deep clean</dt>
@@ -237,11 +243,20 @@
   <div class="container">
     <div class="foot__grid">
       <div>
-        <p class="mark mark--stacked">
-          <span>Westside Property Care</span>
-          <span class="mark__short">WPC513</span>
+        <p class="lockup lockup--foot">
+          <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+          <span class="lockup__type">
+            <span class="lockup__word">WPC 513</span>
+            <span class="lockup__name">Westside Property Care</span>
+          </span>
         </p>
-        <p class="foot__note">Outdoor living care for six homes on the west side of Cincinnati. Green Township, Oak Hills, upper Delhi, and Covedale.</p>
+        <p class="foot__note">Seasonal Outdoor Living &amp; Property Care</p>
+        <p class="foot__note">Six homes on the west side of Cincinnati — Green Township, Oak Hills, upper Delhi, and Covedale.</p>
       </div>
       <div>
         <h2>Get hold of me</h2>
@@ -273,7 +288,12 @@
 
     <hr class="foot__rule">
 
-    <p class="foot__note">Two scheduled visits a month. The same price in January as in July.<br>This is a new business. I'd be starting with you.</p>
+    <!-- THE SIXTEENTH VISIT, short form (01-brand/messaging.md §1.5, last row).
+         This is what stands where the retired winter-price argument used to
+         sit, on every page of the site. Substituted, not deleted — that
+         argument had a job and something had to keep doing it. -->
+    <p class="foot__line">Sixteen visits. Six properties. One person, and a written summary every time.</p>
+    <p class="foot__note">March 1 through October 31. No scheduled visits November through February, and no billing either.<br>This is new. I'd be starting with you.</p>
   </div>
 </footer>
 

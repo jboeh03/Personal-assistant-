@@ -2,22 +2,17 @@
    Westside Property Care 513 — design tokens
    Direction: FIELD LEDGER (01-brand/visual-direction.md)
 
-   Every colour, type size, space, radius, duration, and easing curve in this
-   site is declared here and nowhere else. base.css and components.css contain
-   no literal colour, no literal type size, and no literal spacing value.
+   Every colour, size, space, radius and duration is declared here and nowhere
+   else. Roles are semantic; do not use a colour outside its role.
 
-   Roles are semantic. Do not use a colour outside its role.
+   Re-baselined 2026-08-05: navy and orange, inherited from the finished logo
+   the owner shipped rather than chosen here. The Field Ledger STRUCTURE is
+   unchanged — rail and measure, near-zero radius, the hairline system, the
+   two-shadow rule, the five uneven gaps. Only the ink changed.
 
-   Re-baselined 2026-08-05. The palette is navy and orange, inherited from the
-   finished logo the owner shipped — it was not chosen here. The Field Ledger
-   STRUCTURE is unchanged: the rail and measure, near-zero radius, the
-   hairline system, the two-shadow rule, the five uneven vertical gaps.
-   Only the ink changed.
-
-   Retired token names, which must never come back: --copper, --wash-green,
-   --flag-ochre, --season-accent, and any identifier containing "green" or
-   "dormant". A stale token name is how a retired season name outlives a
-   rewrite (01-brand/voice.md §3, the non-prose surface rule).
+   Retired token names, never to return: --copper, --wash-green, --flag-ochre,
+   --season-accent, and any identifier containing "green" or "dormant". A stale
+   token name is how a retired season outlives a rewrite (voice.md §3).
    ========================================================================== */
 
 :root {
@@ -25,9 +20,8 @@
      daylight, on paper, in a truck. There is no dark mode by decision. */
   color-scheme: light;
 
-  /* --- Ground and ink — identical in both seasons -----------------------
-     Contrast ratios are recomputed by hand in site-spec.md §9.4 and are
-     stated here against the ground each colour actually sits on. --------- */
+  /* --- Ground and ink — identical in both seasons ------------------------
+     Ratios recomputed by hand in site-spec.md §9.4, against a named ground. */
   --paper:      #F4F0E6;  /* page ground. Warm ledger stock, never white     */
   --paper-deep: #E7E1D3;  /* alternating band, insets, the facsimile ground  */
   --ink:        #141C26;  /* body, headlines, section rule  15.08:1 on paper */
@@ -38,20 +32,18 @@
      the background of a page, a section, or a viewport. 12.05:1 on paper. */
   --navy:       #0E2E52;
 
-  /* The ember ramp: ONE colour, ONE meaning — "a decision point" — set at
-     three lightnesses chosen by the ground it sits on, never by taste.
-     If something is ember and it is not a link, a control, the MEMBERSHIP
-     FULL stamp, a display figure, or a finding awaiting a yes/no, it is a
-     bug. This is why the palette does not read as grey-plus-an-accent. */
+  /* The ember ramp: ONE colour, ONE meaning — "a decision point" — at three
+     lightnesses chosen by the ground, never by taste. If something is ember
+     and it is not a link, a control, the MEMBERSHIP FULL stamp, a display
+     figure, or a finding awaiting a yes/no, it is a bug. */
   --ember:      #D4622A;  /* display figures, the finding rule, focus.
                              3.31:1 on --paper — large text (>=24px) and
                              non-text UI only. Never body text.            */
   --ember-deep: #9E4820;  /* ember at TEXT size on paper: links, the button
                              ground, inline prices.  5.42:1 on --paper      */
-  --ember-lift: #EE7A34;  /* ember reversed on a dark ground: the wordmark
-                             and the season stamp inside the navy strip.
-                             4.88:1 on --navy · 2.47:1 on --paper, which is
-                             why it is BANNED on paper at any size.         */
+  --ember-lift: #EE7A34;  /* reversed on a dark ground: the wordmark and the
+                             season stamp in the navy strip. 4.88:1 on --navy ·
+                             2.47:1 on --paper, hence BANNED on paper.      */
 
   /* --- IN SEASON — March 1 through October 31 — the shipped default -----
      Only these three properties change with the calendar. Layout, type,
@@ -59,17 +51,15 @@
      temperature, not shape. ---------------------------------------------- */
   --season-ground:  #0E2E52;  /* = --navy. Reversed panels, the season stamp
                                  ground, the active hairline.  12.05:1      */
-  --season-support: #1A6E6B;  /* POOL ONLY. The one hue that is neither the
-                                 identity navy nor the identity orange, so
-                                 it cannot be read as a mark or an action.
-                                 5.29:1 on --paper · 4.62:1 on --paper-deep */
-  --wash:           #E4E8EE;  /* ledger-row hover fill. A cool wash on warm
-                                 stock — the row changes temperature.       */
+  --season-support: #1A6E6B;  /* POOL ONLY. Neither the identity navy nor the
+                                 identity orange, so it cannot read as a mark
+                                 or an action.  5.29:1 · 4.62:1              */
+  --wash:           #E4E8EE;  /* row hover fill. A cool wash on warm stock   */
 
-  /* --- Type -------------------------------------------------------------
-     Fallback chains are chosen for width and colour, not availability: a
-     Fraunces failure lands on a sturdy old-style face, not on Times.
-     See site/fonts/README.md to install the real faces. */
+  /* --- Type ---------------------------------------------------------------
+     Fallbacks are chosen for width and colour, not availability: a Fraunces
+     failure lands on a sturdy old-style face, not on Times. Install the real
+     faces per site/fonts/README.md. */
   --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino,
                   Georgia, "Times New Roman", serif;
   --font-text:    "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue",
@@ -78,11 +68,11 @@
                   "Roboto Mono", Menlo, Consolas, monospace;
 
   /* High opsz narrows the letterforms and lengthens the ascenders, which is
-     what makes the display face read as sturdy rather than soft. SOFT 0 and
-     WONK 0 are mandatory everywhere on screen. */
+     what makes the display face read sturdy rather than soft. SOFT 0 / WONK 0
+     are mandatory everywhere on screen. */
   --display-axes: "opsz" 120, "SOFT" 0, "WONK" 0;
 
-  /* Non-linear on purpose. Body 17px to display 100px is ~5.9x, and that gap
+  /* Non-linear on purpose. 17px body to 100px display is ~5.9x, and that gap
      is where the hierarchy comes from — not weight, not colour. */
   --type-display: clamp(2.75rem, 1.55rem + 5.3vw, 6.25rem);
   --type-h2:      clamp(1.75rem, 1.24rem + 2.2vw, 3rem);
@@ -92,9 +82,9 @@
   --type-small:   0.875rem;
   --type-stamp:   0.75rem;
   --type-rail:    0.6875rem;
-  /* Three numbers only: the open-slot count, the monthly price, and the
-     visit number. Minimum 2rem = 32px, which clears the WCAG large-text
-     threshold, which is the one place --ember may be used as text. */
+  /* Three numbers only: the slot count, the price, the visit number. Min 2rem
+     = 32px, which clears the large-text threshold — the one place --ember may
+     be text. */
   --type-figure:  clamp(2rem, 1.5rem + 2vw, 3.25rem);
 
   --lh-display: 0.94;
@@ -118,10 +108,9 @@
   --wt-strong:  600;
   --wt-mono:    500;
 
-  /* --- Space -----------------------------------------------------------
-     Five gaps, deliberately uneven. RULE: no two adjacent levels of
-     hierarchy may use the same gap. If a layout reads as evenly padded,
-     it is wrong. ------------------------------------------------------- */
+  /* --- Space --------------------------------------------------------------
+     Five gaps, deliberately uneven. RULE: no two adjacent levels of hierarchy
+     may use the same gap. If a layout reads evenly padded, it is wrong. ---- */
   --space-row:     0.75rem;                              /* lines in an entry */
   --space-entry:   1.5rem;                               /* entry to entry    */
   --space-block:   clamp(2rem, 1.4rem + 2.6vw, 3.5rem);  /* block to block    */
@@ -134,24 +123,21 @@
   --space-margin:  1.25rem;  /* 20px viewport side margin   */
   --space-control: 0.75rem;  /* inside buttons and inputs   */
 
-  /* Minimum interactive target. 44px is the WCAG 2.2 target-size floor —
-     this is an accessibility constant, not a taste value. Anything a
-     gloved hand taps in a driveway uses it. */
+  /* 44px, the WCAG 2.2 target-size floor. An accessibility constant, not a
+     taste value. Anything a gloved hand taps in a driveway uses it. */
   --tap-target:    2.75rem;
 
-  /* 24px is the WCAG 2.2 *minimum* target size (SC 2.5.8), as distinct from
-     the 44px comfortable target above. Used where a native control draws its
-     own box and cannot be padded out — the checkboxes. */
+  /* 24px, the SC 2.5.8 *minimum*, as distinct from the 44px above. Used where
+     a native control draws its own box and cannot be padded out. */
   --tap-min:       1.5rem;
 
-  /* --- Grid ------------------------------------------------------------- */
+  /* --- Grid --------------------------------------------------------------- */
   --container:  77.5rem;  /* 1240px, 12 columns, 24px gutter */
   --measure:    68ch;     /* the reading column caps at 68 characters */
   --rail-width: 11.5rem;
-  /* The bleed track has to reach the right edge of the viewport at any width,
-     not a fixed distance past the container. Below 1240px this overshoots and
-     the plate is cropped hard by main { overflow-x: clip }, which is the
-     intent. */
+  /* The bleed track reaches the viewport edge at any width, not a fixed
+     distance past the container. Below 1240px it overshoots and is cropped by
+     main's overflow-x: clip, which is the intent. */
   --bleed: max(2rem, calc((100vw - var(--container)) / 2 + var(--space-gutter)));
 
   /* --- The season strip — sixteen ticks ---------------------------------- */
@@ -160,7 +146,7 @@
   --tick-sq: 0.5rem;   /* the filled ember square: the current visit */
   --lockup:  2.5rem;   /* 40px — the minimum full-lockup size on screen */
 
-  /* --- Radius — near zero, and meaningful where present ------------------ */
+  /* --- Radius — near zero, meaningful where present ----------------------- */
   --radius-flat:    0;    /* panels, plates, tables, entries, the logo square */
   --radius-stamp:   2px;  /* the three status stamps                         */
   --radius-control: 3px;  /* buttons and inputs, and nothing else            */
@@ -169,7 +155,7 @@
   --hair:      1px;  /* --rule: the default separator, --ink: a boundary */
   --hair-find: 2px;  /* --ember: a FINDING, and only a finding           */
 
-  /* --- Depth — two elements only, both of which overlap something -------- */
+  /* --- Depth — two elements only, both of which overlap something --------- */
   --shadow-overlap: 0 1px 0 var(--rule),
                     0 14px 28px -20px rgb(20 28 38 / 0.35);
 
@@ -179,10 +165,15 @@
   --dur-draw:  420ms;
   --ease-draw: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* --- Focus — visible, in-brand, and never removed ---------------------- */
+  /* --- Focus — visible, in-brand, never removed --------------------------- */
   --focus-width:  2px;
   --focus-offset: 3px;
   --focus-mark:   6px;  /* the filled ember square drawn in the rail */
+
+  /* The only non-palette colour in the system. A photograph needs an edge, and
+     that edge must NOT be brand-tinted — a navy or ember hairline round a photo
+     reads as a frame and starts grading the image. Nothing else uses it. */
+  --img-edge: rgb(20 28 38 / 0.12);
 
   /* --- Texture ----------------------------------------------------------- */
   --grain-opacity: 0.04;
@@ -192,18 +183,15 @@
 /* --------------------------------------------------------------------------
    OFF SEASON — November 1 through the end of February.
 
-   The page drains. The reversed ground goes from navy to a colder, lighter
-   slate; the hover wash goes from cool to warm; and the pool teal has no role
-   at all, because there is no pool work off season. A darker winter ground
+   The page drains: the reversed ground goes from navy to a colder, lighter
+   slate, the hover wash goes from cool to warm, and the pool teal has no role
+   at all because there is no pool work off season. A darker winter ground
    would read as "night," which is a mood. A drained one reads as "closed,"
-   which is a fact.
-
-   The masthead strip and the mark stay navy in both states — the mark does
+   which is a fact. The masthead strip and the mark stay navy — the mark does
    not change with the calendar.
 
-   Driven by a real checkbox in the status strip, so the switch works with
-   JavaScript disabled. js/season.js only sets its initial position from the
-   date; it is not required for the switch to function.
+   Driven by a real checkbox, so the switch works with JavaScript disabled.
+   js/season.js only sets its opening position from the date.
    -------------------------------------------------------------------------- */
 body:has(#season-switch:checked) {
   --season-ground:  #3A4E60;  /* 7.57:1 with --paper */

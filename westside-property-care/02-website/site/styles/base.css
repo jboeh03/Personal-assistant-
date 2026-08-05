@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Westside Property Care — base
+   Westside Property Care 513 — base
    Reset, landmarks, typography, the rail-and-measure grid, texture, motion.
    Contains no literal colour, type size, space, radius, or duration.
    ========================================================================== */
@@ -45,8 +45,8 @@ img, svg { display: block; max-width: 100%; }
 img {
   height: auto;
   /* A neutral inset outline so a photograph's edge does not blur into the
-     paper. Never tinted with the brand palette. */
-  outline: 1px solid rgb(20 28 38 / 0.12);
+     paper. Never tinted with the brand palette — see the token's comment. */
+  outline: var(--hair) solid var(--img-edge);
   outline-offset: -1px;
 }
 
@@ -56,8 +56,8 @@ button, input, textarea, select {
 }
 
 /* --- Texture: one paper-grain layer, site-wide ----------------------------
-   Inline fractalNoise, tiled. About 300 bytes and no network request. It is
-   meant to be invisible until you put it beside a version without it.
+   Inline fractalNoise, tiled, ~300 bytes and no network request. Meant to be
+   invisible until you put it beside a version without it.
    -------------------------------------------------------------------------- */
 
 body::after {
@@ -109,8 +109,8 @@ p + p { margin-top: var(--space-row); }
 
 strong, b { font-weight: var(--wt-strong); }
 
-/* No italics for emphasis anywhere. Italic display type is reserved for the
-   season name in running text. */
+/* No italics for emphasis. Italic display type is reserved for the season
+   name in running text. */
 em, i {
   font-style: normal;
   font-weight: var(--wt-strong);
@@ -129,8 +129,8 @@ em, i {
   color: var(--ink-muted);
 }
 
-/* Mono is not decoration. It is what makes a price row read as a record
-   instead of a pricing table. Uppercase only, tracked positive. */
+/* Mono is not decoration: it is what makes a price read as a record instead
+   of a pricing table. Uppercase only, tracked positive. */
 .stamp,
 .rail {
   font-family: var(--font-mono);
@@ -152,13 +152,13 @@ em, i {
   color: var(--ink-muted);
 }
 
-/* The two status stamps — MEMBERSHIP FULL and the open-slot count — are
-   typographic objects set in caps, not phrases that happen to be shouted
-   (voice.md §7 item 2, visual-direction.md §3.4). The stylesheet is where
-   that rule is kept, so it is auditable here: without text-transform the
-   stamps render in sentence case, which is a softer claim than the one that
-   was approved, and the Plex Mono subset ships uppercase and digits only
-   (fonts/README.md), so lowercase would fall out of the subset mid-word. */
+/* The status stamps — MEMBERSHIP FULL, IN SEASON, OFF SEASON, the slot count,
+   the visit number — are typographic objects set in caps, not phrases that
+   happen to be shouted (voice.md §7 item 2). The stylesheet is where that rule
+   is kept, so it is auditable here: without text-transform they render in
+   sentence case, which is a softer claim than the one approved, and the Plex
+   Mono subset ships uppercase and digits only, so lowercase would fall out of
+   the subset mid-word. */
 .figure {
   font-family: var(--font-mono);
   font-weight: var(--wt-mono);
@@ -169,11 +169,11 @@ em, i {
   font-variant-numeric: tabular-nums;
 }
 
-/* --- Links — the ember ramp is a semantic monopoly on "act" ----------------
-   A link is text, so it takes the TEXT-SIZE step of the ramp: --ember-deep at
+/* --- Links — the ember ramp is a semantic monopoly on "act" ---------------
+   A link is text, so it takes the TEXT-SIZE step of the ramp: --ember-deep,
    5.42:1 on --paper. --ember itself is 3.31:1 and is reserved for display
-   figures, the finding rule, and the focus ring — none of which are body copy.
-   Choose the ember by its ground, never by taste (visual-direction.md §2.4.2).
+   figures, the finding rule and the focus ring, none of which are body copy.
+   Choose the ember by its ground, never by taste (§2.4.2).
    -------------------------------------------------------------------------- */
 
 a {
@@ -191,28 +191,24 @@ a:hover { text-decoration-thickness: var(--hair-find); }
 a:active { color: var(--ink); }
 
 /* --- Focus — visible, in-brand, never removed ------------------------------
-   Keyboard users get the same margin marker the service summary uses for a
-   finding, and after the re-baseline it is literally the same colour: a filled
-   --ember square in the rail at the row's baseline.
+   Keyboard users get the same margin marker the summary uses for a finding,
+   and after the re-baseline it is literally the same colour: a filled --ember
+   square in the rail at the row's baseline.
 
-   --ember is a PAPER-SIDE mark. It is 3.31:1 on --paper, which clears the 3:1
-   floor for a non-text indicator (SC 1.4.11), and 2.89:1 on --paper-deep,
-   which does not. The rule enforced in the markup is that NOTHING FOCUSABLE
-   SITS ON A --paper-deep GROUND — the two --paper-deep surfaces are the
-   summary facsimile and the image plates, and neither contains a link.
+   --ember is a PAPER-SIDE mark: 3.31:1 on --paper, which clears the 3:1
+   non-text floor (SC 1.4.11), and 2.89:1 on --paper-deep, which does not. The
+   rule enforced in the markup is that NOTHING FOCUSABLE SITS ON --paper-deep —
+   its only two surfaces are the summary facsimile and the image plates, and
+   neither contains a link.
 
-   On the two reversed panels — the navy status strip and the footer — the ring
-   and the marker are overridden to --paper (12.05:1 on navy, 7.57:1 on the Off
-   Season slate). --ember would be 3.64:1 on navy and 2.29:1 on the slate, so
-   the ring would disappear for four months of the year. That was a real
-   shipped defect once; the palette changed underneath it and it was
-   re-verified, not assumed. Any future reversed surface must override it too.
-   Full matrix in site-spec.md §9.4.
+   On the two reversed panels — the navy strip and the footer — the ring and
+   the marker are overridden to --paper. Any future reversed surface must do
+   the same. Full matrix in site-spec.md §9.4.
    -------------------------------------------------------------------------- */
 
 /* Suppress the ring only where :focus-visible is understood and has already
-   decided it is not wanted. A browser without :focus-visible keeps its own
-   default ring rather than losing focus indication entirely. */
+   decided it is not wanted. A browser without it keeps its own default ring
+   rather than losing focus indication entirely. */
 :focus:not(:focus-visible) { outline: none; }
 
 :focus-visible {
@@ -266,9 +262,8 @@ summary:focus-visible::before {
 }
 
 /* --- The page: container, rail, measure, bleed ----------------------------
-   12 columns, 24px gutter, 1240px max — but never twelve equal cells. The
-   rail is columns 1-3, the measure is 4-10, and 11-12 are a live bleed track
-   that runs past the container off the right edge of the viewport.
+   12 columns, 24px gutter, 1240px max — never twelve equal cells. Rail 1-3,
+   measure 4-10, 11-12 a live bleed track past the container.
    -------------------------------------------------------------------------- */
 
 .container {
@@ -286,9 +281,8 @@ main { overflow-x: clip; }
 
 .measure { max-width: var(--measure); }
 
-/* An entry: rail label, measure block, a hairline beneath, and nothing else.
-   No border box, no fill at rest, no radius, no shadow. There are no cards on
-   this site. */
+/* An entry: rail label, measure block, a hairline beneath, nothing else. No
+   box, no fill at rest, no radius, no shadow. There are no cards here. */
 .entry {
   display: grid;
   gap: var(--space-tight);
@@ -313,13 +307,11 @@ main { overflow-x: clip; }
 }
 
 /* --- Motion ---------------------------------------------------------------
-   The rules draw. On first view a section's hairlines animate scaleX(0)->1
-   from the left and the text fades in with no translate. The effect is a page
-   being ruled and then written on.
-
-   Implemented with CSS scroll-driven animation, so it costs zero JavaScript
-   and zero scroll handlers. Browsers without support render the final state
-   immediately, which is the correct degradation. Compositor properties only.
+   The rules draw: on first view a section's hairlines animate scaleX(0)->1
+   from the left and the text fades in with no translate — a page being ruled
+   and then written on. CSS scroll-driven animation, so it costs zero
+   JavaScript and zero scroll handlers; browsers without support render the
+   final state immediately. Compositor properties only.
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: no-preference) {
@@ -369,7 +361,7 @@ main { overflow-x: clip; }
   }
 }
 
-/* --- Print — the site is the service report, so it should print like one --- */
+/* --- Print — the site is the service summary, so it prints like one ------- */
 
 @media print {
   body::after,

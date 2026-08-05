@@ -1,18 +1,17 @@
 /* ==========================================================================
    Westside Property Care 513 — components
-   Sixteen of them. There is no card among them, by direction.
-   Contains no literal colour, type size, space, radius, or duration.
+   Sixteen of them. There is no card among them, by direction, and no literal
+   colour, size, space, radius or duration.
 
-   Re-baselined 2026-08-05: navy-and-orange palette, the navy status strip
-   carrying the real logo lockup, the sixteen-tick season strip, and the
-   single-figure price that replaced the four-row configuration ledger.
+   Re-baselined 2026-08-05: navy and orange, the navy status strip carrying the
+   real logo lockup, the sixteen-tick season strip, and the single-figure price
+   that replaced the four-row configuration ledger.
    ========================================================================== */
 
 /* --- 1. Status strip and the logo lockup ----------------------------------
-   The strip is --navy in BOTH seasons. It carries the mark, and the mark does
-   not change with the calendar (visual-direction.md §4.2). It is one of
-   exactly two elements permitted a shadow, because it physically overlaps the
-   content beneath it.
+   --navy in BOTH seasons: it carries the mark, and the mark does not change
+   with the calendar (§4.2). One of exactly two elements permitted a shadow,
+   because it physically overlaps the content beneath it.
    -------------------------------------------------------------------------- */
 
 .strip {
@@ -31,10 +30,9 @@
 }
 
 /* The lockup: house-and-tree line mark, WPC 513 in --ember-lift, the hairline
-   the whole system is built from, then the name in small caps. Minimum full
-   lockup is 40px on screen (--lockup) and this is set at it. The navy square
-   of the printed mark IS the strip, so no second square is drawn — a navy
-   square on navy would be a seam, not a mark. */
+   the whole system is built from, then the name in small caps. Minimum lockup
+   is 40px on screen and this is set at it. The navy square of the printed mark
+   IS the strip, so no second square is drawn. */
 .lockup {
   display: flex;
   align-items: center;
@@ -48,7 +46,6 @@
   inline-size: var(--lockup);
   block-size: var(--lockup);
   flex: 0 0 auto;
-  color: var(--paper);
 }
 
 .lockup__type {
@@ -60,9 +57,8 @@
   text-transform: uppercase;
 }
 
-/* WPC 513 with one optical space, fixed. It is never set on two lines and
-   never split so that the first three letters appear alone — that would
-   produce the one string brand-brief.md §1.2 bans outright. */
+/* WPC 513, one optical space, never on two lines and never split so the first
+   three letters appear alone — that is the string brand-brief.md §1.2 bans. */
 .lockup__word {
   color: var(--ember-lift);        /* 4.88:1 on --navy */
   font-size: var(--type-stamp);
@@ -78,8 +74,22 @@
   border-block-start: var(--hair) solid var(--paper);
 }
 
-/* The footer lockup, reversed the same way but stacked wider. */
-.lockup--foot .lockup__mark { color: var(--paper); }
+/* The footer lockup is a <p>, not a second link to the page you are on, so it
+   resets the tap-target minimum the strip version needs.
+
+   And it is the KNOCKED-OUT single-colour variant (§7.3): the whole lockup in
+   --paper, wordmark included. The footer panel is --season-ground, which is
+   navy In Season but the drained slate Off Season, and --ember-lift is 3.06:1
+   on that slate — under AA for 12px type, and outside the rule that the mark
+   only ever sits on navy. Knocking it out in --paper is 12.05:1 In Season and
+   7.57:1 Off Season, and it is the variant the brief already allows where a
+   single colour is all that is available. */
+.lockup--foot {
+  min-block-size: 0;
+  margin-block-end: var(--space-row);
+}
+
+.lockup--foot .lockup__word { color: var(--paper); }
 
 @media (min-width: 48em) {
   .strip-wrap {
@@ -89,18 +99,16 @@
   }
 }
 
-/* Focus on the navy strip. --ember is 3.64:1 here and --paper is 12.05:1;
-   the ring is a designed indicator, so it inverts with the panel rather than
-   being dropped on it. Same rule as the footer, §15. */
+/* Focus on the navy strip: --ember is 3.64:1 here, --paper is 12.05:1. The
+   ring is a designed indicator, so it inverts with the panel. See §15. */
 .strip :focus-visible { outline-color: var(--paper); }
 
 .strip a:focus-visible::before,
 .strip label:focus-visible::before { background-color: var(--paper); }
 
 /* --- 2. Season switch ----------------------------------------------------
-   IN SEASON, March 1 – October 31. OFF SEASON, November 1 – end of February.
-   A real checkbox and a real label, so the switch works with JavaScript
-   disabled. js/season.js only sets its opening position from the date.
+   IN SEASON Mar 1 – Oct 31. OFF SEASON Nov 1 – end of Feb. A real checkbox and
+   a real label, so it works with JavaScript disabled.
    -------------------------------------------------------------------------- */
 
 .season {
@@ -162,7 +170,7 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
   outline-offset: var(--focus-offset);
 }
 
-/* --- 3. Navigation -------------------------------------------------------- */
+/* --- 3. Navigation ------------------------------------------------------- */
 
 .nav { border-block-end: var(--hair) solid var(--rule); }
 
@@ -196,10 +204,10 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
 }
 
 /* --- 4. Masthead ---------------------------------------------------------
-   What replaces the hero. Left-aligned, grid-breaking, carrying live data.
-   The display headline starts flush with the rail — one column left of the
-   body it introduces — so it visibly does not respect the grid the body
-   respects. No gradient, no blob, no centred anything.
+   What replaces the hero. Left-aligned, grid-breaking, carrying live data. The
+   headline starts flush with the rail, one column left of the body it
+   introduces, so it visibly does not respect the grid the body respects. No
+   gradient, no blob, no centred anything.
    -------------------------------------------------------------------------- */
 
 .masthead { padding-block: var(--space-block) var(--space-section); }
@@ -217,9 +225,8 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
     column-gap: var(--space-gutter);
   }
   /* The bleed track: grid columns 11-12 run past the container and off the
-     right edge of the viewport. main { overflow-x: clip } catches the
-     overflow. This is the second and last element permitted a shadow, and it
-     gets one for the same reason the strip does — it overlaps something. */
+     right edge of the viewport, caught by main's overflow-x: clip. Second and
+     last element permitted a shadow, for the same reason as the strip. */
   .masthead__bleed {
     margin-inline-end: calc(-1 * var(--bleed));
     box-shadow: var(--shadow-overlap);
@@ -227,12 +234,10 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
 }
 
 /* --- 5. The figure line, and the enrolment stamps -------------------------
-   --type-figure exists for three numbers: the open-slot count, the monthly
-   price, and the visit number. Set in mono at display size — a deliberate
-   collision of "data" and "headline" that makes the facts the business turns
-   on look like readings rather than claims. At this size --ember clears the
-   large-text threshold on --paper (3.31:1), which is the one place it may be
-   used as text.
+   Three numbers only: the slot count, the price, the visit number. Mono at
+   display size — a deliberate collision of "data" and "headline" that makes
+   the facts the business turns on read as readings rather than claims. At this
+   size --ember clears the large-text threshold on --paper (3.31:1).
    -------------------------------------------------------------------------- */
 
 .slots {
@@ -252,13 +257,12 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
   color: var(--paper);
   border: var(--hair) solid var(--ember-deep);
   border-radius: var(--radius-stamp);
-  /* A hairline box drawn around the stamp — an outline, not elevation, so the
-     two-shadow rule holds. */
+  /* A hairline box, not elevation, so the two-shadow rule holds. */
   outline: var(--hair) solid var(--ember-deep);
   outline-offset: var(--hair-find);
 }
 
-/* --- 6. Buttons ----------------------------------------------------------- */
+/* --- 6. Buttons ---------------------------------------------------------- */
 
 .btn {
   display: inline-flex;
@@ -293,9 +297,9 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
   border-color: var(--ink);
 }
 
-/* --rule is 1.67:1 on --paper. It is the right colour for a separator nobody
-   has to find, and the wrong one for the only edge a button has — the label
-   is legible but the affordance is not (SC 1.4.11). --ink-muted is 6.20:1. */
+/* --rule is 1.67:1 on --paper: right for a separator nobody has to find, wrong
+   for the only edge a button has — the label would be legible while the
+   affordance is not (SC 1.4.11). --ink-muted is 6.20:1. */
 .btn--quiet {
   background-color: transparent;
   border-color: var(--ink-muted);
@@ -332,18 +336,16 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
 
 /* --- 7. The season strip — sixteen ticks ---------------------------------
    Set-piece 2. THE SIXTEENTH VISIT, drawn rather than written: two ticks per
-   month, March through October, with the month abbreviations beneath.
-   Delivered visits are --ink, remaining visits are --rule, the current one is
-   a filled --ember square (3.31:1 on --paper, a legitimate non-text mark).
+   month, March through October. Delivered visits --ink, remaining --rule, the
+   current one a filled --ember square (3.31:1, a legitimate non-text mark).
 
-   It is PAGE FURNITURE, NOT A CHART. No axis, no scale, no tooltip, no
-   percentage, and NO ANIMATION — a filling progress bar would turn a schedule
-   into a countdown, which is manufactured urgency in motion form. The tick row
-   is aria-hidden and every fact it draws is also written in the caption, so
-   nothing is carried by the graphic alone.
+   PAGE FURNITURE, NOT A CHART. No axis, no scale, no tooltip, no percentage,
+   and NO ANIMATION — a strip that filled itself would turn a schedule into a
+   countdown, which is manufactured urgency in motion form. The tick row is
+   aria-hidden and every fact it draws is also written in the caption.
 
    Off Season every tick drains to --rule and the ember square moves to the
-   first March tick — the strip states the closure instead of arguing it.
+   first March tick: the strip states the closure instead of arguing it.
    -------------------------------------------------------------------------- */
 
 .s16 {
@@ -359,8 +361,8 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
 
 body:has(#season-switch:checked) .s16__open { display: block; }
 
-/* Sixteen equal columns, ticks set flush left in each, so tick 1 sits over
-   MAR, tick 3 over APR, and so on down the eight-column month row. */
+/* Sixteen equal columns, ticks flush left in each, so tick 1 sits over MAR,
+   tick 3 over APR, and so on down the eight-column month row. */
 .s16__ticks {
   display: grid;
   grid-template-columns: repeat(16, minmax(0, 1fr));
@@ -415,8 +417,6 @@ body:has(#season-switch:checked) .tick:first-child {
   max-width: var(--measure);
 }
 
-.s16__label { color: var(--ink); }
-
 .s16__note {
   font-size: var(--type-small);
   line-height: var(--lh-small);
@@ -430,14 +430,13 @@ body:has(#season-switch:checked) .s16__note--off { display: block; }
 
 /* --- 8. The single figure — the price ------------------------------------
    Set-piece 1, and the whole argument is the absence of a second row. One
-   ruled line: an --ink rule, $279 in mono at display size hard against the
-   left edge of the measure, "/ month" on the baseline beside it, and a mono
-   rail label reading ONE PRICE. Beneath it, in one ruled block, the four
-   boundary clauses the cap must always travel with.
+   ruled line: an --ink rule, $279 in mono hard against the left edge of the
+   measure, "/ month" on the baseline beside it, a mono rail label reading ONE
+   PRICE, then the boundary clauses the cap always travels with.
 
-   Nothing is right-aligned, because there is nothing to align against. There
-   is no <dl>, no <th>, and nothing here that would still make grammatical
-   sense if a second price were added.
+   Nothing is right-aligned, because there is nothing to align against. No
+   <dl>, no <th>, and nothing that would still make grammatical sense if a
+   second price were added.
    -------------------------------------------------------------------------- */
 
 .onefig {
@@ -476,13 +475,11 @@ body:has(#season-switch:checked) .s16__note--off { display: block; }
 }
 
 /* --- 9. The project price ledger -----------------------------------------
-   TWO published starting prices, and only these two. This component is NOT a
-   membership price list — the membership renders once per page as §8, and the
-   four-row configuration ledger that used to live here is retired with the
-   four prices that filled it.
-
-   <dl>, one <div> per row, <dt> for the job and <dd> for the price. The
-   pairing is what a screen reader uses to attach the number to the job.
+   TWO published starting prices, and only these two. NOT a membership price
+   list — the membership renders once per page as §8, and the four-row
+   configuration ledger that used to live here is retired with the four prices
+   that filled it. <dl>, one <div> per row, <dt> job, <dd> price: the pairing
+   is what a screen reader uses to attach the number to the job.
    -------------------------------------------------------------------------- */
 
 .ledger { margin-block-start: var(--space-entry); }
@@ -515,16 +512,17 @@ body:has(#season-switch:checked) .s16__note--off { display: block; }
 .ledger__row--lead::after { background-color: var(--ink); }
 
 /* Three coordinated changes on one gesture: the row fills, the hairline
-   thickens and takes the season ground, the rail tag moves 2px right. */
+   thickens and takes the season ground, the label moves 2px right. */
 .ledger__row:hover { background-color: var(--wash); }
 .ledger__row:hover::after {
   transform: scaleY(2);
   background-color: var(--season-ground);
 }
-.ledger__row:hover .ledger__tag { transform: translateX(2px); }
+.ledger__row:hover .ledger__what { transform: translateX(2px); }
 
 .ledger__what {
   flex: 1 1 16rem;
+  transition: transform var(--dur-quick) var(--ease-draw);
   display: flex;
   align-items: baseline;
   min-inline-size: 0;
@@ -541,17 +539,6 @@ body:has(#season-switch:checked) .s16__note--off { display: block; }
   transform: translateY(-0.3em);
 }
 
-.ledger__tag {
-  flex: 0 0 auto;
-  align-self: center;
-  margin-inline-end: 0.8em;
-  padding-inline: 0.45em;
-  border: var(--hair) solid var(--rule);
-  border-radius: var(--radius-stamp);
-  color: var(--ink-muted);
-  transition: transform var(--dur-quick) var(--ease-draw);
-}
-
 .ledger__price {
   flex: 0 0 auto;
   display: flex;
@@ -560,34 +547,27 @@ body:has(#season-switch:checked) .s16__note--off { display: block; }
   margin-inline-start: auto;
 }
 
-.ledger__unit {
-  font-size: var(--type-small);
-  color: var(--ink-muted);
-}
-
 .ledger__terms {
   margin-block-start: var(--space-entry);
   max-width: var(--measure);
 }
 
 /* The pool teal appears only where a pool does, and only IN SEASON. There is
-   no pool work off season, so there is no off-season role for the colour —
-   it reverts to ink rather than borrowing a hue that says something else.
-   5.29:1 on --paper, 4.62:1 on --paper-deep, 4.90:1 on the In Season wash. */
+   no pool work off season, so it reverts to ink rather than borrowing a hue
+   that means something else. 5.29 / 4.62 / 4.90:1. */
 .pool { color: var(--season-support); }
 body:has(#season-switch:checked) .pool { color: inherit; }
 
 /* The mirror of it: the MARCH 1 date, live only off season, in the colder
    support hue. 5.71:1 on --paper. */
-.opens { color: inherit; font-weight: var(--wt-strong); }
+.opens { font-weight: var(--wt-strong); }
 body:has(#season-switch:checked) .opens { color: var(--season-support); }
 
 /* --- 10. The summary facsimile -------------------------------------------
-   Set-piece 3. A real, typeset service summary reproduced on the page: the
-   record stamp, the work performed, then a FINDING marked with a 2px --ember
-   margin rule and its price in the rail. Inset on --paper-deep at 0.9x body
-   size with hairlines top and bottom, so it reads as a document reproduced on
-   the page rather than a UI panel. It belongs above the price.
+   Set-piece 3. A typeset service summary reproduced on the page: record stamp,
+   work performed, then a FINDING marked with a 2px --ember margin rule and its
+   price in the rail. Inset on --paper-deep at 0.9x with hairlines top and
+   bottom, so it reads as a document rather than a UI panel. Above the price.
    -------------------------------------------------------------------------- */
 
 .report { margin-block-start: var(--space-entry); }
@@ -616,9 +596,9 @@ body:has(#season-switch:checked) .opens { color: var(--season-support); }
   margin-block-end: var(--space-row);
 }
 
-/* A finding, and only a finding, gets the 2px ember margin rule. Ember means
-   a decision point, so the focus marker, the finding rule, and the price a
-   customer says yes or no to are now the same colour on purpose. */
+/* A finding, and only a finding, gets the 2px ember margin rule. Ember means a
+   decision point, so the focus marker, the finding rule and the price a
+   customer says yes or no to are the same colour on purpose. */
 .report__finding {
   display: grid;
   gap: var(--space-row);
@@ -632,9 +612,8 @@ body:has(#season-switch:checked) .opens { color: var(--season-support); }
   color: var(--ink);
 }
 
-/* The pool rows in the facsimile carry the teal rail tag AND the disclaimer,
-   inside the same block. A layout that puts the disclaimer in a footnote
-   fails the audit (voice.md §8 item 41). */
+/* The pool rows carry the teal rail tag AND the disclaimer, inside the same
+   block. A layout that footnotes the disclaimer fails the audit (item 41). */
 .report__pool {
   margin-block-start: var(--space-row);
   padding-block-start: var(--space-row);
@@ -653,8 +632,7 @@ body:has(#season-switch:checked) .opens { color: var(--season-support); }
 .report__note { margin-block-start: var(--space-row); }
 
 /* --- 11. Exclusion list --------------------------------------------------
-   Never styled as a features list, and never with a glyph. The marker is a
-   hanging mono label and a rule.
+   Never a features list and never a glyph: the marker is a rule.
    -------------------------------------------------------------------------- */
 
 .nots { margin-block-start: var(--space-entry); }
@@ -672,8 +650,8 @@ body:has(#season-switch:checked) .opens { color: var(--season-support); }
 
 .nots--tight > li { padding-block-end: var(--space-row); }
 
-/* The pool disclaimer, wherever pool work is described. It is a block, not a
-   footnote, and it sits inside the same block as the work it qualifies. */
+/* The pool disclaimer: a block, not a footnote, inside the same block as the
+   work it qualifies. */
 .disclaim {
   margin-block-start: var(--space-row);
   padding-block-start: var(--space-row);
@@ -684,9 +662,9 @@ body:has(#season-switch:checked) .opens { color: var(--season-support); }
 body:has(#season-switch:checked) .disclaim { border-block-start-color: var(--ink); }
 
 /* --- 12. Plate — the standing image slot ---------------------------------
-   No real photography exists yet, and stock photography is never a final
-   answer. Until each frame is shot, the slot ships as an empty ruled band
-   with a mono caption naming exactly what belongs there.
+   No real photography exists yet, and stock is never a final answer. Until
+   each frame is shot the slot ships as an empty ruled band with a mono caption
+   naming exactly what belongs there.
    -------------------------------------------------------------------------- */
 
 .plate {
@@ -709,11 +687,11 @@ body:has(#season-switch:checked) .disclaim { border-block-start-color: var(--ink
 }
 
 /* --- 13. Season divider --------------------------------------------------
-   The one ornamental element on the page, used once, in the bleed track. A
-   survey tick line, not a repeating pattern. Off season the ticks halve in
-   length and every second one is dropped, so the ornament itself gets sparser
-   when the business is closed. Do not confuse it with the season strip in §7 —
-   the divider is ornament, the strip is information.
+   The one ornamental element, used once per page, in the bleed track. A survey
+   tick line, not a repeating pattern. Off season the ticks halve and every
+   second one is dropped, so the ornament gets sparser when the business is
+   closed. Not the same object as §7 — the divider is ornament, the strip is
+   information.
    -------------------------------------------------------------------------- */
 
 .divider {
@@ -777,11 +755,10 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   color: var(--ink-muted);
 }
 
-/* The field sits on the page ground, so the border is the only thing that
-   says "you can type here." --rule is 1.67:1 against --paper and leaves the
-   control with no perceivable boundary at rest, which fails SC 1.4.11 in both
-   seasons. --ink-muted is 6.20:1 and still reads as a hairline rather than a
-   box. */
+/* The border is the only thing that says "you can type here." --rule is
+   1.67:1 on --paper and leaves the control with no perceivable boundary at
+   rest, failing SC 1.4.11 in both seasons. --ink-muted is 6.20:1 and still
+   reads as a hairline rather than a box. */
 .field input,
 .field textarea {
   inline-size: 100%;
@@ -807,15 +784,14 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 .field input:hover,
 .field textarea:hover { border-color: var(--season-ground); }
 
-/* Invalid state is never colour alone (SC 1.4.1). The ember rule is the
-   glance-level signal; the sentence beneath it is the actual information.
-   :user-invalid carries it with no JavaScript at all.
+/* Invalid state is never colour alone (SC 1.4.1): the ember rule is the
+   glance signal, the sentence beneath it is the information. :user-invalid
+   carries it with no JavaScript at all.
 
-   The :user-invalid pair and the [aria-invalid] pair are kept as SEPARATE
-   rules on purpose, never grouped into one selector list: a browser that does
-   not know :user-invalid discards the entire list it appears in, which would
-   take the fallback down with it. Split, the old browser drops the first rule
-   and keeps the second. */
+   The :user-invalid pair and the [aria-invalid] pair are SEPARATE rules on
+   purpose, never one selector list: a browser that does not know
+   :user-invalid discards the whole list it appears in, taking the fallback
+   with it. Split, it drops the first rule and keeps the second. */
 .field input:user-invalid,
 .field textarea:user-invalid {
   border-color: var(--ember-deep);
@@ -830,8 +806,8 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   background-color: var(--paper);
 }
 
-/* Written into the page, not injected on failure — so the sentence is the
-   same one every time and there is no message the markup does not contain. */
+/* Written into the page, not injected — so the sentence is the same every
+   time and there is no message the markup does not contain. */
 .field__error {
   display: none;
   margin-block-start: var(--space-hair);
@@ -860,8 +836,8 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   padding-block: var(--space-hair);
 }
 
-/* The row is 44px, but the box a finger actually lands on is the control's
-   own, so it carries the 24px SC 2.5.8 floor itself. */
+/* The row is 44px, but the box a finger lands on is the control's own, so it
+   carries the 24px SC 2.5.8 floor itself. */
 .check input {
   inline-size: var(--tap-min);
   block-size: var(--tap-min);
@@ -890,11 +866,10 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 }
 
 /* --- 15. Footer ----------------------------------------------------------
-   A reversed panel on --season-ground: navy In Season, the drained slate Off
-   Season. The ember ramp is a paper-side ink and is unusable here, so links
-   are --paper with a --paper underline in both states — which is also the
-   brief's hard rule for the Off Season panel, applied to both so there is one
-   behaviour to audit rather than two.
+   A reversed panel on --season-ground: navy In Season, drained slate Off
+   Season. The ember ramp is a paper-side ink and unusable here, so links are
+   --paper with a --paper underline in both states — the brief's hard rule for
+   the Off Season panel, applied to both so there is one behaviour to audit.
    -------------------------------------------------------------------------- */
 
 .foot {
@@ -941,13 +916,12 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 }
 
 /* Focus, reversed — RE-VERIFIED against the new navy on 2026-08-05, because
-   this was a shipped defect once and the palette changed underneath it.
-   The global ring in base.css is --ember, a paper-side mark: on the In Season
-   navy it computes to 3.64:1 and on the Off Season slate to 2.29:1, so for
-   four months of the year the ring would be under the 3:1 floor for a
-   non-text indicator (SC 1.4.11) and effectively invisible. --paper is
-   12.05:1 on navy and 7.57:1 on the slate. The rail marker moves with it,
-   because it is half of the same indicator. */
+   this was a shipped defect once and the palette changed underneath it. The
+   global ring is --ember, a paper-side mark: 3.64:1 on the In Season navy and
+   2.29:1 on the Off Season slate, so for four months of the year it would sit
+   under the 3:1 non-text floor (SC 1.4.11) and be effectively invisible.
+   --paper is 12.05:1 and 7.57:1. The rail marker moves with it, because it is
+   half of the same indicator. */
 .foot :focus-visible { outline-color: var(--paper); }
 
 .foot a:focus-visible::before,
@@ -965,8 +939,8 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   line-height: var(--lh-small);
 }
 
-/* The sixteenth visit, short form. This is what sits where the retired
-   winter-price argument used to sit, on every page. */
+/* The sixteenth visit, short form — what sits where the retired winter-price
+   argument used to sit, on every page. */
 .foot__line {
   font-family: var(--font-mono);
   font-weight: var(--wt-mono);
@@ -988,7 +962,7 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   .foot__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
-/* --- 16. Page head -------------------------------------------------------- */
+/* --- 16. Page head ------------------------------------------------------- */
 
 .pagehead {
   padding-block: var(--space-block) var(--space-section);
@@ -1001,7 +975,7 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 
 .pagehead .lede { max-width: var(--measure); }
 
-/* --- Utilities used by more than one component ---------------------------- */
+/* --- Utilities used by more than one component --------------------------- */
 
 .pull {
   margin-block-start: var(--space-block);
@@ -1036,10 +1010,9 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   border-block-end: var(--hair) solid var(--rule);
 }
 
-/* The eight parts of a visit. Every label is in the markup — no counter and no
+/* The eight parts of a visit. Every label is in the markup — no counter, no
    generated text, because CSS that changes rendered text is customer-facing
-   copy and this is easier to audit as words than as a counter (voice.md §3,
-   the non-prose surface rule). */
+   copy (voice.md §3) and words are easier to audit than a counter. */
 .blocks { margin-block-start: var(--space-entry); }
 
 .blocks > li {

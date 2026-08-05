@@ -3,16 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What's included, and what isn't — Westside Property Care</title>
-<meta name="description" content="The scope of both seasons — Green Season, April through October, and Dormant Season, November through March. Every exclusion, in the agreement's words.">
+<title>What's included, and what isn't — Westside Property Care 513</title>
+<meta name="description" content="The eight parts of a visit, the pool scope with the disclaimer attached, the season, and every exclusion in the words the agreement uses.">
 <link rel="canonical" href="[URL]/whats-included.html">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-16.svg" type="image/svg+xml" sizes="16x16">
+<link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What's included, and what isn't — Westside Property Care">
-<meta property="og:description" content="Both seasonal scopes in full, and every exclusion, published before you're asked to sign anything.">
+<meta property="og:title" content="What's included, and what isn't — Westside Property Care 513">
+<meta property="og:description" content="Every exclusion, published before you're asked to sign anything. Maintain everything, deep-clean nothing unless it's scheduled.">
 <meta property="og:url" content="[URL]/whats-included.html">
 </head>
 <body>
@@ -20,19 +22,33 @@
 <a class="skip" href="#main">Skip to the main content</a>
 
 <header class="strip-wrap">
+  <!-- The status strip is --navy in BOTH seasons. It carries the mark, and the
+       mark does not change with the calendar (visual-direction.md §4.2). -->
   <div class="strip">
     <div class="container strip__inner">
-      <a class="mark" href="index.html">
-        <span>Westside Property Care</span>
-        <span class="mark__short">WPC513</span>
+      <a class="lockup" href="index.html" aria-label="Westside Property Care 513 — home">
+        <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+        <span class="lockup__type">
+          <span class="lockup__word">WPC 513</span>
+          <span class="lockup__name">Westside Property Care</span>
+        </span>
       </a>
       <div class="season">
-        <span class="stamp season__stamp season__stamp--green">Green Season · Apr–Oct</span>
-        <span class="stamp season__stamp season__stamp--dormant">Dormant Season · Nov–Mar</span>
+        <!-- The three status stamps are IN SEASON, OFF SEASON and MEMBERSHIP
+             FULL. They are typographic objects, not emphasis, and they are
+             typed in caps here as well as being rendered in caps by
+             .stamp with text-transform: uppercase. -->
+        <span class="stamp season__stamp season__stamp--in">IN SEASON · MAR 1 – OCT 31</span>
+        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – FEB 28</span>
         <input type="checkbox" id="season-switch" class="visually-hidden">
         <label class="season__label" for="season-switch">
-          <span class="season__to-dormant">See Dormant Season</span>
-          <span class="season__to-green">See Green Season</span>
+          <span class="season__to-off">See off season</span>
+          <span class="season__to-in">See in season</span>
         </label>
       </div>
     </div>
@@ -57,74 +73,176 @@
 
   <section class="pagehead" aria-labelledby="page-h">
     <div class="container">
-      <p class="rail">Scope · Both seasons</p>
+      <p class="rail">Scope · Mar 1 – Oct 31</p>
       <h1 id="page-h">What's included, and what isn't</h1>
-      <p class="lede">One membership, two scopes. Green Season runs April through October. Dormant Season runs November through March. The price is the same in both.</p>
+      <p class="lede"><strong>Maintain everything. Deep-clean nothing unless it's specifically scheduled.</strong> That line is off the footer of the checklist I carry, and it does more scope protection than a page of exclusions.</p>
+      <p class="lede">Sixteen visits a season, March 1 through October 31. Two a month, up to two hours of on-site service each.</p>
+      <!-- ══ THE SEASON STRIP — sixteen ticks ═══════════════════════════════
+           Page furniture, not a chart. No axis, no scale, no tooltip, no
+           percentage, and no animation — a strip that filled itself would turn
+           a schedule into a countdown (visual-direction.md §4.5, §6).
+           THE ONLY THING TO EDIT AS THE SEASON MOVES: how many <li> carry
+           tick--done, and which one carries tick--now. Everything the graphic
+           says is also written in the caption, and the tick row is aria-hidden,
+           so nothing is carried by the drawing alone.
+           ═══════════════════════════════════════════════════════════════════ -->
+      <figure class="s16">
+        <p class="rail s16__open">Next season opens March 1</p>
+        <ol class="s16__ticks" aria-hidden="true">
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--done"></li>
+          <li class="tick tick--now"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+        </ol>
+        <p class="s16__months" aria-hidden="true"><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></p>
+        <figcaption class="s16__cap">
+          <span class="stamp">16 visits · Mar 1 – Oct 31</span>
+          <span class="s16__note s16__note--in">Two a month, March through October. Ten of the 2026 season's sixteen visit dates are already past — the season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</span>
+          <span class="s16__note s16__note--off">Nothing is scheduled November through February and nobody is billed for it. The next season opens <span class="opens">March 1</span> — sixteen visits, two a month.</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
   <section class="section" aria-labelledby="rule-h">
     <div class="container">
       <div class="entry entry--last">
-        <p class="rail">How the lists work</p>
+        <p class="rail">How the list works</p>
         <div class="entry__body measure">
           <h2 id="rule-h">Not every task happens every visit</h2>
-          <p>I walk the property before I start and again before I leave. In between, I do what will make the biggest difference to the property that day.</p>
-          <p>That's the honest version and I'm not going to pretend otherwise. A visit in early April with the cover just off and winter grit on everything looks nothing like a visit in late August when the place is already dialed in and the real work is skimming and watering. Both are full visits.</p>
-          <p>So read the two lists below as what the work is, not as a checklist that gets completed. A checklist is something I'd fail the first week it rains.</p>
+          <p>I walk the property before I start and again before I leave. In between, I do what will make the biggest difference that day.</p>
+          <p>That's the honest version and I'm not going to pretend otherwise. A visit in early March with the cover just off and winter grit on everything looks nothing like a visit in late August when the place is dialled in and the real work is skimming and watering. Both are full visits.</p>
+          <p>Each visit is up to two hours of on-site service. I spend them highest priority first, using my judgement. <strong>Completion of every possible task during every visit is not guaranteed, and unused service time does not roll over.</strong></p>
+          <p>That cap is why the price is the same for a property with a pool and an outdoor kitchen as for one with a plain patio. It's a limit on what you're buying, not a limit on how carefully I work.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="green-h">
+  <section class="section" aria-labelledby="visit-h">
     <div class="container">
       <div class="entry entry--last">
-        <p class="rail">Green Season · Apr–Oct</p>
+        <p class="rail">The visit</p>
         <div class="entry__body">
           <div class="measure">
-            <h2 id="green-h">April through October</h2>
-            <p>The property is in use, so the work is about keeping it ready to sit in.</p>
-
-            <h3>The walk</h3>
-            <p>I look for storm damage, standing water, fallen limbs, drainage problems, pool trouble, outdoor kitchen problems, and furniture damage — and I photograph anything worth documenting. Once on arrival, once before I leave.</p>
-
-            <h3 class="pool">The pool area</h3>
-            <p>Skim the surface. Empty the skimmer basket and the pump basket. Clear debris off the deck and the surround. Straighten and wipe the pool furniture.</p>
-
-            <h3>The patio and the outdoor living area</h3>
-            <p>Wipe down the furniture and the table surfaces. Straighten and reset the chairs and cushions. Blow the hard surfaces clean — patio, walkways, pool deck, and the outdoor kitchen area.</p>
-
-            <h3>The outdoor kitchen</h3>
-            <p>Wipe the countertops and the stainless. Empty the grease trap and the drip tray on the flat-top or the grill. Clear the debris from around and under the cooking area.</p>
-
-            <h3>The grounds around it</h3>
-            <p>Hand-collect the loose leaves, sticks, and debris, and empty them into your containers. Water the pots and the container plantings. Spot-treat the weeds coming up in the hardscape joints, the walkway cracks, and along the bed edges — not inside the beds.</p>
-
-            <h3>Close out</h3>
-            <p>Check the gates are latched. Make sure every tool and bag of mine is off the property. After photos where they're useful. The report goes out the same day.</p>
+            <h2 id="visit-h">The eight parts of a visit</h2>
+            <p>This is the shape of the two hours, as applicable to your property. A property with no pool and no outdoor kitchen skips two of them, and that is a shorter visit rather than a cheaper one.</p>
           </div>
 
-          <!-- PHOTO REQUIRED · IMG-02 · Frame 2.
-               One close frame of his hands working — the skimmer net breaking
-               the water surface, or the grease tray coming out of a flat-top.
-               It proves it is one person and not a crew. No posed grip, no
-               gloves that look new, no second pair of hands. -->
-          <figure class="plate">
-            <svg class="plate__rules" viewBox="0 0 600 400" role="presentation" focusable="false">
-              <g stroke="currentColor" stroke-width="1" fill="none">
-                <line x1="0" y1="100" x2="600" y2="100"/>
-                <line x1="0" y1="200" x2="600" y2="200"/>
-                <line x1="0" y1="300" x2="600" y2="300"/>
-              </g>
-            </svg>
-            <figcaption class="rail plate__cap">Photo required · Frame 2 · My hands working — the skimmer net breaking the surface, or the grease tray coming out</figcaption>
-          </figure>
+          <ul class="blocks">
+            <li>
+              <p class="rail">Arrival</p>
+              <h3>The walkthrough</h3>
+              <p>Walk the outdoor living areas before I start anything. Storm debris, leaves, sticks, trash, and whatever is obviously wrong. A look over the equipment pad and the outdoor kitchen. Before photos where they are useful, and a note of anything that needs your approval before I touch it.</p>
+            </li>
+            <li>
+              <p class="rail">Up to 30 minutes</p>
+              <h3 class="pool">The pool area, where there is one</h3>
+              <p>Skim the surface. Brush the steps, the corners, and selected areas. Vacuum, stopping at about thirty minutes of total pool time. Empty the skimmer basket, the pump basket where it is safe to, and the robot's debris container. Backwash when it is appropriate and compatible with the system. Check the displayed salt level and the system indicators, look for an Inspect Cell or No Flow warning, and look the equipment over.</p>
+              <p>What I do not do is test or balance the water, or add chlorine, shock, salt, or algaecide. Chemicals, salt, filters, and cartridges are materials, not membership items, and filter servicing beyond a backwash is a separate job.</p>
+              <p class="disclaim">Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment performance, or pool-system operation unless separately contracted.</p>
+            </li>
+            <li>
+              <p class="rail">Kitchen</p>
+              <h3>The outdoor kitchen and the grill</h3>
+              <p>Counters and accessible surfaces wiped. Light grease and food residue removed. Grease trap or drip pan emptied when it needs it. Grill exterior wiped, cooking area checked for buildup and for nesting. Burners, grates, flavorizer bars, and interiors are a deep clean, which is a separate job from $249.</p>
+            </li>
+            <li>
+              <p class="rail">Patio</p>
+              <h3>The patio and the furniture</h3>
+              <p>Tables and chairs wiped. Cushions straightened and reset. Obvious cobwebs cleared. Light cleanup around the seating areas.</p>
+            </li>
+            <li>
+              <p class="rail">Cleanup</p>
+              <h3>The property around it</h3>
+              <p>Sticks and small branches collected. Concentrated leaf and debris pockets cleared. Visible trash picked up. Designated areas swept or blown. The walkways serving the outdoor living area checked.</p>
+            </li>
+            <li>
+              <p class="rail">Trash and pots</p>
+              <h3>Trash, plants, and the small recurring things</h3>
+              <p>Designated outdoor cans emptied into your containers and wiped down when they need it. Pots and container plantings watered if you want them watered. Spot treatment of the weeds in the hardscape joints, the walkway cracks, and along the bed edges — not inside the beds. Whatever small thing you have asked me to keep an eye on.</p>
+            </li>
+            <li>
+              <p class="rail">Priority</p>
+              <h3>The flexible block</h3>
+              <p>Extra time on the pool, a heavier debris pocket, a furniture detail, a seasonal need, or a small maintenance item you have already approved. This is where the difference between a service and a checklist shows up.</p>
+            </li>
+            <li>
+              <p class="rail">Close out</p>
+              <h3>The final walk and the summary</h3>
+              <p>A last walk of the property. Gates and areas back the way I found them. After photos where they are useful. Then a short written summary the same day: what I did, what I found, and what it costs if you want it handled.</p>
+            </li>
+          </ul>
+
+      <!-- PHOTO REQUIRED · IMG-02 · Frame 2.
+           One close frame of my hands working — the skimmer net breaking the
+           water surface, the vacuum head going in, or the grease tray coming
+           out of a flat-top. It proves it is one person and not a crew. No
+           posed grip, no gloves that look new, no second pair of hands. -->
+      <figure class="plate">
+        <svg class="plate__rules" viewBox="0 0 600 400" role="presentation" focusable="false">
+          <g stroke="currentColor" stroke-width="1" fill="none">
+            <line x1="0" y1="100" x2="600" y2="100"/>
+            <line x1="0" y1="200" x2="600" y2="200"/>
+            <line x1="0" y1="300" x2="600" y2="300"/>
+          </g>
+        </svg>
+        <figcaption class="rail plate__cap">Photo required · Frame 2 · My hands working — the skimmer net breaking the surface, or the grease tray coming out</figcaption>
+      </figure>
+
         </div>
       </div>
     </div>
   </section>
 
+  <section class="section" aria-labelledby="pool-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">Pool</p>
+        <div class="entry__body">
+          <div class="measure">
+            <h2 id="pool-h" class="pool">I take care of the pool area. I don't guarantee the pool.</h2>
+            <p>This is the block worth reading twice, because the scope changed and because it is the one people compare on price.</p>
+            <p><strong>What I do on each visit:</strong> skim the surface, brush the steps, corners and selected areas, vacuum for up to about thirty minutes, empty the skimmer and pump baskets and the robot's debris container, backwash when it's appropriate for your system, check the displayed salt level and the system indicators, and look the equipment over for warnings.</p>
+            <p><strong>What I don't do:</strong> test or balance the water, add chlorine, shock, salt, or algaecide, service or take apart the filter beyond a backwash the system is designed for, repair or adjust the pump, heater, cell, or automation, open or close the pool, or work below the water surface beyond the vacuuming and brushing above.</p>
+            <p class="disclaim">Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment performance, or pool-system operation unless separately contracted.</p>
+            <p>A pool company will do the water, weekly, with chemicals, for something like $121 to $142 a month around here. That's full service with chemistry, it's a real product, it's less than I charge, and if what you need is somebody accountable for the water then you should hire one. I'll tell you which ones your neighbours use.</p>
+            <p>What I do on the pool is one block out of eight — because the rest of the visit is the deck, the furniture, the outdoor kitchen, the grill, the grease trap, the trash cans, the pots, the sticks and the leaves, and the walkthrough at both ends that produces the written summary. Plenty of people have both of us. If you can only have one and the water is what keeps you up at night, have the pool company.</p>
+          </div>
+
+      <!-- PHOTO REQUIRED · IMG-05 · Frame 5.
+           The equipment pad: the salt cell display, the pump baskets out, the
+           backwash valve. This is the frame that makes the pool block
+           credible. Its alt text and its caption BOTH carry the disclaimer.
+           Must not show any implication that I service the system, and no
+           before/after water shot. -->
+      <figure class="plate">
+        <svg class="plate__rules" viewBox="0 0 600 400" role="presentation" focusable="false">
+          <g stroke="currentColor" stroke-width="1" fill="none">
+            <line x1="0" y1="100" x2="600" y2="100"/>
+            <line x1="0" y1="200" x2="600" y2="200"/>
+            <line x1="0" y1="300" x2="600" y2="300"/>
+          </g>
+        </svg>
+        <figcaption class="rail plate__cap">Photo required · Frame 5 · The equipment pad — salt cell display, pump baskets out, backwash valve. Caption it with the disclaimer, not with a competence claim.</figcaption>
+      </figure>
+
+        </div>
+      </div>
+    </div>
+  </section>
   <div class="container">
     <div class="divider" aria-hidden="true">
       <svg class="divider__mark" viewBox="0 0 1200 20" preserveAspectRatio="none" focusable="false">
@@ -153,63 +271,17 @@
     </div>
   </div>
 
-  <section class="section" aria-labelledby="dormant-h">
+  <section class="section" aria-labelledby="season-h">
     <div class="container">
       <div class="entry entry--last">
-        <p class="rail">Dormant Season · Nov–Mar</p>
-        <div class="entry__body">
-          <div class="measure">
-            <h2 id="dormant-h">November through March</h2>
-            <p>The property isn't in use, so the work moves from presentation to protection. This is the part people are suspicious of before they've had a winter of it, and it's the part that prevents actual money from being spent.</p>
-
-            <h3 class="freeze">Water and freeze protection</h3>
-            <p>Check the hose bibs and confirm they're shut off and drained. Disconnect the hoses and put them away. Drain, cover, or store the exposed lines and fixtures. Check the outdoor kitchen water line, the sink, and the shutoffs — that line is the one that splits. Look over the <span class="pool">pool equipment pad</span> for anything obviously wrong.</p>
-
-            <h3>Gutters and drainage — checked from the ground, not cleaned</h3>
-            <p>Look at the gutters and downspouts from ground level. Confirm the downspouts are discharging and the extensions are in place. Watch for overflow staining, ice damming, standing water, and pooling at the foundation. Anything I find goes in the report. Actual gutter cleaning is a quoted project, because it means a ladder.</p>
-
-            <h3>Storm and debris</h3>
-            <p>Clear storm debris out of the outdoor living area. Hand-collect fallen limbs and branches. Clear the drains, the grates, and the window wells of surface debris.</p>
-
-            <h3>Furniture and equipment</h3>
-            <p>Cover, store, or consolidate the furniture and cushions at the season change, and uncover and reset them in spring. Cover and secure the grill and the outdoor kitchen. Check the covers again after a high wind, because that's when they come loose.</p>
-
-            <h3 class="freeze">Ice and hardscape</h3>
-            <p>Salt and clear ice on the patio, the pool deck, and the walk serving them, on scheduled visits. I use the stone-safe product on flagstone, because the cheaper stuff pits it.</p>
-
-            <h3>The inspection, and the March report</h3>
-            <p>The fullest exterior inspection of the year, with photos, because the leaves are down and I can see everything. Anything for spring gets noted and photographed. The March report comes with what the property needs in April and what each thing costs.</p>
-          </div>
-
-          <!-- PHOTO REQUIRED · IMG-03 · Frame 5. NON-NEGOTIABLE.
-               Winter, and it must look cold and useful. Covered furniture
-               strapped down, salted flagstone, frost on a pool cover, bare
-               trees, a disconnected hose coiled by the bib. Without this frame
-               the site reads as a summer business seven months a year.
-               No snow-globe prettiness. -->
-          <figure class="plate">
-            <svg class="plate__rules" viewBox="0 0 600 400" role="presentation" focusable="false">
-              <g stroke="currentColor" stroke-width="1" fill="none">
-                <line x1="0" y1="100" x2="600" y2="100"/>
-                <line x1="0" y1="200" x2="600" y2="200"/>
-                <line x1="0" y1="300" x2="600" y2="300"/>
-              </g>
-            </svg>
-            <figcaption class="rail plate__cap">Photo required · Frame 5 · Winter — covered furniture, salted flagstone, frost on a pool cover. It should look cold and useful.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="same-h">
-    <div class="container">
-      <div class="entry entry--last">
-        <p class="rail">Same price</p>
+        <p class="rail">The season</p>
         <div class="entry__body measure">
-          <h2 id="same-h">Why the price doesn't drop in winter</h2>
-          <p>Because the value doesn't. Freeze protection, a set of eyes on an unused property twice a month, and a written plan for spring are worth more than skimming a pool. They just look like less.</p>
-          <p>You're buying a year of coverage, not a season of visits. There's no winter rate, no pause, and no seasonal option — and I'd rather explain that than have you find out in November.</p>
+          <h2 id="season-h">Sixteen visits, March 1 through October 31</h2>
+          <p>Two a month, on your route day. The last one is the end of October.</p>
+          <p>November through February there are no scheduled visits, and I'm not billing you for any of them. No property checks, no freeze protection, no snow, no ice. I'd rather you read that here than find it out in November.</p>
+          <p>What you get instead is the last visit of the season, which is the one where I put the covers on, tell you what I'd want handled before it gets cold, and price it.</p>
+          <p>Two things carry on through the winter if you want them. Project work runs year round — a grill deep clean before the holidays, pressure washing while the deck is empty, storm cleanup. And there's a separate optional winter service, which is its own thing with its own price; it isn't part of this agreement and it isn't included.</p>
+          <p>Then your next scheduled visit is the first route day in <span class="opens">March</span>.</p>
         </div>
       </div>
     </div>
@@ -226,14 +298,14 @@
           <ul class="nots">
             <li>
               <h3 class="pool">Pool</h3>
-              <p>Pool care under this membership is skimming the surface, emptying the skimmer and pump baskets, and clearing the deck and the surround, on two scheduled visits a month. It is not pool service.</p>
-              <p>Not included: water testing or balancing; chlorine, shock, or algaecide; vacuuming; brushing walls or steps; cleaning, backwashing, or servicing the filter; pump, heater, or equipment repair; opening or closing the pool; cover installation or removal; leak detection; and anything on or in the pool below the water surface.</p>
-              <p>I don't maintain the water and I'm not responsible for its condition, clarity, or chemistry. If you need that, hire a pool company — full weekly service on the west side runs about $121 to $142 a month with chemicals, and I'll tell you which ones your neighbors use.</p>
+              <p>Pool care under this membership is the physical maintenance above — skimming, brushing, vacuuming for up to about thirty minutes, emptying the skimmer and pump baskets and the automatic-vacuum debris container, backwashing when appropriate and compatible with the system, and visual checks of displayed salt levels, system indicators, and equipment warnings. It is not pool service.</p>
+              <p>Specifically not included: water chemistry of any kind; chlorine, shock, algaecide, stabiliser, acid, or salt; filter cleaning, disassembly, cartridge replacement or DE charging; pump, heater, cell, automation, plumbing, or cleaner repair; opening, closing, covers, and winterisation; leak detection, liner or surface repair, tile and waterline scale removal, and acid washing.</p>
+              <p class="disclaim">Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment performance, or pool-system operation unless separately contracted.</p>
             </li>
             <li>
               <h3>Lawn and landscape</h3>
-              <p>No mowing, trimming, edging, blowing of lawn areas, fertilization, aeration, overseeding, weed-and-feed, pruning, shrub or tree trimming, planting, mulching, bed edging, bed cleanout, or landscape installation of any kind.</p>
-              <p>Weed treatment is spot treatment of what's visible in the hardscape joints, the walkway cracks, and along the edges of the beds bordering the outdoor living area. Weeding inside a bed is a quoted project.</p>
+              <p>No mowing, trimming, edging, blowing of lawn areas, fertilisation, aeration, overseeding, weed-and-feed, pruning, shrub or tree trimming, planting, mulching, bed edging, bed cleanout, or landscape installation of any kind.</p>
+              <p>Weed treatment is spot treatment of what's visible in the hardscape joints, the walkway cracks, and along the edges of the beds bordering the outdoor living area. Weeding inside a bed is a quoted project. Regulated pesticide or chemical-application services are excluded.</p>
             </li>
             <li>
               <h3>Where the boundary is</h3>
@@ -247,49 +319,49 @@
             </li>
             <li>
               <h3>Deep cleaning</h3>
-              <p>On a visit, the grill and outdoor kitchen work is emptying the grease trap and the drip tray and wiping the exterior surfaces and the counters.</p>
+              <p>On a visit, the grill and outdoor kitchen work is wiping countertops and accessible surfaces, light cleaning around the cooking equipment, removing accessible grease or food residue, and emptying the grease trap or drip pan.</p>
               <p>Not included: burners, grates, flavorizer bars, heat shields, interiors, hoods, or vents; degreasing; and taking any cooking equipment apart. That's a grill and outdoor kitchen deep clean, from $249. Pressure washing of any surface is not included and is quoted separately.</p>
             </li>
             <li>
               <h3>Debris and waste</h3>
-              <p>Included: hand-collected loose leaves, sticks, and debris from the outdoor living area, put into your containers, up to what those containers hold.</p>
-              <p>Not included: debris past the capacity of your containers; taking any waste off the property; moving containers to or from the curb; hauling; disposal; and dump fees. Large-volume removal is quoted, with disposal at cost plus 25%.</p>
+              <p>Included: hand-collected loose leaves, sticks, and debris from the outdoor living area, put into your containers, up to what those containers hold and within the scheduled service time.</p>
+              <p>Not included: debris past the capacity of your containers; debris needing more time than the visit allows; taking any waste off the property; moving containers to or from the curb; hauling; disposal; and dump fees. Large-volume removal is quoted, with disposal at cost plus 25%.</p>
             </li>
             <li>
               <h3>Storms, and what "emergency" means</h3>
               <p>Included: clearing storm debris out of the outdoor living area on your next scheduled visit, by hand, within the volume limit above.</p>
               <p>Not included: any storm response needing a saw, a trailer, more than one trip, or more than your containers hold; tree or large-limb removal; and repair of structural or property damage.</p>
-              <p>This isn't an emergency service and there are no guaranteed response times. Tuesday through Thursday is held open partly for exactly this, so urgent things usually do get handled. That's a real benefit and it isn't a promise, and I'd rather tell you now than have you find out in February.</p>
+              <p>This isn't an emergency service and there are no guaranteed response times. Tuesday through Thursday is held open partly for exactly this, so urgent things usually do get handled. That's a real benefit and it isn't a promise.</p>
             </li>
             <li>
-              <h3>Snow and ice</h3>
-              <p>Included: salting and clearing ice on the outdoor living hardscape — patio, pool deck, and the walk serving them — on scheduled visits only.</p>
-              <p>Not included: the driveway; the public sidewalk; shoveling anywhere outside that hardscape; and any snow or ice response between scheduled visits.</p>
+              <h3>November through February</h3>
+              <p>The membership runs March 1 through October 31 only. During November, December, January, and February there are no scheduled visits, no property checks, no storm response, no freeze protection, no snow or ice service of any kind, and no membership charge.</p>
+              <p>Any work in those months is a separately arranged and separately quoted project. A separate optional winter service exists; it is its own product with its own price and it is never part of this agreement.</p>
             </li>
             <li>
               <h3>Repairs, parts, and trades</h3>
               <p>I don't perform repairs, replace parts, or install, alter, or remove any fixed part of the property under the membership.</p>
-              <p>Anything needing a replacement part, a permit, or a licensed trade — electrical, plumbing, gas, HVAC, structural, or pool equipment — gets quoted separately, and may get referred to a contractor. Parts and materials are always billed separately at cost plus 25%.</p>
+              <p>Anything needing a replacement part, a permit, or a licensed trade — electrical, plumbing, gas, HVAC, structural, or pool equipment — gets quoted separately, and may get referred to a contractor. Parts, materials, chemicals, salt, and filters are always billed separately at cost plus 25%.</p>
             </li>
             <li>
               <h3>Watering and plants</h3>
-              <p>Included: watering the pots and container plantings in the outdoor living area, on scheduled visits.</p>
-              <p>Not included: lawn or garden bed irrigation; irrigation system operation, repair, or winterizing; and plant care between visits, including vacation watering.</p>
+              <p>Included: watering the pots and container plantings in the outdoor living area, on scheduled visits, when you want them watered.</p>
+              <p>Not included: lawn or garden bed irrigation; irrigation system operation, repair, or winterising; and plant care between visits, including vacation watering.</p>
             </li>
             <li>
               <h3>Visits and scheduling</h3>
-              <p>The membership is two scheduled visits per calendar month, on the route day assigned to your property — Monday or Friday of weeks 1 and 3.</p>
-              <p>Not included: extra visits; on-demand visits; a specific requested date; a guaranteed arrival time; and weekend service. Visits get moved for weather or safety, and a moved visit happens inside the same calendar month where I can manage it.</p>
+              <p>The membership is two scheduled visits per calendar month, March through October, on the route day assigned to your property — a Monday or a Friday, set when you sign.</p>
+              <p>Not included: extra visits; on-demand visits; a specific requested date; a guaranteed arrival time; weekend service; and any carry-forward of unused time. Visits get moved for weather, and a moved visit stays in the same calendar month where I can manage it.</p>
               <p>I'll tell you the day, not the hour. That's on purpose — if I give you eleven o'clock, then the property before yours gets shortchanged the week it needs an extra half hour, and eventually yours does too.</p>
             </li>
             <li>
               <h3>Access and pets</h3>
-              <p>You provide safe access to the serviced area on your route day, including gate codes or keys, and secure any pets during the visit.</p>
-              <p>I'm not responsible for work I couldn't do because access wasn't available, or for conditions another contractor, a household member, or anyone else created on the property. A visit I can't perform for lack of access isn't refunded or made up outside the scheduled route days.</p>
+              <p>You provide reasonable and safe access to the serviced area on your route day, including gates, the equipment pad, an outlet, and a water source. Pets secured where I need to work.</p>
+              <p>I'm not responsible for work I couldn't do because access wasn't available, for pre-existing damage or hidden defects, or for conditions another contractor or a household member created. A visit I can't perform for lack of access isn't refunded or made up outside the scheduled route days.</p>
             </li>
           </ul>
 
-          <p>That's the whole list. If something you want isn't in it, I'll quote it.</p>
+          <p>That's the whole list. If something you want isn't in it, I'll quote it, and you decide.</p>
           <p class="onward"><a href="projects.html">What project work looks like, and the two prices I can give you without looking</a></p>
         </div>
       </div>
@@ -302,9 +374,9 @@
         <p class="rail">Next</p>
         <div class="entry__body measure">
           <h2 id="ask-h">Now the price</h2>
-          <p>What you pay depends on what your property has, and it's the same in January as it is in July.</p>
+          <p>$279 a month, March through October. That's the whole price list, and the page it's on says how the billing works.</p>
           <div class="cta">
-            <a class="btn" href="pricing.html">See the price</a>
+            <a class="btn" href="pricing.html">The price</a>
             <span class="cta__aside"><a href="sms:[PHONE]">[PHONE]</a> · texting is fine</span>
           </div>
         </div>
@@ -318,11 +390,20 @@
   <div class="container">
     <div class="foot__grid">
       <div>
-        <p class="mark mark--stacked">
-          <span>Westside Property Care</span>
-          <span class="mark__short">WPC513</span>
+        <p class="lockup lockup--foot">
+          <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+          <span class="lockup__type">
+            <span class="lockup__word">WPC 513</span>
+            <span class="lockup__name">Westside Property Care</span>
+          </span>
         </p>
-        <p class="foot__note">Outdoor living care for six homes on the west side of Cincinnati. Green Township, Oak Hills, upper Delhi, and Covedale.</p>
+        <p class="foot__note">Seasonal Outdoor Living &amp; Property Care</p>
+        <p class="foot__note">Six homes on the west side of Cincinnati — Green Township, Oak Hills, upper Delhi, and Covedale.</p>
       </div>
       <div>
         <h2>Get hold of me</h2>
@@ -354,7 +435,12 @@
 
     <hr class="foot__rule">
 
-    <p class="foot__note">Two scheduled visits a month. The same price in January as in July.<br>This is a new business. I'd be starting with you.</p>
+    <!-- THE SIXTEENTH VISIT, short form (01-brand/messaging.md §1.5, last row).
+         This is what stands where the retired winter-price argument used to
+         sit, on every page of the site. Substituted, not deleted — that
+         argument had a job and something had to keep doing it. -->
+    <p class="foot__line">Sixteen visits. Six properties. One person, and a written summary every time.</p>
+    <p class="foot__note">March 1 through October 31. No scheduled visits November through February, and no billing either.<br>This is new. I'd be starting with you.</p>
   </div>
 </footer>
 

@@ -1,14 +1,30 @@
 # Copy Deck
 
 **Owner:** `wpc-web` · **Status:** every word that appears on the site, paste-ready
-**Audited against:** `01-brand/voice.md` §8, all thirty items, line by line
-**Prices quoted verbatim from:** `00-model/pricing.md` — `$229 · $269 · $289 · $329 · $249+ · $49+`
+**Audited against:** `01-brand/voice.md` §8 — items 1–30 against the prose, 31–34 and 35–42
+against the built surfaces
+**Prices quoted verbatim from:** `00-model/pricing.md` — **`$279` · `$249+` · `$49+`**, and
+nothing else
 
-Placeholders in `[BRACKETS]` are listed once in `site-spec.md` §8. Replace them; never ship them.
+Placeholders in `[BRACKETS]` are listed once in `site-spec.md` §10. Replace them; never ship
+them.
 
-**Two states are written.** Everything in §§1–7 is the **open-enrolment** state. §8 is the
-**MEMBERSHIP FULL** state, which is the real steady state once six slots fill, and it is written
-as a complete page rather than as a banner bolted onto the open one.
+> **Re-baselined 2026-08-05.** Every page in this deck was rewritten. Six things changed and each
+> one moved copy on multiple pages:
+>
+> | Change | Pages it touched |
+> |---|---|
+> | **One price: $279.** The four-row ledger and $229 / $269 / $289 / $329 are deleted. | Home, Pricing, Membership full, Waitlist, Apply, About, 404 |
+> | **The season: March 1 – October 31, sixteen visits.** No winter service in the membership. | All ten |
+> | **The two-hour cap**, and its three clauses, which it never travels without. | Home, What's included, Pricing, Membership full |
+> | **The heavier pool scope.** *"I don't vacuum, brush, backwash, or touch the filter"* was true, is now false, and appeared on six pages. | Home, What's included, Pricing, About, Projects, Membership full |
+> | **The name.** Full on first reference per surface; **WPC513** after; bare "WPC" nowhere, including alt text, slugs and structured data. | All ten |
+> | **The differentiation argument.** *"The same price in January as in July"* appeared ~30 times including the footer of nine of ten pages. Replaced by **the sixteenth visit**, substituted line for line rather than deleted. | All ten |
+
+**Two enrolment states and two seasonal states are written.** §§1–7 are the **open-enrolment**
+state. §8 is **MEMBERSHIP FULL**, written as a complete page rather than a banner bolted onto
+the open one. The **OFF SEASON** copy is marked ⛄ wherever it appears and is reachable in every
+state by the season toggle in the status strip.
 
 ---
 
@@ -16,1938 +32,1224 @@ as a complete page rather than as a banner bolted onto the open one.
 
 ### 0.1 Status strip
 
-```
-WESTSIDE PROPERTY CARE · WPC513
-```
+The strip is navy in both seasons and carries the logo lockup on the left, the season stamp and
+the season toggle on the right.
 
-Season stamp, right-aligned, one of:
-
-```
-GREEN SEASON · APR–OCT
-DORMANT SEASON · NOV–MAR
-```
-
-Season switch label (visually hidden text, read by screen readers and by anyone who tabs to it):
+**Lockup, as typeset:**
 
 ```
-Show the Dormant Season view
+[house-and-tree line mark]   WPC 513
+                             ─────────────────────
+                             WESTSIDE PROPERTY CARE
 ```
+
+The link's accessible name is **`Westside Property Care 513 — home`**, so the full name is the
+first reference on every page and bare "WPC" never reaches an accessibility tree.
+`WPC 513` with a space exists **only** inside the lockup, which is the one place
+`brand-brief.md` §1.2 permits it.
+
+**Season stamps — typed in caps and rendered in caps.** One shows at a time.
+
+```
+IN SEASON · MAR 1 – OCT 31
+OFF SEASON · NOV 1 – FEB 28
+```
+
+**Season toggle label.** One shows at a time, rendered uppercase by the stylesheet:
+
+```
+See off season
+See in season
+```
+
+**Skip link:** `Skip to the main content`
 
 ### 0.2 Navigation
 
 ```
-Home
-What's included
-Pricing
-Projects
-About
-Apply
+Home   What's included   Pricing   Projects   About   Apply
 ```
 
-Skip link:
+In the MEMBERSHIP FULL state, **Apply** is replaced by **Waitlist**. Nothing else changes.
+
+### 0.3 Footer — every page
+
+Column 1, under the lockup:
 
 ```
-Skip to the main content
+Seasonal Outdoor Living & Property Care
+
+Six homes on the west side of Cincinnati — Green Township, Oak Hills, upper Delhi,
+and Covedale.
 ```
 
-### 0.3 Footer
+The tagline is verbatim and on its own line. It is never rewritten, never shortened, and never
+given a verb.
+
+Column 2:
 
 ```
-WESTSIDE PROPERTY CARE
-WPC513
+GET HOLD OF ME
 
-Outdoor living care for six homes on the west side of Cincinnati.
-Green Township, Oak Hills, upper Delhi, and Covedale.
-
-[PHONE]  ·  texting is fine
+[PHONE] · texting is fine
 [EMAIL]
+```
 
-Project work, no membership needed:
+Column 3:
+
+```
+PROJECT WORK, NO MEMBERSHIP NEEDED
+
 Grill and outdoor kitchen deep clean — $249+
 Window well cleanout — $49+
-
-Home  ·  What's included  ·  Pricing  ·  Projects  ·  About  ·  Apply  ·  Waitlist
-
-Two scheduled visits a month. The same price in January as in July.
-This is a new business. I'd be starting with you.
 ```
 
-**Footer notes for the builder.** No copyright year (implies age), no "all rights reserved," no
-social icons, no badges, no "licensed and insured," no service-area list beyond the four
-qualified areas in `00-model/ideal-client.md` §3. Never Westwood, Price Hill, or Cheviot.
+Footer nav: `Home · What's included · Pricing · Projects · About · Apply · Waitlist`
+
+**The closing block, and this is the substitution that matters most:**
+
+```
+Sixteen visits. Six properties. One person, and a written summary every time.
+
+March 1 through October 31. No scheduled visits November through February, and no
+billing either.
+This is new. I'd be starting with you.
+```
+
+> **This is `messaging.md` §1.5, last row, verbatim.** The retired line —
+> *"Two scheduled visits a month. The same price in January as in July."* — sat in the footer of
+> nine of ten pages, and its job was to explain why this is a **membership** rather than a
+> seasonal service. Deleting it and leaving a gap would have cost that argument on every page at
+> once. It was **substituted**, not removed, and the second paragraph carries the season and the
+> honest disclosure that used to sit beside it.
 
 ---
 
 ## 1. Home — `index.html`
 
-**Purpose:** close someone who already heard his name.
-**The one ask:** text me your cross street.
-
 ### 1.1 Masthead
 
-Rail stamp:
+**Rail:** `Entry 01 · The whole thing`
 
-```
-ENTRY 01 · THE WHOLE THING
-```
-
-H1:
-
-```
-Six properties. Twice a month. Written down every time.
-```
-
-Lede:
-
-```
-I take care of the outdoor living areas of six homes on the west side — pool deck, patio,
-outdoor kitchen, and the hardscape and walks that serve them. Two scheduled visits a month,
-the same person every time, and a written report the same day covering what I did and what
-I found.
-
-Not lawn care. Not pool service. Everything I don't do is on this page, above the price.
-```
-
-**ENROLMENT STATE — open.** Figure line, mono, set at display size:
-
-```
-6 OF 6 SPOTS OPEN
-```
-
-Under it:
-
-```
-All six spots are open. This is a new business and I'd be starting with you.
-```
-
-Primary ask — the button, then the aside beside it:
-
-```
-Text me your cross street
-
-[PHONE] · texting is fine
-```
-
-The button goes to `apply.html`; the phone number in the aside is a live `sms:` link. Both are
-the same ask, offered two ways, because the form has no backend until `[FORM_ENDPOINT]` is set.
-
-**IMG-01** caption (plate state):
-
-```
-PHOTO REQUIRED · FRAME 1 · A pool deck mid-visit, standing height, my own equipment in frame
-```
-
-### 1.2 What this is
-
-Rail stamp:
-
-```
-SCOPE
-```
-
-H2:
-
-```
-The same person is on your property twice a month, and you get it in writing
-```
-
-Body:
-
-```
-Twenty-four visits a year on six properties. That is few enough that I can hold all six in my
-head — which gate sticks, which window wells fill up, which pot on the north side dries out
-first.
-
-There is no crew, no dispatcher, and no subcontractor. It is me, on your route day, on the part
-of the yard you actually sit in.
-```
-
-### 1.3 What actually happens on a visit
-
-Rail stamp:
-
-```
-THE VISIT
-```
-
-H2:
-
-```
-What actually happens on a visit
-```
-
-Body:
-
-```
-I walk the property before I start and again before I leave. In between, I do what will make
-the biggest difference to the property that day — which is not the same list every time, and a
-visit in early April looks nothing like one in late August.
-
-April through October, that usually means skimming the pool and emptying both baskets, wiping
-down the furniture and the outdoor kitchen counters, emptying the grease tray, blowing the
-patio and the pool deck, hand-collecting leaves and sticks, watering the pots, and spot-treating
-the weeds coming up in the hardscape joints.
-
-November through March, it means the hose bibs, the disconnects, and the drain-downs; checking
-the downspouts from the ground; clearing storm debris; covering and securing the furniture and
-the grill; salting the patio and the walk; and the fullest exterior inspection of the year,
-because the leaves are down and everything is visible.
-
-Same price both ways. What changes in November is the work, not the bill.
-```
-
-Link:
-
-```
-The full scope, both seasons, and everything that isn't in it
-```
-
-### 1.4 The report
-
-Rail stamp:
-
-```
-THE RECORD
-```
-
-H2:
-
-```
-Every visit ends in writing, the same day
-```
-
-Body:
-
-```
-The report is the part you can check. It says what I did, where, and what I found — including
-the things that aren't mine to fix, and especially those.
-
-If something on the property needs work, it gets named, located, and priced in the report. I'd
-rather tell you what a job costs than quietly fold it into a visit and have you think it was
-included.
-```
-
-**The report facsimile.** Header line:
-
-```
-WPC513 · SERVICE REPORT · EXAMPLE · MONDAY, APRIL 6
-```
-
-Honesty label, in the rail, mono:
-
-```
-FORMAT ONLY — NOT A CLIENT REPORT
-```
-
-Facsimile body:
-
-```
-What I did
-
-Pool skimmed, both baskets emptied. Wiped the six patio chairs and the table. Emptied the
-grease tray on the flat-top and wiped the counters. Blew the patio, the pool deck, and the
-walk — including under the pergola, where the mulberry is dropping hard right now. Pots
-watered. The fern on the north side dries out faster than the others, so I moved it two feet
-under the eave.
-
-What I found                                                                        $49
-
-The two window wells on the south side are full — mostly last fall's leaves, about six inches
-deep, and there's water sitting in the west one. I can clear both on your next visit for $49.
-Say the word and I'll add it. If you'd rather leave them, that's fine and I'll stop mentioning
-it.
-```
-
-Caption under the facsimile:
-
-```
-This is the shape a report takes, not one from a client's property. There aren't any yet. When
-there is one, a real report goes here with the address taken off.
-```
-
-**IMG-04** caption (plate state):
-
-```
-PHOTO REQUIRED · FRAME 4 · A real service report on a phone or printed on the tailgate, address obscured
-```
-
-### 1.5 What happens in December
-
-> **This section is load-bearing.** `01-brand/messaging.md` §5.4 — a member who cancels in
-> February takes the whole Green Season with them. Winter is the objection that kills this sale,
-> so it is answered on the home page, above the price, in his own words.
-
-Rail stamp:
-
-```
-DORMANT SEASON · NOV–MAR
-```
-
-H2:
-
-```
-What happens in December
-```
-
-Body:
-
-```
-Different work, same price.
-
-November through March I'm doing the things that keep a hard freeze from costing you money:
-hose bibs shut off and drained, hoses disconnected and put away, and the outdoor kitchen water
-line drained — that's the one that splits. Covers on the furniture and the grill, and checked
-again after a big wind. Salt and ice on the patio, the pool deck, and the walk out to them.
-Storm debris cleared. Downspouts checked from the ground to see where they're discharging.
-
-And it's the best look at your property all year, because the leaves are down and I can see
-everything. The March report comes with what the property needs in April and what each thing
-costs.
-
-The price doesn't drop, because the value doesn't. It just looks like less.
-```
-
-Pull line, set larger:
-
-```
-The most useful thing I do all winter is notice something in December that would have been a
-burst pipe in February.
-```
-
-### 1.6 What's not included
-
-> Exclusions sit **above** the price on every surface that carries one
-> (`01-brand/messaging.md` §3). This is the condensed home-page version; the full version is on
-> `whats-included.html`.
-
-Rail stamp:
-
-```
-NOT INCLUDED
-```
-
-H2:
-
-```
-What I don't do
-```
-
-Body:
-
-```
-This is the part most people put in the fine print. I'd rather you read it before you get to
-the price.
-```
-
-List:
-
-```
-Not pool service. I skim the surface, empty the skimmer and pump baskets, and clear the deck
-and the surround. I don't test the water, add chlorine, shock, or algaecide, vacuum, brush,
-backwash, or touch the filter, and I don't open or close the pool. If your water goes green in
-July, that isn't something I'm responsible for or able to fix.
-
-Not lawn care. No mowing, trimming, edging, fertilizing, aerating, seeding, pruning, planting,
-mulching, or bed work. Weed treatment is spot treatment in the hardscape joints, the walkway
-cracks, and along the edges of the beds — not inside the beds.
-
-Not gutter cleaning. Gutter cleaning means working off a ladder and I don't work off a ladder.
-On your visits I check the downspouts from the ground and tell you where they're discharging.
-
-Not a deep clean. On a visit I empty the grease trap and the drip tray and wipe the exterior
-surfaces and the counters. Burners, grates, flavorizer bars, and interiors are a grill and
-outdoor kitchen deep clean, from $249.
-
-Not pressure washing. Any surface, any time — that's quoted separately.
-
-Not snow. I salt and clear ice on the patio, the pool deck, and the walk serving them, on
-scheduled visits. Not the driveway, not the public sidewalk, and not between visits.
-
-Not an emergency service. There's no guaranteed response time and no promised arrival window.
-Tuesday through Thursday is held open for projects and urgent things, so they usually do get
-handled — I don't promise same-day.
-
-Not indoors. No garages, basements, enclosed porches, or sunrooms. The membership is the
-outdoor living area, and we'll walk it together on the first visit and write down exactly
-what's in it.
-```
-
-Link:
-
-```
-The full list, in the words it's written in the agreement
-```
-
-### 1.7 The price
-
-Rail stamp:
-
-```
-PRICE
-```
-
-H2:
-
-```
-What you pay depends on what your property has
-```
-
-Body above the ledger:
-
-```
-It's one membership. What it costs is decided by what's in your backyard, so there's nothing to
-choose between — your property has a pool or it doesn't.
-```
-
-**The ledger.** Rows in this order, each one independent:
-
-```
-A property with a pool                                                   $289  a month
-A property with a pool and an outdoor kitchen                            $329  a month
-A property with an outdoor kitchen                                       $269  a month
-BASE    Property care on its own                                         $229  a month
-```
-
-Directly under the ledger, always:
-
-```
-Two scheduled visits a month. The same price in January as in July. Card on file, charged on
-the 1st. Thirty days' notice to cancel, and there's no term.
-```
-
-Founding Member note — show while fewer than four have joined, then delete:
-
-```
-The first four members lock their price for twelve months from the day they start. That isn't a
-promotion. It's what I'm giving the people who take a chance on a business with no track record.
-After four it's gone, and members five and six pay the standard rate.
-```
-
-Link:
-
-```
-Billing, cancellation, and the rest of the price page
-```
-
-### 1.8 Where I work
-
-Rail stamp:
-
-```
-ROUTE
-```
-
-H2:
-
-```
-Where I work, and why it's this narrow
-```
-
-Body:
-
-```
-Green Township, Oak Hills, upper Delhi, and Covedale.
-
-The route is built around two clusters, and every property has to be close to another one I
-already take care of. That's not a preference. Six properties is twelve visits a month across
-four route days, and a house twenty-five minutes out of position costs me the same drive twice
-a month for as long as they're a member.
-
-So location decides more than anything else does. If your street doesn't fit yet, I'll tell you
-that straight and put you on the waitlist — and I'll still do project work for you in the
-meantime.
-```
-
-### 1.9 The ask
-
-Rail stamp:
-
-```
-NEXT
-```
-
-H2:
-
-```
-Text me your cross street
-```
-
-Body:
-
-```
-Two things tell me whether this works: what your property has, and where it is. Send me your
-cross street and whether you've got a pool, an outdoor kitchen, or both.
-
-If it fits, I'll come walk the property with you, show you exactly what's included and what
-isn't, and give you the price while I'm standing there. About forty minutes. You don't have to
-decide anything that day.
-```
+**H1:**
 
-Button:
-
-```
-Text me your cross street
-```
-
-Beside it:
-
-```
-[PHONE] · texting is fine
-```
+> # Sixteen visits. Six properties. Written down every time.
+
+**Lede:**
+
+> **Westside Property Care 513** — seasonal outdoor living and property care on the west side. I
+> take care of the outdoor living areas of six homes: pool deck, patio, outdoor kitchen, and the
+> hardscape and walks that serve them. Two scheduled visits a month from March 1 through October
+> 31, the same person every time, and a short written summary the same day covering what I did
+> and what I found.
+>
+> **$279 a month.** That's the whole price list.
+>
+> Not lawn care. Not pool service — I take care of the pool area but I don't guarantee the water.
+> Everything I don't do is on this page, above the price.
+
+**Note on what is deliberately absent here: the hours.** `CANON.md` §3 and `pricing.md` say the
+price and the cap must not appear in the same breath, because `$279 ÷ 4 hours` reads as an hourly
+rate and invites comparison with a handyman. The masthead states what stays maintained and the
+price. The cap appears where a boundary belongs — §1.7 below, and on What's included.
+
+**Enrolment stamp — open:**
+
+> **6 of 6 spots open**
+>
+> All six spots are open. This is new and I'd be starting with you.
+
+**The ask:**
+
+> [ Text me your cross street ]  ·  [PHONE] · texting is fine
+
+### 1.2 The season strip
+
+Sixteen ticks, two per month, March through October, with the months beneath.
+
+**Label:** `16 visits · Mar 1 – Oct 31`
+
+**Caption, in season:**
+
+> Two a month, March through October. Ten of the 2026 season's sixteen visit dates are already
+> past — the season's underway, so I'll pro-rate what's left of it and lock your rate for all of
+> next year.
+
+⛄ **Caption, off season:**
+
+> **NEXT SEASON OPENS MARCH 1**
+>
+> Nothing is scheduled November through February and nobody is billed for it. The next season
+> opens **March 1** — sixteen visits, two a month.
+
+**What this copy must never become:** "only six visits left," "last chance before the season
+ends," "sign before March or wait a year." The season ending is a fact; it is not a deadline he
+gets to use (`voice.md` §6.5).
+
+### 1.3 The argument — the sixteenth visit
+
+**Rail:** `The argument`
+
+> ## You're not buying sixteen visits. You're buying the sixteenth one.
+>
+> The visit where I already know which gate sticks, which well fills, and what the maple does in
+> September, because I wrote down the other fifteen.
+>
+> By the fourth visit I know your property. By the sixteenth I know what it's going to need next
+> March. Six properties is few enough to hold in my head, and sixteen written summaries a season
+> mean I don't have to.
+>
+> There's no crew, no dispatcher, no route number, and no subcontractor. It's me, on your route
+> day, on the part of the yard you actually sit in.
+
+### 1.4 What actually happens on a visit
+
+**Rail:** `Scope`
+
+> ## What actually happens on a visit
+>
+> **Maintain everything. Deep-clean nothing unless it's specifically scheduled.** That's the rule
+> I work to, and it decides most of what follows.
+>
+> I walk the property before I start and again before I leave. In between I do what will make the
+> biggest difference that day — which is not the same list every time, and a visit in early March
+> with the cover just off looks nothing like one in late August.
+>
+> Read the eight parts below as what the work is, not as a checklist that gets completed.
+> Completion of every possible task during every visit is not guaranteed, and a checklist is
+> something I'd fail the first week it rains.
+
+**The eight parts.** Rail label, then heading, then the work. This block is identical on Home and
+on What's included, deliberately — it is the most concrete thing on the site and it should not
+drift between two pages.
+
+**ARRIVAL — The walkthrough**
+> Walk the outdoor living areas before I start anything. Storm debris, leaves, sticks, trash, and
+> whatever is obviously wrong. A look over the equipment pad and the outdoor kitchen. Before
+> photos where they are useful, and a note of anything that needs your approval before I touch it.
+
+**UP TO 30 MINUTES — The pool area, where there is one**
+> Skim the surface. Brush the steps, the corners, and selected areas. Vacuum, stopping at about
+> thirty minutes of total pool time. Empty the skimmer basket, the pump basket where it is safe
+> to, and the robot's debris container. Backwash when it is appropriate and compatible with the
+> system. Check the displayed salt level and the system indicators, look for an Inspect Cell or
+> No Flow warning, and look the equipment over.
+>
+> What I do not do is test or balance the water, or add chlorine, shock, salt, or algaecide.
+> Chemicals, salt, filters, and cartridges are materials, not membership items, and filter
+> servicing beyond a backwash is a separate job.
+>
+> **Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment
+> performance, or pool-system operation unless separately contracted.**
+
+**KITCHEN — The outdoor kitchen and the grill**
+> Counters and accessible surfaces wiped. Light grease and food residue removed. Grease trap or
+> drip pan emptied when it needs it. Grill exterior wiped, cooking area checked for buildup and
+> for nesting. Burners, grates, flavorizer bars, and interiors are a deep clean, which is a
+> separate job from $249.
+
+**PATIO — The patio and the furniture**
+> Tables and chairs wiped. Cushions straightened and reset. Obvious cobwebs cleared. Light
+> cleanup around the seating areas.
+
+**CLEANUP — The property around it**
+> Sticks and small branches collected. Concentrated leaf and debris pockets cleared. Visible
+> trash picked up. Designated areas swept or blown. The walkways serving the outdoor living area
+> checked.
+
+**TRASH AND POTS — Trash, plants, and the small recurring things**
+> Designated outdoor cans emptied into your containers and wiped down when they need it. Pots and
+> container plantings watered if you want them watered. Spot treatment of the weeds in the
+> hardscape joints, the walkway cracks, and along the bed edges — not inside the beds. Whatever
+> small thing you have asked me to keep an eye on.
+
+**PRIORITY — The flexible block**
+> Extra time on the pool, a heavier debris pocket, a furniture detail, a seasonal need, or a small
+> maintenance item you have already approved. This is where the difference between a service and
+> a checklist shows up.
+
+**CLOSE OUT — The final walk and the summary**
+> A last walk of the property. Gates and areas back the way I found them. After photos where they
+> are useful. Then a short written summary the same day: what I did, what I found, and what it
+> costs if you want it handled.
+
+**Onward:** *The full scope, and everything that isn't in it* → `whats-included.html`
+
+> **The rewrite that mattered most is in the pool block.** The old copy read *"I don't test the
+> water, add chlorine, shock, or algaecide, vacuum, brush, backwash, or touch the filter, and I
+> don't open or close the pool."* **He now vacuums, brushes, backwashes, empties both baskets and
+> reads the salt cell.** The exclusion did not get smaller — it moved. What he excludes now is not
+> the *labour*, it is *responsibility for the result*, which is a harder thing to say well and is
+> the reason the disclaimer is quoted verbatim and sits inside the same block as the work.
+
+### 1.5 The record
+
+**Rail:** `The record`
+
+> ## Every visit ends in writing, the same day
+>
+> The summary is the part you can check. It says what I did, where, and what I found — including
+> the things that aren't mine to fix, and especially those.
+>
+> If something on the property needs work, it gets named, located, and priced. I'd rather tell you
+> what a job costs than quietly fold it into a visit and have you think it was included.
+
+**The summary facsimile.** Header stamp:
+
+```
+WPC513 · SERVICE SUMMARY · VISIT 07 OF 16 · MONDAY, JUNE 15
+```
+
+> `FORMAT ONLY — NOT A CLIENT SUMMARY`
+>
+> **WHAT I DID**
+> Pool skimmed, both baskets emptied, steps and the deep-end corners brushed. Vacuumed about
+> twenty minutes — the maple seeds are heavy right now. Backwashed, the pressure was up. Salt
+> reads normal, no warning lights on the cell. Wiped the six patio chairs and the table. Emptied
+> the grease tray on the flat-top and wiped the counters. Blew the patio, the pool deck, and the
+> walk, including under the pergola. Pots watered. The fern on the north side dries out faster
+> than the others, so I moved it two feet under the eave.
+>
+> `POOL · NO GUARANTEE`
+> **Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment
+> performance, or pool-system operation unless separately contracted.**
+>
+> **$49**
+> **WHAT I FOUND**
+> The two window wells on the south side are full — mostly last fall's leaves, about six inches
+> deep, and there's water sitting in the west one. I can clear both on your next visit for $49.
+> Say the word and I'll add it. If you'd rather leave them, that's fine and I'll stop mentioning
+> it.
+
+**Caption:**
+
+> This is the shape a summary takes, not one from a client's property. There aren't any yet. When
+> there is one, a real summary goes here with the address taken off.
+
+> **`VISIT 07 OF 16` is the highest-value string in the facsimile.** It makes the season legible,
+> it makes the record read as a series rather than a receipt, and it quietly does the work the
+> retired year-round argument used to do (`voice.md` pair 12).
+
+### 1.6 The season
+
+**Rail:** `The season`
+
+> ## Sixteen visits, March 1 through October 31
+>
+> Two a month, on your route day. The last one is the end of October.
+>
+> November through February there are no scheduled visits, and I'm not billing you for any of
+> them. No property checks, no freeze protection, no snow, no ice. I'd rather you read that here
+> than find it out in November.
+>
+> What you get instead is the last visit of the season, which is the one where I put the covers
+> on, tell you what I'd want handled before it gets cold, and price it.
+>
+> Two things carry on through the winter if you want them. Project work runs year round — a grill
+> deep clean before the holidays, pressure washing while the deck is empty, storm cleanup. And
+> there's a separate optional winter service, which is its own thing with its own price; it isn't
+> part of this agreement and it isn't included.
+>
+> Then your next scheduled visit is the first route day in **March**.
+
+> 🔶 **The winter offering is named and not described.** `03-marketing/winter-service.md` has not
+> been written. Until it exists, the only permitted description is *"a separate optional winter
+> service, its own price, not part of this agreement."* Do not invent visits, tasks or a number.
+
+### 1.7 What I don't do
+
+**Rail:** `Not included`
+
+> ## What I don't do
+>
+> This is the part most people put in the fine print. I'd rather you read it before you get to
+> the price.
+
+**I take care of the pool area. I don't guarantee the pool.**
+> I skim, brush, vacuum, empty both baskets and the robot container, backwash when the system
+> wants it, and read the salt level and the warning lights. I don't test or balance the water and
+> I don't add chlorine, shock, salt, or algaecide. If it goes green in July, that isn't something
+> I'm responsible for or able to fix.
+>
+> If you want somebody accountable for the water, hire a pool company — full service with
+> chemistry runs about $121 to $142 a month around here, and I'll tell you who your neighbours
+> use. One of us owns the water. I own the deck, the furniture, the kitchen, the trash, the pots,
+> and the record.
+>
+> **Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment
+> performance, or pool-system operation unless separately contracted.**
+
+**Not lawn care**
+> No mowing, trimming, edging, fertilizing, aerating, seeding, pruning, planting, mulching, or bed
+> work. Weed treatment is spot treatment in the hardscape joints, the walkway cracks, and along
+> the edges of the beds — not inside the beds.
+
+**Not gutter cleaning**
+> Gutter cleaning means working off a ladder and I don't work off a ladder. On your visits I check
+> the downspouts from the ground and tell you where they're discharging.
+
+**Not a deep clean**
+> On a visit I empty the grease trap and the drip tray and wipe the exterior surfaces and the
+> counters. Burners, grates, flavorizer bars, and interiors are a grill and outdoor kitchen deep
+> clean, from $249.
+
+**Not pressure washing**
+> Any surface, any time — that's quoted after I look at it.
+
+**Nothing between November and February**
+> The season is March 1 through October 31. November through February there are no scheduled
+> visits, no property checks, no freeze protection, and no snow or ice service of any kind — and
+> no billing either. Any separate winter service I offer is its own thing with its own price and
+> is not part of this agreement.
+
+**Not an emergency service**
+> There's no guaranteed response time and no promised arrival window. Tuesday through Thursday is
+> held open for projects and urgent things, so they usually do get handled — I don't promise
+> same-day.
+
+**Not indoors**
+> No garages, basements, enclosed porches, or sunrooms. The membership is the outdoor living area,
+> and we'll walk it together on the first visit and write down exactly what's in it.
+
+**Onward:** *The full list, in the words it's written in the agreement* →
+`whats-included.html#nots`
+
+> **The `$121–142` market rate is used once and attached precisely.** It describes **full pool
+> service with chemistry** — the product he does not sell — and it is never placed next to $279
+> as a comparison he is winning. It is a referral fact, which is the one carve-out in the
+> anchor-leak rule.
+
+### 1.8 The price
+
+**Rail:** `Price`
+
+> ## $279 a month
+>
+> That's the whole price list. A property with a pool and an outdoor kitchen pays the same as a
+> property with a plain patio.
+
+**The single figure:**
+
+```
+ONE PRICE
+───────────────────────────────────────────
+$279  / MONTH
+───────────────────────────────────────────
+Two scheduled visits a month, March 1 through October 31 — sixteen visits a season
+Up to two hours of on-site service each visit
+Highest-priority maintenance items first, using my judgement
+Completion of every possible task during every visit is not guaranteed
+Unused service time does not roll over
+```
+
+**Terms beneath:**
+
+> Card on file, charged on the schedule we set when you sign, March through October. Thirty days'
+> written notice to cancel, either of us, and there's no term.
+>
+> The season's already underway, so I'll pro-rate what's left of it and lock your rate for all of
+> next year. That isn't a promotion — it's what I'm giving the people who take a chance on a
+> business with no track record.
+
+**Onward:** *Billing, cancellation, and the rest of the price page* → `pricing.html`
+
+> **The five clauses ship as one indivisible block.** `voice.md` §8 item 39 requires that "up to
+> two hours" travels with *highest priority first*, *completion is not guaranteed* and *unused
+> time does not roll over*. Building them as one component is how that rule is enforced
+> structurally instead of by remembering.
+
+### 1.9 Where I work
+
+**Rail:** `Route`
+
+> ## Where I work, and why it's this narrow
+>
+> Green Township, Oak Hills, upper Delhi, and Covedale.
+>
+> The route is built around two clusters, and every property has to be close to another one I
+> already take care of. That isn't a preference. Six properties is twelve visits a month across
+> four route days, and a house twenty-five minutes out of position costs me the same drive twice
+> a month for as long as they're a member.
+>
+> So location decides more than anything else does. If your street doesn't fit yet, I'll tell you
+> that straight and put you on the waitlist, and I'll still do project work for you in the
+> meantime.
+
+### 1.10 The ask
+
+**Rail:** `Next`
+
+> ## Text me your cross street
+>
+> Two things tell me whether this works: what your property has, and where it is. Send me your
+> cross street and whether you've got a pool, an outdoor kitchen, or both.
+>
+> If it fits, I'll come walk the property with you, show you exactly what's included and what
+> isn't, and give you the price while I'm standing there. About forty minutes. You don't have to
+> decide anything that day.
+>
+> [ Text me your cross street ]  ·  [PHONE] · texting is fine
 
 ---
 
 ## 2. What's included — `whats-included.html`
 
-**Purpose:** make the scope and the two seasons unambiguous.
-**The one ask:** keep reading to the price.
-
 ### 2.1 Page head
 
-Rail stamp:
-
-```
-SCOPE · BOTH SEASONS
-```
-
-H1:
-
-```
-What's included, and what isn't
-```
-
-Lede:
-
-```
-One membership, two scopes. Green Season runs April through October. Dormant Season runs
-November through March. The price is the same in both.
-```
-
-### 2.2 The rule that governs both lists
-
-Rail stamp:
-
-```
-HOW THE LISTS WORK
-```
-
-H2:
-
-```
-Not every task happens every visit
-```
-
-Body:
-
-```
-I walk the property before I start and again before I leave. In between, I do what will make
-the biggest difference to the property that day.
-
-That's the honest version and I'm not going to pretend otherwise. A visit in early April with
-the cover just off and winter grit on everything looks nothing like a visit in late August when
-the place is already dialed in and the real work is skimming and watering. Both are full visits.
-
-So read the two lists below as what the work is, not as a checklist that gets completed. A
-checklist is something I'd fail the first week it rains.
-```
-
-### 2.3 Green Season — April through October
-
-Rail stamp:
-
-```
-GREEN SEASON · APR–OCT
-```
-
-H2:
-
-```
-April through October
-```
-
-Body:
-
-```
-The property is in use, so the work is about keeping it ready to sit in.
-```
-
-Sub-blocks:
-
-```
-The walk
-I look for storm damage, standing water, fallen limbs, drainage problems, pool trouble,
-outdoor kitchen problems, and furniture damage — and I photograph anything worth documenting.
-Once on arrival, once before I leave.
-
-The pool area
-Skim the surface. Empty the skimmer basket and the pump basket. Clear debris off the deck and
-the surround. Straighten and wipe the pool furniture.
-
-The patio and the outdoor living area
-Wipe down the furniture and the table surfaces. Straighten and reset the chairs and cushions.
-Blow the hard surfaces clean — patio, walkways, pool deck, and the outdoor kitchen area.
-
-The outdoor kitchen
-Wipe the countertops and the stainless. Empty the grease trap and the drip tray on the flat-top
-or the grill. Clear the debris from around and under the cooking area.
-
-The grounds around it
-Hand-collect the loose leaves, sticks, and debris, and empty them into your containers. Water
-the pots and the container plantings. Spot-treat the weeds coming up in the hardscape joints,
-the walkway cracks, and along the bed edges — not inside the beds.
-
-Close out
-Check the gates are latched. Make sure every tool and bag of mine is off the property. After
-photos where they're useful. The report goes out the same day.
-```
-
-**IMG-02** caption (plate state):
-
-```
-PHOTO REQUIRED · FRAME 2 · My hands working — the skimmer net breaking the surface, or the grease tray coming out
-```
-
-### 2.4 Dormant Season — November through March
-
-Rail stamp:
-
-```
-DORMANT SEASON · NOV–MAR
-```
-
-H2:
-
-```
-November through March
-```
-
-Body:
-
-```
-The property isn't in use, so the work moves from presentation to protection. This is the part
-people are suspicious of before they've had a winter of it, and it's the part that prevents
-actual money from being spent.
-```
-
-Sub-blocks:
-
-```
-Water and freeze protection
-Check the hose bibs and confirm they're shut off and drained. Disconnect the hoses and put them
-away. Drain, cover, or store the exposed lines and fixtures. Check the outdoor kitchen water
-line, the sink, and the shutoffs — that line is the one that splits. Look over the pool
-equipment pad for anything obviously wrong.
-
-Gutters and drainage — checked from the ground, not cleaned
-Look at the gutters and downspouts from ground level. Confirm the downspouts are discharging
-and the extensions are in place. Watch for overflow staining, ice damming, standing water, and
-pooling at the foundation. Anything I find goes in the report. Actual gutter cleaning is a
-quoted project, because it means a ladder.
-
-Storm and debris
-Clear storm debris out of the outdoor living area. Hand-collect fallen limbs and branches.
-Clear the drains, the grates, and the window wells of surface debris.
-
-Furniture and equipment
-Cover, store, or consolidate the furniture and cushions at the season change, and uncover and
-reset them in spring. Cover and secure the grill and the outdoor kitchen. Check the covers
-again after a high wind, because that's when they come loose.
-
-Ice and hardscape
-Salt and clear ice on the patio, the pool deck, and the walk serving them, on scheduled visits.
-I use the stone-safe product on flagstone, because the cheaper stuff pits it.
-
-The inspection, and the March report
-The fullest exterior inspection of the year, with photos, because the leaves are down and I can
-see everything. Anything for spring gets noted and photographed. The March report comes with
-what the property needs in April and what each thing costs.
-```
-
-**IMG-03** caption (plate state):
-
-```
-PHOTO REQUIRED · FRAME 5 · Winter — covered furniture, salted flagstone, frost on a pool cover. It should look cold and useful.
-```
-
-### 2.5 Why the price doesn't drop
-
-Rail stamp:
-
-```
-SAME PRICE
-```
-
-H2:
-
-```
-Why the price doesn't drop in winter
-```
-
-Body:
-
-```
-Because the value doesn't. Freeze protection, a set of eyes on an unused property twice a
-month, and a written plan for spring are worth more than skimming a pool. They just look like
-less.
-
-You're buying a year of coverage, not a season of visits. There's no winter rate, no pause, and
-no seasonal option — and I'd rather explain that than have you find out in November.
-```
-
-### 2.6 What's not included — the full list
-
-Rail stamp:
-
-```
-NOT INCLUDED
-```
-
-H2:
-
-```
-Everything I don't do
-```
-
-Body:
-
-```
-These are the same words that are in the agreement. You'll see them before you're asked to sign
-anything, and I'll walk them out loud on the first visit before I give you a price.
-```
-
-Entries:
-
-```
-Pool
-Pool care under this membership is skimming the surface, emptying the skimmer and pump baskets,
-and clearing the deck and the surround, on two scheduled visits a month. It is not pool service.
-
-Not included: water testing or balancing; chlorine, shock, or algaecide; vacuuming; brushing
-walls or steps; cleaning, backwashing, or servicing the filter; pump, heater, or equipment
-repair; opening or closing the pool; cover installation or removal; leak detection; and
-anything on or in the pool below the water surface.
-
-I don't maintain the water and I'm not responsible for its condition, clarity, or chemistry. If
-you need that, hire a pool company — full weekly service on the west side runs about $121 to
-$142 a month with chemicals, and I'll tell you which ones your neighbors use.
-
-Lawn and landscape
-No mowing, trimming, edging, blowing of lawn areas, fertilization, aeration, overseeding,
-weed-and-feed, pruning, shrub or tree trimming, planting, mulching, bed edging, bed cleanout, or
-landscape installation of any kind.
-
-Weed treatment is spot treatment of what's visible in the hardscape joints, the walkway cracks,
-and along the edges of the beds bordering the outdoor living area. Weeding inside a bed is a
-quoted project.
-
-Where the boundary is
-The membership covers the exterior outdoor living area — patio, pool and pool deck, outdoor
-kitchen, the adjoining hardscape, and the walkways serving them. We'll walk it together on the
-first visit and write down exactly what's in it.
-
-Not included: anything indoors, including garages, basements, enclosed porches, and sunrooms;
-the front of the property except the walkway serving the outdoor living area; lawn areas; the
-wooded or unmaintained part of the lot; outbuildings; and anything we didn't identify on the
-walkthrough.
-
-Ladders, roofs, and equipment
-No work from a ladder, from a roof, or above roof line. Gutters and downspouts are checked from
-the ground, visually and by watching where they discharge.
-
-Anything needing a pressure washer, a ladder, a chainsaw, powered digging equipment, a trailer,
-or a chemical beyond routine surface cleaner and spot weed treatment is outside the membership
-and gets quoted. It's the cleanest test there is: if it needs something I didn't bring on a
-route day, it's a project.
-
-Deep cleaning
-On a visit, the grill and outdoor kitchen work is emptying the grease trap and the drip tray and
-wiping the exterior surfaces and the counters.
-
-Not included: burners, grates, flavorizer bars, heat shields, interiors, hoods, or vents;
-degreasing; and taking any cooking equipment apart. That's a grill and outdoor kitchen deep
-clean, from $249. Pressure washing of any surface is not included and is quoted separately.
-
-Debris and waste
-Included: hand-collected loose leaves, sticks, and debris from the outdoor living area, put into
-your containers, up to what those containers hold.
-
-Not included: debris past the capacity of your containers; taking any waste off the property;
-moving containers to or from the curb; hauling; disposal; and dump fees. Large-volume removal is
-quoted, with disposal at cost plus 25%.
-
-Storms, and what "emergency" means
-Included: clearing storm debris out of the outdoor living area on your next scheduled visit, by
-hand, within the volume limit above.
-
-Not included: any storm response needing a saw, a trailer, more than one trip, or more than your
-containers hold; tree or large-limb removal; and repair of structural or property damage.
-
-This isn't an emergency service and there are no guaranteed response times. Tuesday through
-Thursday is held open partly for exactly this, so urgent things usually do get handled. That's
-a real benefit and it isn't a promise, and I'd rather tell you now than have you find out in
-February.
-
-Snow and ice
-Included: salting and clearing ice on the outdoor living hardscape — patio, pool deck, and the
-walk serving them — on scheduled visits only.
-
-Not included: the driveway; the public sidewalk; shoveling anywhere outside that hardscape; and
-any snow or ice response between scheduled visits.
-
-Repairs, parts, and trades
-I don't perform repairs, replace parts, or install, alter, or remove any fixed part of the
-property under the membership.
-
-Anything needing a replacement part, a permit, or a licensed trade — electrical, plumbing, gas,
-HVAC, structural, or pool equipment — gets quoted separately, and may get referred to a
-contractor. Parts and materials are always billed separately at cost plus 25%.
-
-Watering and plants
-Included: watering the pots and container plantings in the outdoor living area, on scheduled
-visits.
-
-Not included: lawn or garden bed irrigation; irrigation system operation, repair, or
-winterizing; and plant care between visits, including vacation watering.
-
-Visits and scheduling
-The membership is two scheduled visits per calendar month, on the route day assigned to your
-property — Monday or Friday of weeks 1 and 3.
-
-Not included: extra visits; on-demand visits; a specific requested date; a guaranteed arrival
-time; and weekend service. Visits get moved for weather or safety, and a moved visit happens
-inside the same calendar month where I can manage it.
-
-I'll tell you the day, not the hour. That's on purpose — if I give you eleven o'clock, then the
-property before yours gets shortchanged the week it needs an extra half hour, and eventually
-yours does too.
-
-Access and pets
-You provide safe access to the serviced area on your route day, including gate codes or keys,
-and secure any pets during the visit.
-
-I'm not responsible for work I couldn't do because access wasn't available, or for conditions
-another contractor, a household member, or anyone else created on the property. A visit I can't
-perform for lack of access isn't refunded or made up outside the scheduled route days.
-```
-
-Closing line:
-
-```
-That's the whole list. If something you want isn't in it, I'll quote it — see the project work.
-```
+**Rail:** `Scope · Mar 1 – Oct 31`
+
+> # What's included, and what isn't
+>
+> **Maintain everything. Deep-clean nothing unless it's specifically scheduled.** That line is off
+> the footer of the checklist I carry, and it does more scope protection than a page of
+> exclusions.
+>
+> Sixteen visits a season, March 1 through October 31. Two a month, up to two hours of on-site
+> service each.
+
+Followed by the season strip (§1.2).
+
+### 2.2 How the list works
+
+**Rail:** `How the list works`
+
+> ## Not every task happens every visit
+>
+> I walk the property before I start and again before I leave. In between, I do what will make the
+> biggest difference that day.
+>
+> That's the honest version and I'm not going to pretend otherwise. A visit in early March with
+> the cover just off and winter grit on everything looks nothing like a visit in late August when
+> the place is dialled in and the real work is skimming and watering. Both are full visits.
+>
+> Each visit is up to two hours of on-site service. I spend them highest priority first, using my
+> judgement. **Completion of every possible task during every visit is not guaranteed, and unused
+> service time does not roll over.**
+>
+> That cap is why the price is the same for a property with a pool and an outdoor kitchen as for
+> one with a plain patio. It's a limit on what you're buying, not a limit on how carefully I work.
+
+> **That last sentence is the whole of `voice.md` pair 19 in one line.** The two failure modes it
+> is written against: turning the ceiling into a floor — *"two full hours of dedicated service so
+> nothing gets missed"* — and making speed the product — *"in and out in two hours."* The first
+> gets quoted back at him the first time a visit runs ninety minutes; the second contradicts
+> *never rush a property*.
+
+### 2.3 The eight parts of a visit
+
+**Rail:** `The visit`
+
+> ## The eight parts of a visit
+>
+> This is the shape of the two hours, as applicable to your property. A property with no pool and
+> no outdoor kitchen skips two of them, and that is a shorter visit rather than a cheaper one.
+
+Then the eight blocks, **identical to §1.4**.
+
+### 2.4 The pool
+
+**Rail:** `Pool`
+
+> ## I take care of the pool area. I don't guarantee the pool.
+>
+> This is the block worth reading twice, because the scope changed and because it is the one
+> people compare on price.
+>
+> **What I do on each visit:** skim the surface, brush the steps, corners and selected areas,
+> vacuum for up to about thirty minutes, empty the skimmer and pump baskets and the robot's debris
+> container, backwash when it's appropriate for your system, check the displayed salt level and
+> the system indicators, and look the equipment over for warnings.
+>
+> **What I don't do:** test or balance the water, add chlorine, shock, salt, or algaecide, service
+> or take apart the filter beyond a backwash the system is designed for, repair or adjust the
+> pump, heater, cell, or automation, open or close the pool, or work below the water surface
+> beyond the vacuuming and brushing above.
+>
+> **Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment
+> performance, or pool-system operation unless separately contracted.**
+>
+> A pool company will do the water, weekly, with chemicals, for something like $121 to $142 a
+> month around here. That's full service with chemistry, it's a real product, it's less than I
+> charge, and if what you need is somebody accountable for the water then you should hire one.
+> I'll tell you which ones your neighbours use.
+>
+> What I do on the pool is one block out of eight — because the rest of the visit is the deck, the
+> furniture, the outdoor kitchen, the grill, the grease trap, the trash cans, the pots, the sticks
+> and the leaves, and the walkthrough at both ends that produces the written summary. Plenty of
+> people have both of us. If you can only have one and the water is what keeps you up at night,
+> have the pool company.
+
+> **The last sentence stays.** Offering to lose the sale is the only move that makes the
+> disclaimer above it credible, and a prospect who is told "hire the other guy if that's what you
+> need" and stays is exactly the client `CANON.md` §5 says he needs.
+
+### 2.5 The season
+
+Identical to §1.6.
+
+### 2.6 Everything I don't do — the full list
+
+**Rail:** `Not included`
+
+> ## Everything I don't do
+>
+> These are the same words that are in the agreement. You'll see them before you're asked to sign
+> anything, and I'll walk them out loud on the first visit before I give you a price.
+
+**Pool**
+> Pool care under this membership is the physical maintenance above — skimming, brushing,
+> vacuuming for up to about thirty minutes, emptying the skimmer and pump baskets and the
+> automatic-vacuum debris container, backwashing when appropriate and compatible with the system,
+> and visual checks of displayed salt levels, system indicators, and equipment warnings. It is not
+> pool service.
+>
+> Specifically not included: water chemistry of any kind; chlorine, shock, algaecide, stabiliser,
+> acid, or salt; filter cleaning, disassembly, cartridge replacement or DE charging; pump, heater,
+> cell, automation, plumbing, or cleaner repair; opening, closing, covers, and winterisation; leak
+> detection, liner or surface repair, tile and waterline scale removal, and acid washing.
+>
+> **Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment
+> performance, or pool-system operation unless separately contracted.**
+
+**Lawn and landscape**
+> No mowing, trimming, edging, blowing of lawn areas, fertilisation, aeration, overseeding,
+> weed-and-feed, pruning, shrub or tree trimming, planting, mulching, bed edging, bed cleanout, or
+> landscape installation of any kind.
+>
+> Weed treatment is spot treatment of what's visible in the hardscape joints, the walkway cracks,
+> and along the edges of the beds bordering the outdoor living area. Weeding inside a bed is a
+> quoted project. Regulated pesticide or chemical-application services are excluded.
+
+**Where the boundary is**
+> The membership covers the exterior outdoor living area — patio, pool and pool deck, outdoor
+> kitchen, the adjoining hardscape, and the walkways serving them. We'll walk it together on the
+> first visit and write down exactly what's in it.
+>
+> Not included: anything indoors, including garages, basements, enclosed porches, and sunrooms;
+> the front of the property except the walkway serving the outdoor living area; lawn areas; the
+> wooded or unmaintained part of the lot; outbuildings; and anything we didn't identify on the
+> walkthrough.
+
+**Ladders, roofs, and equipment**
+> No work from a ladder, from a roof, or above roof line. Gutters and downspouts are checked from
+> the ground, visually and by watching where they discharge.
+>
+> Anything needing a pressure washer, a ladder, a chainsaw, powered digging equipment, a trailer,
+> or a chemical beyond routine surface cleaner and spot weed treatment is outside the membership
+> and gets quoted. It's the cleanest test there is: if it needs something I didn't bring on a
+> route day, it's a project.
+
+**Deep cleaning**
+> On a visit, the grill and outdoor kitchen work is wiping countertops and accessible surfaces,
+> light cleaning around the cooking equipment, removing accessible grease or food residue, and
+> emptying the grease trap or drip pan.
+>
+> Not included: burners, grates, flavorizer bars, heat shields, interiors, hoods, or vents;
+> degreasing; and taking any cooking equipment apart. That's a grill and outdoor kitchen deep
+> clean, from $249. Pressure washing of any surface is not included and is quoted separately.
+
+**Debris and waste**
+> Included: hand-collected loose leaves, sticks, and debris from the outdoor living area, put into
+> your containers, up to what those containers hold and within the scheduled service time.
+>
+> Not included: debris past the capacity of your containers; debris needing more time than the
+> visit allows; taking any waste off the property; moving containers to or from the curb; hauling;
+> disposal; and dump fees. Large-volume removal is quoted, with disposal at cost plus 25%.
+
+**Storms, and what "emergency" means**
+> Included: clearing storm debris out of the outdoor living area on your next scheduled visit, by
+> hand, within the volume limit above.
+>
+> Not included: any storm response needing a saw, a trailer, more than one trip, or more than your
+> containers hold; tree or large-limb removal; and repair of structural or property damage.
+>
+> This isn't an emergency service and there are no guaranteed response times. Tuesday through
+> Thursday is held open partly for exactly this, so urgent things usually do get handled. That's a
+> real benefit and it isn't a promise.
+
+**November through February**
+> The membership runs March 1 through October 31 only. During November, December, January, and
+> February there are no scheduled visits, no property checks, no storm response, no freeze
+> protection, no snow or ice service of any kind, and no membership charge.
+>
+> Any work in those months is a separately arranged and separately quoted project. A separate
+> optional winter service exists; it is its own product with its own price and it is never part of
+> this agreement.
+
+**Repairs, parts, and trades**
+> I don't perform repairs, replace parts, or install, alter, or remove any fixed part of the
+> property under the membership.
+>
+> Anything needing a replacement part, a permit, or a licensed trade — electrical, plumbing, gas,
+> HVAC, structural, or pool equipment — gets quoted separately, and may get referred to a
+> contractor. Parts, materials, chemicals, salt, and filters are always billed separately at cost
+> plus 25%.
+
+**Watering and plants**
+> Included: watering the pots and container plantings in the outdoor living area, on scheduled
+> visits, when you want them watered.
+>
+> Not included: lawn or garden bed irrigation; irrigation system operation, repair, or
+> winterising; and plant care between visits, including vacation watering.
+
+**Visits and scheduling**
+> The membership is two scheduled visits per calendar month, March through October, on the route
+> day assigned to your property — a Monday or a Friday, set when you sign.
+>
+> Not included: extra visits; on-demand visits; a specific requested date; a guaranteed arrival
+> time; weekend service; and any carry-forward of unused time. Visits get moved for weather, and a
+> moved visit stays in the same calendar month where I can manage it.
+>
+> I'll tell you the day, not the hour. That's on purpose — if I give you eleven o'clock, then the
+> property before yours gets shortchanged the week it needs an extra half hour, and eventually
+> yours does too.
+
+**Access and pets**
+> You provide reasonable and safe access to the serviced area on your route day, including gates,
+> the equipment pad, an outlet, and a water source. Pets secured where I need to work.
+>
+> I'm not responsible for work I couldn't do because access wasn't available, for pre-existing
+> damage or hidden defects, or for conditions another contractor or a household member created. A
+> visit I can't perform for lack of access isn't refunded or made up outside the scheduled route
+> days.
+
+**Closing:**
+
+> That's the whole list. If something you want isn't in it, I'll quote it, and you decide.
+
+**Onward:** *What project work looks like, and the two prices I can give you without looking* →
+`projects.html`
 
 ### 2.7 The ask
 
-```
-Now the price
-```
+> ## Now the price
+>
+> $279 a month, March through October. That's the whole price list, and the page it's on says how
+> the billing works.
+>
+> [ The price ]  ·  [PHONE] · texting is fine
 
 ---
 
 ## 3. Pricing — `pricing.html`
 
-**Purpose:** make the price unambiguous and unnegotiable.
-**The one ask:** walk the property with me — about forty minutes.
-
-> **Section order is fixed by `01-brand/messaging.md` §3 and must not change:** what happens on a
-> visit, then what is not included, then the price, then billing and cancellation, then the ask.
-
 ### 3.1 Page head
 
-Rail stamp:
-
-```
-PRICE
-```
-
-H1:
-
-```
-What you pay depends on what your property has
-```
-
-Lede:
-
-```
-It's one membership. What it costs is decided by what's in your backyard — a pool is more
-surface to look after than a patio, and an outdoor kitchen is more again. There's nothing to
-choose between: your property has a pool or it doesn't.
-```
-
-### 3.2 What you're buying
-
-Rail stamp:
-
-```
-THE VISIT
-```
-
-H2:
-
-```
-What the money buys
-```
-
-Body:
-
-```
-Two scheduled visits a month, on your route day, twenty-four visits a year. On each one I walk
-the property before I start and again before I leave, and in between I do what will make the
-biggest difference to the property that day.
-
-Then you get a report the same evening: what I did, what I found, and what it costs if you want
-it handled.
-
-Half the value is the visits. The other half is that somebody is looking.
-```
-
-Link:
-
-```
-Everything that happens on a visit, both seasons
-```
-
-### 3.3 What's not included — above the price
-
-Rail stamp:
-
-```
-NOT INCLUDED
-```
-
-H2:
-
-```
-Read this before the number
-```
-
-Body:
-
-```
-A page that quotes you $329 and then discloses that pool chemistry isn't included has already
-spent the trust the disclosure was supposed to buy. So here it is first.
-```
-
-Condensed list — same eight lines as home §1.6.
-
-Link:
-
-```
-The full list, in the words it's written in the agreement
-```
-
-**IMG-05** caption (plate state):
-
-```
-PHOTO REQUIRED · FRAME 3 · A genuine finding — a window well packed with leaves, or a skimmer basket full. Don't clean it before shooting it.
-```
-
-### 3.4 The ledger
-
-Rail stamp:
-
-```
-MONTHLY
-```
-
-H2:
-
-```
-The price
-```
-
-Rows, in this order:
-
-```
-A property with a pool                                                   $289  a month
-A property with a pool and an outdoor kitchen                            $329  a month
-A property with an outdoor kitchen                                       $269  a month
-BASE    Property care on its own                                         $229  a month
-```
-
-Directly under:
-
-```
-Two scheduled visits a month. The same price in January as in July. Card on file, charged on
-the 1st. Thirty days' notice to cancel, and there's no term.
-```
-
-### 3.5 Billing
-
-Rail stamp:
-
-```
-BILLING
-```
-
-H2:
-
-```
-How the money works
-```
-
-Definition rows:
-
-```
-Payment
-Card on file, collected before the first visit. There's no exception to that one, and it isn't
-about you — a six-client business can't spend part of its month chasing $289.
-
-Charge date
-Automatically on the 1st of each month, in advance.
-
-Starting mid-month
-If you start after the 15th, you're charged a half month for that partial month, then full
-months after.
-
-If a card fails
-Service runs as normal through the current month. I need a working card before your next route
-day, and I'll tell you the date rather than the word "immediately."
-
-Cancelling
-Thirty days' notice in writing. Service runs through the month you've paid for. There's no term
-and no cancellation fee, and that applies to Founding Members too — the lock is a price
-guarantee, not a commitment you're stuck in.
-
-Pausing
-There's no seasonal pause. The price is the same all twelve months, and the reason is on this
-page.
-
-Project work
-Invoiced when it's finished, charged to the card on file unless you'd rather arrange it
-differently.
-
-Materials
-Itemized on the estimate before the work starts and on the invoice after, at cost plus 25%.
-Never folded into labor.
-```
-
-### 3.6 Founding Member
-
-> Show while fewer than four have joined. Delete the whole section on the fourth signature.
-
-Rail stamp:
-
-```
-FIRST FOUR
-```
-
-H2:
-
-```
-The first four lock their price for twelve months
-```
-
-Body:
-
-```
-Whatever your property comes to on the day you start, that number can't move for a year.
-
-That isn't a promotion and I'd rather not dress it up as one. I'm asking the first four people
-to take a chance on a business with no track record, and putting my own price at risk for
-twelve months is a fair thing to give them for it.
-
-It covers the membership price only — not project work, not materials. If you build a pool
-halfway through the year, that gets added at the standard rate and the new total carries
-forward. After four members it's gone, and members five and six pay the standard rate on
-standard terms.
-```
-
-### 3.7 Winter
-
-Rail stamp:
-
-```
-TWELVE MONTHS
-```
-
-H2:
-
-```
-The same price in January
-```
-
-Body:
-
-```
-Different work, same price. November through March it's hose bibs, disconnects, and
-drain-downs; covers on and checked after a wind; salt and ice on the patio, the pool deck, and
-the walk; storm debris; downspouts checked from the ground; and the fullest exterior inspection
-of the year, because the leaves are down.
-
-The price doesn't drop, because the value doesn't. It just looks like less.
-```
-
-Link:
-
-```
-Everything that happens November through March
-```
-
-### 3.8 Not discounted
-
-Rail stamp:
-
-```
-FIXED
-```
-
-H2:
-
-```
-What I don't discount
-```
-
-Body:
-
-```
-The membership price. The winter months. Project work for members. And the last slot.
-
-Members don't get a discount on projects. They get scheduling priority and no trip minimum,
-which is worth more — a $49 window well is worth doing when I'm already standing in the yard,
-and it isn't worth a dedicated trip when I'm not.
-
-If the number is more than you want to spend, that's a fair thing to say and it doesn't make
-this awkward. I'd still be glad to do the grill for you, and that's $249 and up with nothing
-committed.
-```
+**Rail:** `Price`
+
+> # $279 a month. That's the whole price list.
+>
+> There's no tier, no module, no add-on, and nothing to configure. A property with a pool and an
+> outdoor kitchen pays exactly what a property with a plain patio pays.
+
+Followed by the season strip (§1.2).
+
+> **Leading the `h1` with the number is `messaging.md` §3's instruction for this surface**, and it
+> is what makes the page pass his ten-second test. The **rendered price figure** still sits below
+> the exclusions, which is the section-order rule. Both are satisfied because the headline states
+> the number and the set-piece renders it.
+
+### 3.2 What the money buys
+
+> ## What the money buys
+>
+> Two scheduled visits a month, March 1 through October 31, on your route day. Sixteen visits a
+> season.
+>
+> On each one I walk the property before I start and again before I leave, and in between I do
+> what will make the biggest difference that day. Then you get a short written summary the same
+> evening: what I did, what I found, and what it costs if you want it handled.
+>
+> Each visit is up to two hours of on-site service, highest-priority maintenance items first,
+> using my judgement. **Completion of every possible task during every visit is not guaranteed,
+> and unused service time does not roll over.**
+>
+> November through February there are no scheduled visits and no billing. The season is eight
+> months and I'd rather you read that above the number than below it.
+
+### 3.3 Read this before the number
+
+> ## Read this before the number
+>
+> A page that quotes you $279 and then discloses that the water isn't guaranteed has already spent
+> the trust the disclosure was supposed to buy. So here it is first.
+
+Then the exclusion list, identical to §1.7.
+
+### 3.4 The price
+
+> ## The price
+
+The single figure, identical to §1.8, then:
+
+> Card on file, collected before the first visit and charged on the schedule we set when you sign,
+> March through October. Thirty days' written notice to cancel, either of us, and there's no term.
+
+### 3.5 "That's more than a handyman"
+
+> ## "That's more than a handyman"
+>
+> You're right about the arithmetic, and I'd rather answer it than dodge it.
+>
+> A handyman's hour starts when you call him. You have to notice the problem, describe it, get on
+> his schedule, and be home. Mine starts because it's the first Monday — I show up whether you
+> noticed anything or not, and most of what I find, you hadn't. That's the thing you're actually
+> buying.
+>
+> The two hours is a ceiling, not a quota. It's there so the price can be one number: a property
+> with a pool and an outdoor kitchen would take three hours to do everything, and a plain patio
+> would take one, and I'd rather cap the time than charge you differently for owning a pool. So I
+> spend those two hours on whatever makes the biggest difference that day, highest priority first,
+> and I tell you what I didn't get to.
+>
+> If what you want is hours, I'd honestly rather sell you a project. Those are flat-priced and you
+> know exactly what you're getting for the money. The membership is a different thing. It's sixteen
+> visits and a record.
+
+> **This is `messaging.md` §5.3, and note what is missing from it: the number.** The heading quotes
+> the reader's objection without repeating the arithmetic, the body concedes it — *"you're right
+> about the arithmetic"* — and at no point does the copy perform the division itself. `voice.md`
+> §3's hours-arithmetic rule permits conceding a reader's sum once and bans producing your own.
+> `$69.75` and `$139.50` do not appear anywhere on the site.
+
+### 3.6 Billing
+
+> ## How the money works
+
+| | |
+|---|---|
+| **PAYMENT** | Card on file, collected before the first visit. There's no exception to that one, and it isn't about you — a six-client business can't spend part of its month chasing an invoice. |
+| **WHEN IT'S CHARGED** | Monthly, in advance, on the schedule we set at enrollment. Eight charges a season, March through October. |
+| **NOVEMBER THROUGH FEBRUARY** | No charge and no scheduled visits. The card stays on file and isn't charged. We'll confirm the next season in writing in February, before the first March route day. |
+| **STARTING MID-SEASON** | The season's already underway, so what's left of it is pro-rated — you pay for the visits you actually get, and I'll show you the number before you sign anything. |
+| **IF A CARD FAILS** | Service runs through the current month. I need a working card before your next route day, and I'll tell you the date rather than the word "immediately." Past-due accounts may have scheduled service suspended until they're current. |
+| **CANCELLING** | Thirty days' written notice, either of us. Amounts already earned for completed service periods remain due. There's no term and no cancellation fee. |
+| **PROJECT WORK** | Invoiced when it's finished, charged to the card on file unless you'd rather arrange it differently. |
+| **MATERIALS** | Itemized on the estimate before the work starts and on the invoice after, at cost plus 25%. Pool chemicals, salt, filters, and cartridges are materials. Never folded into labour. |
+
+### 3.7 Founding terms
+
+> ## Pro-rated 2026, and your rate locked for all of 2027
+>
+> The season's already underway, so I'll pro-rate what's left of it and lock your rate for all of
+> next year.
+>
+> That isn't a promotion and I'd rather not dress it up as one. It's what I'm giving the people
+> who take a chance on a business with no track record, and a locked price through a full season
+> is a fair thing to give them for it.
+>
+> It covers the membership price only — not project work, not materials. The lock runs through the
+> end of the 2027 season and it doesn't extend past it. It's a price guarantee, not a term you're
+> stuck in: thirty days' written notice and you're done, either way.
+
+> 🔶 **No cap is asserted.** `CANON.md` §3 says "clients signing now"; the stale `pricing.md` §2
+> says "the first 4." Until `wpc-strategist` resolves it the site says "clients signing now" and
+> never asserts a cap. If the answer is four, this section gains one sentence and nothing else.
+
+### 3.8 What I don't discount
+
+> ## What I don't discount
+>
+> The membership price. Project work for members. And the last slot.
+>
+> Members don't get a discount on projects. They get scheduling priority and no trip minimum,
+> which is worth more — a $49 window well is worth doing when I'm already standing in the yard,
+> and it isn't worth a dedicated trip when I'm not.
+>
+> If the number is more than you want to spend, that's a fair thing to say and it doesn't make
+> this awkward. I'd still be glad to do the grill for you, and that's $249 and up with nothing
+> committed.
 
 ### 3.9 The ask
 
-Rail stamp:
-
-```
-NEXT
-```
-
-H2:
-
-```
-Walk the property with me
-```
-
-Body:
-
-```
-About forty minutes. I'll look at the pool, the kitchen, the hardscape, and the access, walk
-you through everything that isn't included, and give you the price standing there. You don't
-have to decide that day.
-
-Send me your cross street and whether you've got a pool, an outdoor kitchen, or both.
-```
-
-Button:
-
-```
-Text me your cross street
-```
+> ## Walk the property with me
+>
+> About forty minutes. I'll look at the pool, the kitchen, the hardscape, and the access, walk you
+> through everything that isn't included, and give you the price standing there. You don't have to
+> decide that day.
+>
+> Send me your cross street and whether you've got a pool, an outdoor kitchen, or both.
+>
+> [ Text me your cross street ]  ·  [PHONE] · texting is fine
 
 ---
 
 ## 4. Projects — `projects.html`
 
-**Purpose:** show the second half of the business, and give a prospect who can't be a member a
-real yes.
-**The one ask:** text him about a project — no membership needed.
-
 ### 4.1 Page head
 
-Rail stamp:
+**Rail:** `Projects · Tue–Thu`
 
-```
-PROJECTS · TUE–THU
-```
+> # Project work, membership or not
+>
+> Tuesday through Thursday is kept open for projects, estimates, and the things that come up. You
+> don't have to be a member to hire me for any of it, and unlike the membership, project work runs
+> year round.
 
-H1:
-
-```
-Project work, membership or not
-```
-
-Lede:
-
-```
-Tuesday through Thursday is kept open for projects, estimates, and the things that come up.
-You don't have to be a member to hire me for any of it.
-```
+> **"Year round" is allowed here and only here.** `voice.md` §6.6 bans it as a *membership* claim
+> and explicitly permits it for project work, which genuinely does run all twelve months. This
+> page is what the site has to sell between November and February.
 
 ### 4.2 The two published prices
 
-Rail stamp:
+> ## Two prices I can give you without looking
 
 ```
-PUBLISHED
+Grill and outdoor kitchen deep clean ····························  $249+
+Window well cleanout ···········································   $49+
 ```
 
-H2:
-
-```
-Two prices I can give you without looking
-```
-
-Rows:
-
-```
-Grill and outdoor kitchen deep clean                                            $249+
-Window well cleanout                                                             $49+
-```
-
-Body under:
-
-```
-The plus is doing real work in both. $249 is a standard grill. A full outdoor kitchen with a
-flat-top, a side burner, and stone counters is more, and I'll tell you what it is before I
-start.
-
-$49 is a window well cleaned while I'm already on the property for a visit. A set of six full
-of five years of leaves is a different job and gets quoted.
-
-The deep clean is burners, grates, flavorizer bars, heat shields, the interior, the hood — the
-parts a wipe-down doesn't touch. This is the work my family's business does, and it's where
-this whole thing came from.
-```
-
-**IMG-06** caption (plate state):
-
-```
-PHOTO REQUIRED · Grill and outdoor kitchen, the same frame before and after. Same camera position, same light, same day.
-```
+> The plus is doing real work in both. $249 is a standard grill. A full outdoor kitchen with a
+> flat-top, a side burner, and stone counters is more, and I'll tell you what it is before I start.
+>
+> $49 is a window well cleaned while I'm already on the property for a visit. A set of six full of
+> five years of leaves is a different job and gets quoted.
+>
+> The deep clean is burners, grates, flavorizer bars, heat shields, the interior, the hood — the
+> parts a wipe-down doesn't touch. This is the work my family's business does, and it's where this
+> whole thing came from.
 
 ### 4.3 Quoted after I look at it
 
-Rail stamp:
+> ## Everything else, after I've seen it
+>
+> No price on these until I've walked it. Quoting a flat number from a driveway is how you end up
+> either overcharging somebody or resenting the job.
+>
+> - Pressure washing — patio, walkway, driveway, deck, siding, fence
+> - Storm cleanup beyond routine debris
+> - Drainage correction
+> - Outdoor repairs
+> - Seasonal cleanup — spring open, fall close
+> - Gutter and downspout cleaning
+> - Large-volume debris removal and hauling
+> - Extensive weeding and bed cleanout
+> - Pool filter servicing and equipment work — the things the membership excludes
+> - Special property projects
+>
+> **Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment
+> performance, or pool-system operation unless separately contracted.**
+>
+> Materials, chemicals, salt, filters, and parts are separate and itemized at cost plus 25%.
 
-```
-QUOTED
-```
-
-H2:
-
-```
-Everything else, after I've seen it
-```
-
-Body:
-
-```
-No price on these until I've walked it. Quoting a flat number from a driveway is how you end up
-either overcharging somebody or resenting the job.
-```
-
-List:
-
-```
-Pressure washing — patio, walkway, driveway, deck, siding, fence
-Storm cleanup beyond routine debris
-Drainage correction
-Outdoor repairs
-Seasonal cleanup — spring open, fall close
-Gutter and downspout cleaning
-Large-volume debris removal and hauling
-Extensive weeding and bed cleanout
-Special property projects
-```
+> **The disclaimer travels even here.** The list names pool filter servicing and equipment work,
+> which is a description of pool work, so item 41 applies. Quoting it separately does not create a
+> guarantee and the copy must not let anyone infer one.
 
 ### 4.4 How an estimate works
 
-Rail stamp:
+> ## How an estimate works
+>
+> I come look at it, measure it, and photograph it. You get a number the same day or the next
+> morning — and if it's after Thursday, it might be Monday.
+>
+> It's a flat price, not an hourly rate. If the job takes me longer than I planned, it still costs
+> what I told you. Materials are separate, itemized, at cost plus 25%; you'll see the line on the
+> estimate before the work starts and on the invoice after, never buried in the labour.
+>
+> Estimates are good for 30 days. That's a fact, not pressure.
 
-```
-ESTIMATES
-```
+### 4.5 Members
 
-H2:
-
-```
-How an estimate works
-```
-
-Body:
-
-```
-I come look at it, measure it, and photograph it. You get a number the same day or the next
-morning — and if it's after Thursday, it might be Monday.
-
-It's a flat price, not an hourly rate. If the job takes me longer than I planned, it still costs
-what I told you. Materials are separate, itemized, at cost plus 25% — you'll see the line on the
-estimate before the work starts and on the invoice after, never buried in the labor.
-
-Estimates are good for 30 days. That's a fact, not pressure.
-```
-
-### 4.5 If you're a member
-
-Rail stamp:
-
-```
-MEMBERS
-```
-
-H2:
-
-```
-Members don't get a discount. They get a $49 window well cleared on a day I'm already there.
-```
-
-Body:
-
-```
-Scheduling priority, and no trip minimum. That second one is the whole difference: a small job is
-worth doing while I'm already standing in the yard on your route day, and it isn't worth a
-dedicated drive when I'm not.
-
-That's why the small stuff gets handled for members and doesn't for anybody else. It costs me
-nothing and it's worth more than ten percent off.
-```
-
-**Why the headline changed.** It read *"Members don't get a discount. They get something
-better."* — a withheld benefit, and the body underneath it was doing all the work. Any service
-business in the country could publish that sentence, which is a straight failure of §8 item 30.
-The replacement names the object, locates it in time, and prices it (rules 2, 3, 4 in one line),
-and it can only be written by someone who is already going to be standing in that yard on a known
-day. Nothing in the body needed to change except its first sentence, which had been carrying the
-specificity the headline should have had.
+> ## Members don't get a discount. They get a $49 window well cleared on a day I'm already there.
+>
+> Scheduling priority, and no trip minimum. That second one is the whole difference: a small job
+> is worth doing while I'm already standing in the yard on your route day, and it isn't worth a
+> dedicated drive when I'm not.
+>
+> That's why the small stuff gets handled for members and doesn't for anybody else. It costs me
+> nothing and it's worth more than ten percent off.
 
 ### 4.6 The ask
 
-Rail stamp:
-
-```
-NEXT
-```
-
-H2:
-
-```
-Tell me what it is and I'll come look
-```
-
-Body:
-
-```
-Text me what the job is and your cross street. If it's the grill, tell me what you've got —
-a standalone grill, a built-in, or a full outdoor kitchen with a flat-top.
-```
-
-Button:
-
-```
-Text me about a project
-```
-
-Under it:
-
-```
-[PHONE] · texting is fine
-```
+> ## Tell me what it is and I'll come look
+>
+> Text me what the job is and your cross street. If it's the grill, tell me what you've got — a
+> standalone grill, a built-in, or a full outdoor kitchen with a flat-top.
+>
+> I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
+> I'd rather tell you that than say "within 24 hours."
+>
+> [ Text me about a project ]  ·  [PHONE] · texting is fine
 
 ---
 
 ## 5. About — `about.html`
 
-**Purpose:** answer "you're brand new, why should I trust you."
-**The one ask:** walk the property with me.
-
 ### 5.1 Page head
 
-Rail stamp:
-
-```
-ABOUT
-```
-
-H1:
-
-```
-This is new. I'd be starting with you.
-```
-
-Lede:
-
-```
-There's no track record to point at, no portfolio, and no reviews. I'd rather lead with that
-than have you find it out.
-```
-
-### 5.2 Where it came from
-
-Rail stamp:
-
-```
-LINEAGE
-```
-
-H2:
-
-```
-Where this came from
-```
-
-Body:
-
-```
-What I'm not new at is outdoor kitchens. I've been cleaning grills and outdoor kitchens on
-west-side properties through my family's business, Tri-State Grill Cleaning, and this came out
-of that.
-
-Doing that work put me in a lot of backyards, and the same thing kept happening: the grill got
-cleaned, and the rest of the outdoor living area was clearly nobody's job. The patio furniture
-hadn't been wiped since May. The window wells were full. The hose bib was still connected in
-December. Nobody was looking at any of it, because nobody had been hired to look.
-
-That's the job. Not a task you call about — a schedule, the whole outdoor living area, and a
-record.
-```
-
-**IMG-07** caption (plate state):
-
-```
-PHOTO REQUIRED · FRAME 6 · The WPC513 stencil on the truck door or tailgate, in daylight, equipment behind it
-```
-
-### 5.3 Six, and why
-
-Rail stamp:
-
-```
-THE CAP
-```
-
-H2:
-
-```
-Six properties, and it's a real cap
-```
-
-Body:
-
-```
-Six properties is twelve visits a month, and I do routine visits only on Monday and Friday of
-weeks 1 and 3. That's four route days.
-
-Past six I'd either be adding a fifth route day or hurrying at your house to get to somebody
-else's, and I'm not doing the second one. So when the six are taken the site says MEMBERSHIP
-FULL and I keep a waitlist, and that's a fact about the schedule rather than a sales line.
-
-The empty time is part of what you're paying for. It's what lets a rained-out Monday get moved
-without anybody being bumped, lets a property that needs an extra hour get one, and lets me be
-out on an estimate inside a couple of days.
-```
-
-### 5.4 The route
-
-Rail stamp:
-
-```
-ROUTE
-```
-
-H2:
-
-```
-Why location decides it
-```
-
-Body:
-
-```
-Green Township, Oak Hills, upper Delhi, and Covedale — and inside that, two clusters.
-
-Every property has to be within about fifteen minutes of another one I already take care of. A
-house twenty-five minutes out of position costs me the same unpaid drive twice a month for as
-long as they're a member, and no price fixes distance.
-
-So a qualified property that isn't near a cluster goes on the waitlist. That's true at $329 and
-it's true if you want to start Monday. Two things move you up the list: a spot opening near you,
-or a neighbor of yours with a pool adding their name. Two on one street is a cluster, and that
-changes the math.
-```
-
-### 5.5 The day, not the hour
-
-Rail stamp:
-
-```
-SCHEDULE
-```
-
-H2:
-
-```
-You get told the day, not the hour
-```
-
-Body:
-
-```
-Your visits are the first and third Monday, or the first and third Friday, depending on which
-cluster you're in. You don't need to be home.
-
-I don't give arrival times, and the reason is worth saying out loud: the day I promise you
-eleven o'clock is the day the property before yours gets shortchanged when it needs an extra
-half hour. Eventually that's yours. Never rushing a property is the rule the whole schedule is
-built to protect, so the schedule has slack in it on purpose.
-```
-
-### 5.6 What this is not
-
-Rail stamp:
-
-```
-NOT THIS
-```
-
-H2:
-
-```
-What this isn't
-```
-
-List:
-
-```
-Not a lawn service. No mowing, trimming, edging, fertilizing, aerating, seeding, pruning,
-planting, mulching, or bed work.
-
-Not a pool service. I skim, empty both baskets, and clear the deck. I don't test the water, add
-chemicals, vacuum, brush, backwash, or touch the filter, and I'm not responsible for the water.
-
-Not a landscaper. No installation, no design, no hardscape construction.
-
-Not a handyman. No repairs, no replacement parts, nothing needing a licensed trade.
-
-Not an emergency service. No guaranteed response times and no promised arrival windows.
-
-Not a snow contractor. Salt and ice on the patio, the pool deck, and the walk serving them, on
-scheduled visits. Not the driveway, not the sidewalk, not between visits.
-
-Not a cleaning service. Nothing indoors — no garages, basements, enclosed porches, or sunrooms.
-
-Not a home-watch service. I'm not checking your house while you travel. I'm taking care of the
-outdoor living area on a schedule.
-
-Not a crew, and not growing into one. One person, six properties. That's the whole business and
-it's deliberate.
-
-Not the cheapest. A lawn service is less. A single grill cleaning is less. This costs what it
-costs and the price doesn't move.
-
-Not seasonal. The scope changes in November. The price doesn't.
-```
-
-### 5.7 What closes the gap
-
-Rail stamp:
-
-```
-THE HONEST PART
-```
-
-H2:
-
-```
-What I can do about having no track record
-```
-
-Body:
-
-```
-Four things, and all four are checkable before you pay me anything.
-
-The first four members lock their price for twelve months, so nothing we agree today can move
-on you for a year. There's no contract term — thirty days' notice in writing and you're done,
-Founding Member or not. Everything I don't do is written down before you sign anything. And you
-get a report after every single visit, so if I'm not doing the work you'll know inside two
-weeks, not two years.
-
-The first month is the whole risk. If it's not right, tell me.
-```
+> # This is new. I'd be starting with you.
+>
+> There's no track record to point at, no portfolio, and no reviews. I'd rather lead with that
+> than have you find it out.
+>
+> I'm local, I've got military roots, and what I'm not new at is outdoor kitchens.
+
+> **"Military roots," stated plainly and never quantified.** No rank, no branch, no unit, no span
+> of service, no insignia, no veteran-owned badge. `voice.md` pair 13's second "don't" invents a
+> decade and a personality trait out of three words on a planning sheet, and it is the failure
+> this proof point is most likely to produce.
+
+### 5.2 Where this came from
+
+> ## Where this came from
+>
+> I've been cleaning grills and outdoor kitchens on west-side properties through my family's
+> business, Tri-State Grill Cleaning, and this came out of that.
+>
+> Doing that work put me in a lot of backyards, and the same thing kept happening: the grill got
+> cleaned, and the rest of the outdoor living area was clearly nobody's job. The patio furniture
+> hadn't been wiped since May. The window wells were full. The skimmer basket hadn't been emptied
+> in a fortnight. Nobody was looking at any of it, because nobody had been hired to look.
+>
+> That's the job. Not a task you call about — a schedule, the whole outdoor living area, and a
+> written record.
+
+### 5.3 The four words
+
+> ## Service, honesty, integrity, dependability
+>
+> Those are the four words I'd want somebody to use about me, and the only way to make them mean
+> anything is to show the receipts.
+>
+> So: everything I don't do is published on this site before you're asked to sign anything. The
+> price is one number and it's on the page. The season ends October 31 and I say so above the
+> price rather than below it. And you get a written summary after every single visit, so if I'm
+> not doing the work you'll know in two weeks, not two years.
+>
+> > The first month is the whole risk. If it's not right, tell me.
+
+### 5.4 The cap
+
+> ## Six properties, and it's a real cap
+>
+> Six properties is twelve visits a month, and I do routine visits only on Monday and Friday.
+> That's four route days.
+>
+> Past six I'd either be adding a fifth route day or hurrying at your house to get to somebody
+> else's, and I'm not doing the second one. So when the six are taken the site says MEMBERSHIP
+> FULL and I keep a waitlist, and that's a fact about the schedule rather than a sales line.
+>
+> The empty time is part of what you're paying for. It's what lets a rained-out Monday get moved
+> without anybody being bumped, lets a property that needs an extra hour get one, and lets me be
+> out on an estimate inside the week.
+
+### 5.5 The route
+
+> ## Why location decides it
+>
+> Green Township, Oak Hills, upper Delhi, and Covedale — and inside that, two clusters.
+>
+> Every property has to be within about fifteen minutes of another one I already take care of. A
+> house twenty-five minutes out of position costs me the same unpaid drive twice a month for as
+> long as they're a member, and no price fixes distance.
+>
+> So a qualified property that isn't near a cluster goes on the waitlist. Two things move you up: a
+> spot opening near you, or a neighbour of yours adding their name. Two on one street is a cluster,
+> and that changes the math.
+
+### 5.6 The day, not the hour
+
+> ## You get told the day, not the hour
+>
+> Your visits land on your route day — a Monday or a Friday, set when you sign. You don't need to
+> be home.
+>
+> I don't give arrival times, and the reason is worth saying out loud: the day I promise you eleven
+> o'clock is the day the property before yours gets shortchanged when it needs an extra half hour.
+> Eventually that's yours. Never rushing a property is the rule the whole schedule is built to
+> protect, so the schedule has slack in it on purpose.
+
+### 5.7 What this isn't
+
+> ## What this isn't
+
+- **Not a lawn service** — No mowing, trimming, edging, fertilizing, aerating, seeding, pruning,
+  planting, mulching, or bed work.
+- **Not a pool company** — I skim, brush, vacuum, empty both baskets, backwash when the system
+  wants it, and read the salt level and the warning lights. I don't test or balance the water and
+  I don't add chemicals. *Plus the disclaimer, in the same block.*
+- **Not a landscaper** — No installation, no design, no hardscape construction.
+- **Not a handyman** — No repairs, no replacement parts, nothing needing a licensed trade.
+- **Not an emergency service** — No guaranteed response times and no promised arrival windows.
+- **Not a winter service** — The membership stops October 31. No snow, no ice, no freeze
+  protection, and no billing between November and February.
+- **Not a cleaning service** — Nothing indoors: no garages, basements, enclosed porches, or
+  sunrooms.
+- **Not a home-watch service** — I'm not checking your house while you travel. I'm taking care of
+  the outdoor living area on a schedule.
+- **Not a crew, and not growing into one** — One person, six properties. That's the whole business
+  and it's deliberate.
+- **Not the cheapest** — A lawn service is less. A pool service is less. A single grill cleaning is
+  less. This costs what it costs and the price doesn't move.
+
+> **The retired eleventh row was "Not seasonal — the scope changes in November. The price
+> doesn't."** It is now false in both halves. Its replacement is "Not a winter service," which
+> says the true version of the same boundary.
 
 ### 5.8 The ask
 
-```
-Walk the property with me — about forty minutes
-```
+> ## Walk the property with me
+>
+> About forty minutes. Send me your cross street and whether you've got a pool, an outdoor kitchen,
+> or both.
+>
+> [ Text me your cross street ]  ·  [PHONE] · texting is fine
 
 ---
 
 ## 6. Apply — `apply.html`
 
-**Purpose:** take the inquiry with the two qualifying questions attached.
-**The one ask:** send the two answers.
-
 ### 6.1 Page head
 
-Rail stamp:
-
-```
-APPLY
-```
-
-H1:
-
-```
-Two questions, then I'll come look
-```
-
-Lede:
-
-```
-Does the property have a pool, an outdoor kitchen, or both — and what's your cross street?
-
-I take six clients and the route is built around two clusters, so location decides more than
-anything else does. If it works, I'll come walk the property with you, show you exactly what's
-included and what isn't, and give you the price while I'm standing there. About forty minutes.
-```
-
-**ENROLMENT STATE — open:**
-
-```
-6 OF 6 SPOTS OPEN
-```
+> # Two questions, then I'll come look
+>
+> Does the property have a pool, an outdoor kitchen, or both — and what's your cross street?
+>
+> I take six clients and the route is built around two clusters, so location decides more than
+> anything else does. If it works, I'll come walk the property with you, show you exactly what's
+> included and what isn't, and give you the price while I'm standing there. About forty minutes.
+>
+> **6 of 6 spots open**
 
 ### 6.2 The form
 
-Legend:
+> ## Send me the two answers
 
-```
-Your details
-```
+| Field | Label | Help text |
+|---|---|---|
+| Name | Your name | Required. |
+| Phone | Phone | Texting is fine. Give me a phone or an email, whichever you'd rather I use. |
+| Email | Email | — |
+| Cross street | Cross street | Required. The nearest cross street is enough — I don't need your address yet. |
+| Pool | A pool | *(see fieldset hint)* |
+| Kitchen | An outdoor kitchen, a grill, or outdoor counters | *(see fieldset hint)* |
+| Notes | What isn't getting handled right now? | Optional. The window wells, the patio nobody's washed since 2022, the skimmer basket you haven't looked in. This is usually the useful part. |
 
-Fields:
+**Fieldset legend:** `WHAT DOES THE PROPERTY HAVE?`
 
-```
-Your name
-   Help text: Required.
-Phone — texting is fine
-Email
-Cross street
-   Help text: Required. The nearest cross street is enough — I don't need your address yet.
-```
+**Fieldset hint — rewritten, and the rewrite is load-bearing:**
 
-Both required fields carry the word in visible help text. Marking one and not the other is worse
-than marking neither, because the reader reasonably concludes the unmarked one is optional
-(SC 3.3.2).
+> Check either, both, or neither. It doesn't change the price — $279 is $279. It changes how much
+> of the two hours the property uses, which is how I work out whether it fits.
 
-Fieldset legend:
+> **Under the old model these two checkboxes selected a configuration.** The hint used to read
+> *"Neither is a real answer and it's a real price,"* which only made sense when a pool changed
+> the number. Under the flat price the same two questions are a **client-selection** question, not
+> a pricing one — a pool-and-kitchen property consumes far more of the two hours than a plain
+> patio at the same fee, so the attributes decide *whether he takes the client*, not what he
+> charges (`CANON.md` §3). The hint had to say that or the form would have implied a tier.
 
-```
-What does the property have?
-```
+**Button:** `Send it` · beside it: `Or text me — [PHONE]`
 
-Checkboxes:
+### 6.3 Error sentences — written into the page, not injected
 
-```
-A pool
-An outdoor kitchen, a grill, or outdoor counters
-   Help text: Check either, both, or neither. Neither is a real answer and it's a real price.
-```
+| Field | Sentence |
+|---|---|
+| Name | I need a name so I know who I'm answering. |
+| Email | That doesn't look like an email address. Check it, or leave it blank and give me a phone number instead. |
+| Cross street | I need a cross street. The nearest one is enough. |
 
-Textarea:
+### 6.4 Under the form
 
-```
-What isn't getting handled right now?
-   Help text: Optional. The window wells, the patio nobody's washed since 2022, the hose bib
-   you're not sure about. This is usually the useful part.
-```
+> I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and I'd
+> rather tell you that than say "within 24 hours."
+>
+> Nothing gets sent to anybody else, there's no mailing list, and I won't follow up more than once
+> if you don't reply.
+>
+> If this form doesn't go through, text me at [PHONE]. That works better than the form anyway.
 
-Submit button:
+> **This is the reference reply commitment** (`voice.md` §8 item 14b, pair 17), and it is
+> unchanged by the re-baseline. It commits to *answering*, not to *arriving*; it names its own
+> failure case before you find it; and it quotes the banned phrase back at the reader in order to
+> refuse it.
 
-```
-Send it
-```
+### 6.5 If the route doesn't fit
 
-Beside the button:
-
-```
-Or text me — [PHONE]
-```
-
-Under the form:
-
-```
-I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
-I'd rather tell you that than say "within 24 hours."
-
-Nothing gets sent to anybody else, there's no mailing list, and I won't follow up more than once
-if you don't reply.
-```
-
-The reply commitment is the full one, with the failure case attached — the same wording as
-`thanks.html`, which `voice.md` §8 item 14b names as the reference. It previously ran here
-without the Thursday clause, which made it a smaller promise than the one the confirmation page
-makes about the same message. Two different answers to "when will he write back" is a defect
-even when both are optimistic.
-
-### 6.3 Microcopy — errors and states
-
-**Required-field help, shown permanently rather than injected on error:**
-
-```
-Required
-```
-
-Carried on **both** required fields — name and cross street.
-
-**Native validation messages** are left to the browser. Where a hint helps, it is permanent help
-text, not an error:
-
-```
-Your name
-   Required.
-
-Cross street
-   Required. The nearest cross street is enough — I don't need your address yet.
-
-Phone — texting is fine
-   Give me a phone or an email, whichever you'd rather I use.
-```
-
-**Invalid-field sentences.** Written into the page on every load and revealed when the control is
-actually invalid — never injected, so there is no message on the site that is not in the markup
-and auditable here. They exist because the copper rule on an invalid field is colour on its own,
-and colour on its own is not information (SC 1.4.1).
-
-```
-Your name         →  I need a name so I know who I'm answering.        (apply.html)
-                     I need a name to write on the list.               (waitlist.html)
-
-Email             →  That doesn't look like an email address. Check it, or leave it blank and
-                     give me a phone number instead.
-
-Cross street      →  I need a cross street. The nearest one is enough.
-```
-
-First person, no "we," no "error," no "invalid," and each one says what he needs and why rather
-than what the field did wrong.
-
-**If the form can't send** (endpoint down, no JavaScript, offline):
-
-```
-If this form doesn't go through, text me at [PHONE]. That works better than the form anyway.
-```
-
-**Success — `thanks.html`:**
-
-```
-Got it.
-
-I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
-I'd rather tell you that than say "within 24 hours."
-
-If you'd rather just talk, text me at [PHONE].
-```
-
-**Waitlist success — same page, second block:**
-
-```
-You're on the list.
-
-It's a written list with your street on it. When a spot opens it goes to whoever is closest to
-the route I'm already driving, and I'll tell you honestly where you sit and what would have to
-happen.
-
-In the meantime I do project work Tuesday through Thursday: grill and outdoor kitchen deep
-cleans from $249, window wells from $49, and pressure washing quoted after I look at it.
-```
-
-### 6.4 If the route doesn't fit
-
-Rail stamp:
-
-```
-IF IT DOESN'T FIT
-```
-
-Body:
-
-```
-If your street isn't near either cluster, I'll tell you that straight instead of taking the
-money and driving forty minutes twice a month. You go on the waitlist with your street on it,
-and I'll still do project work for you in the meantime.
-```
-
-Link:
-
-```
-The waitlist, and how it actually works
-```
+> ## If your street isn't near the route
+>
+> I'll tell you that straight instead of taking the money and driving forty minutes twice a month.
+> You go on the waitlist with your street on it, and I'll still do project work for you in the
+> meantime.
 
 ---
 
 ## 7. Waitlist — `waitlist.html`
 
-**Purpose:** the waitlist, which exists in both enrolment states.
-**The one ask:** add your name.
-
 ### 7.1 Page head
 
-Rail stamp:
-
-```
-WAITLIST
-```
-
-H1:
-
-```
-The waitlist is a real list
-```
-
-Lede:
-
-```
-It's written down, it has your street on it, and when a spot opens it goes to whoever is
-closest to the route I'm already driving. Not to whoever asked first, and not to whoever pays
-the most.
-```
-
-**ENROLMENT STATE — open.** Figure line, then the line that explains why a list exists while
-spots are still open:
-
-```
-6 OF 6 SPOTS OPEN
-
-Spots are open right now, so the list is for properties that aren't near either route cluster
-yet. That's a real reason to be on it, and it isn't a rejection.
-```
-
-**ENROLMENT STATE — full.** Replace the block above with the MEMBERSHIP FULL stamp from §8.1.
+> # The waitlist is a real list
+>
+> It's written down, it has your street on it, and when a spot opens it goes to whoever is closest
+> to the route I'm already driving. Not to whoever asked first, and not to whoever pays the most.
+>
+> **6 of 6 spots open**
+>
+> Spots are open right now, so the list is for properties that aren't near either route cluster
+> yet. That's a real reason to be on it, and it isn't a rejection.
 
 ### 7.2 Why there's a list at all
 
-Rail stamp:
-
-```
-THE MECHANISM
-```
-
-H2:
-
-```
-Why there's a list at all
-```
-
-Body:
-
-```
-Two reasons, and they're both about the route.
-
-Six properties is twelve visits a month across four route days. When those six are taken,
-that's the cap — past it I'd be hurrying at one house to get to another, and that's the one
-thing the whole schedule is built to prevent.
-
-And a property that isn't near one of the two clusters goes on the list even when a slot is
-open. A house twenty-five minutes out of position costs me the same unpaid drive twice a month
-for as long as they're a member, and no price fixes distance. That's true at $329, and it's
-true if you want to start Monday.
-```
+> ## Why there's a list at all
+>
+> Two reasons, and they're both about the route.
+>
+> Six properties is twelve visits a month across four route days, and routine visits only happen
+> Monday and Friday. When those six are taken, that's the cap — past it I'd be hurrying at one
+> house to get to another, and that's the one thing the whole schedule is built to prevent.
+>
+> And a property that isn't near one of the two clusters goes on the list even when a slot is open.
+> A house twenty-five minutes out of position costs me the same unpaid drive twice a month for as
+> long as they're a member, and no price fixes distance.
 
 ### 7.3 What moves you up
 
-Rail stamp:
-
-```
-WHAT HELPS
-```
-
-H2:
-
-```
-Two things move you up
-```
-
-Body:
-
-```
-A spot opening near you. Or a neighbor of yours with a pool or an outdoor kitchen adding their
-name — if two of you are on the same street, that's a cluster, and it changes the math
-completely.
-
-That second one is the fastest way up the list in practice, and it's worth asking around.
-```
-
-It read "the fastest way **onto** the list," which contradicted the heading directly above it —
-the reader of this section is already on the list, and the whole section is about moving up it.
-Nothing about a neighbor adding their name gets anybody onto a list they are already on.
+> ## Two things move you up
+>
+> A spot opening near you. Or a neighbour of yours adding their name — if two of you are on the
+> same street, that's a cluster, and it changes the math completely.
+>
+> That second one is the fastest way up the list in practice, and it's worth asking around.
 
 ### 7.4 The form
 
-Legend:
+> ## Add your name
 
-```
-Add your name
-```
+Same fields and same error sentences as §6.2 and §6.3, with three differences:
 
-Fields — same as `apply.html`, including the required-field help and the invalid-field sentences
-in §6.3, with two strings that differ:
+| | Waitlist version |
+|---|---|
+| Name error | I need a name to write on the list. |
+| Cross-street help | Required, and on this form it's the whole point — the list is ordered by how close you are to the route. |
+| Notes label | Anything you'd want handled in the meantime? |
+| Notes help | Optional. Project work doesn't need a membership and doesn't need a slot. |
 
-```
-Your name
-   Invalid: I need a name to write on the list.
+**Button:** `Add me to the waitlist`
 
-Anything you'd want handled in the meantime?
-   Help text: Optional. Project work doesn't need a membership and doesn't need a slot.
-```
+**Under the form:**
 
-Submit button:
-
-```
-Add me to the waitlist
-```
-
-Beside it:
-
-```
-Or text me — [PHONE]
-```
-
-Under the form:
-
-```
-I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
-I'd rather tell you that than say "within 24 hours." I'll tell you honestly where you sit and
-what would have to happen.
-
-If this form doesn't go through, text me at [PHONE].
-```
-
-This form leaves a person waiting on him exactly the way `apply.html` does, so it carries the
-same reply commitment (`voice.md` §8 item 14b). It previously said only what he would tell them,
-never when.
+> I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and I'd
+> rather tell you that than say "within 24 hours." I'll tell you honestly where you sit and what
+> would have to happen.
+>
+> If this form doesn't go through, text me at [PHONE].
 
 ### 7.5 Meanwhile
 
-Rail stamp:
+> ## Project work doesn't need a slot
+>
+> Tuesday through Thursday I'm doing projects and estimates whether you're a member or not, and
+> project work runs year round.
 
 ```
-MEANWHILE
+Grill and outdoor kitchen deep clean ····························  $249+
+Window well cleanout ···········································   $49+
 ```
 
-H2:
-
-```
-Project work doesn't need a slot
-```
-
-Body:
-
-```
-Tuesday through Thursday I'm doing projects and estimates whether you're a member or not.
-
-Grill and outdoor kitchen deep clean — $249+
-Window well cleanout — $49+
-
-Pressure washing, gutters, bed cleanout, drainage, storm work, and spring open or fall close all
-get quoted after I look at them. Flat number, materials itemized separately at cost plus 25%,
-good for 30 days.
-```
-
-Link:
-
-```
-Everything I do as a project
-```
+> Pressure washing, gutters, bed cleanout, drainage, storm work, and spring open or fall close all
+> get quoted after I look at them. Flat number, materials itemized separately at cost plus 25%,
+> good for 30 days.
 
 ---
 
@@ -1955,286 +1257,207 @@ Everything I do as a project
 
 ### `thanks.html` — the success state for both forms
 
-Rail stamp `RECEIVED`. H1 and lede are in §6.3. One further section, so the page is not a dead
-end:
+> # Got it.
+>
+> I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
+> I'd rather tell you that than say "within 24 hours."
+>
+> If you'd rather just talk, text me at [PHONE].
 
-Rail stamp:
+> ## You're on the list
+>
+> It's a written list with your street on it. When a spot opens it goes to whoever is closest to
+> the route I'm already driving, and I'll tell you honestly where you sit and what would have to
+> happen.
+>
+> In the meantime I do project work Tuesday through Thursday, year round: grill and outdoor kitchen
+> deep cleans from $249, window wells from $49, and pressure washing quoted after I look at it.
 
-```
-WHILE YOU WAIT
-```
+> ## Worth reading before we talk
+>
+> The two things people are most surprised by are what isn't included on the pool, and that the
+> season stops on October 31. Both are on the site in full, and I'd rather you read them now than
+> hear them from me in a driveway.
+>
+> [ What's included, and what isn't ]  [ The price ]
 
-H2:
-
-```
-Worth reading before we talk
-```
-
-Body:
-
-```
-The two things people are most surprised by are what isn't included, and what happens in
-December. Both are on the site in full, and I'd rather you read them now than hear them from me
-in a driveway.
-```
-
-Two quiet buttons: `What's included, and what isn't` · `The price`.
-
-The waitlist success block from §6.3 sits above this one, under the rail stamp
-`IF YOU JOINED THE WAITLIST` and the heading `You're on the list`.
+> **That last paragraph changed with the model.** It used to say the two surprises were *"what
+> isn't included, and what happens in December."* December is no longer a surprise about *work* —
+> it is a surprise about *the season ending*, and the pool is now the sharper of the two because
+> the scope grew.
 
 ### `404.html`
 
-Rail stamp:
+> # There's nothing at this address
+>
+> Six pages is the whole site, and they're all in the bar above. If you were looking for the price,
+> it's $279 a month and it's on the pricing page.
+>
+> [ The price ]  ·  Or text me — [PHONE]
 
-```
-NOT FOUND
-```
-
-H1:
-
-```
-There's nothing at this address
-```
-
-Body:
-
-```
-Six pages is the whole site, and they're all in the bar above. If you were looking for the
-price, it's on the pricing page and it's published.
-```
-
-Button `The price`, with `Or text me — [PHONE]` beside it. No apology, no joke, no illustration.
+The 404 states the price in the body. A wrong-address page is still a surface, and the ten-second
+test still applies to it.
 
 ---
 
 ## 8. MEMBERSHIP FULL state — `membership-full.html`
 
-> This is the home page written for the steady state. `00-model/operating-model.md` §5 — the
-> scarcity is a fact about the schedule, not a device. Never soften it, never fake it, and never
-> quietly take a seventh client because someone was persistent.
+`membership-full.html` is `index.html` in the full state. Same layout, same sections, same voice.
+Three blocks change and one is added.
+
+### 8.1 Masthead — replaces §1.1's enrolment stamp
+
+> **MEMBERSHIP FULL**
 >
-> Everything not listed below is **identical to §1**, including the price ledger. The price does
-> not move because the book is full.
+> All six spots are taken. That's the actual cap, not a sales line — six properties is twelve
+> visits a month, and routine visits only happen Monday and Friday. Past six I'd be rushing
+> somebody.
+>
+> [ Add your name to the waitlist ]  ·  Or text me — [PHONE]
 
-### 8.1 Masthead — replaces §1.1
+The `h1`, the lede, the price line and the pool line are **unchanged**. Someone arriving in the
+full state still needs to know what this is before they need to know they cannot have it.
 
-Rail stamp:
+### 8.2 Why six — added section, directly after the masthead
 
-```
-ENTRY 01 · THE WHOLE THING
-```
+> ## Why it stops at six
+>
+> Six properties is twelve visits a month, and routine visits happen only on Monday and Friday.
+> That's four route days.
+>
+> Past six I'd either add a fifth route day or start hurrying at one house to get to another. Never
+> rushing a property is the rule the whole schedule is built to protect, so the cap isn't a number
+> I picked to sound selective. It's what fits.
+>
+> The empty time is part of what the six are paying for. It's what lets a rained-out Monday get
+> moved without anybody being bumped, lets a property that needs an extra hour get one, and lets me
+> be out on an estimate inside the week.
 
-H1:
+### 8.3 The price section — one paragraph changes
 
-```
-Six properties. Twice a month. Written down every time.
-```
+The founding-terms paragraph is replaced by:
 
-Lede — unchanged from §1.1.
+> The price doesn't move because the book is full, and it won't move when a spot opens.
 
-**ENROLMENT STATE — full.** The stamp, reversed out of copper in a hairline box:
+Four members have joined by definition in this state, so the founding terms are gone. The single
+figure and the five clauses are **byte-identical** to the open state.
 
-```
-MEMBERSHIP FULL
-```
+### 8.4 The ask — replaces §1.10
 
-Under it:
-
-```
-All six spots are taken. That's the actual cap, not a sales line — six properties is twelve
-visits a month across four route days, and past that I'd be rushing somebody.
-```
-
-Primary ask:
-
-```
-Add your name to the waitlist
-```
-
-Under it:
-
-```
-Or text me — [PHONE]
-```
-
-### 8.2 Why six — added section, sits directly after the masthead
-
-Rail stamp:
-
-```
-THE CAP
-```
-
-H2:
-
-```
-Why it stops at six
-```
-
-Body:
-
-```
-Six properties is twelve visits a month, and routine visits happen only on Monday and Friday of
-weeks 1 and 3. That's four route days.
-
-Past six I'd either add a fifth route day or start hurrying at one house to get to another.
-Never rushing a property is the rule the whole schedule is built to protect, so the cap isn't a
-number I picked to sound selective. It's what fits.
-
-The empty time is part of what the six are paying for. It's what lets a rained-out Monday get
-moved without anybody being bumped, lets a property that needs an extra hour get one, and lets
-me be out on an estimate inside a couple of days.
-```
-
-### 8.3 The waitlist — replaces §1.9
-
-Rail stamp:
-
-```
-NEXT
-```
-
-H2:
-
-```
-The waitlist is a real list
-```
-
-Body:
-
-```
-I keep it in writing with your street on it, because when a spot opens it goes to whoever is
-closest to the existing route. Add your name and I'll tell you honestly where you sit and what
-would have to happen.
-
-Two things move you up: a spot opening near you, or a neighbor of yours with a pool adding
-their name. Two on one street is a cluster, and that changes the math.
-
-In the meantime I do project work Tuesday through Thursday, membership or not: grill and
-outdoor kitchen deep cleans from $249, window wells from $49, and pressure washing quoted after
-I look at it.
-```
-
-Button:
-
-```
-Add your name to the waitlist
-```
-
-### 8.4 What is deleted in the full state
-
-- The Founding Member note. Four members have joined by definition, so the rate is gone
-  (`00-model/pricing.md` §2). Delete it from `pricing.html` at the same time.
-- "All six spots are open. This is a new business and I'd be starting with you."
-- Every "text me your cross street" call to action. In the full state the only ask is the
-  waitlist plus the project offer (`01-brand/voice.md` §1, CTA rules).
+> ## The waitlist is a real list
+>
+> I keep it in writing with your street on it, because when a spot opens it goes to whoever is
+> closest to the route I'm already driving. Add your name and I'll tell you honestly where you sit
+> and what would have to happen.
+>
+> Two things move you up: a spot opening near you, or a neighbour of yours adding their name. Two
+> on one street is a cluster, and that changes the math.
+>
+> In the meantime I do project work Tuesday through Thursday, membership or not: grill and outdoor
+> kitchen deep cleans from $249, window wells from $49, and pressure washing quoted after I look at
+> it.
+>
+> [ Add your name to the waitlist ]  ·  Or text me — [PHONE]
 
 ### 8.5 What must not appear in the full state
 
-Checked against `01-brand/voice.md` §6.5 — the entire manufactured-urgency category. None of
-these goes on the page under any circumstances:
-
-`join our exclusive waitlist` · `priority access` · `spots fill fast` · `don't miss out` ·
-`limited availability` · `by invitation` · `VIP` · `act fast` · `we're currently at capacity!`
-· any count that is not the true count · any implication that a seventh slot could be found for
-the right person.
+- **No urgency of any kind.** No "spots fill fast," no "join now for priority access," no
+  "exclusive," no "invitation only." The cap is real and explaining the mechanism makes it
+  believable in a way "exclusive" never does (`voice.md` pair 7).
+- **No price change.** Not up because demand exists, not down to fill the last slot.
+- **No implied growth.** No "as I expand," no "additional territories," no "taking a limited
+  number of additional clients." `CANON.md` §1.
+- **No waitlist length.** Publishing "23 people ahead of you" is a scarcity number, and the only
+  count that may ever be published is the true count of open slots.
 
 ---
 
 ## 9. Deferred claims — written, approved, and **not on the site**
 
-None of the following is published, because none of it is true yet
-(`01-brand/brand-brief.md` §4.3). The wording is held here so that when each fact exists, the
-approved line gets pasted and nothing gets invented in a hurry.
+Held here so nobody has to rewrite them under pressure, and so nobody pastes them early.
 
-| Publishable when | The approved line, exactly |
-|---|---|
-| The general liability policy is bound and in force | `Insured — general liability.` |
-| The Ohio Articles of Organization are filed | `Westside Property Care LLC, an Ohio limited liability company.` |
-| One real service report exists | `Here is an actual report from a February visit, with the address removed.` |
-| Real reviews exist | The exact count and the exact platform, e.g. `Three reviews on Google.` |
-| Real photographs exist | A caption naming the property type, the season, and what is happening |
+**Insurance — paste only when the policy is bound and in hand:**
 
-**Never publishable, at all:** "licensed," "licensed and insured," "fully insured," "bonded,"
-"certified," years in business, a client count, a testimonial, a star rating, an award, or
-"family owned and operated." Ohio does not license this trade, so "licensed" is not early — it
-is wrong.
+> Insured — general liability.
+
+Five words. Not "fully insured," which is a meaningless intensifier. Not "licensed and insured,"
+because **Ohio does not license this trade** and the claim is wrong rather than early.
+
+**The LLC — paste only when the Articles are filed and accepted:**
+
+> Westside Property Care 513 LLC
+
+**A review count — paste only when reviews exist, and only as the exact true count:**
+
+> [N] reviews on Google.
+
+Never "5-star," never "highly rated," never a rounded number, and never a review reproduced on
+this site rather than linked to on the profile.
+
+**A real service summary** replaces the facsimile in §1.5 the day one exists, with the address
+removed and the "format only" label taken off.
 
 ---
 
-## 10. Audit — `01-brand/voice.md` §8, run against this deck
+## 10. Audit — `01-brand/voice.md` §8, run against this deck and the built site
 
-**What the first pass covered, and what it did not.** Items 1–30 below were run against **prose
-only** — the words in this file. That is what "this deck" meant, and it is stated here because
-the pass returned thirty passes while two real defects were live on the site, both of them
-outside prose:
+Items 1–30 against the prose. Items 31–34 and 35–42 against the **built** surfaces: the
+structured data, the rendered CSS case, the `alt` and label strings, and the meta values.
 
-- an `openingHoursSpecification` of Monday–Friday `08:00`–`17:00` in the `index.html` JSON-LD,
-  which is a false availability claim under item **14a** and would have rendered in Google as
-  "Open · Closes 5 PM" for a man who works 1.5–2 days a week;
-- a missing `text-transform` on `.figure` in `base.css`, so `MEMBERSHIP FULL` and
-  `6 OF 6 SPOTS OPEN` rendered in sentence case — a softer claim than the one approved, and a
-  break of item **32**.
-
-Both are fixed. Neither was findable by reading this file, because neither was in it. Items 31–34
-are the non-prose sweep and they are run against the **built site** — `site/*.html`,
-`site/styles/*.css`, `site/js/*.js`, `site/robots.txt` — not against this deck. Item 14 is
-restated below to cover structured data as well as sentences.
-
-| # | Check | Result |
+| # | Item | Result |
 |---|---|---|
-| 1 | First person singular; no "our," "us," company-as-subject | Pass. The two "we"s that appear — "we'll walk it together on the first visit" — can only mean you-and-me |
-| 2 | Reader addressed as "you" | Pass |
-| 3 | No crew, team, or staff claimed or designed around | Pass. "There is no crew, no dispatcher, and no subcontractor" is stated outright |
-| 4 | Every description of work names a specific object | Pass — both baskets, the six patio chairs, the grease tray, the hose bib, the flat-top, the window wells |
-| 5 | At least one thing located on the property | Pass — "the south side," "under the pergola," "the fern on the north side," "the west one" |
-| 6 | Every finding carries a price or an honest "I'd have to look" | Pass — $49 in the facsimile; "quoted after I look at it" everywhere else |
-| 7 | No unfalsifiable adjectives from §6.3 | Pass |
-| 8 | Prices verbatim from `pricing.md`, unrounded | Pass — $229, $269, $289, $329, $249+, $49+, and the $121–142 pool-service figure quoted unaltered |
-| 9 | $289 and $329 lead; $229 sits underneath as the base | Pass — ledger order is $289, $329, $269, $229, and $229 carries the `BASE` label |
-| 10 | Count of price points never fixed; no `+$60`/`+$40` module arithmetic | Pass. No sentence anywhere states how many prices exist, and the modules appear nowhere on any customer-facing surface. Adding or removing a row breaks no sentence |
-| 11 | Zero testimonials, review counts, ratings, years, certifications, licenses, awards | Pass |
-| 12 | Insurance and LLC not claimed | Pass — held in §9, unused |
-| 13 | Six-client cap stated with the real count; no urgency phrases | Pass — `6 OF 6 SPOTS OPEN` is the true number today |
-| 14a | **Availability — must be absent.** No arrival time, time window, response or turnaround commitment, or same-day promise, *in prose or in structured data* | Pass **now**. Prose was clean and the reason for the refusal is stated in About §5.5. The JSON-LD was not: `openingHoursSpecification` Mon–Fri 08:00–17:00 has been deleted from `index.html` and recorded in `seo.md` §3's omissions table, with an HTML comment above the block saying why it must not come back |
-| 14b | **Reply — must be present.** Every surface that leaves someone waiting says when he answers, in his own hours, with the failure case attached | Pass **now**, on all four: `thanks.html` (the reference wording), `apply.html` under the form, `waitlist.html` under the form, and `projects.html` on the estimate. `apply.html` and `projects.html` carried the promise without the after-Thursday clause and `waitlist.html` carried no timing at all; all three now use the reference construction |
-| 15 | No claim about pool water, chemistry, or clarity | Pass — the opposite is stated three times |
-| 16 | No implication of lawn or landscape service | Pass |
-| 17 | Exclusions present on every surface stating a price, and positioned above it | Pass — home §1.6 before §1.7; pricing §3.3 before §3.4 |
-| 18 | No minutes per visit, planning allowance, $100/hr, $149 floor, route hours, or metrics | Pass |
-| 19 | Internal quoting anchors absent as a published price list | Pass — projects §4.3 names categories with no prices |
-| 20 | Price stated as the same all twelve months | Pass — five separate places |
-| 21 | Winter names specific Dormant Season work, not "reduced service" | Pass — home §1.5, included §2.4, pricing §3.7 |
-| 22 | No winter discount, pause, or seasonal rate proposed or hinted | Pass — refused explicitly in pricing §3.5 and included §2.5 |
-| 23 | Zero exclamation marks, emoji, or ✓ glyphs | Pass |
-| 24 | Sentence case; ALL CAPS only on the status stamps | Pass — caps appear only on `MEMBERSHIP FULL`, `GREEN SEASON`, `DORMANT SEASON`, `BASE`, the rail labels, and the report header |
-| 25 | Every banned phrase in §6.1–§6.7 absent | Pass — checked as a find pass across this file and `site/` |
-| 26 | One em dash per paragraph max; "twice a month"; "first and third Monday" | Pass |
-| 27 | Street names only; no client address; no identifying house photo | Pass — and the image slots forbid it in `site-spec.md` §6 |
-| 28 | Exactly one ask per surface, naming the next step and how long it takes | Pass — "about forty minutes" appears with every walkthrough ask |
-| 29 | When full, the only ask is the waitlist plus the project offer | Pass — §8 |
-| 30 | Could a competitor with two hundred accounts and a call center publish this word for word? | **No** — with one line repaired. "The fern on the north side dries out faster than the others, so I moved it two feet under the eave" cannot be written by a company that does not know the fern. But the Projects members headline read *"Members don't get a discount. They get something better"* — a withheld-benefit tease anyone could publish, and it failed this item. Rewritten to name, locate, and price the thing: see §4.5 |
+| 1–3 | First person singular, reader as "you", no crew | **Pass.** Every `we` / `us` on the site was read by hand; each can only mean *you and me* — "we'll walk it together," "the schedule we set when you sign," "either of us," "one of us owns the water." Zero where "we" could be swapped for "the company." |
+| 4–5 | Named, located objects | **Pass.** Both baskets, the robot's debris container, the Inspect Cell light, the six patio chairs, the fern on the north side, the two window wells on the south side, the west one with water in it. |
+| 6 | Every finding carries a price or an honest "I'd have to look" | **Pass.** The facsimile finding is $49. Every quoted category says "quoted after I look at it." |
+| 7 | Unfalsifiable adjectives absent, including "military precision" | **Pass.** Grepped §6.3 in full. |
+| 8 | Prices exact and traceable | **Pass.** $279, $249+, $49+, all from `pricing.md`. |
+| 9, 10 | *Retired* | Superseded by 35 and 36. |
+| 11 | Zero testimonials, ratings, years, certifications, licences | **Pass.** The only "licensed" on the site is *"a licensed trade,"* referring work **out** to electricians and plumbers, which is not a claim about him. |
+| 12 | Insurance / LLC wording only if true | **Pass.** Neither appears. Both held in §9. |
+| 13 | The cap stated as the real number; no urgency | **Pass.** "6 of 6 spots open" is the true count today. Every phrase in §6.5 absent, including the new season-closing row. |
+| 14a | No availability promise | **Pass.** No arrival time, no window, no SLA, no same-day. No `openingHoursSpecification` in the structured data. |
+| 14b | Reply commitment present where someone waits | **Pass.** Apply, Waitlist, Thanks and Projects all carry it. |
+| 15 | No claim about water, chemistry, clarity or equipment | **Pass.** |
+| 16 | No implied lawn or landscape service | **Pass.** Stated as an exclusion on four pages. |
+| 17 | Exclusions present and above the price | **Pass.** Home §1.7 before §1.8; Pricing §3.3 before §3.4. |
+| 18a | The cap travels with all its clauses | **Pass.** The five clauses ship as one indivisible component. |
+| 18b | No performance target | **Pass.** No "average visit length," no minutes-per-visit as a measure, nothing implying he aims to finish quickly. The checklist's eight time budgets are **not** published; the eight parts are published without their minute allowances, except the pool's "about thirty minutes," which is in the agreement the customer signs. |
+| 19a, 19b | No anchor list, no ranges, nothing before the look | **Pass.** The only range on the site is $121–142, attached to **full pool service with chemistry** — a referral fact about a product he does not sell. |
+| 20–22 | *Retired* | Superseded by 37–40. |
+| 23 | Zero exclamation marks, emoji, check glyphs | **Pass.** |
+| 24 | Sentence case; caps only on the stamps | **Pass.** `.stamp`, `.rail` and `.figure` all carry `text-transform: uppercase`, so the stamps render in caps and no lowercase is letterspaced. |
+| 25 | Every banned phrase in §6 absent | **Pass.** The one deliberate appearance is `"within 24 hours"`, quoted in order to refuse it. |
+| 26 | One em dash per paragraph; "twice a month"; a route day, not an hour | **Pass.** |
+| 27 | Street names only | **Pass.** No address anywhere, including the structured data. |
+| 28 | Exactly one ask per surface | **Pass.** |
+| 29 | Full state → waitlist plus project offer; off season → waitlist or walkthrough plus March 1 | **Pass.** §8.4 and §1.2 ⛄. |
+| 31 | Structured data asserts only what the prose asserts | **Pass.** `seo.md` §3, property by property. `priceRange` is `$279 per month`. No hours, no rating, no review, no employee. |
+| 32 | Rendered case | **Pass.** The three stamps are typed in caps **and** rendered in caps. The stylesheet carries the rule and is auditable there. |
+| 33 | Alt text and labels | **Pass.** The seven image slots ship as plates with mono captions naming the missing frame; when photographs land, every alt string names the object and locates it, and **frame 5's alt and caption both carry the pool disclaimer**. No "we" and no bare "WPC" in any label, button or `aria-label`. |
+| 34 | Titles, meta and social | **Pass.** `seo.md` §2. |
+| 35 | One price, and only one | **Pass.** $279 is the only membership number. $229, $269, $289 and $329 are absent from prose, markup, JSON-LD, `og:` values, filenames and CSS. $249 appears **only** as the published grill deep-clean starting price. |
+| 36 | No tiers and no division | **Pass.** No "plans," "tiers," "packages," "options," "add-ons," "starting at" or "from" attached to the membership. $279 is never divided: `139.50` and `69.75` return zero hits. |
+| 37 | The season, stated | **Pass.** March 1 – October 31 and sixteen visits on all ten pages. "Year-round" appears only for project work, which is the one permitted use. |
+| 38 | The off season, stated honestly | **Pass.** No scheduled visits, no billing, next season opens March 1. The winter offering is named as separate, optional and outside the agreement — and is **not described**, because the file defining it does not exist yet. |
+| 39 | The cap's clauses | **Pass.** See 18a. |
+| 40 | No invented off-season revenue | **Pass.** No retainer, no winter membership, no rolled-over credit, no prepay discount, no annual rate, no referral credit, no last-slot price. The founding concession is a pro-rated 2026 remainder plus a locked 2027 rate — a term, not a discount — and is never framed as a promotion. |
+| 41 | The pool disclaimer travels | **Pass.** It appears in the same block as **every** description of pool work: the eight parts (Home and What's included), the pool section, the exclusion list on three pages, the summary facsimile, the About "what this isn't" list, and the quoted-projects list. Frame 5's future alt text and caption both carry it. |
+| 42 | Name and roots | **Pass.** Full name on first reference on every surface; WPC513 thereafter; the bare three letters appear **nowhere** — not in prose, headings, alt text, slugs, filenames or structured data. `WPC 513` with a space exists only inside the logo lockup. The tagline is verbatim. Military service is "military roots" and nothing more. |
+| 30 | Could a competitor with two hundred accounts and a call centre publish this? | **No.** Not the six-property cap, not "I'll tell you which pool company your neighbours use," not "if the water is what keeps you up at night, have the pool company," not "you're not buying sixteen visits, you're buying the sixteenth one," and not a summary that names the fern on the north side. |
 
-### Items 31–34 — the non-prose surfaces
-
-Run against the built site, not against this file. Numbered 31–34 because `voice.md` §8 never
-renumbers and item 30 is written to be run last.
-
-| # | Check | Result |
-|---|---|---|
-| 31 | **Structured data** asserts only what the prose asserts and `00-model/` supports; where there is no honest value the field is omitted rather than filled | **Pass now — this is where the worst defect was.** `openingHoursSpecification` deleted (item 14a). `areaServed` said `Delhi Township, Ohio` while every other surface said *upper Delhi*, which is a machine-readable claim on an area the price does not fit — now `Upper Delhi, Cincinnati, Ohio`. `makesOffer` set `price` and `minPrice` to the same figure, asserting an exact price where the site publishes `$249+` and `$49+` — `price` dropped, `minPrice` kept. Still absent and still correct: no `aggregateRating`, no `review`, no `employee`, no `foundingDate`, no service area outside the four qualified ones, no price not in `pricing.md`. Full table in `seo.md` §3 |
-| 32 | **Rendered case** — the status stamps actually render in caps, `text-transform` present wherever the stylesheet carries that rule, no letterspaced lowercase | **Pass now.** `.figure` set the mono face, tracking, and tabular figures but no `text-transform`, so `MEMBERSHIP FULL` and `6 OF 6 SPOTS OPEN` rendered as "Membership full" and "6 of 6 spots open" — letterspaced lowercase, which `visual-direction.md` §3.4 bans outright, and a softer claim than the approved stamp. Second-order: `fonts/README.md` subsets Plex Mono to uppercase and digits only, so once the real face lands the lowercase would fall out of the subset mid-word. `text-transform: uppercase` added to `.figure` in `base.css` with the reason in a comment. `.stamp` and `.rail` already had it |
-| 33 | **Alt text and labels** name a specific object and locate it; button, `aria-label`, placeholder, and error text pass §6 and the person rules | Pass. There is no `alt` on the site yet because there is no photograph yet — every slot is a `<figure class="plate">` whose `figcaption` names the missing frame and its subject ("A pool deck mid-visit, standing height, my own equipment in frame"), and `site-spec.md` §6 carries the alt rule for the day they are shot. No `aria-label` on the site says anything but `Main` and `Footer`. No placeholders anywhere — every field has a real `<label>`. The new invalid-field sentences in §6.3 are first person and say what he needs, not what the field did |
-| 34 | **Titles, meta, and Open Graph** pass §6 in full — no banned phrases, no invented credentials, no urgency, sentence case | Pass. Checked across all ten pages plus the `og:` values. No "premier," "solutions," "professional," "licensed," "free estimate," "call now," or any §6.5 urgency phrase. Sentence case throughout, the business name being the only capitalised exception. `projects.html` gained `Cincinnati` in its `<title>`, which is geography rather than a keyword stuff, and its `og:title` was updated in step so the two agree. Seven descriptions were shortened so each one's closing differentiator survives truncation — the wording is in `seo.md` §2 and every price in them is verbatim from `pricing.md` |
+**What this audit does not cover:** whether the claims are *true*. The site says six clients,
+sixteen visits, a written summary every time, and no seventh client ever. Every one of those is
+falsifiable by his behaviour rather than by a grep, and the moment one stops being true, the copy
+on this page becomes a lie that reads exactly the same.
 
 ---
 
 ## Related files
 
-- `site-spec.md` — where each block above lands, and the image slots
-- `seo.md` — titles and descriptions, which are the only copy not in this file
-- `01-brand/voice.md` — the checklist in §10
-- `01-brand/messaging.md` — the section order and objection answers this deck is built from
-- `00-model/pricing.md` — every price
-- `00-model/service-catalog.md` — every scope and exclusion statement
+- `site-spec.md` — where each of these blocks sits, and the components that carry them
+- `seo.md` — the titles, descriptions and structured data this prose has to agree with
+- `01-brand/voice.md` — the rules, the worked pairs, and the checklist in §10 above
+- `01-brand/messaging.md` §1 — *the sixteenth visit*, and §1.5, the footer short form
+- `00-model/pricing.md` — $279, $249+, $49+
+- `00-model/service-catalog.md` §3, §4 — the eight parts and every exclusion
+- `_source/2026-08-05-owner-decisions.md` §2 — the agreement the disclaimer is quoted from

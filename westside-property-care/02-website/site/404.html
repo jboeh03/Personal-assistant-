@@ -4,31 +4,51 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Nothing at this address — Westside Property Care</title>
+<title>Nothing at this address — Westside Property Care 513</title>
 <meta name="description" content="That page isn't here.">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-16.svg" type="image/svg+xml" sizes="16x16">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.svg">
 <link rel="stylesheet" href="/styles/tokens.css">
 <link rel="stylesheet" href="/styles/base.css">
 <link rel="stylesheet" href="/styles/components.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nothing at this address — Westside Property Care 513">
+<meta property="og:description" content="That page isn't here.">
+<meta property="og:url" content="[URL]/">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to the main content</a>
 
 <header class="strip-wrap">
+  <!-- The status strip is --navy in BOTH seasons. It carries the mark, and the
+       mark does not change with the calendar (visual-direction.md §4.2). -->
   <div class="strip">
     <div class="container strip__inner">
-      <a class="mark" href="/index.html">
-        <span>Westside Property Care</span>
-        <span class="mark__short">WPC513</span>
+      <a class="lockup" href="/index.html" aria-label="Westside Property Care 513 — home">
+        <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+        <span class="lockup__type">
+          <span class="lockup__word">WPC 513</span>
+          <span class="lockup__name">Westside Property Care</span>
+        </span>
       </a>
       <div class="season">
-        <span class="stamp season__stamp season__stamp--green">Green Season · Apr–Oct</span>
-        <span class="stamp season__stamp season__stamp--dormant">Dormant Season · Nov–Mar</span>
+        <!-- The three status stamps are IN SEASON, OFF SEASON and MEMBERSHIP
+             FULL. They are typographic objects, not emphasis, and they are
+             typed in caps here as well as being rendered in caps by
+             .stamp with text-transform: uppercase. -->
+        <span class="stamp season__stamp season__stamp--in">IN SEASON · MAR 1 – OCT 31</span>
+        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – FEB 28</span>
         <input type="checkbox" id="season-switch" class="visually-hidden">
         <label class="season__label" for="season-switch">
-          <span class="season__to-dormant">See Dormant Season</span>
-          <span class="season__to-green">See Green Season</span>
+          <span class="season__to-off">See off season</span>
+          <span class="season__to-in">See in season</span>
         </label>
       </div>
     </div>
@@ -50,24 +70,34 @@
 <script src="/js/season.js"></script>
 
 <main id="main">
+
   <section class="pagehead" aria-labelledby="page-h">
     <div class="container">
       <p class="rail">Not found</p>
       <h1 id="page-h">There's nothing at this address</h1>
-      <p class="lede">Six pages is the whole site, and they're all in the bar above. If you were looking for the price, it's on the pricing page and it's published.</p>
+      <p class="lede">Six pages is the whole site, and they're all in the bar above. If you were looking for the price, it's $279 a month and it's on the pricing page.</p>
       <div class="cta">
         <a class="btn" href="/pricing.html">The price</a>
         <span class="cta__aside">Or text me — <a href="sms:[PHONE]">[PHONE]</a></span>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer class="foot">
   <div class="container">
-    <p class="mark mark--stacked">
-      <span>Westside Property Care</span>
-      <span class="mark__short">WPC513</span>
+    <p class="lockup lockup--foot">
+      <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+      <span class="lockup__type">
+        <span class="lockup__word">WPC 513</span>
+        <span class="lockup__name">Westside Property Care</span>
+      </span>
     </p>
     <hr class="foot__rule">
     <nav class="foot__nav" aria-label="Footer">
@@ -79,6 +109,8 @@
       <a href="/apply.html">Apply</a>
       <a href="/waitlist.html">Waitlist</a>
     </nav>
+    <hr class="foot__rule">
+    <p class="foot__line">Sixteen visits. Six properties. One person, and a written summary every time.</p>
   </div>
 </footer>
 

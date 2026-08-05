@@ -4,31 +4,70 @@
 **Reads from:** `CANON.md`, `00-model/`, `01-brand/` · **Never contradicts them**
 **Design brief:** `01-brand/visual-direction.md` — FIELD LEDGER. Followed, not reinterpreted.
 
+> **Re-baselined 2026-08-05, against the owner's shipped documents.** Six locked facts changed
+> and every one of them landed on this site: **one price ($279)**, **an eight-month season
+> (March 1 – October 31, sixteen visits)**, **the two-hour visit cap**, **the name**, **a
+> materially heavier pool scope**, and **a real logo in navy and orange**.
+>
+> Three things did *not* get torn down and rebuilt, which is the whole reason this was a day
+> and not a week:
+>
+> - **The season mechanic was repurposed, not removed.** The two states stop being Green /
+>   Dormant *scopes at one year-round price* and become **IN SEASON** and **OFF SEASON**.
+>   `season.js`, the checkbox, the strip markup and the token structure are unchanged; the
+>   dates, the labels and the off-season copy are new.
+> - **The Field Ledger structure survived the palette swap intact.** The rail and measure, the
+>   bleed track, the three-weight hairline system, the five uneven gaps, near-zero radius, the
+>   two-shadow rule — none of it is colour-dependent. Only the ink changed.
+> - **The accessibility work from the previous pass survived and was re-verified**, not
+>   assumed. §9.4 records what was re-checked and what broke.
+>
+> **Two things were rebuilt from scratch.** The four-row configuration ledger is deleted along
+> with the four prices in it, replaced by the single-figure set-piece (§5). And **the entire
+> contrast audit in §9.4 was recomputed from zero** against the new palette — the old ~90-line
+> matrix is void and none of its numbers were carried forward.
+
 ---
 
 ## 1. What this site is for, and what it must not become
 
-`CANON.md` §5: **the site is not a lead-generation engine. It is what closes someone who
-already heard his name** — from a neighbor, a yard sign, a grill-cleaning job, or a Google
-Business Profile listing.
+`CANON.md` §6: **the site is not a lead-generation engine. It is what closes someone who
+already heard his name** — from a neighbour, a yard sign, a grill-cleaning job, or a Google
+listing.
+
+His own standard governs the top of every page:
+
+> **A homeowner understands in 10 seconds: what you do → who it's for → price → how to contact
+> you.**
+
+That is a testable claim about the masthead, and §2 states how each page passes it.
 
 Three consequences that govern every decision below:
 
-1. **The architecture is a close, not a funnel.** There is one path through the site and it
-   ends in the same place from every page. No lead magnets, no gated content, no newsletter.
+1. **The architecture is a close, not a funnel.** One path through the site, ending in the same
+   place from every page. No lead magnets, no gated content, no newsletter.
 2. **SEO does not shape the information architecture.** No service-area page farm, no
-   `/pool-cleaning-green-township` doorway pages. A six-client business does not need them and
-   they would make the site look like every other home-services site. See `seo.md` §1.
-3. **Scope and price are unambiguous and both are published.** Anything a competitor would
-   hide behind "contact us for a quote" is on the page, and the exclusions sit *above* the
+   `/pool-cleaning-green-township` doorway pages. See `seo.md` §1.
+3. **Scope and price are unambiguous and both are published.** Anything a competitor hides
+   behind "contact us for a quote" is on the page, and the exclusions sit **above** the rendered
    price on every surface that carries one (`01-brand/messaging.md` §3).
+
+### The ten-second test, per surface
+
+| Element | Where it is | On which pages |
+|---|---|---|
+| **What you do** | The `h1` and the first lede | All ten |
+| **Who it's for** | "six homes on the west side," and the geography line in the footer | All ten |
+| **Price** | `$279 a month` — in the masthead lede on home, in the `h1` on pricing | Home, Pricing, 404 |
+| **How to contact you** | The `sms:` link beside every button, and the footer contact column | All ten |
 
 ### The one ask, per state
 
-| Enrolment state | The single ask | Where it lives |
+| State | The single ask | Where it lives |
 |---|---|---|
 | **Open** (1–6 slots free) | Text me your cross street → walk the property with me, about forty minutes | `apply.html` |
 | **MEMBERSHIP FULL** (0 free) | Add your name to the waitlist, plus the project offer | `waitlist.html` |
+| **OFF SEASON** (Nov 1 – end Feb) | The same ask, plus the March 1 date, stated as a fact and never as a deadline | `apply.html` / `waitlist.html` |
 
 `01-brand/voice.md` §1 allows exactly one ask per surface. Every page ends in the same one.
 
@@ -41,274 +80,375 @@ Ten files. Six in the navigation. That is the whole site.
 | # | File | In nav | Purpose | Single conversion goal |
 |---|---|---|---|---|
 | 1 | `index.html` | Home | Close the person who already heard his name, in one scroll | Reach `apply.html`, or text the cross street |
-| 2 | `whats-included.html` | What's included | Make the scope and the two seasons unambiguous; answer "what happens in December" in full | Keep reading to `pricing.html` |
-| 3 | `pricing.html` | Pricing | Make the price unambiguous and unnegotiable, with the exclusions above it | Reach `apply.html` |
-| 4 | `projects.html` | Projects | Show the second half of the business, and give a non-qualifying prospect a real yes | Text him about a project — no membership required |
+| 2 | `whats-included.html` | What's included | Make the scope, the pool boundary and the season unambiguous | Keep reading to `pricing.html` |
+| 3 | `pricing.html` | Pricing | Make the one price unambiguous and unnegotiable, exclusions above the figure | Reach `apply.html` |
+| 4 | `projects.html` | Projects | The second half of the business, and a real yes for a non-qualifying prospect | Text him about a project — no membership required |
 | 5 | `about.html` | About | Answer "you're brand new, why should I trust you," and explain the cap as a mechanism | Reach `apply.html` |
 | 6 | `apply.html` | Apply | Take the inquiry with the two qualifying questions attached | Form submitted, or a text sent |
-| 7 | `waitlist.html` | — (contextual) | The waitlist, which exists in **both** states | Waitlist form submitted |
-| 8 | `membership-full.html` | — (state swap) | `index.html` in the MEMBERSHIP FULL state — the drop-in replacement home page | Reach `waitlist.html` |
+| 7 | `waitlist.html` | — (contextual) | The waitlist, which exists in **both** enrolment states | Waitlist form submitted |
+| 8 | `membership-full.html` | — (state swap) | `index.html` in the MEMBERSHIP FULL state — a drop-in replacement home page | Reach `waitlist.html` |
 | 9 | `thanks.html` | — | Success state for both forms | Nothing. It ends. |
 | 10 | `404.html` | — | Wrong address. Points at the price and the phone number | Reach a real page |
 
 ### Why this shape and not another
 
-- **Home is long and does the whole job on its own.** Someone arriving from a yard sign or a
-  neighbor's recommendation should be able to close without a second click: what it is, what
-  happens on a visit, the report, winter, what is excluded, the price, the geography, the ask.
-  Every subsequent page is the long version of one home-page section for the reader who needs
-  more before they commit.
-- **"What's Included" is one page, not two.** Splitting Green Season and Dormant Season into
-  separate pages would let a reader see a summer service and a winter service and conclude
-  they are being charged twice for one. They are on the same page, one after the other, under
-  a single heading that says the price does not change. That is a structural argument, not a
-  copy argument, and it is the reason the split is refused.
-- **Projects is a page, not a footnote.** `CANON.md` §2 — the membership is the lead engine
-  and project revenue is the actual income. A prospect who fails the route test or the budget
-  test is still a profitable project customer (`00-model/ideal-client.md` §4), and the site
-  needs somewhere to send them that does not read as a consolation prize.
-- **The waitlist is permanent, not a full-state artifact.** `00-model/ideal-client.md` §4: a
-  qualified prospect who does not fit a route cluster goes on the waitlist *even when slots are
-  open, even at $329.* Building the waitlist as something that only appears when the book is
-  full would misrepresent the model. It is a live page in both states.
-- **No blog, no gallery, no FAQ page, no testimonials page.** A gallery cannot exist until
-  real photographs do (`CANON.md` §9.3). A testimonials page cannot exist at all
-  (`01-brand/brand-brief.md` §4.4). The FAQ content is distributed to the section it belongs
-  to, because an FAQ page is where objections go to be ignored.
+- **Home is long and does the whole job on its own.** Someone arriving from a yard sign should
+  be able to close without a second click: what it is, the sixteenth-visit argument, what
+  happens on a visit, the summary, the season, what is excluded, the price, the geography, the
+  ask.
+- **"What's included" is one page, not two.** Under the old year-round model this page had to
+  hold two scopes side by side so a reader could not conclude they were being charged twice for
+  one. **There is now one scope**, so the page holds the eight parts of a visit, the pool block
+  in full, the season, and the exclusions — in that order, which is `messaging.md` §3's order.
+- **Projects is a page, not a footnote.** `CANON.md` §2 — the membership is the lead engine and
+  project revenue is the actual income. It matters *more* now: an eight-month membership year
+  makes project work the larger share. A prospect who fails the route test or the budget test is
+  still a profitable project customer.
+- **The waitlist is permanent, not a full-state artifact.** A qualified prospect who does not
+  fit a route cluster goes on the waitlist *even when slots are open*. Building it as something
+  that only appears when the book is full would misrepresent the model.
+- **No blog, no gallery, no FAQ page, no testimonials page.** A gallery cannot exist until real
+  photographs do. A testimonials page cannot exist at all. FAQ content is distributed to the
+  section it belongs to, because an FAQ page is where objections go to be ignored.
 
 ---
 
-## 3. The two enrolment states
+## 3. The two enrolment states, and the two seasonal states
 
-The scarcity is real (`00-model/operating-model.md` §5). Both states are fully built.
+There are **two independent switches**, and confusing them is the fastest way to break this
+site. One is about the book. The other is about the calendar.
 
-### 3.1 Where the number lives
+| | Controls | Driven by | Where it lives |
+|---|---|---|---|
+| **Enrolment** | Open ↔ MEMBERSHIP FULL | A human editing three files | `index.html`, `apply.html`, `waitlist.html` |
+| **Season** | IN SEASON ↔ OFF SEASON | The date, with a manual toggle | Every page, one checkbox |
+
+### 3.1 Where the slot number lives
 
 The open-slot count appears in **three files only**: `index.html`, `apply.html`, and
 `waitlist.html`. It is deliberately *not* in the sticky status strip, because that strip is on
-every page and would make the count an eight-file edit every time a slot changes.
+every page and would make the count a ten-file edit every time a slot changes.
 
-In each of the three files it sits inside one block marked:
+In each of the three it sits inside one block marked:
 
 ```html
 <!-- ══ ENROLMENT STATE — the only block to edit when a slot opens or fills ══ -->
 ```
 
 The shipped default is **6 of 6 spots open**, which is the true number today: the business has
-not launched. Launch target is 4 members, hard cap 6 (`00-model/operating-model.md` §2).
+not launched. Launch target is 4 members, hard cap 6.
 
 ### 3.2 Switching to MEMBERSHIP FULL
 
 `membership-full.html` is `index.html` written in the full state — same layout, same sections,
-different masthead stamp, different ask, plus one added entry explaining the cap mechanism.
-It is a complete page, not a fragment, so the swap is a file copy and not an edit:
+different masthead stamp, different ask, plus one added entry explaining the cap. It is a
+complete page, not a fragment, so the swap is a file copy and not an edit:
 
 ```sh
-cp index.html        membership-open.html   # keep the open state
-cp membership-full.html index.html          # go full
+cp index.html            membership-open.html   # keep the open state
+cp membership-full.html  index.html             # go full
 ```
 
 To reopen, copy `membership-open.html` back over `index.html` and correct the count.
 `membership-full.html` carries `<meta name="robots" content="noindex">` while it is the staging
-copy; the note to remove it is in the file and in `seo.md` §6.
+copy; the note to remove it is in `seo.md` §6.
 
-### 3.3 What changes between states
+### 3.3 What changes between enrolment states
 
 | Element | Open | Full |
 |---|---|---|
-| Masthead figure | `6 OF 6 SPOTS OPEN` | `MEMBERSHIP FULL`, reversed out of `--copper` in a hairline-boxed stamp |
+| Masthead figure | `6 OF 6 SPOTS OPEN` in `--ember` | `MEMBERSHIP FULL`, `--paper` reversed out of `--ember-deep` in a hairline-boxed stamp |
 | Home ask | Text me your cross street → walkthrough | Add your name to the waitlist |
-| Added section | — | "Why six" — twelve visits, four route days, route proximity |
-| `apply.html` lead | Two qualifying questions | Points to `waitlist.html` first, then still takes project inquiries |
-| Price ledger | Unchanged | Unchanged — the price does not move because the book is full |
-| Founding Member note | Shown while fewer than four have joined | Removed once four have joined, in both states |
+| Added section | — | "Why it stops at six" — twelve visits, four route days, route proximity |
+| Nav | Apply | Apply is swapped for Waitlist |
+| Founding-terms paragraph | Shown | Replaced by "the price doesn't move because the book is full" |
+| The price | Unchanged | Unchanged — $279 either way |
 
-Nothing else changes. The waitlist page is byte-identical in both states.
+### 3.4 What changes between seasonal states
+
+Only the three `--season-*` / `--wash` custom properties and four blocks of copy. **Layout,
+type, spacing, hairlines, the masthead navy and the mark do not move.** The page changes
+temperature, not shape.
+
+| Element | IN SEASON | OFF SEASON |
+|---|---|---|
+| `--season-ground` | `#0E2E52` navy | `#3A4E60` drained slate |
+| `--season-support` | `#1A6E6B` pool teal | `#1F6580` colder ice-blue, used only on the March 1 date |
+| `--wash` (row hover) | `#E4E8EE` cool | aliased to `--paper-deep`, warm |
+| Status stamp | `IN SEASON · MAR 1 – OCT 31` | `OFF SEASON · NOV 1 – FEB 28` |
+| Season strip | 10 delivered `--ink`, 1 current `--ember`, 5 remaining `--rule` | every tick `--rule`, the ember square on the first March tick, preceded by `NEXT SEASON OPENS MARCH 1` |
+| Season-strip caption | pro-rated remainder + 2027 lock | "nothing scheduled, nobody billed, next season opens March 1" |
+| `.pool` teal | live | reverts to `--ink` — there is no pool work off season |
+| Season divider | full-length ticks | half-length, every second one dropped |
+
+**The switch is a real `<input type="checkbox">` with a real `<label>`.** It works with
+JavaScript disabled. `js/season.js` only sets its opening position from `Date().getMonth()` —
+months 2–9 inclusive are in season, everything else is off — and remembers a manual choice for
+the session. Nothing else on the site depends on that file.
 
 ---
 
 ## 4. Global components
 
-Fourteen components. There is no card among them, by direction
-(`01-brand/visual-direction.md` §4.3, §12.3).
+Sixteen components. There is no card among them, by direction
+(`01-brand/visual-direction.md` §4.3, §12.4).
 
 | Component | Where | Notes |
 |---|---|---|
-| **Status strip** | Every page, sticky ≥768px | Wordmark + `WPC513` left, season stamp + season switch right. One of exactly two elements permitted a shadow, because it overlaps the content beneath it (§4.4 of the brief). The other is the bleeding masthead plate, for the same reason. |
-| **Season switch** | Status strip | A real `<input type="checkbox">` + `<label>`. Works with JS disabled via `body:has()`. `js/season.js` only sets its initial position from the date. |
+| **Status strip** | Every page, sticky ≥768px | **`--navy` in both seasons** — it carries the mark, and the mark does not change with the calendar. One of exactly two elements permitted a shadow, because it overlaps the content beneath it. |
+| **Logo lockup** | Strip and footer | Inline SVG house-and-tree line mark + `WPC 513` in `--ember-lift` + the hairline + the name in small caps. 40px minimum. §8. |
+| **Season switch** | Status strip | Real checkbox + label, `body:has()` for the CSS. `js/season.js` sets its opening position only. |
 | **Primary nav** | Every page, under the strip | `<nav aria-label="Main">`, six links, `aria-current="page"`. Wraps on small screens; no hamburger, no JS. |
-| **Masthead** | Home, `membership-full` | Display headline breaking one column *left* of the measure, lede, the figure line, the ask, and the bleed-track plate. Replaces the banned centred hero. |
-| **Page head** | All inner pages | Rail stamp + `h1` + lede. Smaller than the masthead; no figure. |
+| **Masthead** | Home, `membership-full` | Display headline breaking one column *left* of the measure, lede, the figure line, the ask, the season strip, and the bleed-track plate. Replaces the banned centred hero. |
+| **Page head** | All inner pages | Rail stamp + `h1` + lede, and on three of them the season strip. Smaller than the masthead; no figure. |
 | **Ledger entry** | Everywhere | Rail label (mono, uppercase) + measure block + `1px --rule` hairline beneath. No box, no fill at rest, no radius, no shadow. This is what replaces cards. |
-| **Rail label** | Every entry | `<p class="rail">` on mobile/tablet it sits *on* the rule above the entry; ≥1024px it moves into the left rail. Pure CSS, one markup order. |
-| **Figure line** | 3 files | `--type-figure` mono, tabular numerals. Two numbers only: the open-slot count and the monthly price. |
-| **Price ledger** | Home, Pricing, Projects, Waitlist | `<dl>` of independent rows, each a `<div>` wrapping a `<dt>`/`<dd>` pair. See §5. **One markup contract, everywhere it appears.** The two project ledgers were built as `<ul>/<li>/<span>`, which looks identical and tells a screen reader nothing about which number belongs to which job; they are now `<dl>` like the other two. |
-| **Report facsimile** | Home, What's included | Inset on `--paper-deep`, hairlines top and bottom, 0.9× body size, `--flag-ochre` margin rule on the finding. Set-piece #2 in the brief. |
-| **Exclusion list** | Home, What's included, Pricing | `<ul>` with a hanging mono `NOT` marker. Never styled as a "features" list — the marker is a strike-through rule, not a glyph (`voice.md` §6.7 bans ✓/✗ glyphs). |
-| **Plate** | 7 image slots | The empty ruled band that stands in for a photograph. See §6. |
-| **Season divider** | Once per page, in the bleed track | Inline SVG survey-tick line: 2,316 B raw, **403 B gzipped**, zero network requests. Ticks halve in length and every second one is dropped in Dormant Season, so the ornament gets sparser in winter. |
-| **Form** | Apply, Waitlist | Native validation, honeypot, visible `Required` on both required fields, a written-in error sentence per field. Works with JS off; `js/forms.js` adds `aria-invalid` and nothing else. See §7. |
-| **Footer** | Every page | Full nav, contact, the mark, the two published project prices, and the honest disclosure block. **The only reversed panel on the site**, and therefore the only place the copper focus ring is overridden to `--paper` — §9.4. |
+| **Rail label** | Every entry | `<p class="rail">`. Below 1024px it sits *on* the rule above the entry; ≥1024px it moves into the left rail. Pure CSS, one markup order. |
+| **Figure line** | 3 files | `--type-figure` mono, tabular numerals. Three numbers only: the slot count, the price, the visit number. |
+| **The season strip** | Home, `membership-full`, What's included, Pricing | Sixteen ticks. §6. |
+| **The single figure** | Home, `membership-full`, Pricing | The price, once per page, as one ruled line. §5. |
+| **Project price ledger** | Projects, Waitlist | `<dl>` of two rows — the two published *project* starting prices. **Not a membership price list.** |
+| **Summary facsimile** | Home, `membership-full` | Inset on `--paper-deep`, hairlines top and bottom, 0.9× body size, `--ember` margin rule on the finding, the pool disclaimer inside the same block. Set-piece 3. |
+| **Exclusion list** | Home, What's included, Pricing, About | `<ul>` with a hanging mono label and a rule. Never a features list; no ✓/✗ glyphs anywhere. |
+| **Plate** | 7 image slots | The empty ruled band that stands in for a photograph. §7. |
+| **Season divider** | Once per page, in the bleed track | Inline SVG survey-tick line. Ticks halve and every second one is dropped off season, so the ornament gets sparser when the business is closed. |
+| **Form** | Apply, Waitlist | Native validation, honeypot, visible `Required` on both required fields, a written-in error sentence per field. Works with JS off; `js/forms.js` adds `aria-invalid` and nothing else. §9. |
+| **Footer** | Every page | The **only reversed content panel**, on `--season-ground`. Carries the sixteenth-visit short form, the contact block, the two published project prices, and the honest disclosure. |
 
 ---
 
-## 5. The price ledger — the anti-plan-grid component
+## 5. The single figure — what replaced the price ledger
 
-`CANON.md` §3 presentation rule and `01-brand/voice.md` §3 both govern this component, and it
-is the single most likely place for the site to go wrong.
+🔁 **The four-row configuration ledger is deleted.** It existed because four prices existed and
+a fifth might appear. **There is one price.** A three-row ledger with one row in it is a defect,
+not a design (`visual-direction.md` §4.5).
 
 ### What it must not be
 
-Not four boxes. Not a comparison table with a "most popular" flag. Not a toggle. Not a
-calculator. Not a "build your plan" widget. **And it must never publish the `+$60` / `+$40`
-module arithmetic** — the modules are how the price is derived internally, not how it is shown.
-A reader who is handed the components will do the sums and start shopping between the results,
-which converts one membership into a menu of four plans.
+Not four boxes. Not a comparison table. Not a toggle, a calculator, or a "build your plan"
+widget. **Not a `<dl>`, not a `<table>`, and not a `<th>`** — nothing on the page would still
+make grammatical sense if a second price were added, and that is the test. No sentence anywhere
+says how many prices there are, because there is nothing to count.
 
 ### What it is
 
-A ruled ledger. Four independent rows, each of the form *[what the property has] — [price]*,
-with a leader rule of `--rule` running between the two and the price set in `--type-figure`
-mono on a tabular figure column so the digits stack.
+One ruled line.
 
 ```
-A property with a pool ·············································  $289  a month
-A property with a pool and an outdoor kitchen ······················  $329  a month
-────────────────────────────────────────────────────────────────────────────────────
-A property with an outdoor kitchen ·································  $269  a month
-BASE   Property care on its own ····································  $229  a month
+ONE PRICE
+──────────────────────────────────────────────────────────────
+$279  / MONTH
+──────────────────────────────────────────────────────────────
+Two scheduled visits a month, March 1 through October 31 — sixteen visits a season
+Up to two hours of on-site service each visit
+Highest-priority maintenance items first, using my judgement
+Completion of every possible task during every visit is not guaranteed
+Unused service time does not roll over
 ```
 
-- **Order is fixed by `CANON.md` §3 and `pricing.md` §2:** $289 and $329 lead. $229 never
-  leads. $269 is a real price that gets charged and sits with the others, not in a footnote.
-- **The first two rows close on a heavier `1px --ink` rule.** The last two close on `--rule`.
-  That is the whole visual hierarchy — no colour, no badge, no emphasis weight.
-- **`$229` carries a mono rail label `BASE`.** It reads as the floor the others are measured
-  from without any arithmetic being published.
-- **Rows are structurally independent.** Each is a `<div>` wrapping a `<dt>`/`<dd>` pair inside
-  one `<dl>`. Adding, removing, or repricing a configuration is one contiguous block of markup
-  and touches no CSS, no sentence, and no other row — required by
-  `01-brand/visual-direction.md` §12.5.
-- **No sentence on the page states how many prices there are.** `voice.md` §3's price-count
-  rule. The copy says "what you pay depends on what your property has," never "four options."
+- `$279` in `--type-figure` mono, `--ember`, hard against the left edge of the measure.
+- `/ MONTH` in `--type-stamp` on the baseline beside it. Nothing is right-aligned, because
+  there is nothing to align against.
+- A mono rail label reading `ONE PRICE`, and a 1px `--ink` rule above the figure.
+- Directly beneath, in one ruled block at `--type-small`, **all five boundary clauses**.
 
-Directly beneath the ledger, always, and never above it: the billing line (two visits a month,
-same price in January as in July, card on file charged on the 1st, thirty days' notice, no
-term). And above the ledger, always: the exclusions (`messaging.md` §3, section order).
+**The cap never appears without all of its clauses.** `voice.md` §8 item 39 requires that
+"up to two hours" travels with *highest priority first*, *completion is not guaranteed*, and
+*unused time does not roll over*. Shipping them as one indivisible block is how that rule is
+enforced structurally rather than by remembering.
+
+**And the price and the hours are never in the same breath.** `$279 ÷ 4 hours = $69.75` lands
+inside the Cincinnati handyman band. The masthead states the price and does not mention hours;
+the hours appear in this block, on `whats-included.html`, and in the objection answer on
+`pricing.html`, which concedes the reader's arithmetic once and never produces its own. No
+division of $279 appears anywhere on the site — verified by grep for `139.50` and `69.75`.
+
+Above the figure on every surface that carries one: the exclusions, including the pool
+disclaimer. Below it: billing and cancellation. That order is `messaging.md` §3 and it does not
+change.
 
 ---
 
-## 6. Image slots — every one needs a real photograph
+## 6. The season strip — the sixteenth visit, drawn
 
-**No real photography exists** (`CANON.md` §9.3). **Stock photography is never a final answer**
-(`01-brand/visual-direction.md` §8). Until the frames below are shot, each slot ships as a
-**plate**: an empty band on `--paper-deep` with hairlines top and bottom and a mono caption
-naming the missing frame. That is honest, it looks intentional, and the Field Ledger direction
-was chosen partly because it looks finished with zero images.
+`visual-direction.md` §4.5 set-piece 2, and it is the visual form of the argument that replaced
+*"the same price in January as in July."*
 
-Each slot in the markup carries an HTML comment naming the required shot. Frame numbers below
-map to `01-brand/visual-direction.md` §8; the bracketed items map to the shot list in
-`05-playbook/human-checklist.md` §8.
+**Sixteen ticks**, two per month, March through October, with month abbreviations beneath in
+`--type-rail`, terminating in a mono label: `16 VISITS · MAR 1 – OCT 31`.
+
+| Tick state | Colour | Shape |
+|---|---|---|
+| Delivered | `--ink` | 2px × 14px bar |
+| Current / next | `--ember` | 8px filled square |
+| Remaining | `--rule` | 2px × 14px bar |
+
+Off season every tick drains to `--rule`, the ember square moves to the first March tick, and
+the strip is preceded by a `--season-support` block reading `NEXT SEASON OPENS MARCH 1`.
+
+**Four rules it is built to obey:**
+
+1. **It is page furniture, not a chart.** No axis, no scale, no tooltip, no percentage. Nothing
+   here is data beyond a schedule anyone could copy off the agreement.
+2. **It never animates its ticks.** A strip that filled itself would turn a schedule into a
+   countdown, which is manufactured urgency in motion form (`voice.md` §6.5). There is no
+   keyframe, no transition and no `animation-timeline` anywhere near it.
+3. **Nothing is carried by the graphic alone.** The tick row is `aria-hidden="true"` and every
+   fact it draws is written in the `<figcaption>` as real text — the season, the count, the
+   dates, and the pro-ration.
+4. **It states the season, it does not sell it.** The caption says the 2026 season is ten visit
+   dates past, that the season is underway, and that what is left is pro-rated with a locked
+   2027 rate. It never says "only six left" and it never attaches a deadline to the date.
+
+**One documented deviation from the brief.** §4.5 says the strip runs "into the bleed track."
+It does not: it spans the full container, which is already wider than the 68ch measure and
+already breaks the reading column, but it stops at the container edge. Running it off the
+viewport would crop the sixteenth tick — the one the entire argument is named after. Grid
+breaking, yes; clipping the punchline, no.
+
+**Editing it as the season moves** is one thing: how many `<li>` carry `tick--done`, and which
+one carries `tick--now`. The markup comment says so at each of the four instances.
+
+---
+
+## 7. Image slots — every one needs a real photograph
+
+**No real photography exists** (`CANON.md` §10.6). **Stock photography is never a final answer**
+(`visual-direction.md` §8). Until the frames below are shot, each slot ships as a **plate**: an
+empty band on `--paper-deep` with hairlines top and bottom and a mono caption naming the missing
+frame. That is honest, it looks intentional, and the Field Ledger direction was chosen partly
+because it looks finished with zero images.
+
+Each slot in the markup carries an HTML comment naming the required shot.
 
 | Slot | Page · position | Frame | **Exactly what the real photo must show** | Must not show | Loading |
 |---|---|---|---|---|---|
-| **IMG-01** | `index.html` · masthead bleed track | 1 | A pool deck or patio **mid-visit**, shot standing, his own equipment in frame — blower set down, pool net leaning on a chair, the bucket where he left it. 3:2 landscape with dead space in the **left third** so the display headline can sit over it. *[human-checklist: "a wide shot of a whole outdoor living area looking genuinely ready to use"]* | People, faces, a house number, a street sign, anything that identifies a client | `eager`, `fetchpriority="high"` |
-| **IMG-02** | `whats-included.html` · Green Season entry | 2 | One close frame of **his hands working** — the skimmer net breaking the water surface, or the grease tray coming out of a flat-top. Proves it is one person and not a crew. *[human-checklist: "him working — hands, tools, actual effort"]* | A posed grip, arms crossed, gloves that look new, a second pair of hands | `lazy` |
-| **IMG-03** | `whats-included.html` · Dormant Season entry | 5 | **Winter, and it must look cold and useful.** Covered furniture strapped down, salted flagstone, frost on a pool cover, bare trees, a disconnected hose coiled by the bib. Non-negotiable — without it the site reads as a summer business seven months a year. *[human-checklist: "a dormant-season shot when the season allows"]* | Snow-globe prettiness, sun flare, a scene that looks pleasant rather than protective | `lazy` |
-| **IMG-04** | `index.html` · beside the report facsimile | 4 | **The record.** A real service report open on a phone screen or printed and sitting on the tailgate, address obscured. It should be legible enough to read two lines. | An invented report, a mocked-up screen, a stock phone render | `lazy` |
-| **IMG-05** | `pricing.html` · above the exclusions | 3 | **The finding, and it must be genuinely unflattering.** A window well packed with leaves with water standing in it, a skimmer basket lifted out full of maple seeds, a split hose bib. **Do not clean it before shooting.** This is the single most persuasive image on the site because it is the only one that costs him something to publish. | Anything staged, tidied, or improved before the shutter | `lazy` |
-| **IMG-06** | `projects.html` · deep clean section | — | **Grill / outdoor kitchen, the same frame before and after.** Same camera position, same light, same day. Grease tray out and the burners visible in the "before." *[human-checklist: "an outdoor kitchen / grill area before and after"]* | Two different grills, two different days, two different crops | `lazy` |
-| **IMG-07** | `about.html` · lineage entry | 6 | **The mark, in daylight.** The `WPC513` stencil on the truck door or tailgate, with the equipment visible behind it. This is the shot that makes the business look real to a neighbor who saw the truck on the street. *[human-checklist: "one clean shot of the truck and equipment"]* | A rendered mockup, a vinyl proof, a photoshopped door | `lazy` |
+| **IMG-01** | `index.html`, `membership-full.html` · masthead bleed track | 1 | A pool deck or patio **mid-visit**, shot standing, his own equipment in frame — blower set down, pool net leaning on a chair, the bucket where he left it. 3:2 landscape with dead space in the **left third** so the display headline can sit over it. | People, faces, a house number, a street sign, anything that identifies a client | `eager`, `fetchpriority="high"` |
+| **IMG-02** | `whats-included.html` · the eight parts | 2 | One close frame of **his hands working** — the skimmer net breaking the water surface, the vacuum head going in, or the grease tray coming out of a flat-top. Proves it is one person and not a crew. | A posed grip, gloves that look new, a second pair of hands | `lazy` |
+| **IMG-03** | `pricing.html` · above the exclusions | 3 | **The finding, and it must be genuinely unflattering.** A window well packed with leaves with water standing in it, a skimmer basket lifted out full of maple seeds, a split hose bib, a torn pool cover. **Do not clean it before shooting.** The most persuasive image on the site, because it is the only one that costs him something to publish. | Anything staged, tidied or improved before the shutter | `lazy` |
+| **IMG-04** | `index.html`, `membership-full.html` · beside the facsimile | 4 | **The record.** A real service summary open on a phone, or printed on the tailgate, address obscured, legible enough to read two lines. | An invented summary, a mocked-up screen, a stock phone render | `lazy` |
+| **IMG-05** | `whats-included.html` · the pool block | 5 | **The equipment pad.** The salt cell display, the pump baskets out, the backwash valve. This is the frame that makes the pool block credible — and **its alt text and its caption both carry the disclaimer**, not a competence claim. | Any implication that he services the system; any before/after water shot | `lazy` |
+| **IMG-06** | `projects.html` · deep clean section | — | **Grill / outdoor kitchen, the same frame before and after.** Same camera position, same light, same day. Grease tray out and the burners visible in the "before." | Two different grills, two different days, two different crops | `lazy` |
+| **IMG-07** | `about.html` · lineage entry | 7 | **The mark, in daylight.** The `WPC513` stencil or the full lockup on the truck door, equipment visible behind it. The shot that makes the business look real to a neighbour who saw the truck. | A rendered mockup, a vinyl proof, a photoshopped door | `lazy` |
 
-### Shooting and delivery rules — carried from the brief
+> 🔶 **Frame 6, "end of season," is specified in the brief and has no slot on the site yet.**
+> Covers going on, furniture stacked, the last leaves on an empty deck, late-October light — and
+> **no snow**, because there is no winter service in this membership. It belongs on
+> `whats-included.html` in the season block the day it exists. It is listed here rather than
+> given an eighth empty plate, because a plate promising a photograph that has no home is worse
+> than an honest gap.
+
+### Shooting and delivery rules
 
 - Bright **overcast** day or the hour before sunset. Available light, no flash. Phone camera is
   fine. Landscape orientation.
-- Warm the highlights slightly, hold the greens exactly where they are, pull 10–15% of the
-  saturation out of the sky. **No duotone, no colour overlay, no vignette, no HDR, no film-grain
-  filter** — the page already has grain and a second layer reads as an effect.
-- Deliver AVIF with a WebP fallback, `width`/`height` set explicitly on every `<img>` so nothing
-  shifts. Never ship a source file far beyond its rendered size.
-- **Alt text names the object and locates it** (`voice.md`): "Skimmer basket lifted out, packed
-  with maple seeds," never "pool maintenance."
-- **Street names only, ever.** No full address, no identifying house
-  (`voice.md` §3, `voice.md` §6.7).
+- Hold the blues cool and let the warm stock of the page do the warming. Pull 10–15% of the
+  saturation out of the sky. **No duotone, no colour overlay, no navy/orange grade, no vignette,
+  no HDR, no film-grain filter** — the page already has grain, and grading a photo to match the
+  palette is exactly what a franchise does.
+- AVIF with a WebP fallback, `width`/`height` set explicitly on every `<img>` so nothing shifts.
+- **Alt text names the object and locates it**: "Skimmer basket lifted out, packed with maple
+  seeds," never "pool maintenance." **Any alt text describing pool work carries the disclaimer**
+  (`voice.md` §8 item 41).
+- **Street names only, ever.** No full address, no identifying house.
 
 ### How to install a photograph
 
 Each plate is a `<figure class="plate">`. Replace the inline `<svg>` with an `<img>` carrying
-`width`, `height`, `alt`, and `loading`; keep the `<figcaption>` and rewrite it to describe the
-real frame. The surrounding CSS needs no change — `.plate` sizes by aspect ratio, not by
-content. Delete the `PHOTO REQUIRED` comment when the slot is filled.
+`width`, `height`, `alt` and `loading`; keep the `<figcaption>` and rewrite it to describe the
+photograph rather than to request one. Nothing in the CSS changes.
 
 ---
 
-## 7. Forms
+## 8. The mark
 
-There is no backend and there will not be one. Both forms are plain `POST` forms that work
-with JavaScript disabled.
+`visual-direction.md` §7. The owner shipped a finished logo, so the previous purely typographic
+lockup is retired.
 
-| Field | Type | Required | Notes |
-|---|---|---|---|
-| Name | `text`, `autocomplete="name"` | yes | — |
-| Phone | `tel`, `autocomplete="tel"` | one of phone/email | Label says texting is fine |
-| Email | `email`, `autocomplete="email"` | one of phone/email | — |
-| Cross street | `text` | **yes** | The most important field on the site. Route compactness decides more than anything else (`ideal-client.md` §4) |
-| What the property has | two independent `checkbox`es in a `<fieldset>` | no | "Pool" and "Outdoor kitchen." Checking neither is a valid answer, which is what makes it not a plan picker |
-| What isn't getting handled | `textarea` | no | This is where the first year of project work comes from (`ideal-client.md` §6, step 3) |
-| `company` | honeypot, `hidden` from users | — | Empty `label`, `tabindex="-1"`, `autocomplete="off"`, moved off-screen. `rules/web/security.md` prefers honeypots to CAPTCHA |
+**On screen**, inside the `--navy` status strip: the house-and-tree line mark in `--paper`
+stroke at 40px, then `WPC 513` in `--ember-lift` mono with `+0.10em` tracking, a `--paper`
+hairline, and `WESTSIDE PROPERTY CARE` in small caps at `+0.16em`. The navy square of the
+printed mark **is** the strip, so no second square is drawn — a navy square on navy is a seam,
+not a mark.
 
-- **Required is stated in visible text.** Both required fields — name and cross street — carry
-  `Required` in a `field__hint`. Marking one and not the other is worse than marking neither,
-  because the reader concludes the unmarked field is optional (SC 3.3.2). No asterisk: an
-  asterisk is a symbol that needs a legend, and the word does not.
-- **Validation** is native (`required`, `type`). No JS validator, no JS gatekeeping submission.
-  An invalid field gets a `--copper` border **and** a sentence: every error string is written
-  into the markup on page load, hidden by default, and *revealed* by `:user-invalid` — never
-  injected. So the copper is the glance-level signal and the sentence is the information, which
-  is what keeps the state off colour alone (SC 1.4.1). Every sentence is in `copy-deck.md` §6.3
-  and is auditable against `voice.md` there, which would not be true of a string that only
-  existed in a script.
-- **`js/forms.js` is progressive enhancement and nothing else.** It adds `aria-invalid="true"` to
-  a field the browser has already judged invalid and removes it when the field becomes valid. It
-  contains no message text, does not touch submission, and does not validate anything itself.
-  With the file blocked or JavaScript off, the form still validates, still blocks submission, and
-  still shows the same sentence — the `[aria-invalid="true"]` selector in the stylesheet exists
-  as the fallback path for browsers that do not yet support `:user-invalid`, not as the primary.
-- **Success** is `thanks.html`, reached by the endpoint's redirect (`_next` / `_redirect`
-  hidden field, both provided and commented).
-- **Failure** is the endpoint's own error page. Every form therefore also shows the phone number
-  in plain text next to the submit button, so a broken endpoint never costs an inquiry.
-- `[FORM_ENDPOINT]` must be set before launch. Until it is, the forms will not submit — which
-  is why the text-me path is given equal weight in the layout rather than being a fallback.
+**Three favicon files ship, not one scaled SVG**, because a scaled lockup at 16px reads as a
+smudge in a tab strip:
 
----
-
-## 8. Contact and configuration placeholders — all of them, in one place
-
-**Nothing on the site invents a contact detail.** Every one of these is a literal string in the
-markup and must be replaced before launch. Search for the bracket.
-
-| Placeholder | What it is | Appears in |
+| File | Application | Contents |
 |---|---|---|
-| `[PHONE]` | The 513 business number, digits only for `tel:`/`sms:` and formatted for display | Every page footer; `index.html`, `apply.html`, `waitlist.html`, `projects.html` bodies; `seo.md` schema |
-| `[EMAIL]` | The business email, not a personal Gmail | Every page footer; `apply.html`; `seo.md` schema |
-| `[URL]` | The final domain, no trailing slash | `<link rel="canonical">` on every page; `sitemap.xml`; `seo.md` schema |
-| `[FORM_ENDPOINT]` | The `action` for both forms — a static-form service | `apply.html`, `waitlist.html` |
-| `[GBP_URL]` | The Google Business Profile share link | Footer; `seo.md` schema `sameAs` |
+| `favicon-16.svg` | 16×16 | `513` alone, `--ember-lift` mono on `--navy`. 4.88:1. |
+| `favicon.svg` | 32×32, and the default `sizes="any"` | House-and-tree line mark alone on `--navy`, stroke 2.5 units, no type |
+| `apple-touch-icon.svg` | 180×180 | Line mark + `WPC 513` + the rule. The small-caps line is dropped; at that size its absence is not a defect. |
 
-Two facts that are **not** placeholders and must stay true rather than being filled in:
+`WPC 513` inside the lockup is **never** set on two lines, never cropped, and never split so
+that the first three letters appear without the numerals — that would produce the one string
+`brand-brief.md` §1.2 bans outright. The link's accessible name is
+`Westside Property Care 513 — home`, so the first reference on every page is the full name and
+bare "WPC" never reaches an accessibility tree, a slug, or the structured data.
 
-- **The open-slot count.** Shipped at the true current number, 6 of 6. See §3.1.
-- **Insurance and the LLC.** Neither is claimed anywhere on the site, because neither is in
-  force yet (`brand-brief.md` §4.3). Approved wording is in `copy-deck.md` under
-  *Deferred claims*; do not paste it until the policy is bound and the Articles are filed.
+> 🔶 **Two colours in the lockup are unconfirmed against his artwork.** The source fixes the
+> elements and the palette — navy ground, orange wordmark, line mark above, rule beneath, small
+> caps below — but **not** the colour of the icon, the rule, or the small caps. They ship as
+> `--paper` so the wordmark is the only warm element and reads as the name. **If his artwork
+> colours them differently, his artwork wins.** Every one of them is a single `stroke` or `fill`
+> value, and the three favicon files each carry a comment at the top saying exactly which value
+> to change. Do not redraw his logo to fit this spec.
+
+**One footer decision worth recording**, because it is a contrast fix and not a taste call. The
+footer lockup is the **knocked-out single-colour variant**: the whole lockup in `--paper`,
+wordmark included. The footer panel is `--season-ground`, which is navy in season but the
+drained slate off season, and `--ember-lift` is **3.06:1** on that slate — under AA for 12px
+type, and outside the rule that the mark only ever sits on navy. `--paper` is 12.05:1 and
+7.57:1. §7.3 already allows the knocked-out variant "where a single colour is all that is
+available," so this is the brief's own escape hatch rather than a deviation from it.
 
 ---
 
-## 9. Technical build
+## 9. Forms
 
-### 9.1 Files
+Two forms, one component, `apply.html` and `waitlist.html`.
+
+- **They work with JavaScript disabled.** Native `required` and `type="email"` validation, and
+  `:user-invalid` reveals the error sentence with no script at all.
+- **Every error sentence is written into the markup on page load and revealed, not injected.**
+  There is no message a person can read that the markup does not contain, which is what makes
+  the copy auditable against `voice.md`.
+- **The invalid state is never colour alone** (SC 1.4.1): an `--ember-deep` rule *and* a
+  sentence.
+- **Both required fields carry the word "Required" in visible help text** (SC 3.3.2).
+- **`js/forms.js` adds one attribute.** It sets and removes `aria-invalid` on a field the
+  browser has already judged. It contains no message text, reads `el.validity.valid` only, and
+  never echoes what was typed.
+- **The `:user-invalid` rules and the `[aria-invalid]` rules are kept as separate declarations**,
+  never grouped into one selector list — a browser that does not understand `:user-invalid`
+  discards the entire list it appears in, which would take the fallback with it.
+- **A honeypot, not a CAPTCHA** (`rules/web/security.md`).
+- **The property checkboxes no longer price anything.** Their hint says so explicitly: *"It
+  doesn't change the price — $279 is $279. It changes how much of the two hours the property
+  uses, which is how I work out whether it fits."* Under the old model those two boxes selected
+  a configuration; under the flat price they are a **client-selection** question, and the copy
+  had to change to match or the form would have implied a tier.
+- **[FORM_ENDPOINT] must be set before launch.** Until it is, the form will not submit — which
+  is why the phone number sits beside the button with equal weight rather than as a fallback.
+
+---
+
+## 10. Contact and configuration placeholders
+
+Every placeholder in the built site, in one place. All are literal strings; find and replace.
+
+| Placeholder | What it is | Files |
+|---|---|---|
+| `[PHONE]` | The business number, in both the `sms:` href and the visible text | All ten pages |
+| `[EMAIL]` | The business email, in the `mailto:` href and the visible text | All ten pages (footer) |
+| `[URL]` | The final domain, **no trailing slash** | Canonical tags, `og:url`, JSON-LD `@id` and `url`, form `_next`, `sitemap.xml`, `robots.txt` |
+| `[FORM_ENDPOINT]` | The static-form service action URL | `apply.html`, `waitlist.html`, and the `form-action` directive in `_headers` |
+| `[GBP_URL]` | The Google Business Profile URL, for `sameAs` | Not yet placed — see `seo.md` §3 |
+
+---
+
+## 11. Technical build
+
+### 11.1 Files
 
 ```
 site/
@@ -325,14 +465,16 @@ site/
 ├── styles/
 │   ├── tokens.css           every colour, size, space, radius, duration — nothing else
 │   ├── base.css             reset, landmarks, type, rail-and-measure grid, grain, motion
-│   └── components.css       the fourteen components in §4
+│   └── components.css       the sixteen components in §4
 ├── js/
 │   ├── season.js            sets the season switch from the date. Nothing else.
 │   └── forms.js             adds aria-invalid to an invalid field. Nothing else.
 │                            Loaded only by apply.html and waitlist.html.
 ├── fonts/
 │   └── README.md            how to install the three webfonts (they are not in the repo)
-├── favicon.svg
+├── favicon-16.svg           513 alone
+├── favicon.svg              the line mark
+├── apple-touch-icon.svg     line mark + WPC 513 + rule
 ├── robots.txt
 ├── sitemap.xml
 └── _headers                 security headers for Netlify / Cloudflare Pages
@@ -341,417 +483,448 @@ site/
 No framework, no bundler, no build step, no `npm install`, no dependency of any kind. Open
 `index.html` from the filesystem and it works.
 
-### 9.2 Measured budgets
+### 11.2 Measured budgets
 
-Measured with `gzip -c <file> | wc -c` on the shipped files. Not estimated, not rounded up from
-an approximation.
+**Measured with `gzip -c <file> | wc -c` on the shipped files after the re-baseline.** Not
+estimated, not carried over from the previous pass, not rounded up from an approximation.
 
 | Asset | Raw | **Gzipped** | Budget | Result |
 |---|---|---|---|---|
-| `styles/tokens.css` | 7,548 B | **3,193 B** | — | |
-| `styles/base.css` | 11,056 B | **3,901 B** | — | |
-| `styles/components.css` | 24,451 B | **6,114 B** | — | |
-| **CSS total** | **43,055 B** | **13,208 B — 12.9 KB** | **< 30 KB gz** | **44% of budget** |
-| `js/season.js` | 1,148 B | **639 B** | — | |
+| `styles/tokens.css` | 10,453 B | **4,324 B** | — | |
+| `styles/base.css` | 11,455 B | **4,045 B** | — | |
+| `styles/components.css` | 31,221 B | **7,966 B** | — | |
+| **CSS total** | **53,129 B** | **16,335 B — 15.95 KB** | **< 30 KB gz** | **53% of budget** |
+| `js/season.js` | 1,334 B | **730 B** | — | |
 | `js/forms.js` | 1,415 B | **714 B** | — | |
-| **JS total** | **2,563 B** | **1,353 B — 1.3 KB** | **< 150 KB gz** | **0.9% of budget** |
+| **JS total** | **2,749 B** | **1,444 B — 1.41 KB** | **< 150 KB gz** | **0.96% of budget** |
 
 The CSS total is the **sum of the three files measured separately**, because each is its own
-HTTP response and is gzipped on its own. Concatenating them first and gzipping once gives
-11,733 B, which is a smaller and less honest number — nothing on this site is bundled, so that
-figure would describe a build that does not exist. The same applies to the two scripts, and
-`js/forms.js` is only requested by the two pages that have a form.
+HTTP response and is gzipped on its own. Concatenating them first and gzipping once gives a
+smaller and less honest number — nothing here is bundled, so that figure would describe a build
+that does not exist. The same applies to the two scripts, and `js/forms.js` is only requested by
+the two pages that have a form.
+
+**Against the tighter microsite row: 15.95 KB versus 15 KB, and stated rather than hidden.**
+`visual-direction.md` §12.11 asks for ≤ 15 KB CSS. This build is **0.95 KB over**. Code-only —
+every comment stripped — the three stylesheets gzip to **6.7 KB**, so the entire overage and
+about 9.6 KB besides is *comment*: the contrast arithmetic next to each colour choice, the
+reason each accessibility fix exists so the next person does not undo it as tidying, and the
+rule each component is enforcing. Two full passes of condensing took 1.4 KB out of it without
+losing a single reason. The remaining choice is between deleting the reasoning and being 0.95 KB
+over a stretch budget while sitting at 53% of the binding one, and the reasoning wins. If the
+overage ever matters, minifying comments out at deploy costs 9.6 KB gz and changes nothing else.
 
 Per page:
 
 | Page | Raw | Gzipped |
 |---|---|---|
-| `index.html` | 26,493 B | 7,605 B |
-| `whats-included.html` | 23,411 B | 6,999 B |
-| `membership-full.html` | 23,706 B | 6,783 B |
-| `pricing.html` | 20,331 B | 5,687 B |
-| `about.html` | 15,213 B | 4,576 B |
-| `waitlist.html` | 14,032 B | 4,188 B |
-| `apply.html` | 11,739 B | 3,711 B |
-| `projects.html` | 10,606 B | 3,418 B |
-| `thanks.html` | 5,513 B | 1,904 B |
-| `404.html` | 3,147 B | 1,080 B |
+| `index.html` | 36,496 B | 10,141 B |
+| `membership-full.html` | 37,401 B | 10,451 B |
+| `whats-included.html` | 31,667 B | 9,162 B |
+| `pricing.html` | 25,811 B | 7,364 B |
+| `about.html` | 17,314 B | 5,234 B |
+| `waitlist.html` | 15,533 B | 4,735 B |
+| `apply.html` | 13,820 B | 4,437 B |
+| `projects.html` | 13,420 B | 4,359 B |
+| `thanks.html` | 7,815 B | 2,673 B |
+| `404.html` | 5,060 B | 1,672 B |
+| `favicon.svg` | 1,348 B | 804 B |
+| `apple-touch-icon.svg` | 1,358 B | 826 B |
+| `favicon-16.svg` | 866 B | 587 B |
 
-**The number that matters is the heaviest first load:** `index.html` (7,605 B) plus all three
-stylesheets (13,208 B) plus `season.js` (639 B) = **21,452 B gzipped, 21.0 KB**, in five
-requests, with no font, no image, and no third-party anything. `index.html` does not load
-`forms.js` — it has no form. The heaviest form page, `apply.html` cold, is 3,711 + 13,208 + 639
-+ 714 = **18,272 B, 17.8 KB** in six requests. Every subsequent page is 1–7 KB, because the CSS
-and the JS are already cached.
-
-The site also clears the tighter **microsite** row in `rules/web/performance.md` (< 15 KB CSS,
-< 80 KB JS) with the CSS at 12.9 KB gz and the JS at 1.3 KB gz.
-
-**What the accessibility work cost.** The CSS grew 1,631 B gzipped and the JS grew 714 B
-gzipped, and a large share of the CSS growth is comment — the reason each contrast fix exists is
-written next to it, so the next person does not undo it as tidying. That is 5.4% of the CSS
-budget and 0.5% of the JS budget spent on WCAG conformance, which is the right trade at any
-ratio.
+**The number that matters is the heaviest first load:** `index.html` (10,141 B) plus all three
+stylesheets (16,335 B) plus `season.js` (730 B) plus one favicon (804 B) = **28,010 B gzipped,
+27.4 KB**, in six requests, with no font, no photograph and no third-party anything.
+`index.html` does not load `forms.js` — it has no form. The heaviest form page, `apply.html`
+cold, is 4,437 + 16,335 + 730 + 714 + 804 = **23,020 B, 22.5 KB** in seven requests. Every
+subsequent page is 1.6–10 KB, because the CSS, the JS and the icon are already cached.
 
 Reproduce any figure above with:
 
 ```sh
 cd 02-website/site
-for f in styles/*.css js/*.js *.html; do
+for f in styles/*.css js/*.js *.html *.svg; do
   printf "%-24s raw %7s  gz %7s\n" "$f" "$(wc -c < "$f")" "$(gzip -c "$f" | wc -c)"
 done
 ```
 
-**Fonts are not counted above because none ship.** See §9.5.
+**Fonts are not counted above because none ship.** See §11.5.
 
-### 9.3 Motion
+### 11.3 Motion
 
 Only `transform` and `opacity` are animated. There is no keyframe animation that moves layout.
 
 - **Entrance — the rules draw.** Section hairlines animate `transform: scaleX(0) → scaleX(1)`
-  from `transform-origin: left`; text fades `opacity: 0 → 1` with no translate. Implemented
-  with **CSS scroll-driven animation** (`animation-timeline: view()`) inside an
-  `@supports` block, so it costs **zero JavaScript** and zero scroll handlers. Browsers without
-  support render the final state immediately, which is the correct degradation.
-- **Hover — three coordinated changes on one gesture**, per the brief §6: the row fills
-  `--season-wash`, the hairline beneath thickens via `scaleY(2)` and takes `--season-accent`,
-  and the rail label translates 2px right.
-- **Focus** is `2px solid var(--copper)` at `3px` offset plus a filled 6px copper square drawn
-  in the rail at the row's baseline — keyboard users get the same margin marker the report uses
-  for a finding. Focus is never removed and is never only a colour change. **On the reversed
-  footer panel the ring and the marker are `--paper`, not copper**, because copper is a
-  paper-side colour and lands at 2.01:1 / 1.20:1 on the season accent — see §9.4.
+  from `transform-origin: left`; text fades `opacity: 0 → 1` with no translate. Implemented with
+  **CSS scroll-driven animation** (`animation-timeline: view()`) inside an `@supports` block, so
+  it costs **zero JavaScript** and zero scroll handlers. Browsers without support render the
+  final state immediately, which is the correct degradation.
+- **Hover — three coordinated changes on one gesture:** the row fills `--wash`, the hairline
+  beneath thickens via `scaleY(2)` and takes `--season-ground`, and the label translates 2px
+  right.
+- **Focus** is `2px solid var(--ember)` at `3px` offset plus a filled 6px `--ember` square drawn
+  in the rail — keyboard users get the same margin marker the summary uses for a finding, which
+  after the re-baseline is literally the same colour. **On the two reversed panels the ring and
+  the marker are `--paper`** — see §11.4.
 - **Active** is `translateY(1px)` and the rule under the control goes to `--ink`. No scale, no
   bounce, no spring.
+- **The season strip never animates.** No transition, no keyframe, no scroll timeline anywhere
+  near it. §6 rule 2.
 - `prefers-reduced-motion: reduce` collapses all durations to `0.01ms` and renders hairlines at
   `scaleX(1)`. Hover and focus still change colour, because they are information.
 
 **One documented deviation from `rules/web/coding-style.md`.** Interactive state changes
-(hover, focus, active) transition `background-color`, `color`, and `border-color` at
-`--dur-quick` (140ms). These are paint-only, not layout, and they are specified by name in
-`01-brand/visual-direction.md` §6. No *entrance*, *scroll*, or *loop* animation touches
-anything but `transform` and `opacity`. `transition: all` and `will-change: all` appear nowhere.
+transition `background-color`, `color` and `border-color` at 140ms. These are paint-only, not
+layout, and they are specified by name in `visual-direction.md` §6. No *entrance*, *scroll* or
+*loop* animation touches anything but `transform` and `opacity`. `transition: all` and
+`will-change` appear nowhere.
 
 The season switch changes colour **instantly**, with no transition. The brief permits a 320ms
-custom-property transition; it is declined because animating a registered `<color>` custom
-property repaints the entire document, and the binding performance rule wins over the optional
-flourish.
+custom-property transition; it is declined because animating a registered custom property
+repaints the entire document, and the binding performance rule beats the optional flourish.
 
-### 9.4 Accessibility
+### 11.4 Accessibility, and the recomputed contrast audit
 
 Verified by reading the markup and computing contrast by hand — Playwright cannot launch here,
 so nothing below is claimed on the basis of an automated pass.
 
 - Real landmarks: `<header>`, `<nav aria-label="Main">`, `<main>`, `<section aria-labelledby>`,
-  `<footer>`. Every `<section>` has an `id`-bound heading, and **each `aria-labelledby` points at
-  exactly one heading** — a section that named two produced a run-on landmark name, so the two
-  entries it held are now two sections (`index.html` and `membership-full.html`, Scope and The
-  visit).
+  `<footer>`. Verified programmatically: every `<section>` has an `id`-bound heading, **each
+  `aria-labelledby` names exactly one heading**, every referenced `id` exists, and every page has
+  exactly one `<h1>` with no skipped heading level.
+- Tag balance verified programmatically across all ten pages: zero unclosed and zero stray tags.
 - Skip link to `#main`, visible on focus, first in tab order.
-- One `<h1>` per page. Headings descend without skipping.
-- Focus is visible on every interactive element. The ring is **`--copper` on paper-side grounds
-  and `--paper` on the reversed footer panel**, and both clear 3:1 in both seasons — see the
-  sweep below, which is where the footer defect was found.
-- The season switch is a real checkbox with a real `<label>`; it is reachable by keyboard,
-  toggles with Space, and announces its state.
+- Focus is visible on every interactive element and is never removed.
+- The season switch is a real checkbox with a real `<label>`; reachable by keyboard, toggles
+  with Space, announces its state.
 - `aria-current="page"` on the active nav link.
-- Tap targets: **≥44px** (`--tap-target`) on nav links, buttons, footer links, and the season
-  switch; **≥24px** (`--tap-min`, the SC 2.5.8 floor) on the two checkboxes, which draw their own
-  box and cannot be padded out. The header wordmark is a link and gets vertical padding for the
-  same reason — inherited flex spacing is not a target.
-- Both required fields carry the word "Required" in visible help text (SC 3.3.2), and the invalid
-  state carries a sentence as well as a colour (SC 1.4.1).
-- Decorative SVG (grain, season divider, plate ruling) is `aria-hidden="true"` or
-  `role="presentation"`.
-- The grain layer is `pointer-events: none` and sits behind nothing interactive.
+- Tap targets: **≥44px** (`--tap-target`) on nav links, buttons, footer links, the lockup link
+  and the season switch; **≥24px** (`--tap-min`, the SC 2.5.8 floor) on the two checkboxes, which
+  draw their own box and cannot be padded out.
+- Both required fields carry visible "Required" help text; the invalid state carries a sentence
+  as well as a colour.
+- Decorative SVG — the grain, the season divider, the plate ruling, the lockup mark and the
+  sixteen ticks — is `aria-hidden="true"` or `role="presentation"`. Every fact the season strip
+  draws is repeated as real text in its caption.
+- The grain layer is `pointer-events: none`.
 
-### The contrast sweep — every token against every ground, in both seasons
+#### The matrix — recomputed from scratch, both seasons, three grounds
 
-**Computed by hand from the sRGB relative-luminance formula and checked against WCAG 2.2 AA:
-4.5:1 for body text, 3:1 for large text and for meaningful non-text (SC 1.4.11).**
+**The previous ~90-line audit is void.** It was computed against oat / copper / green, and not
+one of its numbers survives a palette change. What follows was computed from zero with the sRGB
+relative-luminance formula (`c/12.92` or `((c+0.055)/1.055)^2.4`, `L = 0.2126R + 0.7152G +
+0.0722B`, `(L₁+0.05)/(L₂+0.05)`) and checked against WCAG 2.2 AA: **4.5:1 for body text, 3:1 for
+large text (≥24px) and for meaningful non-text (SC 1.4.11).**
 
-**This sweep replaces an earlier one that was wrong by omission.** The first pass listed only
-pairs it expected to occur, and it checked `--paper` and `--paper-deep` as grounds. It never
-checked **`--season-accent` as a ground at all** — which is exactly where the footer lives, on
-every one of the ten pages, with seven to nine focusable links in it. The result was a focus ring
-at 2.01:1 in Green Season and 1.20:1 in Dormant, where it is effectively invisible. The lesson is
-in the method, not the number: **sweep the matrix, not the list you thought of.** What follows is
-the full matrix.
+Grounds across, foregrounds down. **Bold = passes 4.5:1.**
 
-**Green Season.** Grounds across, foregrounds down.
+**IN SEASON — March 1 through October 31**
 
-| | on `--paper` | on `--paper-deep` | on `--season-accent` |
-|---|---|---|---|
-| `--ink` | **14.53** | **12.59** | 1.40 |
-| `--ink-muted` | **5.97** | **5.17** | 1.74 |
-| `--rule` | 1.59 | 1.38 | **6.53** |
-| `--copper` | **5.19** | 4.49 | 2.01 |
-| `--flag-ochre` | 2.65 | 2.29 | **3.93** |
-| `--paper` | — | 1.15 | **10.40** |
-| `--paper-deep` | 1.15 | — | **9.01** |
-| `--season-accent` | **10.40** | **9.01** | — |
-| `--season-support` | **5.47** | 4.74 | 1.90 |
-
-On the Green hover fill `--wash-green`: `--ink` 13.79, `--ink-muted` 5.67, `--copper` 4.92,
-`--season-support` 5.19, `--season-accent` 9.87.
-
-**Dormant Season.** Only the two `--season-*` tokens change; every constant pair is identical to
-the table above and is repeated so the matrix can be read on its own.
-
-| | on `--paper` | on `--paper-deep` | on `--season-accent` |
-|---|---|---|---|
-| `--ink` | **14.53** | **12.59** | 2.33 |
-| `--ink-muted` | **5.97** | **5.17** | 1.05 |
-| `--rule` | 1.59 | 1.38 | **3.92** |
-| `--copper` | **5.19** | 4.49 | 1.20 |
-| `--flag-ochre` | 2.65 | 2.29 | 2.36 |
-| `--paper` | — | 1.15 | **6.24** |
-| `--paper-deep` | 1.15 | — | **5.41** |
-| `--season-accent` | **6.24** | **5.41** | — |
-| `--season-support` | 4.95 | 4.29 | 1.26 |
-
-On the Dormant hover fill, which is `--paper-deep`: `--ink` 12.59, `--ink-muted` 5.17,
-`--copper` 4.49, `--season-support` 4.29, `--season-accent` 5.41.
-
-### What actually lands on the `--season-accent` ground
-
-The footer is the only reversed panel on the site. Everything in it:
-
-| Element | Foreground | Green | Dormant | |
+| | on `--paper` | on `--paper-deep` | on `--wash` | on `--season-ground` (navy) |
 |---|---|---|---|---|
-| Wordmark, `WPC513`, headings, notes, project prices | `--paper` | 10.40 | 6.24 | pass |
-| Links (`--paper` with a `--paper` underline) | `--paper` | 10.40 | 6.24 | pass |
-| **Focus ring and rail marker — fixed** | `--paper` | **10.40** | **6.24** | pass |
-| ~~Focus ring and rail marker — as shipped before~~ | ~~`--copper`~~ | ~~2.01~~ | ~~1.20~~ | **fail** |
+| `--ink` | **15.08** | **13.16** | **13.95** | 1.25 |
+| `--ink-muted` | **6.20** | **5.41** | **5.73** | 1.94 |
+| `--rule` | 1.67 | 1.45 | 1.54 | **7.24** |
+| `--navy` | **12.05** | **10.52** | **11.15** | 1.00 |
+| `--ember` | 3.31 | 2.89 | 3.06 | 3.64 |
+| `--ember-deep` | **5.42** | **4.74** | **5.02** | 2.22 |
+| `--ember-lift` | 2.47 | 2.16 | 2.29 | **4.88** |
+| `--season-support` (pool teal) | **5.29** | **4.62** | **4.90** | 2.28 |
+| `--paper` | — | 1.15 | 1.08 | **12.05** |
+| `--paper-deep` | 1.15 | — | 1.06 | **10.52** |
+
+**OFF SEASON — November 1 through the end of February.** `--wash` is aliased to `--paper-deep`,
+so that column is identical to the second one; it is repeated so the matrix reads on its own.
+
+| | on `--paper` | on `--paper-deep` | on `--wash` (= `--paper-deep`) | on `--season-ground` (slate) |
+|---|---|---|---|---|
+| `--ink` | **15.08** | **13.16** | **13.16** | 1.99 |
+| `--ink-muted` | **6.20** | **5.41** | **5.41** | 1.22 |
+| `--rule` | 1.67 | 1.45 | 1.45 | **4.54** |
+| `--navy` | **12.05** | **10.52** | **10.52** | 1.59 |
+| `--ember` | 3.31 | 2.89 | 2.89 | 2.29 |
+| `--ember-deep` | **5.42** | **4.74** | **4.74** | 1.39 |
+| `--ember-lift` | 2.47 | 2.16 | 2.16 | 3.06 |
+| `--season-support` (ice) | **5.71** | **4.98** | **4.98** | 1.33 |
+| `--paper` | — | 1.15 | 1.15 | **7.57** |
+| `--paper-deep` | 1.15 | — | — | **6.61** |
+
+#### Agreement with `visual-direction.md` §2
+
+The brief asks for an independent recomputation and for disagreements to be **flagged, not
+silently corrected**. **All 27 stated ratios in §2.1, §2.2 and §2.3 reproduce**, every one within
+0.05 of the published figure — the differences are rounding (`12.05` published as `12.0`,
+`15.08` as `15.1`). **There is no disagreement about a colour value.** The palette is correct as
+published.
+
+There is **one disagreement about a placement**, and it is recorded in the next section as
+near-miss 1.
+
+#### What actually lands on each reversed ground
+
+The **status strip** is `--navy` in both seasons; the **footer** is `--season-ground`, so navy in
+season and slate off season. Those are the only two reversed panels.
+
+| Element | Foreground | In Season | Off Season | |
+|---|---|---|---|---|
+| Strip: lockup mark, small caps, switch label | `--paper` on `--navy` | 12.05 | 12.05 | pass |
+| Strip: `WPC 513` and the season stamp | `--ember-lift` on `--navy` | 4.88 | 4.88 | pass — the tightest text pass on the site |
+| Strip: switch border | `--rule` on `--navy` | 7.24 | 7.24 | pass (non-text) |
+| **Strip: focus ring and rail marker** | `--paper` | **12.05** | **12.05** | pass |
+| Footer: all text, headings, notes, project prices, links | `--paper` | 12.05 | 7.57 | pass |
+| **Footer: lockup, knocked out entire** | `--paper` | **12.05** | **7.57** | pass — §8 |
+| ~~Footer: lockup wordmark as `--ember-lift`~~ | ~~`--ember-lift`~~ | ~~4.88~~ | ~~3.06~~ | **fail off season — fixed** |
+| **Footer: focus ring and rail marker** | `--paper` | **12.05** | **7.57** | pass |
+| ~~Footer: focus ring as `--ember`~~ | ~~`--ember`~~ | ~~3.64~~ | ~~2.29~~ | **would fail off season** |
 | `.foot__rule` divider, `--paper` at 45% | — | — | — | decorative, no meaning of its own |
 
-The fix is one declaration pair in `components.css` §13 — `outline-color` and the `::before`
-marker's `background-color`, both to `--paper` — and `base.css` now carries a comment at the
-global focus rule saying that copper assumes a paper-side ground and that any future reversed
-surface must override it the same way.
+**The footer focus ring was re-verified, not assumed.** It was a shipped critical defect once,
+the override was carried forward, and the palette then changed underneath it. Re-computed: on
+the In Season navy `--ember` would be **3.64:1**, which technically clears the 3:1 non-text
+floor — and on the Off Season slate it is **2.29:1**, which does not. A ring that works for
+eight months and disappears for four is a worse bug than one that never works, because nobody
+finds it. **The `--paper` override stays, and it is now correct in both states with margin.**
+Any future reversed surface must override it the same way; `base.css` carries that instruction
+at the global focus rule.
 
-### Pairs that do not clear 4.5:1, and what was done about each
+#### Pairs that do not clear the threshold, and what was done about each
 
-Each is designed around rather than waved through. The first three were confirmed unchanged by
-review; the fourth and fifth are new entries for pairs the old sweep never reached.
-
-1. **`--copper` on `--paper-deep` = 4.49:1.** Misses AA for body text by a hundredth.
-   **Rule enforced in the markup: copper never appears as text on a `--paper-deep` ground.**
-   The two `--paper-deep` surfaces are the report facsimile and the image plates; verified
-   programmatically that neither contains a single `<a>`. The `MEMBERSHIP FULL` stamp is
-   `--paper` reversed *out of* copper rather than copper on a tint, so it is unaffected.
-
-2. **Dormant `--season-support` on `--paper-deep` = 4.29:1.** This would have occurred on a
-   `.pool` marker inside a price-ledger row during hover in Dormant Season. Fixed at the
-   semantic level rather than by nudging a hex: **`.pool` carries the teal only in Green
-   Season**, because in Dormant Season `--season-support` means freeze protection, not water
-   — the brief's own palette rule. In Dormant it reverts to `inherit`, which is `--ink` at
-   12.59:1. This is a case where the accessible fix and the correct semantic reading turned out
-   to be the same change.
-
-3. **`--flag-ochre` on `--paper-deep` = 2.29:1.** Ochre is never text — it appears exactly once
-   in the entire stylesheet, as `border-inline-start: 2px solid var(--flag-ochre)` on
-   `.report__finding`. It is redundant emphasis on a block that is already labelled in text
-   ("What I found") and already carries its price in the rail, so it is not a graphical object
-   required to understand the content and SC 1.4.11 does not apply to it. Recorded rather than
-   quietly omitted.
-
-4. 🔶 **Dormant `--season-support` on `--paper` = 4.95:1 — passes, but it is the tightest pass on
-   the site.** This is the `.freeze` marker, live only in Dormant Season, and it appears only in
-   headings on the page ground. It clears 4.5:1 with 0.45 to spare, which is real margin in
-   arithmetic and thin margin in practice: the site currently renders in a **fallback** text face
-   (§9.5), and the day IBM Plex Sans is installed the stem weights, x-height, and rasterisation
-   all change. Nothing about the ratio changes — contrast is a colour computation, not a type one
-   — but perceived legibility at small sizes does. **Action when the real fonts land: look at a
-   `.freeze` heading in Dormant Season on a real screen.** If it reads thin, the fix is to darken
-   `--season-support` in the Dormant block, which is one hex in `tokens.css` and touches nothing
-   else. Do not fix it by making the text larger; the size is doing hierarchy work.
-
-5. **`--rule` on `--paper` = 1.59:1, and `--rule` on `--paper-deep` = 1.38:1.** The hairline is a
-   decorative separator and never carries meaning alone — every entry it separates is also
-   separated by whitespace and a heading. **But it is not acceptable as the only edge of a
-   control**, which is what it was on the form fields and on `.btn--quiet`: a boundary at 1.59:1
-   means the input has no perceivable edge at rest, and the button's label is legible while its
-   affordance is not. Both now use `--ink-muted` at 5.97:1. That introduces a fourth hairline
-   colour beyond the three in `visual-direction.md` §5.2 — deliberately, and only on controls: the
+1. 🔶 **`--ember` on `--paper-deep` = 2.89:1 — the finding rule, and this is the one disagreement
+   to flag to `wpc-brand`.** `visual-direction.md` §5.2 justifies the 2px finding rule with *"at
+   3.3:1 on `--paper` it clears the non-text contrast threshold, so it is a legitimate carrier of
+   meaning."* That is true on `--paper`. But §4.5 set-piece 3 places the summary facsimile — the
+   only place a finding rule exists — **on `--paper-deep`**, where the same colour is 2.89:1 and
+   misses the 3:1 floor by 0.11. The two sections disagree with each other, not with me.
+   **Shipped as specified, `--ember`, and flagged rather than adjusted**, on the argument that
+   SC 1.4.11 does not bind here: the finding block is already labelled in text ("What I found")
+   and already carries its price in the rail in mono, so the rule is redundant emphasis rather
+   than a graphic required to understand the content. **If `wpc-brand` disagrees, the fix is one
+   token** — `--ember-deep` on `--paper-deep` is 4.74:1 — and it is consistent with §2.4 rule 2,
+   *choose the ember by its ground*. It is one declaration in `components.css` §10.
+2. **`--ember` as the focus ring on `--paper-deep` = 2.89:1 — designed around, not waived.**
+   **Rule enforced in the markup: nothing focusable sits on a `--paper-deep` ground.** The only
+   two `--paper-deep` surfaces are the summary facsimile and the image plates; verified
+   programmatically that neither contains an `<a>`, `<button>`, `<input>`, `<select>`,
+   `<textarea>` or `<summary>` on any of the ten pages. On `--paper` the ring is 3.31:1 and on
+   the In Season `--wash` it is 3.06:1, both passing.
+3. **`--ember-lift` on the Off Season `--season-ground` = 3.06:1 — a real defect, found by this
+   sweep and fixed.** It would have put the footer lockup's wordmark below AA for four months of
+   the year. Fixed at the semantic level rather than by nudging a hex: the footer uses the
+   knocked-out single-colour lockup the brief already specifies for exactly this situation. §8.
+4. **`--ember-lift` on `--navy` = 4.88:1 — passes, and it is the tightest text pass on the
+   site.** It clears 4.5:1 by 0.38. It carries the wordmark and the season stamp at
+   `--type-stamp` (12px). Nothing about the ratio changes when the real fonts land — contrast is
+   a colour computation — but perceived weight at 12px does. 🔶 **Action when Plex Mono is
+   installed: look at the season stamp in the navy strip on a real screen.** If it reads thin,
+   the fix is to darken `--ember-lift` slightly toward `--ember`, which is one hex in
+   `tokens.css`. Do not fix it by making the stamp larger; the size is doing hierarchy work.
+5. **`--season-support` (pool teal) on `--paper-deep` = 4.62:1 — passes.** It occurs on the pool
+   rail tag inside the summary facsimile. Off season it does not occur at all: `.pool` reverts to
+   `inherit` (`--ink`, 13.16:1) because there is no pool work off season, so the accessible
+   answer and the correct semantic reading are the same change.
+6. **`--rule` on `--paper` = 1.67:1, on `--paper-deep` = 1.45:1.** The hairline is a decorative
+   separator and never carries meaning alone — every entry it separates is also separated by
+   whitespace and a heading. **But it is not acceptable as the only edge of a control**, which is
+   why the form fields and `.btn--quiet` use `--ink-muted` at 6.20:1 instead. That introduces a
+   fourth hairline colour beyond the three in §5.2, deliberately and only on controls: the
    three-weight system governs the page's *separators*, and a control border is a different
-   object with a WCAG floor of its own. Form fields already distinguished themselves from the
-   hairline system with a 2px bottom edge, so the change reads as the same ledger underline,
-   darker.
+   object with a WCAG floor of its own. Carried forward from the previous pass and re-verified
+   against the new `--rule`.
+7. **`--ember` on `--paper` = 3.31:1 — passes for its only two uses.** Display figures at
+   `--type-figure`, whose minimum is 2rem (32px), clear the large-text threshold; and non-text
+   marks. It is never body copy anywhere on the site — links, prices in prose, error text and the
+   button ground all use `--ember-deep` at 5.42:1.
 
-**Also verified as unchanged and still passing:** the focus ring against paper-side grounds
-(`--copper` at 5.19:1), the `.btn` reversal (`--paper` on `--copper`, 5.19:1), the `MEMBERSHIP
-FULL` stamp (same pair), and the season stamp and slot count (`--season-accent` on `--paper`,
-10.40 / 6.24).
+### 11.5 Fonts — shipped state and the human action required
 
-### 9.5 Fonts — shipped state and the human action required
+`visual-direction.md` §3 specifies **Fraunces** (display), **IBM Plex Sans** (text) and **IBM
+Plex Mono** (data). All three are SIL OFL and all three are correct choices.
 
-`01-brand/visual-direction.md` §3 specifies **Fraunces** (display), **IBM Plex Sans** (text),
-and **IBM Plex Mono** (data). All three are SIL OFL and all three are correct choices.
-
-**None of them ship in this repository**, because the environment has no outbound network
-(`CANON.md` §8) and font binaries cannot be fetched or generated here. Rather than link a CDN
-URL that cannot be verified, the site ships on the fallback chains from the brief §3.2 — which
-were explicitly chosen so that a Fraunces failure lands on Iowan Old Style or Palatino rather
-than on Times, and so the page degrades in the right direction.
+**None ship in this repository**, because the environment has no outbound network and font
+binaries cannot be fetched or generated here. Rather than link a CDN URL that cannot be
+verified, the site ships on the fallback chains from §3.2 — chosen so a Fraunces failure lands
+on Iowan Old Style or Palatino rather than on Times.
 
 **The site is complete and looks intentional as shipped.** Installing the real faces is a
-one-line change and is documented in `site/fonts/README.md`, including the `@font-face` block,
-the Plex Mono subset (`uppercase, digits, . , : · $ + — / ( )`, one weight), `font-display: swap`,
-and the single preload. Budget when installed: ≈70 KB, inside the microsite allowance.
+one-line change, documented in `site/fonts/README.md`. Budget when installed: ≈70 KB.
 
-🔶 **HUMAN ACTION.** Download the three families and drop them in `site/fonts/`. Until then the
-display face is a system old-style serif. This is the one place the shipped site differs from
-the brief, it is flagged rather than hidden, and it is reversible in one line.
+🔶 **HUMAN ACTION.** Download the three families into `site/fonts/`. When they land, look at one
+thing: the season stamp in the navy strip. See near-miss 4 above.
 
-### 9.6 Security
+### 11.6 Security
 
 `rules/web/security.md`, applied to a static site with no server of its own.
 
-- `_headers` ships CSP, HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`,
-  and `Permissions-Policy` in Netlify/Cloudflare Pages format, with the Apache and nginx
+- `_headers` ships CSP, HSTS, `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and
+  `Permissions-Policy` in Netlify / Cloudflare Pages format, with the Apache and nginx
   equivalents commented beside them.
 - The CSP is `default-src 'self'` with **no** `'unsafe-inline'` for scripts, `object-src 'none'`,
   `frame-ancestors 'none'`, `base-uri 'self'`, and `form-action` pinned to `[FORM_ENDPOINT]`.
-  `img-src` allows `data:` for the grain and the plates. `style-src` is `'self'` only — there is
-  no inline `<style>` and no inline `style=` attribute anywhere in the site.
-- Both scripts are external and same-origin, so `script-src 'self'` covers them with no nonce and
-  no `'unsafe-inline'`. `season.js` touches a single checkbox; `forms.js` sets and removes one
-  attribute on form controls. There is no `innerHTML`, no `eval`, no template interpolation, no
-  `document.write`, and **no user input reaches the DOM** — `forms.js` reads `el.validity.valid`
-  and writes a fixed attribute value, and never reads or echoes what was typed.
+  `img-src` allows `data:` for the grain. `style-src` is `'self'` only — there is no inline
+  `<style>` and no inline `style=` attribute anywhere in the site.
+- Both scripts are external and same-origin. There is no `innerHTML`, no `eval`, no template
+  interpolation, no `document.write`, and **no user input reaches the DOM**.
 - No third-party script, no analytics, no font CDN, no tag manager, no embed, no iframe.
-- Forms carry a honeypot; there is no state-changing endpoint on this origin to protect with a
-  CSRF token, and rate limiting belongs to the form service.
-- `rel="noopener"` on any external link.
+- Forms carry a honeypot; rate limiting belongs to the form service.
 
 ---
 
-## 10. `design-quality.md` — the required qualities, and how this build delivers them
+## 12. `design-quality.md` — the required qualities, and how this build delivers them
 
 The rule asks for at least four of ten. This build delivers **eight**, and declines two on the
-record. Each row names the mechanism and where to look.
+record. All eight survived the re-baseline; three of them changed mechanism, and those are
+marked 🔁.
 
 | # | Quality | How it is delivered here |
 |---|---|---|
-| **1** | **Hierarchy through scale contrast** | `--type-body` is 17px; `--type-display` reaches 100px. That is a **5.9× jump**, and the rail labels sit at 11px mono against it — an 9× span across one page. Hierarchy is carried by size only. No heading anywhere is distinguished by being bold-and-grey. `tokens.css` type scale; `base.css` heading rules. |
-| **2** | **Intentional spacing rhythm, not uniform padding** | Five non-interchangeable vertical gaps — `--space-row` 12px, `--space-entry` 24px, `--space-block` 32–56px, `--space-section` 64–160px, `--space-chapter` 96–256px — with a rule enforced in review that **no two adjacent levels of hierarchy may use the same gap.** The season divider is the only thing that gets `--space-chapter`, once per page. |
-| **3** | **Depth and layering** | Four mechanisms, none of them elevation: the **bleed track** (grid columns 11–12) runs the masthead plate off the right edge of the viewport past the container; the sticky status strip **overlaps** the masthead rule and is one of exactly two elements permitted a shadow; the report facsimile is **inset** on `--paper-deep` between two hairlines so it reads as a document reproduced on the page; and a fixed 4% fractal-noise grain multiplies over everything. |
-| **4** | **Typography with a real pairing strategy** | A display old-style serif against the IBM Plex superfamily — one type system plus a display face, not three unrelated fonts. Every axis is pinned rather than defaulted (`--display-axes: "opsz" 120, "SOFT" 0, "WONK" 0`), tracking and leading are specified per role, and `font-variant-numeric: tabular-nums` is set on every price, date, and count so the ledger columns do not shimmy. The mono is not decoration — it is what makes a price row read as a record instead of a pricing table. |
-| **5** | **Colour used semantically** | `--copper` is a **semantic monopoly on "act"**: if something is copper and is not a link, a button, or the MEMBERSHIP FULL stamp, it is a bug. `--season-support` teal appears **only where a pool does** — the pool row in the ledger, the pool lines in the Green Season scope, and nowhere else. `--flag-ochre` appears only on a *finding*, and never as text. And the entire palette flips on the calendar, so the page tells you which scope you are reading before you read a word. |
-| **6** | **Designed hover / focus / active states** | Hover on a ledger row makes **three coordinated changes on one gesture**: the row fills `--season-wash`, the hairline beneath thickens by `scaleY(2)` and takes the season accent, and the rail label translates 2px right. Focus draws an outline **plus a filled 6px square in the rail** — the same margin marker the report uses for a finding, so keyboard users get the brand's own notation. Copper on paper-side grounds, `--paper` on the reversed footer, both above 3:1 in both seasons: the marker is a *designed* indicator, so it inverts with the panel rather than being dropped on it (§9.4). Active drops 1px and darkens the rule. |
-| **7** | **Grid-breaking editorial composition** | An asymmetric **rail-and-measure** page: 12 columns, but never twelve equal cells — the rail is 1–3, the measure is 4–10, and 11–12 are a live **bleed track**. The display headline starts flush with the rail, one column *left* of the body it introduces, so it visibly does not respect the grid the body respects. That single decision is what takes the page out of a centred content well. |
-| **8** | **Texture and atmosphere** | A 4% `feTurbulence` paper grain, generated as an inline data-URI SVG at **241 bytes** with **no network request**; a three-weight hairline system (`1px --rule` separator, `1px --ink` section boundary, `2px --flag-ochre` finding) that does more visual work than any image on the site; and a hand-set **survey-tick season divider** whose ticks halve and whose gaps double in Dormant Season, so the ornament itself gets sparser in winter. |
+| **1** | **Hierarchy through scale contrast** | `--type-body` is 17px; `--type-display` reaches 100px. A **5.9× jump**, with rail labels at 11px mono against it — a 9× span across one page. Hierarchy is carried by size only. No heading anywhere is distinguished by being bold-and-grey. |
+| **2** | **Intentional spacing rhythm, not uniform padding** | Five non-interchangeable vertical gaps — `--space-row` 12px, `--space-entry` 24px, `--space-block` 32–56px, `--space-section` 64–160px, `--space-chapter` 96–256px — with a rule enforced in review that **no two adjacent levels of hierarchy may use the same gap.** Only the season divider gets `--space-chapter`, once per page. |
+| **3** | 🔁 **Depth and layering** | Five mechanisms, none of them elevation: the **bleed track** (grid columns 11–12) runs the masthead plate off the right edge past the container; the **navy status strip** now overlaps the masthead as a solid reversed band rather than a paper one, which is a stronger overlap than before; the summary facsimile is **inset** on `--paper-deep` between two hairlines; the season strip breaks out of the measure to the full container; and a fixed 4% fractal-noise grain multiplies over everything. |
+| **4** | **Typography with a real pairing strategy** | A display old-style serif against the IBM Plex superfamily — one type system plus a display face, not three unrelated fonts. Every axis pinned rather than defaulted (`"opsz" 120, "SOFT" 0, "WONK" 0`), tracking and leading specified per role, `tabular-nums` on every price, date and count so the ledger columns do not shimmy. The mono is what makes `$279` and `VISIT 07 OF 16` read as readings rather than claims. |
+| **5** | 🔁 **Colour used semantically** | The **ember ramp is a monopoly on "act"** — one colour, one meaning, three lightnesses chosen by ground: `--ember-deep` for text-size actions, `--ember` for display figures and non-text marks, `--ember-lift` only inside the navy strip. The retired ochre flag is folded into it, so the focus marker, the finding rule and the price a customer says yes or no to are now literally the same colour. `--season-support` teal appears **only where a pool does**, and has no off-season existence because there is no off-season pool work. And the whole palette flips on the calendar, so the page tells you whether the business is open before you read a word. |
+| **6** | **Designed hover / focus / active states** | Hover makes **three coordinated changes on one gesture**: the row fills `--wash`, the hairline beneath thickens by `scaleY(2)` and takes `--season-ground`, and the label translates 2px right. Focus draws an outline **plus a filled 6px square in the rail** — the brand's own notation for a finding. It inverts to `--paper` on both reversed panels rather than being dropped on them. Active drops 1px and darkens the rule. |
+| **7** | 🔁 **Grid-breaking editorial composition** | An asymmetric **rail-and-measure** page: 12 columns, never twelve equal cells — rail 1–3, measure 4–10, 11–12 a live **bleed track**. The display headline starts flush with the rail, one column *left* of the body it introduces. **New: the sixteen-tick season strip breaks out of the 68ch measure to the full container**, so the one element that carries the argument is also the one that visibly refuses the reading column. |
+| **8** | **Texture and atmosphere** | A 4% `feTurbulence` paper grain as an inline data-URI with **no network request**; a three-weight hairline system (`1px --rule` separator, `1px --ink` boundary, `2px --ember` finding) doing more visual work than any image on the site; and the hand-set **survey-tick season divider**, whose ticks halve and whose gaps double off season, so the ornament itself gets sparser when the business is closed. |
 
 **Not claimed, on the record:**
 
-- **#9 Purposeful motion.** Motion here is deliberately near-absent. The hairline draw makes
-  the page's structure legible as it arrives and does nothing else. Claiming motion as a design
-  quality on a site this still would be dishonest.
-- **#10 Designed data display.** There is no data visualisation, because a six-client service
-  business has nothing honest to chart. The price ledger and the report facsimile are typeset
-  documents, not charts, and dressing them as dashboards would be exactly the
-  "dashboard-by-numbers" the rule warns against.
+- **#9 Purposeful motion.** Motion here is deliberately near-absent, and the season strip is
+  explicitly forbidden from animating. Claiming motion as a design quality on a site this still
+  would be dishonest.
+- **#10 Designed data display.** There is no data visualisation. The season strip is a typeset
+  schedule and the single figure is a typeset price; dressing either as a chart would be exactly
+  the dashboard-by-numbers the rule warns against, and the brief forbids it by name.
 
 ### Against the banned-pattern list
 
 | Banned | Refused by |
 |---|---|
-| Default card grids with uniform spacing | **There are no cards.** `grep -i card styles/*.css` returns exactly two lines, both comments stating that there are none — there is no `.card` rule and no `class="card"` in any page. Content units are ledger entries: rail label, measure, hairline. |
-| Stock centred hero with a gradient blob | Left-aligned masthead, headline breaking the grid left, plate bleeding off the right edge, and a live open-slot count where the generic CTA would be. Gradients are banned outright and none appear. |
-| Unmodified library defaults | No library. Every font axis, tracking value, leading, gap, radius, and duration is a named token with a stated reason. |
-| Flat layouts with no layering | Bleed track, sticky overlap, inset facsimile, grain layer. |
-| Uniform radius, spacing, and shadows | Radius is `0` by default with two meaningful exceptions capped at 3px; five non-interchangeable spacing tokens; shadows on exactly two elements, both of which physically overlap something. |
-| Safe grey-on-white with one decorative accent | The ground is warm oat `#F4EFE4` and is never white; the ink is a green-cast near-black and is never `#000`; copper is semantic rather than decorative; and the palette carries two seasonal states. |
-| Dashboard-by-numbers | No dashboard, no sidebar, no charts. |
-| Default font stacks used without a reason | The stack and every fallback in it is argued in `01-brand/visual-direction.md` §3.2 and reproduced in `tokens.css` with the reasoning in a comment. |
-| Defaulting to dark mode | **Both seasonal modes are light.** The product happens outdoors in Ohio daylight, on paper, in a truck. |
+| Default card grids with uniform spacing | **There are no cards.** No `.card` rule and no `class="card"` in any page. Content units are ledger entries: rail label, measure, hairline. |
+| Stock centred hero with a gradient blob | Left-aligned masthead, headline breaking the grid left, plate bleeding off the right edge, a live slot count and a sixteen-tick schedule where the generic CTA would be. Gradients are banned outright and none appear. |
+| Unmodified library defaults | No library. Every font axis, tracking value, leading, gap, radius and duration is a named token with a stated reason. |
+| Flat layouts with no layering | Bleed track, reversed sticky band, inset facsimile, measure-breaking strip, grain layer. |
+| Uniform radius, spacing and shadows | Radius `0` by default with two meaningful exceptions capped at 3px; five non-interchangeable spacing tokens; shadows on exactly two elements, both of which physically overlap something. |
+| Safe grey-on-white with one decorative accent | The ground is warm stock `#F4F0E6` and is never white; the ink is a navy-cast near-black and is never `#000`; orange is a semantic monopoly at three grounds-appropriate lightnesses; teal is confined to the pool; two seasonal states. |
+| Dashboard-by-numbers | No dashboard, no sidebar, no charts. The season strip is explicitly built not to become one. |
+| Default font stacks used without a reason | Argued in `visual-direction.md` §3.2 and reproduced in `tokens.css` with the reasoning in a comment. |
+| Defaulting to dark mode | **Both seasonal states are light.** The product happens outdoors in Ohio daylight, on paper, in a truck. |
 
 ---
 
-## 11. Responsive behaviour
+## 13. Responsive behaviour
 
 | Breakpoint | Layout |
 |---|---|
-| **≥1024px** | Rail and measure side by side. Bleed track live — the masthead plate and the season divider run off the right edge of the viewport, past the container. Status strip sticky. |
+| **≥1024px** | Rail and measure side by side. Bleed track live — the masthead plate and the season divider run off the right edge past the container. Status strip sticky. |
 | **768–1023px** | Rail collapses to a mono label line sitting *on* the rule above each entry. Bleed becomes full-width. Status strip sticky. |
 | **<768px** | Single column, 20px side margin. Hairlines run full-bleed to the margins so the ledger read survives. Rail labels sit above each entry. Header is **static**, not sticky, so it does not eat a phone viewport; the footer carries the full nav. |
 
-Verified by reading the CSS at 320, 375, 768, 1024, 1440, and 1920. No horizontal overflow: the
+Verified by reading the CSS at 320, 375, 768, 1024, 1440 and 1920. No horizontal overflow: the
 container is `max-width` with `padding-inline`, the bleed uses `margin-right` against a clipped
-`overflow-x: clip` on `main` rather than a negative viewport-width trick, and the price ledger's
-leader rule is a flexible `flex: 1` element that collapses to zero before it can push the price
-column off-screen.
+`overflow-x: clip` on `main` rather than a negative viewport-width trick, and the season strip is
+a 16-column grid of `minmax(0, 1fr)` so the ticks compress rather than push.
+
+The season strip at 320px puts sixteen 2px ticks and eight month labels across ~280px. The ticks
+survive; the month labels are the tightest type on the page at that width, and they are
+`aria-hidden` reinforcement of a caption that says the same thing in words, so their failure mode
+is cosmetic rather than informational.
 
 ---
 
-## 12. Verification performed, and what could not be verified
+## 14. Verification performed, and what could not be verified
 
 **Done here:**
 
-- Served with `python3 -m http.server` and every page and asset fetched — all `200`, including
-  `js/forms.js`, `robots.txt`, and `sitemap.xml`.
-- Gzipped byte counts measured with `gzip -c <file> | wc -c` and recorded in §9.2. Re-measured
-  after the accessibility work; the numbers in §9.2 are the current files, not the earlier ones.
-- **Contrast swept as a full matrix** — every token against `--paper`, `--paper-deep`, **and
-  `--season-accent`**, in both seasons, plus each season's hover fill, computed by hand from the
-  sRGB relative-luminance formula. The table is §9.4. An earlier pass checked a *list* of pairs
-  it expected rather than the matrix, never evaluated `--season-accent` as a ground, and so
-  missed a focus ring at 2.01:1 / 1.20:1 in the footer of all ten pages. Sweep the matrix.
-- Markup read against `rules/web/coding-style.md` for landmarks, heading order, and semantics.
-  Tag balance verified programmatically across all ten pages after the section split.
-- JSON-LD parsed with a JSON parser after editing, and re-checked property by property against
-  the schema.org type hierarchy — `seo.md` §3.
-- Copy audited against `01-brand/voice.md` §8. **Items 1–30 against the prose, items 31–34
-  against the built site** — the structured data, the rendered CSS case, the alt and label
-  strings, and the meta values. The prose pass alone returned thirty passes while two real
-  defects were live in non-prose surfaces; `copy-deck.md` §10 records both and now states its own
-  scope.
-- Every price traced to `00-model/pricing.md` — `$229 · $269 · $289 · $329 · $249+ · $49+`, and
-  the two internal figures ($100/hr, $149 floor) confirmed absent.
-- `grep` for every banned phrase in `voice.md` §6.1–§6.7 across `site/` and `copy-deck.md`.
+- Served with `python3 -m http.server` and every page and asset fetched — **all 21 URLs
+  returned 200**, including the three favicons, `js/forms.js`, `robots.txt` and `sitemap.xml`.
+- Gzipped byte counts measured with `gzip -c <file> | wc -c` on the shipped files after the
+  re-baseline and recorded in §11.2.
+- **Contrast recomputed from scratch as a full matrix** — every token against `--paper`,
+  `--paper-deep`, `--wash` and `--season-ground`, in both seasonal states, by hand from the sRGB
+  relative-luminance formula. §11.4. All 27 published ratios in `visual-direction.md` §2
+  reproduce; one placement disagreement is flagged rather than silently corrected.
+- Tag balance, heading order, single `<h1>`, and `aria-labelledby` target existence verified
+  programmatically across all ten pages: zero defects.
+- Verified programmatically that **no focusable element sits on a `--paper-deep` ground**, which
+  is the rule the `--ember` focus ring depends on.
+- Verified that **`--ember-lift` appears in exactly three rules**, all of them inside the navy
+  status strip, and that the footer overrides the one that would otherwise land on the Off Season
+  slate.
+- CSS class coverage swept both ways: **zero classes used in markup without a rule, and zero
+  rules without a use.**
+- Token coverage swept both ways: **zero `var(--x)` references to an undefined token, and zero
+  defined tokens with no reference.** Exactly one colour literal exists outside `tokens.css` — it
+  does not; it was moved into `tokens.css` as `--img-edge` during this pass.
+- JSON-LD parsed with a real JSON parser after editing, and re-checked property by property —
+  `seo.md` §3.
+- Copy grepped for every retired string: `$229`, `$269`, `$289`, `$329`, `Green Season`,
+  `Dormant`, `same price in January`, `twelve months`, `year-round` as a membership claim, bare
+  `WPC` not followed by `513`, `139.50`, `69.75`, and the stale pool line *"I don't vacuum,
+  brush, backwash, or touch the filter."* **Zero hits in rendered copy, and zero in source
+  comments.**
+- Copy grepped against `voice.md` §6.1–§6.7. The only hits are `"a licensed trade"` (referring
+  work *out* to a trade that requires a licence, which is correct and is not a claim about him)
+  and the deliberately quoted `"within 24 hours"` in the reply commitment, which quotes the
+  banned phrase in order to refuse it.
+- First-person-plural sweep: every `we` / `us` on the site was read by hand and each one can only
+  mean *you and me* — "we'll walk it together," "the schedule we set when you sign," "either of
+  us," "one of us owns the water." Zero instances where "we" could be swapped for "the company."
+- Every price traced to `00-model/pricing.md`: `$279`, `$249+`, `$49+`. The internal figures
+  ($100/hr, the $149 floor, $139.50) confirmed absent.
 
 **Not possible in this environment, and therefore not claimed:**
 
 - No browser rendering, no screenshots, no visual regression — Playwright cannot launch.
-- No Lighthouse run, so the Core Web Vitals in `rules/web/performance.md` are *designed for*
-  (no render-blocking third party, no layout shift source, no JS on the critical path) rather
-  than *measured*.
-- No automated accessibility audit. The a11y claims in §9.4 come from reading markup and
-  computing contrast, not from axe.
+- No Lighthouse run, so the Core Web Vitals targets are *designed for* (no render-blocking third
+  party, no layout-shift source, no JS on the critical path, explicit dimensions on every
+  eventual image) rather than *measured*.
+- No automated accessibility audit. The claims in §11.4 come from reading markup and computing
+  contrast, not from axe.
 - No cross-browser check. The two modern features used — `:has()` for the season switch and
-  `animation-timeline: view()` for the hairline draw — both degrade to a correct static state
-  and neither is load-bearing.
+  `animation-timeline: view()` for the hairline draw — both degrade to a correct static state and
+  neither is load-bearing. Without `:has()` the site opens IN SEASON and the toggle does nothing
+  visible, which is the correct failure for eight months of the year and a legible one for the
+  other four.
 
 ---
 
-## 13. Open items for the owner
+## 15. Open items for the owner
 
-1. 🔶 **Shoot the seven frames in §6.** This is the single biggest quality lever on the site and
-   no agent can produce it. Priority order if he only does three: **IMG-05** (the finding),
-   **IMG-03** (winter), **IMG-01** (the masthead).
-2. 🔶 **Supply `[PHONE]`, `[EMAIL]`, `[URL]`, `[FORM_ENDPOINT]`, `[GBP_URL]`** — §8.
-3. 🔶 **Install the three webfonts** — §9.5. **And when they land, look at one thing:** a
-   `.freeze` heading in Dormant Season. It is `--season-support` on `--paper` at **4.95:1**,
-   which passes AA and is the narrowest pass on the site. The ratio will not change with the
-   font — contrast is a colour computation — but perceived weight will, and this is the one pair
-   worth a human eye rather than arithmetic. If it reads thin, darken `--season-support` in the
-   Dormant block of `tokens.css`. One hex, nothing else. §9.4, near-miss 4.
-4. 🔶 **Keep the slot count true.** §3.1. It is the most valuable element on the page precisely
-   because it is a fact.
-5. 🔶 **Replace the report facsimile with a real redacted report** the day one exists. It ships
-   labelled as a format, not as a client report, because `brand-brief.md` §4.3 forbids a sample
-   report built from imagination. The label comes off when the report is real.
-6. 🔶 **Do not paste the insurance or LLC wording** until the policy is bound and the Articles
-   are filed. Approved wording is held in `copy-deck.md`, unused.
+1. 🔶 **Shoot the seven frames in §7.** The single biggest quality lever on the site and no agent
+   can produce it. Priority order if he only does three: **IMG-03** (the finding), **IMG-05** (the
+   equipment pad, which is what makes the new pool scope credible), **IMG-01** (the masthead).
+   Frame 6, end of season, needs shooting in late October or it waits a year.
+2. 🔶 **Confirm the logo's icon, rule and small-caps colours** — §8. They ship as `--paper` and
+   are marked unconfirmed in three files. If his artwork differs, his artwork wins.
+3. 🔶 **Supply `[PHONE]`, `[EMAIL]`, `[URL]`, `[FORM_ENDPOINT]`, `[GBP_URL]`** — §10.
+4. 🔶 **Confirm nothing already went out at $249 as a monthly price.** `CANON.md` §10.1. The site
+   is $279 everywhere; the risk is a flyer in somebody's hand.
+5. 🔶 **Confirm the 2026 start with pro-ration.** His agreement is headed 2027. The site says the
+   season is underway and the offer is a pro-rated remainder plus a 2027 lock — `CANON.md` §10.2.
+6. 🔶 **Tell the insurer what he actually touches.** Vacuuming, backwashing and salt-cell checks
+   are pool-system operation. `CANON.md` §10.3. This is a coverage question, not a scope one, and
+   the site now publishes the heavier scope.
+7. 🔶 **Resolve whether the founding rate is capped at four members.** `CANON.md` §3 says "clients
+   signing now"; the stale `pricing.md` §2 says "the first 4." The site says **"clients signing
+   now"** and asserts no cap, which is the safe reading until `wpc-strategist` resolves it.
+8. 🔶 **Keep the slot count and the season strip true.** §3.1 and §6. They are the most valuable
+   elements on the page precisely because they are facts.
+9. 🔶 **Replace the summary facsimile with a real redacted summary** the day one exists. It ships
+   labelled "format only — not a client summary" because a sample built from imagination is
+   forbidden. The label comes off when the summary is real.
+10. 🔶 **Install the three webfonts**, then look at the season stamp in the navy strip — §11.4
+    near-miss 4.
+11. 🔶 **Do not paste the insurance or LLC wording** until the policy is bound and the Articles
+    are filed. Approved wording is held in `copy-deck.md` §9, unused.
 
 ---
 
 ## Related files
 
-- `copy-deck.md` — every word on every page, both enrolment states, all microcopy
+- `copy-deck.md` — every word on every page, both enrolment states, both seasonal states
 - `seo.md` — titles, descriptions, JSON-LD, service area, and why SEO is secondary here
-- `01-brand/visual-direction.md` — the design brief this implements
+- `01-brand/visual-direction.md` — the design brief this implements, and the palette §11.4 checks
+- `01-brand/messaging.md` §1 — *the sixteenth visit*, which §6 draws
 - `01-brand/voice.md` §8 — the checklist all copy passed
 - `00-model/pricing.md` — every price on the site
-- `05-playbook/human-checklist.md` §8 — the shot list §6 cross-references
+- `CANON.md` §3 — the price, the season, the cap, the capacity

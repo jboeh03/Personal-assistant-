@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>This is new. I'd be starting with you. — Westside Property Care</title>
-<meta name="description" content="New, one person, west side of Cincinnati, out of a family grill-cleaning business. Six properties is the cap, and everything I don't do is published.">
+<title>This is new. I'd be starting with you. — Westside Property Care 513</title>
+<meta name="description" content="Local, military roots, one person, west side of Cincinnati, out of a family grill-cleaning business. Six properties is the cap and everything I don't do is published.">
 <link rel="canonical" href="[URL]/about.html">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-16.svg" type="image/svg+xml" sizes="16x16">
+<link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.svg">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="This is new. I'd be starting with you. — Westside Property Care">
+<meta property="og:title" content="This is new. I'd be starting with you. — Westside Property Care 513">
 <meta property="og:description" content="One person, six properties, and a cap that is a schedule constraint rather than a sales line.">
 <meta property="og:url" content="[URL]/about.html">
 </head>
@@ -20,19 +22,33 @@
 <a class="skip" href="#main">Skip to the main content</a>
 
 <header class="strip-wrap">
+  <!-- The status strip is --navy in BOTH seasons. It carries the mark, and the
+       mark does not change with the calendar (visual-direction.md §4.2). -->
   <div class="strip">
     <div class="container strip__inner">
-      <a class="mark" href="index.html">
-        <span>Westside Property Care</span>
-        <span class="mark__short">WPC513</span>
+      <a class="lockup" href="index.html" aria-label="Westside Property Care 513 — home">
+        <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+        <span class="lockup__type">
+          <span class="lockup__word">WPC 513</span>
+          <span class="lockup__name">Westside Property Care</span>
+        </span>
       </a>
       <div class="season">
-        <span class="stamp season__stamp season__stamp--green">Green Season · Apr–Oct</span>
-        <span class="stamp season__stamp season__stamp--dormant">Dormant Season · Nov–Mar</span>
+        <!-- The three status stamps are IN SEASON, OFF SEASON and MEMBERSHIP
+             FULL. They are typographic objects, not emphasis, and they are
+             typed in caps here as well as being rendered in caps by
+             .stamp with text-transform: uppercase. -->
+        <span class="stamp season__stamp season__stamp--in">IN SEASON · MAR 1 – OCT 31</span>
+        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – FEB 28</span>
         <input type="checkbox" id="season-switch" class="visually-hidden">
         <label class="season__label" for="season-switch">
-          <span class="season__to-dormant">See Dormant Season</span>
-          <span class="season__to-green">See Green Season</span>
+          <span class="season__to-off">See off season</span>
+          <span class="season__to-in">See in season</span>
         </label>
       </div>
     </div>
@@ -60,6 +76,7 @@
       <p class="rail">About</p>
       <h1 id="page-h">This is new. I'd be starting with you.</h1>
       <p class="lede">There's no track record to point at, no portfolio, and no reviews. I'd rather lead with that than have you find it out.</p>
+      <p class="lede">I'm local, I've got military roots, and what I'm not new at is outdoor kitchens.</p>
     </div>
   </section>
 
@@ -70,26 +87,41 @@
         <div class="entry__body">
           <div class="measure">
             <h2 id="lineage-h">Where this came from</h2>
-            <p>What I'm not new at is outdoor kitchens. I've been cleaning grills and outdoor kitchens on west-side properties through my family's business, Tri-State Grill Cleaning, and this came out of that.</p>
-            <p>Doing that work put me in a lot of backyards, and the same thing kept happening: the grill got cleaned, and the rest of the outdoor living area was clearly nobody's job. The patio furniture hadn't been wiped since May. The window wells were full. The hose bib was still connected in December. Nobody was looking at any of it, because nobody had been hired to look.</p>
-            <p>That's the job. Not a task you call about — a schedule, the whole outdoor living area, and a record.</p>
+            <p>I've been cleaning grills and outdoor kitchens on west-side properties through my family's business, Tri-State Grill Cleaning, and this came out of that.</p>
+            <p>Doing that work put me in a lot of backyards, and the same thing kept happening: the grill got cleaned, and the rest of the outdoor living area was clearly nobody's job. The patio furniture hadn't been wiped since May. The window wells were full. The skimmer basket hadn't been emptied in a fortnight. Nobody was looking at any of it, because nobody had been hired to look.</p>
+            <p>That's the job. Not a task you call about — a schedule, the whole outdoor living area, and a written record.</p>
           </div>
 
-          <!-- PHOTO REQUIRED · IMG-07 · Frame 6.
-               The WPC513 stencil on the truck door or tailgate, in daylight,
-               equipment visible behind it. This is the shot that makes the
-               business look real to a neighbor who saw the truck on the
-               street. Not a rendered mockup, not a vinyl proof. -->
-          <figure class="plate">
-            <svg class="plate__rules" viewBox="0 0 600 400" role="presentation" focusable="false">
-              <g stroke="currentColor" stroke-width="1" fill="none">
-                <line x1="0" y1="100" x2="600" y2="100"/>
-                <line x1="0" y1="200" x2="600" y2="200"/>
-                <line x1="0" y1="300" x2="600" y2="300"/>
-              </g>
-            </svg>
-            <figcaption class="rail plate__cap">Photo required · Frame 6 · The WPC513 stencil on the truck door or tailgate, in daylight, equipment behind it</figcaption>
-          </figure>
+      <!-- PHOTO REQUIRED · IMG-07 · Frame 7.
+           The mark, in daylight: the WPC513 stencil or the full lockup on the
+           truck door, with the equipment visible behind it. This is the shot
+           that makes the business look real to a neighbour who saw the truck
+           on the street. Not a rendered mockup, not a vinyl proof. -->
+      <figure class="plate">
+        <svg class="plate__rules" viewBox="0 0 600 400" role="presentation" focusable="false">
+          <g stroke="currentColor" stroke-width="1" fill="none">
+            <line x1="0" y1="100" x2="600" y2="100"/>
+            <line x1="0" y1="200" x2="600" y2="200"/>
+            <line x1="0" y1="300" x2="600" y2="300"/>
+          </g>
+        </svg>
+        <figcaption class="rail plate__cap">Photo required · Frame 7 · The WPC513 stencil or the full lockup on the truck door, in daylight, equipment behind it</figcaption>
+      </figure>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="trust-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">What I'm like</p>
+        <div class="entry__body measure">
+          <h2 id="trust-h">Service, honesty, integrity, dependability</h2>
+          <p>Those are the four words I'd want somebody to use about me, and the only way to make them mean anything is to show the receipts.</p>
+          <p>So: everything I don't do is published on this site before you're asked to sign anything. The price is one number and it's on the page. The season ends October 31 and I say so above the price rather than below it. And you get a written summary after every single visit, so if I'm not doing the work you'll know in two weeks, not two years.</p>
+          <p class="pull">The first month is the whole risk. If it's not right, tell me.</p>
         </div>
       </div>
     </div>
@@ -101,9 +133,9 @@
         <p class="rail">The cap</p>
         <div class="entry__body measure">
           <h2 id="cap-h">Six properties, and it's a real cap</h2>
-          <p>Six properties is twelve visits a month, and I do routine visits only on Monday and Friday of weeks 1 and 3. That's four route days.</p>
+          <p>Six properties is twelve visits a month, and I do routine visits only on Monday and Friday. That's four route days.</p>
           <p>Past six I'd either be adding a fifth route day or hurrying at your house to get to somebody else's, and I'm not doing the second one. So when the six are taken the site says MEMBERSHIP FULL and I keep a waitlist, and that's a fact about the schedule rather than a sales line.</p>
-          <p>The empty time is part of what you're paying for. It's what lets a rained-out Monday get moved without anybody being bumped, lets a property that needs an extra hour get one, and lets me be out on an estimate inside a couple of days.</p>
+          <p>The empty time is part of what you're paying for. It's what lets a rained-out Monday get moved without anybody being bumped, lets a property that needs an extra hour get one, and lets me be out on an estimate inside the week.</p>
         </div>
       </div>
     </div>
@@ -117,7 +149,7 @@
           <h2 id="route-h">Why location decides it</h2>
           <p>Green Township, Oak Hills, upper Delhi, and Covedale — and inside that, two clusters.</p>
           <p>Every property has to be within about fifteen minutes of another one I already take care of. A house twenty-five minutes out of position costs me the same unpaid drive twice a month for as long as they're a member, and no price fixes distance.</p>
-          <p>So a qualified property that isn't near a cluster goes on the waitlist. That's true at $329 and it's true if you want to start Monday. Two things move you up the list: a spot opening near you, or a neighbor of yours with a pool adding their name. Two on one street is a cluster, and that changes the math.</p>
+          <p>So a qualified property that isn't near a cluster goes on the waitlist. Two things move you up: a spot opening near you, or a neighbour of yours adding their name. Two on one street is a cluster, and that changes the math.</p>
           <p class="onward"><a href="waitlist.html">How the waitlist actually works</a></p>
         </div>
       </div>
@@ -130,13 +162,12 @@
         <p class="rail">Schedule</p>
         <div class="entry__body measure">
           <h2 id="day-h">You get told the day, not the hour</h2>
-          <p>Your visits are the first and third Monday, or the first and third Friday, depending on which cluster you're in. You don't need to be home.</p>
+          <p>Your visits land on your route day — a Monday or a Friday, set when you sign. You don't need to be home.</p>
           <p>I don't give arrival times, and the reason is worth saying out loud: the day I promise you eleven o'clock is the day the property before yours gets shortchanged when it needs an extra half hour. Eventually that's yours. Never rushing a property is the rule the whole schedule is built to protect, so the schedule has slack in it on purpose.</p>
         </div>
       </div>
     </div>
   </section>
-
   <div class="container">
     <div class="divider" aria-hidden="true">
       <svg class="divider__mark" viewBox="0 0 1200 20" preserveAspectRatio="none" focusable="false">
@@ -173,31 +204,20 @@
           <h2 id="notthis-h">What this isn't</h2>
           <ul class="nots nots--tight">
             <li><h3>Not a lawn service</h3><p>No mowing, trimming, edging, fertilizing, aerating, seeding, pruning, planting, mulching, or bed work.</p></li>
-            <li><h3>Not a pool service</h3><p>I skim, empty <span class="pool">both baskets</span>, and clear the deck. I don't test the water, add chemicals, vacuum, brush, backwash, or touch the filter, and I'm not responsible for the water.</p></li>
+            <li>
+              <h3 class="pool">Not a pool company</h3>
+              <p>I skim, brush, vacuum, empty both baskets, backwash when the system wants it, and read the salt level and the warning lights. I don't test or balance the water and I don't add chemicals.</p>
+              <p class="disclaim">Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment performance, or pool-system operation unless separately contracted.</p>
+            </li>
             <li><h3>Not a landscaper</h3><p>No installation, no design, no hardscape construction.</p></li>
             <li><h3>Not a handyman</h3><p>No repairs, no replacement parts, nothing needing a licensed trade.</p></li>
             <li><h3>Not an emergency service</h3><p>No guaranteed response times and no promised arrival windows.</p></li>
-            <li><h3>Not a snow contractor</h3><p>Salt and ice on the patio, the pool deck, and the walk serving them, on scheduled visits. Not the driveway, not the sidewalk, not between visits.</p></li>
+            <li><h3>Not a winter service</h3><p>The membership stops October 31. No snow, no ice, no freeze protection, and no billing between November and February.</p></li>
             <li><h3>Not a cleaning service</h3><p>Nothing indoors — no garages, basements, enclosed porches, or sunrooms.</p></li>
             <li><h3>Not a home-watch service</h3><p>I'm not checking your house while you travel. I'm taking care of the outdoor living area on a schedule.</p></li>
             <li><h3>Not a crew, and not growing into one</h3><p>One person, six properties. That's the whole business and it's deliberate.</p></li>
-            <li><h3>Not the cheapest</h3><p>A lawn service is less. A single grill cleaning is less. This costs what it costs and the price doesn't move.</p></li>
-            <li><h3>Not seasonal</h3><p>The scope changes in November. The price doesn't.</p></li>
+            <li><h3>Not the cheapest</h3><p>A lawn service is less. A pool service is less. A single grill cleaning is less. This costs what it costs and the price doesn't move.</p></li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-labelledby="gap-h">
-    <div class="container">
-      <div class="entry entry--last">
-        <p class="rail">The honest part</p>
-        <div class="entry__body measure">
-          <h2 id="gap-h">What I can do about having no track record</h2>
-          <p>Four things, and all four are checkable before you pay me anything.</p>
-          <p>The first four members lock their price for twelve months, so nothing we agree today can move on you for a year. There's no contract term — thirty days' notice in writing and you're done, Founding Member or not. Everything I don't do is written down before you sign anything. And you get a report after every single visit, so if I'm not doing the work you'll know inside two weeks, not two years.</p>
-          <p class="pull">The first month is the whole risk. If it's not right, tell me.</p>
         </div>
       </div>
     </div>
@@ -225,11 +245,20 @@
   <div class="container">
     <div class="foot__grid">
       <div>
-        <p class="mark mark--stacked">
-          <span>Westside Property Care</span>
-          <span class="mark__short">WPC513</span>
+        <p class="lockup lockup--foot">
+          <svg class="lockup__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 31 L24 17 L38 31"/><path d="M14 31 V48 H34 V31"/>
+            <path d="M48 15 L55 33 H41 Z"/><path d="M48 33 V48"/>
+          </g>
+        </svg>
+          <span class="lockup__type">
+            <span class="lockup__word">WPC 513</span>
+            <span class="lockup__name">Westside Property Care</span>
+          </span>
         </p>
-        <p class="foot__note">Outdoor living care for six homes on the west side of Cincinnati. Green Township, Oak Hills, upper Delhi, and Covedale.</p>
+        <p class="foot__note">Seasonal Outdoor Living &amp; Property Care</p>
+        <p class="foot__note">Six homes on the west side of Cincinnati — Green Township, Oak Hills, upper Delhi, and Covedale.</p>
       </div>
       <div>
         <h2>Get hold of me</h2>
@@ -261,7 +290,12 @@
 
     <hr class="foot__rule">
 
-    <p class="foot__note">Two scheduled visits a month. The same price in January as in July.<br>This is a new business. I'd be starting with you.</p>
+    <!-- THE SIXTEENTH VISIT, short form (01-brand/messaging.md §1.5, last row).
+         This is what stands where the retired winter-price argument used to
+         sit, on every page of the site. Substituted, not deleted — that
+         argument had a job and something had to keep doing it. -->
+    <p class="foot__line">Sixteen visits. Six properties. One person, and a written summary every time.</p>
+    <p class="foot__note">March 1 through October 31. No scheduled visits November through February, and no billing either.<br>This is new. I'd be starting with you.</p>
   </div>
 </footer>
 
