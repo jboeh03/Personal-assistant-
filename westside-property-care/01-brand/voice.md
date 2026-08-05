@@ -4,6 +4,12 @@
 **This file is auditable.** Other agents check their copy against §6 (banned phrases) and §8
 (the checklist). Every rule here is written to be pass/fail, not to be interpreted.
 
+**Three named rules in §3 catch the failures that a phrase-level pass misses**, because they
+are about the *shape* of a claim rather than its wording — the **price-count rule**, the
+**anchor-leak rule** (a range is the internal quoting table read aloud), and the **non-prose
+surface rule** (structured data, rendered CSS case, alt text, and meta values are copy). Run
+them as well as §6, not instead of it.
+
 **Tokens used in the examples.** `{{owner}}` is his first name, `{{phone}}` the business
 number, `{{slots_open}}` how many of the six spots are currently open, `{{route_day}}` the
 client's assigned route day, `{{address_short}}` a street-name-only reference. These are
@@ -220,7 +226,8 @@ Three questions. All three must pass.
 | Form | A single figure — "$449" | Any range — "$249–$449," "$249 to $449," "$300-ish," "somewhere in the $300s," "high threes" |
 | Scope | This driveway and this back patio | "Pressure washing," "gutters," "seasonal cleanup" — the §5.2 quoted categories |
 | Timing | After the walk | Before the walk, in a report, on a call, in a text, on a page |
-| Hedges | None. The number is flat. | "likely," "probably," "typically runs," "in the ballpark of," "starting around," "from" |
+| Hedges | None. The number is flat. | "likely," "probably," "typically runs," "in the ballpark of," "starting around" |
+| "From" | Only on the two published starting prices — "$249+" / "from $249" for a grill and outdoor kitchen deep clean, "$49+" for a window well (`pricing.md` §5.1) | "From" attached to any §5.2 quoted category — "pressure washing from $249," "gutters from $179." That is an anchor row with the word *from* in front of it. |
 
 **The two published exceptions, and only these two** (`pricing.md` §5.1): a grill and outdoor
 kitchen deep clean is **$249+**, a window well cleanout is **$49+**. Those are published
@@ -933,8 +940,12 @@ rendered text — all of it is customer-facing copy and every item below applies
 **rendered** result, not only the source. See §3, the non-prose surface rule, for how to sweep
 these and for the two real defects that were found there.
 
-**Numbering is stable.** Items are split as `14a`/`14b` rather than renumbered, because other
-agents' audits cite these numbers. Never renumber; split.
+**Numbering is stable, permanently.** Other agents cite these numbers in audit reports, so an
+item number must always mean the same thing. When a rule needs to divide, **split it in place**
+— 14 became 14a and 14b, 19 became 19a and 19b. When a rule is genuinely new, **append a number
+past the end** — the non-prose block is 31–34 even though it is printed before item 30, because
+item 30 is written to be run last. Never renumber an existing item, and never reuse a retired
+number.
 
 **Person and stance**
 
@@ -950,7 +961,9 @@ agents' audits cite these numbers. Never renumber; split.
    bib — rather than a category like "pool care"? (§2 rule 2)
 5. Is at least one thing located on the property — a side, a corner, a fixture? (§2 rule 3)
 6. Does every finding carry a price, a "from" price, or an explicit "I'd have to look at it"?
-   (§2 rule 4)
+   (§2 rule 4) — where "a 'from' price" means one of the two published starting prices in
+   `pricing.md` §5.1 and nothing else. On every other category the honest answer is "I'd have
+   to look at it," never a range and never a soft number. See item 19b.
 7. Are all unfalsifiable adjectives from §6.3 absent?
 
 **Truth**
@@ -1075,7 +1088,12 @@ defects found in this project were both here.*
 
 - `brand-brief.md` — what may be claimed, and the name usage rules this file enforces
 - `messaging.md` — what to say, in what order; every line in it passes §8
-- `visual-direction.md` — the typographic treatment of the stamps referenced in §7
+- `visual-direction.md` — the typographic treatment of the stamps referenced in §7, and §3.4,
+  which the rendered-case rule in §7 item 2 and checklist item 32 enforce
 - `CANON.md` §7 — the guardrails this file extends
-- `00-model/service-catalog.md` — every scope and exclusion quoted above
-- `00-model/pricing.md` — every price quoted above
+- `00-model/service-catalog.md` — every scope and exclusion quoted above. §4.7 is the source of
+  the availability ban in item 14a
+- `00-model/pricing.md` — every price quoted above. §5.1 is what may be published; §5.3 is the
+  internal anchor table the anchor-leak rule protects
+- `02-website/site/thanks.html` — the shipped reference wording for a reply commitment
+  (item 14b, pair 17). Not owned here; cited as the model
