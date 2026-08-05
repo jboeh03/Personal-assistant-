@@ -76,9 +76,10 @@ Outdoor kitchen, no pool   120 − 30 (block 2) =  90    = 1.50 hrs
 Neither                    120 − 50           =  70    = 1.17 hrs   ← not a target client
 ```
 
-Every qualified member property has a pool, an outdoor kitchen, or both
-(`ideal-client.md` §2), so the fourth shape is excluded from the book. On the assumed
-six-client composition in **A6** — two of each of the first three shapes:
+The target property has a pool, an outdoor kitchen, or both (`ideal-client.md` §2), and the
+fourth shape is capped at **one of six and only as an exception** (`ideal-client.md` §2.3),
+so it is excluded from the modelled book. On the assumed six-client composition in **A6** —
+two of each of the first three shapes:
 
 ```
 (2 × 120) + (2 × 100) + (2 × 90)  =  240 + 200 + 180  =  620 min per full round of six
@@ -136,12 +137,13 @@ structures fit:
    calendar across three weeks and leave less contiguous project time, which is the opposite
    of what the model needs.
 5. **Revenue per route day rewards it and can prove it.** At six clients Option A produces
-   $418.50 a route day and Option B produces $279.00 (§9.1). Under a flat price that metric
-   has become a **route-density** measure, and it points straight at Option A.
+   `$1,674 ÷ 4 = $418.50` a route day and Option B produces `$1,674 ÷ 6 = $279.00`. Under a
+   flat price that metric has become a **route-density** measure
+   (`operating-model.md` §7.1), and it points straight at Option A.
 
 **The honest cost of Option A, and the rule that handles it.** If all three properties on a
 route day genuinely need the full two hours, the day is seven hours with no slack in it.
-That is why `ideal-client.md` §3 carries a hard scheduling rule: **never more than one
+That is why `ideal-client.md` §2.3 carries a hard scheduling rule: **never more than one
 pool-and-outdoor-kitchen property per route day, and never more than two in the book.** On
 the assumed composition each route day carries one of each shape:
 
@@ -669,7 +671,7 @@ value $279 a month. `ideal-client.md` §2.1 explains why the hourly column is no
 
 **The same fee buys a third more of his on-site time on a maximal property than on a plain
 one.** Under attribute pricing that gap was closed with money. Under a flat price it can
-only be closed with **selection and scheduling** — which is why `ideal-client.md` §3 caps
+only be closed with **selection and scheduling** — which is why `ideal-client.md` §2.3 caps
 the book at two pool-and-outdoor-kitchen properties and never puts two on the same route
 day.
 

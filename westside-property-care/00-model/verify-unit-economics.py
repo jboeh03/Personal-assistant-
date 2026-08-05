@@ -480,7 +480,9 @@ _, _, _, ptS = processing(R6["mem"], 48, mpS, mpS_n, R6["nm"], R6["nm_n"])
 expS = vehS + 65 * 8 + 55 * 12 + 29 * 12 + rd(ptS) + 35 * 12 + 600 + 60 + 350
 netS = grossS - expS
 chk("Z21 sens member projects", mpS, 2475)
-chk("Z22 sens attach rate %", round(100 * mpS_n / (6 * 16), 1), 9.4)
+# 100 * 9 / 96 = 9.375 sits exactly on a rounding midpoint; nudge past it so the
+# result does not depend on banker's rounding.
+chk("Z22 sens attach rate %", round(100 * mpS_n / (6 * 16) + 1e-9, 1), 9.4)
 chk("Z23 sens gross", grossS, 24367)
 chk("Z24 sens hours", hrsS, 451)
 chk("Z25 sens miles", miS, 2260)

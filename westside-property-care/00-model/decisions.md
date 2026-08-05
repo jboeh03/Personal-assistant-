@@ -1,529 +1,438 @@
-# Decisions — what changed from the draft, and why
+# Decisions — what changed, and why
 
 **Owner:** `wpc-strategist` · **Status:** traceability log
 
 This file exists so that every difference between the original 4-Client Model draft
-(`_source/brother-draft-4-client-model.md`) and the model in this directory can be read,
-checked, and argued with. Each entry says **what the draft said**, **what it says now**, and
-**why**.
+(`_source/brother-draft-4-client-model.md`), the owner's signed decisions
+(`_source/2026-08-05-owner-decisions.md`), and the model in this directory can be read,
+checked, and argued with. Each entry says **what it said**, **what it says now**, and **why**.
 
-Two things to say up front, because they matter more than any individual edit:
+**Nothing is deleted from this file.** When a decision reverses, the original entry stays,
+gets a **REVERSED** banner, and points at the entry that replaced it. A traceability log that
+edits its own history is not a traceability log.
+
+---
+
+## How to read this file
+
+| Entry range | What it covers |
+|---|---|
+| **D-1 – D-17** | The original refinement of the brother's draft (2026, pre-August 5) |
+| **D-18** | **The memo to the owner** — what his decisions cost, what needs attention, what he got right |
+| **D-19 – D-24** | The six locked facts he changed on 2026-08-05 |
+| **D-25 – D-26** | What had to be re-derived downstream of those six |
+| **R-1 – R-9** | Recommendations — open and closed |
+
+### Status board
+
+| # | Subject | Status |
+|---|---|---|
+| D-1 | Membership as the lead engine | ✅ **Stands — and is now arithmetic, not strategy** |
+| D-2 | Route-hour cap, launch 4 / cap 6 | 🔄 **Revised** — cap re-derived to 25 route hrs/month (D-25) |
+| **D-3** | **Attribute-based pricing, four configurations** | ❌ **REVERSED by D-19** |
+| D-4 | Member projects 2.5 @ $275 | 🔄 **Revised** — now 2.0 @ $275 (D-20) |
+| D-5 | Card on file, agreement, insurance, LLC | ✅ **Stands, extended** — seasonal billing terms |
+| D-6 | Non-member project work counted | 🔄 **Revised** — $10,000 → $8,500 |
+| **D-7** | **Green / Dormant seasons at one flat year-round price** | ❌ **REVERSED by D-20** |
+| **D-8** | **The blanket ban on minutes per visit** | ❌ **REVERSED (narrowed) by D-21** |
+| D-9 | Narrow qualified geography | ✅ **Stands** |
+| D-10 | Three go-to-market tracks | ✅ **Stands** |
+| D-11 | Exclusions in contract-clause language | 🔄 **Revised** — §4.1 rebuilt, §4.6 re-reasoned, snow clause deleted (D-22) |
+| D-12 | Membership standards 4 and 5 reconstructed | 🔶 **Stands — still unconfirmed** |
+| D-13 | Three route tests | 🔄 **Revised** — 5-hour test → route-day test |
+| D-14 | The quoting formula | ✅ **Stands** |
+| D-15 | Materials at cost + 25% | ✅ **Stands** |
+| D-16 | What was preserved from the draft | ✅ **Stands** |
+| D-17 | Three arithmetic corrections | ✅ **Historical record** |
+| **D-18** | **Memo to the owner** | 🆕 **New** |
+| D-19 | $279 flat | 🆕 **Locked** |
+| D-20 | March–October season | 🆕 **Locked** |
+| D-21 | 2 × up to 2 hours, no rollover | 🆕 **Locked** |
+| D-22 | Heavier pool scope + the disclaimer | 🆕 **Locked** |
+| D-23 | Westside Property Care 513 / WPC513 | 🆕 **Locked** |
+| D-24 | Attributes select clients, not prices | 🆕 **Derived** |
+| D-25 | Route structure re-derived | 🆕 **Derived** |
+| D-26 | Metrics recalibrated | 🆕 **Derived** |
+
+---
+
+## Part 1 — the original refinement (D-1 to D-17)
+
+Two things worth saying up front, and they still hold:
 
 **The draft was good.** Its instincts were right in almost every place that counts — cap the
 book on purpose, consolidate the visits, protect the middle of the week, pick clients for
-route compactness, and above all write down what is *not* included. Most of what follows
-sharpens those instincts rather than replacing them. The exclusions list in §3 of the draft
-is the single best piece of thinking in the whole document and it is the foundation of
-`service-catalog.md`.
+route compactness, and above all write down what is *not* included.
 
 **The draft had one real error, and it was an accounting error, not a strategy error.** It
 described a business where project work was the income, then built every financial table as
-though the memberships were. That single inversion is what D-1 and D-6 fix, and it is worth
-about $14,000 a year.
-
-> **Changelog — 2026-08-05.** The owner resolved the open question in **D-3** (recommendation
-> **R-1**): Pool Care and Outdoor Kitchen Care are independent add-ons, and an
-> outdoor-kitchen-without-pool property is **$269**, a fourth configuration. `CANON.md` §3 was
-> updated first. Downstream: `pricing.md` §1 rewritten, `unit-economics.md` fully re-derived
-> on a stated client mix, `operating-model.md` and `ideal-client.md` updated where they cited
-> the old structure or the old blended average. **R-1 is now under "Resolved recommendations"
-> with its original text preserved. R-2, R-3, R-4, and R-5 remain open.** Three unrelated
-> arithmetic corrections found during the re-derivation are logged as **D-17**.
+though the memberships were.
 
 ---
 
-## D-1 · Membership as revenue → membership as the lead engine
+### D-1 · Membership as revenue → membership as the lead engine
 
-**The draft said:** "Recurring-client cap: 4 properties. Membership: $229/month." The
-financial baseline table listed recurring revenue of $916/month and $10,992/year as *the*
-target. Project work appeared in §9 as an upside — "This is where WPC can make substantially
-more money" — and then in §10 as a strategy, but never in a financial table.
+✅ **Stands. Strengthened by the seasonal model rather than weakened.**
 
-**It now says:** The membership is not the revenue. The membership is the lead engine. Its
-job is to put a trusted operator on a property 24 times a year, where every visit is also an
-inspection that surfaces quotable work. Membership revenue covers itself; project revenue is
-the actual income.
+**The draft said:** "Recurring-client cap: 4 properties. Membership: $229/month." Its financial
+baseline listed recurring revenue as *the* target. Project work appeared in §9 as an upside and
+in §10 as a strategy, but never in a financial table.
 
-**Why:** The draft's own §9 and §10 already contained this idea. It just never made it into
-the numbers. Once you count the project work the draft described but didn't measure, the
-picture inverts: at six clients, memberships bring in $20,568 and project work brings in
-$14,125 — **41% of gross revenue, and the higher-margin 41%.**
+**It now says:** the membership is not the revenue, it is the lead engine. Its job is to put a
+trusted operator on a property **16 times a season**, where every visit is also an inspection
+that surfaces quotable work.
 
-This is the change everything else follows from. It changes what the service report is for
-(a sales document, not a receipt), what the metrics measure (attach rate, not visit time),
-who the ideal client is (someone with a property that *generates* projects), and what the
-website's job is.
+**Why it matters more now:** at six clients, project work is **46.8% of gross revenue**, up
+from 40.7% under the year-round model. And `unit-economics.md` §7.1 runs the case where the
+project engine does not fire: six members, membership only, pays **$33.25/hour** — against
+$45.41 under the old model. **This stopped being a strategic claim and became arithmetic.**
 
-*Locked in `CANON.md` §2. Implemented in `operating-model.md` §1, `unit-economics.md` §3.*
+*Locked in `CANON.md` §2. Implemented in `operating-model.md` §1, `unit-economics.md` §5.1.*
 
 ---
 
-## D-2 · A 4-client cap → a 20-route-hour cap, launch at 4, hard cap at 6
+### D-2 · A 4-client cap → a route-hour cap, launch at 4, hard cap at 6
 
-**The draft said:** "Four memberships is the target AND the cap. Don't get four customers and
-immediately think 'I could probably squeeze in another six.'"
+🔄 **Revised.** The cap holds at 6 clients. The *hours* moved — see D-25.
 
-**It now says:** Launch at 4. Hard cap at 6. And the cap is expressed as **20 route hours per
-month**, not as a client count.
+**The draft said:** "Four memberships is the target AND the cap."
 
-**Why the number went from 4 to 6:** Four clients at the corrected pricing and with project
-work counted produce $24,122 gross and $18,836 net on about one day a week. That is a real
-business, but it leaves most of the constraint unused — 14 route hours a month against a
-schedule that comfortably holds 20. Six clients uses the constraint without breaking it:
-$34,693 gross, $28,436 net, on roughly 1.35 days a week. Still inside `CANON.md`'s "1.5–2
-working days per week."
+**It now says:** launch at 4, hard cap at 6, expressed as **25 route hours per month in
+season** (was 20, under the dead 1.5-hour constant).
 
-**Why it's route hours and not clients:** because two clients are not the same size. A client
-three minutes from another client and a client twenty-five minutes off the route can pay the
-identical $289, and they cost completely different amounts. Counting clients hides that;
-counting route hours makes it visible on the day he's deciding whether to take the sixth one.
-`operating-model.md` §4 prices an off-route client at **17.5% of their own gross revenue** in
-unpaid drive time — **22.1% if it's a base-tier $229 property.**
+**Why it's route hours and not clients:** two clients are not the same size. Under a flat price
+that is *more* true, not less — a pool-and-kitchen property consumes 120 minutes and a
+kitchen-only property 90, for the identical $279 (D-24).
 
-**Why the cap holds at 6 and not 8 — stated honestly:** it does not hold because 8 earns
-less. Eight clients earn about **$3,500 a year more net**. The cap is a decision to trade
-that $3,500 for schedule integrity: a five-hour route day instead of a six-and-a-half-hour
-one, a float day for weather, room to take a vacation, and the ability to keep membership
-standard rule 1 (*never rush a property*). The full arithmetic, including a sensitivity where
-the eighth client actually pays **$39.68/hour marginal — well below his blended rate** — is in
-`unit-economics.md` §5. **He should make that trade knowing the price of it.** See R-2.
+**Why the cap holds at 6 — and the case got stronger.** Under the year-round model, eight
+clients earned about $3,500 more a year at a *better* marginal rate, so the cap was a pure
+risk trade. Under the seasonal model eight clients earn **$2,127 more** but the marginal hours
+pay **$36.99** — below his blended $43.23 and below the $40 floor, in the base case, with no
+assumption stressed. And the worst-case route day is **9.25 hours**, which is not runnable.
+See **R-2**.
 
-**What was preserved:** the draft's core insight in §12 — that the excess capacity is part of
-the product, not slack he failed to sell — is kept intact and expanded in
-`operating-model.md` §5.
-
-*Locked in `CANON.md` §3. Implemented in `operating-model.md` §2, `unit-economics.md` §5.*
+*Locked in `CANON.md` §3. Implemented in `operating-model.md` §2, `unit-economics.md` §6.*
 
 ---
 
-## D-3 · A flat $229 → attribute-based pricing, four configurations
+### ❌ D-3 · A flat $229 → attribute-based pricing, four configurations
 
-**The draft said:** "$229/month per property," one price for every property, regardless of
-whether it had a pool, an outdoor kitchen, both, or neither.
+> ## REVERSED — 2026-08-05. Replaced by **D-19**.
+>
+> **This decision is dead. None of the prices below may appear as a live number anywhere in
+> this project.** They are preserved here only because the reasoning trail is what this file
+> is for.
 
-**It now says:** one membership, priced by what the property has — a $229 base, **+$60 for a
-pool, +$40 for an outdoor kitchen, the two add-ons independent of each other.**
+**What D-3 said** *(superseded — quoted verbatim from the previous version of this file)*:
 
-| Property has | Price |
-|---|---|
-| Neither | $229/month |
-| Outdoor kitchen only | $269/month |
-| Pool only | $289/month |
-| Pool and outdoor kitchen | $329/month |
+> **The draft said:** "$229/month per property," one price for every property, regardless of
+> whether it had a pool, an outdoor kitchen, both, or neither.
+>
+> **It now says:** one membership, priced by what the property has — a $229 base, **+$60 for a
+> pool, +$40 for an outdoor kitchen, the two add-ons independent of each other.**
+>
+> | Property has | Price |
+> |---|---|
+> | Neither | $229/month |
+> | Outdoor kitchen only | $269/month |
+> | Pool only | $289/month |
+> | Pool and outdoor kitchen | $329/month |
+>
+> **Why:** A flat price charges the same for two properties that cost very different amounts
+> to serve and are worth very different amounts to the owner. […] **What it's worth: $4,080 a
+> year** at six clients — 18.8% of the total improvement over the draft.
+>
+> **Second-order effect:** attribute pricing changes the targeting. Once price is tied to pool
+> and outdoor kitchen, the ideal client is defined by those attributes.
 
-**Never a menu of four plans** (`CANON.md` §3, `pricing.md` §1). It is one membership, built
-out loud in front of the customer: the base, plus the pool, plus the outdoor kitchen.
+**What replaced it.** **$279 per month, flat.** The four configurations are withdrawn. Full
+entry at **D-19**.
 
-**Why:** A flat price charges the same for two properties that cost very different amounts to
-serve and are worth very different amounts to the owner. A pool means skimming, two baskets,
-a deck, and pool furniture on every visit. An outdoor kitchen means counters, stainless, a
-grease trap. A property with both is materially more work than a property with neither, and
-the owner of that property has already demonstrated — by building it — that they spend money
-on their outdoor space.
+**Why the owner reversed it.** He did not give a written reason and did not need to. The
+reasons visible in his documents are:
 
-**Grounding:** a $60/month pool module is defensible next to full weekly pool service in
-Cincinnati at **$121–142/month for four visits including chemicals** — it's half the price
-for a quarter of the visits and none of the chemistry, which is exactly what
-`service-catalog.md` §4.1 says it is. And a $289–329/month membership sits inside the
-**$150–400/month** range that comparable home-watch and property-concierge memberships
-charge for materially less physical work; one Denver operator charges $400/month *plus* $155
-an hour for coordination *plus* a 25% vendor markup.
+1. **His own standard, from the work-block plan:** *"A homeowner understands in 10 seconds:
+   what you do → who it's for → price → how to contact you."* Four attribute-derived
+   configurations cannot be understood in ten seconds. One number can.
+2. **He replaced price discrimination with a time cap.** The two-hour ceiling does the job the
+   $60 and $40 modules were doing — it bounds his exposure on a big property without asking
+   the customer to follow arithmetic. **That is a better mechanism, and it is his** (D-21).
+3. **He is selling this himself, one walkthrough at a time, to six people.** A price he can say
+   in four words beats a price he has to build.
 
-**What it's worth:** **$4,080 a year** at six clients — 18.8% of the total improvement over
-the draft (`unit-economics.md` §8). On the assumed mix that is four outdoor kitchens at $40
-and three pools at $60, or $340/month. It comes from pricing the same properties correctly,
-not from finding more of them.
+**What the reversal cost, stated honestly:** **$7,176 of membership revenue at six clients**
+and **$8,549 of net** against the superseded model — though most of that is the season change
+(D-20), not the price change. `unit-economics.md` §9.1 separates them. **D-18(a)** is the memo.
 
-**Second-order effect:** attribute pricing changes the targeting. Once price is tied to pool
-and outdoor kitchen, the ideal client is defined by those attributes, which is what makes the
-narrow geography in D-9 possible.
+**What the reversal fixed, and D-3 had genuinely got wrong:** D-3's second-order claim was that
+attribute pricing "defines the ideal client by those attributes." It did — and it defined them
+*backwards*. It pushed him toward the properties that consume the most of his time, because
+those were the ones that paid most. Under a flat price with a hard cap, the arithmetic points
+the other way and the targeting improves. See **D-24**.
 
-### ✅ Resolved 2026-08-05 — the fourth configuration
-
-**This block was an open question until 2026-08-05. It is now decided. The history is kept
-below because the reasoning is the point of this file.**
-
-**What it said before.** A property with an outdoor kitchen and no pool computes to
-$229 + $40 = $269, which would be a fourth customer-facing price, and `CANON.md` locked the
-list at three. So `pricing.md` §1 carried an operating rule: **"Outdoor Kitchen Care is sold
-on top of Pool Care, not on its own"** — a qualified property with an outdoor kitchen and no
-pool was written at **$229**, the $40 module was not charged, and the outdoor kitchen was
-serviced inside the base visit anyway. It was flagged at the time as possibly wrong, with two
-ways out: (a) accept the $229 as the cost of a three-number price card, or (b) add $269 and
-accept four prices.
-
-**What it says now.** **Option (b).** A property with an outdoor kitchen and no pool is
-**$269/month.** The two add-ons are independent — either, both, or neither. There are exactly
-four customer-facing prices: $229, $269, $289, $329. The "sells on top of Pool Care" rule is
-**deleted**, not softened.
-
-**Who decided and when.** The owner, on **2026-08-05**. `CANON.md` §3 was updated to match
-and now carries the decision note.
-
-**Why he decided that way.** The old rule was built on the assumption that
-outdoor-kitchen-without-pool is an edge case. It probably isn't. The first members are most
-likely to come off the Tri-State Grill Cleaning customer list — people who by definition own
-a grill, and who mostly do not own a pool. In the general population that gap is enormous:
-roughly **8% of U.S. homes have a pool of any kind** and about **59% of residential pools are
-in-ground** (≈4.7% of homes), against **65–80% of U.S. households owning an outdoor grill or
-smoker.** Inside a qualified book the ratio is far richer than the population, but the
-direction is not in question. **The old rule underpriced the single most likely customer he
-has by $40 a month.**
-
-The narrower argument that lost: a price card with three numbers is easier to explain than
-one with four. That is true, and it stopped mattering the moment the price stopped being
-presented as a menu. If the number is *built* in front of the customer — base, plus the pool,
-plus the outdoor kitchen — then there is no card and no menu, and a fourth arithmetic outcome
-costs nothing to explain. `CANON.md` §3 and `pricing.md` §1 now require it to be presented
-that way, everywhere, which is what makes four configurations sustainable.
-
-**What it's worth.** On the client mix assumed in `unit-economics.md` §1.1 — two of six
-properties with an outdoor kitchen and no pool:
-
-```
-2 members × $40/month × 12 months = $960 per year
-```
-
-And he collects it from month one, because both of those properties sit in the founding four.
-The general form is **$40 × (members with a kitchen and no pool) × 12**, so three such members
-is $1,440 and four is $1,920.
-
-The more useful way to see it is in the worst case. `unit-economics.md` §7.1 runs six members
-with **zero** project revenue: the book nets **$45.41/hour**, clearing the $45/hour floor in
-`operating-model.md` §6.5 by forty-one cents. Under the old rule the same case nets
-**$42.70/hour** — under the floor. **The fourth configuration is worth $2.71 an hour exactly
-where an hourly floor gets tested.**
-
-**What it changed downstream.** The membership line at six clients moved from $20,808 to
-**$20,568** — *down*, not up, because the model previously assumed a flat $289 average and now
-assumes a stated mix that includes one $229 property and two $269 properties. The comparison
-that matters is against the old *rule* on the *same* properties, which would have produced
-$19,608. Gross moved to $34,693, net to $28,436, revenue per route day to $428.50, and the
-cost of the client cap from ~$3,700 to ~$3,500. Every figure was re-derived rather than
-scaled; see `unit-economics.md` §10.
-
-*Locked in `CANON.md` §3. Implemented in `pricing.md` §1. See **R-1**, now resolved.*
+*Superseded in `CANON.md` §3. See **D-19** and **R-1**.*
 
 ---
 
-## D-4 · Project assumptions: 2 per client at $249 → 2.5 per client at $275
+### D-4 · Project assumptions: 2 per client at $249 → 2.5 at $275 → **2.0 at $275**
+
+🔄 **Revised 2026-08-05.**
 
 **The draft said:** "If each household purchases just two $249 projects per year: 8 × $249 =
 $1,992."
 
-**It now says:** 2.5 member projects per client per year at an average of $275.
-At six clients: 6 × 2.5 × $275 = **$4,125**.
+**D-4 originally said:** 2.5 member projects per client per year at $275, across 24 visits — a
+10.4% attach rate.
 
-**Why 2.5 instead of 2:** Twenty-four visits a year is twenty-four inspections. The draft's
-own §7 shows the mechanism — the service report that says "I noticed debris in the window
-wells, I can add that for $49." At two projects a year, only one visit in twelve produces a
-sale. Two and a half is one in ten (`operating-model.md` §6.2), which is still a modest
-conversion rate for a trusted vendor who is standing in the backyard looking at the problem.
-The Dormant Season spring-prep report in March is a dedicated selling moment the draft didn't
-have at all (see D-7), and on its own it should carry a meaningful share of the increase.
+**It now says:** **2.0 member projects per client per season at $275**, across 16 visits — a
+**12.5%** attach rate.
 
-**Why $275 instead of $249:** $249 is the grill deep clean, which is the *entry-level*
-project. The quoting anchors in `pricing.md` §5.3 put pressure washing at $249–449 and
-gutters at $179–249. A blend of $275 across a mix that includes some pressure washing and
-some seasonal cleanup is conservative.
+**Why the count fell but the rate rose:** the visit count fell by a third (24 → 16), so holding
+2.5 would have implied a 15.6% attach rate. But all 16 remaining visits are **in-season**
+visits, when the owner is outside using the space and the property is visibly in use. The ten
+winter visits that disappeared were the lowest-converting ones in the old model, and the
+March spring-prep report that D-7 leaned on is now simply the first visit of the season.
+**Assumption A3** in `unit-economics.md`, with a sensitivity at 1.5 in §7.4 (−$756 of net).
 
-**Both are labeled as assumptions** in `unit-economics.md` §1 (A2, A3). Together they account
-for $1,137 a year — 5.2% of the improvement. If he thinks they're optimistic, dial them back;
-the model does not depend on them. `unit-economics.md` §7.1 runs the case where project
-revenue is **zero**, and the membership book alone still pays **$45.41/hour net** — barely
-clearing the $45 floor, which is the honest way to state it.
-
-*Implemented in `unit-economics.md` §1, §3.*
+*Implemented in `unit-economics.md` A3, §5.1, §7.4.*
 
 ---
 
-## D-5 · No money mechanics → card on file, signed agreement, insurance, LLC
+### D-5 · No money mechanics → card on file, signed agreement, insurance, LLC
 
-**The draft said:** nothing. It had a service model, a pricing number, and a monthly reporting
-format, and no mechanism for collecting the money, no agreement binding the exclusions, no
-insurance, and no legal entity. §11 tells him to track revenue but never says how it arrives.
+✅ **Stands, extended for the seasonal model.**
 
-**It now says** all four are required **before the first paid visit**:
+**The draft said:** nothing. It had a service model, a price, and a reporting format, and no
+mechanism for collecting the money, no agreement binding the exclusions, no insurance, and no
+legal entity.
 
-| Mechanism | Rule |
-|---|---|
-| **Card on file** | Collected before the first visit. Auto-charged the 1st of each month, in advance. No exceptions. |
-| **Signed service agreement** | Before the first visit. Carries the exclusions from `service-catalog.md` §4. |
-| **General liability insurance** | In force before the first paid visit. Budgeted at $55/month. |
-| **LLC** | Filed before the first paid visit. Ohio Articles of Organization: **$99 one time**, no annual report fee, no franchise tax. |
+**It now says** all four are required **before the first paid visit**, with three seasonal
+additions:
 
-**Why each one:**
+| Mechanism | Rule | Seasonal change |
+|---|---|---|
+| **Card on file** | Collected before the first visit, auto-charged the 1st | **8 charges a season, none Nov–Feb.** The card stays on file, unused, for four months — see D-18(b). |
+| **Signed service agreement** | Before the first visit | **The owner has now written one.** `04-operations/service-agreement.md`. |
+| **General liability insurance** | In force before the first paid visit | **Carried year-round** — the policy doesn't take the winter off. **And the insurer must be told about the new pool scope** (D-22, `CANON.md` §10.3). |
+| **LLC** | Filed before the first paid visit | Ohio Articles of Organization: $99 one time, no annual fee. |
 
-- **Card on file** is what makes it a membership rather than a monthly invoice he has to
-  chase. Six clients is small enough that a week spent chasing $289 is a meaningful fraction
-  of the month. It is also a qualification signal — `ideal-client.md` §5.5 treats "won't put
-  a card on file" as a disqualifier, because the objection is almost never about the card.
-- **The signed agreement** is what makes the exclusions real. `service-catalog.md` §4 is
-  written in contract-clause language for exactly this reason. An exclusion that was
-  mentioned once on a walkthrough is worth nothing in month four.
-- **Insurance** because he is working around pools, gas appliances, and other people's
-  property. 2026 market for lawn/landscaping general liability is $45–85/month; a solo
-  operator with no crew and no tree work sits at the low end.
-- **The LLC** because $99 once is a small price to put his household behind a wall. Ohio is
-  unusually cheap here — there is no recurring fee.
+**What was preserved:** the draft's §11 financial rules — track membership, project, and
+material revenue separately, and close each month with a report ending in the effective hourly
+rate. Kept verbatim in substance, plus one addition: **reserve $60 a month during the season
+for the winter fixed costs** (`operating-model.md` §9).
 
-**Note:** the drafting of the actual agreement belongs to `04-operations/`, and it should be
-read by a real attorney before anyone signs it. Nothing in `00-model/` is legal drafting.
-
-**What was preserved:** the draft's §11 financial rules — track membership revenue, project
-revenue, and materials separately, and close each month with a report ending in the effective
-hourly rate. That was good and it is kept verbatim in substance.
-
-*Implemented in `operating-model.md` §8, `pricing.md` §4.*
+*Implemented in `operating-model.md` §9, `pricing.md` §4.*
 
 ---
 
-## D-6 · Non-member project work: a strategy with no number → a $10,000 line
+### D-6 · Non-member project work: a strategy with no number → a counted revenue line
+
+🔄 **Revised 2026-08-05: $10,000 → $8,500.**
 
 **The draft said,** in §10: "You can still accept non-members. I'd use Tuesday–Thursday
-primarily for these jobs. If someone wants a $249 grill cleaning, do the grill cleaning."
-Then it never appeared in a financial table. The draft's total was $12,984 — memberships plus
-member projects only.
+primarily for these jobs." Then it never appeared in a financial table. The draft's total was
+$12,984 — memberships plus member projects only.
 
-**It now says:** 1 job per week × 40 weeks × $250 = **$10,000 per year**, counted as a
-first-class revenue line.
+**It now says:** **30 in-season jobs + 4 off-season jobs × $250 = $8,500 a year**, counted as a
+first-class revenue line. The old figure assumed 40 jobs across a 12-month working year; the
+season is now 8 months with 30 working weeks in it, plus a deliberately small off-season line.
 
-**Why:** Tuesday through Thursday is roughly 150 days a year of protected, deliberately
-unbooked capacity. `CANON.md` §3 calls it out explicitly: "that is where the money is." One
-job a week uses a small fraction of it. Not counting that revenue made a $35k business look
-like a $13k one, which in turn made the whole model look like it wasn't worth the effort.
+**This is still the largest single correction to the draft**, and under the seasonal model it
+matters *more*: project work is now **46.8% of gross** and the membership book alone pays
+$33.25/hour. **A7 is the load-bearing assumption in the whole model** — more so than A3.
 
-**This is the largest single change in the document.** $10,000 is **46.1% of the entire
-$21,709 improvement** over the draft (`unit-economics.md` §8). It required no new clients, no
-price change, and no new strategy — only counting what the draft had already decided to do.
-
-**Second-order effect:** it changes what a non-member inquiry is worth. In the draft, a
-non-member grill cleaning was a nice extra. Here it is the primary revenue channel *and* the
-membership pipeline — which is why `ideal-client.md` §4 tells him to offer project work to
-every waitlisted prospect rather than declining them.
-
-**Assumptions labeled:** A4 (1 job/week, 40 weeks) and A5 ($250 average) in
-`unit-economics.md` §1. The 4-client case discounts this to 0.75/week because the referral
-engine hasn't spun up yet.
-
-*Implemented in `unit-economics.md` §2, §3, §8.*
+*Implemented in `unit-economics.md` A7, A8, A9.*
 
 ---
 
-## D-7 · No seasonality → Green and Dormant scopes at one flat price
+### ❌ D-7 · No seasonality → Green and Dormant scopes at one flat year-round price
 
-**The draft said:** one scope, listed in §2, describing warm-weather work — pool skimming,
-patio furniture, watering flower pots, blowing hard surfaces. Nothing about November through
-March. The word "winter" does not appear in the document.
+> ## REVERSED — 2026-08-05. Replaced by **D-20**.
+>
+> **The Dormant Season does not exist. The year-round argument is dead and must not survive
+> anywhere — including page footers, where it appeared on nine of ten pages.**
 
-**It now says:** two scopes, one price.
+**What D-7 said** *(superseded — quoted verbatim)*:
 
-- **Green Season, April–October:** pool skimming and baskets, patio and furniture, outdoor
-  kitchen surfaces, debris, watering, light weed treatment, blowing hard surfaces.
-- **Dormant Season, November–March:** gutter and downspout check, storm debris, freeze
-  protection (hose bibs, disconnects, drain-downs), furniture covering and storage, hardscape
-  ice and salt management, full exterior inspection with photo report, spring-prep planning.
+> **It now says:** two scopes, one price.
+>
+> - **Green Season, April–October:** pool skimming and baskets, patio and furniture, outdoor
+>   kitchen surfaces, debris, watering, light weed treatment, blowing hard surfaces.
+> - **Dormant Season, November–March:** gutter and downspout check, storm debris, freeze
+>   protection (hose bibs, disconnects, drain-downs), furniture covering and storage, hardscape
+>   ice and salt management, full exterior inspection with photo report, spring-prep planning.
+>
+> **The price does not change.**
+>
+> **Why the gap had to be filled:** a member who signs in June and finds themselves paying $289
+> in January for a scope that was written entirely around a pool will cancel. […]
+>
+> **Why the price stays flat:** because flat year-round pricing is what makes this a membership
+> instead of a seasonal service. A winter discount invites the member to ask why they're paying
+> anything in January. `unit-economics.md` §6 has the arithmetic: the swing between a good
+> month and a slow month is only **$565** *because* the $1,714 membership floor holds it
+> steady.
+>
+> **The retention metric changed to match:** membership retention is measured on **April 1**,
+> not January 1.
 
-**The price does not change.**
+**What replaced it.** **March 1 – October 31. Eight months, 16 visits. No winter service in
+the membership, and no charge.** Full entry at **D-20**.
 
-**Why the gap had to be filled:** a member who signs in June and finds themselves paying $289
-in January for a scope that was written entirely around a pool will cancel. The Dormant
-Season scope exists so that January's visit has obvious, statable value — and it genuinely
-does. Freeze protection on hose bibs and outdoor kitchen water lines is the highest-value
-work of the year measured in avoided damage. It just doesn't *look* like much, which is why
-the report matters more in winter than in summer.
+**Why the owner reversed it, and D-7's own weakest point.** D-7 was an *invented* scope. The
+draft contained no winter work at all — the word "winter" does not appear in it — and D-7 built
+a Dormant Season to justify collecting money in January. The owner, who actually has to stand
+in a Cincinnati backyard in January, decided he would rather not collect it. **He removed the
+part of the model he would have had to defend, rather than defending it.** That is a better
+instinct than the one D-7 had.
 
-**Why the price stays flat:** because flat year-round pricing is what makes this a membership
-instead of a seasonal service. A winter discount invites the member to ask why they're paying
-anything in January. `unit-economics.md` §6 has the arithmetic: the swing between a good
-month and a slow month is only **$565** *because* the $1,714 membership floor holds it
-steady. Remove the floor and February goes from slow to bad — and a member who cancels in
-February takes the entire Green Season with them.
+**What the reversal cost:** the flat membership floor that held the seasonal swing to $565 is
+gone for four months a year. **The swing is now $2,774 — 4.9× larger**
+(`unit-economics.md` §8). The answer is a $60/month reserve, not a price change.
 
-**The retention metric changed to match:** membership retention is measured on **April 1**,
-not January 1 (`operating-model.md` §6.3). A January number tells him nothing.
+**What it exposed:** D-7 argued the winter risk was *revenue*. It is not. **It is retention.**
+See **D-18(b)**.
 
-**One more thing the Dormant Season buys:** the March spring-prep report is the highest-
-converting document of the year. Leaves are down, everything is visible, and the client is
-already thinking about opening the pool. The draft had no equivalent moment.
-
-*Locked in `CANON.md` §3. Implemented in `service-catalog.md` §2, §3; `pricing.md` §3.*
-
----
-
-## D-8 · The ~80-minute visit target → five real metrics
-
-**The draft said:** "Target average visit: ~80 minutes." And then, six sections later, in its
-own membership standards: "**Never rush a property because another client is waiting.**"
-
-**It now says:** minutes per visit does not exist in this business, internal or external.
-
-**Why:** those two statements cannot both be true. The moment a time target exists, it becomes
-the thing he measures himself against on a day a property needs more than the target allows.
-The rule is better than the metric, so the metric goes.
-
-**The distinction that survives:** `operating-model.md` §2 keeps a **planning allowance** of
-1.5 hours per stop door-to-door, used to build a calendar and size the route-hour cap. That is
-an input to a schedule, not an output he is graded on. It never appears in customer-facing
-material and it is never compared to what a visit actually took. The document says so
-explicitly, in both places it appears.
-
-**What replaced it** — four from `CANON.md`, plus one from the draft:
-
-| Metric | Formula | Target |
-|---|---|---|
-| **Revenue per route day** | membership revenue ÷ route days worked | ≥ $400 *(model: $428.50)* |
-| **Project attach rate** | projects sold to members ÷ member visits | ~10%, or 2.5/member/year |
-| **Membership retention** | members active on **April 1** | 6 of 6 |
-| **Referrals** | inquiries naming a member or a specific job | ≥ 1 per quarter |
-| **Effective hourly rate** | (gross − expenses) ÷ all hours | ≥ $45/hr *(model: $50.69)* |
-
-**Note on the fifth one:** effective hourly rate is the draft's own metric. §11 ended with
-"That last number matters," and it was right. It is kept, given a formula and a floor, and
-expanded to include admin hours, which the draft's version did not.
-
-**Why these five and not others:** each one changes a decision. Revenue per route day is the
-referee for accepting an off-route client. Attach rate tells him whether the service report is
-being written as an inspection or as a receipt. April retention tests the Dormant Season
-scope. Referrals test whether the work is distinctive. Effective hourly rate tests everything
-at once. Minutes per visit changed nothing except how he felt at 4pm.
-
-*Locked in `CANON.md` §3. Implemented in `operating-model.md` §6.*
+*Superseded in `CANON.md` §3. See **D-20**.*
 
 ---
 
-## D-9 · No targeting → a narrow qualified geography with explicit exclusions
+### ❌ D-8 · The ~80-minute visit target → five real metrics
 
-**The draft said:** nothing about who the customer is or where they live. §5 discussed route
-compactness — clients A and B close together, C and D close together — but never which
-neighborhoods, which price points, or which attributes.
+> ## REVERSED (narrowed) — 2026-08-05. Replaced by **D-21**.
+>
+> **The blanket ban is lifted. The performance-target ban is not.** Read both halves.
 
-**It now says:**
+**What D-8 said** *(superseded — quoted verbatim)*:
 
-- **Qualified:** Green Township subdivisions, Oak Hills, the upper end of Delhi, and
-  Covedale. Bridgetown is conditional — it qualifies on property attributes, never on the
-  address alone.
-- **Explicitly excluded:** Westwood, Price Hill, Cheviot. No copy, no ads, no yard signs, no
-  targeting.
-- **Qualifying attributes:** a real pool or outdoor kitchen; an owner who already pays other
-  people to maintain things; and a location that passes the route tests.
+> **The draft said:** "Target average visit: ~80 minutes." And then, six sections later, in its
+> own membership standards: "**Never rush a property because another client is waiting.**"
+>
+> **It now says:** minutes per visit does not exist in this business, internal or external.
+>
+> **Why:** those two statements cannot both be true. The moment a time target exists, it
+> becomes the thing he measures himself against on a day a property needs more than the target
+> allows. The rule is better than the metric, so the metric goes.
+>
+> **The distinction that survives:** `operating-model.md` §2 keeps a **planning allowance** of
+> 1.5 hours per stop door-to-door, used to build a calendar and size the route-hour cap.
 
-**Why:** west-side Cincinnati home values are modest — Delhi $180–350k, Bridgetown ~$240k,
-Green Township $250–450k, Westwood/Price Hill/Cheviot ~$175k. A membership costing
-$2,748–$3,948 a year ($229–$329 a month) addresses a narrow slice of that. Pretending
-otherwise wastes the only scarce resource he has,
-which is his own time. The excluded areas are not a judgment about the neighborhoods; at a
-~$175k median, the qualifying households are rare enough that finding them costs more than
-they return when he only needs six.
+**What replaced it.** The owner's signed agreement sells **up to two hours of on-site service
+per visit**, and his field checklist budgets those two hours across eight named blocks. **Time
+is now a contractual term of the product.** D-8's blanket statement — *"minutes per visit does
+not exist in this business, internal or external"* — was overreach and is withdrawn.
 
-**Why the narrowness is a feature:** Green Township, Oak Hills, upper Delhi, and Covedale hold
-a few hundred homes with a real pool or built outdoor kitchen and an owner who already
-outsources. **He needs six.** That is roughly a 2% conversion of a list he could physically
-walk in a few weekends — which is what makes this achievable with no advertising budget.
+**The narrowed rule, which is now `CANON.md` §3 and `operating-model.md` §7:**
 
-**Disqualifiers were added too,** because the draft had none: too far off route, wants
-unlimited scope, haggles the price, expects on-demand response — plus four quieter ones in
-`ideal-client.md` §5.5.
+| | Status |
+|---|---|
+| "Up to two hours of on-site service per visit" — a **scope boundary** | ✅ **Legitimate.** It limits what was sold. |
+| His eight-block checklist budgeting those two hours — a **work aid** | ✅ **Legitimate.** His own document. |
+| The 1:45 planning allowance — a **calendar input** | ✅ **Legitimate.** Never recorded, never compared to actuals. |
+| "Average visit length" as a tracked number | ❌ **Still banned.** |
+| Minutes per visit as a KPI | ❌ **Still banned.** |
+| Copy implying he aims to finish quickly | ❌ **Still banned.** |
 
-*Locked in `CANON.md` §4. Implemented in `ideal-client.md` §2, §3, §5.*
+**The test, in one line:** *does this number limit what was sold, or does it grade how fast he
+worked?* One is a ceiling on the customer's entitlement. The other is a stopwatch on his work.
+
+**What D-8 got right and keeps:** the draft's ~80-minute *target* is still gone, and membership
+standard 1 (*never rush a property*) is unchanged and now **served** by the cap rather than
+threatened by it — because the cap bounds what the customer is owed, so he is never choosing
+between finishing this property and reaching the next one.
+
+**D-8's five replacement metrics survive with two recalibrated** — see **D-26**.
+
+*Superseded in `CANON.md` §3. See **D-21** and **D-26**.*
 
 ---
 
-## D-10 · No go-to-market → three tracks
+### D-9 · No targeting → a narrow qualified geography with explicit exclusions
 
-**The draft said:** §10 came closest — non-member customers "become a potential membership
-lead," and once the slots are full the website can say MEMBERSHIP FULL. That is a *positioning*
-observation, not a plan for getting the first four clients.
+✅ **Stands.** Qualified: Green Township subdivisions, Oak Hills, upper Delhi, Covedale.
+Bridgetown conditional on attributes. **Excluded: Westwood, Price Hill, Cheviot** — no copy, no
+ads, no yard signs, no targeting.
 
-**It now says** there are three channels, and only three, because six clients does not justify
-a fourth:
+**One honest update.** D-9 argued the exclusion from annual cost: a membership costing
+"$2,748–$3,948 a year" addresses a narrow slice of a ~$175k-median market. **At $2,232 a season
+the membership is about a third cheaper per year**, so that argument is weaker than it was. The
+exclusion still stands, but the reasoning is now **attribute density**, not price: built outdoor
+kitchens and in-ground pools are rare in that housing stock, and households already paying
+three vendors are rarer still. `ideal-client.md` §3 states it that way.
 
-1. **The Tri-State Grill Cleaning warm list.** People who have already had him on their
-   property, already paid him, and already trust him. These prospects skip the entire
-   trust-building problem. **CONDITIONAL — access to that list is unconfirmed** (`CANON.md`
-   §9.2), and every plan that depends on it must say so in those words.
-2. **Neighborhood proximity.** Yard signs and door hangers on the streets where a member
-   already lives, and on the qualified subdivisions in `ideal-client.md` §3. This channel does
-   double duty: it directly serves the route-compactness requirement, because every lead it
-   produces is by definition near an existing client. A waitlisted prospect who recruits two
-   neighbors converts all three.
-3. **Google Business Profile plus the site as a closer.** `CANON.md` §5 is clear that the site
-   is not a lead-generation engine — it is what closes someone who already heard his name from
-   a neighbor, a yard sign, or a grill-cleaning job. GBP catches the people searching his name
-   or the category locally. Neither one needs a service-area page farm.
+*Locked in `CANON.md` §5. Implemented in `ideal-client.md` §3.*
 
-**Why only three:** a six-client business with no advertising budget cannot run more than
-three channels well, and two of the three (warm list, neighbor referral) are essentially free.
-The third is a Google listing and a static site.
+---
 
-**Ownership:** the detailed execution of all three belongs to `03-marketing/`. This entry
-records only that the draft had no plan and that these are the three tracks the model implies.
+### D-10 · No go-to-market → three tracks
+
+✅ **Stands.** (1) The Tri-State Grill Cleaning warm list — **CONDITIONAL**, access unconfirmed
+(`CANON.md` §10.5). (2) Neighbourhood proximity — yard signs and door hangers where a member
+already lives, which does double duty on route compactness. (3) Google Business Profile plus
+the site as a closer, not a lead engine.
+
+**Seasonal note:** the calendar now matters to all three. **A yard sign in September is
+advertising a season that ends in seven weeks.** Marketing spend and effort belong in
+**January–March**, aimed at the March 1 start, not spread evenly. Detailed execution belongs to
+`03-marketing/`.
 
 *Implemented in `ideal-client.md` §4 and handed to `03-marketing/`.*
 
 ---
 
-## D-11 · The exclusions list → contract-clause language
+### D-11 · The exclusions list → contract-clause language
 
-**The draft said,** in §3 — and this was the best section in the document: "Routine membership
-does not include: deep grill cleaning, pressure washing, major storm cleanup, landscaping
-projects, drainage installation, repairs, replacement parts, large-volume debris removal,
-extensive weeding, gutter cleaning, window-well cleanouts, heavy hauling or anything requiring
+🔄 **Revised 2026-08-05.** The mechanism stands; three clauses changed.
+
+**The draft said,** in §3 — the best section in the document: "Routine membership does not
+include: deep grill cleaning, pressure washing, major storm cleanup, landscaping projects,
+drainage installation, repairs, replacement parts, large-volume debris removal, extensive
+weeding, gutter cleaning, window-well cleanouts, heavy hauling or anything requiring
 specialized materials/equipment."
 
-**It now says** the same things, in twelve numbered clauses precise enough to sign
-(`service-catalog.md` §4), with **bright lines instead of adjectives**.
-
-**Why:** "extensive weeding" and "major storm cleanup" are the right ideas with no way to
-settle a disagreement. Every clause was rewritten so both parties can point at the same
-boundary:
+**It now says** the same things, in numbered clauses precise enough to sign
+(`service-catalog.md` §4), with **bright lines instead of adjectives**:
 
 | Draft's word | The bright line it became |
 |---|---|
-| "large-volume debris removal" | up to the capacity of the homeowner's own containers |
+| "large-volume debris removal" | up to the capacity of the homeowner's own containers **— and within the two-hour visit** |
 | "extensive weeding" | hardscape joints, walkway cracks, and bed *edges* — never inside beds |
 | "major storm cleanup" | anything requiring a saw, a trailer, or more than one trip |
 | "gutter cleaning" | ground-level visual inspection only; **no work from a ladder or above roof line** |
 | "specialized equipment" | pressure washer, ladder, chainsaw, powered digging equipment, trailer |
 | "deep grill cleaning" | burners, grates, flavorizer bars, interiors, hoods — vs. grease trap and exterior wipe-down |
 
-**Five clauses were added that the draft did not have,** each one covering a real way this
-business gets damaged:
+**Three changes on 2026-08-05:**
 
-- **§4.1 Pool.** The most important clause in the document. It states in plain words that WPC
-  does not test, balance, or add chemicals; does not vacuum, brush, or service the filter;
-  does not open or close the pool; and **is not responsible for water condition or
-  chemistry.** Without it, a homeowner seeing "pool" on an invoice twice a month will hold him
-  responsible for green water in July. The market comparison makes the case: full weekly pool
-  service in Cincinnati is $121–142/month for four visits *with* chemicals. A $60/month,
-  two-visit skim-and-baskets module is a different product and the agreement must say so.
-- **§4.2 Lawn and landscape.** "Property Care" sounds like lawn care to most people. Mowing,
-  trimming, edging, fertilizing, pruning, mulching, and planting are excluded by name.
-- **§4.8 Snow and ice.** `CANON.md`'s Dormant scope includes hardscape ice management, which
-  without a boundary converts the membership into a free snow contract on the first heavy
-  Tuesday. Included: salting the outdoor living hardscape on scheduled visits. Not included:
-  driveways, sidewalks, plowing, or anything between visits.
-- **§4.7 and §4.11 Response times.** No guaranteed response window, no on-demand visits, no
-  guaranteed arrival times. Clients are told their route day, not their hour — because
-  promising an hour is the fastest way to break membership standard rule 1.
-- **§4.3 The boundary of the property.** The serviced area is identified at the walkthrough and
-  recorded in the property file. No interiors, no garages, no lawn, no wooded lot.
+1. **§4.1 Pool was rebuilt.** It excluded vacuuming, brushing, and backwashing — all of which
+   he now does. See **D-22**.
+2. **§4.8 Snow and ice was deleted** and replaced with **§4.8 The off-season**. There is no
+   winter scope to bound. See **D-20**.
+3. **§4.6 debris limits were re-reasoned, not changed.** The original justification was that a
+   container-capacity limit avoided putting a stopwatch in the business. **There is now a
+   stopwatch, in the agreement, in his words** — so the justification was dead even though the
+   clause was still right. Both limits now stand with a new reason: **they fail in different
+   directions.** Container capacity answers *how much can leave the property*; the two-hour cap
+   answers *how long is he here*. A post-storm visit fills the can in twenty minutes; a heavy
+   pool day runs out of time with the can half empty. **Whichever binds first, binds.**
 
-**What was preserved verbatim in substance:** the draft's closing principle, which is the
-whole point of the section — *"Your recurring service should find additional work, not absorb
-additional work."*
+**What was preserved verbatim in substance:** *"Your recurring service should find additional
+work, not absorb additional work."* And it is now joined by the owner's own line, which is
+better: **"Maintain everything. Deep-clean nothing unless specifically scheduled."**
 
 *Implemented in `service-catalog.md` §4, §5.*
 
 ---
 
-## D-12 · Membership standards — rules 4 and 5 reconstructed
+### 🔶 D-12 · Membership standards — rules 4 and 5 reconstructed
 
-**The draft said:** "I'd establish five internal rules," then listed three, and **cut off
+🔶 **Stands. Still unconfirmed.** See **R-3**.
+
+**The draft said:** "I'd establish five internal rules," listed three, and **cut off
 mid-sentence in rule 4**: *"Recommend additional work; don't quietly absorb projects into the"*
 — and the document ends. Rule 5 is missing entirely.
 
-**It now says** (`operating-model.md` §7), with rules 4 and 5 clearly flagged:
+**It now says** (`operating-model.md` §8):
 
 1. Never rush a property because another client is waiting. *(draft's)*
 2. Communicate anything unusual. *(draft's)*
@@ -531,311 +440,755 @@ mid-sentence in rule 4**: *"Recommend additional work; don't quietly absorb proj
 4. 🔶 **Recommend additional work; never quietly absorb a project into the membership.**
 5. 🔶 **Every visit ends in writing, the same day.**
 
-**Basis for rule 4:** the sentence is nearly complete. The only sensible completions are "the
-membership" or "the routine visit," and both mean the same thing. It is also exactly the
-principle stated in the draft's own §3 ("find additional work, not absorb additional work") and
-in `CANON.md` §2. **Confidence: high.**
+**Basis for rule 4 — confidence: high.** The sentence is nearly complete and the only sensible
+completions mean the same thing. It is also the principle in the draft's own §3, in
+`CANON.md` §2, and now in **agreement §6** (*work beyond the scheduled service time requires
+client approval before additional billable work is performed*), which is the owner's own
+language and corroborates the reconstruction independently.
 
-**Basis for rule 5:** nothing survives of it. The reconstruction comes from what the draft
-itself argued hardest for — §7 (the post-visit communication) and §8 (the property record) were
-the two things it said a four-client operation could beat a large company on. A written-report
-discipline is the natural fifth rule, and it is the rule that makes the project attach rate in
-D-8 mechanically possible: a finding that isn't written down can't be quoted or followed up.
-**Confidence: moderate. This is a reconstruction, not a recovery.**
+**Basis for rule 5 — confidence: moderate.** Nothing survives of it. The reconstruction came
+from what the draft argued hardest for (§7 communication, §8 property record) and is now
+**corroborated by the owner's checklist block 8**: *record completed services · note repairs /
+additional-service recommendations · send short service summary to customer.* That is
+materially stronger evidence than existed before, but it is still a reconstruction, not a
+recovery.
 
-**Both are marked 🔶 RECONSTRUCTED — CONFIRM WITH OWNER** in `operating-model.md` §7 and must
-stay marked until he confirms. If he remembers a different rule 5, use his — but the written-
-report discipline needs to live somewhere regardless, so move it rather than delete it.
+**Both stay marked 🔶 RECONSTRUCTED — CONFIRM WITH OWNER** in `operating-model.md` §8 until he
+confirms. If he remembers a different rule 5, use his — but the written-report discipline has
+to live somewhere regardless, because the project attach rate depends on it mechanically.
 
-See **R-3**.
-
-*Flagged in `CANON.md` §9.1. Implemented in `operating-model.md` §7.*
+*Flagged in `CANON.md` §10.4. Implemented in `operating-model.md` §8.*
 
 ---
 
-## D-13 · "Don't take a client 40 minutes away" → three testable rules
+### D-13 · "Don't take a client 40 minutes away" → three testable rules
+
+🔄 **Revised:** the third test was recalibrated.
 
 **The draft said:** "Don't accept a $229 customer who requires 40 minutes of driving each way
 unless there's a strategic reason."
 
-**It now says:** three tests every prospect passes before price is discussed —
+**It now says:** three tests every prospect passes before price is discussed — the **15-minute
+test**, the **25-minute test**, and the **route-day test** (was: the 5-hour test).
 
-- **15-minute test:** within 15 minutes of at least one existing member.
-- **25-minute test:** within 25 minutes of home base.
-- **5-hour test:** the route day still finishes under five hours after adding this property.
+**Why the third test changed:** the 5-hour figure came from the dead 1.5-hour planning
+constant. A three-stop route day at the current allowance is **6.25 hours**, and **7.0 hours at
+the two-hour ceiling on every stop**. The test is now: *does the route day still finish under
+6.5 hours at the allowance, and stay runnable under 7 at the ceiling?*
 
-**Why:** the draft's version is the right instinct with no enforcement mechanism, and it would
-lose every time it collided with a live prospect holding a checkbook. Three numeric tests can
-be applied on the spot.
+**And it is still priced,** so the trade-off is visible rather than intuitive: a client 15
+minutes off the cluster costs **8 unpaid drive hours a season — $346, or 15.5% of that client's
+entire membership revenue** — before he picks up a tool. **Under a flat price that 15.5% is the
+same for every client**, which makes the rule simpler to apply and no less severe.
 
-**And it was priced,** so the trade-off is visible rather than intuitive
-(`operating-model.md` §4): a client 15 minutes off the cluster costs 12 unpaid drive hours a
-year — **$608, or 17.5% of a $289 client's entire gross revenue, and 22.1% of a $229
-client's** — before he picks up a tool. The cheaper the property, the worse the trade.
-
-**The rule that follows from it:** the empty slot is worth more than the wrong client. An
-empty slot keeps all its hours. A wrong client consumes route hours permanently and can't be
-removed without an awkward conversation.
-
-**What to do instead of declining:** `ideal-client.md` §4 turns the failure into a pipeline —
-waitlist them in writing, ask who else on their street has a pool, and sell them project work
-in the meantime. The waitlist is a project pipeline, not a rejection queue.
+**The rule that follows:** the empty slot is worth more than the wrong client.
 
 *Implemented in `operating-model.md` §4, `ideal-client.md` §4.*
 
 ---
 
-## D-14 · A price list with "quoted" on it → a quoting formula
+### D-14 · A price list with "quoted" on it → a quoting formula
 
-**The draft said:** §9 listed two prices — grill/outdoor kitchen deep cleaning $249+, window
-wells $49+ — and then "quoted" for pressure washing, storm cleanup, drainage, repairs,
-seasonal cleanup, and special projects.
+✅ **Stands**, with one addition.
 
-**It now says** the same list, plus a rule of thumb so he isn't building a number from scratch
-with a customer standing next to him (`pricing.md` §7):
+**It says:** `(on-site hours × $100) + (materials at cost × 1.25)`, rounded up to the nearest
+$25. **Floor: no standalone trip below $149**, and the floor does not apply to work done during
+a scheduled membership visit.
 
-```
-  estimated on-site hours × $100
-+ materials at cost × 1.25
-= subtotal, rounded UP to the nearest $25
-```
+**The addition, forced by the two-hour cap:** work performed during a visit must be *additional
+to* the two hours, not carved out of them. If a $49 window well is done inside the two hours,
+the membership paid for it and the project revenue is fictional. `pricing.md` §7.
 
-**Floor: no standalone trip below $149.** The floor does **not** apply to work done during a
-scheduled membership visit, because the trip is already paid for.
-
-**Why $100/hour:** Cincinnati handyman labor runs **$40–80/hour**. He is not selling handyman
-hours — he is selling a flat price for a finished result, with his own equipment, from someone
-the client already trusts and already lets through the gate. That prices above hourly labor,
-not at it.
-
-**The formula reproduces the draft's own published prices**, which is the test that it's
-calibrated right:
-
-- Grill deep clean, 2.5 hrs × $100 = $250 → the published **$249+** ✓
-- Window well during a visit, 0.5 hrs × $100 = $50 → the published **$49+** ✓
-
-**And it explains why $49 works at all**, which the draft never did: a $49 job would be
-absurd as a standalone trip and is perfectly good as an add-on found during a visit he was
-already making. That is the membership-as-lead-engine principle showing up in the price list.
-
-**Internal quoting anchors** for the "quoted" categories are in `pricing.md` §5.3, clearly
-marked NOT customer-facing so nobody publishes them as fixed prices.
+**The formula still reproduces the published prices** — 2.5 hrs × $100 = $250 → **$249+**;
+0.5 hrs × $100 = $50 → **$49+**. That is the test that it is calibrated right.
 
 *Implemented in `pricing.md` §5, §7.*
 
 ---
 
-## D-15 · "Bill materials separately" → cost + 25%, itemized
+### D-15 · "Bill materials separately" → cost + 25%, itemised
 
-**The draft said:** "Materials and replacement parts should also be billed separately," and in
-§11, "If a project requires $75 worth of materials, track the $75 separately so you can see
-your actual margin."
+✅ **Stands**, with one addition.
 
-**It now says:** materials, parts, and disposal are billed at **cost + 25%**, itemized on the
-estimate before the work and on the invoice after.
+**It says:** materials, parts, and disposal at **cost + 25%**, itemised on the estimate before
+the work and on the invoice after. Routine consumables used on a membership visit are **not**
+materials — they are covered and budgeted as an operating expense.
 
-**Why a markup and not just pass-through:** the draft's version tracks materials but gives away
-the sourcing time, the supply run, and the cost of carrying the money until the invoice clears.
-25% is the established figure in this category — a Denver home-watch operator charges a 25%
-vendor markup on top of $400/month and $155/hour coordination. It does not need to be
-apologized for and it should not be hidden.
+**The addition:** **pool chemicals, salt, filters, and cartridges are materials, not membership
+items.** Agreement §7 says so explicitly, and now that the pool scope is heavy (D-22) the
+boundary needs stating in the price list as well as in the exclusions. `pricing.md` §6.
 
-**Why itemized rather than folded in:** it preserves exactly what the draft wanted — visible
-margin — and it makes the labor price defensible, because the client can see that the $93.75 of
-materials isn't padding the $250 of work.
-
-**Boundary added:** routine consumables used on a membership visit — surface cleaner, bags,
-spot weed treatment, ice melt — are **not** materials. They're covered by the membership and
-budgeted as an operating expense ($65/month in `unit-economics.md` A14). Without that line, the
-first client to be handed a $6 charge for trash bags will remember it for a year.
-
-*Implemented in `pricing.md` §6, `service-catalog.md` §4.6, §4.9.*
+*Implemented in `pricing.md` §6, `service-catalog.md` §4.1, §4.9.*
 
 ---
 
-## D-16 · What was preserved deliberately, and not touched
+### D-16 · What was preserved deliberately, and not touched
 
-Listed explicitly so it's clear these were considered and kept, not overlooked:
+✅ **Stands.** Listed explicitly so it's clear these were considered and kept, not overlooked.
 
 | From the draft | Status |
 |---|---|
 | **Excess capacity is part of the product** (§12) | Kept and expanded — `operating-model.md` §5. One of the best ideas in the draft. |
 | **Consolidate visits into weeks 1 and 3** (§4) | Kept exactly. Locked in `CANON.md`. |
-| **Tuesday–Thursday protected for projects** (§1, §10) | Kept and given a much stronger reason — D-6. |
+| **Tuesday–Thursday protected for projects** (§1, §10) | Kept, and now the primary argument for the 3-stop route day (D-25). |
 | **No regularly scheduled weekend work** (§1) | Kept exactly. |
-| **The per-visit SOP shape** (§6): before arrival, walk on arrival, work the priorities, walk before leaving | Kept. Its structure runs through `service-catalog.md` §2 and belongs to `04-operations/` to expand. |
-| **"What will make the biggest difference today?" over "how many boxes can I check?"** (§6) | Kept — it's the reason `service-catalog.md` §1 exists. |
-| **The post-visit service report** (§7), including the "I noticed the window wells, I can add that for $49" pattern | Kept, and promoted: it is now the primary sales mechanism of the business (D-1) and the subject of membership standard rule 5 (D-12). |
+| **The per-visit SOP shape** (§6): before arrival, walk on arrival, work the priorities, walk before leaving | **Kept — and independently confirmed.** The owner's own checklist has exactly this shape: block 1 is the arrival walk, blocks 2–7 are the priorities, block 8 is the closing walk. |
+| **"What will make the biggest difference today?" over "how many boxes can I check?"** (§6) | Kept — it is why `service-catalog.md` §1 exists, and it is now reinforced by agreement §5. |
+| **The post-visit service report** (§7), including "I noticed the window wells, I can add that for $49" | Kept and promoted: the primary sales mechanism of the business (D-1), membership standard 5 (D-12), and block 8 of his own checklist. |
 | **The property record and service history** (§8) | Kept. Belongs to `04-operations/`. |
-| **"Not every task has to be performed every visit"** (§2) | Kept, and moved to the top of `service-catalog.md` as §1, because it governs everything below it. |
-| **Track membership, project, and material revenue separately** (§11) | Kept — `operating-model.md` §8. |
-| **The monthly report ending in effective hourly rate** (§11) | Kept, and the metric was promoted into the permanent set — D-8. |
-| **MEMBERSHIP FULL and the waitlist** (§10) | Kept, and made a genuine constraint rather than a positioning device — `operating-model.md` §5. |
-| **"You need four excellent ones"** (§10) | Kept in spirit at six. The insight — that the answer to more revenue is not more clients — is exactly what D-6 proves. |
+| **"Not every task has to be performed every visit"** (§2) | Kept at the top of `service-catalog.md`. |
+| **Track membership, project, and material revenue separately** (§11) | Kept — `operating-model.md` §9. |
+| **The monthly report ending in effective hourly rate** (§11) | Kept, and promoted into the permanent metric set. |
+| **MEMBERSHIP FULL and the waitlist** (§10) | Kept, and a genuine constraint rather than a positioning device. |
+| **"You need four excellent ones"** (§10) | Kept in spirit at six. |
 
 ---
 
-## D-17 · Three corrections found while re-deriving the model on 2026-08-05
+### D-17 · Three corrections found while re-deriving the model on 2026-08-05 (morning)
 
-Recorded here so the edits aren't mistaken for drift. None of these follow from the pricing
-resolution; they are errors in the previous version of `unit-economics.md` that surfaced when
-every line was recomputed.
+✅ **Historical record.** These were errors in the pre-August-5 `unit-economics.md`, found when
+every line was recomputed for the four-configuration resolution. They are recorded so the edits
+aren't mistaken for drift. **All three sections they touched have since been rewritten**, but
+the corrections themselves were real:
 
-**1. "Above the top of the Cincinnati handyman range."** §4.3 and §7.1 both compared a *net,
-after-tax, per-hour* figure ($43.88 and $46.09) to the **$40–80/hour** handyman range and
-called it "at the top." That was wrong twice: $44 is near the *bottom* of $40–80, and the
-$40–80 figure is a **billing rate**, not take-home — a handyman billing $60 an hour keeps far
-less than $60. The comparison is now stated honestly: the business pays a solid trade wage,
-and the advantage is that the work is recurring, scheduled, and prepaid rather than chased.
-**The $100/hour project quoting rate in `pricing.md` §7 is unaffected** — that *is* a billing
-rate, and comparing it to $40–80 of handyman billing is the correct comparison.
-
-**2. "−10% of membership gross" in §7.2.** Losing one of six equally priced clients is
-−16.7% of membership gross, not −10%. The section has been rebuilt anyway, because under
-attribute pricing members are no longer interchangeable: it now shows what each of the four
-configurations costs if it cancels, from **$2,665 to $3,830 of net (9.4%–13.5%)**.
-
-**3. The 8-client sensitivity expense line was previously unshown.** §5.3 gave a total
-($6,715) without a derivation. It is now derived line by line — the vehicle line in
-particular, at **2,835 miles**, which is the mileage the old total implied but never stated.
+1. **"Above the top of the Cincinnati handyman range"** compared a net, after-tax, per-hour
+   figure to the **$40–80/hour** handyman *billing* range and called it "at the top." Wrong
+   twice. The comparison is now stated honestly in `unit-economics.md` §9.3.
+2. **"−10% of membership gross"** for losing one of six clients. It is −16.7%.
+3. **The 8-client sensitivity expense line was unshown** — a total with no derivation. Every
+   expense line in the current version is derived.
 
 ---
 
-## Resolved recommendations
-
-### ✅ R-1 · The outdoor-kitchen-without-pool configuration — RESOLVED 2026-08-05
-
-**Status: closed. The owner took option (b).** Kept here in full because the reasoning trail
-is the reason this file exists.
-
-**What R-1 originally said** *(verbatim, as written before the resolution)*:
-
-> **The issue:** `CANON.md` locks the customer-facing price list at three numbers, and a
-> property with an outdoor kitchen but no pool computes to a fourth ($269). `pricing.md` §1
-> resolves it by writing those properties at $229 and not charging the $40 module.
->
-> **Why it may need revisiting:** the most likely source of the first four members is the
-> Tri-State Grill Cleaning customer list — people who have an outdoor kitchen and may well
-> not have a pool. If that configuration is common rather than rare, the current rule gives
-> away **$40 × the number of such members × 12** a year. Three of them is **$1,440**.
->
-> **Recommendation:** ask him directly — *of the homes you've cleaned grills at, how many
-> have pools?* If the answer is "most," the current rule is fine. If the answer is "hardly
-> any," take option (b): add **$269** as a fourth configuration. **A fourth price is a
-> smaller problem than $1,440 a year.**
->
-> **Not changed here** because the three-price rule is locked in `CANON.md` §3.
-
-**The resolution.** On **2026-08-05** the owner added the fourth configuration. Pool Care
-(+$60) and Outdoor Kitchen Care (+$40) are independent add-ons; a property with an outdoor
-kitchen and no pool is **$269/month**. `CANON.md` §3 was updated first and now carries the
-decision note; `pricing.md` §1 implements it and the "sells on top of Pool Care" rule is
-deleted. Full write-up in **D-3**.
-
-**What it is worth:** $960/year on the mix assumed in `unit-economics.md` §1.1 (two such
-members), $1,440 at three, $1,920 at four — and **$2.71/hour in the zero-project-revenue
-case**, which is the difference between clearing the $45/hour floor and not clearing it.
-
-**One condition rides along with it, and it is not optional.** Four prices only works because
-the price is never presented as four plans. It is one membership, built out loud: *the base,
-plus the pool, plus the outdoor kitchen.* That rule is in `CANON.md` §3 and `pricing.md` §1,
-and it is what every downstream document — website, brochure, agreement, marketing — has to
-honour. **If a price card with four boxes on it ever ships, the objection R-1 was originally
-weighing comes back, and it comes back on the customer-facing surface where it does the most
-damage.**
-
-**Still worth asking him,** even though the decision is made: *of the homes you've cleaned
-grills at, how many have pools?* The answer doesn't change the price structure any more — it
-calibrates the **A1 client mix** in `unit-economics.md` §1.1, which is currently an assumption
-(two of six). If the answer is "hardly any," the mix should move to three or four
-kitchen-only properties and the membership line moves with it.
+## Part 2 — the owner's decisions, 2026-08-05
 
 ---
 
-## Open recommendations
+## 🆕 D-18 · Memo to the owner — what your decisions cost, and what they fixed
 
-These are recommendations, not changes. Nothing locked in `CANON.md` was altered.
+**You wrote *"PRICING & SCOPE ARE DONE. DON'T CHANGE IT AGAIN."* Nothing below reopens them.**
+The model in this directory is built to your numbers. This memo exists because you should know
+what they cost and where the two real risks are, and because two of the things you sent are
+better than what the build had.
 
-### R-2 · The cap costs about $3,500 a year — hold it, but hold it knowingly
+### (a) The money: $2,232 a client instead of $3,468 — a $7,176 gap at six
 
-**The issue:** `unit-economics.md` §5 shows that eight clients net about **$3,478 more** than
-six, at a marginal rate of **$53.51/hour** — better than his blended rate of $50.69.
+```
+Now         $279 × 8 months               =  $2,232 per client per year
+Superseded  a pool-configuration property × 12 months
+                                          =  $3,468 per client per year   (dead)
+                                             -------
+Per client                                     −$1,236   ( −35.6% )
 
-*(This was $3,712 before the 2026-08-05 pricing resolution. Re-derived on the new client mix
-it is $3,478. The recommendation is unchanged; only the price tag moved.)*
+At the book level, on the mix the old model actually assumed:
+$20,568 − $13,392                         =  −$7,176 of membership revenue
+                                             ( −34.9% )
+```
 
-**Recommendation: hold the cap at six.** The reason is risk, not revenue. The 8-client case
-depends entirely on non-member project flow holding up at a fuller route load, and if it
-slips even modestly the marginal client pays **$39.68/hour — well below his own blended rate
-and below the $45/hour floor** — and by then he can't un-sell them. The cap also buys the
-float day, the vacation, the real waitlist, and the ability to keep membership standard
-rule 1.
+*(Six identical pool properties would give 6 × $1,236 = $7,416. The old book was a mix, so
+$7,176 is the right number. `unit-economics.md` §9.1.)*
 
-**But the number should be visible.** He is buying schedule integrity for about $3,500 a year,
-and he should decide that on purpose rather than inherit it. If he ever revisits the cap, the
-place to start is `unit-economics.md` §5.3.
+**Carried all the way down:** gross falls from $34,693 to **$25,192**; net from $28,436 to
+**$19,887**; net per hour from $50.69 to **$43.23**. That is **−$8,549 of net a year at the
+cap.**
+
+**Three things to say about that number, because it is not as bad as it looks and it is not as
+good as it looks either.**
+
+- **Most of it is the season, not the price.** Eight months instead of twelve is the bulk of
+  the $7,176. The flat price on its own is a much smaller effect.
+- **You bought something real with it.** 101 fewer hours a year, all of them in the worst
+  weather, and no obligation to invent value for a January visit. That was the weakest joint in
+  the old model and you removed it instead of defending it.
+- **The project engine now has to work.** Six members with no project work pays **$33.25 an
+  hour** (it was $45.41). The membership was always the lead engine on paper. **It is now the
+  lead engine in fact — it cannot pay you on its own.** Protect Tuesday–Thursday accordingly.
+
+### (b) The real winter risk is retention, not revenue
+
+**The four months don't cost much money. They cost the relationship.**
+
+The revenue side is fine:
+
+```
+Nov 2026 – Feb 2027    revenue  $1,000  (four project jobs)
+                       expenses   $595  (insurance, software, phone, a little driving)
+                       net        $405
+Fixed cost that doesn't stop:  $119/month, $476 total
+Reserve $60 a month during the season and every winter bill is pre-paid.
+```
+
+**That is a solved problem. This is the unsolved one:**
+
+> **A client who signs in mid-August 2026 gets three visits, and then you disappear for four
+> months.**
+
+Three visits is not enough to build a habit. Four months of silence is long enough to break
+one. And a seasonal membership requires an **active decision to come back**, where an annual
+one requires an active decision to leave. The industry evidence on that difference is blunt:
+landscape operators on **annual contracts retain 10–20% more customers** than operators on
+seasonal billing, and the two commonest causes of churn are customers who feel undervalued and
+customers who **simply forget to renew between seasons**.
+
+**You have chosen seasonal billing. Here is what buys it back, and none of it costs money:**
+
+1. **Tell them the gap exists before they sign.** In the driveway, in your own words. A
+   prospect who reacts badly has disqualified themselves for free instead of in November.
+   `ideal-client.md` §5.
+2. **Two written touches across the gap.** A season-end property report in late November — what
+   was done, what you found, what next season needs, with prices. One note in mid-January. A
+   person wrote it, not software.
+3. **Confirm re-enrolment in February, in writing, before March 1.** Not on the first route
+   day. By the first route day it is too late to replace anyone.
+4. **The Founding lock is your best tool here and it isn't primarily a discount.** It gives the
+   August signer a written reason to come back on March 1. Use it that way.
+
+**This is now the most important metric in the business** — `operating-model.md` §7.3 replaced
+the old April-1 retention number with **season re-enrolment, measured before March 1, target 6
+of 6.** The at-risk cohort is named: anyone who signs after August 1.
+
+### (c) The heavier pool scope turned a deflection into a competitor
+
+**This one is a direct consequence of two good decisions colliding.**
+
+The old scope was skim-and-baskets. Dedicated pool service in Cincinnati runs **$121–142 a
+month for four visits including chemicals** — and that comparison was easy to wave off, because
+the two products barely overlapped.
+
+**Your new scope vacuums, brushes, backwashes, empties both baskets and the auto-vac canister,
+and reads the salt cell.** That overlaps a pool company substantially. And at a flat $279:
+
+```
+A dedicated pool service is 43–51% of your membership price
+  $121 ÷ $279 = 43.4%      $142 ÷ $279 = 50.9%
+…at twice your visit frequency (4 visits/month vs 2)
+…and it brings chemicals.
+```
+
+**A prospect with a pool will make that comparison, and on the surface they win it.** You are
+now roughly twice the price for half the visits.
+
+**Your own disclaimer is the answer, and it is why it has to be said out loud rather than
+buried in the agreement:**
+
+> **"WPC513 does not guarantee water chemistry, water clarity, equipment performance, or
+> pool-system operation unless separately contracted."**
+
+Said plainly on the walkthrough, before the price:
+
+> *"I vacuum it, I brush it, I empty the baskets, I'll backwash it and I'll tell you if the
+> cell throws a code. I don't do your chemistry and I don't guarantee your water. I maintain
+> the pool as part of the whole outdoor space. If you want somebody responsible for the water,
+> you want a pool company — and I'll tell you who I'd call."*
+
+**Two operational consequences, and neither is optional:**
+
+- **Never lead with the pool.** The pool is one of eight blocks. Lead with the whole outdoor
+  living space, which no pool company touches.
+- **Tell your insurer what you actually do.** Vacuuming, backwashing, and salt-cell checks are
+  **pool-system operation**. The old exclusion said you did none of it. This is a coverage
+  question, not a scope question, and it is open — `CANON.md` §10.3.
+
+### (d) $279 ÷ 4 hours = $69.75, and it is fixable in copy alone
+
+```
+$279 per month ÷ (2 visits × 2 hours) = $69.75 per hour of entitlement
+```
+
+That number is correct, it is the first calculation a price-sensitive prospect will do, and it
+lands squarely inside the **$40–80/hour** Cincinnati handyman band. It reframes a maintenance
+membership from someone who knows the property as **four hours of general labour**.
+
+**This costs nothing to fix, because it is entirely a copy problem:**
+
+- **Never put the price and the hours in the same sentence**, on any surface.
+- **Lead with what stays maintained.** State the cap where a boundary belongs — the agreement,
+  the what's-included page, the walkthrough after the price has landed.
+- The cap is a **scope boundary**, not the thing being sold. `CANON.md` §3 makes this a rule and
+  `operating-model.md` §6 implements it.
+
+### What you got right, and it beat what we had
+
+**1. The two-hour cap is the best mechanism in the model.** It is what makes a flat price
+survivable across uneven properties, and it does it better than four price tiers did. At $279
+for everything, a pool-and-kitchen house consumes 120 minutes and a kitchen-only house 90 — the
+same fee buying between **$69.75 and $93.00 an hour** of your time. Without a ceiling, one price
+would be a promise to work until the biggest property was finished, at the price the smallest
+one pays. **The cap bounds your exposure without asking the customer to follow arithmetic**,
+and it does something the tiers never did: it makes membership standard 1 keepable, because you
+are never choosing between finishing this property and reaching the next one.
+
+It also improved the targeting, which we had backwards. Attribute pricing pushed toward the
+properties that eat the most of your day, because they paid the most. A flat price with a cap
+points the other way. `ideal-client.md` was rewritten around it.
+
+**2. Your motto beats a page of exclusions.**
+
+> **Maintain everything. Deep-clean nothing unless specifically scheduled.**
+
+Six words that settle nearly every scope argument before it starts. It is now the opening line
+of `service-catalog.md` and it belongs on the checklist, in the agreement, and on the site.
+
+**3. Your pool disclaimer is better than the clause it replaced.** The old §4.1 protected the
+business by excluding the work. Yours protects it by **disclaiming the outcome while keeping
+the work** — which is the harder and more valuable version, because it lets you do more for the
+client without taking on what you can't control. It is adopted verbatim and it is the one
+sentence in this whole build that must never be paraphrased.
+
+---
+
+## 🆕 D-19 · Four configurations → **$279 per month, flat**
+
+**Reverses D-3.**
+
+**What it said:** four attribute-derived membership prices, a base plus a pool module plus an
+outdoor-kitchen module, presented as one membership built out loud rather than a menu.
+
+**What it says now:** **$279 per month. One number. Billed March through October — eight
+charges a season, $2,232 a year.** A property with a pool and an outdoor kitchen pays exactly
+what a property with neither pays.
+
+**Source:** the owner's signed service agreement, §1 and §11. His work-block plan and flyer
+spec said $249; the agreement said $279. **Resolved to $279 — the agreement is the document a
+customer signs**, and $249 collides with the published $249+ grill deep-clean project price.
+
+**$249 is withdrawn as a membership price.** It remains a **project** price (`pricing.md`
+§5.1). **`CANON.md` §10.1 tracks the open item: confirm nothing already went out at $249 as a
+membership number.**
+
+**Pro-ration is by visit — $279 ÷ 2 = $139.50.** That rule is `wpc-strategist`'s, not the
+owner's. See **R-7**.
+
+**Founding Member rate**, adapted to the season: the first 4 clients lock **$279 through
+October 31, 2027** — the remainder of 2026 plus a full 2027. Its real job in a seasonal
+business is **re-enrolment**, not discount. `pricing.md` §2.
+
+*Locked in `CANON.md` §3. Implemented in `pricing.md` §1. Costed in **D-18(a)**.*
+
+---
+
+## 🆕 D-20 · Year-round with two scopes → **March 1 – October 31, 16 visits**
+
+**Reverses D-7.**
+
+**What it said:** Green Season April–October, Dormant Season November–March, one price all
+twelve months, retention measured April 1.
+
+**What it says now:**
+
+- **Season: March 1 – October 31.** Eight months, two visits a month, **16 visits a season**.
+- **Off season: November 1 – end of February.** No scheduled visits, no property checks, no
+  freeze protection, no snow or ice service, **and no charge.**
+- **The Dormant Season section of `service-catalog.md` is deleted**, and the snow-and-ice
+  clause with it.
+- The **separate optional winter offering** (`03-marketing/winter-service.md`) is not part of
+  this agreement and must never be described as included.
+- **The 2026 season is underway.** Clients signing now get a pro-rated remainder of 2026 plus a
+  locked founding rate for a full 2027.
+
+**Source:** agreement §8 and the Service Season field on the signed form.
+
+**What must not survive:** the argument *"the same price in January as in July."* It was on
+nine of ten page footers. **It is false now and it is the single most likely thing to leak
+through into a downstream document.** What replaced it is `CANON.md` §4: *sixteen visits, six
+properties, the same person every time, who writes down what he saw.*
+
+**Downstream arithmetic:** every membership figure that was `× 12` is now `× 8`. Insurance,
+software, phone, web, and accounting remain twelve-month costs. Supplies are eight-month costs.
+`unit-economics.md` §11 states the rule; `verify-unit-economics.py` enforces it.
+
+*Locked in `CANON.md` §3. Implemented in `service-catalog.md`, `pricing.md` §3,
+`operating-model.md` §3. Risk analysed in **D-18(b)**.*
+
+---
+
+## 🆕 D-21 · A planning allowance and a blanket ban → **2 visits × up to 2 hours, no rollover**
+
+**Reverses D-8 in part.**
+
+**What it says now**, from agreement §1 and §5:
+
+> **$279 per month includes two scheduled property-care visits each month, with up to two hours
+> of on-site service per visit. Unused service time does not roll over.**
+>
+> **Because each visit is limited to approximately two hours, WPC513 will use reasonable
+> judgment to address the highest-priority maintenance items first. Completion of every
+> possible task during every visit is not guaranteed.**
+
+**Those two clauses travel together everywhere.** A cap without the judgment clause is a
+promise to finish; the judgment clause without the cap is an excuse. Neither works alone.
+
+**What it replaces:** the 1.5-hour planning constant (dead — see D-25) and D-8's overreaching
+claim that minutes per visit do not exist in this business at all. **Time is now a contractual
+term of the product.**
+
+**What is still banned:** average visit length as a tracked number, minutes per visit as a KPI,
+and any copy implying he aims to finish quickly. The full table is in D-8's REVERSED banner and
+in `operating-model.md` §7.
+
+**The one thing to watch:** $279 ÷ 4 hours = $69.75. See **D-18(d)**.
+
+*Locked in `CANON.md` §3. Implemented in `operating-model.md` §6, §7, `service-catalog.md`
+§4.11.*
+
+---
+
+## 🆕 D-22 · Skim-and-baskets → **vacuum, brush, backwash, salt cell, both baskets, auto-vac**
+
+**What it said:** `service-catalog.md` §4.1 was headed *"the most important exclusion in the
+business"* and excluded **water chemistry, chemicals, vacuuming the pool, brushing walls or
+steps, cleaning or backwashing the filter, equipment repair, opening and closing, and any work
+below the water surface.**
+
+**What it says now.** Included, per agreement §3 and checklist block 2, up to approximately
+**30 minutes of pool time per visit**:
+
+- surface skimming
+- **brushing steps, corners, and selected areas**
+- **vacuuming, stopping at approximately 30 minutes of total pool time**
+- emptying the **skimmer basket** and the **pump basket**
+- emptying the **automatic pool-vacuum debris container**
+- **checking displayed salt levels and system indicators**, including Inspect Cell / No Flow
+- **backwashing when appropriate and compatible with the system**
+- visual equipment checks and notification of visible warnings
+
+**What is still excluded, and this is the rebuilt clause:** **water chemistry, chemicals of any
+kind, filter servicing beyond backwashing, equipment repair or adjustment, seasonal open and
+close, cover work, leak detection and below-surface repair — and any guarantee.**
+
+> **WPC513 does not guarantee water chemistry, water clarity, equipment performance, or
+> pool-system operation unless separately contracted.**
+
+**Adopted verbatim. Never paraphrase it.**
+
+**Why the old clause had to go rather than be edited:** it excluded three things he now does.
+Leaving it would have put the signed agreement in direct contradiction with the laminated
+checklist in the client's own backyard — the worst possible place for a scope disagreement to
+surface.
+
+**Two consequences that are not scope questions:**
+
+1. **Competitive.** See **D-18(c)**. This is the change that made the $121–142 pool-service
+   comparison live.
+2. **Insurance.** Vacuuming, backwashing, and salt-cell checks are **pool-system operation**.
+   The insurer was, in effect, told he did none of it. **`CANON.md` §10.3 — open, and it
+   blocks the first paid visit.**
+
+*Implemented in `service-catalog.md` §3.2, §4.1. Priced in `pricing.md` §6 (chemicals are
+materials).*
+
+---
+
+## 🆕 D-23 · "WPC513, 513 as a short mark" → **Westside Property Care 513 / WPC513**
+
+**What it said:** the name was Westside Property Care, with 513 demoted to a short mark, and
+the visual direction was a "Field Ledger" palette with the explicit note *"there is no icon and
+there will not be one."*
+
+**What it says now**, from his finished logo and agreement letterhead:
+
+- **Full customer-facing name: WESTSIDE PROPERTY CARE 513.** In full on first reference.
+- **WPC513** thereafter and as the mark. **"WPC" alone never appears in customer-facing copy.**
+- **Tagline: Seasonal Outdoor Living & Property Care.**
+- **Navy and orange**, with a **house-and-tree line mark** above the wordmark, a rule beneath,
+  and WESTSIDE PROPERTY CARE in small caps below.
+- **There is an icon.** It exists, it is finished, and it is his.
+
+**Also new and usable, from his Trust/About note:** *local, **military roots**, service,
+honesty, integrity, dependability.* `CANON.md` §8: state the military roots plainly; **never
+quantify them** into ranks, years, or units that have not been confirmed.
+
+**This entry is recorded here for traceability only.** Identity and visual direction belong to
+`01-brand/`, which owns the implementation. `00-model/` uses the name correctly and otherwise
+stays out of it.
+
+*Locked in `CANON.md` §8. Owned by `01-brand/`.*
+
+---
+
+## 🆕 D-24 · Property attributes: price modifiers → **client-selection criteria**
+
+**Derived from D-19. This is the largest downstream consequence of the flat price and it is
+the one most likely to be missed.**
+
+**What it said:** a pool added $60 and an outdoor kitchen added $40. `ideal-client.md` §2
+ranked prospects by revenue: *"Both a pool and an outdoor kitchen. $329, and the best client in
+the book."*
+
+**What it says now:** every property pays **$279** and gets **16 visits of up to two hours**.
+What differs is how much of those two hours the property consumes — which, at a flat price, is
+the same thing as what he is paid per hour.
+
+From his own checklist blocks (`unit-economics.md` §7.3):
+
+| Property shape | On-site min | On-site hrs/season | **$ per on-site hour** |
+|---|---|---|---|
+| Neither attribute | 70 | 18.67 | **$119.57** |
+| **Outdoor kitchen, no pool** | 90 | 24.00 | **$93.00** |
+| **Pool, no outdoor kitchen** | 100 | 26.67 | **$83.70** |
+| Pool **and** outdoor kitchen | 120 | 32.00 | **$69.75** |
+
+**The same fee buys a third more of his on-site time on a maximal property than on a
+one-attribute one.** ($93.00 ÷ $69.75 = 1.333.)
+
+**The rule that comes out of it, and it is not the obvious one.** The naive reading is *take
+the emptiest backyards.* That is wrong: a plain-patio owner will not pay $279, and their
+property surfaces nothing to quote — and project work is 46.8% of gross. **The target property
+has one attribute, not zero and not two.**
+
+**Three hard limits, now in `ideal-client.md` §2.3:**
+
+1. **At most 2 of 6 properties may have both a pool and an outdoor kitchen.**
+2. **Never two maximal properties on the same route day** — three 120-minute stops plus drive
+   is a 7-hour day at the ceiling with zero slack.
+3. **At most 1 of 6 with neither attribute**, and only if exceptionally well placed.
+
+**Plus a new qualification test:** the **time-fit test** — run the eight checklist blocks in
+your head on the walkthrough and ask whether block 7 (the flexible priority block) has anything
+left in it. If not, the property does not fit inside the membership and the prospect is a
+project client. `ideal-client.md` §2.2.
+
+*Implemented in `ideal-client.md` §1, §2. Arithmetic in `unit-economics.md` §7.3.*
+
+---
+
+## 🆕 D-25 · The 1.5-hour planning constant → **1:45 allowance, 3 stops, 4 route days**
+
+**Derived from D-21 and D-22. `CANON.md` §3 explicitly asks `operating-model.md` to derive
+this.**
+
+**What it said:** *"Plan one and a half hours per stop, door-to-door, including the drive
+between properties, plus half an hour of round trip."* That produced a 5-hour route day and a
+20-route-hour monthly cap.
+
+**Why it's dead:** it predates both the two-hour cap and the heavier pool scope. Thirty minutes
+of vacuuming did not exist when it was written.
+
+**What it says now**, derived in `unit-economics.md` §2 from his own checklist blocks:
+
+```
+Property shapes from the checklist:   120 / 100 / 90 minutes
+Assumed six-client composition (2 of each):  620 min ÷ 6  =  103.3 min
+Planning allowance, rounded up:                            =  1.75 hrs (1:45)
+Contractual ceiling:                                       =  2.00 hrs
+Drive: 0.5 hr round trip per route day + 0.25 hr between stops
+```
+
+| | 4 clients | **6 clients** | 8 clients |
+|---|---|---|---|
+| Stops per route day | 2 | **3** | 4 |
+| Hours per route day | 4.25 | **6.25** | 8.25 |
+| **Route hrs/month** | 17.0 | **25.0** | 33.0 |
+| Route hrs/season | 136 | **200** | 264 |
+| **Worst case at the ceiling** | 4.75 | **7.00** | **9.25** |
+
+**The structural decision: 3 stops per route day across 4 route days, not 2 stops across 6.**
+Both fit twelve visits into Mondays and Fridays. Five reasons for the first, in order:
+
+1. **It protects Tuesday–Thursday absolutely.** Four route days uses half the available
+   Monday/Friday slots and leaves four as weather valve. Six route days leaves two, and a
+   two-rain-out month then pushes routine work into the project block — where the money is.
+2. **"Never rush a property" is about the property, not the length of the day.** Each property
+   still gets its full two-hour entitlement; the day simply ends when it ends. There is no
+   property 4 to hurry toward.
+3. **Fewer dead-head round trips** — 4 instead of 6 is one unpaid hour a month, eight a season.
+4. **Four real workdays beats six half-days** for someone protecting contiguous project time.
+5. **Revenue per route day proves it**: $418.50 under the chosen structure, $279.00 under the
+   alternative (D-26).
+
+**The honest cost, and the rule that handles it:** three maximal properties on one day would be
+a 7-hour ceiling day with no slack. That is exactly why **D-24** forbids two
+pool-and-outdoor-kitchen properties on the same route day.
+
+*Implemented in `operating-model.md` §2, `unit-economics.md` §2.*
+
+---
+
+## 🆕 D-26 · Metrics recalibrated — two of the five moved
+
+**Derived from D-19, D-20 and D-21. D-8's five-metric structure survives; two of the five had
+their meaning or their threshold changed.**
+
+| Metric | Before | Now | Change |
+|---|---|---|---|
+| **Revenue per route day** | ≥ $400 *(model $428.50)* | **≥ $400 *(model $418.50)*** | **Meaning changed** — see below |
+| **Project attach rate** | ~10%, 2.5/member/year | **12.5%, 2 per member per season** | Rebased on 16 visits |
+| **Membership retention** | Members active **April 1** | **Season re-enrolment, confirmed in writing before March 1** | **Replaced** |
+| **Referrals** | ≥ 1 per quarter | ≥ 1 per quarter | Unchanged |
+| **Effective hourly rate** | ≥ **$45**/hr *(model $50.69)* | ≥ **$40**/hr *(model $43.23)* | **Floor lowered** |
+
+**1. Revenue per route day changed job.** It used to detect a badly *priced* client. It cannot
+any more — every client is $279. What it detects now is **route density**: at a flat price,
+clearing $400 means exactly one thing, **at least three properties on every route day.** It
+still catches the most expensive mistake available (adding a route day for one awkward client),
+so it stays.
+
+**2. The retention metric was replaced, not adjusted.** April 1 measured whether the Dormant
+Season scope was doing its job. There is no Dormant Season. What matters now is whether people
+**come back**, and that is measured **before March 1**, in writing — because by the first route
+day it is too late to replace anyone. **This is now the most important number in the business.**
+See **D-18(b)**.
+
+**3. The hourly floor moved from $45 to $40, and this is a change the owner should see.** The
+$45 figure was set against a twelve-month, attribute-priced model producing $50.69/hour. That
+model is gone. Under the seasonal flat price:
+
+| Case | Net per hour | vs a $45 floor | vs the $40 floor |
+|---|---|---|---|
+| 6 clients, full season | **$43.23** | fails | clears by $3.23 |
+| 4 clients, full season | $38.09 | fails | under |
+| 6 clients, zero project revenue | $33.25 | fails | well under |
+| The 7th and 8th client, marginal | $36.99 | fails | under |
+
+**A $45 floor would flag the business as failing on the day it opened, which makes it a useless
+instrument.** $40 is set below the target case and above the point at which the work stops being
+worth doing. **Three of those four cases are still under it** — that is the honest shape of this
+business: **it works at six clients with the project engine running, and not otherwise.**
+
+*Implemented in `operating-model.md` §7. See **R-8**.*
+
+---
+
+## Recommendations
+
+### Closed
+
+#### ⛔ R-1 · The outdoor-kitchen-without-pool configuration — **MOOT**
+
+Resolved 2026-08-05 in the morning in favour of a fourth configuration at $269; **superseded
+the same day** by the owner's flat $279 (**D-19**). The question no longer exists: there are no
+configurations. Kept on the board so the sequence is legible — this project resolved a pricing
+question and had it overtaken by a better decision within hours, and the record should show
+that rather than hide it.
+
+**One thing from R-1 is still worth asking him**, because it now calibrates a *time* assumption
+rather than a price: ***of the homes you've cleaned grills at, how many have pools?*** The
+answer moves the book composition in `unit-economics.md` A6, which drives route hours and the
+selection limits in `ideal-client.md` §2.3.
+
+---
+
+### Open
+
+#### 🔶 R-2 · The cap costs about $2,100 a season — hold it, and the case is now easy
+
+**The issue:** eight clients net **$2,127 more** than six (`unit-economics.md` §6.3).
+*(This was $3,478 under the superseded model. The price tag fell and the argument got stronger.)*
+
+**Recommendation: hold the cap at six, and this time it barely needs arguing.** Under the
+year-round model the eighth client paid a *better* marginal rate than the blended one, so the
+cap was a pure risk trade. Under the seasonal model the marginal hours pay **$36.99** — below
+his blended $43.23 and below the $40 floor — **in the base case, with nothing stressed.** Net
+per hour goes *down*. And the worst-case route day is **9.25 hours**, which cannot be run
+without rushing a property or breaking the Monday/Friday rule.
 
 **Not changed here** because the cap is locked in `CANON.md` §3.
 
-### 🔶 R-3 · Confirm membership standards 4 and 5 — STILL OPEN
+#### 🔶 R-3 · Confirm membership standards 4 and 5 — **STILL OPEN**
 
-Rule 4 is a high-confidence completion of a truncated sentence. **Rule 5 is a reconstruction
-from context — there is no surviving text.** Both are marked 🔶 in `operating-model.md` §7 and
-**must stay marked until he confirms.** The 2026-08-05 pricing resolution did not touch this.
+Rule 4 is a high-confidence completion of a truncated sentence, now independently corroborated
+by agreement §6. **Rule 5 is a reconstruction — there is no surviving text**, though checklist
+block 8 corroborates it more strongly than anything did before. Both stay marked 🔶 in
+`operating-model.md` §8 until he confirms.
 
 **Ask him:** *"Your rule 4 got cut off at 'don't quietly absorb projects into the' — was that
 'the membership'? And do you remember what rule 5 was?"*
 
-If his rule 5 is different, use his. But the same-day written report needs to live somewhere
-regardless, because the project attach rate in `operating-model.md` §6.2 depends on it
-mechanically.
+#### 🔶 R-4 · The Founding rate now has a second job — make sure it does it
 
-### R-4 · Consider whether the Founding Member rate should cover 4 or 6
+`pricing.md` §2 locks $279 for the first 4 clients through **October 31, 2027**, and it
+disappears after that.
 
-`CANON.md` sets the Founding Member 12-month price lock at the **first 4 clients**, and
-`pricing.md` §2 says it disappears after that — members 5 and 6 pay standard rates on standard
-terms.
+**The recommendation has changed.** Previously this was a note about not extending the lock to
+close slots 5 and 6 — **that still stands**; a discount to fill the last slot permanently lowers
+the reference price for every referral that member sends. If a concession is needed for slot 6,
+give **scheduling priority, a free first project, or an extra visit** — never a lower number.
 
-**This is probably right**, and it is implemented as written. Worth noting only because
-members 5 and 6 will be the hardest to place under the route-compactness tests (D-13), and
-there will be a temptation to extend the lock to close them. **Don't.** Filling slot 6 on
-Founding terms permanently lowers the reference price for every referral that member sends.
-If a closing concession is needed for slot 6, give **scheduling priority or a free first
-project**, not a price.
+**What is new:** in a seasonal business the lock is primarily a **re-enrolment device**, not a
+discount. It gives the August-2026 signer a written reason to come back on March 1, 2027. **Make
+sure it is presented that way** — "your price is locked through next season" is a returning-
+customer argument, and it is the cheapest one available against the risk in D-18(b).
 
-### 🔶 R-5 · Two numbers to verify with real quotes before launch — STILL OPEN
+#### 🔶 R-5 · Numbers to verify with real quotes before launch — **STILL OPEN AND NOW LARGER**
 
-Both are labeled assumptions and both are large enough to matter. Neither was affected by the
-2026-08-05 pricing resolution; both are still unverified.
+- **General liability insurance at $55/month** (A22). $45–85/month is the 2026 national range
+  for lawn/landscaping general liability; basic lawn care averages about $46. **Get two real
+  Ohio quotes** — and see R-6, because the scope change may move this number. Also ask whether
+  commercial auto is required if the vehicle is titled to the LLC; that is not modelled.
+- **Vehicle cost at $0.74/mile** (A18). The 2026 IRS business rate is 72.5¢ Jan–Jun and 76¢
+  Jul–Dec, blending to 74.25¢; the 2027 rate is unpublished. It is the right number for judging
+  the business, but out-of-pocket fuel is only about **$425 a year**. He should know both, and
+  not be surprised when the truck needs tyres.
+- **Startup equipment at $1,200** (A27). New. The heavier pool scope needs a vacuum head, hose,
+  and brush the old scope did not. **Price the actual list before the first walkthrough.**
 
-- **General liability insurance at $55/month** (A15). The $45–85/month range is a national
-  average for lawn/landscaping general liability. **Get two real Ohio quotes.** Also ask
-  whether commercial auto is required if the vehicle is titled to the LLC — that is not
-  modeled and could add meaningfully to the expense line.
-- **Vehicle cost at $0.74/mile** (A11). This is the IRS full-cost rate. It's the right number
-  for judging the business, but out-of-pocket fuel is only about **$532 a year**
-  (`unit-economics.md` §4.1). He should know both, and not be surprised when the truck needs
-  tires.
+#### 🔴 R-6 · Tell the insurer what he actually touches — **BLOCKS THE FIRST PAID VISIT**
+
+**The highest-priority open item in this file.** Vacuuming, backwashing, emptying pump baskets,
+and reading salt-cell indicators are **pool-system operation**. The superseded scope excluded
+all of it. **A general liability policy written against the old description may not respond to
+a claim arising from the new work.**
+
+**Do this before the first paid visit, not before the first pool.** Describe the work in the
+words of `service-catalog.md` §3.2, ask specifically about pool-equipment operation, and get
+the answer in writing. `CANON.md` §10.3.
+
+#### 🔶 R-7 · Confirm the 2026 start date and the pro-ration rule
+
+Two things in this build are `wpc-strategist`'s inference, not the owner's decision:
+
+1. **The agreement is headed *2027* Seasonal Property Care Service Agreement**, Service Season
+   March 1 – October 31, **2027**. He is launching **now**. The build re-dates it to a 2026
+   start with a partial-season pro-ration clause. **Confirm.** `CANON.md` §10.2.
+2. **Pro-ration by visit at $139.50** ($279 ÷ 2). Clean, fair in both directions, and needs no
+   calendar arithmetic — but it is not his rule. **Confirm before the first agreement is
+   signed.**
+
+The 2026 model also assumes a **mid-August first visit** (A1). If it slips to September, the
+season is worth **$558 a client instead of $697.50** — $837 less at six clients
+(`unit-economics.md` §4.4).
+
+#### 🔶 R-8 · Watch the hourly floor for one season, then decide whether $40 is right
+
+**D-26** lowered the effective-hourly floor from $45 to $40 because the old figure was set
+against a model that no longer exists. **That is a judgment, not a measurement.** Three of four
+modelled cases sit under it.
+
+**Recommendation: run the 2027 season, track the real number monthly, and revisit the floor in
+November 2027 with actuals instead of assumptions.** If the project engine performs at A7 the
+floor is comfortable. If it does not, the floor is not the thing that needs adjusting — the
+book or the route is.
+
+#### 🔶 R-9 · Downstream documents still describe the superseded model
+
+**Not a recommendation about the business — a warning about the repository.** `00-model/` is
+now consistent with `CANON.md`. Several documents outside this directory are not, and they are
+owned by other agents:
+
+| What to look for | Why it's wrong now |
+|---|---|
+| **Any of $229 / $249 / $269 / $289 / $329 as a membership price** | All withdrawn. **D-19** |
+| **"The same price in January as in July"** — it was on nine of ten page footers | The season ends October 31. **D-20** |
+| **"Year-round," "Dormant Season," "24 visits a year," "twelve months"** | Eight months, 16 visits. **D-20** |
+| **"Roughly $35k/year"** — including in `README.md` | The target case is **$25,192 gross, $19,887 net**. **D-18(a)** |
+| **A pool scope of "skim and baskets," or an exclusion of vacuuming/brushing/backwashing** | He does all three. **D-22** |
+| **"There is no icon and there will not be one"** | There is one, and it is finished. **D-23** |
+| **"WPC" alone in customer-facing copy** | **WPC513**, or the full name. **D-23** |
+| **Any snow, ice, or freeze-protection service inside the membership** | Deleted. **D-20** |
+
+**`00-model/` cannot fix these — they are outside this lane.** Flagged for the orchestrator.
 
 ---
 
 ## Related files
 
-- `operating-model.md` — D-1, D-2, D-5, D-8, D-12, D-13
-- `pricing.md` — D-3 (including the resolved fourth configuration), D-5, D-7, D-14, D-15
-- `service-catalog.md` — D-7, D-11, D-15
-- `ideal-client.md` — D-9, D-10, D-13
-- `unit-economics.md` — D-2, D-4, D-6, D-17, the A1 client mix behind D-3, and the bridge
-  from the draft's $12,984
-- `CANON.md` §3 — carries the 2026-08-05 decision note for D-3 / R-1
-- `_source/brother-draft-4-client-model.md` — the document all of this refines
-
-### Recommendation status at a glance
-
-| | Subject | Status |
-|---|---|---|
-| **R-1** | Fourth configuration ($269) | ✅ **Resolved 2026-08-05** — added |
-| **R-2** | The cap costs ~$3,500/yr | 🔶 Open — hold the cap, knowingly |
-| **R-3** | Membership standards 4 and 5 | 🔶 Open — reconstructed, needs confirmation |
-| **R-4** | Founding rate covers 4, not 6 | 🔶 Open — implemented as written, noted |
-| **R-5** | Real Ohio insurance and vehicle quotes | 🔶 Open — unverified |
+- `operating-model.md` — D-1, D-2, D-5, D-12, D-13, D-21, D-25, D-26
+- `pricing.md` — D-14, D-15, D-19, D-20
+- `service-catalog.md` — D-11, D-20, D-22
+- `ideal-client.md` — D-9, D-10, D-13, D-24
+- `unit-economics.md` — D-4, D-6, D-17, D-18, D-24, D-25, D-26
+- `verify-unit-economics.py` — mechanical check of every figure in `unit-economics.md`
+- `CANON.md` — carries the 2026-08-05 re-baseline note and the open items in §10
+- `_source/brother-draft-4-client-model.md` — the original draft
+- `_source/2026-08-05-owner-decisions.md` — the signed agreement, checklist, work-block plan,
+  and logo that supersede it
