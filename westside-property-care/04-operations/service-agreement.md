@@ -10,7 +10,9 @@
 > this document is legal advice, and nothing in it should be relied on as legal advice until
 > that review has happened. See §17.
 
-Designed to print short — two sides of one sheet. Fill-in slots are marked `[ ]`.
+This document is the full terms. `membership-summary-sheet.md` is the one-page,
+plain-language cover page a member actually reads and signs first — the two are signed
+together as **one agreement, not two.** See §15. Fill-in slots below are marked `[ ]`.
 
 ---
 
@@ -280,11 +282,17 @@ choice.
 
 ## 15. Entire agreement
 
-This document, together with the property file referenced in §5, is the entire agreement
-between the parties for this membership and supersedes any prior verbal discussion,
-including anything said at the walkthrough. It may be changed only in writing, signed by
-both parties. If any clause is found unenforceable, the rest remains in effect. This
-agreement is governed by the laws of the State of Ohio.
+This document, the property file referenced in §5, and the attached
+`membership-summary-sheet.md` are together **one agreement, not two separate documents.**
+The summary sheet is the plain-language cover page signed with these terms — it does not
+stand alone, and signing it does not create an agreement that is separate from, or lesser
+than, the terms below. If the summary sheet and this agreement ever appear to say different
+things about anything other than the price in §1, **this agreement controls**; the summary
+sheet exists to make the terms clear at the point of signing, not to add or remove any of
+them. This full package supersedes any prior verbal discussion, including anything said at
+the walkthrough. It may be changed only in writing, signed by both parties. If any clause is
+found unenforceable, the rest remains in effect. This agreement is governed by the laws of
+the State of Ohio.
 
 ## 16. What Westside Property Care is not
 
@@ -313,6 +321,8 @@ of those reviews have happened.
 
 ## Related files
 
+- `04-operations/membership-summary-sheet.md` — the one-page cover page signed together with
+  this document; §15 states the two are one instrument
 - `00-model/service-catalog.md` — the source scope and exclusions this agreement is built
   from; §4's twelve clauses map one-to-one to §6.1–§6.12 above
 - `00-model/pricing.md` — every price quoted in this agreement, verbatim
