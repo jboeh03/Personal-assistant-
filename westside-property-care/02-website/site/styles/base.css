@@ -1,0 +1,363 @@
+/* ==========================================================================
+   Westside Property Care — base
+   Reset, landmarks, typography, the rail-and-measure grid, texture, motion.
+   Contains no literal colour, type size, space, radius, or duration.
+   ========================================================================== */
+
+/* --- Reset ---------------------------------------------------------------- */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--space-block) * 1.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--type-body);
+  font-weight: var(--wt-text);
+  line-height: var(--lh-body);
+  font-variant-numeric: tabular-nums;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote {
+  margin: 0;
+}
+
+ul, ol { padding: 0; list-style: none; }
+
+img, svg { display: block; max-width: 100%; }
+
+img {
+  height: auto;
+  /* A neutral inset outline so a photograph's edge does not blur into the
+     paper. Never tinted with the brand palette. */
+  outline: 1px solid rgb(28 31 26 / 0.12);
+  outline-offset: -1px;
+}
+
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* --- Texture: one paper-grain layer, site-wide ----------------------------
+   Inline fractalNoise, tiled. About 300 bytes and no network request. It is
+   meant to be invisible until you put it beside a version without it.
+   -------------------------------------------------------------------------- */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size: var(--grain-tile) var(--grain-tile);
+}
+
+/* --- Typography ----------------------------------------------------------- */
+
+.display,
+h1 {
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-axes);
+  font-weight: var(--wt-display);
+  font-size: var(--type-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  text-wrap: balance;
+  hanging-punctuation: first last;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-axes);
+  font-weight: var(--wt-display);
+  font-size: var(--type-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+  text-wrap: balance;
+}
+
+h3 {
+  font-family: var(--font-text);
+  font-weight: var(--wt-strong);
+  font-size: var(--type-h3);
+  line-height: var(--lh-h3);
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+p + p { margin-top: var(--space-row); }
+
+strong, b { font-weight: var(--wt-strong); }
+
+/* No italics for emphasis anywhere. Italic display type is reserved for the
+   season name in running text. */
+em, i {
+  font-style: normal;
+  font-weight: var(--wt-strong);
+}
+
+.lede {
+  font-size: var(--type-lede);
+  line-height: var(--lh-lede);
+}
+
+.lede + .lede { margin-top: var(--space-row); }
+
+.small {
+  font-size: var(--type-small);
+  line-height: var(--lh-small);
+  color: var(--ink-muted);
+}
+
+/* Mono is not decoration. It is what makes a price row read as a record
+   instead of a pricing table. Uppercase only, tracked positive. */
+.stamp,
+.rail {
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  line-height: var(--lh-small);
+  margin: 0;
+}
+
+.stamp {
+  font-size: var(--type-stamp);
+  letter-spacing: var(--ls-stamp);
+}
+
+.rail {
+  font-size: var(--type-rail);
+  letter-spacing: var(--ls-rail);
+  color: var(--ink-muted);
+}
+
+.figure {
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-figure);
+  line-height: var(--lh-flat);
+  letter-spacing: var(--ls-mark);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Links — copper is a semantic monopoly on "act" ------------------------ */
+
+a {
+  color: var(--copper);
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--hair);
+  text-underline-offset: 0.18em;
+  transition-property: color, background-color, text-decoration-color;
+  transition-duration: var(--dur-quick);
+  transition-timing-function: var(--ease-draw);
+}
+
+a:hover { text-decoration-thickness: var(--hair-flag); }
+
+a:active { color: var(--ink); }
+
+/* --- Focus — visible, in-brand, never removed ------------------------------
+   Keyboard users get the same margin marker the service report uses for a
+   finding: a filled copper square in the rail at the row's baseline.
+   -------------------------------------------------------------------------- */
+
+:focus { outline: none; }
+
+:focus-visible {
+  outline: var(--focus-width) solid var(--copper);
+  outline-offset: var(--focus-offset);
+  border-radius: var(--radius-flat);
+  position: relative;
+}
+
+a:focus-visible::before,
+button:focus-visible::before,
+summary:focus-visible::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(-1 * (var(--focus-mark) + var(--space-tight)));
+  inset-block-start: 0.42em;
+  width: var(--focus-mark);
+  height: var(--focus-mark);
+  background-color: var(--copper);
+}
+
+.skip {
+  position: absolute;
+  inset-inline-start: var(--space-margin);
+  inset-block-start: 0;
+  z-index: 120;
+  padding: var(--space-control);
+  background-color: var(--copper);
+  color: var(--paper);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: var(--type-stamp);
+  letter-spacing: var(--ls-stamp);
+  text-transform: uppercase;
+  transform: translateY(-120%);
+  transition: transform var(--dur-quick) var(--ease-draw);
+}
+
+.skip:focus-visible { transform: translateY(0); }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- The page: container, rail, measure, bleed ----------------------------
+   12 columns, 24px gutter, 1240px max — but never twelve equal cells. The
+   rail is columns 1-3, the measure is 4-10, and 11-12 are a live bleed track
+   that runs past the container off the right edge of the viewport.
+   -------------------------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-margin);
+}
+
+main { overflow-x: clip; }
+
+.section { padding-block: var(--space-section); }
+
+.section + .section { padding-block-start: 0; }
+
+.section--tint {
+  background-color: var(--paper-deep);
+  margin-block: var(--space-block);
+}
+
+.measure { max-width: var(--measure); }
+
+/* An entry: rail label, measure block, a hairline beneath, and nothing else.
+   No border box, no fill at rest, no radius, no shadow. There are no cards on
+   this site. */
+.entry {
+  display: grid;
+  gap: var(--space-tight);
+  padding-block-end: var(--space-entry);
+  border-block-end: var(--hair) solid var(--rule);
+}
+
+.entry + .entry { margin-block-start: var(--space-entry); }
+
+.entry--last { border-block-end: 0; }
+
+.entry--boundary { border-block-end-color: var(--ink); }
+
+.entry__body > * + * { margin-block-start: var(--space-row); }
+
+.entry__body > h3 { margin-block-start: var(--space-entry); }
+
+.block + .block { margin-block-start: var(--space-block); }
+
+@media (min-width: 64em) {
+  .entry {
+    grid-template-columns: var(--rail-width) minmax(0, 1fr);
+    column-gap: var(--space-gutter);
+  }
+  .entry > .rail { padding-block-start: 0.5em; }
+}
+
+/* --- Motion ---------------------------------------------------------------
+   The rules draw. On first view a section's hairlines animate scaleX(0)->1
+   from the left and the text fades in with no translate. The effect is a page
+   being ruled and then written on.
+
+   Implemented with CSS scroll-driven animation, so it costs zero JavaScript
+   and zero scroll handlers. Browsers without support render the final state
+   immediately, which is the correct degradation. Compositor properties only.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    @keyframes draw-rule {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    @keyframes write-in {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .entry {
+      border-block-end: 0;
+      position: relative;
+    }
+    .entry:not(.entry--last)::after {
+      content: "";
+      position: absolute;
+      inset-block-end: 0;
+      inset-inline: 0;
+      block-size: var(--hair);
+      background-color: var(--rule);
+      transform-origin: left center;
+      animation: draw-rule var(--dur-draw) var(--ease-draw) both;
+      animation-timeline: view();
+      animation-range: entry 8% cover 26%;
+    }
+    .entry--boundary:not(.entry--last)::after { background-color: var(--ink); }
+
+    .entry__body {
+      animation: write-in var(--dur-base) var(--ease-draw) both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 28%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Print — the site is the service report, so it should print like one --- */
+
+@media print {
+  body::after,
+  .strip-wrap,
+  .nav,
+  .divider { display: none; }
+  body { background: none; font-size: 11pt; }
+  a { color: inherit; text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+  .entry { break-inside: avoid; }
+}

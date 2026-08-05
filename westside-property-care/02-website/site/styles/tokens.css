@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Westside Property Care — design tokens
+   Direction: FIELD LEDGER (01-brand/visual-direction.md)
+
+   Every colour, type size, space, radius, duration, and easing curve in this
+   site is declared here and nowhere else. base.css and components.css contain
+   no literal colour, no literal type size, and no literal spacing value.
+
+   Roles are semantic. Do not use a colour outside its role.
+   ========================================================================== */
+
+:root {
+  /* Both seasonal modes are light. The product happens outdoors in Ohio
+     daylight, on paper, in a truck. There is no dark mode by decision. */
+  color-scheme: light;
+
+  /* --- Ground and ink — constant across both seasons -------------------- */
+  --paper:        #F4EFE4;  /* page ground. Warm oat stock, never white     */
+  --paper-deep:   #E8DFCD;  /* alternating band, inset panels, table zebra  */
+  --wash-green:   #E7EBE2;  /* hover fill on a ledger row; included state   */
+  --ink:          #1C1F1A;  /* body, headlines, hairline emphasis   14.4:1  */
+  --ink-muted:    #5C5B50;  /* secondary text, captions, marginalia  5.9:1  */
+  --rule:         #C9BFA8;  /* THE hairline. Most-used non-text colour      */
+  --copper:       #A6462A;  /* the only colour that means ACT        5.2:1  */
+  --flag-ochre:   #C08A2E;  /* 2px marker on a FINDING. Never text on paper */
+
+  /* --- Green Season, April through October — the shipped default -------- */
+  --season-accent:  #1F3D2B;  /* reversed panels, season stamp     10.3:1   */
+  --season-support: #1E6B66;  /* Pool Care module ONLY              4.9:1   */
+  --season-wash:    var(--wash-green);
+
+  /* --- Type ------------------------------------------------------------- */
+  /* Fallback chains are chosen for width and colour, not availability: a
+     Fraunces failure lands on a sturdy old-style face, not on Times.
+     See site/fonts/README.md to install the real faces. */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino,
+                  Georgia, "Times New Roman", serif;
+  --font-text:    "IBM Plex Sans", "Segoe UI", Roboto, "Helvetica Neue",
+                  Arial, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", "Cascadia Mono",
+                  "Roboto Mono", Menlo, Consolas, monospace;
+
+  /* High opsz narrows the letterforms and lengthens the ascenders, which is
+     what makes the display face read as sturdy rather than soft. SOFT 0 and
+     WONK 0 are mandatory everywhere on screen. */
+  --display-axes: "opsz" 120, "SOFT" 0, "WONK" 0;
+
+  /* Non-linear on purpose. Body 17px to display 100px is ~5.9x, and that gap
+     is where the hierarchy comes from — not weight, not colour. */
+  --type-display: clamp(2.75rem, 1.55rem + 5.3vw, 6.25rem);
+  --type-h2:      clamp(1.75rem, 1.24rem + 2.2vw, 3rem);
+  --type-h3:      clamp(1.25rem, 1.12rem + 0.55vw, 1.5rem);
+  --type-lede:    clamp(1.125rem, 1.02rem + 0.5vw, 1.375rem);
+  --type-body:    1.0625rem;
+  --type-small:   0.875rem;
+  --type-stamp:   0.75rem;
+  --type-rail:    0.6875rem;
+  --type-figure:  clamp(2rem, 1.5rem + 2vw, 3.25rem);
+
+  --lh-display: 0.94;
+  --lh-h2:      1.06;
+  --lh-h3:      1.25;
+  --lh-lede:    1.55;
+  --lh-body:    1.65;
+  --lh-small:   1.55;
+  --lh-flat:    1;
+
+  --ls-display: -0.018em;
+  --ls-h2:      -0.012em;
+  --ls-mark:     0.01em;
+  --ls-stamp:    0.14em;
+  --ls-rail:     0.1em;
+
+  --wt-display: 600;
+  --wt-text:    400;
+  --wt-strong:  600;
+  --wt-mono:    500;
+
+  /* --- Space -----------------------------------------------------------
+     Five gaps, deliberately uneven. RULE: no two adjacent levels of
+     hierarchy may use the same gap. If a layout reads as evenly padded,
+     it is wrong. ------------------------------------------------------- */
+  --space-row:     0.75rem;                              /* lines in an entry */
+  --space-entry:   1.5rem;                               /* entry to entry    */
+  --space-block:   clamp(2rem, 1.4rem + 2.6vw, 3.5rem);  /* block to block    */
+  --space-section: clamp(4rem, 2.4rem + 6.5vw, 10rem);   /* section to section*/
+  --space-chapter: clamp(6rem, 3rem + 12vw, 16rem);      /* the season divider*/
+
+  --space-hair:    0.25rem;
+  --space-tight:   0.5rem;
+  --space-gutter:  1.5rem;   /* the 24px grid gutter        */
+  --space-margin:  1.25rem;  /* 20px viewport side margin   */
+  --space-control: 0.75rem;  /* inside buttons and inputs   */
+
+  /* --- Grid ------------------------------------------------------------- */
+  --container:  77.5rem;  /* 1240px, 12 columns, 24px gutter */
+  --measure:    68ch;     /* the reading column caps at 68 characters */
+  --rail-width: 11.5rem;
+  --bleed:      clamp(2rem, 8vw, 9rem);
+
+  /* --- Radius — near zero, and meaningful where present ------------------ */
+  --radius-flat:    0;    /* panels, plates, tables, entries — the default */
+  --radius-stamp:   2px;  /* the status stamp and the season chip          */
+  --radius-control: 3px;  /* buttons and inputs, and nothing else          */
+
+  /* --- Hairlines — three weights, and only three ------------------------- */
+  --hair:      1px;  /* --rule: the default separator     */
+  --hair-flag: 2px;  /* --flag-ochre: a finding, only     */
+
+  /* --- Depth — two elements only, both of which overlap something -------- */
+  --shadow-overlap: 0 1px 0 var(--rule),
+                    0 14px 28px -20px rgb(28 31 26 / 0.35);
+
+  /* --- Motion — a ledger does not animate -------------------------------- */
+  --dur-quick: 140ms;
+  --dur-base:  260ms;
+  --dur-draw:  420ms;
+  --ease-draw: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* --- Focus — visible, in-brand, and never removed ---------------------- */
+  --focus-width:  2px;
+  --focus-offset: 3px;
+  --focus-mark:   6px;  /* the filled copper square drawn in the rail */
+
+  /* --- Texture ----------------------------------------------------------- */
+  --grain-opacity: 0.04;
+  --grain-tile:    180px;
+}
+
+/* --------------------------------------------------------------------------
+   Dormant Season, November through March.
+
+   Only the --season-* properties change. Layout, type, spacing, and rules do
+   not move. The page changes temperature, not shape.
+
+   Driven by a real checkbox in the status strip, so the switch works with
+   JavaScript disabled. js/season.js only sets its initial position from the
+   date; it is not required for the switch to function.
+   -------------------------------------------------------------------------- */
+body:has(#season-switch:checked) {
+  --season-accent:  #4A5A63;  /* 5.4:1 on --paper */
+  --season-support: #8A5E1B;  /* freeze-protection and findings emphasis, 4.9:1 */
+  --season-wash:    var(--paper-deep);
+}
