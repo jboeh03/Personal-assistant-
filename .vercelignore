@@ -9,3 +9,7 @@ install.ps1
 package.ecc.json
 package-lock.ecc.json
 .mcp.json
+
+# Westside Property Care business/brand/marketing docs and its standalone static
+# site. Deployed separately (or hosted elsewhere) — the root app never imports it.
+westside-property-care/
