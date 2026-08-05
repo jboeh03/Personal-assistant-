@@ -20,8 +20,8 @@
 
 ### Back
 
-> Not lawn care. Not pool service. Everything I don't do is on this page before you're asked to
-> sign anything.
+> Not lawn care. Not pool service. Everything I don't do is written down before you sign
+> anything.
 >
 > `[PHONE]`
 
@@ -38,6 +38,18 @@ yourself" reading `voice.md` §3 warns against for a piece nobody is standing ne
 explain. The back exists to pre-empt the single most common misunderstanding named in
 `brand-brief.md` §6 ("Property Care" sounds like lawn care) in three words, without turning the
 piece into a scope document — that job belongs to `leave-behind.md`.
+
+**The back does not claim the exclusions are printed on it.** An earlier draft said "everything I
+don't do is on this page" — false on this specific surface, since the back carries three lines and
+no list. "Written down" is true: the exclusions are written down, in the service agreement and the
+leave-behind, and the walkthrough covers them out loud before the price (`ideal-client.md` §6 step
+4). Don't restore "on this page" here even if it reads slightly punchier.
+
+**No URL on this piece, and that's a decision, not an oversight.** `gtm-plan.md` §8 lists `[URL]`
+as not yet resolved — no production domain exists yet — and the front is already at the
+`voice.md` four-line cap, so adding one would mean cutting the slot count or the phone number, not
+appending for free. Revisit once the site ships and `[URL]` has a real value; until then, `[PHONE]`
+is the one working channel this piece can point to.
 
 ---
 

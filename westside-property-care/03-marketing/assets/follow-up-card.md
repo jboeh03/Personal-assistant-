@@ -5,17 +5,21 @@
 
 ---
 
-## When this is used, and in which of its two forms
+## When this is used, and in which of its three forms
 
-This card has two jobs, and two short copy variants — same size, same production spec, different
-five lines. Pick the variant that matches the moment; never send both to the same person.
+This card has two jobs and three short copy variants — same size, same production spec, different
+four or five lines. Pick the variant that matches the moment; never send a variant that opens by
+describing a conversation to someone who never had one.
 
-1. **The re-touch** — sent or hand-delivered roughly 10–14 days after a door-hanger drop that got
-   no response, or after a doorstep conversation that didn't close on the spot. A second, warmer
-   touch, still with no pressure attached.
-2. **The thank-you** — sent to an existing member after a referral of theirs turns into a real
-   walkthrough, whether or not it converts. This is the only piece in the whole campaign that
-   isn't aimed at a prospect; it's aimed at keeping the referral mechanic in
+1. **The re-touch after a drop (Variant 1A)** — sent or hand-delivered roughly 10–14 days after a
+   door-hanger drop that got **no response**. No conversation happened yet, so the card can't open
+   by referencing one.
+2. **The re-touch after a conversation (Variant 1B)** — sent after a doorstep conversation that
+   **didn't close on the spot**. A second, warmer touch that can reference the conversation
+   because it actually took place.
+3. **The thank-you (Variant 2)** — sent to an existing member after a referral of theirs turns
+   into a real walkthrough, whether or not it converts. This is the only piece in the whole
+   campaign that isn't aimed at a prospect; it's aimed at keeping the referral mechanic in
    `neighborhood-campaign.md` §3 genuinely reciprocal, without turning into a paid incentive
    (`pricing.md` §8 — the membership is never discounted, and that boundary holds here too: this
    is a note, not a reward).
@@ -24,7 +28,16 @@ five lines. Pick the variant that matches the moment; never send both to the sam
 
 ## Copy
 
-### Variant 1 — the re-touch
+### Variant 1A — the re-touch after a drop (no conversation happened)
+
+> **Westside Property Care**
+>
+> Left something at your door a little while back. {{slots_open}} of the six spots are still
+> open — if you've got a question, or the timing's better now, I'm at `[PHONE]`.
+>
+> `[OWNER FIRST NAME]` · WPC513
+
+### Variant 1B — the re-touch after a conversation
 
 > **Westside Property Care**
 >
@@ -78,6 +91,7 @@ One ask, `[PHONE]`, stated once. No separate banner, no "call now" — the whole
 ## Before this ships
 
 - `[PHONE]` and `[OWNER FIRST NAME]` must be real.
-- `{{slots_open}}` (Variant 1 only) must be the true count on the day of the print run.
-- Confirm which variant is being produced before ordering — they are not interchangeable and
-  share no line of copy.
+- `{{slots_open}}` (Variants 1A and 1B only) must be the true count on the day of the print run.
+- Confirm which of the three variants is being produced before ordering — 1A, 1B, and 2 are not
+  interchangeable and share no line of copy. Sending 1B to someone who never had a conversation
+  with him is a factual error, not a style choice — use 1A for that case.

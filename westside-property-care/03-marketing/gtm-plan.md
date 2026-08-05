@@ -281,6 +281,7 @@ examples" rather than inventing a second system.
 | Token | What it means | Why it's dynamic |
 |---|---|---|
 | `{{slots_open}}` | How many of the six spots are open right now | Changes every time a member signs or a slot is confirmed full — this is why door hangers print in small batches (`neighborhood-campaign.md` §6) rather than one large run |
+| `{{founding_spots_filled}}` | How many of the first 4 (founding) spots are filled right now, as opposed to `{{slots_open}}`'s count of all 6 | Used only in `warm-list-campaign.md` §5 Step 3, where the founding-rate deadline is the actual send-time fact, never a hardcoded guess like "three of four." If the true value is 0, the sentence that would use it is deleted rather than sent as "0 of 4 filled" — see the instruction inline in that step. |
 | `{{route_day}}` | A specific client's assigned route day (first/third Monday or first/third Friday) | Per-client, assigned at signing, not a campaign-wide constant |
 | `{{address_short}}` | Street name only, no house number, no client name | Per-client, used only in the service report system, not in `03-marketing/` |
 

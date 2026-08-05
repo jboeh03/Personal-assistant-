@@ -19,7 +19,7 @@ together as **one agreement, not two.** See §15. Fill-in slots below are marked
 ## Parties
 
 **Company:** [Westside Property Care LLC — legal name pending Ohio Secretary of State
-availability check; see `01-brand/brand-brief.md` §1], an Ohio limited liability company.
+availability check], an Ohio limited liability company.
 [Business address] · [Business phone] · [Business email] — referred to below as "Company"
 or "Westside Property Care."
 
@@ -38,13 +38,13 @@ below is the same every month of the year; it does not change between seasons.
 
 | This property has | Monthly price |
 |---|---|
-| Neither a pool nor an outdoor kitchen | $229 |
-| An outdoor kitchen, no pool | $269 |
-| A pool, no outdoor kitchen | $289 |
 | A pool and an outdoor kitchen | $329 |
+| A pool, no outdoor kitchen | $289 |
+| An outdoor kitchen, no pool | $269 |
+| Neither a pool nor an outdoor kitchen | $229 |
 
-**This property:** [ ] Neither  [ ] Outdoor kitchen only  [ ] Pool only  [ ] Pool and outdoor
-kitchen  →  **$[ ] / month**, charged as set out in §7.
+**This property:** [ ] Pool and outdoor kitchen  [ ] Pool only  [ ] Outdoor kitchen only
+[ ] Neither  →  **$[ ] / month**, charged as set out in §7.
 
 ## 2. Founding Member rate
 
@@ -96,12 +96,13 @@ area of the property identified at the initial walkthrough and recorded in the p
 — the patio, the pool and pool deck if the property has one, the outdoor kitchen if the
 property has one, the adjoining hardscape, and the walkways serving those areas.
 
-Not every task happens on every visit. Each visit is spent on what the property actually
-needs that day: a walk-through before starting and again before leaving, and — as
-applicable to the property — pool-area care, patio and furniture care, outdoor-kitchen care,
-and debris and grounds care within the outdoor living area. The full task lists for each
-season are in `00-model/service-catalog.md` §§2–3, incorporated into this agreement by
-reference.
+Not every task happens on every visit. Each visit starts and ends with a walk-through of that
+area, and in between covers whatever the property actually needs that day: skimming the pool
+and clearing its baskets and deck if the property has one, wiping down the patio furniture
+and the outdoor kitchen counters if the property has one, and hand-clearing leaves, sticks,
+and debris from the outdoor living area. **Schedule A, attached to and made part of this
+agreement, sets out the complete Green Season and Dormant Season task lists** this paragraph
+summarizes.
 
 **Green Season, April through October,** and **Dormant Season, November through March,** are
 two different scopes of work at one flat price. Dormant Season shifts the work from
@@ -153,8 +154,8 @@ and is quoted separately.
 grease trap and drip tray and wiping down exterior surfaces and countertops. Not included:
 cleaning of burners, grates, flavorizer bars, heat shields, interiors, hoods, or vents;
 degreasing; and any disassembly of cooking equipment. That is a grill and outdoor kitchen
-deep clean, quoted separately (from $249 — see `estimate-templates.md`). Pressure washing of
-any surface is not included and is quoted separately.
+deep clean, quoted separately as a written estimate, from $249. Pressure washing of any
+surface is not included and is quoted separately.
 
 **6.6 — Debris and waste volume.** Included: hand-collected loose leaves, sticks, and debris
 from the outdoor living area, transferred to the Member's own designated waste containers, up
@@ -247,9 +248,8 @@ recommendation has no effect on the membership, the price, or future visits.
 
 ## 13. Liability and insurance
 
-Westside Property Care carries general liability insurance: [carrier name — pending, see
-`tooling.md`], policy number [pending], in force as of [date — pending]. A certificate is
-available on request.
+Westside Property Care carries general liability insurance: [carrier name — pending], policy
+number [pending], in force as of [date — pending]. A certificate is available on request.
 
 Westside Property Care is not responsible for: the condition, clarity, or chemistry of pool
 water (§6.1); pre-existing conditions, defects, or wear not caused by Westside Property Care;
@@ -282,17 +282,17 @@ choice.
 
 ## 15. Entire agreement
 
-This document, the property file referenced in §5, and the attached
-`membership-summary-sheet.md` are together **one agreement, not two separate documents.**
-The summary sheet is the plain-language cover page signed with these terms — it does not
-stand alone, and signing it does not create an agreement that is separate from, or lesser
-than, the terms below. If the summary sheet and this agreement ever appear to say different
-things about anything other than the price in §1, **this agreement controls**; the summary
-sheet exists to make the terms clear at the point of signing, not to add or remove any of
-them. This full package supersedes any prior verbal discussion, including anything said at
-the walkthrough. It may be changed only in writing, signed by both parties. If any clause is
-found unenforceable, the rest remains in effect. This agreement is governed by the laws of
-the State of Ohio.
+This document, **Schedule A** attached to it, the property file referenced in §5, and the
+attached `membership-summary-sheet.md` are together **one agreement, not separate
+documents.** The summary sheet is the plain-language cover page signed with these terms — it
+does not stand alone, and signing it does not create an agreement that is separate from, or
+lesser than, the terms below. If the summary sheet and this agreement ever appear to say
+different things about anything other than the price in §1, **this agreement controls**; the
+summary sheet exists to make the terms clear at the point of signing, not to add or remove
+any of them. This full package supersedes any prior verbal discussion, including anything
+said at the walkthrough. It may be changed only in writing, signed by both parties. If any
+clause is found unenforceable, the rest remains in effect. This agreement is governed by the
+laws of the State of Ohio.
 
 ## 16. What Westside Property Care is not
 

@@ -107,8 +107,8 @@ This is not a paid referral program. There is no bounty, no discount, no credit 
 anywhere in `unit-economics.md` would be exactly the kind of number this project doesn't invent.
 What it costs nothing to do is ask, directly, the way `ideal-client.md` §4 already scripts it:
 
-> Do you know anyone else on the street with a pool or an outdoor kitchen? I've got a couple of
-> spots open and I'd rather work streets I'm already on.
+> Do you know anyone else on the street with a pool or an outdoor kitchen? I've got
+> {{slots_open}} of the six spots open and I'd rather work streets I'm already on.
 
 Said in person at the end of a visit, or written into a service report as a single line, this
 does two things a print piece can't: it names the actual mechanism (fewer trips, more time per

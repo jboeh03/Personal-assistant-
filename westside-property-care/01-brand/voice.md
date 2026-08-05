@@ -76,6 +76,10 @@ CTA Rules
 - The ask is never "learn more." It is "text me your cross street," "walk the
   property with me — about forty minutes," or "add your name to the waitlist."
 - When the book is full, the only ask is the waitlist plus the project offer.
+- Any ask that leaves a person waiting must say when he will answer, in his own
+  hours, with the honest failure case attached. That is a **reply commitment**
+  and it is required. It is not a **response window**, which is banned. The two
+  are separated in §8, items 14a and 14b, and worked in pair 17.
 
 Channel Notes
 - Website:        Second person for the reader, first person for him. Prices in
@@ -84,6 +88,10 @@ Channel Notes
 - Door hanger:    Four lines maximum. The current open-slot count is one of them.
 - Estimate:       Flat number, materials separate, expiry date.
 - Text / email:   Same voice, shorter. No greeting boilerplate.
+- Non-prose:      Structured data, alt text, meta titles, aria-labels, form
+                  errors, and CSS-rendered case are customer-facing copy and
+                  carry every rule in this file. See §3, the non-prose surface
+                  rule.
 ```
 
 ---
@@ -144,6 +152,8 @@ soften it with "however," and never dress it as a benefit.
 | Frequency | "Twice a month" or "two scheduled visits a month." Never "bi-monthly" — it means both things. |
 | Schedule | "The first and third Monday." Never "every other Monday," which is a different schedule. |
 | Arrival | Never a time, a window, or "between." Route day only, and say why. |
+| Reply to a person | **Required** wherever someone is left waiting on him. Say when he will answer, in his own hours, with the failure case attached: "the same day or the next morning — if it's after Thursday, it might be Monday." (§8 item 14b) |
+| Response to a work request | **Banned.** No turnaround, no SLA, no "within 24 hours," no "same-day service," no "24-hour emergency response." He works 1.5–2 days a week and cannot keep one. (§8 item 14a, `service-catalog.md` §4.7) |
 | Seasons | "Green Season" (April–October) and "Dormant Season" (November–March), capitalized, defined on first use. |
 | Address | Street name only in anything public. Never a full client address, never a house photo that identifies one. |
 
@@ -155,7 +165,8 @@ These are internal. Publishing any of them is an audit failure.
   external (`00-model/operating-model.md` §6).
 - The 1.5-hour route planning allowance.
 - The internal quoting anchors in `pricing.md` §5.3, the $100/hour rate, or the $149 trip
-  floor.
+  floor. **This includes reading two anchors out as a range** — "$249–$449" is the §5.3 table
+  with the labels removed. See the anchor-leak rule below.
 - Route hours, revenue per route day, project attach rate, retention, or effective hourly
   rate.
 - Any revenue figure from `unit-economics.md`.
@@ -186,9 +197,116 @@ as the base the others are built from. It is never the headline number.
 
 ---
 
+### 🔶 The anchor-leak rule
+
+**One number, one job, after he has looked at it. A range is the anchor table read aloud.**
+
+`pricing.md` §5.3 is headed *"Do not publish this table. Do not put it on the website."* The
+table exists so he isn't building a number from scratch in a driveway. Quoting a *specific*
+number off it, on a *specific* job, after he has *stood on the property*, is the table working
+exactly as designed. Quoting the **span** between two of its rows publishes the table.
+
+Three questions. All three must pass.
+
+1. **Is it one number?** A range is two anchors with the labels stripped off. "$249–$449" is
+   `pricing.md` §5.3 row 1 and row 3 side by side, and a reader can reconstruct the shape of
+   the table from it.
+2. **Is it this job, on this property?** Not a category, not a service, not a page.
+3. **Has he already looked at it?** A number before the on-site look is a guess he now has to
+   defend, and per `pricing.md` §7 the flat price is the promise.
+
+| | Allowed | Banned |
+|---|---|---|
+| Form | A single figure — "$449" | Any range — "$249–$449," "$249 to $449," "$300-ish," "somewhere in the $300s," "high threes" |
+| Scope | This driveway and this back patio | "Pressure washing," "gutters," "seasonal cleanup" — the §5.2 quoted categories |
+| Timing | After the walk | Before the walk, in a report, on a call, in a text, on a page |
+| Hedges | None. The number is flat. | "likely," "probably," "typically runs," "in the ballpark of," "starting around," "from" |
+
+**The two published exceptions, and only these two** (`pricing.md` §5.1): a grill and outdoor
+kitchen deep clean is **$249+**, a window well cleanout is **$49+**. Those are published
+starting prices and may appear anywhere. Every other project category is quoted after an
+on-site look with no published price (`pricing.md` §5.2).
+
+**Worked — the finding that needs a quote he hasn't built yet.** This is where the leak
+happens, because he wants to give the homeowner something to hold onto.
+
+> ❌ **Don't**
+> I'll walk it and send you a flat number tomorrow morning, likely somewhere in the $249–$449
+> range depending on how much of the walkway needs it too.
+
+> ✅ **Do**
+> I'll walk it and send you a flat number tomorrow morning, once I've measured the walkway and
+> seen how far the algae actually runs. Whatever the number is, it's flat — it doesn't move if
+> the job takes me longer than I planned.
+
+The rewrite loses nothing. The homeowner wanted to know *when* they'd get a number and *whether
+it could change on them*, and both of those are now answered. What they no longer have is the
+ability to anchor him at $249 before he has seen the walkway — which is the actual reason the
+table is internal (`pricing.md` §7).
+
+**Why the range is worse than it looks.** It sets the floor as the expectation and the ceiling
+as the insult, so the real number lands as a markup no matter where it falls. It also tells a
+reader that a table exists, which invites "what's the driveway on its own, then?" — a question
+he now has to answer from the driveway, which §5.3 exists to prevent.
+
+---
+
+### 🔶 The non-prose surface rule
+
+**If a customer can see it, hear it, or have it read to them, it is copy — and every rule in
+this file applies to it.** Prose is the surface most likely to be audited and the least likely
+to be wrong, because someone wrote it on purpose. The defects that survive are in the surfaces
+nobody thought of as writing.
+
+Copy includes, and is not limited to:
+
+| Surface | Carries |
+|---|---|
+| JSON-LD and any structured data | Every truth rule. A machine-readable claim is still a claim. |
+| CSS that changes rendered text — `text-transform`, `content`, `::before`/`::after` | §7's stamp rule. What renders is what was said. |
+| `alt` text | Rules 2 and 3 — name the object, locate it |
+| `<title>`, meta description, Open Graph, `og:image` overlay text | §6 in full |
+| Button, link, and `aria-label` text | The CTA rules |
+| Form labels, placeholders, helper text, validation and error messages | Person, tone, and the ban on urgency |
+| Email subject lines, SMS auto-replies, voicemail greeting | Everything |
+| Filenames, URL slugs, and anchor IDs a user can see in the address bar | The naming rules in `brand-brief.md` §1 |
+| Print artwork, yard sign, door hanger, vehicle lettering | Everything |
+
+**Two defects found in exactly this way**, both from real WPC surfaces, neither anywhere near
+a paragraph:
+
+**1. Structured data that invented a staffing model.** The `LocalBusiness` block on the
+homepage carried an `openingHoursSpecification` of Monday–Friday, `"opens": "08:00"`,
+`"closes": "17:00"`. No prose on the site says that, and it is not true — he works 1.5–2 days
+a week, routine visits are the first and third Monday and Friday, and Tuesday through Thursday
+is project time (`CANON.md` §3). Published as structured data, it is a machine-readable
+forty-hour week with someone at a desk, and it is the same false-availability failure as
+"within 24 hours" (item 14a) wearing a different hat. Google may surface it as a staffed
+business's hours. **The rule: structured data may only assert what the prose already asserts
+and `00-model/` already supports.** If there is no honest value for a field, omit the field —
+absent is not a defect, wrong is.
+
+**2. CSS that unsaid a stamp.** `.figure` set the mono face, the tracking, and tabular figures,
+but no `text-transform`. The status stamps rendered in sentence case, letterspaced — which
+breaks §7 item 2 (the stamps are typographic objects, set in caps), breaks
+`visual-direction.md` §3.4 ("no letterspaced lowercase, ever"), and, because the Plex Mono
+subset ships uppercase and digits only (`visual-direction.md` §3.1), risks the lowercase
+falling back to a different face entirely. MEMBERSHIP FULL is not a phrase that is written in
+caps; it is a stamp, and a stamp that renders as "Membership full" is a different, softer
+claim. **The rule: if the voice specifies rendered case, the stylesheet is where that rule is
+kept, and it is auditable there.**
+
+**How to run this as an auditor.** Do not stop when the prose passes. Grep the built surface
+for the things that are text but do not look like text: `application/ld+json`, `alt=`,
+`aria-label`, `<title>`, `content="`, `text-transform`, `::before`, `::after`, `placeholder=`,
+and every string in a validation or error path. Then read the rendered result, not the source
+— because case, truncation, and generated content only exist after the browser has run.
+
+---
+
 ## 4. Do / don't — worked pairs
 
-Sixteen pairs, each from a real Westside Property Care situation.
+Seventeen pairs, each from a real Westside Property Care situation.
 
 ---
 
@@ -539,6 +657,60 @@ membership. Name it, price it, let them say yes.
 
 ---
 
+### Pair 17 — The reply commitment and the response window
+
+**Situation:** Every surface that leaves a person waiting — the thanks page after the form, the
+"text me" line, the estimate promise. These two things look identical and are opposites. One is
+required by the CTA rule in §1; the other is the false-availability failure in `CANON.md` §7
+and `service-catalog.md` §4.7.
+
+**The test, in one line:** *is he promising to answer a person, or to show up for a job?*
+
+| | Reply commitment — **required** | Response window — **banned** |
+|---|---|---|
+| What is promised | That he will write back | That work will be started or completed |
+| What it costs him | A text from a phone, anywhere, any day | A route day he does not have |
+| Can he keep it? | Yes. Answering is not a visit. | No. He works 1.5–2 days a week. |
+| Form | A named point in his own week, with the failure case | A duration, a clock, or an SLA |
+| Source | §1 CTA rules, §8 item 14b | `service-catalog.md` §4.7, §8 item 14a |
+
+> ❌ **Don't** — the response window
+> We respond to all service requests within 24 hours. Same-day service available. Call our
+> 24-hour line for emergencies.
+
+Three separate false claims. There is no line, there is no same-day, and 24 hours is a
+commitment that Tuesday-through-Thursday project time exists to *absorb*, not to guarantee
+(`service-catalog.md` §4.7). It also implies someone is on the other end at 2am, which is the
+implied-crew failure in a different costume.
+
+> ✅ **Do** — the reply commitment
+> I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
+> I'd rather tell you that than say "within 24 hours."
+
+**This is the reference example.** It is live on `02-website/site/thanks.html` and it is the
+model every other reply commitment on every surface should be written against. Three things
+make it work:
+
+1. **It commits to answering, not to arriving.** Nothing about the property, the schedule, or
+   the work.
+2. **It names its own failure case before you find it.** "If it's after Thursday, it might be
+   Monday" is rule 5 doing its job — and a Monday reply, disclosed, reads as honesty, while the
+   same Monday reply after a 24-hour promise reads as a broken promise.
+3. **It names the thing it is refusing to say, and says why.** Quoting "within 24 hours" back
+   at the reader tells them he knows what the normal move is and declined it. That single
+   quoted phrase does more for credibility than the rest of the page.
+
+**Where it must appear:** any form confirmation, any "text me" or "email me" ask, any promise
+to send a number. `messaging.md` uses the same construction for estimates — "I look at it, then
+send you a flat number the same day or the next morning" — and §6.6 of this file requires it as
+the replacement for a "free estimate" banner. A CTA that leaves someone waiting with no reply
+commitment is a defect under item 14b; a CTA that gives them an operational SLA instead is a
+worse defect under item 14a.
+
+**Rules:** 5, the CTA rules in §1, and §3's reply/response rows.
+
+---
+
 ## 5. Two rewrites of longer copy
 
 ### 5.1 The homepage opening
@@ -668,6 +840,9 @@ audit item.** A hit in customer-facing copy is a failure, not a suggestion.
 | satisfaction guaranteed | No such guarantee exists | "Thirty days' notice and you're done." |
 | no job too big or too small | False. The scope is defined and published. | The exclusions |
 | 24/7, always available, just a call away, anytime | False. No guaranteed response (`service-catalog.md` §4.7) | "Tuesday through Thursday is held open, so urgent things usually get handled — I don't promise same-day." |
+| within 24 hours, 24-hour response, within one business day, guaranteed turnaround, rapid response, we respond to all service requests within ___ | An operational SLA on a 1.5–2 day week. This is the exact phrase the site refuses on purpose. | The reply commitment: "I'll answer the same day or the next morning. If it's after Thursday, it might be Monday." (Pair 17) |
+| same-day service, emergency service, on-call | Not offered. `service-catalog.md` §4.7 — not an emergency service. | "Tuesday through Thursday is held open, so urgent things usually get handled — I don't promise same-day." |
+| business hours, Mon–Fri 8–5, open 8 to 5 — **including in structured data** | Implies a staffed week that does not exist (`CANON.md` §3) | The real schedule, or omit the field entirely. See §3, the non-prose surface rule. |
 | we handle everything so you don't have to | False and it invites scope creep | The scope, then the exclusions |
 
 ### 6.5 Manufactured urgency — the entire category
@@ -724,7 +899,11 @@ Three surfaces are allowed to read differently, and only these three.
 1. **The service agreement.** Third person, "Westside Property Care," clause language. It is a
    contract and it needs to be one. `service-catalog.md` §4 is the model.
 2. **The status stamps.** MEMBERSHIP FULL, GREEN SEASON, DORMANT SEASON, and the report header
-   are set in caps as typographic objects, not as emphasis.
+   are set in caps as typographic objects, not as emphasis. **They must render in caps**, not
+   merely be typed in caps in a source file — a stamp that arrives as "Membership full" is a
+   softer claim than the one that was approved. Where the case is applied by a stylesheet, the
+   stylesheet is carrying a voice rule and is auditable as copy (§3, the non-prose surface
+   rule; `visual-direction.md` §3.4).
 3. **Prices in a table.** A row may read `A property with a pool — $289 a month` without a
    full sentence around it. Everywhere else the number goes in a sentence.
 
@@ -738,6 +917,16 @@ more polish.
 
 **Run this line by line against any customer-facing copy.** Every item is yes/no. Any "no" is a
 defect with a named fix.
+
+**What counts as "copy" for this checklist.** Not just prose. Structured data, `alt` text, meta
+titles and descriptions, Open Graph values, button and `aria-label` text, form placeholders and
+error messages, email subject lines, filenames and visible URL slugs, and any CSS that changes
+rendered text — all of it is customer-facing copy and every item below applies to it. Audit the
+**rendered** result, not only the source. See §3, the non-prose surface rule, for how to sweep
+these and for the two real defects that were found there.
+
+**Numbering is stable.** Items are split as `14a`/`14b` rather than renumbered, because other
+agents' audits cite these numbers. Never renumber; split.
 
 **Person and stance**
 
@@ -769,8 +958,23 @@ defect with a named fix.
     yet? (`brand-brief.md` §4.3)
 13. Is the six-client cap stated as the real number, with the real count of open slots — and is
     every urgency phrase from §6.5 absent?
-14. Does the copy avoid promising an arrival time, a time window, a response window, or
-    same-day service? (`service-catalog.md` §4.7, §4.11)
+14a. **Availability — must be absent.** Does the copy avoid promising an arrival time, a time
+    window, an operational response or turnaround commitment, or same-day service? Any promise
+    that *work* will be started, responded to, or completed inside a stated period is a false
+    availability claim — he works 1.5–2 days a week and cannot keep one. Banned in prose *and*
+    in structured data: "within 24 hours," "same-day service," "24-hour emergency response,"
+    "guaranteed turnaround," and an `openingHoursSpecification` of Mon–Fri 8–5 are all the same
+    defect. (`service-catalog.md` §4.7, §4.11; §3 non-prose surface rule; pair 17)
+
+14b. **Reply — must be present.** Where the surface leaves someone waiting to hear back, does
+    it say when he will answer, in his own hours, with the honest failure case attached? A
+    reply commitment is not a response window: answering a text is something he can do from a
+    phone on a Saturday, and clearing your window wells is not. The reference wording is live
+    on `02-website/site/thanks.html` — *"I'll answer the same day or the next morning. If it's
+    after Thursday, it might be Monday, and I'd rather tell you that than say 'within 24
+    hours.'"* Write every other reply commitment against that. A CTA that leaves someone
+    waiting and says nothing about when he answers is a defect here; a CTA that answers it with
+    an SLA is a worse defect under 14a. (§1 CTA rules; pair 17)
 15. Does it avoid any claim about pool water, chemistry, or clarity? (`service-catalog.md` §4.1)
 16. Does it avoid implying lawn or landscape service of any kind? (`service-catalog.md` §4.2)
 17. Are the exclusions present on any surface that states a price, and positioned *before* or

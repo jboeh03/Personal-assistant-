@@ -193,15 +193,15 @@ just good practice.
 >
 > Two quick questions if you've got a minute — do you still have the pool, or is it just the
 > kitchen setup now? And is `[STREET NAME]` still the right address? If it sounds worth a look, I'd
-> come walk the property with you — about forty minutes, no obligation, and I'll give you the
-> number for your place while I'm standing there.
+> come walk the property with you — about forty minutes, and I'll give you the number for your
+> place while I'm standing there. You don't have to decide anything that day.
 
 **Letter (for names with no working phone number):**
 
 > `[OWNER FIRST NAME]` here — I cleaned your grill through Tri-State Grill Cleaning. I wanted to
-> reach out about something new: I now take care of the outdoor living areas of six properties on
-> the west side, twice a month, with a written report after every visit. Not lawn care, not pool
-> service — pool deck, patio, and the outdoor kitchen.
+> let you know about something new: I now take care of the outdoor living areas of six properties
+> on the west side, twice a month, with a written report after every visit. Not lawn care, not
+> pool service — pool deck, patio, and the outdoor kitchen.
 >
 > If you're interested, call or text me at `[PHONE]` and I'll come walk the property with you —
 > about forty minutes, and I'll give you a number for your place while I'm there. The first four
@@ -212,7 +212,7 @@ just good practice.
 ### Step 2 (within ~5–7 days of no response) — Email
 
 > **Subject:** the grill cleaning, and what's new since then
-> **Preview:** Same person, same trust — a new offer for the rest of the yard.
+> **Preview:** Same person who cleaned your grill — a new offer for the rest of the yard.
 >
 > `[OWNER FIRST NAME]` here. I cleaned your grill a while back through Tri-State Grill Cleaning,
 > and I wanted to let you know what I've started since: twice-a-month care for the outdoor living
@@ -239,19 +239,27 @@ just good practice.
 
 ### Step 3 (Day ~14, non-responders in Tier 1 and Tier 2 only) — short second touch
 
-> `[OWNER FIRST NAME]` again — following up on the note about the outdoor living membership. No
-> pressure, just a real number: three of the four founding spots are accounted for as of this
-> week, and the founding rate goes away once the fourth is filled.
+> `[OWNER FIRST NAME]` again — following up on the note about the outdoor living membership.
+> {{founding_spots_filled}} of the four founding spots are filled, and the founding rate goes
+> away once the fourth is taken.
 >
 > If you want to see what your place would run, text me your cross street at `[PHONE]` and I'll
 > tell you honestly whether it fits the route yet.
 >
 > *Reply "stop" and I won't follow up again on this.*
 
-*(The "three of four" line is a template placeholder for the real count at send time — never a
-fabricated number. If fewer than three founding spots are filled when this step actually goes
-out, the sentence changes to match reality. This is the same rule `voice.md` §6.5 applies to the
-open-slot count generally: the real number, always.)*
+**`{{founding_spots_filled}}` is a dynamic token, not prose** — the real count of the four
+founding spots filled on the day this step actually sends, per `voice.md` §6.5: the real number,
+always, never a placeholder like "three of four" written as if it were already true. Add it to
+`gtm-plan.md` §8's dynamic-token table alongside `{{slots_open}}`.
+
+**If `{{founding_spots_filled}}` is 0 at send time, delete the entire first sentence** — the
+"No pressure, just a real number" framing plus the count — and open the message directly with
+the second paragraph instead: *"`[OWNER FIRST NAME]` again — following up on the note about the
+outdoor living membership. If you want to see what your place would run, text me your cross
+street at `[PHONE]` and I'll tell you honestly whether it fits the route yet."* A count of zero
+founding spots filled is not a proof point and saying so out loud undercuts the message it's
+supposed to support; the fix is to say nothing about the count that day, not to round it up.
 
 ### Step 4 — SMS, opt-in only
 
@@ -265,9 +273,9 @@ box on a reply form. Never sent cold to the list.
 
 **Follow-up SMS (only after confirmation above):**
 
-> Hey, it's `[OWNER FIRST NAME]`. Still time to grab one of the founding spots at your rate for
-> twelve months if you want to talk. Text me your cross street or call `[PHONE]`. Reply STOP to
-> opt out.
+> Hey, it's `[OWNER FIRST NAME]`. The first four lock their price for twelve months because
+> they're taking a chance on someone with no track record. {{slots_open}} of the six are open.
+> Text me your cross street or call `[PHONE]`. Reply STOP to opt out.
 
 ### Step 5 — Close-out once the founding four are filled
 
@@ -288,9 +296,10 @@ Per `gtm-plan.md` §3, §5: **the founding-member framing stops the moment slot 
 > it fits the route right now.
 
 > **Close-out message (waitlist version):**
-> `[OWNER FIRST NAME]` here — the book's close to full and the route is built around two clusters
-> at this point. I'd still like to help; I keep a real waitlist, and I still do grill and outdoor
-> kitchen deep cleans (from $249) with no membership required. Text `[PHONE]` if either's useful.
+> `[OWNER FIRST NAME]` here — {{slots_open}} of the six are open and the route is built around
+> two clusters at this point, so yours isn't near one yet. I'd still like to help; I keep a real
+> waitlist, and I still do grill and outdoor kitchen deep cleans (from $249) with no membership
+> required. Text `[PHONE]` if either's useful.
 
 ---
 
