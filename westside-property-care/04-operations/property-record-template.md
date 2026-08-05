@@ -6,12 +6,12 @@ customer-facing
 This is the file that lets a solo operator hold six properties in his head — which gate
 sticks, which window wells fill, which pot dries out first. Fill one out at the walkthrough,
 before the first visit, and update it after every visit. It is the source for the property
-boundary referenced in `service-agreement.md` §5, and the source of truth for what a given
-property is billed, and why.
+boundary referenced in `service-agreement.md` §5, and the record of what a given property was
+found to have and what changed on it since.
 
-**This is internal.** Unlike the service agreement and the service reports, this file is not
-customer-facing, so the `+$60` / `+$40` module arithmetic that's banned from customer-facing
-copy (`CANON.md` §3) is exactly how §9 below should be filled in.
+**This is internal**, but there is no module arithmetic to keep off customer-facing copy any
+more — the membership is one flat price (`CANON.md` §3). What stays internal here is the
+property detail itself: access codes, quirks, and the running history.
 
 File naming, per `01-brand/brand-brief.md`: `WPC513 · PROPERTY [0#]`.
 
@@ -30,7 +30,8 @@ File naming, per `01-brand/brand-brief.md`: `WPC513 · PROPERTY [0#]`.
 | Effective date | |
 | Route | [ A / B ] |
 | Route day | [ Monday / Friday ] of weeks 1 and 3 |
-| Founding Member | [ Y / N ] — if Y, lock expires: [date, 12 months from effective date] |
+| Membership price | **$279/month, flat** — `service-agreement.md` §1 |
+| Founding Member | [ Y / N ] — if Y, rate locked through **October 31, 2027** (pro-rated remainder of 2026 + full 2027 season) — `service-agreement.md` §2 |
 | Agreement signed | [ Y / N ] — date: |
 | Card on file | [ Y / N ] |
 
@@ -55,7 +56,9 @@ File naming, per `01-brand/brand-brief.md`: `WPC513 · PROPERTY [0#]`.
 | Approximate size | |
 | Skimmer basket location(s) | |
 | Pump basket / equipment pad location | |
-| Filter type *(noted for reference — not serviced under the membership; see `service-agreement.md` §6.1)* | |
+| Filter type *(backwashed under the membership when appropriate; other filter service is not — `service-agreement.md` §6.1)* | |
+| Salt system | [ Y / N ] — cell type / brand, and where the panel or readout is | |
+| Automatic pool vacuum / robot | [ Y / N ] — model, and where the debris container is | |
 | Known quirks (e.g., "west skimmer lid is cracked, lift gently") | |
 
 ### 4. Outdoor kitchen details
@@ -104,37 +107,27 @@ Write down anything a substitute (there isn't one, but write it anyway) would ne
 
 ### 8. Known issues — being monitored, not urgent
 
-*Things worth watching but not yet worth a recommendation. Move to §9 once they're worth
+*Things worth watching but not yet worth a recommendation. Move to §10 once they're worth
 naming a price for.*
 
 | First noted | Issue | Location | Status |
 |---|---|---|---|
 | | | | |
 
-### 9. Configuration and price
+### 9. Property changes — notification only, no price effect
 
-*Internal only — the module arithmetic that produces the customer-facing number in
-`service-agreement.md` §1.*
+*The membership price does not change based on what the property has
+(`service-agreement.md` §3) — this log exists so the visit plan and the property file stay
+accurate when the property itself changes, not to recalculate a bill.*
 
-| Component | Applies | Amount |
-|---|---|---|
-| Property Care base | Always | $229 |
-| + Pool Care | [ Y / N ] | +$60 if Y |
-| + Outdoor Kitchen Care | [ Y / N ] | +$40 if Y |
-| **Current monthly price** | | **$[ ]** |
-
-**Configuration history** *(log every change under `service-agreement.md` §3 — property
-changes, notice given, effective date, and how it interacted with the Founding Member lock
-if applicable)*
-
-| Date noted | Change | Old config → new config | Notice given | New price effective | Founding lock note |
-|---|---|---|---|---|---|
-| | | | | | |
+| Date noted | Change | Notice given | Property file updated | Notes |
+|---|---|---|---|---|
+| | | | | |
 
 ### 10. Recommended future projects
 
 *Every recommendation from a service report belongs here, whether it was accepted, declined,
-or is still pending — this is the attach-rate record `operating-model.md` §6.2 depends on.*
+or is still pending — this is the attach-rate record `operating-model.md` §7.2 depends on.*
 
 | Date recommended | What | Location | Price quoted | Member response | Status |
 |---|---|---|---|---|---|
@@ -142,12 +135,12 @@ or is still pending — this is the attach-rate record `operating-model.md` §6.
 
 ### 11. Service history
 
-*Update after every visit — this is the running record `operating-model.md` §7 rule 5 exists
+*Update after every visit — this is the running record `operating-model.md` §8 rule 5 exists
 to produce. One row per visit.*
 
-| Date | Season | Route day kept? | Work performed (summary) | Finding / recommendation | Report sent |
+| Date | Visit # of 16 | Route day kept? | Work performed (summary) | Finding / recommendation | Report sent |
 |---|---|---|---|---|---|
-| | [Green / Dormant] | [Y / rescheduled to __] | | | [Y — date] |
+| | | [Y / rescheduled to __] | | | [Y — date] |
 
 ---
 
@@ -156,7 +149,7 @@ to produce. One row per visit.*
 - `visit-sop.md` — the procedure each service-history row documents
 - `service-report-templates.md` — the customer-facing message each row's "report sent"
   column tracks
-- `service-agreement.md` §1, §3 — the customer-facing price and property-change clause this
-  file's §9 supports internally
+- `service-agreement.md` §1, §2, §3 — the customer-facing price, Founding Member lock, and
+  property-change clause this file's §1 and §9 support internally
 - `estimate-templates.md` — where a §10 recommendation goes once it's ready to be quoted
   formally

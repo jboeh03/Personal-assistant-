@@ -1,4 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Westside Property Care">
-  <rect width="32" height="32" fill="#1F3D2B"/>
-  <text x="16" y="24" font-family="Fraunces, 'Iowan Old Style', Palatino, Georgia, serif" font-size="24" font-weight="600" text-anchor="middle" fill="#F4EFE4">W</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Westside Property Care 513 — favicon, 32px application.
+  visual-direction.md §7.3: at 32px the mark is the house-and-tree LINE MARK
+  alone on --navy, stroke thickened to 2.5 units, no type. A scaled full
+  lockup at this size is a smudge, so it is not shipped.
+
+  COLOUR NOTE — easy to change, and it may need to be.
+  The owner's artwork fixes the elements and the palette (navy ground, orange
+  wordmark, line mark above, rule beneath, small caps below) but NOT the
+  colour of the icon, the rule, or the small caps. This file draws them in
+  --paper #F4F0E6 so the wordmark is the only warm element in the lockup.
+  If his artwork colours the icon differently, HIS ARTWORK WINS: change the
+  one `stroke` value below and the matching values in favicon-16.svg and
+  apple-touch-icon.svg. Do not redraw his logo to fit this file.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Westside Property Care 513">
+  <rect width="64" height="64" fill="#0E2E52"/>
+  <g fill="none" stroke="#F4F0E6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 30 L26 18 L38 30"/>
+    <path d="M17 30 V46 H35 V30"/>
+    <path d="M48 16 L54 30 H42 Z"/>
+    <path d="M48 30 V46"/>
+    <path d="M14 50 H50"/>
+  </g>
 </svg>

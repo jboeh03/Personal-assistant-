@@ -46,7 +46,7 @@ img {
   height: auto;
   /* A neutral inset outline so a photograph's edge does not blur into the
      paper. Never tinted with the brand palette. */
-  outline: 1px solid rgb(28 31 26 / 0.12);
+  outline: 1px solid rgb(20 28 38 / 0.12);
   outline-offset: -1px;
 }
 
@@ -169,10 +169,15 @@ em, i {
   font-variant-numeric: tabular-nums;
 }
 
-/* --- Links — copper is a semantic monopoly on "act" ------------------------ */
+/* --- Links — the ember ramp is a semantic monopoly on "act" ----------------
+   A link is text, so it takes the TEXT-SIZE step of the ramp: --ember-deep at
+   5.42:1 on --paper. --ember itself is 3.31:1 and is reserved for display
+   figures, the finding rule, and the focus ring — none of which are body copy.
+   Choose the ember by its ground, never by taste (visual-direction.md §2.4.2).
+   -------------------------------------------------------------------------- */
 
 a {
-  color: var(--copper);
+  color: var(--ember-deep);
   text-decoration-line: underline;
   text-decoration-thickness: var(--hair);
   text-underline-offset: 0.18em;
@@ -181,20 +186,28 @@ a {
   transition-timing-function: var(--ease-draw);
 }
 
-a:hover { text-decoration-thickness: var(--hair-flag); }
+a:hover { text-decoration-thickness: var(--hair-find); }
 
 a:active { color: var(--ink); }
 
 /* --- Focus — visible, in-brand, never removed ------------------------------
-   Keyboard users get the same margin marker the service report uses for a
-   finding: a filled copper square in the rail at the row's baseline.
+   Keyboard users get the same margin marker the service summary uses for a
+   finding, and after the re-baseline it is literally the same colour: a filled
+   --ember square in the rail at the row's baseline.
 
-   Copper is a PAPER-SIDE colour (visual-direction.md §2.5 rule 2). Everything
-   below assumes a --paper or --paper-deep ground, which is true everywhere
-   except the reversed footer panel — there copper lands at 2.01:1 on the
-   Green accent and 1.20:1 on the Dormant one, so components.css §13 overrides
-   both the ring and the marker to --paper. Any future reversed surface must
-   do the same.
+   --ember is a PAPER-SIDE mark. It is 3.31:1 on --paper, which clears the 3:1
+   floor for a non-text indicator (SC 1.4.11), and 2.89:1 on --paper-deep,
+   which does not. The rule enforced in the markup is that NOTHING FOCUSABLE
+   SITS ON A --paper-deep GROUND — the two --paper-deep surfaces are the
+   summary facsimile and the image plates, and neither contains a link.
+
+   On the two reversed panels — the navy status strip and the footer — the ring
+   and the marker are overridden to --paper (12.05:1 on navy, 7.57:1 on the Off
+   Season slate). --ember would be 3.64:1 on navy and 2.29:1 on the slate, so
+   the ring would disappear for four months of the year. That was a real
+   shipped defect once; the palette changed underneath it and it was
+   re-verified, not assumed. Any future reversed surface must override it too.
+   Full matrix in site-spec.md §9.4.
    -------------------------------------------------------------------------- */
 
 /* Suppress the ring only where :focus-visible is understood and has already
@@ -203,7 +216,7 @@ a:active { color: var(--ink); }
 :focus:not(:focus-visible) { outline: none; }
 
 :focus-visible {
-  outline: var(--focus-width) solid var(--copper);
+  outline: var(--focus-width) solid var(--ember);
   outline-offset: var(--focus-offset);
   border-radius: var(--radius-flat);
   position: relative;
@@ -218,7 +231,7 @@ summary:focus-visible::before {
   inset-block-start: 0.42em;
   width: var(--focus-mark);
   height: var(--focus-mark);
-  background-color: var(--copper);
+  background-color: var(--ember);
 }
 
 .skip {
@@ -227,7 +240,7 @@ summary:focus-visible::before {
   inset-block-start: 0;
   z-index: 120;
   padding: var(--space-control);
-  background-color: var(--copper);
+  background-color: var(--ember-deep);  /* --paper on it is 5.42:1 */
   color: var(--paper);
   text-decoration: none;
   font-family: var(--font-mono);

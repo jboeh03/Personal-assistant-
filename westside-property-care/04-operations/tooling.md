@@ -9,6 +9,10 @@ likely to get started too late. Every item is marked **BLOCKER** or not: a block
 something `00-model/decisions.md` D-5 or plain practicality requires **before the first paid
 visit**, not just before launch day.
 
+**The 2026 season (March 1 – October 31) is already underway.** Every week this list takes
+is a week of a season that doesn't wait, and the season, not the calendar year, is what these
+lead times are racing.
+
 All timeframes below are working estimates, not guarantees from the providers involved —
 confirm current processing times with the Ohio Secretary of State, the IRS, your insurance
 agent, and Google directly, since these change without notice.
@@ -20,7 +24,7 @@ agent, and Google directly, since these change without notice.
 | # | Step | Typical lead time | Blocks the first paid visit? |
 |---|---|---|---|
 | 1 | Google Business Profile verification | 1–3+ weeks | No — but start it first, it's the slowest thing on this page |
-| 2 | General liability insurance — shop and bind | 1–2 weeks | **Yes** |
+| 2 | General liability insurance — shop and bind | 1–2 weeks | **Yes — and must reflect the new pool scope (R-6)** |
 | 3 | LLC formation (Ohio Articles of Organization) | A few business days to ~2 weeks | **Yes** |
 | 4 | EIN (federal tax ID) | Same day, once the LLC is approved | Practically yes — needed for #5 |
 | 5 | Business bank account | Same day to a few days, once EIN is in hand | Practically yes — see note below |
@@ -53,7 +57,24 @@ verification isn't always offered to a brand-new listing. Budget for the slow pa
 ## 2. General liability insurance
 
 **Lead time: 1 to 2 weeks to gather real quotes and bind coverage. BLOCKER — insurance must
-be in force before the first paid visit** (`operating-model.md` §8; `decisions.md` D-5).
+be in force before the first paid visit** (`operating-model.md` §9; `decisions.md` D-5).
+
+🔴 **`00-model/decisions.md` R-6 — the highest-priority open item on this whole page, and it
+blocks the first paid visit as surely as having no policy at all.** The membership's pool
+scope changed on 2026-08-05: WPC513 now vacuums, brushes, backwashes when the system allows
+it, empties the pump basket, and reads the salt cell and other displayed indicators. All of
+that is **pool-system operation** (`service-agreement.md` §5.2). The scope this business
+launched with excluded every one of those tasks, so **a policy quoted or bound against the
+old description may not respond to a claim arising from the new work.** This is a coverage
+question, not a scope question, and it has to be resolved before anyone is charged for a
+visit:
+
+- [ ] **When getting quotes, describe the pool work exactly as `service-agreement.md` §5.2
+      does — vacuuming, brushing, backwashing, emptying both baskets and the automatic-vacuum
+      debris container, and reading salt-cell and system indicators** — not "basic pool
+      maintenance" or "skimming." Ask the agent directly: does this policy cover
+      pool-system operation, and does it change the quote?
+- [ ] Get the answer in writing before the policy is bound, not after.
 
 🔶 **`decisions.md` R-5 — still open, and it matters here specifically.** The $55/month
 figure used throughout `00-model/unit-economics.md` is a **national average for
@@ -62,8 +83,8 @@ budget or a contract:
 
 - [ ] **Get two real quotes from Ohio-licensed agents or carriers**, specifically for a
       solo residential outdoor property-care operator with no crew, no tree work, and
-      work performed around pools and gas grills. Ask specifically whether pool-adjacent
-      work changes the quote.
+      work performed around pools and gas grills — describing the pool work exactly as
+      above, per R-6.
 - [ ] **Ask each quote explicitly whether commercial auto coverage is required** if the work
       vehicle is titled to the LLC rather than to the owner personally — this was flagged
       in `decisions.md` R-5 as unmodeled and could add meaningfully to the expense line in
@@ -161,21 +182,22 @@ the GBP listing will publish this number.
 third-party dependency. Do it last, because it depends on #5 (where the money lands) and #6
 (what's actually generating the transactions).**
 
-`operating-model.md` §8 states the rule plainly: **track membership revenue, project
+`operating-model.md` §9 states the rule plainly: **track membership revenue, project
 revenue, and materials separately.** Materials must never disappear into labor revenue — if
 a project consumes $75 of materials, that $75 shows up as its own line, not folded into the
 job's price, so the real margin is visible.
 
-- [ ] **Ledger 1 — Membership.** One row per member per month: the configuration, the price
-      charged, the date charged, and whether it cleared. This ledger is what produces
-      `operating-model.md` §6.1's revenue-per-route-day number.
+- [ ] **Ledger 1 — Membership.** One row per member per month: **$279 flat** — there is no
+      configuration to log any more, just whether it charged, the date charged, and whether
+      it cleared. This ledger is what produces `operating-model.md` §7.1's
+      revenue-per-route-day number.
 - [ ] **Ledger 2 — Project revenue.** One row per project: the job, the member or
       non-member, the flat price charged, the date invoiced, the date paid. This is what
-      `operating-model.md` §6.2's attach rate is counted from.
+      `operating-model.md` §7.2's attach rate is counted from.
 - [ ] **Ledger 3 — Materials.** One row per material line: the job it belongs to, the cost,
       the 25% markup, the total billed. Never merge this into Ledger 2 — the whole point of
       `pricing.md` §6 is that materials stay visible as their own number.
-- [ ] Close the month with a one-page report, per `operating-model.md` §8: membership
+- [ ] Close the month with a one-page report, per `operating-model.md` §9: membership
       revenue, project revenue, material reimbursements, gross revenue, expenses, net,
       hours worked, and the effective hourly rate.
 - [ ] If Jobber (or similar) was chosen in #6, most of Ledgers 1 and 2 come out of its
@@ -192,7 +214,8 @@ From `decisions.md` D-5, plus the practical additions above:
 2. **Signed service agreement** — `service-agreement.md`, with real values in place of its
    `[ ]` slots, including the insurance carrier and policy number from #2
 3. **General liability insurance in force** — real Ohio quotes, not the $55/month modeling
-   assumption (#2)
+   assumption, **and written confirmation the carrier knows about the pool-system work**
+   (#2, R-6)
 4. **LLC filed** — Ohio Articles of Organization approved (#3)
 
 Google Business Profile (#1), the phone number (#7), and the choice of software beyond bare
@@ -202,10 +225,11 @@ above are finished.
 
 ## Related files
 
-- `00-model/decisions.md` D-5, R-5 — why these four are required before the first visit, and
-  the open flag on the insurance and vehicle-cost figures
+- `00-model/decisions.md` D-5, R-5, R-6 — why these four are required before the first visit,
+  the open flag on the insurance and vehicle-cost figures, and the pool-scope insurance
+  disclosure that blocks the first paid visit
 - `00-model/unit-economics.md` §1 (A15–A22) — every cost assumption this page budgets
   against
-- `00-model/operating-model.md` §8 — the money mechanics this checklist implements
+- `00-model/operating-model.md` §9 — the money mechanics this checklist implements
 - `service-agreement.md` §13, §17 — the fill-in slots that depend on #2 and #3 being real
 - `01-brand/brand-brief.md` §1 — the legal name decision that gates #1, #3, #4, and #5

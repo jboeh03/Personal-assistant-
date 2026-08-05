@@ -7,6 +7,14 @@ becomes a signed-off, flat-priced job. Every template below is built from the qu
 formula in `00-model/pricing.md` §7 and structured so **a quoted project cannot quietly
 grow** — scope and exclusions are named on the estimate itself, not assumed.
 
+**These prices don't move with the season.** The membership runs March 1 – October 31
+(`service-agreement.md` §4), but project work is offered year-round, including the
+membership off-season, November through February (`service-agreement.md` §6.8) — a grill
+deep clean before the holidays or pressure washing while the deck is empty is exactly the
+kind of work the last-visit-of-season report routes into that gap
+(`service-report-templates.md`, Template 5). Every price and formula below applies whether
+or not the member's card is currently being charged.
+
 ---
 
 ## The formula (internal — never customer-facing as a formula)

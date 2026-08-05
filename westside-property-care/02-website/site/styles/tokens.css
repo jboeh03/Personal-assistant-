@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Westside Property Care — design tokens
+   Westside Property Care 513 — design tokens
    Direction: FIELD LEDGER (01-brand/visual-direction.md)
 
    Every colour, type size, space, radius, duration, and easing curve in this
@@ -7,30 +7,67 @@
    no literal colour, no literal type size, and no literal spacing value.
 
    Roles are semantic. Do not use a colour outside its role.
+
+   Re-baselined 2026-08-05. The palette is navy and orange, inherited from the
+   finished logo the owner shipped — it was not chosen here. The Field Ledger
+   STRUCTURE is unchanged: the rail and measure, near-zero radius, the
+   hairline system, the two-shadow rule, the five uneven vertical gaps.
+   Only the ink changed.
+
+   Retired token names, which must never come back: --copper, --wash-green,
+   --flag-ochre, --season-accent, and any identifier containing "green" or
+   "dormant". A stale token name is how a retired season name outlives a
+   rewrite (01-brand/voice.md §3, the non-prose surface rule).
    ========================================================================== */
 
 :root {
-  /* Both seasonal modes are light. The product happens outdoors in Ohio
+  /* Both seasonal states are light. The product happens outdoors in Ohio
      daylight, on paper, in a truck. There is no dark mode by decision. */
   color-scheme: light;
 
-  /* --- Ground and ink — constant across both seasons -------------------- */
-  --paper:        #F4EFE4;  /* page ground. Warm oat stock, never white     */
-  --paper-deep:   #E8DFCD;  /* alternating band, inset panels, table zebra  */
-  --wash-green:   #E7EBE2;  /* hover fill on a ledger row; included state   */
-  --ink:          #1C1F1A;  /* body, headlines, hairline emphasis   14.4:1  */
-  --ink-muted:    #5C5B50;  /* secondary text, captions, marginalia  5.9:1  */
-  --rule:         #C9BFA8;  /* THE hairline. Most-used non-text colour      */
-  --copper:       #A6462A;  /* the only colour that means ACT        5.2:1  */
-  --flag-ochre:   #C08A2E;  /* 2px marker on a FINDING. Never text on paper */
+  /* --- Ground and ink — identical in both seasons -----------------------
+     Contrast ratios are recomputed by hand in site-spec.md §9.4 and are
+     stated here against the ground each colour actually sits on. --------- */
+  --paper:      #F4F0E6;  /* page ground. Warm ledger stock, never white     */
+  --paper-deep: #E7E1D3;  /* alternating band, insets, the facsimile ground  */
+  --ink:        #141C26;  /* body, headlines, section rule  15.08:1 on paper */
+  --ink-muted:  #4E5A66;  /* secondary text, rail marginalia  6.20:1         */
+  --rule:       #C2BCAC;  /* THE hairline. Structural only, never text.      */
 
-  /* --- Green Season, April through October — the shipped default -------- */
-  --season-accent:  #1F3D2B;  /* reversed panels, season stamp     10.3:1   */
-  --season-support: #1E6B66;  /* Pool Care module ONLY              4.9:1   */
-  --season-wash:    var(--wash-green);
+  /* The identity colour. Ink, hairline, reversed panel, logo ground — never
+     the background of a page, a section, or a viewport. 12.05:1 on paper. */
+  --navy:       #0E2E52;
 
-  /* --- Type ------------------------------------------------------------- */
-  /* Fallback chains are chosen for width and colour, not availability: a
+  /* The ember ramp: ONE colour, ONE meaning — "a decision point" — set at
+     three lightnesses chosen by the ground it sits on, never by taste.
+     If something is ember and it is not a link, a control, the MEMBERSHIP
+     FULL stamp, a display figure, or a finding awaiting a yes/no, it is a
+     bug. This is why the palette does not read as grey-plus-an-accent. */
+  --ember:      #D4622A;  /* display figures, the finding rule, focus.
+                             3.31:1 on --paper — large text (>=24px) and
+                             non-text UI only. Never body text.            */
+  --ember-deep: #9E4820;  /* ember at TEXT size on paper: links, the button
+                             ground, inline prices.  5.42:1 on --paper      */
+  --ember-lift: #EE7A34;  /* ember reversed on a dark ground: the wordmark
+                             and the season stamp inside the navy strip.
+                             4.88:1 on --navy · 2.47:1 on --paper, which is
+                             why it is BANNED on paper at any size.         */
+
+  /* --- IN SEASON — March 1 through October 31 — the shipped default -----
+     Only these three properties change with the calendar. Layout, type,
+     spacing, rules, and the masthead navy do not move. The page changes
+     temperature, not shape. ---------------------------------------------- */
+  --season-ground:  #0E2E52;  /* = --navy. Reversed panels, the season stamp
+                                 ground, the active hairline.  12.05:1      */
+  --season-support: #1A6E6B;  /* POOL ONLY. The one hue that is neither the
+                                 identity navy nor the identity orange, so
+                                 it cannot be read as a mark or an action.
+                                 5.29:1 on --paper · 4.62:1 on --paper-deep */
+  --wash:           #E4E8EE;  /* ledger-row hover fill. A cool wash on warm
+                                 stock — the row changes temperature.       */
+
+  /* --- Type -------------------------------------------------------------
+     Fallback chains are chosen for width and colour, not availability: a
      Fraunces failure lands on a sturdy old-style face, not on Times.
      See site/fonts/README.md to install the real faces. */
   --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino,
@@ -55,6 +92,9 @@
   --type-small:   0.875rem;
   --type-stamp:   0.75rem;
   --type-rail:    0.6875rem;
+  /* Three numbers only: the open-slot count, the monthly price, and the
+     visit number. Minimum 2rem = 32px, which clears the WCAG large-text
+     threshold, which is the one place --ember may be used as text. */
   --type-figure:  clamp(2rem, 1.5rem + 2vw, 3.25rem);
 
   --lh-display: 0.94;
@@ -70,6 +110,8 @@
   --ls-mark:     0.01em;
   --ls-stamp:    0.14em;
   --ls-rail:     0.1em;
+  --ls-lockup:   0.1em;   /* WPC 513 inside the lockup, per the brief §7.1 */
+  --ls-caps:     0.16em;  /* the small-caps line inside the lockup         */
 
   --wt-display: 600;
   --wt-text:    400;
@@ -112,18 +154,24 @@
      intent. */
   --bleed: max(2rem, calc((100vw - var(--container)) / 2 + var(--space-gutter)));
 
+  /* --- The season strip — sixteen ticks ---------------------------------- */
+  --tick-w:  2px;
+  --tick-h:  0.875rem;
+  --tick-sq: 0.5rem;   /* the filled ember square: the current visit */
+  --lockup:  2.5rem;   /* 40px — the minimum full-lockup size on screen */
+
   /* --- Radius — near zero, and meaningful where present ------------------ */
-  --radius-flat:    0;    /* panels, plates, tables, entries — the default */
-  --radius-stamp:   2px;  /* the status stamp and the season chip          */
-  --radius-control: 3px;  /* buttons and inputs, and nothing else          */
+  --radius-flat:    0;    /* panels, plates, tables, entries, the logo square */
+  --radius-stamp:   2px;  /* the three status stamps                         */
+  --radius-control: 3px;  /* buttons and inputs, and nothing else            */
 
   /* --- Hairlines — three weights, and only three ------------------------- */
-  --hair:      1px;  /* --rule: the default separator     */
-  --hair-flag: 2px;  /* --flag-ochre: a finding, only     */
+  --hair:      1px;  /* --rule: the default separator, --ink: a boundary */
+  --hair-find: 2px;  /* --ember: a FINDING, and only a finding           */
 
   /* --- Depth — two elements only, both of which overlap something -------- */
   --shadow-overlap: 0 1px 0 var(--rule),
-                    0 14px 28px -20px rgb(28 31 26 / 0.35);
+                    0 14px 28px -20px rgb(20 28 38 / 0.35);
 
   /* --- Motion — a ledger does not animate -------------------------------- */
   --dur-quick: 140ms;
@@ -134,7 +182,7 @@
   /* --- Focus — visible, in-brand, and never removed ---------------------- */
   --focus-width:  2px;
   --focus-offset: 3px;
-  --focus-mark:   6px;  /* the filled copper square drawn in the rail */
+  --focus-mark:   6px;  /* the filled ember square drawn in the rail */
 
   /* --- Texture ----------------------------------------------------------- */
   --grain-opacity: 0.04;
@@ -142,17 +190,25 @@
 }
 
 /* --------------------------------------------------------------------------
-   Dormant Season, November through March.
+   OFF SEASON — November 1 through the end of February.
 
-   Only the --season-* properties change. Layout, type, spacing, and rules do
-   not move. The page changes temperature, not shape.
+   The page drains. The reversed ground goes from navy to a colder, lighter
+   slate; the hover wash goes from cool to warm; and the pool teal has no role
+   at all, because there is no pool work off season. A darker winter ground
+   would read as "night," which is a mood. A drained one reads as "closed,"
+   which is a fact.
+
+   The masthead strip and the mark stay navy in both states — the mark does
+   not change with the calendar.
 
    Driven by a real checkbox in the status strip, so the switch works with
    JavaScript disabled. js/season.js only sets its initial position from the
    date; it is not required for the switch to function.
    -------------------------------------------------------------------------- */
 body:has(#season-switch:checked) {
-  --season-accent:  #4A5A63;  /* 5.4:1 on --paper */
-  --season-support: #8A5E1B;  /* freeze-protection and findings emphasis, 4.9:1 */
-  --season-wash:    var(--paper-deep);
+  --season-ground:  #3A4E60;  /* 7.57:1 with --paper */
+  --season-support: #1F6580;  /* the MARCH 1 date and any freeze note.
+                                 Colder than navy — it reads as ice, not as
+                                 brand.  5.71:1 on --paper                  */
+  --wash:           var(--paper-deep);
 }

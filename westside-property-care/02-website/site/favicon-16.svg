@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Westside Property Care 513 — favicon, 16px application.
+  visual-direction.md §7.3: at 16px the line mark is illegible and must not be
+  shipped scaled, so the mark is `513` alone in --ember-lift on --navy, zero
+  radius. 4.88:1 — it stays legible in a tab strip.
+
+  COLOUR NOTE: see the block in favicon.svg. The wordmark orange is confirmed
+  from his artwork; the icon and small-caps colours are not.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Westside Property Care 513">
+  <rect width="64" height="64" fill="#0E2E52"/>
+  <text x="32" y="45"
+        font-family="'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace"
+        font-size="34" font-weight="500" letter-spacing="1"
+        text-anchor="middle" fill="#EE7A34">513</text>
+</svg>
