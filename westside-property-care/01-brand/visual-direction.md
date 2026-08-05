@@ -8,8 +8,8 @@ item by item in §9 and §10
 > **Re-baselined 2026-08-05. Two sections are reversed, not patched.**
 >
 > - **§2, the palette.** The Field Ledger *structure* survives entirely — the ruled field-book
->   layout, the rail and measure, the reading measure, near-zero radius, the three-weight
->   hairline system, the two-shadow rule, the uneven vertical rhythm. **Only the colour system
+>   layout, the rail and measure, the reading measure, near-zero radius, the hairline
+>   system, the two-shadow rule, the uneven vertical rhythm. **Only the colour system
 >   changes.** Oat/copper/green is replaced by **his navy and orange**, taken from the finished
 >   logo he shipped (`_source/2026-08-05-owner-decisions.md` §1).
 > - **§7, the mark.** This file used to say *"There is no icon and there will not be one. No
@@ -19,6 +19,14 @@ item by item in §9 and §10
 >   one flat year-round price. It is **In Season (March 1 – October 31)** and **Off Season
 >   (November 1 – end of February)**, where the off-season state says the next season opens
 >   March 1. Both states carry a complete palette that passes contrast on its own.
+>
+> **Ruling appended the same day, after `wpc-web` recomputed the palette.** All 27 published
+> ratios reproduced within 0.05 — no colour value is in dispute — but one was justified against a
+> ground its element never renders on, and a second instance of the same defect was found
+> unflagged in §6. **The decision mark is now `--mark`, a per-surface variable resolved from the
+> ember ramp by its ground (§2.5).** The finding rule and the focus indicator both take it. §5.2
+> records the ruling and the argument it declined; the §2 preamble records the rule that stops it
+> recurring; §7.1 answers the `--ember-lift` flag. **No hex changed.**
 
 ---
 
@@ -91,6 +99,28 @@ linear → relative luminance, WCAG 2.x) and are stated against a named ground e
 `CANON.md` §9 says Playwright cannot be relied on here, so this arithmetic is the only check
 there is.
 
+> 🔁 **Added 2026-08-05 after a ruling. How a ratio must be stated in this file.**
+>
+> `wpc-web` recomputed all 27 published ratios and reproduced every one within 0.05 — then found
+> that one of them was **arithmetically right and structurally useless**, because it was computed
+> against a ground the element never sits on. §5.2 justified the 2px finding rule at 3.31:1 on
+> `--paper`; §4.5 puts the only finding on `--paper-deep`, where the same colour is 2.89:1. Two
+> correct numbers, one wrong conclusion. The ruling is §2.5 and §5.2; this is the rule that stops
+> it recurring.
+>
+> 1. **A ratio is stated against the ground the element renders on, not against the ground it is
+>    conceptually associated with.** If an element renders on more than one ground, *every* ground
+>    is published, and the **worst** one governs whether the colour may be used.
+> 2. **If a colour fails on any ground it actually touches, the fix is a different step of the
+>    ramp on that ground — not a rewritten justification.** §2.4 rule 2 already said this. It was
+>    written for text and was not applied to marks; §2.5 closes that.
+> 3. **Two decimal places wherever the margin to a threshold is under 0.15.** `2.89` and `3.06`
+>    are different answers to the same question and `2.9` and `3.1` hide that. One decimal is fine
+>    everywhere else.
+> 4. **Do not accept "the criterion does not bind here" as a resolution** unless the redundancy is
+>    itself specified and enforceable. See §5.2, where that argument was made, examined, and
+>    declined on the merits.
+
 **Roles are semantic. Do not use a colour outside its role.**
 
 ### 2.1 Constant tokens — identical in both seasons
@@ -101,12 +131,12 @@ there is.
 | `--paper-deep` | `#E7E1D3` | `oklch(91.1% 0.020 88)` | Alternating band, table zebra, the summary facsimile ground | — |
 | `--wash` | `#E4E8EE` | `oklch(93.0% 0.009 258)` | Hover fill on a ledger row, In Season only. A cool wash on warm stock — the row visibly changes temperature. | — |
 | `--ink` | `#141C26` | `oklch(22.3% 0.023 254)` | Body text, headlines, section-boundary hairline. A navy-cast near-black, tied to the mark. | **15.1:1** on `--paper` · **13.2:1** on `--paper-deep` · **14.0:1** on `--wash` |
-| `--ink-muted` | `#4E5A66` | `oklch(46.2% 0.025 248)` | Secondary text, captions, rail marginalia | **6.2:1** on `--paper` · **5.4:1** on `--paper-deep` |
-| `--rule` | `#C2BCAC` | `oklch(79.6% 0.023 90)` | The default hairline. The most-used non-text colour in the system. | 1.7:1 on `--paper` — **structural only, never text, never the sole carrier of information** |
+| `--ink-muted` | `#4E5A66` | `oklch(46.2% 0.025 248)` | Secondary text, captions, rail marginalia | **6.2:1** on `--paper` · **5.4:1** on `--paper-deep` · **5.7:1** on `--wash` (a rail label on a hovered row) |
+| `--rule` | `#C2BCAC` | `oklch(79.6% 0.023 90)` | The default hairline. The most-used non-text colour in the system. | 1.7:1 on `--paper` · 1.45:1 on `--paper-deep`. Both are far under 3:1 and that is intentional: **structural only, never text, never the sole carrier of information.** The exemption is what makes the number irrelevant — which is exactly the argument §5.2 declines for the finding rule, and the difference is set out there. |
 | `--navy` | `#0E2E52` | `oklch(29.9% 0.075 254)` | The identity colour. Logo ground, masthead strip, reversed panels In Season. | **12.0:1** on `--paper` |
-| `--ember` | `#D4622A` | `oklch(62.7% 0.159 44)` | The identity orange. Display figures on paper, the 2px finding rule, focus marker, non-text UI. | **3.3:1** on `--paper` — large text (≥24px, or ≥19px bold) and non-text UI only |
-| `--ember-deep` | `#9E4820` | `oklch(50.6% 0.126 43)` | Orange at **text size on paper**: links, the join button label, inline prices in a finding. | **5.4:1** on `--paper` · **4.7:1** on `--paper-deep` · **5.0:1** on `--wash` |
-| `--ember-lift` | `#EE7A34` | `oklch(70.1% 0.164 48)` | Orange **reversed on a dark ground**: the logo wordmark, links and the season stamp inside a navy panel. | **4.9:1** on `--navy` · **2.5:1 on `--paper` — banned on paper, at any size** |
+| `--ember` | `#D4622A` | `oklch(62.7% 0.159 44)` | The identity orange **on `--paper` and `--wash`**: display figures, and the decision mark where those are the ground. Never hardcoded as a mark — resolve through `--mark`, §2.5. | **3.31:1** on `--paper` · **3.06:1** on `--wash` — large text (≥24px, or ≥19px bold) and non-text UI only · **2.89:1 on `--paper-deep` — under the 3:1 floor, so it carries nothing there** |
+| `--ember-deep` | `#9E4820` | `oklch(50.6% 0.126 43)` | Orange at **text size on paper**: links, the join button label, inline prices in a finding — **and the decision mark on `--paper-deep`** (§2.5). | **5.43:1** on `--paper` · **4.74:1** on `--paper-deep` · **5.02:1** on `--wash`. Reversed, `--paper` on an `--ember-deep` fill = **5.43:1** (the MEMBERSHIP FULL stamp, the join button) |
+| `--ember-lift` | `#EE7A34` | `oklch(70.1% 0.164 48)` | Orange **reversed on a dark ground**: the logo wordmark, the season stamp inside a navy panel, and the decision mark on any reversed panel (§2.5). | **4.88:1** on `--navy` · **3.06:1** on off-season `--season-ground` slate · **2.47:1 on `--paper` — banned on paper, at any size** |
 
 **On the three-step ember ramp.** It is one colour with one meaning, set at three lightnesses
 chosen by the ground it sits on. That is not three accents; it is the minimum needed to keep a
@@ -132,19 +162,27 @@ predicted anything.
 | `--ink-muted` | `#4E5A66` | `oklch(46.2% 0.025 248)` | Rail, captions | 6.2:1 / 5.4:1 |
 | `--rule` | `#C2BCAC` | `oklch(79.6% 0.023 90)` | Default hairline | structural |
 | `--season-ground` | `#0E2E52` | `oklch(29.9% 0.075 254)` | Reversed panels, the season stamp, the active/hover hairline. **= `--navy`.** | 12.0:1 with `--paper` |
-| `--season-support` | `#1A6E6B` | `oklch(49.0% 0.077 191)` | **Pool only.** The pool block in the scope list, pool rows in the summary facsimile, the pool rail tag. | **5.3:1** on `--paper` · **4.6:1** on `--paper-deep` |
-| `--ember` | `#D4622A` | `oklch(62.7% 0.159 44)` | Display figures, the finding rule, focus | 3.3:1 — large / non-text |
-| `--ember-deep` | `#9E4820` | `oklch(50.6% 0.126 43)` | Links and controls at text size | 5.4:1 / 4.7:1 / 5.0:1 |
-| `--ember-lift` | `#EE7A34` | `oklch(70.1% 0.164 48)` | Orange inside a navy panel | 4.9:1 on `--season-ground` |
+| `--season-support` | `#1A6E6B` | `oklch(49.0% 0.077 191)` | **Pool only.** The pool block in the scope list, pool rows in the summary facsimile, the pool rail tag, the 2px disclaimer rule. | **5.29:1** on `--paper` · **4.62:1** on `--paper-deep` · **4.90:1** on `--wash` (a pool row on hover) |
+| `--ember` | `#D4622A` | `oklch(62.7% 0.159 44)` | Display figures; `--mark` on `--paper` and `--wash` | 3.31:1 / 3.06:1 — large / non-text |
+| `--ember-deep` | `#9E4820` | `oklch(50.6% 0.126 43)` | Links and controls at text size; **`--mark` on `--paper-deep`** | 5.43:1 / 4.74:1 / 5.02:1 |
+| `--ember-lift` | `#EE7A34` | `oklch(70.1% 0.164 48)` | Orange inside a navy panel; `--mark` on navy | 4.88:1 on `--season-ground` |
 
 **Reversed out of `--season-ground` (navy):** `--paper` **12.0:1** · `--paper-deep` **10.5:1** ·
-`--rule` **7.2:1** · `--ember-lift` **4.9:1** · `--ember` 3.6:1 (large / non-text only).
+`--rule` **7.2:1** · `--ember-lift` **4.88:1** · `--ember` 3.64:1 (large / non-text only).
 
 **Why teal is the pool colour and why it is confined.** It is the one hue in the system that is
 neither the identity navy nor the identity orange, so it cannot be mistaken for either a brand
 mark or an action. It appears exactly where a pool does. Using it as a generic accent destroys
 the one place it carries meaning — and on this site the pool block is the block that has to be
 read most carefully, because it is the block the disclaimer travels with (`voice.md` §8 item 41).
+
+> 🔁 **Its worst ground is the one it was not published against, and it is now the tightest text
+> pass on the site.** The pool rail tag is `--type-rail`, 11px, so it needs 4.5:1 — and inside the
+> summary facsimile it renders on `--paper-deep`, where teal is **4.62:1**. It passes by 0.12,
+> which is narrower than the 0.38 on the season stamp (§7.1). Found during the 2026-08-05 ground
+> audit; the value was already published, the tightness was not. **`--season-support` may not be
+> lightened, and pool text may not go below 11px.** If a pool row ever needs to sit on a darker
+> band than `--paper-deep`, the tag goes to `--ink` and the teal stays on the rule beside it.
 
 ### 2.3 OFF SEASON — November 1 through the end of February
 
@@ -162,14 +200,14 @@ on.**
 | `--rule` | `#C2BCAC` | `oklch(79.6% 0.023 90)` | Default hairline | structural |
 | `--season-ground` | `#3A4E60` | `oklch(41.5% 0.039 246)` | Reversed panels, the OFF SEASON stamp, the active hairline | **7.6:1** with `--paper` |
 | `--season-support` | `#1F6580` | `oklch(47.6% 0.080 228)` | The **March 1** date wherever it appears, and any freeze/weather note. Colder hue than navy — it reads as ice, not as brand. | **5.7:1** on `--paper` · **5.0:1** on `--paper-deep` |
-| `--ember` | `#D4622A` | `oklch(62.7% 0.159 44)` | Display figures, focus | 3.3:1 — large / non-text |
-| `--ember-deep` | `#9E4820` | `oklch(50.6% 0.126 43)` | The one or two remaining links: waitlist, project work | 5.4:1 / 4.7:1 |
-| `--ember-lift` | `#EE7A34` | `oklch(70.1% 0.164 48)` | **Restricted.** See the rule below. | **3.1:1** on `--season-ground` — large text and non-text UI only |
+| `--ember` | `#D4622A` | `oklch(62.7% 0.159 44)` | Display figures on paper; `--mark` on `--paper`. **Never inside the slate panel** — 2.29:1 there. | 3.31:1 on `--paper` — large / non-text |
+| `--ember-deep` | `#9E4820` | `oklch(50.6% 0.126 43)` | The one or two remaining links: waitlist, project work. **`--mark` on `--paper-deep`, which is also the row hover fill in this state.** | 5.43:1 / 4.74:1 |
+| `--ember-lift` | `#EE7A34` | `oklch(70.1% 0.164 48)` | **Restricted.** See the rule below. Also `--mark` inside the slate panel (§2.5). | **3.06:1** on `--season-ground` — large text and non-text UI only |
 | `--navy` | `#0E2E52` | `oklch(29.9% 0.075 254)` | **Identity only** — the mark, the masthead strip. Never a panel ground in this state. | 12.0:1 on `--paper` |
 
 **Reversed out of `--season-ground` (slate):** `--paper` **7.6:1** · `--paper-deep` **6.6:1** ·
-`--rule` **4.5:1** · `--ember-lift` **3.1:1** (large / non-text only) · `--ember` 2.3:1
-(**banned**).
+`--rule` **4.5:1** · `--ember-lift` **3.06:1** (large / non-text only) · `--ember` **2.29:1
+(banned — including as a focus ring, which is why §2.5 exists)**.
 
 > **Hard rule for the Off Season panel.** Body-size text inside a reversed panel is `--paper`.
 > Links inside a reversed panel are `--paper` **plus a 1px underline** — never orange. Only the
@@ -194,11 +232,16 @@ February.
    close to ember to read as a different thing, and — more importantly — a finding **is** a call
    to act. It is the sentence the customer says yes or no to (`voice.md` §2 rule 4;
    `CANON.md` §2). Merging them tightens the semantics: **ember means a decision point.** One
-   colour, one meaning, three lightnesses.
+   colour, one meaning, three lightnesses. The mark that carries that meaning is **`--mark`**,
+   §2.5 — not any one of the three hexes.
 
 2. **Choose the ember by its ground, not by taste.** `--ember-deep` on paper at text size,
-   `--ember` for display figures and non-text marks on paper, `--ember-lift` inside a navy panel.
-   `--ember-lift` on paper is 2.5:1 and is banned at every size, including in print.
+   `--ember` for display figures on paper, `--ember-lift` inside a navy panel. `--ember-lift` on
+   paper is 2.47:1 and is banned at every size, including in print.
+
+   🔁 **This rule governs marks as well as text, and always did.** It was written about type and
+   applied only to type, which is how a 2.89:1 finding rule and a 2.29:1 focus ring shipped. §2.5
+   states the mark case explicitly so the extension is not left to inference again.
 
 3. **Navy is ink and panel, never page.** `--navy` may be a text colour, a hairline, a reversed
    panel ground, or the logo ground. It is never the background of a page, a section, or a
@@ -219,6 +262,82 @@ February.
    and the orange is a brick-rust rather than a safety orange. **Never brighten the ember past
    `--ember-lift` or lighten the navy toward royal.** A property-care business that reads as
    football merchandise loses the register in one glance.
+
+### 2.5 `--mark` — the decision colour, resolved by its ground
+
+🔁 **Added 2026-08-05. This is the ruling on the §5.2 / §4.5 conflict, and it is binding.**
+
+There are exactly two **decision marks** in this system, and they were always meant to be the
+same thing: the **2px rule beside a finding** in the summary facsimile, and the **focus
+indicator** — the ring plus the filled 6px square in the rail. A finding is the sentence the
+customer says yes or no to. A focus ring is where the keyboard user's yes or no would land. One
+meaning, one colour role, and §6 already says a keyboard user gets the same marker the summary
+uses for a finding. That part was right.
+
+What was wrong is that both were **pinned to one hex** — `--ember` — while the surfaces they
+render on are not all `--paper`. §5.2 justified the finding rule at 3.31:1 on `--paper`; §4.5
+puts the only finding in the system on `--paper-deep`, where `--ember` is **2.89:1**. The same
+pin puts an `--ember` focus ring on the off-season reversed panel at **2.29:1**, which §2.3's
+own reversed list already bans outright. §2.4 rule 2 — *choose the ember by its ground, not by
+taste* — predicted both and was simply not applied to marks, only to text.
+
+**The fix is not a colour swap. It is a variable.** `--mark` is the decision colour. It is
+never given a hex directly. **Every surface that sets its own ground sets `--mark` in the same
+declaration block**, from the ember ramp, at the step that clears 3:1 on that ground:
+
+| Ground | `--mark` resolves to | Ratio | Where this surface is |
+|---|---|---|---|
+| `--paper` | `--ember` | **3.31:1** | The page. Default. |
+| `--wash` (In Season row hover) | `--ember` | **3.06:1** | A hovered ledger row. |
+| `--paper-deep` | **`--ember-deep`** | **4.74:1** | The summary facsimile (§4.5, set-piece 3), alternating bands, image plates, **and the Off Season row hover**, where `--wash` is aliased to `--paper-deep`. |
+| `--navy` | `--ember-lift` | **4.88:1** | The masthead status strip, In Season reversed panels. |
+| Off Season `--season-ground` slate | `--ember-lift` | **3.06:1** | The off-season reversed panel and footer. |
+
+```css
+:root                    { --mark: var(--ember); }       /* --paper, --wash   */
+.report__sheet, .band    { --mark: var(--ember-deep); }  /* --paper-deep      */
+.strip, .panel--reversed { --mark: var(--ember-lift); }  /* navy or slate     */
+```
+
+**Selectors are `wpc-web`'s to name** — what is binding is that the declaration lives with the
+background it answers to, so the two cannot be changed independently. A surface that gains a
+`background-color` and does not gain a `--mark` is the bug this ruling exists to prevent.
+
+The finding rule and the focus indicator both take `var(--mark)` and nothing else. **`--ember`,
+`--ember-deep`, and `--ember-lift` must not appear in a border, outline, or fill that means "a
+decision" — only in `--mark`'s definition.** If a stylesheet writes `border-inline-start: 2px
+solid var(--ember)`, this rule was not followed, regardless of what surface it happens to land
+on today.
+
+**Why (b) and not (a).** The argument for leaving it at 2.89:1 was that the finding block also
+carries a text heading and a price, so the rule is redundant emphasis rather than a graphic
+required to understand content, and SC 1.4.11 does not bind. That argument is **sound about the
+finding rule specifically and I am declining it anyway**, for three reasons that are about this
+file rather than about the criterion:
+
+1. **It does not generalise, and the identical defect next door proves it.** The focus ring is
+   the same mark on the same pin, and a focus ring has no heading and no price beside it —
+   nothing is redundant about it. Accepting (a) fixes the sentence in §5.2 and leaves the focus
+   ring at 2.89:1 on `--paper-deep` and 2.29:1 on slate. A ruling that repairs the flagged
+   instance and not the unflagged one is not a ruling.
+2. **A redundancy exemption has to be enforced to be real.** (a) would make the rule legal only
+   for as long as every finding keeps its heading and its price. That is a copy decision living
+   in `voice.md`, in a different agent's lane, silently load-bearing on a colour value here.
+   `--mark` costs one declaration per surface and depends on nothing anyone else might edit.
+3. **It is what §2.4 rule 2 already says.** The three-step ramp exists precisely so that one
+   meaning survives three grounds. Using `--ember-deep` for the mark on `--paper-deep` is not an
+   exception to *one colour, one meaning, three lightnesses* — it is that idea working. The
+   single-lightness-per-meaning reading would have been the exception, and it is the reading that
+   produced the bug.
+
+**A bonus, not the reason:** the finding's price in the rail is already `--ember-deep` (§4.5.3).
+Under this ruling the rule and the number it points at become the same value, so the mark and
+the figure it flags now match instead of nearly matching.
+
+**What this does not license.** `--mark` is not a fourth accent and not a licence to tint. It
+resolves to one of exactly three published hexes, all of them ember, and it changes only when
+the ground under it changes. No new value may be added to the ramp to satisfy a new ground —
+if a proposed surface cannot carry any of the three, the surface is wrong, not the ramp.
 
 ---
 
@@ -463,6 +582,13 @@ one-price rule).
 `--rule` ticks; the current or next visit is a filled `--ember` square. The strip terminates in a
 mono label: `16 VISITS · MAR 1 – OCT 31`.
 
+**Ground check (§2 preamble):** the strip runs the measure and the bleed track, so it is on
+`--paper` in both seasons and `--ember` is 3.31:1 there — correct as written. **It does not take
+`--mark`**: the next-visit square is a position in a schedule, not a decision awaiting a yes or
+no, and §2.5 is a monopoly on the latter only. If a build ever insets the strip on a
+`--paper-deep` band, the square goes to `--ember-deep` for contrast, and that is a contrast fix,
+not a promotion to `--mark`.
+
 Off Season, every tick is `--rule`, the strip is preceded by a `--season-support` block reading
 `NEXT SEASON OPENS MARCH 1`, and the ember square sits on the first March tick.
 
@@ -473,12 +599,19 @@ beyond a schedule anyone could copy off the agreement. Do not let it acquire a t
 percentage, or an animation that counts.
 
 **3. The summary facsimile.** A real, typeset service summary on the page — rail stamp reading
-`WPC513 · VISIT 07 OF 16`, the work performed, then a *finding* marked with a 2px `--ember`
-margin rule and its price in the rail in `--ember-deep`. It is the product demo, the voice demo,
+`WPC513 · VISIT 07 OF 16`, the work performed, then a *finding* marked with a **2px `--mark`
+margin rule** and its price in the rail in `--ember-deep`. It is the product demo, the voice demo,
 and the proof of the promise in one object, and it belongs above the price. Set at 0.9× body size
 on a `--paper-deep` ground with hairlines top and bottom, so it reads as a document reproduced on
 the page rather than a UI panel. If the property in the facsimile has a pool, the pool rows carry
 the `--season-support` rail tag **and the disclaimer**.
+
+🔁 **The facsimile sets `--mark: var(--ember-deep)` (§2.5).** Its ground is `--paper-deep`, where
+`--ember` is 2.89:1 and `--ember-deep` is **4.74:1**. So the margin rule and the price in the rail
+are the same value — which is correct, because they are the same finding. **The price in the rail
+is the facsimile's own rail, inside the `--paper-deep` sheet, not the page rail**; if a build ever
+moves it out onto `--paper`, `--ember-deep` is 5.43:1 there and still passes, but `--mark` must
+then be re-resolved for whichever element crossed the boundary.
 
 ---
 
@@ -495,13 +628,47 @@ something needs attention.
 without it.
 
 **2. The hairline system is the texture.** `--rule` at 1px is doing more visual work than any
-image on the site. 🔁 **Three weights, and the third changed colour:**
+image on the site. 🔁 **Two weights, four meanings** — corrected 2026-08-05, see the ruling
+below:
 
-- `1px --rule` — the default separator
-- `1px --ink` — a section boundary
-- `2px --ember` — **a finding, and only a finding.** Formerly ochre; folded into the ember
-  monopoly (§2.4 rule 1). At 3.3:1 on `--paper` it clears the non-text contrast threshold, so it
-  is a legitimate carrier of meaning and not decoration.
+| Hairline | Means | Contrast, **against the ground it renders on** |
+|---|---|---|
+| `1px --rule` | The default separator | 1.7:1 on `--paper`, 1.45:1 on `--paper-deep`, 7.2:1 reversed on navy. **Exempt** — structural, never the sole carrier of information (§2.1). |
+| `1px --ink` | A section boundary | 15.1:1 on `--paper`, 13.2:1 on `--paper-deep` |
+| **`2px --mark`** | **A finding, and only a finding** | **4.74:1** — `--mark` resolves to `--ember-deep` on the `--paper-deep` sheet the facsimile actually sits on (§2.5). |
+| `2px --season-support` | The pool disclaimer rule, and only that | 5.29:1 on `--paper`, 4.62:1 on `--paper-deep` |
+
+The fourth row is not new to the design — §4.1 has always drawn the teal disclaimer rule inside
+the pool block, and §4.1 has always said that rule and the `POOL` rail tag are the only teal on
+the page. It was missing from this list, which described three weights while the design shipped
+four meanings. Under-enumeration here is how the ruling below became possible in the first place.
+
+> 🔁 **RULING, 2026-08-05 — the finding rule takes `--mark`, resolving to `--ember-deep`.**
+>
+> **What this section used to say:** *"`2px --ember` — a finding, and only a finding. At 3.3:1 on
+> `--paper` it clears the non-text contrast threshold, so it is a legitimate carrier of meaning
+> and not decoration."*
+>
+> **Why that was wrong.** The arithmetic was right — `--ember` on `--paper` is 3.31:1. The ground
+> was wrong. **There is exactly one finding rule in this system and §4.5 set-piece 3 puts it on
+> `--paper-deep`**, where the same colour is **2.89:1**, 0.11 under the floor. The sentence
+> defended the colour on a surface the element has never once appeared on. It was not a rounding
+> error or a disagreement about a hex; it was a justification pointed at the wrong page.
+>
+> **The argument for keeping 2.89:1, and why it is declined.** `wpc-web` shipped as specified and
+> flagged it rather than quietly changing a colour, which is exactly the behaviour §12.2 asks for.
+> Its argument: the finding block already carries a text heading — *"What I found"* — and the
+> price beside it, so the 2px rule is redundant emphasis rather than a graphic required to
+> understand the content, and SC 1.4.11 does not bind. **That reading of the criterion is
+> defensible.** It is declined anyway, on the three grounds set out in §2.5: it does not
+> generalise to the focus ring, which is the identical mark with no redundancy available to it; a
+> redundancy exemption would make this colour value silently dependent on copy decisions owned by
+> another file; and §2.4 rule 2 already prescribed the answer. The full reasoning lives in §2.5
+> because the ruling is about the mark, not about the texture layer.
+>
+> **The correction is not "swap one hex."** Both places were pinned to a literal `--ember`, so a
+> swap would have fixed the finding rule and left the focus ring — see §6, which had the same
+> defect and was not flagged. `--mark` (§2.5) is the fix; this row consumes it.
 
 **3. The season divider.** The one ornamental element, used once per page, in the bleed track. A
 20px band of hand-set marks — a horizontal rule broken by short verticals at irregular intervals
@@ -545,10 +712,42 @@ properties throughout.
 Three coordinated changes on one gesture. That is what "designed hover states" means here.
 
 **Focus — visible and in-brand.**
-`outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 0;` plus a filled 6px
-`--ember` square drawn in the rail at the row's baseline. Keyboard users get the *same* marker the
-summary uses for a finding, which is now literally the same colour. Focus is never removed, and it
-is never only a colour change.
+`outline: 2px solid var(--mark); outline-offset: 3px; border-radius: 0;` plus a filled 6px
+`--mark` square drawn in the rail at the row's baseline. Keyboard users get the *same* marker the
+summary uses for a finding — the same **role**, resolved to the same step of the ramp whenever
+they share a ground. Focus is never removed, and it is never only a colour change.
+
+🔁 **Corrected 2026-08-05 — this carried the same defect as §5.2 and was not flagged.** The ring
+was pinned to a literal `--ember`, which is 3.31:1 on `--paper` and passes, **2.89:1 on
+`--paper-deep`**, and **2.29:1 on the off-season slate panel** — a value §2.3's own reversed list
+already bans. Nothing about a focus ring is redundant: it has no heading beside it and no price,
+so the exemption argued for the finding rule is not even available here. This is the instance that
+decided the ruling. `--mark` (§2.5) resolves it on every surface, and the resulting ring is:
+
+| Focus lands on | Ring and rail square | Ratio |
+|---|---|---|
+| `--paper` | `--ember` | 3.31:1 |
+| `--wash`, In Season row hover | `--ember` | 3.06:1 |
+| `--paper-deep` — bands, image plates, **and the Off Season row hover** | `--ember-deep` | 4.74:1 |
+| `--navy` status strip | `--ember-lift` | 4.88:1 |
+| Off Season slate panel | `--ember-lift` | 3.06:1 |
+
+Two consequences worth stating plainly, because both are easy to get wrong:
+
+- **The offset matters to which ground you measure against.** At `outline-offset: 3px` the ring
+  sits *outside* the element's box, so on a filled hover row the adjacent colour may be the page
+  ground rather than the fill. **Where the two differ, publish and satisfy the worse of them.**
+  For the In Season row that is `--wash` at 3.06:1; for the Off Season row it is `--paper-deep`,
+  which is why that row resolves `--mark` to `--ember-deep`.
+- **"Nothing focusable sits on `--paper-deep`" is not a substitute for this.** It is a good
+  markup habit and worth keeping, but it is an invariant maintained by hand, and the Off Season
+  hover fill breaks it by aliasing `--wash` to `--paper-deep` without anyone touching the markup.
+  A per-surface `--mark` holds without anyone remembering the rule.
+
+**A ring that inverts to `--paper` on a reversed panel is also acceptable** and is a stronger
+indicator on navy (12.05:1 against 4.88:1). If a build prefers it, set `--mark: var(--paper)` on
+that panel — it is still one declaration in the same place, and it stays inside §2.5's structure
+rather than around it. What is not acceptable is a hardcoded ember on any panel.
 
 **Active.** `transform: translateY(1px)` and the rule under the control goes to `--ink`. No scale,
 no bounce.
@@ -621,8 +820,27 @@ hairline rule, which is still in the mark and still ties it to the page.
 | Rule | 1 unit tall, 40 units wide, centred, at y = 48. `--paper`. |
 | `WESTSIDE PROPERTY CARE` | Cap height 4 units, baseline at 56. `--paper`, mono 500, small caps, `ls +0.16em`, set to fit inside 52 units. |
 
-**Contrast inside the mark:** `--paper` on `--navy` = **12.0:1**. `--ember-lift` on `--navy` =
-**4.9:1**. Both clear AA at every size the mark ships at.
+**Contrast inside the mark:** `--paper` on `--navy` = **12.05:1**. `--ember-lift` on `--navy` =
+**4.88:1**. Both clear AA at every size the mark ships at.
+
+> **On the 4.88:1, which `wpc-web` flagged as the tightest text pass on the site — it passes, and
+> here is the split, so it is not re-litigated.** Two different elements share that value and only
+> one of them is bound by SC 1.4.3:
+>
+> - **`WPC 513` inside the lockup** is a **logotype**. WCAG 1.4.3 exempts text that is part of a
+>   logo or brand name from any contrast requirement. It is exempt at 4.88:1 and would be exempt
+>   at 3:1. **This is not a licence to darken the navy or brighten the orange** — it is his
+>   printed mark and §7's whole point is that we do not redraw it.
+> - **The season stamp in the masthead strip** is **not** a logotype. It is UI text at
+>   `--type-stamp` 12px, so it needs 4.5:1 and it has **4.88:1**. It passes with 0.38 of margin,
+>   which is thinner than anything else on the site but is margin, not a rounding artefact.
+>
+> **What this constrains going forward:** the pass depends on `--ember-lift` and `--navy` both
+> staying exactly where they are. §2.4 rule 7 already forbids brightening the ember or lightening
+> the navy for reasons of register; this adds an accessibility reason to the same prohibition,
+> and a new one — **do not darken `--ember-lift` either.** It has 0.38 of headroom above 12px
+> text and none of it is spare. If the stamp ever needs to move, move the *size* (14px clears
+> comfortably), not the colour.
 
 > 🔶 **Confirm with the owner.** The source fixes the *elements* and the *palette* — navy ground,
 > orange wordmark, line mark above, rule beneath, small caps below — but not the colour of the
@@ -725,10 +943,10 @@ The rule asks for at least four of ten. This direction delivers **eight**, each 
 | **2** | Intentional rhythm, not uniform padding | Five distinct vertical gaps (§4.3) with an explicit rule that no two adjacent hierarchy levels may share one. |
 | **3** | Depth and layering | The bleed track running photos and the season strip off the right edge; the navy status strip overlapping the masthead rule; the summary facsimile inset on `--paper-deep`; the grain multiply layer. Depth from overlap, not from elevation. |
 | **4** | Typography with a real pairing strategy | Fraunces (Cooper/Windsor lineage, §3.1) + IBM Plex Sans/Mono as one superfamily, with the mono carrying the mark itself. Axis settings, tracking, and leading specified per role, not left at default. |
-| **5** | Colour used semantically | The ember ramp is a monopoly on "act," including the finding rule and the focus marker. `--season-support` teal appears only where a pool does. The whole palette flips on the calendar to say whether the business is open. |
-| **6** | Designed hover / focus / active | Three coordinated changes per hover (§6). Focus draws the same ember marker the summary uses for a finding. Active moves 1px and darkens the rule. |
+| **5** | Colour used semantically | The ember ramp is a monopoly on "act," expressed as `--mark` — one role, resolved to the ramp step its ground requires (§2.5). `--season-support` teal appears only where a pool does. The whole palette flips on the calendar to say whether the business is open. |
+| **6** | Designed hover / focus / active | Three coordinated changes per hover (§6). Focus draws the same marker the summary uses for a finding, at the same step of the ramp wherever they share a ground. Active moves 1px and darkens the rule. |
 | **7** | Grid-breaking editorial composition | Asymmetric rail-and-measure; the display headline breaking one column left of the body; columns 11–12 as a live bleed track past the container; the season strip running out of the measure into it. |
-| **8** | Texture and atmosphere | 4% fractal-noise paper grain, the three-weight hairline system, and the survey-tick season divider that gets sparser when the season closes. |
+| **8** | Texture and atmosphere | 4% fractal-noise paper grain, the hairline system of two weights carrying four meanings (§5.2), and the survey-tick season divider that gets sparser when the season closes. |
 
 Not claimed: **#9 motion that clarifies flow** — motion here is deliberately minimal and does not
 carry meaning beyond arrival. **#10 data visualisation** — there is no data viz. The season strip
@@ -795,6 +1013,23 @@ Non-negotiable when this direction is implemented:
    `CANON.md` §9 says Playwright cannot be relied on in this environment, so hand arithmetic
    against the same formula is the check. Flag any disagreement to `wpc-brand` rather than
    adjusting a colour.
+
+   🔁 **And check the ground, not just the number.** The 2026-08-05 ruling exists because 27
+   ratios all reproduced and one of them was still wrong — computed against `--paper` for an
+   element that only ever renders on `--paper-deep`. **For every coloured element, name the
+   surface it actually renders on, including hover and both seasons, and satisfy the worst
+   one.** A ratio that reproduces to two decimals against the wrong ground is a passing check on
+   a failing element. Flagging beats silently adjusting, and `wpc-web` was right to flag; the
+   ruling is that the answer was a variable, not a hex.
+
+   🔁 **`--mark` is a real token and the only way a decision mark gets a colour** (§2.5). It is
+   declared per surface, in the same block that sets that surface's background, and it resolves
+   to `--ember`, `--ember-deep`, or `--ember-lift` — never to a literal hex. **The finding rule
+   (§4.5, set-piece 3) and the focus indicator (§6) both take `var(--mark)` and nothing else.**
+   If `var(--ember)` appears in any `outline`, `border`, or decision-mark `background-color`,
+   this item was not implemented. `--hair-find: 2px` survives unchanged as the weight token —
+   only the colour it is paired with changes hands. Item numbering is unchanged so existing
+   cross-references to §12.2 and below still resolve.
 3. **No component library, no framework, no build step.** The site is standalone HTML and CSS.
 4. **Zero cards.** If a `.card` class appears in the stylesheet, the direction was not followed.
 5. **Retire the old token names, not just the old values.** `--copper`, `--wash-green`,
