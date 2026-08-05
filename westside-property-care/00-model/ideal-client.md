@@ -15,8 +15,9 @@ another client.**
 
 All three parts are load-bearing. Drop any one of them and the model stops working:
 
-- **No pool or outdoor kitchen** → the property is a $229 base-tier stop, which is the
-  weakest economics in the book and the least interesting work.
+- **No pool and no outdoor kitchen** → the property prices at the $229 base, which is the
+  weakest economics in the book and the least interesting work. Price follows the property
+  (`pricing.md` §1), so there is no way to make a bare property pay like a built one.
 - **Doesn't already pay for services** → he is not selling to someone who does their own
   yard. He is selling to someone who has already made the decision to outsource, and is
   choosing between vendors.
@@ -39,11 +40,17 @@ A prospect must clear the first three. The rest raise or lower the priority.
 
 ### Strong signals — move to the front of the list
 
-- **Both a pool and an outdoor kitchen.** This is the $329 tier and it is the best client in
-  the book: highest revenue per stop, most surface area to inspect, most project work found.
+- **Both a pool and an outdoor kitchen.** $329, and the best client in the book: highest
+  revenue per stop, most surface area to inspect, most project work found. Worth **1.44×** a
+  base-tier member on the same route time (`unit-economics.md` §7.2).
 - **Existing Tri-State Grill Cleaning customer.** He has already been on the property, they
   have already paid him, and they already trust him. *(Access to that list is
   **CONDITIONAL** — see `CANON.md` §9.2. Any plan that depends on it must say so.)*
+- **An outdoor kitchen but no pool — $269.** Do **not** treat this as a base-tier property.
+  As of 2026-08-05 the Outdoor Kitchen Care module is charged on its own (`pricing.md` §1),
+  and this is plausibly the most common configuration he will meet coming off the grill-
+  cleaning list. Grills are everywhere and in-ground pools are not; the model assumes two of
+  the six members look like this (`unit-economics.md` §1.1). **Charge the $40.**
 - **A neighbor of an existing member.** Directly improves route compactness and arrives
   pre-sold. This is the single best lead type in the business.
 - **Travels, or owns a second property.** The value of a trusted person on the property
@@ -59,7 +66,9 @@ A prospect must clear the first three. The rest raise or lower the priority.
 ### Weak signals — take, but don't chase
 
 - Base-tier property, no pool, no outdoor kitchen — a $229 stop that has to be exceptionally
-  close to be worth a slot.
+  close to be worth a slot. One of these in a six-client book is fine and is what the model
+  assumes; a second one drops revenue per route day to $403.50, three dollars off the floor
+  (`unit-economics.md` §3.5). **Take one. Think hard about a second. Never a third.**
 - Long list of conditions and preferences at the first conversation.
 - Wants the service to start "sometime in spring" — Green Season sign-ups are easy;
   a member who joins in November is the one proving the model works.
@@ -69,7 +78,7 @@ A prospect must clear the first three. The rest raise or lower the priority.
 ## 3. Geography
 
 West-side Cincinnati home values are modest: **Delhi $180–350k, Bridgetown ~$240k, Green
-Township $250–450k, Westwood/Price Hill/Cheviot ~$175k.** A $289/month outdoor-care
+Township $250–450k, Westwood/Price Hill/Cheviot ~$175k.** A $229–$329/month outdoor-care
 membership addresses a narrow slice of that, and pretending otherwise wastes the only
 scarce resource he has, which is his own time.
 
@@ -91,10 +100,10 @@ alone.
 
 **Westwood. Price Hill. Cheviot.**
 
-At roughly **$175k** median, these are not the market for a $289/month membership. This is
-not a judgment about the neighborhoods — it is arithmetic. A service costing $3,468 a year
-addresses a fraction of a percent of the households there, and finding that fraction costs
-more than it returns when he only needs six.
+At roughly **$175k** median, these are not the market for a $229–$329/month membership. This
+is not a judgment about the neighborhoods — it is arithmetic. A service costing $2,748–$3,948
+a year addresses a fraction of a percent of the households there, and finding that fraction
+costs more than it returns when he only needs six.
 
 **Do not write copy, ads, yard-sign plans, or targeting for these areas.** If an inquiry
 comes in from one of them and the property genuinely qualifies on attributes and route,
@@ -187,11 +196,15 @@ after it.** The membership price is not negotiable — see `pricing.md` §8. The
 discount and no trial rate, including for the last slot.
 
 There is one legitimate version of this conversation and it is not haggling: "$329 is more
-than I want to spend." That prospect may be a base-tier client, or a project client, or a
-waitlist name. What is disqualifying is the person who wants the $329 service at $250.
+than I want to spend." That is a budget statement, not a negotiation. **It does not make them
+a cheaper member** — the price follows the property, and their property has a pool and an
+outdoor kitchen, so $329 is what it computes to. They may be a project client or a waitlist
+name instead, and either is a fine outcome. What is disqualifying is the person who wants the
+$329 property serviced at $250.
 
-*What to say:* "The price is $289 and it's the same in January as it is in July. If it's not
-the right fit, I'd still be glad to take care of the grill for you."
+*What to say:* "For your place it's $329 — $229 for the property, $60 for the pool, $40 for
+the kitchen — and it's the same in January as it is in July. If that's not where you want to
+be, I'd still be glad to take care of the grill for you."
 
 ### 5.4 Expects on-demand response
 
@@ -233,7 +246,10 @@ The walkthrough is the qualification. Run it in this sequence:
    for the first year comes from.
 4. **Walk the exclusions out loud** — pool chemistry, lawn, gutters, snow. Do it before the
    price, not after. It costs a few sales and prevents every bad year.
-5. **Give the tier and the price.** $289 or $329, based on the property, per `pricing.md` §1.
+5. **Build the price out loud, don't recite a plan.** "$229 for the property, $60 for the
+   pool, $40 for the outdoor kitchen." Whatever the property has is what it costs — $229,
+   $269, $289, or $329, per `pricing.md` §1. **Never present it as four plans to choose
+   from.** There is nothing to choose: he is adding up what is in their backyard.
 6. **Explain the route day, not an arrival time.**
 7. **Card on file and the agreement, before the first visit.**
 
@@ -244,8 +260,8 @@ who becomes a good project customer instead of a bad member is a win, not a loss
 
 ## Related files
 
-- `pricing.md` — the tiers a qualified property lands on
+- `pricing.md` — the four prices a qualified property can land on, and how to say them
 - `service-catalog.md` — the exclusions to walk through at step 4
 - `operating-model.md` — the route tests and what an off-route client costs
-- `unit-economics.md` — why the tier mix in this book matters
+- `unit-economics.md` §1.1 — the client mix this book is modeled on, and why it matters
 - `03-marketing/` — how these households are actually reached

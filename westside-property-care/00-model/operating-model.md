@@ -18,7 +18,7 @@ quoting. Membership revenue covers its own cost and buys standing permission to 
 property. **Project revenue is the actual income.**
 
 The arithmetic in `unit-economics.md` says this plainly: at six clients, memberships bring
-in $20,808 a year and project work brings in $14,125. Projects are 40% of gross revenue
+in $20,568 a year and project work brings in $14,125. Projects are **41%** of gross revenue
 and they exist *because* the membership put him in the backyard twice a month.
 
 Practical consequence, and it applies to every document in this project: **nothing treats
@@ -33,9 +33,15 @@ The draft capped the business at four clients. A client count is the wrong unit,
 two clients are not the same size.
 
 A client three minutes from another client costs a fraction of what a client twenty-five
-minutes off the route costs, and both pay the same $289. Counting clients hides that. What
-actually runs out is **route hours** — the door-to-door time the routine service consumes
-out of a week that also has to hold project work, estimates, weather slippage, and a life.
+minutes off the route costs, and both can be paying the identical $289. Counting clients
+hides that. What actually runs out is **route hours** — the door-to-door time the routine
+service consumes out of a week that also has to hold project work, estimates, weather
+slippage, and a life.
+
+Price does not fix it either, because price is set by the property, not by the drive: under
+`pricing.md` §1 a membership is $229, $269, $289, or $329 depending on whether the property
+has a pool, an outdoor kitchen, both, or neither. **Nothing in that number reflects how far
+away the house is.** §4 is where the distance gets priced.
 
 ### The cap
 
@@ -75,7 +81,7 @@ The eight-client row is there to show what the cap is protecting, not as an opti
 ### Why the cap holds at six even though eight earns more
 
 Eight clients earn more gross and more net than six. `unit-economics.md` shows it: about
-$3,700 more net per year. Anyone who tells him the cap is free is not being straight with
+$3,500 more net per year. Anyone who tells him the cap is free is not being straight with
 him. **The cap costs real money and he should know exactly how much.**
 
 The reason to hold it anyway is that at six clients a route day is five hours, and at
@@ -83,11 +89,12 @@ eight it is six and a half. A six-and-a-half-hour route day is a whole workday. 
 Monday of week 1 rains out, six clients push into a float day; eight clients push into
 Tuesday, which was project time, which is where the income is. The eight-client case also
 assumes project flow holds up. If it doesn't — if 16 stops a month means estimates go out
-two days later and fewer close — the marginal hour past the cap pays **$45**, below his
-own blended rate. That sensitivity is run in `unit-economics.md` §5.2.
+two days later and fewer close — the marginal hour past the cap pays **$39.68**, well below
+his own blended rate of $50.69 and below the $45 floor in §6.5. That sensitivity is run in
+`unit-economics.md` §5.3.
 
 So: the cap is not a claim that six earns more than eight. It is a decision to trade about
-$3,700 a year for a schedule that survives a bad February, a sick week, and a vacation
+$3,500 a year for a schedule that survives a bad February, a sick week, and a vacation
 without anyone being told he can't come.
 
 ---
@@ -140,14 +147,20 @@ Assume a sixth client sits 15 minutes further off the route than he should, addi
 minutes of drive per visit.
 
 ```
-30 min per visit × 2 visits/month × 12 months  =  12 hours per year of unpaid drive
-12 hours × $51/hr net (unit-economics.md §4)   =  $612 per year of margin destroyed
-$612 ÷ ($289 × 12 = $3,468 annual membership)  =  17.6% of that client's gross revenue
+30 min per visit × 2 visits/month × 12 months     =  12 hours per year of unpaid drive
+12 hours × $50.69/hr net (unit-economics.md §3.5) =  $608 per year of margin destroyed
+
+$608 ÷ ($289 × 12 = $3,468)  =  17.5% of a pool client's gross revenue
+$608 ÷ ($269 × 12 = $3,228)  =  18.8% of an outdoor-kitchen client's gross revenue
+$608 ÷ ($229 × 12 = $2,748)  =  22.1% of a base-tier client's gross revenue
 ```
 
-Almost 18% of the client's revenue is gone before he unloads a tool — and that is the
-*profitable* case. A client 25 minutes off-route at the base $229 is worth close to
-nothing, and worth less than nothing on a day it rains.
+Between a sixth and a fifth of the client's revenue is gone before he unloads a tool — and
+that is the *profitable* case, a client only 15 minutes out of position. **The cheaper the
+property, the worse the trade**, which is the opposite of how it feels in the driveway: the
+$229 house is the one where the drive hurts most, and it is the one most likely to be
+outside the cluster in the first place. A client 25 minutes off-route at the base $229 is
+worth close to nothing, and worth less than nothing on a day it rains.
 
 This is why compactness is a selection criterion. Selling the sixth slot to the wrong
 house is worse than leaving it empty, because an empty slot still has all its hours.
@@ -170,7 +183,7 @@ What the open capacity buys:
 
 He is deliberately giving up maximum revenue in exchange for control and service quality.
 That is the trade, it is intentional, and `unit-economics.md` prices it honestly at about
-$3,700 a year.
+$3,500 a year.
 
 **The corollary the draft didn't state:** because the capacity is part of the product, the
 scarcity is real. When the six slots are full the site says **MEMBERSHIP FULL** and offers
@@ -198,13 +211,20 @@ is preserved because it was the best number in the draft.
 membership revenue for the month ÷ route days worked that month
 ```
 
-At six clients: **$1,734 ÷ 4 = $433.50 per route day.**
+At six clients on the assumed mix: **$1,714 ÷ 4 = $428.50 per route day.**
 **Target: $400 or better.**
 
 This number is the referee for every route decision. It goes up when the route is compact
-and the tier mix is pool-heavy. It goes down the moment he accepts a client off the
-cluster or discounts to fill a slot. It is the single number that makes the cost of a bad
-client visible in the month it happens.
+and the book is pool-heavy. It goes down the moment he accepts a client off the cluster,
+fills a slot with a base-tier property, or discounts. It is the single number that makes
+the cost of a bad client visible in the month it happens.
+
+**Two things to know about the margin here.** The modeled book clears the target by $28.50 —
+about 7%. A book carrying a *second* base-tier $229 property instead of a $329 one lands at
+**$403.50**, which still clears but leaves almost nothing. And at the 4-client launch stage
+the number is **$1,156 ÷ 4 = $289.00**, well under target, because two stops a day cannot
+clear $400 at these prices. That is expected at launch and it is not a reason to take an
+off-route fifth client. Arithmetic in `unit-economics.md` §2.5 and §3.5.
 
 ### 6.2 Project attach rate
 
@@ -255,9 +275,13 @@ should be the dominant channel. If it isn't, the service isn't distinctive enoug
 (gross revenue − expenses) ÷ all hours worked, field and admin
 ```
 
-Target case: **$28,669 ÷ 561 hours = $51 per hour net**, before income and
+Target case: **$28,436 ÷ 561 hours = $50.69 per hour net**, before income and
 self-employment tax.
 **Floor: $45/hr.** Below that, something in the book or the route needs to change.
+
+Worth knowing where the floor actually bites: with six members and **zero** project revenue
+the book pays **$45.41/hour** (`unit-economics.md` §7.1) — it clears the floor by forty-one
+cents. The floor is not a comfortable margin. It is a tripwire.
 
 This is the draft's own metric — it said "that last number matters," and it was right. It
 is kept, given a formula and a floor, and it now includes admin hours, which the draft's

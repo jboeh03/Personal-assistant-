@@ -8,7 +8,7 @@ is wrong.** Never invent a price. Quote this page verbatim.
 
 ---
 
-## 1. The membership — three prices, built from three components
+## 1. The membership — one membership, priced by what the property has
 
 ### Components (locked in `CANON.md` §3)
 
@@ -18,15 +18,36 @@ is wrong.** Never invent a price. Quote this page verbatim.
 | + Pool Care | **+$60/month** | The property has a pool |
 | + Outdoor Kitchen Care | **+$40/month** | Grill, flat-top, or outdoor counters |
 
-### The only three prices a customer ever sees
+**The two add-ons are independent.** Either, both, or neither. Pool Care does not require
+Outdoor Kitchen Care, and Outdoor Kitchen Care does not require Pool Care. A property is
+priced on what is actually in the ground, nothing else.
 
-| Tier | Price | Property has |
+### The only four prices a customer ever sees
+
+| Property has | Price | Arithmetic |
 |---|---|---|
-| **Property Care** | **$229/month** | Neither a pool nor an outdoor kitchen |
-| **Property + Pool Care** | **$289/month** | A pool |
-| **Property + Pool + Outdoor Kitchen Care** | **$329/month** | Both |
+| Neither a pool nor an outdoor kitchen | **$229/month** | $229 |
+| An outdoor kitchen, no pool | **$269/month** | $229 + $40 |
+| A pool, no outdoor kitchen | **$289/month** | $229 + $60 |
+| A pool **and** an outdoor kitchen | **$329/month** | $229 + $60 + $40 |
 
-$229 + $60 = **$289**.  $229 + $60 + $40 = **$329**.
+**$229 · $269 · $289 · $329.** No other membership number exists in this business.
+
+### Never present this as four plans
+
+It is **one membership**, priced by what the property has: *the base, plus the pool, plus
+the outdoor kitchen.* Say it that way on the walkthrough, on the website, in the agreement,
+and in every piece of marketing.
+
+The difference is not cosmetic. A menu of four plans invites the prospect to shop between
+them and to ask what they'd get if they picked a cheaper one. There is no cheaper one —
+their property has a pool or it doesn't. Building the number up out loud in front of them
+("two hundred twenty-nine for the property, sixty for the pool, forty for the kitchen —
+three twenty-nine") makes the price feel measured rather than quoted, and it makes the
+add-ons feel like scope rather than upsell.
+
+**How to say it:** *"It's $229 a month for the property. You've got the pool, so that's
+another $60, and the outdoor kitchen is $40. $329, same every month, all twelve months."*
 
 ### Lead with $289 and $329
 
@@ -35,25 +56,23 @@ the ones with a pool or an outdoor kitchen in the ground — that is the whole t
 thesis in `ideal-client.md`. Quoting $229 first trains the prospect to negotiate down from
 a number that was already the floor.
 
-Every customer-facing surface leads with the middle and top tiers and lets $229 sit
-underneath as the base the others are built from.
+Every customer-facing surface leads with a property that has a pool, or a pool and a
+kitchen, and lets $229 sit underneath as the base the others are built from. $269 is not a
+headline either, but it is a real price and it gets charged.
 
-### 🔶 The fourth configuration — outdoor kitchen, no pool
+### The outdoor-kitchen-without-pool property — resolved 2026-08-05
 
-A property with an outdoor kitchen and **no** pool would compute to $229 + $40 = $269. That
-would be a fourth price, and `CANON.md` locks the customer-facing list at three.
+A property with an outdoor kitchen and no pool is **$269**. It was previously written at
+$229 under an operating rule that sold Outdoor Kitchen Care only on top of Pool Care. **That
+rule is gone.** The owner resolved it on 2026-08-05 in favour of the fourth configuration.
 
-**Operating rule: Outdoor Kitchen Care is sold on top of Pool Care, not on its own.** A
-qualified property with an outdoor kitchen and no pool is written at the base tier, **$229**,
-and its outdoor kitchen surfaces are serviced within that visit. The $40 module is not
-charged and is not discussed.
+The reason: if the first members come off the Tri-State Grill Cleaning customer list — which
+is where they are most likely to come from, though access to that list is still
+**CONDITIONAL** (`CANON.md` §9.2) — then an outdoor kitchen with no pool is plausibly the
+*most common* property in the book, not an edge case. The old rule underpriced the single
+most likely customer by **$40 a month**.
 
-**CONFIRM WITH OWNER — this one has real money in it.** If the first members come off the
-Tri-State Grill Cleaning customer list (which is *conditional* — see `CANON.md` §9.2), then
-outdoor-kitchen-without-pool may be the *common* configuration, not the edge case. Three
-such members would forgo $40 × 3 × 12 = **$1,440 a year**. The recommendation and the two
-ways out of it are written up in `decisions.md` **D-3**. Do not resolve it by inventing a
-price here.
+Full reasoning and what it is worth: `decisions.md` **D-3** and **R-1**.
 
 ---
 
@@ -61,10 +80,12 @@ price here.
 
 **The first 4 clients lock their price for 12 months from their start date.**
 
-- The lock covers the membership price only — the tier they signed at.
+- The lock covers the membership price only — the number their property computed to on the
+  day they signed.
 - It does not cover project work, add-ons, or materials.
-- If a Founding Member adds a pool or an outdoor kitchen mid-term, the module is added at
-  the standard rate and the new total is what carries forward.
+- If a Founding Member builds a pool or an outdoor kitchen mid-term, that module is added at
+  the standard rate and the new total is what carries forward. The lock protects the price
+  of the property they signed with, not the property they later build.
 - The lock is a real commitment and it is stated in the service agreement. It is also the
   strongest close available before there is a portfolio of finished work to point at: he
   is asking the first four people to take a chance on a business with no track record, and
@@ -258,9 +279,10 @@ is wrong — either the hours are underestimated or the job shouldn't be taken.
 
 | Item | Price |
 |---|---|
-| Property Care membership | **$229/month** |
-| Property + Pool Care | **$289/month** |
-| Property + Pool + Outdoor Kitchen Care | **$329/month** |
+| Membership — property only | **$229/month** |
+| Membership — property with an outdoor kitchen | **$269/month** |
+| Membership — property with a pool | **$289/month** |
+| Membership — property with a pool and an outdoor kitchen | **$329/month** |
 | Pool Care module | +$60/month |
 | Outdoor Kitchen Care module | +$40/month |
 | Founding Member rate | First 4 clients, locked 12 months |
@@ -276,6 +298,8 @@ is wrong — either the hours are underestimated or the job shouldn't be taken.
 ## Related files
 
 - `operating-model.md` — the capacity cap and schedule these prices are sized against
-- `service-catalog.md` — what $229/$289/$329 buys, and what it does not
-- `unit-economics.md` — what these prices produce at 4, 6, and 8 clients
-- `decisions.md` — why the flat $229 became three tiers (D-3), and the billing mechanics (D-5)
+- `service-catalog.md` — what $229/$269/$289/$329 buys, and what it does not
+- `unit-economics.md` — what these prices produce at 4, 6, and 8 clients, and the client mix
+  the model assumes across the four configurations
+- `decisions.md` — why the flat $229 became attribute pricing (D-3), how the fourth
+  configuration was resolved (D-3 / R-1), and the billing mechanics (D-5)

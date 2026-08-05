@@ -21,6 +21,15 @@ described a business where project work was the income, then built every financi
 though the memberships were. That single inversion is what D-1 and D-6 fix, and it is worth
 about $14,000 a year.
 
+> **Changelog — 2026-08-05.** The owner resolved the open question in **D-3** (recommendation
+> **R-1**): Pool Care and Outdoor Kitchen Care are independent add-ons, and an
+> outdoor-kitchen-without-pool property is **$269**, a fourth configuration. `CANON.md` §3 was
+> updated first. Downstream: `pricing.md` §1 rewritten, `unit-economics.md` fully re-derived
+> on a stated client mix, `operating-model.md` and `ideal-client.md` updated where they cited
+> the old structure or the old blended average. **R-1 is now under "Resolved recommendations"
+> with its original text preserved. R-2, R-3, R-4, and R-5 remain open.** Three unrelated
+> arithmetic corrections found during the re-derivation are logged as **D-17**.
+
 ---
 
 ## D-1 · Membership as revenue → membership as the lead engine
@@ -37,8 +46,8 @@ the actual income.
 
 **Why:** The draft's own §9 and §10 already contained this idea. It just never made it into
 the numbers. Once you count the project work the draft described but didn't measure, the
-picture inverts: at six clients, memberships bring in $20,808 and project work brings in
-$14,125 — **40% of gross revenue, and the higher-margin 40%.**
+picture inverts: at six clients, memberships bring in $20,568 and project work brings in
+$14,125 — **41% of gross revenue, and the higher-margin 41%.**
 
 This is the change everything else follows from. It changes what the service report is for
 (a sales document, not a receipt), what the metrics measure (attach rate, not visit time),
@@ -61,22 +70,22 @@ month**, not as a client count.
 work counted produce $24,122 gross and $18,836 net on about one day a week. That is a real
 business, but it leaves most of the constraint unused — 14 route hours a month against a
 schedule that comfortably holds 20. Six clients uses the constraint without breaking it:
-$34,933 gross, $28,669 net, on roughly 1.35 days a week. Still inside `CANON.md`'s "1.5–2
+$34,693 gross, $28,436 net, on roughly 1.35 days a week. Still inside `CANON.md`'s "1.5–2
 working days per week."
 
 **Why it's route hours and not clients:** because two clients are not the same size. A client
-three minutes from another client and a client twenty-five minutes off the route both pay
-$289, and they cost completely different amounts. Counting clients hides that; counting route
-hours makes it visible on the day he's deciding whether to take the sixth one. `operating-
-model.md` §4 prices an off-route client at **17.6% of their own gross revenue** in unpaid
-drive time.
+three minutes from another client and a client twenty-five minutes off the route can pay the
+identical $289, and they cost completely different amounts. Counting clients hides that;
+counting route hours makes it visible on the day he's deciding whether to take the sixth one.
+`operating-model.md` §4 prices an off-route client at **17.5% of their own gross revenue** in
+unpaid drive time — **22.1% if it's a base-tier $229 property.**
 
 **Why the cap holds at 6 and not 8 — stated honestly:** it does not hold because 8 earns
-less. Eight clients earn about **$3,700 a year more net**. The cap is a decision to trade
-that $3,700 for schedule integrity: a five-hour route day instead of a six-and-a-half-hour
+less. Eight clients earn about **$3,500 a year more net**. The cap is a decision to trade
+that $3,500 for schedule integrity: a five-hour route day instead of a six-and-a-half-hour
 one, a float day for weather, room to take a vacation, and the ability to keep membership
 standard rule 1 (*never rush a property*). The full arithmetic, including a sensitivity where
-the eighth client actually pays **$45/hour marginal — below his blended rate** — is in
+the eighth client actually pays **$39.68/hour marginal — well below his blended rate** — is in
 `unit-economics.md` §5. **He should make that trade knowing the price of it.** See R-2.
 
 **What was preserved:** the draft's core insight in §12 — that the excess capacity is part of
@@ -87,20 +96,23 @@ the product, not slack he failed to sell — is kept intact and expanded in
 
 ---
 
-## D-3 · A flat $229 → three attribute-based tiers
+## D-3 · A flat $229 → attribute-based pricing, four configurations
 
 **The draft said:** "$229/month per property," one price for every property, regardless of
 whether it had a pool, an outdoor kitchen, both, or neither.
 
-**It now says:**
+**It now says:** one membership, priced by what the property has — a $229 base, **+$60 for a
+pool, +$40 for an outdoor kitchen, the two add-ons independent of each other.**
 
-| Tier | Price |
+| Property has | Price |
 |---|---|
-| Property Care | $229/month |
-| Property + Pool Care | $289/month |
-| Property + Pool + Outdoor Kitchen Care | $329/month |
+| Neither | $229/month |
+| Outdoor kitchen only | $269/month |
+| Pool only | $289/month |
+| Pool and outdoor kitchen | $329/month |
 
-Built from a $229 base, +$60 for pool, +$40 for outdoor kitchen.
+**Never a menu of four plans** (`CANON.md` §3, `pricing.md` §1). It is one membership, built
+out loud in front of the customer: the base, plus the pool, plus the outdoor kitchen.
 
 **Why:** A flat price charges the same for two properties that cost very different amounts to
 serve and are worth very different amounts to the owner. A pool means skimming, two baskets,
@@ -117,36 +129,80 @@ for a quarter of the visits and none of the chemistry, which is exactly what
 charge for materially less physical work; one Denver operator charges $400/month *plus* $155
 an hour for coordination *plus* a 25% vendor markup.
 
-**What it's worth:** $4,320 a year at six clients — 19.7% of the total improvement over the
-draft (`unit-economics.md` §8). It comes from pricing the same properties correctly, not from
-finding more of them.
+**What it's worth:** **$4,080 a year** at six clients — 18.8% of the total improvement over
+the draft (`unit-economics.md` §8). On the assumed mix that is four outdoor kitchens at $40
+and three pools at $60, or $340/month. It comes from pricing the same properties correctly,
+not from finding more of them.
 
-**Second-order effect:** the tiers change the targeting. Once price is tied to pool and
-outdoor kitchen, the ideal client is defined by those attributes, which is what makes the
+**Second-order effect:** attribute pricing changes the targeting. Once price is tied to pool
+and outdoor kitchen, the ideal client is defined by those attributes, which is what makes the
 narrow geography in D-9 possible.
 
-### 🔶 Open question inside this decision — the fourth configuration
+### ✅ Resolved 2026-08-05 — the fourth configuration
 
-A property with an outdoor kitchen and **no pool** computes to $229 + $40 = **$269**, which
-would be a fourth customer-facing price. `CANON.md` locks the list at three.
+**This block was an open question until 2026-08-05. It is now decided. The history is kept
+below because the reasoning is the point of this file.**
 
-**The operating rule written into `pricing.md` §1:** Outdoor Kitchen Care is sold on top of
-Pool Care, not on its own. A qualified property with an outdoor kitchen and no pool is
-written at **$229**, and its outdoor kitchen is serviced within that visit.
+**What it said before.** A property with an outdoor kitchen and no pool computes to
+$229 + $40 = $269, which would be a fourth customer-facing price, and `CANON.md` locked the
+list at three. So `pricing.md` §1 carried an operating rule: **"Outdoor Kitchen Care is sold
+on top of Pool Care, not on its own"** — a qualified property with an outdoor kitchen and no
+pool was written at **$229**, the $40 module was not charged, and the outdoor kitchen was
+serviced inside the base visit anyway. It was flagged at the time as possibly wrong, with two
+ways out: (a) accept the $229 as the cost of a three-number price card, or (b) add $269 and
+accept four prices.
 
-**This may be the wrong answer and it needs his decision.** If the first members come off the
-Tri-State Grill Cleaning customer list — which is exactly where they're most likely to come
-from — then *outdoor kitchen without a pool* may be the **common** configuration, not the
-edge case. Three such members forgo **$40 × 3 × 12 = $1,440 a year.**
+**What it says now.** **Option (b).** A property with an outdoor kitchen and no pool is
+**$269/month.** The two add-ons are independent — either, both, or neither. There are exactly
+four customer-facing prices: $229, $269, $289, $329. The "sells on top of Pool Care" rule is
+**deleted**, not softened.
 
-Two ways out, both his call, neither taken here because the three-price rule is locked:
+**Who decided and when.** The owner, on **2026-08-05**. `CANON.md` §3 was updated to match
+and now carries the decision note.
 
-- **(a)** Accept the $229 and treat it as the cost of a price card with three numbers on it.
-- **(b)** Add **$269** as a fourth configuration and accept four prices instead of three.
+**Why he decided that way.** The old rule was built on the assumption that
+outdoor-kitchen-without-pool is an edge case. It probably isn't. The first members are most
+likely to come off the Tri-State Grill Cleaning customer list — people who by definition own
+a grill, and who mostly do not own a pool. In the general population that gap is enormous:
+roughly **8% of U.S. homes have a pool of any kind** and about **59% of residential pools are
+in-ground** (≈4.7% of homes), against **65–80% of U.S. households owning an outdoor grill or
+smoker.** Inside a qualified book the ratio is far richer than the population, but the
+direction is not in question. **The old rule underpriced the single most likely customer he
+has by $40 a month.**
 
-See **R-1**.
+The narrower argument that lost: a price card with three numbers is easier to explain than
+one with four. That is true, and it stopped mattering the moment the price stopped being
+presented as a menu. If the number is *built* in front of the customer — base, plus the pool,
+plus the outdoor kitchen — then there is no card and no menu, and a fourth arithmetic outcome
+costs nothing to explain. `CANON.md` §3 and `pricing.md` §1 now require it to be presented
+that way, everywhere, which is what makes four configurations sustainable.
 
-*Locked in `CANON.md` §3. Implemented in `pricing.md` §1.*
+**What it's worth.** On the client mix assumed in `unit-economics.md` §1.1 — two of six
+properties with an outdoor kitchen and no pool:
+
+```
+2 members × $40/month × 12 months = $960 per year
+```
+
+And he collects it from month one, because both of those properties sit in the founding four.
+The general form is **$40 × (members with a kitchen and no pool) × 12**, so three such members
+is $1,440 and four is $1,920.
+
+The more useful way to see it is in the worst case. `unit-economics.md` §7.1 runs six members
+with **zero** project revenue: the book nets **$45.41/hour**, clearing the $45/hour floor in
+`operating-model.md` §6.5 by forty-one cents. Under the old rule the same case nets
+**$42.70/hour** — under the floor. **The fourth configuration is worth $2.71 an hour exactly
+where an hourly floor gets tested.**
+
+**What it changed downstream.** The membership line at six clients moved from $20,808 to
+**$20,568** — *down*, not up, because the model previously assumed a flat $289 average and now
+assumes a stated mix that includes one $229 property and two $269 properties. The comparison
+that matters is against the old *rule* on the *same* properties, which would have produced
+$19,608. Gross moved to $34,693, net to $28,436, revenue per route day to $428.50, and the
+cost of the client cap from ~$3,700 to ~$3,500. Every figure was re-derived rather than
+scaled; see `unit-economics.md` §10.
+
+*Locked in `CANON.md` §3. Implemented in `pricing.md` §1. See **R-1**, now resolved.*
 
 ---
 
@@ -174,7 +230,8 @@ some seasonal cleanup is conservative.
 **Both are labeled as assumptions** in `unit-economics.md` §1 (A2, A3). Together they account
 for $1,137 a year — 5.2% of the improvement. If he thinks they're optimistic, dial them back;
 the model does not depend on them. `unit-economics.md` §7.1 runs the case where project
-revenue is **zero**, and the membership book alone still pays $46/hour net.
+revenue is **zero**, and the membership book alone still pays **$45.41/hour net** — barely
+clearing the $45 floor, which is the honest way to state it.
 
 *Implemented in `unit-economics.md` §1, §3.*
 
@@ -236,8 +293,8 @@ unbooked capacity. `CANON.md` §3 calls it out explicitly: "that is where the mo
 job a week uses a small fraction of it. Not counting that revenue made a $35k business look
 like a $13k one, which in turn made the whole model look like it wasn't worth the effort.
 
-**This is the largest single change in the document.** $10,000 is **45.6% of the entire
-$21,949 improvement** over the draft (`unit-economics.md` §8). It required no new clients, no
+**This is the largest single change in the document.** $10,000 is **46.1% of the entire
+$21,709 improvement** over the draft (`unit-economics.md` §8). It required no new clients, no
 price change, and no new strategy — only counting what the draft had already decided to do.
 
 **Second-order effect:** it changes what a non-member inquiry is worth. In the draft, a
@@ -279,7 +336,7 @@ the report matters more in winter than in summer.
 **Why the price stays flat:** because flat year-round pricing is what makes this a membership
 instead of a seasonal service. A winter discount invites the member to ask why they're paying
 anything in January. `unit-economics.md` §6 has the arithmetic: the swing between a good
-month and a slow month is only **$565** *because* the $1,734 membership floor holds it
+month and a slow month is only **$565** *because* the $1,714 membership floor holds it
 steady. Remove the floor and February goes from slow to bad — and a member who cancels in
 February takes the entire Green Season with them.
 
@@ -315,11 +372,11 @@ explicitly, in both places it appears.
 
 | Metric | Formula | Target |
 |---|---|---|
-| **Revenue per route day** | membership revenue ÷ route days worked | ≥ $400 *(model: $433.50)* |
+| **Revenue per route day** | membership revenue ÷ route days worked | ≥ $400 *(model: $428.50)* |
 | **Project attach rate** | projects sold to members ÷ member visits | ~10%, or 2.5/member/year |
 | **Membership retention** | members active on **April 1** | 6 of 6 |
 | **Referrals** | inquiries naming a member or a specific job | ≥ 1 per quarter |
-| **Effective hourly rate** | (gross − expenses) ÷ all hours | ≥ $45/hr *(model: $51)* |
+| **Effective hourly rate** | (gross − expenses) ÷ all hours | ≥ $45/hr *(model: $50.69)* |
 
 **Note on the fifth one:** effective hourly rate is the draft's own metric. §11 ended with
 "That last number matters," and it was right. It is kept, given a formula and a floor, and
@@ -352,8 +409,9 @@ neighborhoods, which price points, or which attributes.
   people to maintain things; and a location that passes the route tests.
 
 **Why:** west-side Cincinnati home values are modest — Delhi $180–350k, Bridgetown ~$240k,
-Green Township $250–450k, Westwood/Price Hill/Cheviot ~$175k. A $3,468-a-year membership
-addresses a narrow slice of that. Pretending otherwise wastes the only scarce resource he has,
+Green Township $250–450k, Westwood/Price Hill/Cheviot ~$175k. A membership costing
+$2,748–$3,948 a year ($229–$329 a month) addresses a narrow slice of that. Pretending
+otherwise wastes the only scarce resource he has,
 which is his own time. The excluded areas are not a judgment about the neighborhoods; at a
 ~$175k median, the qualifying households are rare enough that finding them costs more than
 they return when he only needs six.
@@ -512,7 +570,8 @@ be applied on the spot.
 
 **And it was priced,** so the trade-off is visible rather than intuitive
 (`operating-model.md` §4): a client 15 minutes off the cluster costs 12 unpaid drive hours a
-year — **$612, or 17.6% of that client's entire gross revenue** — before he picks up a tool.
+year — **$608, or 17.5% of a $289 client's entire gross revenue, and 22.1% of a $229
+client's** — before he picks up a tool. The cheaper the property, the worse the trade.
 
 **The rule that follows from it:** the empty slot is worth more than the wrong client. An
 empty slot keeps all its hours. A wrong client consumes route hours permanently and can't be
@@ -616,50 +675,113 @@ Listed explicitly so it's clear these were considered and kept, not overlooked:
 
 ---
 
+## D-17 · Three corrections found while re-deriving the model on 2026-08-05
+
+Recorded here so the edits aren't mistaken for drift. None of these follow from the pricing
+resolution; they are errors in the previous version of `unit-economics.md` that surfaced when
+every line was recomputed.
+
+**1. "Above the top of the Cincinnati handyman range."** §4.3 and §7.1 both compared a *net,
+after-tax, per-hour* figure ($43.88 and $46.09) to the **$40–80/hour** handyman range and
+called it "at the top." That was wrong twice: $44 is near the *bottom* of $40–80, and the
+$40–80 figure is a **billing rate**, not take-home — a handyman billing $60 an hour keeps far
+less than $60. The comparison is now stated honestly: the business pays a solid trade wage,
+and the advantage is that the work is recurring, scheduled, and prepaid rather than chased.
+**The $100/hour project quoting rate in `pricing.md` §7 is unaffected** — that *is* a billing
+rate, and comparing it to $40–80 of handyman billing is the correct comparison.
+
+**2. "−10% of membership gross" in §7.2.** Losing one of six equally priced clients is
+−16.7% of membership gross, not −10%. The section has been rebuilt anyway, because under
+attribute pricing members are no longer interchangeable: it now shows what each of the four
+configurations costs if it cancels, from **$2,665 to $3,830 of net (9.4%–13.5%)**.
+
+**3. The 8-client sensitivity expense line was previously unshown.** §5.3 gave a total
+($6,715) without a derivation. It is now derived line by line — the vehicle line in
+particular, at **2,835 miles**, which is the mileage the old total implied but never stated.
+
+---
+
+## Resolved recommendations
+
+### ✅ R-1 · The outdoor-kitchen-without-pool configuration — RESOLVED 2026-08-05
+
+**Status: closed. The owner took option (b).** Kept here in full because the reasoning trail
+is the reason this file exists.
+
+**What R-1 originally said** *(verbatim, as written before the resolution)*:
+
+> **The issue:** `CANON.md` locks the customer-facing price list at three numbers, and a
+> property with an outdoor kitchen but no pool computes to a fourth ($269). `pricing.md` §1
+> resolves it by writing those properties at $229 and not charging the $40 module.
+>
+> **Why it may need revisiting:** the most likely source of the first four members is the
+> Tri-State Grill Cleaning customer list — people who have an outdoor kitchen and may well
+> not have a pool. If that configuration is common rather than rare, the current rule gives
+> away **$40 × the number of such members × 12** a year. Three of them is **$1,440**.
+>
+> **Recommendation:** ask him directly — *of the homes you've cleaned grills at, how many
+> have pools?* If the answer is "most," the current rule is fine. If the answer is "hardly
+> any," take option (b): add **$269** as a fourth configuration. **A fourth price is a
+> smaller problem than $1,440 a year.**
+>
+> **Not changed here** because the three-price rule is locked in `CANON.md` §3.
+
+**The resolution.** On **2026-08-05** the owner added the fourth configuration. Pool Care
+(+$60) and Outdoor Kitchen Care (+$40) are independent add-ons; a property with an outdoor
+kitchen and no pool is **$269/month**. `CANON.md` §3 was updated first and now carries the
+decision note; `pricing.md` §1 implements it and the "sells on top of Pool Care" rule is
+deleted. Full write-up in **D-3**.
+
+**What it is worth:** $960/year on the mix assumed in `unit-economics.md` §1.1 (two such
+members), $1,440 at three, $1,920 at four — and **$2.71/hour in the zero-project-revenue
+case**, which is the difference between clearing the $45/hour floor and not clearing it.
+
+**One condition rides along with it, and it is not optional.** Four prices only works because
+the price is never presented as four plans. It is one membership, built out loud: *the base,
+plus the pool, plus the outdoor kitchen.* That rule is in `CANON.md` §3 and `pricing.md` §1,
+and it is what every downstream document — website, brochure, agreement, marketing — has to
+honour. **If a price card with four boxes on it ever ships, the objection R-1 was originally
+weighing comes back, and it comes back on the customer-facing surface where it does the most
+damage.**
+
+**Still worth asking him,** even though the decision is made: *of the homes you've cleaned
+grills at, how many have pools?* The answer doesn't change the price structure any more — it
+calibrates the **A1 client mix** in `unit-economics.md` §1.1, which is currently an assumption
+(two of six). If the answer is "hardly any," the mix should move to three or four
+kitchen-only properties and the membership line moves with it.
+
+---
+
 ## Open recommendations
 
 These are recommendations, not changes. Nothing locked in `CANON.md` was altered.
 
-### R-1 · Decide the outdoor-kitchen-without-pool configuration before the first sale
+### R-2 · The cap costs about $3,500 a year — hold it, but hold it knowingly
 
-**The issue:** `CANON.md` locks the customer-facing price list at three numbers, and a
-property with an outdoor kitchen but no pool computes to a fourth ($269). `pricing.md` §1
-resolves it by writing those properties at $229 and not charging the $40 module.
+**The issue:** `unit-economics.md` §5 shows that eight clients net about **$3,478 more** than
+six, at a marginal rate of **$53.51/hour** — better than his blended rate of $50.69.
 
-**Why it may need revisiting:** the most likely source of the first four members is the
-Tri-State Grill Cleaning customer list — people who have an outdoor kitchen and may well not
-have a pool. If that configuration is common rather than rare, the current rule gives away
-**$40 × the number of such members × 12** a year. Three of them is **$1,440**.
-
-**Recommendation:** ask him directly — *of the homes you've cleaned grills at, how many have
-pools?* If the answer is "most," the current rule is fine. If the answer is "hardly any," take
-option (b): add **$269** as a fourth configuration. **A fourth price is a smaller problem than
-$1,440 a year.**
-
-**Not changed here** because the three-price rule is locked in `CANON.md` §3.
-
-### R-2 · The cap costs about $3,700 a year — hold it, but hold it knowingly
-
-**The issue:** `unit-economics.md` §5 shows that eight clients net about **$3,712 more** than
-six, at a marginal rate of $57/hour — better than his blended rate.
+*(This was $3,712 before the 2026-08-05 pricing resolution. Re-derived on the new client mix
+it is $3,478. The recommendation is unchanged; only the price tag moved.)*
 
 **Recommendation: hold the cap at six.** The reason is risk, not revenue. The 8-client case
 depends entirely on non-member project flow holding up at a fuller route load, and if it
-slips even modestly the marginal client pays **$45/hour — below his own blended rate**, and by
-then he can't un-sell them. The cap also buys the float day, the vacation, the real waitlist,
-and the ability to keep membership standard rule 1.
+slips even modestly the marginal client pays **$39.68/hour — well below his own blended rate
+and below the $45/hour floor** — and by then he can't un-sell them. The cap also buys the
+float day, the vacation, the real waitlist, and the ability to keep membership standard
+rule 1.
 
-**But the number should be visible.** He is buying schedule integrity for about $3,700 a year,
+**But the number should be visible.** He is buying schedule integrity for about $3,500 a year,
 and he should decide that on purpose rather than inherit it. If he ever revisits the cap, the
 place to start is `unit-economics.md` §5.3.
 
 **Not changed here** because the cap is locked in `CANON.md` §3.
 
-### R-3 · Confirm membership standards 4 and 5
+### 🔶 R-3 · Confirm membership standards 4 and 5 — STILL OPEN
 
 Rule 4 is a high-confidence completion of a truncated sentence. **Rule 5 is a reconstruction
 from context — there is no surviving text.** Both are marked 🔶 in `operating-model.md` §7 and
-should stay marked until he confirms.
+**must stay marked until he confirms.** The 2026-08-05 pricing resolution did not touch this.
 
 **Ask him:** *"Your rule 4 got cut off at 'don't quietly absorb projects into the' — was that
 'the membership'? And do you remember what rule 5 was?"*
@@ -681,9 +803,10 @@ Founding terms permanently lowers the reference price for every referral that me
 If a closing concession is needed for slot 6, give **scheduling priority or a free first
 project**, not a price.
 
-### R-5 · Two numbers to verify with real quotes before launch
+### 🔶 R-5 · Two numbers to verify with real quotes before launch — STILL OPEN
 
-Both are labeled assumptions and both are large enough to matter:
+Both are labeled assumptions and both are large enough to matter. Neither was affected by the
+2026-08-05 pricing resolution; both are still unverified.
 
 - **General liability insurance at $55/month** (A15). The $45–85/month range is a national
   average for lawn/landscaping general liability. **Get two real Ohio quotes.** Also ask
@@ -699,8 +822,20 @@ Both are labeled assumptions and both are large enough to matter:
 ## Related files
 
 - `operating-model.md` — D-1, D-2, D-5, D-8, D-12, D-13
-- `pricing.md` — D-3, D-5, D-7, D-14, D-15
+- `pricing.md` — D-3 (including the resolved fourth configuration), D-5, D-7, D-14, D-15
 - `service-catalog.md` — D-7, D-11, D-15
 - `ideal-client.md` — D-9, D-10, D-13
-- `unit-economics.md` — D-2, D-4, D-6, and the bridge from the draft's $12,984
+- `unit-economics.md` — D-2, D-4, D-6, D-17, the A1 client mix behind D-3, and the bridge
+  from the draft's $12,984
+- `CANON.md` §3 — carries the 2026-08-05 decision note for D-3 / R-1
 - `_source/brother-draft-4-client-model.md` — the document all of this refines
+
+### Recommendation status at a glance
+
+| | Subject | Status |
+|---|---|---|
+| **R-1** | Fourth configuration ($269) | ✅ **Resolved 2026-08-05** — added |
+| **R-2** | The cap costs ~$3,500/yr | 🔶 Open — hold the cap, knowingly |
+| **R-3** | Membership standards 4 and 5 | 🔶 Open — reconstructed, needs confirmation |
+| **R-4** | Founding rate covers 4, not 6 | 🔶 Open — implemented as written, noted |
+| **R-5** | Real Ohio insurance and vehicle quotes | 🔶 Open — unverified |
