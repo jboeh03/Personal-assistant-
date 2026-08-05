@@ -3,790 +3,970 @@
 **Owner:** `wpc-strategist` · **Status:** the financial model, with the arithmetic shown
 
 **Every number on this page is checkable.** Every input is either locked in `CANON.md`,
-priced in `pricing.md`, or labeled below as an assumption with the reasoning attached. If an
-assumption is wrong, the arithmetic still holds — change the input and rerun it.
+priced in `pricing.md`, or numbered below and explicitly labelled an assumption. Run
+`verify-unit-economics.py` in this directory to check the arithmetic mechanically.
 
-> **Re-derived 2026-08-05** after the owner resolved the fourth configuration (`decisions.md`
-> D-3 / R-1). A property with an outdoor kitchen and no pool is now **$269**, not $229. That
-> changed the assumed client mix, which changed the membership line, which changed every
-> figure downstream of it. The whole page was recomputed, not patched.
-
----
-
-## 1. Assumptions, all in one place
-
-Nothing here is a fact. These are the inputs, and they are the first thing to argue with.
-
-### Revenue assumptions
-
-| # | Assumption | Value | Basis |
-|---|---|---|---|
-| A1 | **Client mix across the four configurations** | 1 × $229, 2 × $269, 1 × $289, 2 × $329 | **The single biggest assumption on this page.** Fully stated in §1.1. Produces a $1,714/month book and a **$285.67** blended average. |
-| A2 | Member projects per client per year | **2.5** | The draft assumed 2.0. Raised because 24 visits a year is 24 inspections, and the Dormant Season spring-prep report is a dedicated selling moment. **Assumption.** |
-| A3 | Average member project value | **$275** | Between the $249 grill deep clean and the mid-range quoted jobs in `pricing.md` §5.3. **Assumption.** |
-| A4 | Non-member project jobs | **1 per week, 40 weeks/year** | Tue–Thu is open ~150 days a year. One job a week uses a fraction of it. 40 weeks allows for weather, holidays, and time off. **Assumption.** |
-| A5 | Average non-member project value | **$250** | Anchored on the $249 grill deep clean, the most likely first job from a Tri-State Grill Cleaning referral. **Assumption.** |
-| A6 | Project revenue seasonality | **70% Apr–Oct** | Outdoor project work concentrates in Green Season. **Assumption**, used only in §6. |
-
-### Time assumptions
-
-| # | Assumption | Value | Basis |
-|---|---|---|---|
-| A7 | Route planning allowance | **1.5 hrs per stop door-to-door**, + 0.5 hr home-to-route round trip | `operating-model.md` §2. A scheduling input, **not** a per-visit target. |
-| A8 | Scheduled route days | **4/month** (Mon + Fri, weeks 1 and 3) | `CANON.md` §3. |
-| A9 | Average project job, including travel | **3.0 hours** | A $249 grill deep clean is ~2.5 hrs on site plus drive. **Assumption.** |
-| A10 | Admin hours | **3.0 hrs/week at 6 clients** | Service reports, estimates, invoicing, scheduling, supply runs. 2.5 at 4 clients, 3.5 at 8. **Assumption.** |
-
-### Cost assumptions
-
-| # | Assumption | Value | Basis |
-|---|---|---|---|
-| A11 | Vehicle cost | **$0.74/mile** | 2026 IRS business standard mileage rate, blended: 72.5¢ Jan–Jun, 76¢ Jul–Dec. Full cost of operation — fuel, wear, depreciation, insurance share — not just gas. See §4.1. |
-| A12 | Route miles | 25/route day at 6 clients (20 at 4, 30 at 8) | Compact route per `operating-model.md` §4. **Assumption.** |
-| A13 | Project miles | **20 per job**; supply/estimate trips 15 mi | **Assumption.** |
-| A14 | Consumable supplies | **$65/month** at 6 clients | Surface cleaner, degreaser, microfiber, bags, spot weed treatment, ice melt. Excludes project materials, which are billed at cost + 25%. **Assumption.** |
-| A15 | General liability insurance | **$55/month** | 2026 market: $45–85/month for lawn/landscaping general liability; basic lawn care averages ~$46, landscaping contractors ~$51. A solo operator with no crew and no tree work sits at the low end. **Verify with two real Ohio quotes — `decisions.md` R-5.** |
-| A16 | Field service software | **$29/month** | Jobber Core, one user, billed annually. (Housecall Pro Basic is $59/user/month.) |
-| A17 | Card processing | **2.9% + $0.30** per transaction; **50%** of non-member work paid by card | Standard card-present/keyed rate. **Assumption** on the 50%. |
-| A18 | Phone | **$35/month** attributable | **Assumption.** |
-| A19 | Equipment reserve | **$600/year** at 6 clients | Blower, pressure washer, pool net and pole, hand tools, replacement and repair. **Assumption.** |
-| A20 | Web, domain, listings | **$60/year** | Static site on a free host; domain renewal. `02-website/` is standalone HTML/CSS with no build cost. |
-| A21 | Accounting / tax prep | **$350/year** | Single-member LLC Schedule C. **Assumption.** |
-| A22 | LLC formation | **$99, one time, year 1 only** | Ohio Articles of Organization. Ohio has no annual report fee and no franchise tax. |
-
-**Not modeled, deliberately:** owner's labor as a cost (this is his income, not a wage);
-income tax beyond self-employment tax (depends on his household return — see §4.4); vehicle
-purchase or lease (A11 already carries depreciation); and health insurance (a household
-decision, not a business one).
+> **Rewritten 2026-08-05** against the owner's signed agreement
+> (`_source/2026-08-05-owner-decisions.md`). The previous version modelled four
+> attribute-based membership prices across a twelve-month year at a 1.5-hour-per-stop
+> planning constant. **All three of those inputs are dead.** The membership is one flat
+> price, the year is eight months long, and the visit is two hours with a heavier pool
+> scope. Roughly 700 of the previous 792 lines were invalid. This page was rebuilt from the
+> locked facts up, not patched. See `decisions.md` **D-18** through **D-26**.
 
 ---
 
-### 1.1 A1 — the client mix, stated plainly
+## 1. What this page models, and what it does not
 
-**This is an assumption, not a fact. He does not have six clients. He does not have one.**
-Nothing below is a forecast of who will actually sign; it is a stated composition chosen so
-the rest of the page has something concrete to compute from. Change these six rows and every
-number after them moves.
+Two scenarios, modelled separately because they are genuinely different businesses:
 
-The four prices come from `pricing.md` §1: $229 base, +$60 pool, +$40 outdoor kitchen,
-add-ons independent.
+| | Period | Why it is separate |
+|---|---|---|
+| **Scenario A — 2026 partial season** | mid-Aug 2026 → Oct 31 2026, plus the Nov–Feb gap | He is signing in August. Roughly three months of season remain, then four months of nothing. This is the year he actually has to survive. |
+| **Scenario B — full 2027 season** | Mar 1 2027 → Feb 28 2028 | Eight service months plus the off-season that follows them. This is the steady state the business is designed around. |
 
-**The assumed six-client book:**
+Each scenario is run at **4, 6, and 8 clients.** Four is the launch target, six is the hard
+cap, and eight exists only so the price of the cap is visible instead of assumed.
 
-| Property has | Price | Clients | Subtotal |
-|---|---|---|---|
-| Neither | $229 | 1 | $229 |
-| Outdoor kitchen only | $269 | 2 | $538 |
-| Pool only | $289 | 1 | $289 |
-| Pool and outdoor kitchen | $329 | 2 | $658 |
-| | | **6** | **$1,714/month** |
-
-```
-$229 + $538 + $289 + $658 = $1,714 per month
-$1,714 ÷ 6                =   $285.67  blended average
-$1,714 × 12               = $20,568  per year
-```
-
-**Cross-check the same book from its components** — this is the honest way to read it,
-because it is how the price is actually built:
-
-```
-6 properties × $229 base                =  $1,374
-4 of the 6 have an outdoor kitchen × $40 =    $160
-3 of the 6 have a pool × $60             =    $180
-                                            ------
-                                            $1,714  ✓
-```
-
-**Why four kitchens and three pools.** In-ground pools are rare and outdoor cooking is
-common: roughly **8% of U.S. homes have a pool of any kind** and about **59% of residential
-pools are in-ground** (≈4.7% of homes), while **65–80% of U.S. households own an outdoor
-grill or smoker.** Every qualified property in this book has at least one of the two
-attributes (`ideal-client.md` §2), so the ratio inside the book is far richer than the
-population — but the *direction* is not in doubt, and it points the same way the Tri-State
-Grill Cleaning warm list points: **outdoor kitchens are the more common attribute, pools are
-the rarer and more valuable one.**
-
-**Why this specific mix and not a rounder one.** Three constraints pulled on it:
-
-1. **Kitchen-without-pool has to be well represented.** That is the entire reason the fourth
-   configuration exists (`decisions.md` D-3). Modeling it as an edge case would quietly undo
-   the decision the owner just made. Two of six is a modest reading of "plausibly the modal
-   property" — it could easily be three or four.
-2. **The book still has to be pool-weighted enough to be worth running.** `CANON.md` §3 says
-   lead with $289/$329, and `ideal-client.md` §2 puts a pool-and-kitchen property at the front
-   of the list. Three of six with a pool reflects targeting that works without assuming it
-   works perfectly.
-3. **One base-tier client is realistic.** Slots 5 and 6 are filled by whoever fits the route
-   cluster, not by whoever has the best backyard (`ideal-client.md` §4). Assuming all six are
-   premium properties would be the optimistic error.
-
-**The launch four are a subset of the same book,** so the two scenarios are consistent rather
-than independently invented:
-
-```
-Founding four (§2)   2 × $269 + 1 × $289 + 1 × $329  =  $1,156/month  (avg $289.00)
-Clients 5 and 6      1 × $229 + 1 × $329             =    $558/month  (avg $279.00)
-                                                        -----------
-Full book (§3)                                          $1,714/month  (avg $285.67)
-```
-
-The split is deliberate and it says something real: **the founding four are the best-qualified
-properties off the warm list and blend to $289; the last two slots go to whoever fits the
-cluster, blend to $279, and pull the book average down to $285.67.** If slots 5 and 6 turn out
-better than that, the book beats this model. *(That the founding four happen to total the same
-$1,156 the pre-resolution model produced from a flat $289 average is a coincidence — see the
-note at the end of §2.5.)*
-
-**Sensitivity — what a different mix does to the annual membership line:**
-
-| Mix | Monthly | Annual | vs. model |
-|---|---|---|---|
-| 3 × $269, 1 × $229, 1 × $289, 1 × $329 (kitchen-heavy) | $1,654 | $19,848 | −$720 |
-| **1 × $229, 2 × $269, 1 × $289, 2 × $329 (the model)** | **$1,714** | **$20,568** | **—** |
-| 1 × $269, 2 × $289, 3 × $329 (pool-heavy) | $1,834 | $22,008 | +$1,440 |
-| 6 × $329 (every property has both — do not plan on it) | $1,974 | $23,688 | +$3,120 |
-
-The whole realistic range is about **$1,650 to $1,850 a month.** Every conclusion in this
-document survives anywhere in that band. That is the useful thing to know about A1: it moves
-the top line by a few percent, and it moves nothing structural.
-
-**What the fourth configuration is worth on this mix.** Under the old rule, the two
-outdoor-kitchen-only properties would have been written at $229:
-
-```
-2 members × $40 × 12 months = $960 per year
-```
-
-And he collects it from month one, because both of those properties are in the founding four.
+**Not modelled, deliberately:** the owner's labour as a cost (this is his income, not a
+wage); income tax beyond self-employment tax (§9.3); vehicle purchase or lease (A19 already
+carries depreciation); health insurance (a household decision); and the separate optional
+winter offering in `03-marketing/winter-service.md`, which is **not** part of this
+membership and must never be counted as though it were.
 
 ---
 
-## 2. Scenario: 4 clients — the launch case
+## 2. Step 1 — the operating assumption everything downstream sits on
 
-This is where he actually starts. `CANON.md`: launch at 4, hard cap at 6.
+The old `1.5 hours per property` planning constant is dead (`CANON.md` §3). It is replaced
+by the owner's own structure: **two visits a month, up to two hours of on-site service per
+visit, unused time does not roll over.** Before a single dollar can be modelled, two things
+have to be settled: *how long a property actually takes*, and *how the visits are grouped
+into days.*
 
-### 2.1 Revenue
+### 2.1 Average on-site time versus the two-hour ceiling
 
-```
-MEMBERSHIP                                 (A1 launch subset, §1.1)
-  2 × $269 + 1 × $289 + 1 × $329     =    $1,156 per month
-  $1,156 × 12                        =   $13,872 per year
+**The two hours is a ceiling, not a target.** A property that finishes in ninety minutes is
+finished; there is no rollover and no obligation to fill the time. So route days cannot be
+sized on the ceiling alone or the model over-states his hours, and they cannot be sized on
+the average alone or a day with three demanding properties runs off the end of the calendar.
 
-MEMBER PROJECTS                            (A2, A3)
-  4 clients × 2.5 projects × $275    =    $2,750 per year
-  ( = 10 projects )
+The average is derived from **his own field checklist**, which budgets the two hours across
+eight blocks (`_source/2026-08-05-owner-decisions.md` §3). Two of those eight blocks only
+exist if the property has the corresponding feature:
 
-NON-MEMBER PROJECTS                        (A4, A5, reduced — see note)
-  0.75 jobs/week × 40 weeks          =        30 jobs
-  30 × $250                          =    $7,500 per year
-                                          --------
-GROSS REVENUE                              $24,122 per year
-```
+| Block | Budget | Present on every property? |
+|---|---|---|
+| 1 · Arrival + property walkthrough | 10 min | yes |
+| **2 · Pool care** | **30 min** | **only if there is a pool** |
+| **3 · Outdoor kitchen + grill area** | **20 min** | **only if there is an outdoor kitchen** |
+| 4 · Patio + furniture | 20 min | yes |
+| 5 · Property cleanup | 15 min | yes |
+| 6 · Trash + plants + misc. | 10 min | yes |
+| 7 · Flexible priority block | 10 min | yes |
+| 8 · Final walk + documentation | 5 min | yes |
+| | **120 min** | |
 
-> **Note on the non-member rate at launch.** The 6-client case assumes 1 job/week. Year one
-> assumes 0.75, because the referral engine hasn't spun up, the Google Business Profile is
-> new, and there are 4 members generating word of mouth instead of 6. **Assumption.**
-
-### 2.2 Route hours
-
-```
-8 visits/month ÷ 4 route days = 2 stops per route day
-Hours per route day = (2 stops × 1.5 hrs) + 0.5 hrs travel = 3.5 hrs
-4 route days × 3.5 hrs        =  14.0 route hours per month
-14.0 × 12                     = 168   route hours per year
-```
-
-### 2.3 Total hours
+So the checklist itself produces four property shapes:
 
 ```
-Route                              168
-Projects  (10 + 30 = 40 jobs × 3)  120
-Admin     (2.5 hrs/wk × 52)        130
-                                   ---
-                                   418 hours per year
-418 ÷ 52 = 8.0 hours per week      ≈ 1 working day per week
+Pool AND outdoor kitchen   120 min                    = 2.00 hrs   ← the ceiling
+Pool, no outdoor kitchen   120 − 20 (block 3) = 100    = 1.67 hrs
+Outdoor kitchen, no pool   120 − 30 (block 2) =  90    = 1.50 hrs
+Neither                    120 − 50           =  70    = 1.17 hrs   ← not a target client
 ```
 
-### 2.4 Expenses
+Every qualified member property has a pool, an outdoor kitchen, or both
+(`ideal-client.md` §2), so the fourth shape is excluded from the book. On the assumed
+six-client composition in **A6** — two of each of the first three shapes:
 
 ```
-Vehicle    route 48 days × 20 mi        =    960 mi
-           projects 40 jobs × 20 mi     =    800 mi
-           supply/estimate 30 × 15 mi   =    450 mi
-                                           ------
-                                          2,210 mi × $0.74      = $1,635
-Supplies   $50/month × 12                                       =   $600
-Insurance  $55/month × 12                                       =   $660
-Software   $29/month × 12                                       =   $348
-Processing membership  $13,872 × 2.9% + (48 × $0.30) = $416.69
-           mem projects $2,750 × 2.9% + (10 × $0.30) =  $82.75
-           non-member   $3,750 × 2.9% + (15 × $0.30) = $113.25  =   $613
-Phone      $35/month × 12                                       =   $420
-Equipment  reserve                                              =   $600
-Web/domain                                                      =    $60
-Accounting                                                      =   $350
-                                                                  ------
-TOTAL EXPENSES                                                    $5,286
+(2 × 120) + (2 × 100) + (2 × 90)  =  240 + 200 + 180  =  620 min per full round of six
+620 ÷ 6                           =  103.33 min       =  1.72 hrs
 ```
 
-### 2.5 Result
+**Planning allowance: 1.75 hours (1:45) of on-site time per property** — the derived 1.72
+rounded up, so the calendar errs long rather than short. **This is assumption A7.**
+
+> **This is not the banned metric, and the distinction matters.** `CANON.md` §3 bans
+> minutes-per-visit as a *performance target* — no average visit length tracked as a KPI,
+> no copy implying he aims to finish quickly. It explicitly asks `operating-model.md` to
+> derive route hours from the client count and the two-hour cap, which is what this is.
+> 1:45 is used exactly twice: to lay out a calendar, and to compute the hours on this page.
+> It is never recorded, never reported, and never compared against what a visit actually
+> took. **If you ever find yourself measuring a real visit against 1:45, you have converted
+> a planning input into the banned metric. Stop.**
+
+### 2.2 Drive time
+
+From the route tests in `operating-model.md` §4 — every member within 15 minutes of another
+member, and within 25 minutes of home base:
 
 ```
-Gross revenue         $24,122
-Expenses             − $5,286
+Home → first stop and last stop → home   0.50 hr per route day   (A8)
+Between two consecutive stops            0.25 hr                 (A8, the 15-minute test as worst case)
+```
+
+### 2.3 Route-day structure — 3 stops per day, 4 route days a month
+
+Six clients × two visits = **12 visits a month**, on Mondays and Fridays only. Two
+structures fit:
+
+| | Stops per route day | Route days per month | Hours worked per route day | Mon/Fri slots used of 8 |
+|---|---|---|---|---|
+| **Option A — chosen** | **3** | **4** (Mon + Fri, weeks 1 and 3) | (3 × 1.75) + 0.5 + (2 × 0.25) = **6.25** | **4** |
+| Option B — rejected | 2 | 6 | (2 × 1.75) + 0.5 + (1 × 0.25) = **4.25** | 6 |
+
+**Option A is chosen.** Five reasons, in the order they matter:
+
+1. **It protects Tuesday–Thursday absolutely, which is where the income is.** Option A uses
+   four of the eight Monday/Friday slots in a month and leaves four as weather valve. In
+   Cincinnati between March and October he can lose *two* route days to rain in a month and
+   still never touch the project block. Option B leaves two spare slots; a two-rain-out month
+   pushes routine work into Tuesday, and `CANON.md` §3 says plainly that is where the money
+   is.
+2. **"Never rush a property" is a rule about the property, not the length of the day.** Under
+   Option A each property still gets its full two-hour entitlement — the day blocks
+   3 × 2.0 + 1.0 = **7.0 hours** at the ceiling and simply ends when it ends. He is never
+   choosing between finishing property 2 and reaching property 4, because there is no
+   property 4. Membership standard 1 is kept by the *cap*, not by the shortness of the day.
+3. **Fewer dead-head round trips.** Six route days means six home-to-route-and-back trips
+   instead of four: 2 × 0.5 = **1 extra unpaid hour a month, 8 hours a season.**
+4. **Four real workdays a month beats six half-days.** Six 4.25-hour days fragment the
+   calendar across three weeks and leave less contiguous project time, which is the opposite
+   of what the model needs.
+5. **Revenue per route day rewards it and can prove it.** At six clients Option A produces
+   $418.50 a route day and Option B produces $279.00 (§9.1). Under a flat price that metric
+   has become a **route-density** measure, and it points straight at Option A.
+
+**The honest cost of Option A, and the rule that handles it.** If all three properties on a
+route day genuinely need the full two hours, the day is seven hours with no slack in it.
+That is why `ideal-client.md` §3 carries a hard scheduling rule: **never more than one
+pool-and-outdoor-kitchen property per route day, and never more than two in the book.** On
+the assumed composition each route day carries one of each shape:
+
+```
+120 + 100 + 90 = 310 min = 5.17 hrs on site
++ 0.5 dead-head + (2 × 0.25) between stops = 1.0 hr drive
+                                             --------
+                          designed route day = 6.17 hrs      (planning figure: 6.25)
+```
+
+### 2.4 Route hours, all three book sizes
+
+Route days per month = **4**. Season = **8 months**. Route days per season = **32**.
+
+| Clients | Visits/month | Stops per route day | Drive/day | **Hours per route day** | **Route hrs/month** | **Route hrs/season** | Ceiling day |
+|---|---|---|---|---|---|---|---|
+| 4 | 8 | 2 | 0.75 | (2 × 1.75) + 0.75 = **4.25** | **17.0** | **136** | 4.75 |
+| **6 (cap)** | **12** | **3** | **1.00** | (3 × 1.75) + 1.00 = **6.25** | **25.0** | **200** | **7.00** |
+| 8 (over cap) | 16 | 4 | 1.25 | (4 × 1.75) + 1.25 = **8.25** | 33.0 | 264 | **9.25** |
+
+**The eight-client row is the cap argument in one number: a 9.25-hour worst-case route day.**
+That is not a long day, it is an impossible one — it starts before the dew is off the patio
+furniture and ends after dark for half the season.
+
+---
+
+## 3. Assumptions, all in one place
+
+**Locked** rows are not assumptions — they come from `CANON.md` or the signed agreement and
+may not be changed here. Everything else is an **assumption** and is the first thing to
+argue with.
+
+### 3.1 Locked inputs
+
+| # | Input | Value | Source |
+|---|---|---|---|
+| L1 | Membership price | **$279/month, flat** | `CANON.md` §3 · agreement §1, §11 |
+| L2 | Service season | **March 1 – October 31**, 8 months | `CANON.md` §3 · agreement §8 |
+| L3 | Visits | **2/month, 16/season** | `CANON.md` §3 · agreement §1 |
+| L4 | On-site ceiling | **2.0 hrs/visit, no rollover** | agreement §1 |
+| L5 | Route days | **Mon + Fri, weeks 1 and 3 = 4/month** | `CANON.md` §3 |
+| L6 | Capacity | launch **4**, hard cap **6** | `CANON.md` §3 |
+| L7 | Project quoting rate | **$100/on-site hour**, $149 standalone-trip floor | `pricing.md` §7 |
+| L8 | Materials | **cost + 25%**, itemised, never in labour revenue | `pricing.md` §6 |
+
+### 3.2 Revenue assumptions
+
+| # | Assumption | Value | Basis |
+|---|---|---|---|
+| **A1** | **2026 service starts mid-August** — one visit in August, two each in September and October | **5 visits per client, 3 billed months** | The agreement, card, insurance, and LLC all have to land first. **Assumption.** A September start is run as a variant in §4.4. |
+| **A2** | **Partial-month pro-ration is by visit** | **$279 ÷ 2 = $139.50 per visit** | Cleanest possible rule and it needs no calendar arithmetic. Implemented in `pricing.md` §3. **Assumption** pending the owner's confirmation — see `decisions.md` R-7. |
+| **A3** | Member projects per client, **full season** | **2.0** | 16 visits, all of them in-season with the owner outside using the space. 2.0 ÷ 16 = a **12.5%** attach rate. The old model assumed 2.5 across 24 visits (10.4%) — ten of which were winter visits with materially lower conversion. **Assumption.** Sensitivity in §7.4. |
+| **A4** | Member projects per client, **2026 partial season** | **0.5** | Five visits into a brand-new relationship. He is learning the property, not selling it. **Assumption.** |
+| **A5** | Average member project value | **$275** | Between the $249 grill deep clean and the mid-range anchors in `pricing.md` §5.3. **Assumption.** |
+| **A6** | **Book composition** — two properties of each shape: pool + kitchen, pool only, kitchen only | 2 / 2 / 2 at six clients | Not a pricing input any more (every property pays $279). It drives **time**, and therefore route hours and selection. **The single biggest assumption on this page.** Derived in §2.1, used in §2.3, priced in §7.3. **Assumption.** |
+| **A7** | Non-member jobs, **in season** (30 working weeks of the 35 in the season) | **6 clients: 30** (≈1/wk) · **4 clients: 22** (≈0.75/wk) · **8 clients: 18** (≈0.6/wk) | Tue–Thu is ~100 protected days across the season. The 4-client rate is lower because the referral engine has not spun up; the 8-client rate is lower because a fuller route delays estimates. **Assumption.** |
+| **A8** | Non-member jobs, **off season** (Nov–Feb) | **4 jobs**, all book sizes | Grill deep cleans before the holidays, a gutter job, a storm callout. Deliberately small. Independent of book size because members are not being visited. **Assumption.** |
+| **A9** | Non-member jobs, **2026 partial season** (11 weeks) | **8 jobs**, all book sizes | ≈0.75/wk. He is new in 2026 regardless of how many members he has signed. **Assumption.** |
+| **A10** | Average non-member project value | **$250** | Anchored on the $249 grill deep clean, the most likely first job from a Tri-State Grill Cleaning referral. **Assumption.** |
+
+### 3.3 Time assumptions
+
+| # | Assumption | Value | Basis |
+|---|---|---|---|
+| **A11** | On-site planning allowance | **1.75 hrs (1:45) per property** | Derived in §2.1 from his checklist blocks and A6. **A planning input, never a target.** **Assumption.** |
+| **A12** | Drive allowance | **0.5 hr round trip per route day + 0.25 hr between stops** | The 15- and 25-minute route tests, taken at their worst case. **Assumption.** |
+| **A13** | Average project job, including travel | **3.0 hrs** | A $249 grill deep clean is ~2.5 hrs on site plus drive. **Assumption.** |
+| **A14** | Admin, **in season** (35 weeks) | **3.0 hrs/wk at 6 clients** (2.5 at 4, 3.5 at 8) | Service reports, estimates, invoicing, scheduling, supply runs. **Assumption.** |
+| **A15** | Admin, **off season** (17 weeks) | **1.0 hr/wk**, all book sizes | Bookkeeping, renewals, next-season planning, the odd quote. **Assumption.** |
+| **A16** | Season length in weeks | **35 in season, 17 off season** | Mar 1 – Oct 31 = 245 days = 35 weeks exactly. Nov 1 – Feb 28 = 120 days ≈ 17 weeks. 35 + 17 = 52. **Arithmetic, not an assumption.** |
+| **A17** | Working weeks available for project work, in season | **30 of 35** | Weather, holidays, and time off. **Assumption.** |
+
+### 3.4 Cost assumptions
+
+| # | Assumption | Value | Basis |
+|---|---|---|---|
+| **A18** | Vehicle cost | **$0.74/mile** | The 2026 IRS business standard mileage rate is **72.5¢ Jan–Jun and 76¢ Jul–Dec**, blending to 74.25¢; rounded down to $0.74 as a planning figure. This is the *full* cost of operation — fuel, wear, depreciation, insurance share — not a fuel bill. See §9.2. The 2027 rate is unpublished. **Assumption.** |
+| **A19** | Route miles per route day | **25 at 6 clients** (20 at 4, 30 at 8) | Compact cluster route. **Assumption.** |
+| **A20** | Project miles | **20 per job**; supply and standalone estimate trips **15 mi**, **40/yr at 6 clients** (30 at 4, 45 at 8) | **Assumption.** |
+| **A21** | Consumable supplies | **$65/month at 6 clients, in-season months only** ($50 at 4, $85 at 8) | Surface cleaner, degreaser, microfibre, bags, pool net and brush wear, spot weed treatment. Excludes project materials, which are billed at cost + 25% (L8). **Assumption.** |
+| **A22** | General liability insurance | **$55/month × 12** | 2026 market for lawn/landscaping general liability is **$45–85/month**; basic lawn care averages about **$46**. A solo operator with no crew and no tree work sits at the low end. **It is carried year-round** — the policy does not take the winter off. **Verify with two real Ohio quotes: `decisions.md` R-5.** |
+| **A23** | Field service software | **$29/month × 12** | Jobber Core, one user, billed annually — which is why it also does not stop in November. **Assumption.** |
+| **A24** | Card processing | **2.9% + $0.30** per transaction; **50%** of non-member work paid by card | Standard keyed/card-present rate. Membership is 100% card (`pricing.md` §4). **Assumption** on the 50%. |
+| **A25** | Phone | **$35/month × 12** attributable | **Assumption.** |
+| **A26** | Equipment reserve | **$600/season at 6 clients** ($700 at 8) | Blower, pressure washer, pool net, pole, brush, vac head and hose, hand tools. **Assumption.** |
+| **A27** | **Startup equipment, one time** | **$1,200** | The kit has to exist before visit one, and the heavier pool scope adds a vacuum head, hose, and brush the old scope did not need. Charged to 2026 only. **Assumption.** |
+| **A28** | Web, domain, listings | **$60/year** | Static site on a free host plus domain renewal. `02-website/` has no build cost. |
+| **A29** | Accounting / tax prep | **$350/year** | Single-member LLC, Schedule C. **Assumption.** |
+| **A30** | LLC formation | **$99, one time, 2026 only** | Ohio Articles of Organization. No annual report fee, no franchise tax. |
+
+---
+
+## 4. Scenario A — the 2026 partial season
+
+**This is the year he actually has to get through.** Three months of revenue, a full set of
+startup costs, and then four months with no membership income at all.
+
+### 4.1 What a client is worth in 2026
+
+Per A1 and A2, a client who starts mid-August gets **five visits** before the season closes:
+
+```
+August    1 visit  × $139.50   =  $139.50    (half month, pro-rated by visit)
+September 2 visits             =  $279.00
+October   2 visits             =  $279.00
+                                  -------
+                                  $697.50 per client, for 5 visits
+Check:    5 visits × $139.50   =  $697.50  ✓
+```
+
+**Route days in 2026:** one round in August (the week-3 Monday and Friday) plus two rounds
+in each of September and October = **2 + 4 + 4 = 10 route days.**
+
+Check at six clients: 10 route days × 3 stops = 30 visits = 6 clients × 5 visits ✓
+
+### 4.2 The three book sizes, Aug 15 – Oct 31 2026
+
+```
+                                    4 CLIENTS      6 CLIENTS      8 CLIENTS
+MEMBERSHIP        n × $697.50         $2,790         $4,185         $5,580
+MEMBER PROJECTS   n × 0.5 × $275        $550           $825         $1,100      (A4, A5)
+NON-MEMBER        8 × $250            $2,000         $2,000         $2,000      (A9, A10)
+                                     -------        -------        -------
+GROSS                                 $5,340         $7,010         $8,680
+
+ROUTE HOURS       10 days ×             4.25           6.25           8.25
+                                        42.5           62.5           82.5
+PROJECT HOURS     jobs × 3.0          10 × 3         11 × 3         12 × 3
+                                        30.0           33.0           36.0
+ADMIN             A14 × 11 wks         2.5×11         3.0×11         3.5×11
+                                        27.5           33.0           38.5
+                                       -----          -----          -----
+TOTAL HOURS                            100.0          128.5          157.0
+```
+
+**Expenses** — three in-season months (Aug, Sep, Oct) of the monthly lines, and the full
+annual lines because they are billed once:
+
+```
+                                    4 CLIENTS      6 CLIENTS      8 CLIENTS
+Vehicle  route  10 × A19             200 mi         250 mi         300 mi
+         proj.  jobs × 20            200 mi         220 mi         240 mi
+         supply trips × 15           150 mi         180 mi         210 mi
+                                     ------         ------         ------
+                                     550 mi         650 mi         750 mi
+         × $0.74                       $407           $481           $555
+Supplies A21 × 3 months                $150           $195           $255
+Insurance $55 × 3                      $165           $165           $165
+Software  $29 × 3                       $87            $87            $87
+Processing (derived below)             $131           $182           $232
+Phone     $35 × 3                      $105           $105           $105
+Web/domain                              $60            $60            $60
+Accounting                             $350           $350           $350
+                                     -------        -------        -------
+OPERATING EXPENSES                    $1,455         $1,625         $1,809
+```
+
+Card processing, six-client column, derived in full (A24). Membership is three charges per
+client — August, September, October:
+
+```
+membership     $4,185 × 2.9%  = $121.365  +  (6 × 3 = 18 txns × $0.30 = $5.40)  = $126.765
+member proj.     $825 × 2.9%  =  $23.925  +  (3 txns × $0.30 = $0.90)           =  $24.825
+non-member  ($2,000 × 50%) × 2.9% = $29.00 + (8 × 50% = 4 txns × $0.30 = $1.20) =  $30.200
+                                                                                  --------
+                                                                                  $181.79 → $182
+```
+
+**Result:**
+
+```
+                                    4 CLIENTS      6 CLIENTS      8 CLIENTS
+Gross                                 $5,340         $7,010         $8,680
+Operating expenses                  − $1,455       − $1,625       − $1,809
+                                     -------        -------        -------
+OPERATING NET                         $3,885         $5,385         $6,871
+  ÷ hours                              $38.85         $41.91         $43.76  /hr
+
+One-time startup  LLC $99 + equipment $1,200      = $1,299   (A27, A30)
+                                     -------        -------        -------
+NET AFTER STARTUP                     $2,586         $4,086         $5,572
+  ÷ hours                              $25.86         $31.80         $35.49  /hr
+```
+
+> **The realistic 2026 number is none of these three.** He has no members today. Signing
+> four qualified properties inside two weeks — walkthrough, agreement, card on file, and
+> insurance in force before the first visit — would be an excellent result. **Two members is
+> the honest expectation**, which is roughly $1,395 of membership revenue and does not cover
+> the $1,299 of startup on its own. **2026 is a launch year, not an earnings year. Plan for
+> it to be paid for out of project work, and treat every membership dollar as a bonus.**
+
+### 4.3 The gap — November 2026 to February 2027
+
+This is the part of the seasonal model that does not appear in any revenue table, and it is
+the part that decides whether there is a 2027.
+
+```
+REVENUE     4 non-member jobs × $250                          =  $1,000   (A8)
+            membership                                        =      $0
+
+EXPENSES    insurance   $55 × 4                = $220
+            software    $29 × 4                = $116
+            phone       $35 × 4                = $140
+                                                 ----
+            fixed costs that do not stop       = $476
+            vehicle  (4 jobs × 20) + (4 trips × 15) = 140 mi × $0.74 = $104
+            processing ($1,000 × 50%) × 2.9% + (2 × $0.30)           =  $15
+                                                                       ----
+                                                                       $595
+
+NET over four months                          $1,000 − $595   =    $405
+HOURS  (4 jobs × 3) + (1.0 hr/wk × 17 wks)    = 12 + 17       =     29
+$405 ÷ 29                                                     =  $13.97 /hr
+```
+
+**$119 a month of fixed cost keeps running whether or not he works.** That is not the
+problem. The problem is the second line of the revenue block: **four months of zero contact
+with every member he just signed.** See §9.4 and `decisions.md` **D-18(b)**.
+
+### 4.4 Variant — a September 1 start
+
+If A1 is optimistic and the first visit is September rather than mid-August, each client
+bills **two full months = $558** instead of $697.50, and there are **8 route days** instead
+of 10.
+
+```
+Membership at 6 clients   6 × $558   =  $3,348     versus $4,185
+Difference                              −$837
+Route days                    8         versus 10
+Route hours                 8 × 6.25 = 50.0        versus 62.5
+```
+
+Everything else moves with it. The shape of the year does not change; the launch just gets
+$837 thinner and the winter gap gets three weeks longer.
+
+---
+
+## 5. Scenario B — a full 2027 season, six clients (the target case)
+
+Eight service months, sixteen visits per client, plus the Nov 2027 – Feb 2028 off-season so
+the figure is a comparable full trading year.
+
+### 5.1 Revenue
+
+```
+MEMBERSHIP                             (L1, L2, L6)
+  $279 × 8 months × 6 clients    =   $13,392 per year
+  ( = $1,674 per month, in season )
+
+MEMBER PROJECTS                        (A3, A5)
+  6 clients × 2.0 × $275         =    $3,300     ( = 12 projects )
+
+NON-MEMBER, IN SEASON                  (A7, A10)
+  30 jobs × $250                 =    $7,500
+
+NON-MEMBER, OFF SEASON                 (A8, A10)
+  4 jobs × $250                  =    $1,000
+                                      -------
+GROSS REVENUE                          $25,192 per year
+```
+
+**Check:** $13,392 + $3,300 + $7,500 + $1,000 = **$25,192** ✓
+
+```
+Membership share   $13,392 ÷ $25,192  =  53.2%
+Project share      $11,800 ÷ $25,192  =  46.8%
+```
+
+Under the superseded year-round model project work was **40.7%** of gross. Under the
+seasonal model it is **46.8%.** `CANON.md` §2 is right that the eight-month membership year
+makes project work carry more — and §7.1 below shows exactly how much more.
+
+### 5.2 Hours
+
+```
+ROUTE       32 route days × 6.25 hrs                    =  200.0
+PROJECTS    (12 + 30 + 4) = 46 jobs × 3.0 hrs           =  138.0
+ADMIN       in season  3.0 hrs/wk × 35 wks  = 105.0
+            off season 1.0 hr/wk  × 17 wks  =  17.0     =  122.0
+                                                           -----
+TOTAL                                                      460.0 hours per year
+```
+
+Averaging 460 hours over 52 weeks is misleading, because the work is not spread evenly.
+Split it:
+
+```
+IN SEASON   200 route + (12 + 30 = 42 jobs × 3 = 126) + 105 admin  =  431 hrs over 35 wks
+            431 ÷ 35 = 12.3 hrs/week  =  1.54 eight-hour days/week
+OFF SEASON  (4 jobs × 3 = 12) + 17 admin                           =   29 hrs over 17 wks
+            29 ÷ 17 = 1.7 hrs/week
+Check: 431 + 29 = 460 ✓
+```
+
+**1.54 working days a week in season** lands inside `CANON.md`'s "roughly 1.5–2 working days
+per week," slightly under. That is the right direction to be wrong in.
+
+### 5.3 Expenses
+
+```
+Vehicle    route     32 days × 25 mi      =    800 mi
+           projects  46 jobs × 20 mi      =    920 mi
+           supply/estimate 40 × 15 mi     =    600 mi
+                                              ------
+                                             2,320 mi × $0.74      = $1,717
+Supplies   $65/month × 8 in-season months                          =   $520
+Insurance  $55/month × 12                                          =   $660
+Software   $29/month × 12                                          =   $348
+Processing membership $13,392 × 2.9% + (48 × $0.30) = $402.77
+           mem. proj.  $3,300 × 2.9% + (12 × $0.30) =  $99.30
+           non-member ($8,500 × 50%) × 2.9%
+                              + (34 × 50% × $0.30)  = $128.35      =   $630
+Phone      $35/month × 12                                          =   $420
+Equipment  reserve                                                 =   $600
+Web/domain                                                         =    $60
+Accounting                                                         =   $350
+                                                                     ------
+TOTAL EXPENSES                                                       $5,305
+```
+
+Membership transactions: 6 clients × 8 monthly charges = **48**.
+Expenses are **$5,305 ÷ $25,192 = 21.1%** of gross. The largest single line is the truck.
+
+### 5.4 Result
+
+```
+Gross revenue         $25,192
+Expenses             − $5,305
                      ---------
-NET                   $18,836   per year
+NET                   $19,887   per year
 
-$18,836 ÷ 418 hours = $45.06 per hour, net
-$24,122 ÷ 418 hours = $57.71 per hour, gross
+$19,887 ÷ 460 hours = $43.23 per hour, net
+$25,192 ÷ 460 hours = $54.77 per hour, gross
 ```
 
-Year 1 also carries the one-time $99 LLC filing, bringing net to **$18,737**.
+**Revenue per route day:** `$13,392 ÷ 32 route days = $418.50` — clears the $400 target in
+`operating-model.md` §7.1. Equivalently `$1,674 ÷ 4 = $418.50`.
 
-> **Revenue per route day at launch is $1,156 ÷ 4 = $289.00** — below the $400 target in
-> `operating-model.md` §6.1. That is expected and it is not a problem to solve. Two stops a
-> day cannot clear $400 at these prices; the metric starts working as a referee once the
-> route days carry three stops. **Do not chase the $400 by taking an off-route fifth client.**
-
-> **Note.** The launch case is numerically unchanged by the 2026-08-05 pricing resolution.
-> Two $269 properties plus a $289 and a $329 happen to total exactly $1,156 — the same figure
-> the old model produced by assuming four clients at a flat $289 average. The composition is
-> different and the reasoning is different; the total is a coincidence. Under the *old* rule
-> those two properties would have been written at $229 and the launch book would have been
-> $1,076/month — **$12,912/year, $960 less.**
+> **$43.23 an hour is below the $45 floor the superseded model used**, and that is not a
+> rounding problem — it is the seasonal model telling the truth. The floor has been reset to
+> **$40/hour** in `operating-model.md` §7.5, with the reasoning recorded in `decisions.md`
+> **D-26**. The target case now clears its floor by $3.23 instead of $5.69. That is thinner,
+> and it should be.
 
 ---
 
-## 3. Scenario: 6 clients — the target case
+## 6. Scenario B at 4 and 8 clients
 
-The cap. This is the model the business is built to reach.
-
-### 3.1 Revenue
+### 6.1 Four clients — the launch case
 
 ```
-MEMBERSHIP                                 (A1, §1.1)
-  1×$229 + 2×$269 + 1×$289 + 2×$329  =    $1,714 per month
-  $1,714 × 12                        =   $20,568 per year
+MEMBERSHIP        $279 × 8 × 4                    =   $8,928
+MEMBER PROJECTS   4 × 2.0 × $275  ( = 8 projects) =   $2,200
+NON-MEMBER        (22 in season + 4 off) = 26 × $250 = $6,500
+                                                     -------
+GROSS                                                 $17,628
 
-MEMBER PROJECTS                            (A2, A3)
-  6 clients × 2.5 projects × $275    =    $4,125 per year
-  ( = 15 projects )
+ROUTE      32 days × 4.25 hrs                     =    136.0 hrs
+PROJECTS   (8 + 26) = 34 jobs × 3.0               =    102.0 hrs
+ADMIN      (2.5 × 35) + (1.0 × 17) = 87.5 + 17    =    104.5 hrs
+                                                       -----
+TOTAL                                                  342.5 hrs
 
-NON-MEMBER PROJECTS                        (A4, A5)
-  1 job/week × 40 weeks              =        40 jobs
-  40 × $250                          =   $10,000 per year
-                                          --------
-GROSS REVENUE                              $34,693 per year
+EXPENSES   vehicle  route 32 × 20      =   640 mi
+                    proj. 34 × 20      =   680 mi
+                    supply 30 × 15     =   450 mi
+                    1,770 mi × $0.74                =  $1,310
+           supplies $50 × 8                         =    $400
+           insurance $660 · software $348 · phone $420
+           processing  mem  $8,928 × 2.9% + (32 × $0.30) = $268.51
+                       proj $2,200 × 2.9% + ( 8 × $0.30) =  $66.20
+                       n-m ($6,500 × 50%) × 2.9%
+                                  + (13 × $0.30)         =  $98.15   =  $433
+           equipment $600 · web $60 · accounting $350
+                                                          -------
+                                                           $4,581
+
+NET        $17,628 − $4,581                          =   $13,047
+           $13,047 ÷ 342.5 hrs                       =    $38.09 /hr net
+           $17,628 ÷ 342.5 hrs                       =    $51.47 /hr gross
 ```
 
-**Check:** $20,568 + $4,125 + $10,000 = $34,693 ✓
+**Revenue per route day at four clients: `$1,116 ÷ 4 = $279.00`** — memorably, exactly the
+membership price, because two stops a day at two rounds a month works out that way. It is
+well under the $400 target and **that is expected and is not a problem to solve.** Two stops
+a day cannot clear $400 at a flat $279. **Do not chase the target by taking an off-route
+fifth client.**
 
-**Membership is 59.3% of gross revenue. Project work is 40.7%** — and the project work only
-exists because the membership put him on the property 144 times a year. That is
-`CANON.md` §2 expressed in dollars.
+**$38.09/hr is below the $40 floor.** The launch case does not clear it. That is worth
+saying out loud: at four clients this is a business that pays for itself and buys a route,
+not one that pays a trade wage. The floor starts working at six.
 
-### 3.2 Route hours
+### 6.2 Eight clients — what the cap costs
 
-```
-12 visits/month ÷ 4 route days = 3 stops per route day
-Hours per route day = (3 stops × 1.5 hrs) + 0.5 hrs travel = 5.0 hrs
-4 route days × 5.0 hrs        =  20.0 route hours per month   ← THE CAP
-20.0 × 12                     = 240   route hours per year
-```
-
-**20 route hours per month is the cap** stated in `operating-model.md` §2. Four scheduled
-route days at five hours each, plus roughly one float day a month for weather, which is
-where `CANON.md`'s "≈ 5 route days/month" comes from.
-
-### 3.3 Total hours
+**This is not a proposal.** `CANON.md` caps the book at 6.
 
 ```
-Route                              240
-Projects  (15 + 40 = 55 jobs × 3)  165
-Admin     (3.0 hrs/wk × 52)        156
-                                   ---
-                                   561 hours per year
-561 ÷ 52 = 10.8 hours per week     ≈ 1.35 working days per week
+MEMBERSHIP        $279 × 8 × 8                     =  $17,856
+MEMBER PROJECTS   8 × 2.0 × $275 ( = 16 projects)  =   $4,400
+NON-MEMBER        (18 in season + 4 off) = 22 × $250 =  $5,500
+                                                      -------
+GROSS                                                  $27,756
+
+ROUTE      32 days × 8.25 hrs                      =    264.0 hrs
+PROJECTS   (16 + 22) = 38 jobs × 3.0               =    114.0 hrs
+ADMIN      (3.5 × 35) + (1.0 × 17) = 122.5 + 17    =    139.5 hrs
+                                                        -----
+TOTAL                                                   517.5 hrs
+
+EXPENSES   vehicle  route 32 × 30      =   960 mi
+                    proj. 38 × 20      =   760 mi
+                    supply 45 × 15     =   675 mi
+                    2,395 mi × $0.74                 =  $1,772
+           supplies $85 × 8                          =    $680
+           insurance $660 · software $348 · phone $420
+           processing  mem  $17,856 × 2.9% + (64 × $0.30) = $537.02
+                       proj  $4,400 × 2.9% + (16 × $0.30) = $132.40
+                       n-m  ($5,500 × 50%) × 2.9%
+                                    + (11 × $0.30)        =  $83.05  =   $752
+           equipment $700 · web $60 · accounting $350
+                                                           -------
+                                                            $5,742
+
+NET        $27,756 − $5,742                          =   $22,014
+           $22,014 ÷ 517.5 hrs                       =    $42.54 /hr
 ```
 
-Against `CANON.md`'s "roughly 1.5–2 working days per week": this lands slightly *under* it.
-That is the right direction to be wrong in — the schedule has room for a bad month before it
-breaks the promise.
-
-### 3.4 Expenses
-
-```
-Vehicle    route 48 days × 25 mi        =  1,200 mi
-           projects 55 jobs × 20 mi     =  1,100 mi
-           supply/estimate 40 × 15 mi   =    600 mi
-                                           ------
-                                          2,900 mi × $0.74      = $2,146
-Supplies   $65/month × 12                                       =   $780
-Insurance  $55/month × 12                                       =   $660
-Software   $29/month × 12                                       =   $348
-Processing membership  $20,568 × 2.9% + (72 × $0.30) = $618.07
-           mem projects $4,125 × 2.9% + (15 × $0.30) = $124.13
-           non-member   $5,000 × 2.9% + (20 × $0.30) = $151.00  =   $893
-Phone      $35/month × 12                                       =   $420
-Equipment  reserve                                              =   $600
-Web/domain                                                      =    $60
-Accounting                                                      =   $350
-                                                                  ------
-TOTAL EXPENSES                                                    $6,257
-```
-
-Expenses are **18.0%** of gross revenue ($6,257 ÷ $34,693). For a solo service business with
-no payroll, no rent, and no inventory, that is the shape you'd expect — the largest single
-line is the truck.
-
-### 3.5 Result
-
-```
-Gross revenue         $34,693
-Expenses             − $6,257
-                     ---------
-NET                   $28,436   per year
-
-$28,436 ÷ 561 hours = $50.69 per hour, net
-$34,693 ÷ 561 hours = $61.84 per hour, gross
-```
-
-**Revenue per route day** (`operating-model.md` §6.1):
-`$1,714 membership ÷ 4 route days = $428.50 per route day` ✓ — clears the $400 target.
-
-> That $428.50 is worth watching, because it is only **7% above the target.** Under the
-> kitchen-heavy mix in §1.1 it would be $1,654 ÷ 4 = **$413.50**. Under a book carrying two
-> base-tier $229 properties instead of one — 2×$229 + 2×$269 + 1×$289 + 1×$329 = $1,614 — it
-> would be **$403.50**, clearing $400 by three and a half dollars. **A second base-tier client
-> is the last one this metric can absorb.** That is exactly what it was built to catch.
-
----
-
-## 4. What's left after tax, and what the truck really costs
-
-### 4.1 The vehicle line is a full cost, not a fuel bill
-
-A11 uses the IRS standard mileage rate, which is the full cost of operating the vehicle —
-fuel, maintenance, tires, depreciation, and a share of insurance. It is the honest number
-for judging whether the business is profitable.
-
-**Out-of-pocket fuel alone is much smaller:**
-
-```
-2,900 miles ÷ 18 mpg = 161 gallons × $3.30/gal ≈ $532 per year
-```
-
-So the cash he actually spends at the pump is about **$532**, and the other **~$1,614** is
-wear and depreciation he'll pay for later in repairs or a truck payment. Both numbers are
-true. Use $2,146 to judge the business; expect $532 to leave the checking account.
-
-### 4.2 Self-employment tax
-
-```
-Net                            $28,436
-× 92.35% (SE taxable base)   = $26,261
-× 15.3%                      =  $4,018
-
-$28,436 − $4,018 = $24,418  after self-employment tax
-```
-
-### 4.3 What that means per hour
-
-```
-$24,418 ÷ 561 hours = $43.53 per hour, after self-employment tax
-```
-
-Cincinnati handyman labor **bills** at $40–80/hour. That is a billing rate, not take-home, so
-the comparison flatters nobody: $43.53 is what he keeps per hour after the business pays its
-own bills and his SE tax, and a handyman billing $60 keeps considerably less than $60. The
-honest reading is that this business pays a solid trade wage — while the work is recurring,
-scheduled, and predictable, with a signed agreement and a card on file, instead of chased one
-job at a time.
-
-### 4.4 Income tax is not modeled
-
-Federal and Ohio income tax depend entirely on his household return — filing status, other
-income, deductions, and the qualified business income deduction. **Do not model it here and
-do not guess at it.** He should take these numbers to whoever does his taxes before the
-first invoice, not after the first year.
-
----
-
-## 5. Scenario: 8 clients — what the cap costs
-
-**This is not a proposal.** `CANON.md` caps the book at 6. This scenario exists so the price
-of that cap is visible instead of assumed.
-
-**Mix assumption for clients 7 and 8:** one outdoor-kitchen-only property ($269) and one
-pool-only property ($289) — the two middle configurations. That is deliberately neutral. He
-already took the best properties on his list for slots 1–6, so 7 and 8 should not be assumed
-to be better; and assuming both were base-tier would rig the comparison in favour of the cap.
-
-```
-Book at 6 (§1.1)   $1,714 + $269 + $289 = $2,272/month   (avg $284.00)
-$2,272 × 12                             = $27,264/year
-```
-
-### 5.1 Base variant — project flow holds up
-
-```
-MEMBERSHIP     $2,272 × 12                           =  $27,264
-MEMBER PROJ.   8 × 2.5 × $275   ( = 20 projects )    =   $5,500
-NON-MEMBER     0.6 jobs/wk × 40 wks = 24 × $250      =   $6,000
-                                                        -------
-GROSS                                                    $38,764
-
-ROUTE HOURS    16 visits ÷ 4 days = 4 stops/day
-               (4 × 1.5) + 0.5 = 6.5 hrs/route day
-               4 × 6.5 = 26.0/month × 12             =      312 hrs
-PROJECT HOURS  (20 + 24 = 44 jobs) × 3               =      132 hrs
-ADMIN          3.5 hrs/wk × 52                       =      182 hrs
-                                                            ----
-TOTAL HOURS                                                 626 hrs
-
-EXPENSES       vehicle  route 48 × 30 mi      = 1,440 mi
-                        projects 44 × 20 mi   =   880 mi
-                        supply/est. 45 × 15   =   675 mi
-                        2,995 mi × $0.74          = $2,216
-               supplies $85 × 12                  = $1,020
-               insurance                          =   $660
-               software                           =   $348
-               processing  mem  $819.46
-                           proj $165.50
-                           n-m   $90.60           = $1,076
-               phone                              =   $420
-               equipment reserve                  =   $700
-               web/domain                         =    $60
-               accounting                         =   $350
-                                                    ------
-                                                    $6,850
-
-NET            $38,764 − $6,850                      =  $31,914
-               $31,914 ÷ 626 hrs                     =   $50.98 /hr
-```
-
-> **Why non-member work drops to 0.6/week.** Two effects. (a) A 6.5-hour route day consumes
-> Monday and Friday of weeks 1 and 3 entirely, so a weather reschedule pushes into
-> Tuesday–Thursday and eats a project slot. (b) With 16 stops a month there is less slack to
-> run an estimate within 48 hours, and estimate turnaround is what actually closes project
-> work. **Assumption**, and the whole scenario turns on it — see §5.3.
-
-### 5.2 The comparison, honestly
+### 6.3 Six versus eight, honestly
 
 | | 6 clients | 8 clients | Difference |
 |---|---|---|---|
-| Membership | $20,568 | $27,264 | +$6,696 |
-| Gross | $34,693 | $38,764 | +$4,071 |
-| Expenses | $6,257 | $6,850 | +$593 |
-| **Net** | **$28,436** | **$31,914** | **+$3,478 (+12.2%)** |
-| Hours | 561 | 626 | +65 (+11.6%) |
-| Net per hour | $50.69 | $50.98 | +$0.29 |
-| **Marginal rate on the extra hours** | — | — | **$3,478 ÷ 65 = $53.51/hr** |
+| Membership | $13,392 | $17,856 | +$4,464 |
+| Gross | $25,192 | $27,756 | +$2,564 |
+| Expenses | $5,305 | $5,742 | +$437 |
+| **Net** | **$19,887** | **$22,014** | **+$2,127 (+10.7%)** |
+| Hours | 460 | 517.5 | +57.5 (+12.5%) |
+| Net per hour | **$43.23** | **$42.54** | **−$0.69** |
+| Worst-case route day | 7.00 hrs | **9.25 hrs** | +2.25 |
+| **Marginal rate on the extra hours** | — | — | **$2,127 ÷ 57.5 = $36.99/hr** |
 
-**Eight clients earn more money.** Not a little — about **$3,500 a year**, at a marginal rate
-slightly better than his blended rate. Anyone claiming the cap is free is not reading the
-arithmetic.
+**Under the seasonal flat-price model the cap argument got much stronger, and it no longer
+needs a sensitivity to make it.** Eight clients earn $2,127 more, but:
 
-*(This figure was **$3,712** before the 2026-08-05 pricing resolution. It moved to $3,478
-because the six-client book now carries two $269 properties instead of a flat $289 average,
-while clients 7 and 8 are assumed at the two middle prices. The conclusion did not move.)*
+- the marginal hours pay **$36.99** — *below* his blended $43.23 and **below the $40 floor**,
+  in the base case, before any assumption is stressed;
+- net per hour goes **down**, not up;
+- the worst-case route day is **9.25 hours**, which cannot be run without either rushing a
+  property or breaking the Monday/Friday-only rule.
 
-### 5.3 The sensitivity that decides it
-
-The 8-client case rests entirely on non-member project flow holding at 0.6 jobs/week. If a
-fuller route pushes estimates back and it falls to **0.4/week (16 jobs, $4,000)**:
-
-```
-GROSS        $27,264 + $5,500 + $4,000            =  $36,764
-HOURS        312 route + (36 jobs × 3 = 108) + 182 =      602
-EXPENSES     vehicle 1,440 + 720 + 675 = 2,835 mi × $0.74 = $2,098
-             supplies $1,020 · insurance $660 · software $348
-             processing $1,045 · phone $420 · equipment $700
-             web $60 · accounting $350                      $6,701
-NET          $36,764 − $6,701                      =  $30,063
-             $30,063 ÷ 602                         =   $49.94 /hr
-
-vs. 6 clients:  +$1,627 net for +41 hours
-                $1,627 ÷ 41 = $39.68 per marginal hour
-```
-
-**$39.68 is well below his own blended rate of $50.69** — and below the $45/hour floor in
-`operating-model.md` §6.5. Under this variant, the seventh and eighth clients are earning him
-less per hour than the six he already has, and he cannot un-sell them.
-
-### 5.4 So the cap is a risk decision, not a revenue one
-
-The case for stopping at six is not that six earns more. It's that:
-
-1. **The upside is $3,500 and the downside is a rate cut.** Whether client 7 and 8 are worth
-   having depends on an assumption he cannot verify until after he has already signed them.
-2. **Every hour of float is gone.** At six clients a rained-out Monday moves to week 2. At
-   eight it moves to Tuesday, which was the profitable day.
-3. **There is no vacation absorption.** Sixteen stops a month with no slack means a week off
-   requires telling clients he isn't coming.
-4. **Membership standard rule 1 stops being keepable.** *Never rush a property because
-   another client is waiting* is a promise the six-client schedule can keep and the
-   eight-client schedule cannot.
-5. **The waitlist stops being real.** Scarcity is part of the product (`CANON.md` §3). It
-   only works if he actually says no.
-
-**He is buying schedule integrity for about $3,500 a year.** That is the trade, stated
-plainly, and it is his to make. If he ever decides differently, this is where the number is.
+Under the superseded year-round model the eighth client paid a *better* marginal rate than
+the blended one and the cap cost about $3,500 a year. It now costs **$2,127 a year and buys
+a schedule that is physically possible.** `decisions.md` **R-2** is updated accordingly.
 
 ---
 
-## 6. Cash flow shape — why the flat price matters
+## 7. Downside and sensitivity
 
-Membership revenue is flat. Project revenue is not: assume **70% of project work lands
-April–October** (A6).
+### 7.1 Zero project work — the floor, and it is much lower than it was
+
+Six members, membership only, no project revenue at all:
 
 ```
-PROJECT REVENUE      $4,125 + $10,000 = $14,125
-
-Green Season (7 mo)   $14,125 × 70% = $9,887.50  ÷ 7 = $1,412.50/month
-Dormant Season (5 mo) $14,125 × 30% = $4,237.50  ÷ 5 =   $847.50/month
+GROSS      $279 × 8 × 6                                =  $13,392
+HOURS      200 route + admin ((2.0 × 35) + (0.5 × 17) = 78.5)  =   278.5
+EXPENSES   vehicle  route 800 mi + supply (16 × 15 = 240 mi)
+                    = 1,040 mi × $0.74      =   $770
+           supplies $520 · insurance $660 · software $348
+           processing $403 · phone $420 · equipment $600
+           web $60 · accounting $350                       $4,131
+NET        $13,392 − $4,131                            =   $9,261
+           $9,261 ÷ 278.5 hrs                          =    $33.25 /hr
 ```
+
+**The superseded year-round model produced $45.41/hour in this same case. The seasonal model
+produces $33.25.** That is the single most important number on this page, and it is not a
+criticism of the decision — it is the decision's consequence, stated plainly:
+
+> **The membership book can no longer stand on its own.** Under the old model, six members
+> with zero projects still paid a trade wage. Under this one they do not. `CANON.md` §2 says
+> *the membership is the lead engine, not the revenue*; that was a strategic claim before.
+> It is now an arithmetic fact. **If the project engine does not fire, this is a $9,261
+> business.**
+
+### 7.2 Losing one member
+
+Under a flat price every member is worth the same revenue:
+
+```
+Membership lost      $279 × 8                          = $2,232
+Card fees saved      $2,232 × 2.9% + (8 × $0.30)       =    $67
+                                                         ------
+NET COST                                                 $2,165
+$2,165 ÷ $19,887 net                                   =   10.9%
+```
+
+**One cancellation costs 10.9% of the year's net**, and route hours barely move — a route day
+drops a stop, and essentially the whole loss falls to the bottom line.
+
+**But the members are not interchangeable in time**, and that inverts the old retention
+logic. See §7.3.
+
+### 7.3 What the flat price actually buys, per hour, by property shape
+
+This is the arithmetic that turns property attributes from a pricing input into a selection
+criterion (`ideal-client.md` §2). Same $2,232 a season from every member:
+
+| Property shape | On-site min/visit | On-site hrs/season (× 16) | **Revenue per on-site hour** |
+|---|---|---|---|
+| Outdoor kitchen, no pool | 90 | 24.00 | **$93.00** |
+| Pool, no outdoor kitchen | 100 | 26.67 | **$83.70** |
+| Pool **and** outdoor kitchen | 120 | 32.00 | **$69.75** |
+
+```
+$2,232 ÷ 24.00 = $93.00
+$2,232 ÷ 26.67 = $83.70
+$2,232 ÷ 32.00 = $69.75
+Spread:  $93.00 ÷ $69.75 = 1.333  →  33.3%
+```
+
+For completeness, the shape that is deliberately excluded from the book: a property with
+neither attribute runs 70 minutes, or 18.67 on-site hours a season, and therefore
+**$2,232 ÷ 18.67 = $119.57 an on-site hour** — the best rate in the table and the worst
+client in the business, because it generates almost no project work and its owner will not
+value $279 a month. `ideal-client.md` §2.1 explains why the hourly column is not the answer.
+
+**The same fee buys a third more of his on-site time on a maximal property than on a plain
+one.** Under attribute pricing that gap was closed with money. Under a flat price it can
+only be closed with **selection and scheduling** — which is why `ideal-client.md` §3 caps
+the book at two pool-and-outdoor-kitchen properties and never puts two on the same route
+day.
+
+The counterweight, and it is real: the maximal property is also the one with the most
+surface area to inspect and the most project work to find. **The rule is not "avoid pools."
+It is "never let the book fill up with maximal properties."**
+
+### 7.4 If the member project rate is optimistic
+
+A3 assumes 2.0 member projects per client per season (12.5% attach). At **1.5** (9.4%):
+
+```
+MEMBER PROJECTS   6 × 1.5 × $275  ( = 9 projects)     =   $2,475
+GROSS             $13,392 + $2,475 + $7,500 + $1,000  =  $24,367
+HOURS             200 + ((9 + 34) = 43 × 3 = 129) + 122  =   451
+EXPENSES          vehicle 800 + (43 × 20 = 860) + 600
+                          = 2,260 mi × $0.74  = $1,672
+                  supplies $520 · insurance $660 · software $348
+                  processing $606 · phone $420 · equipment $600
+                  web $60 · accounting $350               $5,236
+NET               $24,367 − $5,236                    =  $19,131
+                  $19,131 ÷ 451                       =   $42.42 /hr
+```
+
+**−$756 of net and −$0.81 an hour.** Still above the $40 floor. A3 is an assumption worth
+arguing with, but it is not load-bearing. **A7 — the non-member job rate — is.**
+
+### 7.5 A client fifteen minutes off route
+
+Thirty extra minutes of drive per visit, sixteen visits a season:
+
+```
+30 min × 16 visits                       =  8 unpaid drive hours per season
+8 hrs × $43.23/hr net (§5.4)             =  $346 of margin destroyed
+$346 ÷ $2,232                            =  15.5% of that client's entire membership revenue
+```
+
+Under a flat price this is **15.5% for every client** — there is no longer a cheaper tier
+where it hurts more. It is simply a sixth of the client's revenue, gone before he unloads a
+tool. `ideal-client.md` §6.1 is the disqualifier this pays for.
+
+---
+
+## 8. Cash-flow shape — and why this is the risk the flat price no longer covers
+
+Membership revenue is flat **within the season and zero outside it.** Project revenue moves
+with the season too.
+
+```
+IN-SEASON MONTH (Mar–Oct, 8 months)
+  membership                                          $1,674.00
+  member projects      $3,300 ÷ 8                      $412.50
+  non-member in season $7,500 ÷ 8                      $937.50
+                                                     ----------
+                                                     $3,024.00
+
+OFF-SEASON MONTH (Nov–Feb, 4 months)
+  membership                                              $0.00
+  non-member off season $1,000 ÷ 4                      $250.00
+                                                     ----------
+                                                       $250.00
+```
+
+**Check:** ($3,024.00 × 8) + ($250.00 × 4) = $24,192 + $1,000 = **$25,192** ✓
 
 | | Membership | Projects | **Monthly total** |
 |---|---|---|---|
-| Green Season month (Apr–Oct) | $1,714 | $1,412.50 | **$3,126.50** |
-| Dormant Season month (Nov–Mar) | $1,714 | $847.50 | **$2,561.50** |
+| In-season month (Mar–Oct) | $1,674.00 | $1,350.00 | **$3,024.00** |
+| Off-season month (Nov–Feb) | $0.00 | $250.00 | **$250.00** |
 
-**Check:** ($3,126.50 × 7) + ($2,561.50 × 5) = $21,885.50 + $12,807.50 = **$34,693** ✓
+**The swing between a good month and a slow month is $2,774.**
 
-The swing between a good month and a slow month is **$565**. Without the flat-priced
-membership underneath it, that swing would be the difference between a working February and
-a February spent worrying — project work in January on the west side of Cincinnati is close
-to zero some years.
+Under the superseded year-round model that swing was **$565**, and the flat membership floor
+was the reason. **The seasonal model gives that floor up for four months a year — the swing
+is 4.9× larger.** ($2,774 ÷ $565 = 4.91.)
 
-**This is the arithmetic behind never offering a winter discount** (`pricing.md` §3). The
-$1,714 floor is the entire reason the Dormant Season is survivable. Cut it by a third and
-February goes from a slow month to a bad one, and a member who cancels in February takes the
-whole Green Season with them.
+Two consequences that belong in his hands, not in a footnote:
 
----
+1. **Fixed costs do not take the winter off.** Insurance, software, and phone are $119 a
+   month, $476 across the gap (§4.3). The off-season project line covers them and leaves
+   $405. It is not a loss. It is also not an income.
+2. **The winter has to be reserved for out of the season, not earned in it.**
 
-## 7. Downside cases
+   ```
+   Winter fixed cost                      $476
+   ÷ 8 in-season months                =   $59.50  →  set aside $60 a month
+   ```
 
-### 7.1 Zero project work — the floor
-
-What if the project engine simply doesn't fire in year one? Six members, membership only:
-
-```
-GROSS      $1,714 × 12                               =  $20,568
-HOURS      240 route + 104 admin (2 hrs/wk × 52)     =      344
-EXPENSES   vehicle  route 1,200 mi + supply 300 mi
-                    = 1,500 mi × $0.74      = $1,110
-           supplies $780 · insurance $660
-           software $348 · processing $618
-           phone $420 · equipment $600
-           web $60 · accounting $350                    $4,946
-NET        $20,568 − $4,946                          =  $15,622
-           $15,622 ÷ 344 hrs                         =   $45.41 /hr
-```
-
-**Even with no project revenue at all, the membership book alone pays $45.41/hour net** — and
-it clears the $45/hour floor in `operating-model.md` §6.5 by forty-one cents. That is the real
-floor under this business. The model does not require the project assumptions to be right; it
-requires them to be roughly right in order to be *good*.
-
-Two things worth saying about how thin that margin is:
-
-- It clears the floor **on the modeled mix, and only just.** On the kitchen-heavy mix in §1.1
-  ($1,654/month, $19,848/year) the same case nets **$19,848 − $4,925 = $14,923, or $43.38 an
-  hour** — under the floor. The zero-project case is a genuine floor, not a comfortable one.
-  *(Expenses there differ only in card processing: $19,848 × 2.9% + 72 × $0.30 = $597.)*
-- **The fourth configuration is what puts it over the line.** Under the old rule the two
-  outdoor-kitchen-only properties would be written at $229, making the book $1,634/month =
-  $19,608/year. The same zero-project case then nets $19,608 − $4,918 = **$14,690, or $42.70
-  an hour** — below the floor. So the 2026-08-05 decision is worth **$2.71 an hour in the
-  worst case**, which is the case where an hourly floor actually gets tested.
-
-### 7.2 Losing one client
-
-Under attribute pricing, members are no longer interchangeable — it matters *which* one
-cancels.
-
-| The member who leaves | Annual membership lost | Card fees saved | **Net cost** | % of the year's net |
-|---|---|---|---|---|
-| $229 (neither) | $2,748 | $83 | **$2,665** | 9.4% |
-| $269 (kitchen) | $3,228 | $97 | **$3,131** | 11.0% |
-| $289 (pool) | $3,468 | $104 | **$3,364** | 11.8% |
-| $329 (both) | $3,948 | $118 | **$3,830** | 13.5% |
-
-```
-Example, the $329 member:  $329 × 12 = $3,948 of membership revenue gone
-                           card fees saved: $3,948 × 2.9% + (12 × $0.30) = $118
-                           net cost:        $3,948 − $118 = $3,830
-                           $3,830 ÷ $28,436 net = 13.5%
-```
-
-Route hours barely move — 12 visits become 10, and a route day drops a stop — so essentially
-the entire loss falls to the bottom line. **One cancellation costs 9–14% of net, and the $329
-member is worth 1.44× the $229 member** ($3,948 ÷ $2,748). That ratio is the argument for
-selecting on attributes rather than filling slots: the best member in the book is worth
-almost half again as much as the weakest one, for very nearly the same route time.
-
-This is also why `operating-model.md` §6.3 measures retention on April 1, and why replacing a
-member from the waitlist should take weeks, not months.
-
-### 7.3 A client 15 minutes off route
-
-From `operating-model.md` §4: 30 extra minutes of drive per visit is 12 unpaid drive hours a
-year.
-
-```
-12 hrs × $50.69/hr net (§3.5)          =  $608 of margin destroyed
-
-$608 ÷ ($289 × 12 = $3,468)   =  17.5% of a pool client's gross revenue
-$608 ÷ ($229 × 12 = $2,748)   =  22.1% of a base client's gross revenue
-```
-
-**The cheaper the property, the worse an off-route client is.** A base-tier $229 house 15
-minutes off the cluster gives up better than a fifth of its own revenue before he unloads a
-tool. That is the arithmetic behind the disqualifier in `ideal-client.md` §5.1: no price fixes
-distance, and the lowest price fixes it least.
+   **Sixty dollars a month during the season pre-pays every winter bill the business has.**
+   $150 a month builds a real cushion — $1,200 across the season, enough to cover the winter
+   *and* a February equipment failure. That is a bookkeeping instruction, and it is the whole
+   of the cash-flow answer. The revenue gap is not the danger; forgetting to fund it is.
 
 ---
 
-## 8. Comparison to the source draft
+## 9. The honest comparison, and four numbers worth checking
 
-The draft's model: 4 clients at $229, plus two $249 projects each per year.
+### 9.1 The superseded year-round model versus his seasonal one
+
+The previous version of this page modelled six clients across twelve months on four
+attribute-based membership prices. **Those prices are dead** (`decisions.md` **D-19**, which
+reverses D-3). The comparison below exists for one reason: he should know what the decision
+cost, because he made it for reasons that were not financial and those reasons may well be
+right.
+
+| At six clients | Superseded year-round model **(dead)** | **His seasonal model** | Difference |
+|---|---|---|---|
+| Membership | $20,568 | **$13,392** | **−$7,176** |
+| Member projects | $4,125 | $3,300 | −$825 |
+| Non-member projects | $10,000 | $8,500 | −$1,500 |
+| **Gross** | **$34,693** | **$25,192** | **−$9,501** |
+| Expenses | $6,257 | $5,305 | −$952 |
+| **Net** | **$28,436** | **$19,887** | **−$8,549** |
+| Hours | 561 | 460 | −101 |
+| **Net per hour** | **$50.69** | **$43.23** | **−$7.46** |
+| Project share of gross | 40.7% | **46.8%** | +6.1 pts |
+| Zero-project floor | $45.41/hr | **$33.25/hr** | −$12.16 |
+
+**Checks:** $7,176 + $825 + $1,500 = **$9,501** ✓ · $9,501 − $952 = **$8,549** ✓
+
+**Per client, the same thing stated the way he will feel it:**
 
 ```
-DRAFT
-  4 × $229 × 12   =  $10,992   membership
-  8 × $249        =   $1,992   projects
-                     -------
-                     $12,984   per year
+Now         $279 × 8 months          =  $2,232 per client per year
+Superseded  a pool-configuration property, 12 months
+                                     =  $3,468 per client per year   (dead — D-19)
+Difference                              −$1,236  ( −35.6% )
 ```
 
-### This model, target case: **$34,693** gross · **$28,436** net
-
-### The bridge — where $21,709 of additional revenue comes from
+**Two ways to size the gap at six clients, and they differ for a reason:**
 
 ```
-  $12,984   Draft baseline: 4 clients @ $229, 8 projects @ $249
-+  $5,496   Two more clients at the base price (2 × $229 × 12)      D-2
-= $18,480
-+  $4,080   Attribute add-ons on the six-client book:               D-3
-            4 outdoor kitchens × $40 + 3 pools × $60 = $340/mo × 12
-= $22,560
-+    $996   Member projects scaled 4 → 6 clients at draft rate
-            (2 clients × 2 projects × $249)
-= $23,556
-+  $1,137   Member projects: 2 @ $249 → 2.5 @ $275                  D-4
-            ($4,125 − $2,988)
-= $24,693
-+ $10,000   Non-member Tue–Thu project work — never counted at all  D-6
-= $34,693   ✓
+If all six had been pool-configuration:  6 × ($3,468 − $2,232)  = $7,416
+On the mix the old model actually assumed (blended $285.67/mo):
+                              $20,568 − $13,392                 = $7,176
 ```
 
-**Check on the add-on line:** six clients at the bare base would be 6 × $229 × 12 = $16,488.
-The actual membership line is $20,568. $20,568 − $16,488 = **$4,080** ✓
+The second is the right one, because the superseded book was a mix, not six identical
+properties. **$7,176 is the membership gap at six clients.** ($7,176 ÷ $20,568 = **34.9%**.)
 
-**Check on the bridge:** $34,693 − $12,984 = **$21,709**, a 2.67× increase.
+**What he gets for it, and it is not nothing:**
 
-### Where the increase actually comes from
+- **Four months with no route obligation.** 101 fewer hours a year, all of them in the worst
+  weather, and — more to the point — no obligation to invent value for a January visit. That
+  was the weakest joint in the old model and he removed it instead of defending it.
+- **A product that explains itself in ten seconds.** One number, one season, two visits.
+  `CANON.md` §6 is his own standard and the flat price meets it; four attribute-derived
+  configurations did not.
+- **A cap that does the work price used to do.** The two-hour ceiling is what makes one price
+  survivable across a 90-minute property and a 120-minute one (§7.3). That is a genuinely
+  good mechanism and the old model did not have it.
 
-| Source | Amount | Share |
-|---|---|---|
-| **Non-member project work the draft never counted** | $10,000 | **46.1%** |
-| Two more clients | $5,496 | 25.3% |
-| Attribute add-ons (pool + outdoor kitchen) | $4,080 | 18.8% |
-| Member project rate uplift | $1,137 | 5.2% |
-| Member project count scaling | $996 | 4.6% |
-| | **$21,709** | **100%** |
+**What it does not fix, and what `decisions.md` D-18 is about:** the gap is not really a
+revenue problem. It is a **retention** problem, and a **pool-scope positioning** problem.
 
-**The single largest line — $10,000, 46% of the entire increase — is the Tuesday-through-
-Thursday non-member project work.** The draft described this strategy correctly in §10
-("You can still accept non-members. I'd use Tuesday–Thursday primarily for these jobs") and
-then left it out of every financial table it produced. Its financial baseline counted only
-$12,984, and by doing so it made the business look like a $13k side gig instead of a $35k
-one.
+### 9.2 The vehicle line is a full cost, not a fuel bill
 
-The second thing worth noticing: **only 25% of the increase comes from having more
-clients.** Three quarters of it comes from pricing the same properties correctly and
-counting revenue the draft was already generating but not measuring. That is why the cap
-can stay at six.
+A18 uses the IRS standard mileage rate, which covers fuel, maintenance, tyres, depreciation,
+and a share of insurance. It is the honest number for judging whether the business is
+profitable. Out-of-pocket fuel alone is far smaller:
 
-**Of the $4,080 attribute line, $960 is the fourth configuration** — the two
-outdoor-kitchen-only properties that the pre-2026-08-05 rule would have written at $229. It
-is a small share of the total and it is the easiest $960 in the whole document to collect: it
-requires no extra client, no extra visit, and no extra minute of work.
+```
+2,320 miles ÷ 18 mpg = 128.9 gallons × $3.30/gal  ≈  $425 per year
+$1,717 − $425 = $1,292 of wear and depreciation he pays for later
+```
 
-### What the draft got right, and kept
+Use **$1,717** to judge the business. Expect **$425** to leave the checking account.
 
-The draft's actual strategic instincts were sound and survive intact:
+### 9.3 Self-employment tax
 
-- Cap the book on purpose and treat the open capacity as part of the product
-- Consolidate visits into weeks 1 and 3 rather than spreading them across every week
-- Protect Tuesday–Thursday for project work
-- Select clients for route compactness
-- The exclusions list — the single best section in the document
-- Track membership, project, and material revenue separately
-- Measure the effective hourly rate, because "that last number matters"
+```
+6 CLIENTS   Net $19,887 × 92.35% = $18,366 × 15.3% = $2,810
+            $19,887 − $2,810 = $17,077  after SE tax
+            $17,077 ÷ 460 hrs = $37.12 per hour
 
-The draft's error was one of accounting, not of strategy: it invented the right business and
-then reported it as though the recurring revenue *was* the business.
+4 CLIENTS   $13,047 × 0.9235 × 0.153 = $1,843  →  $11,204
+8 CLIENTS   $22,014 × 0.9235 × 0.153 = $3,110  →  $18,904
+```
+
+Cincinnati handyman labour **bills** at $40–80/hour. That is a billing rate, not take-home,
+so the comparison flatters nobody: $37.12 is what he keeps per hour after the business pays
+its own bills and his SE tax, and a handyman billing $60 keeps considerably less than $60.
+The honest reading is that this pays a modest trade wage on about one and a half days a week
+for eight months, with a signed agreement and a card on file instead of work chased one job
+at a time.
+
+**Federal and Ohio income tax are not modelled and must not be guessed at here.** They depend
+entirely on his household return. He should take these numbers to whoever does his taxes
+before the first invoice, not after the first season.
+
+### 9.4 $279 ÷ 4 hours = $69.75, and why that framing is dangerous
+
+```
+$279 per month ÷ (2 visits × 2 hours) = $69.75 per hour of entitlement
+```
+
+That number is arithmetically correct and it is the wrong way to see the product. It is also
+the first calculation a price-sensitive prospect will do, and it lands squarely inside the
+$40–80/hour Cincinnati handyman band — which makes a *maintenance membership from someone
+who knows the property* look like *four hours of general labour.*
+
+**This is fixable in copy alone and costs nothing.** `CANON.md` §3 already requires it: lead
+with what stays maintained, state the cap only where a boundary belongs, and never let a
+customer-facing surface put the price and the hours in the same sentence. `decisions.md`
+**D-18(d)** carries the full note.
 
 ---
 
-## 9. Summary
+## 10. Summary
+
+### 10.1 Scenario A — Aug 15 to Oct 31, 2026
+
+| | 4 clients | **6 clients** | 8 clients |
+|---|---|---|---|
+| Membership (3 billed months) | $2,790 | **$4,185** | $5,580 |
+| Member projects | $550 | **$825** | $1,100 |
+| Non-member projects | $2,000 | **$2,000** | $2,000 |
+| **Gross** | **$5,340** | **$7,010** | **$8,680** |
+| Operating expenses | $1,455 | $1,625 | $1,809 |
+| **Operating net** | **$3,885** | **$5,385** | **$6,871** |
+| One-time startup (LLC + kit) | $1,299 | $1,299 | $1,299 |
+| **Net after startup** | **$2,586** | **$4,086** | **$5,572** |
+| Route days | 10 | 10 | 10 |
+| Total hours | 100.0 | 128.5 | 157.0 |
+| Net/hr (operating) | $38.85 | **$41.91** | $43.76 |
+| Net/hr (after startup) | $25.86 | **$31.80** | $35.49 |
+
+**Plus the gap, Nov 2026 – Feb 2027, identical at every book size:** $1,000 gross, $595
+expenses, **$405 net**, 29 hours.
+
+**Combined Aug 2026 – Feb 2027 at six clients:** $8,010 gross · $2,220 expenses · $5,790
+operating net · **$4,491 after startup**, across 157.5 hours = **$28.51/hr**.
+
+### 10.2 Scenario B — a full season, Mar 2027 – Feb 2028
 
 | | 4 clients (launch) | **6 clients (target)** | 8 clients (over cap) |
 |---|---|---|---|
-| Assumed mix | 2×$269, 1×$289, 1×$329 | **1×$229, 2×$269, 1×$289, 2×$329** | +1×$269, +1×$289 |
-| Book per month | $1,156 | **$1,714** | $2,272 |
-| Blended average | $289.00 | **$285.67** | $284.00 |
-| Membership revenue | $13,872 | **$20,568** | $27,264 |
-| Member projects | $2,750 | **$4,125** | $5,500 |
-| Non-member projects | $7,500 | **$10,000** | $6,000 |
-| **Gross revenue** | **$24,122** | **$34,693** | **$38,764** |
-| Expenses | $5,286 | $6,257 | $6,850 |
-| **Net** | **$18,836** | **$28,436** | **$31,914** |
-| Route hrs/month | 14.0 | **20.0** | 26.0 |
-| Total hrs/year | 418 | **561** | 626 |
-| Hours/week | 8.0 | **10.8** | 12.0 |
-| Days/week (8-hr) | 1.0 | **1.35** | 1.5 |
-| **Net per hour** | **$45.06** | **$50.69** | **$50.98** |
-| Revenue per route day | $289.00 | **$428.50** | $568.00 |
-| After SE tax | $16,175 | **$24,418** | $27,405 |
+| Membership | $8,928 | **$13,392** | $17,856 |
+| Member projects | $2,200 | **$3,300** | $4,400 |
+| Non-member projects | $6,500 | **$8,500** | $5,500 |
+| **Gross revenue** | **$17,628** | **$25,192** | **$27,756** |
+| Expenses | $4,581 | **$5,305** | $5,742 |
+| **Net** | **$13,047** | **$19,887** | **$22,014** |
+| Route hrs/month, in season | 17.0 | **25.0** | 33.0 |
+| Route hrs/season | 136 | **200** | 264 |
+| Total hrs/year | 342.5 | **460** | 517.5 |
+| In-season hrs/week | 9.0 | **12.3** | 14.0 |
+| In-season days/week (8-hr) | 1.12 | **1.54** | 1.74 |
+| **Net per hour** | **$38.09** | **$43.23** | **$42.54** |
+| Revenue per route day | $279.00 | **$418.50** | $558.00 |
+| Worst-case route day | 4.75 hrs | **7.00 hrs** | 9.25 hrs |
+| After SE tax | $11,204 | **$17,077** | $18,904 |
 
-*(After-SE-tax line: net × 0.9235 × 15.3%, subtracted from net.
-4-client: $18,836 × 0.9235 × 0.153 = $2,661 → $16,175.
-6-client: $28,436 × 0.9235 × 0.153 = $4,018 → $24,418.
-8-client: $31,914 × 0.9235 × 0.153 = $4,509 → $27,405.
-Revenue per route day: book per month ÷ 4 scheduled route days.)*
+*(In-season hours = route + in-season project hours + in-season admin, excluding the 29
+off-season hours every column carries. 4-client: 136 + ((8 + 22) × 3 = 90) + 87.5 = 313.5,
+÷ 35 = 9.0. 6-client: 200 + ((12 + 30) × 3 = 126) + 105 = 431, ÷ 35 = 12.3. 8-client:
+264 + ((16 + 18) × 3 = 102) + 122.5 = 488.5, ÷ 35 = 14.0. Each reconciles: 313.5 + 29 =
+342.5 ✓ · 431 + 29 = 460 ✓ · 488.5 + 29 = 517.5 ✓. After-SE line: net × 0.9235 × 15.3%,
+subtracted from net. Revenue per route day: monthly membership ÷ 4 route days.)*
 
-**The target case: about $34,700 gross and $28,400 net, on roughly 1.35 days a week, from six
-clients.** That is what `README.md` means by "roughly $35k/year at 1.5–2 days per week."
+**The target case: about $25,200 gross and $19,900 net, on roughly a day and a half a week
+for eight months, from six clients — with the entire winter off.**
+
+Anything in this repository still claiming "roughly $35k/year" is describing the superseded
+model and is wrong. `README.md` and any downstream document quoting that figure need
+updating by their owners.
 
 ---
 
-## 10. How to re-run this page
+## 11. How to re-run this page
 
-Every figure above is a function of the assumptions in §1. If one changes, three things have
-to move together or the page stops being checkable:
+Every figure is a function of the assumptions in §3. Run `verify-unit-economics.py` after any
+change — it checks every number above and exits non-zero on the first disagreement.
 
-1. **The mix in §1.1** drives the monthly book, which drives §2.1/§3.1/§5.1 membership,
-   §3.4 card processing, §6 cash flow, §7.1/§7.2 downside, and the §8 add-on line.
-2. **Card processing is recomputed, not scaled** — it has a per-transaction component
-   (2.9% of revenue *plus* $0.30 × the number of charges).
-3. **The §8 bridge must still close on the §3.1 gross**, and the five shares must still sum
-   to 100%.
+Four things have to move together or the page stops being checkable:
 
-The fastest check that the page is internally consistent: **the bridge in §8 must land
-exactly on $34,693**, and **§6's seasonal split must reconcile to the same $34,693.** If both
-close, nothing upstream drifted.
+1. **A11 (1.75 hrs) drives everything in §2.4**, which drives route hours in every scenario,
+   which drives total hours, which drives every per-hour figure.
+2. **Card processing is recomputed, never scaled** — it has a per-transaction component
+   (2.9% of revenue *plus* $0.30 × the number of charges). Membership transactions are
+   **clients × 8** in a full season and **clients × 3** in the 2026 partial season.
+3. **Anything multiplied by 12 in a membership context is wrong.** The season is 8 months.
+   Insurance, software, phone, web, and accounting *are* twelve-month costs; supplies and
+   membership are not.
+4. **§8 must reconcile to §5.1.** ($3,024 × 8) + ($250 × 4) must equal $25,192.
+
+The fastest check that nothing drifted: **§8 reconciles to $25,192**, and **§9.1's three
+revenue deltas sum to $9,501.** If both close, nothing upstream moved.
 
 ---
 
 ## Related files
 
-- `pricing.md` — every price used above, including the four configurations
-- `operating-model.md` — the cap, the schedule, and the metrics these numbers feed
-- `ideal-client.md` — the attributes that determine which of the four prices a property lands on
-- `decisions.md` — D-2 through D-6 explain each line of the §8 bridge; D-3 explains the
-  fourth configuration and what the resolution is worth
+- `pricing.md` — the one membership price, the project price list, and the quoting formula
+- `operating-model.md` — the calendar, the route structure derived in §2, and the metrics
+- `service-catalog.md` — the scope the two hours are spent on
+- `ideal-client.md` — the selection logic §7.3 pays for
+- `decisions.md` — **D-18** is the memo explaining this page to the owner; **D-19** through
+  **D-26** record each reversal
+- `verify-unit-economics.py` — mechanical check of every figure above

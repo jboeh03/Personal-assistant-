@@ -2,9 +2,16 @@
 """
 Verification of every arithmetic claim in
 westside-property-care/00-model/unit-economics.md
-after the 2026-08-05 four-configuration pricing resolution.
 
-Run:  python3 verify_unit_economics.py
+REWRITTEN 2026-08-05 for the owner's signed model:
+  $279/month flat  ·  March 1 - October 31 (8 months)  ·  2 visits/month
+  2 hours on-site per visit, no rollover  ·  heavier pool scope
+
+The previous version of this script verified a twelve-month, four-price model
+that no longer exists. Roughly 150 of its 159 assertions were dead. It was
+rewritten, not patched.
+
+Run:  python3 verify-unit-economics.py
 Each check prints PASS/FAIL. Exit code 1 if any check fails.
 """
 
@@ -25,48 +32,111 @@ def rd(x):          # round to whole dollars
     return int(round(x + 1e-9))
 
 
-# ---------------------------------------------------------------- prices
-BASE, POOL, KITCHEN = 229, 60, 40
-P_NEITHER = BASE                      # 229
-P_KIT     = BASE + KITCHEN            # 269
-P_POOL    = BASE + POOL               # 289
-P_BOTH    = BASE + POOL + KITCHEN     # 329
+# ===================================================================
+# LOCKED INPUTS  (CANON.md section 3 / signed agreement)
+# ===================================================================
+PRICE = 279                 # L1  membership, per month, flat
+SEASON_MONTHS = 8           # L2  March 1 - October 31
+VISITS_PER_MONTH = 2        # L3
+VISITS_PER_SEASON = 16      # L3
+CAP_HOURS = 2.0             # L4  on-site ceiling per visit
+ROUTE_DAYS_PER_MONTH = 4    # L5  Mon + Fri, weeks 1 and 3
 
-chk("C01 $269 = 229+40", P_KIT, 269)
-chk("C02 $289 = 229+60", P_POOL, 289)
-chk("C03 $329 = 229+60+40", P_BOTH, 329)
+chk("L01 visits per season", VISITS_PER_MONTH * SEASON_MONTHS, VISITS_PER_SEASON)
+chk("L02 route days per season", ROUTE_DAYS_PER_MONTH * SEASON_MONTHS, 32)
+chk("L03 season revenue per client", PRICE * SEASON_MONTHS, 2232)
+chk("L04 price per visit (pro-ration, A2)", PRICE / VISITS_PER_MONTH, 139.50)
+chk("L05 $279 over 4 hrs of entitlement",
+    r2(PRICE / (VISITS_PER_MONTH * CAP_HOURS)), 69.75)
 
-# ------------------------------------------------------------- A1 mix
-# 6-client book: 1 neither, 2 kitchen-only, 1 pool-only, 2 both
-MIX6 = {P_NEITHER: 1, P_KIT: 2, P_POOL: 1, P_BOTH: 2}
-m6 = sum(p * n for p, n in MIX6.items())
-chk("C04 6-client monthly book", m6, 1714)
-chk("C05 6-client blended avg", r2(m6 / 6), 285.67)
-chk("C06 mix via attributes", 6 * BASE + 4 * KITCHEN + 3 * POOL, 1714)
-chk("C07 6-client annual membership", m6 * 12, 20568)
+# ===================================================================
+# STEP 1 - the operating assumption (unit-economics.md section 2)
+# ===================================================================
+# 2.1 checklist blocks -> property shapes
+BLOCKS_ALWAYS = 10 + 20 + 15 + 10 + 10 + 5      # blocks 1,4,5,6,7,8
+BLOCK_POOL = 30                                  # block 2
+BLOCK_KITCHEN = 20                               # block 3
+chk("S01 checklist blocks total 120 min",
+    BLOCKS_ALWAYS + BLOCK_POOL + BLOCK_KITCHEN, 120)
 
-# launch four = subset: 2 kitchen-only, 1 pool-only, 1 both
-MIX4 = {P_KIT: 2, P_POOL: 1, P_BOTH: 1}
-m4 = sum(p * n for p, n in MIX4.items())
-chk("C08 4-client monthly book", m4, 1156)
-chk("C09 4-client blended avg", m4 / 4, 289)
-chk("C10 4-client annual membership", m4 * 12, 13872)
-chk("C11 clients 5+6 close the book", m4 + P_NEITHER + P_BOTH, m6)
+MIN_BOTH = BLOCKS_ALWAYS + BLOCK_POOL + BLOCK_KITCHEN     # 120
+MIN_POOL = BLOCKS_ALWAYS + BLOCK_POOL                     # 100
+MIN_KIT = BLOCKS_ALWAYS + BLOCK_KITCHEN                   # 90
+MIN_NEITHER = BLOCKS_ALWAYS                               # 70
+chk("S02 pool + kitchen minutes", MIN_BOTH, 120)
+chk("S03 pool only minutes", MIN_POOL, 100)
+chk("S04 kitchen only minutes", MIN_KIT, 90)
+chk("S05 neither minutes (not a target client)", MIN_NEITHER, 70)
+chk("S06 pool+kitchen equals the 2-hour ceiling", MIN_BOTH / 60, CAP_HOURS)
 
-# 8-client: book + one kitchen-only + one pool-only
-m8 = m6 + P_KIT + P_POOL
-chk("C12 8-client monthly book", m8, 2272)
-chk("C13 8-client annual membership", m8 * 12, 27264)
-chk("C14 8-client blended avg", m8 / 8, 284)
+# A6 book composition: 2 of each of the first three shapes
+ROUND_MIN = 2 * MIN_BOTH + 2 * MIN_POOL + 2 * MIN_KIT
+chk("S07 one full round of six, minutes", ROUND_MIN, 620)
+chk("S08 derived average minutes", r2(ROUND_MIN / 6), 103.33)
+ONSITE = 1.75                                    # A11 planning allowance
+chk("S09 planning allowance rounds 1.72 up to 1.75", r2(ROUND_MIN / 6 / 60), 1.72)
 
-# what the resolution is worth on this mix (2 kitchen-only x $40 x 12)
-chk("C15 value of the 4th configuration", 2 * KITCHEN * 12, 960)
+# 2.2 drive allowance (A12)
+DEADHEAD = 0.50                                  # home -> route -> home
+BETWEEN = 0.25                                   # between consecutive stops
 
-# -------------------------------------------------------- assumptions
-PROJ_PER_CLIENT, PROJ_VALUE = 2.5, 275
-NM_VALUE = 250
-MILE = 0.74
-CARD, PER_TXN, CARD_SHARE = 0.029, 0.30, 0.50
+
+def route_day_hours(stops):
+    return stops * ONSITE + DEADHEAD + (stops - 1) * BETWEEN
+
+
+def ceiling_day_hours(stops):
+    return stops * CAP_HOURS + DEADHEAD + (stops - 1) * BETWEEN
+
+
+chk("S10 2-stop route day", route_day_hours(2), 4.25)
+chk("S11 3-stop route day", route_day_hours(3), 6.25)
+chk("S12 4-stop route day", route_day_hours(4), 8.25)
+chk("S13 3-stop ceiling day", ceiling_day_hours(3), 7.00)
+chk("S14 4-stop ceiling day", ceiling_day_hours(4), 9.25)
+chk("S15 2-stop ceiling day", ceiling_day_hours(2), 4.75)
+
+# designed 3-stop day on the A6 composition (one of each shape)
+designed = (MIN_BOTH + MIN_POOL + MIN_KIT) / 60 + DEADHEAD + 2 * BETWEEN
+chk("S16 designed route day on-site minutes", MIN_BOTH + MIN_POOL + MIN_KIT, 310)
+chk("S17 designed route day hours", r2(designed), 6.17)
+
+# route hours by book size
+chk("S18 4c route hrs/month", route_day_hours(2) * ROUTE_DAYS_PER_MONTH, 17.0)
+chk("S19 6c route hrs/month", route_day_hours(3) * ROUTE_DAYS_PER_MONTH, 25.0)
+chk("S20 8c route hrs/month", route_day_hours(4) * ROUTE_DAYS_PER_MONTH, 33.0)
+RT4 = route_day_hours(2) * 32
+RT6 = route_day_hours(3) * 32
+RT8 = route_day_hours(4) * 32
+chk("S21 4c route hrs/season", RT4, 136)
+chk("S22 6c route hrs/season", RT6, 200)
+chk("S23 8c route hrs/season", RT8, 264)
+
+# Option B (rejected): 2 stops x 6 route days
+chk("S24 Option B route days/month", 12 / 2, 6)
+chk("S25 Option B extra dead-head hrs/month", (6 - 4) * DEADHEAD, 1.0)
+chk("S26 Option B extra dead-head hrs/season", (6 - 4) * DEADHEAD * 8, 8.0)
+chk("S27 Option B revenue per route day",
+    r2(PRICE * 6 / 6), 279.00)                   # 6 clients over 6 route days
+
+# ===================================================================
+# ASSUMPTIONS (section 3)
+# ===================================================================
+WK_IN, WK_OFF = 35, 17
+chk("A16a season weeks reconcile to a year", WK_IN + WK_OFF, 52)
+chk("A16b season days", 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31, 245)
+chk("A16c season days = 35 weeks", 245 / 7, 35)
+
+MEM_PROJ_SEASON = 2.0        # A3
+MEM_PROJ_2026 = 0.5          # A4
+MEM_PROJ_VALUE = 275         # A5
+NM_VALUE = 250               # A10
+PROJ_HRS = 3.0               # A13
+MILE = 0.74                  # A18
+CARD, PER_TXN, CARD_SHARE = 0.029, 0.30, 0.50    # A24
+NM_OFF = 4                   # A8
+NM_2026 = 8                  # A9
+STARTUP = 99 + 1200          # A27 + A30
 
 
 def processing(mem_rev, mem_txn, proj_rev, proj_n, nm_rev, nm_n):
@@ -76,258 +146,426 @@ def processing(mem_rev, mem_txn, proj_rev, proj_n, nm_rev, nm_n):
     return a, b, c, a + b + c
 
 
-# ============================================================ 4 CLIENTS
-mem4 = m4 * 12
-mp4_n = int(4 * PROJ_PER_CLIENT)
-mp4 = mp4_n * PROJ_VALUE
-nm4_n = int(0.75 * 40)
-nm4 = nm4_n * NM_VALUE
-gross4 = mem4 + mp4 + nm4
-chk("C16 4c member projects count", mp4_n, 10)
-chk("C17 4c member projects $", mp4, 2750)
-chk("C18 4c non-member jobs", nm4_n, 30)
-chk("C19 4c non-member $", nm4, 7500)
-chk("C20 4c gross", gross4, 24122)
+# ===================================================================
+# SCENARIO A - 2026 PARTIAL SEASON (section 4)
+# ===================================================================
+PER_CLIENT_2026 = 139.50 + 279 + 279
+chk("P01 2026 revenue per client", PER_CLIENT_2026, 697.50)
+chk("P02 2026 = 5 visits at the per-visit rate", 5 * 139.50, 697.50)
+ROUTE_DAYS_2026 = 2 + 4 + 4
+chk("P03 2026 route days", ROUTE_DAYS_2026, 10)
+chk("P04 2026 visits reconcile at 6 clients", ROUTE_DAYS_2026 * 3, 6 * 5)
 
-hrs_route4 = ((2 * 1.5) + 0.5) * 4 * 12
-chk("C21 4c route hrs/month", ((2 * 1.5) + 0.5) * 4, 14.0)
-chk("C22 4c route hrs/year", hrs_route4, 168)
-hrs4 = hrs_route4 + (mp4_n + nm4_n) * 3 + 2.5 * 52
-chk("C23 4c project hours", (mp4_n + nm4_n) * 3, 120)
-chk("C24 4c admin hours", 2.5 * 52, 130)
-chk("C25 4c total hours", hrs4, 418)
+RESULTS_2026 = {}
+for n, stops, admin_wk, supplies_mo, route_mi, supply_trips in [
+        (4, 2, 2.5, 50, 20, 10),
+        (6, 3, 3.0, 65, 25, 12),
+        (8, 4, 3.5, 85, 30, 14)]:
+    mem = n * PER_CLIENT_2026
+    mp_n = int(n * MEM_PROJ_2026)
+    mp = mp_n * MEM_PROJ_VALUE
+    nm = NM_2026 * NM_VALUE
+    gross = mem + mp + nm
 
-mi4 = 48 * 20 + (mp4_n + nm4_n) * 20 + 30 * 15
-chk("C26 4c miles", mi4, 2210)
-chk("C27 4c vehicle $", rd(mi4 * MILE), 1635)
-a, b, c, tot4 = processing(mem4, 48, mp4, mp4_n, nm4, nm4_n)
-chk("C28 4c proc membership", r2(a), 416.69)
-chk("C29 4c proc member proj", r2(b), 82.75)
-chk("C30 4c proc non-member", r2(c), 113.25)
-chk("C31 4c proc total", rd(tot4), 613)
-exp4 = rd(mi4 * MILE) + 600 + 660 + 348 + rd(tot4) + 420 + 600 + 60 + 350
-chk("C32 4c expenses", exp4, 5286)
-net4 = gross4 - exp4
-chk("C33 4c net", net4, 18836)
-chk("C34 4c net/hr", r2(net4 / hrs4), 45.06)
-chk("C35 4c gross/hr", r2(gross4 / hrs4), 57.71)
-chk("C36 4c year-1 net after LLC", net4 - 99, 18737)
-chk("C37 4c revenue per route day", m4 / 4, 289)
+    hrs_route = ROUTE_DAYS_2026 * route_day_hours(stops)
+    jobs = mp_n + NM_2026
+    hrs = hrs_route + jobs * PROJ_HRS + admin_wk * 11
 
-# ============================================================ 6 CLIENTS
-mem6 = m6 * 12
-mp6_n = int(6 * PROJ_PER_CLIENT)
-mp6 = mp6_n * PROJ_VALUE
-nm6_n = 40
-nm6 = nm6_n * NM_VALUE
-gross6 = mem6 + mp6 + nm6
-chk("C38 6c member projects count", mp6_n, 15)
-chk("C39 6c member projects $", mp6, 4125)
-chk("C40 6c non-member $", nm6, 10000)
-chk("C41 6c gross", gross6, 34693)
+    mi = ROUTE_DAYS_2026 * route_mi + jobs * 20 + supply_trips * 15
+    veh = rd(mi * MILE)
+    _, _, _, ptot = processing(mem, n * 3, mp, mp_n, nm, NM_2026)
+    exp = veh + supplies_mo * 3 + 55 * 3 + 29 * 3 + rd(ptot) + 35 * 3 + 60 + 350
+    net = gross - exp
+    RESULTS_2026[n] = dict(mem=mem, mp=mp, nm=nm, gross=gross, hrs=hrs,
+                           mi=mi, veh=veh, proc=rd(ptot), exp=exp, net=net,
+                           after=net - STARTUP)
 
-hrs_route6 = ((3 * 1.5) + 0.5) * 4 * 12
-chk("C42 6c route hrs/month", ((3 * 1.5) + 0.5) * 4, 20.0)
-chk("C43 6c route hrs/year", hrs_route6, 240)
-hrs6 = hrs_route6 + (mp6_n + nm6_n) * 3 + 3.0 * 52
-chk("C44 6c project hours", (mp6_n + nm6_n) * 3, 165)
-chk("C45 6c admin hours", 3.0 * 52, 156)
-chk("C46 6c total hours", hrs6, 561)
+chk("P05 2026-4c membership", RESULTS_2026[4]["mem"], 2790)
+chk("P06 2026-4c member projects", RESULTS_2026[4]["mp"], 550)
+chk("P07 2026-4c non-member", RESULTS_2026[4]["nm"], 2000)
+chk("P08 2026-4c gross", RESULTS_2026[4]["gross"], 5340)
+chk("P09 2026-4c hours", RESULTS_2026[4]["hrs"], 100.0)
+chk("P10 2026-4c miles", RESULTS_2026[4]["mi"], 550)
+chk("P11 2026-4c vehicle", RESULTS_2026[4]["veh"], 407)
+chk("P12 2026-4c processing", RESULTS_2026[4]["proc"], 131)
+chk("P13 2026-4c expenses", RESULTS_2026[4]["exp"], 1455)
+chk("P14 2026-4c net", RESULTS_2026[4]["net"], 3885)
+chk("P15 2026-4c net/hr", r2(RESULTS_2026[4]["net"] / 100.0), 38.85)
+chk("P16 2026-4c after startup", RESULTS_2026[4]["after"], 2586)
+chk("P17 2026-4c after startup /hr", r2(RESULTS_2026[4]["after"] / 100.0), 25.86)
 
-mi6 = 48 * 25 + (mp6_n + nm6_n) * 20 + 40 * 15
-chk("C47 6c miles", mi6, 2900)
-chk("C48 6c vehicle $", rd(mi6 * MILE), 2146)
-a, b, c, tot6 = processing(mem6, 72, mp6, mp6_n, nm6, nm6_n)
-chk("C49 6c proc membership", r2(a), 618.07)
-chk("C50 6c proc member proj", r2(b), 124.13)
-chk("C51 6c proc non-member", r2(c), 151.00)
-chk("C52 6c proc total", rd(tot6), 893)
-exp6 = rd(mi6 * MILE) + 780 + 660 + 348 + rd(tot6) + 420 + 600 + 60 + 350
-chk("C53 6c expenses", exp6, 6257)
-chk("C54 6c expense ratio %", round(100 * exp6 / gross6, 1), 18.0)
-net6 = gross6 - exp6
-chk("C55 6c net", net6, 28436)
-chk("C56 6c net/hr", r2(net6 / hrs6), 50.69)
-chk("C57 6c gross/hr", r2(gross6 / hrs6), 61.84)
-chk("C58 6c revenue per route day", m6 / 4, 428.50)
-chk("C59 6c membership share %", round(100 * mem6 / gross6, 1), 59.3)
-chk("C60 6c project share %", round(100 * (mp6 + nm6) / gross6, 1), 40.7)
-chk("C61 6c hours/week", round(hrs6 / 52, 1), 10.8)
-chk("C62 6c days/week", round(hrs6 / 52 / 8, 2), 1.35)
-chk("C63 6c attach rate %", round(100 * mp6_n / (6 * 24), 1), 10.4)
+chk("P18 2026-6c membership", RESULTS_2026[6]["mem"], 4185)
+chk("P19 2026-6c member projects", RESULTS_2026[6]["mp"], 825)
+chk("P20 2026-6c gross", RESULTS_2026[6]["gross"], 7010)
+chk("P21 2026-6c route hours", ROUTE_DAYS_2026 * route_day_hours(3), 62.5)
+chk("P22 2026-6c hours", RESULTS_2026[6]["hrs"], 128.5)
+chk("P23 2026-6c miles", RESULTS_2026[6]["mi"], 650)
+chk("P24 2026-6c vehicle", RESULTS_2026[6]["veh"], 481)
+a, b, c, tot = processing(4185, 18, 825, 3, 2000, 8)
+chk("P25 2026-6c proc membership", r2(a), 126.77)
+chk("P26 2026-6c proc member proj", r2(b), 24.83)
+chk("P27 2026-6c proc non-member", r2(c), 30.20)
+chk("P28 2026-6c proc total", rd(tot), 182)
+chk("P29 2026-6c expenses", RESULTS_2026[6]["exp"], 1625)
+chk("P30 2026-6c net", RESULTS_2026[6]["net"], 5385)
+chk("P31 2026-6c net/hr", r2(RESULTS_2026[6]["net"] / 128.5), 41.91)
+chk("P32 2026-6c after startup", RESULTS_2026[6]["after"], 4086)
+chk("P33 2026-6c after startup /hr", r2(RESULTS_2026[6]["after"] / 128.5), 31.80)
 
-# vehicle: fuel vs full cost
-gal = mi6 / 18
-chk("C64 6c gallons", round(gal, 1), 161.1)
-chk("C65 6c pump cost", rd(gal * 3.30), 532)
-chk("C66 6c non-cash vehicle", rd(mi6 * MILE) - rd(gal * 3.30), 1614)
+chk("P34 2026-8c membership", RESULTS_2026[8]["mem"], 5580)
+chk("P35 2026-8c gross", RESULTS_2026[8]["gross"], 8680)
+chk("P36 2026-8c hours", RESULTS_2026[8]["hrs"], 157.0)
+chk("P37 2026-8c miles", RESULTS_2026[8]["mi"], 750)
+chk("P38 2026-8c vehicle", RESULTS_2026[8]["veh"], 555)
+chk("P39 2026-8c processing", RESULTS_2026[8]["proc"], 232)
+chk("P40 2026-8c expenses", RESULTS_2026[8]["exp"], 1809)
+chk("P41 2026-8c net", RESULTS_2026[8]["net"], 6871)
+chk("P42 2026-8c net/hr", r2(RESULTS_2026[8]["net"] / 157.0), 43.76)
+chk("P43 2026-8c after startup /hr", r2(RESULTS_2026[8]["after"] / 157.0), 35.49)
+chk("P44 startup total", STARTUP, 1299)
 
-# SE tax
-se6 = net6 * 0.9235 * 0.153
-chk("C67 6c SE base", rd(net6 * 0.9235), 26261)
-chk("C68 6c SE tax", rd(se6), 4018)
-chk("C69 6c after SE", net6 - rd(se6), 24418)
-chk("C70 6c after-SE per hour", r2((net6 - rd(se6)) / hrs6), 43.53)
+# ---- 4.3 the gap, Nov 2026 - Feb 2027
+gap_rev = NM_OFF * NM_VALUE
+gap_fixed = (55 + 29 + 35) * 4
+gap_mi = NM_OFF * 20 + 4 * 15
+gap_veh = rd(gap_mi * MILE)
+_, _, gc, _ = processing(0, 0, 0, 0, gap_rev, NM_OFF)
+gap_exp = gap_fixed + gap_veh + rd(gc)
+gap_net = gap_rev - gap_exp
+gap_hrs = NM_OFF * PROJ_HRS + 1.0 * WK_OFF
+chk("G01 gap revenue", gap_rev, 1000)
+chk("G02 gap monthly fixed cost", 55 + 29 + 35, 119)
+chk("G03 gap fixed cost over 4 months", gap_fixed, 476)
+chk("G04 gap miles", gap_mi, 140)
+chk("G05 gap vehicle", gap_veh, 104)
+chk("G06 gap processing", rd(gc), 15)
+chk("G07 gap expenses", gap_exp, 595)
+chk("G08 gap net", gap_net, 405)
+chk("G09 gap hours", gap_hrs, 29)
+chk("G10 gap net/hr", r2(gap_net / gap_hrs), 13.97)
 
-# ============================================================ 8 CLIENTS
-mem8 = m8 * 12
-mp8_n = int(8 * PROJ_PER_CLIENT)
-mp8 = mp8_n * PROJ_VALUE
-nm8_n = int(0.6 * 40)
-nm8 = nm8_n * NM_VALUE
-gross8 = mem8 + mp8 + nm8
-chk("C71 8c member projects", mp8, 5500)
-chk("C72 8c non-member jobs", nm8_n, 24)
-chk("C73 8c non-member $", nm8, 6000)
-chk("C74 8c gross", gross8, 38764)
+# combined Aug 2026 - Feb 2027 at six clients
+comb_gross = RESULTS_2026[6]["gross"] + gap_rev
+comb_exp = RESULTS_2026[6]["exp"] + gap_exp
+comb_net = comb_gross - comb_exp
+comb_hrs = RESULTS_2026[6]["hrs"] + gap_hrs
+chk("G11 combined gross", comb_gross, 8010)
+chk("G12 combined expenses", comb_exp, 2220)
+chk("G13 combined operating net", comb_net, 5790)
+chk("G14 combined after startup", comb_net - STARTUP, 4491)
+chk("G15 combined hours", comb_hrs, 157.5)
+chk("G16 combined after-startup /hr", r2((comb_net - STARTUP) / comb_hrs), 28.51)
 
-hrs_route8 = ((4 * 1.5) + 0.5) * 4 * 12
-chk("C75 8c route hrs/month", ((4 * 1.5) + 0.5) * 4, 26.0)
-chk("C76 8c route hrs/year", hrs_route8, 312)
-hrs8 = hrs_route8 + (mp8_n + nm8_n) * 3 + 3.5 * 52
-chk("C77 8c project hours", (mp8_n + nm8_n) * 3, 132)
-chk("C78 8c admin hours", 3.5 * 52, 182)
-chk("C79 8c total hours", hrs8, 626)
+# 4.4 September-start variant
+chk("V01 Sept-start per client", 2 * PRICE, 558)
+chk("V02 Sept-start membership at 6", 6 * 2 * PRICE, 3348)
+chk("V03 Sept-start shortfall", 4185 - 3348, 837)
+chk("V04 Sept-start route days", 8, 8)
+chk("V05 Sept-start route hours", 8 * route_day_hours(3), 50.0)
 
-mi8 = 48 * 30 + (mp8_n + nm8_n) * 20 + 45 * 15
-chk("C80 8c miles", mi8, 2995)
-chk("C81 8c vehicle $", rd(mi8 * MILE), 2216)
-a, b, c, tot8 = processing(mem8, 96, mp8, mp8_n, nm8, nm8_n)
-chk("C82 8c proc membership", r2(a), 819.46)
-chk("C83 8c proc total", rd(tot8), 1076)
-exp8 = rd(mi8 * MILE) + 1020 + 660 + 348 + rd(tot8) + 420 + 700 + 60 + 350
-chk("C84 8c expenses", exp8, 6850)
-net8 = gross8 - exp8
-chk("C85 8c net", net8, 31914)
-chk("C86 8c net/hr", r2(net8 / hrs8), 50.98)
-chk("C87 8c hours/week", round(hrs8 / 52, 1), 12.0)
-chk("C88 8c days/week", round(hrs8 / 52 / 8, 2), 1.50)
-se8 = net8 * 0.9235 * 0.153
-chk("C89 8c SE tax", rd(se8), 4509)
-chk("C90 8c after SE", net8 - rd(se8), 27405)
-se4 = net4 * 0.9235 * 0.153
-chk("C91 4c SE tax", rd(se4), 2661)
-chk("C92 4c after SE", net4 - rd(se4), 16175)
+# ===================================================================
+# SCENARIO B - FULL SEASON (sections 5 and 6)
+# ===================================================================
+RESULTS = {}
+for n, stops, nm_in, admin_wk, supplies_mo, route_mi, supply_trips, equip in [
+        (4, 2, 22, 2.5, 50, 20, 30, 600),
+        (6, 3, 30, 3.0, 65, 25, 40, 600),
+        (8, 4, 18, 3.5, 85, 30, 45, 700)]:
+    mem = PRICE * SEASON_MONTHS * n
+    mp_n = int(n * MEM_PROJ_SEASON)
+    mp = mp_n * MEM_PROJ_VALUE
+    nm_n = nm_in + NM_OFF
+    nm = nm_n * NM_VALUE
+    gross = mem + mp + nm
 
-# 6 vs 8 comparison
-chk("C93 delta gross", gross8 - gross6, 4071)
-chk("C94 delta expenses", exp8 - exp6, 593)
-chk("C95 delta net", net8 - net6, 3478)
-chk("C96 delta net %", round(100 * (net8 - net6) / net6, 1), 12.2)
-chk("C97 delta hours", hrs8 - hrs6, 65)
-chk("C98 delta hours %", round(100 * (hrs8 - hrs6) / hrs6, 1), 11.6)
-chk("C99 marginal rate", r2((net8 - net6) / (hrs8 - hrs6)), 53.51)
+    hrs_route = 32 * route_day_hours(stops)
+    jobs = mp_n + nm_n
+    admin = admin_wk * WK_IN + 1.0 * WK_OFF
+    hrs = hrs_route + jobs * PROJ_HRS + admin
 
-# 8-client sensitivity: non-member falls to 0.4/week
-nmS_n = int(0.4 * 40)
-nmS = nmS_n * NM_VALUE
-grossS = mem8 + mp8 + nmS
-chk("C100 sens non-member $", nmS, 4000)
-chk("C101 sens gross", grossS, 36764)
-hrsS = hrs_route8 + (mp8_n + nmS_n) * 3 + 3.5 * 52
-chk("C102 sens hours", hrsS, 602)
-miS = 48 * 30 + (mp8_n + nmS_n) * 20 + 45 * 15
-chk("C103 sens miles", miS, 2835)
-chk("C104 sens vehicle $", rd(miS * MILE), 2098)
-a, b, c, totS = processing(mem8, 96, mp8, mp8_n, nmS, nmS_n)
-chk("C105 sens proc total", rd(totS), 1045)
-expS = rd(miS * MILE) + 1020 + 660 + 348 + rd(totS) + 420 + 700 + 60 + 350
-chk("C106 sens expenses", expS, 6701)
-netS = grossS - expS
-chk("C107 sens net", netS, 30063)
-chk("C108 sens net/hr", r2(netS / hrsS), 49.94)
-chk("C109 sens delta net vs 6c", netS - net6, 1627)
-chk("C110 sens marginal rate", r2((netS - net6) / (hrsS - hrs6)), 39.68)
+    mi = 32 * route_mi + jobs * 20 + supply_trips * 15
+    veh = rd(mi * MILE)
+    pa, pb, pc, ptot = processing(mem, n * SEASON_MONTHS, mp, mp_n, nm, nm_n)
+    exp = (veh + supplies_mo * SEASON_MONTHS + 55 * 12 + 29 * 12
+           + rd(ptot) + 35 * 12 + equip + 60 + 350)
+    net = gross - exp
+    in_season_hrs = hrs_route + (mp_n + nm_in) * PROJ_HRS + admin_wk * WK_IN
+    RESULTS[n] = dict(mem=mem, mp_n=mp_n, mp=mp, nm_n=nm_n, nm=nm, gross=gross,
+                      hrs_route=hrs_route, jobs=jobs, admin=admin, hrs=hrs,
+                      mi=mi, veh=veh, pa=pa, pb=pb, pc=pc, proc=rd(ptot),
+                      exp=exp, net=net, in_season=in_season_hrs)
 
-# ======================================================= CASH FLOW (S6)
-proj_total = mp6 + nm6
-chk("C111 project revenue total", proj_total, 14125)
-green = proj_total * 0.70
-dorm = proj_total * 0.30
-chk("C112 green season projects", r2(green), 9887.50)
-chk("C113 dormant season projects", r2(dorm), 4237.50)
-chk("C114 green project/month", r2(green / 7), 1412.50)
-chk("C115 dormant project/month", r2(dorm / 5), 847.50)
-gm = m6 + green / 7
-dm = m6 + dorm / 5
-chk("C116 green month total", r2(gm), 3126.50)
-chk("C117 dormant month total", r2(dm), 2561.50)
-chk("C118 cash-flow reconciles to gross", r2(gm * 7 + dm * 5), 34693.00)
-chk("C119 seasonal swing", r2(gm - dm), 565.00)
+R4, R6, R8 = RESULTS[4], RESULTS[6], RESULTS[8]
 
-# ================================================== DOWNSIDE (S7)
+# ---- 6 clients (section 5)
+chk("B01 6c membership", R6["mem"], 13392)
+chk("B02 6c membership per month", PRICE * 6, 1674)
+chk("B03 6c member project count", R6["mp_n"], 12)
+chk("B04 6c member projects $", R6["mp"], 3300)
+chk("B05 6c non-member jobs", R6["nm_n"], 34)
+chk("B06 6c non-member $", R6["nm"], 8500)
+chk("B07 6c gross", R6["gross"], 25192)
+chk("B08 6c membership share %", round(100 * R6["mem"] / R6["gross"], 1), 53.2)
+chk("B09 6c project share %",
+    round(100 * (R6["mp"] + R6["nm"]) / R6["gross"], 1), 46.8)
+chk("B10 6c project revenue", R6["mp"] + R6["nm"], 11800)
+
+chk("B11 6c route hours", R6["hrs_route"], 200)
+chk("B12 6c project jobs", R6["jobs"], 46)
+chk("B13 6c project hours", R6["jobs"] * PROJ_HRS, 138)
+chk("B14 6c admin hours", R6["admin"], 122)
+chk("B15 6c total hours", R6["hrs"], 460)
+chk("B16 6c in-season hours", R6["in_season"], 431)
+chk("B17 6c off-season hours", R6["hrs"] - R6["in_season"], 29)
+chk("B18 6c in-season hrs/week", round(R6["in_season"] / WK_IN, 1), 12.3)
+chk("B19 6c in-season days/week", round(R6["in_season"] / WK_IN / 8, 2), 1.54)
+
+chk("B20 6c miles", R6["mi"], 2320)
+chk("B21 6c vehicle $", R6["veh"], 1717)
+chk("B22 6c membership transactions", 6 * SEASON_MONTHS, 48)
+chk("B23 6c proc membership", r2(R6["pa"]), 402.77)
+chk("B24 6c proc member proj", r2(R6["pb"]), 99.30)
+chk("B25 6c proc non-member", r2(R6["pc"]), 128.35)
+chk("B26 6c proc total", R6["proc"], 630)
+chk("B27 6c expenses", R6["exp"], 5305)
+chk("B28 6c expense ratio %", round(100 * R6["exp"] / R6["gross"], 1), 21.1)
+chk("B29 6c net", R6["net"], 19887)
+chk("B30 6c net/hr", r2(R6["net"] / R6["hrs"]), 43.23)
+chk("B31 6c gross/hr", r2(R6["gross"] / R6["hrs"]), 54.77)
+chk("B32 6c revenue per route day", r2(R6["mem"] / 32), 418.50)
+chk("B33 6c revenue per route day, monthly form", r2(PRICE * 6 / 4), 418.50)
+chk("B34 6c attach rate %", round(100 * R6["mp_n"] / (6 * 16), 1), 12.5)
+
+# ---- 4 clients (section 6.1)
+chk("B35 4c membership", R4["mem"], 8928)
+chk("B36 4c member projects", R4["mp"], 2200)
+chk("B37 4c non-member jobs", R4["nm_n"], 26)
+chk("B38 4c non-member $", R4["nm"], 6500)
+chk("B39 4c gross", R4["gross"], 17628)
+chk("B40 4c route hours", R4["hrs_route"], 136)
+chk("B41 4c project hours", R4["jobs"] * PROJ_HRS, 102)
+chk("B42 4c admin hours", R4["admin"], 104.5)
+chk("B43 4c total hours", R4["hrs"], 342.5)
+chk("B44 4c in-season hours", R4["in_season"], 313.5)
+chk("B45 4c in-season hrs/week", round(R4["in_season"] / WK_IN, 1), 9.0)
+chk("B46 4c in-season days/week", round(R4["in_season"] / WK_IN / 8, 2), 1.12)
+chk("B47 4c miles", R4["mi"], 1770)
+chk("B48 4c vehicle $", R4["veh"], 1310)
+chk("B49 4c proc membership", r2(R4["pa"]), 268.51)
+chk("B50 4c proc member proj", r2(R4["pb"]), 66.20)
+chk("B51 4c proc non-member", r2(R4["pc"]), 98.15)
+chk("B52 4c proc total", R4["proc"], 433)
+chk("B53 4c expenses", R4["exp"], 4581)
+chk("B54 4c net", R4["net"], 13047)
+chk("B55 4c net/hr", r2(R4["net"] / R4["hrs"]), 38.09)
+chk("B56 4c gross/hr", r2(R4["gross"] / R4["hrs"]), 51.47)
+chk("B57 4c revenue per route day", r2(PRICE * 4 / 4), 279.00)
+
+# ---- 8 clients (section 6.2)
+chk("B58 8c membership", R8["mem"], 17856)
+chk("B59 8c member projects", R8["mp"], 4400)
+chk("B60 8c non-member jobs", R8["nm_n"], 22)
+chk("B61 8c non-member $", R8["nm"], 5500)
+chk("B62 8c gross", R8["gross"], 27756)
+chk("B63 8c route hours", R8["hrs_route"], 264)
+chk("B64 8c project hours", R8["jobs"] * PROJ_HRS, 114)
+chk("B65 8c admin hours", R8["admin"], 139.5)
+chk("B66 8c total hours", R8["hrs"], 517.5)
+chk("B67 8c in-season hours", R8["in_season"], 488.5)
+chk("B68 8c in-season hrs/week", round(R8["in_season"] / WK_IN, 1), 14.0)
+chk("B69 8c in-season days/week", round(R8["in_season"] / WK_IN / 8, 2), 1.74)
+chk("B70 8c miles", R8["mi"], 2395)
+chk("B71 8c vehicle $", R8["veh"], 1772)
+chk("B72 8c proc membership", r2(R8["pa"]), 537.02)
+chk("B73 8c proc member proj", r2(R8["pb"]), 132.40)
+chk("B74 8c proc non-member", r2(R8["pc"]), 83.05)
+chk("B75 8c proc total", R8["proc"], 752)
+chk("B76 8c expenses", R8["exp"], 5742)
+chk("B77 8c net", R8["net"], 22014)
+chk("B78 8c net/hr", r2(R8["net"] / R8["hrs"]), 42.54)
+chk("B79 8c gross/hr", r2(R8["gross"] / R8["hrs"]), 53.63)
+chk("B80 8c revenue per route day", r2(PRICE * 8 / 4), 558.00)
+
+# ---- 6 vs 8 (section 6.3)
+chk("C01 delta membership", R8["mem"] - R6["mem"], 4464)
+chk("C02 delta gross", R8["gross"] - R6["gross"], 2564)
+chk("C03 delta expenses", R8["exp"] - R6["exp"], 437)
+chk("C04 delta net", R8["net"] - R6["net"], 2127)
+chk("C05 delta net %", round(100 * (R8["net"] - R6["net"]) / R6["net"], 1), 10.7)
+chk("C06 delta hours", R8["hrs"] - R6["hrs"], 57.5)
+chk("C07 delta hours %", round(100 * (R8["hrs"] - R6["hrs"]) / R6["hrs"], 1), 12.5)
+chk("C08 marginal rate past the cap",
+    r2((R8["net"] - R6["net"]) / (R8["hrs"] - R6["hrs"])), 36.99)
+chk("C09 net/hr goes DOWN past the cap",
+    r2(R8["net"] / R8["hrs"]) - r2(R6["net"] / R6["hrs"]), -0.69)
+chk("C10 marginal rate is below the $40 floor",
+    1 if (R8["net"] - R6["net"]) / (R8["hrs"] - R6["hrs"]) < 40 else 0, 1)
+
+# ---- self-employment tax (section 9.3)
+def se(net):
+    return rd(net * 0.9235 * 0.153)
+
+
+chk("T01 6c SE base", rd(R6["net"] * 0.9235), 18366)
+chk("T02 6c SE tax", se(R6["net"]), 2810)
+chk("T03 6c after SE", R6["net"] - se(R6["net"]), 17077)
+chk("T04 6c after-SE per hour", r2((R6["net"] - se(R6["net"])) / R6["hrs"]), 37.12)
+chk("T05 4c SE tax", se(R4["net"]), 1843)
+chk("T06 4c after SE", R4["net"] - se(R4["net"]), 11204)
+chk("T07 8c SE tax", se(R8["net"]), 3110)
+chk("T08 8c after SE", R8["net"] - se(R8["net"]), 18904)
+
+# ---- vehicle: full cost vs pump cost (section 9.2)
+gal = R6["mi"] / 18
+chk("T09 6c gallons", round(gal, 1), 128.9)
+chk("T10 6c pump cost", rd(gal * 3.30), 425)
+chk("T11 6c non-cash vehicle cost", R6["veh"] - rd(gal * 3.30), 1292)
+
+# ===================================================================
+# DOWNSIDE AND SENSITIVITY (section 7)
+# ===================================================================
 # 7.1 zero project revenue
-hrsZ = hrs_route6 + 2.0 * 52
-chk("C120 zero-project hours", hrsZ, 344)
-miZ = 48 * 25 + 20 * 15
-chk("C121 zero-project miles", miZ, 1500)
-chk("C122 zero-project vehicle $", rd(miZ * MILE), 1110)
-a, _, _, _ = processing(mem6, 72, 0, 0, 0, 0)
-chk("C123 zero-project processing", rd(a), 618)
-expZ = rd(miZ * MILE) + 780 + 660 + 348 + rd(a) + 420 + 600 + 60 + 350
-chk("C124 zero-project expenses", expZ, 4946)
-netZ = mem6 - expZ
-chk("C125 zero-project net", netZ, 15622)
-chk("C126 zero-project net/hr", r2(netZ / hrsZ), 45.41)
+hrsZ = RT6 + (2.0 * WK_IN + 0.5 * WK_OFF)
+miZ = 32 * 25 + 16 * 15
+vehZ = rd(miZ * MILE)
+za, _, _, _ = processing(R6["mem"], 48, 0, 0, 0, 0)
+expZ = vehZ + 65 * 8 + 55 * 12 + 29 * 12 + rd(za) + 35 * 12 + 600 + 60 + 350
+netZ = R6["mem"] - expZ
+chk("Z01 zero-project admin hours", 2.0 * WK_IN + 0.5 * WK_OFF, 78.5)
+chk("Z02 zero-project hours", hrsZ, 278.5)
+chk("Z03 zero-project miles", miZ, 1040)
+chk("Z04 zero-project vehicle", vehZ, 770)
+chk("Z05 zero-project processing", rd(za), 403)
+chk("Z06 zero-project expenses", expZ, 4131)
+chk("Z07 zero-project net", netZ, 9261)
+chk("Z08 zero-project net/hr", r2(netZ / hrsZ), 33.25)
 
 # 7.2 losing one member
-def loss(price):
-    rev = price * 12
-    saved = rev * CARD + 12 * PER_TXN
-    return rev, rd(rev - saved)
+lost_rev = PRICE * SEASON_MONTHS
+lost_fees = rd(lost_rev * CARD + SEASON_MONTHS * PER_TXN)
+chk("Z09 lost member revenue", lost_rev, 2232)
+chk("Z10 lost member card fees saved", lost_fees, 67)
+chk("Z11 lost member net cost", lost_rev - lost_fees, 2165)
+chk("Z12 lost member % of net",
+    round(100 * (lost_rev - lost_fees) / R6["net"], 1), 10.9)
 
+# 7.3 revenue per on-site hour by property shape
+h_kit = VISITS_PER_SEASON * MIN_KIT / 60
+h_pool = VISITS_PER_SEASON * MIN_POOL / 60
+h_both = VISITS_PER_SEASON * MIN_BOTH / 60
+chk("Z13 kitchen-only on-site hrs/season", h_kit, 24.0)
+chk("Z14 pool-only on-site hrs/season", r2(h_pool), 26.67)
+chk("Z15 both on-site hrs/season", h_both, 32.0)
+chk("Z16 kitchen-only $/on-site hr", r2(2232 / h_kit), 93.00)
+chk("Z17 pool-only $/on-site hr", r2(2232 / h_pool), 83.70)
+chk("Z18 both $/on-site hr", r2(2232 / h_both), 69.75)
+chk("Z19 spread across shapes", round((2232 / h_kit) / (2232 / h_both), 3), 1.333)
+chk("Z20 both-shape rate equals the $279/4hr figure",
+    r2(2232 / h_both), r2(PRICE / 4))
+# the shape deliberately excluded from the book
+h_neither = VISITS_PER_SEASON * MIN_NEITHER / 60
+chk("Z20a neither-shape on-site hrs/season", r2(h_neither), 18.67)
+chk("Z20b neither-shape $/on-site hr", r2(2232 / h_neither), 119.57)
+chk("Z20c visit frequency vs a pool service", VISITS_PER_MONTH / 4, 0.5)
 
-chk("C127 lose $229 revenue", loss(229)[0], 2748)
-chk("C128 lose $229 net", loss(229)[1], 2665)
-chk("C129 lose $269 net", loss(269)[1], 3131)
-chk("C130 lose $289 net", loss(289)[1], 3364)
-chk("C131 lose $329 revenue", loss(329)[0], 3948)
-chk("C132 lose $329 net", loss(329)[1], 3830)
-chk("C133 worst case % of net", round(100 * loss(329)[1] / net6, 1), 13.5)
-chk("C134 best case % of net", round(100 * loss(229)[1] / net6, 1), 9.4)
-chk("C135 $329 vs $229 ratio", round(3948 / 2748, 2), 1.44)
+# 7.4 member project rate sensitivity: 2.0 -> 1.5
+mpS_n = int(6 * 1.5)
+mpS = mpS_n * MEM_PROJ_VALUE
+grossS = R6["mem"] + mpS + R6["nm"]
+jobsS = mpS_n + R6["nm_n"]
+hrsS = RT6 + jobsS * PROJ_HRS + R6["admin"]
+miS = 32 * 25 + jobsS * 20 + 40 * 15
+vehS = rd(miS * MILE)
+_, _, _, ptS = processing(R6["mem"], 48, mpS, mpS_n, R6["nm"], R6["nm_n"])
+expS = vehS + 65 * 8 + 55 * 12 + 29 * 12 + rd(ptS) + 35 * 12 + 600 + 60 + 350
+netS = grossS - expS
+chk("Z21 sens member projects", mpS, 2475)
+chk("Z22 sens attach rate %", round(100 * mpS_n / (6 * 16), 1), 9.4)
+chk("Z23 sens gross", grossS, 24367)
+chk("Z24 sens hours", hrsS, 451)
+chk("Z25 sens miles", miS, 2260)
+chk("Z26 sens vehicle", vehS, 1672)
+chk("Z27 sens processing", rd(ptS), 606)
+chk("Z28 sens expenses", expS, 5236)
+chk("Z29 sens net", netS, 19131)
+chk("Z30 sens net/hr", r2(netS / hrsS), 42.42)
+chk("Z31 sens net delta", R6["net"] - netS, 756)
+chk("Z32 sens per-hour delta",
+    r2(r2(R6["net"] / R6["hrs"]) - r2(netS / hrsS)), 0.81)
 
-# 7.3 off-route client
-off = 12 * r2(net6 / hrs6)
-chk("C136 off-route margin lost", rd(off), 608)
-chk("C137 off-route % of $289 client", round(100 * rd(off) / 3468, 1), 17.5)
-chk("C138 off-route % of $229 client", round(100 * rd(off) / 2748, 1), 22.1)
+# 7.5 off-route client
+off_hrs = 0.5 * VISITS_PER_SEASON
+off_cost = rd(off_hrs * r2(R6["net"] / R6["hrs"]))
+chk("Z33 off-route unpaid drive hrs/season", off_hrs, 8.0)
+chk("Z34 off-route margin destroyed", off_cost, 346)
+chk("Z35 off-route % of client revenue", round(100 * off_cost / 2232, 1), 15.5)
 
-# ==================================================== BRIDGE (S8)
-draft = 4 * 229 * 12 + 8 * 249
-chk("C139 draft membership", 4 * 229 * 12, 10992)
-chk("C140 draft projects", 8 * 249, 1992)
-chk("C141 draft total", draft, 12984)
-step1 = draft + 2 * 229 * 12
-chk("C142 +2 clients at base", 2 * 229 * 12, 5496)
-chk("C143 running total 1", step1, 18480)
-addons = (4 * KITCHEN + 3 * POOL) * 12
-chk("C144 add-on revenue", addons, 4080)
-chk("C145 add-ons reconcile", mem6 - 6 * 229 * 12, 4080)
-step2 = step1 + addons
-chk("C146 running total 2", step2, 22560)
-step3 = step2 + 2 * (2 * 249)
-chk("C147 member proj scaling", 2 * (2 * 249), 996)
-chk("C148 running total 3", step3, 23556)
-uplift = mp6 - 6 * 2 * 249
-chk("C149 member proj uplift", uplift, 1137)
-step4 = step3 + uplift
-chk("C150 running total 4", step4, 24693)
-chk("C151 bridge closes on gross", step4 + 10000, gross6)
-chk("C152 total improvement", gross6 - draft, 21709)
-chk("C153 multiple vs draft", round(gross6 / draft, 2), 2.67)
-imp = gross6 - draft
-chk("C154 share non-member %", round(100 * 10000 / imp, 1), 46.1)
-chk("C155 share +2 clients %", round(100 * 5496 / imp, 1), 25.3)
-chk("C156 share add-ons %", round(100 * addons / imp, 1), 18.8)
-chk("C157 share proj uplift %", round(100 * uplift / imp, 1), 5.2)
-chk("C158 share proj scaling %", round(100 * 996 / imp, 1), 4.6)
-chk("C159 shares sum to 100",
-    round(100 * (10000 + 5496 + addons + uplift + 996) / imp, 1), 100.0)
+# ===================================================================
+# CASH FLOW (section 8)
+# ===================================================================
+in_month = PRICE * 6 + R6["mp"] / 8 + 7500 / 8
+off_month = 1000 / 4
+chk("F01 in-season member projects/month", r2(R6["mp"] / 8), 412.50)
+chk("F02 in-season non-member/month", r2(7500 / 8), 937.50)
+chk("F03 in-season month total", r2(in_month), 3024.00)
+chk("F04 off-season month total", r2(off_month), 250.00)
+chk("F05 cash flow reconciles to gross",
+    r2(in_month * 8 + off_month * 4), 25192.00)
+chk("F06 seasonal swing", r2(in_month - off_month), 2774.00)
+chk("F07 swing vs superseded model's $565", round((in_month - off_month) / 565, 2), 4.91)
+chk("F08 winter reserve needed per in-season month", rd(476 / 8), 60)
+
+# ===================================================================
+# COMPARISON TO THE SUPERSEDED YEAR-ROUND MODEL (section 9.1)
+# ===================================================================
+OLD_MEM, OLD_MP, OLD_NM = 20568, 4125, 10000       # superseded - DEAD numbers
+OLD_GROSS, OLD_EXP, OLD_NET, OLD_HRS = 34693, 6257, 28436, 561
+chk("X01 superseded gross reconciles", OLD_MEM + OLD_MP + OLD_NM, OLD_GROSS)
+chk("X02 superseded net reconciles", OLD_GROSS - OLD_EXP, OLD_NET)
+chk("X03 membership gap", OLD_MEM - R6["mem"], 7176)
+chk("X04 member project gap", OLD_MP - R6["mp"], 825)
+chk("X05 non-member gap", OLD_NM - R6["nm"], 1500)
+chk("X06 revenue deltas sum to the gross gap",
+    (OLD_MEM - R6["mem"]) + (OLD_MP - R6["mp"]) + (OLD_NM - R6["nm"]),
+    OLD_GROSS - R6["gross"])
+chk("X07 gross gap", OLD_GROSS - R6["gross"], 9501)
+chk("X08 expense gap", OLD_EXP - R6["exp"], 952)
+chk("X09 net gap", OLD_NET - R6["net"], 8549)
+chk("X10 net gap = gross gap - expense gap",
+    (OLD_GROSS - R6["gross"]) - (OLD_EXP - R6["exp"]), 8549)
+chk("X11 hours gap", OLD_HRS - R6["hrs"], 101)
+chk("X12 per-hour gap", r2(50.69 - r2(R6["net"] / R6["hrs"])), 7.46)
+chk("X13 membership gap %", round(100 * (OLD_MEM - R6["mem"]) / OLD_MEM, 1), 34.9)
+chk("X14 superseded project share %",
+    round(100 * (OLD_MP + OLD_NM) / OLD_GROSS, 1), 40.7)
+
+# per-client comparison
+OLD_PER_CLIENT = 3468          # superseded pool-configuration property x 12 - DEAD
+chk("X15 seasonal per client", PRICE * SEASON_MONTHS, 2232)
+chk("X16 per-client difference", OLD_PER_CLIENT - 2232, 1236)
+chk("X17 per-client difference %", round(100 * 1236 / OLD_PER_CLIENT, 1), 35.6)
+chk("X18 six identical properties would give", 6 * 1236, 7416)
+chk("X19 the mix-based gap is the right one", OLD_MEM - R6["mem"], 7176)
+chk("X20 the two gaps differ by", 7416 - 7176, 240)
+
+# pool-service comparison (CANON section 5)
+chk("X21 pool service low as % of $279", round(100 * 121 / PRICE, 1), 43.4)
+chk("X22 pool service high as % of $279", round(100 * 142 / PRICE, 1), 50.9)
+
+# ===================================================================
+# GUARDS - no superseded membership price may reappear
+# ===================================================================
+DEAD_PRICES = (229, 249, 269, 289, 329)
+chk("N01 membership price is 279", PRICE, 279)
+chk("N02 no dead price is the membership price",
+    1 if PRICE not in DEAD_PRICES else 0, 1)
+chk("N03 season is 8 months, not 12", SEASON_MONTHS, 8)
+chk("N04 no membership figure uses x12",
+    1 if R6["mem"] != PRICE * 12 * 6 else 0, 1)
 
 # ------------------------------------------------------------- report
 fails = [c for c in CHECKS if not c[1]]
 for name, ok, got, want in CHECKS:
-    print(f"{'PASS' if ok else 'FAIL'}  {name:42s} got={got!r:>14} want={want!r}")
+    print(f"{'PASS' if ok else 'FAIL'}  {name:46s} got={got!r:>14} want={want!r}")
 print(f"\n{len(CHECKS) - len(fails)}/{len(CHECKS)} checks passed.")
 raise SystemExit(1 if fails else 0)
