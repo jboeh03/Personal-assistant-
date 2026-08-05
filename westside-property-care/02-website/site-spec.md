@@ -332,10 +332,10 @@ an approximation.
 
 | Asset | Raw | **Gzipped** | Budget | Result |
 |---|---|---|---|---|
-| `styles/tokens.css` | 7,081 B | **2,979 B** | — | |
+| `styles/tokens.css` | 7,304 B | **3,085 B** | — | |
 | `styles/base.css` | 10,091 B | **3,430 B** | — | |
-| `styles/components.css` | 21,486 B | **5,056 B** | — | |
-| **CSS total** | **38,658 B** | **11,465 B — 11.2 KB** | **< 30 KB gz** | **37% of budget** |
+| `styles/components.css` | 21,546 B | **5,062 B** | — | |
+| **CSS total** | **38,941 B** | **11,577 B — 11.3 KB** | **< 30 KB gz** | **38% of budget** |
 | `js/season.js` | 1,148 B | **639 B — 0.6 KB** | **< 150 KB gz** | **0.4% of budget** |
 
 The CSS total is the **sum of the three files measured separately**, because each is its own
@@ -359,12 +359,12 @@ Per page:
 | `404.html` | 3,147 B | 1,080 B |
 
 **The number that matters is the heaviest first load:** `index.html` (7,374 B) plus all three
-stylesheets (11,465 B) plus the script (639 B) = **19,478 B gzipped, 19.0 KB**, in five
+stylesheets (11,577 B) plus the script (639 B) = **19,590 B gzipped, 19.1 KB**, in five
 requests, with no font, no image, and no third-party anything. Every subsequent page is 1–7 KB,
 because the CSS and the JS are already cached.
 
 The site also clears the tighter **microsite** row in `rules/web/performance.md` (< 15 KB CSS,
-< 80 KB JS) with the CSS at 11.2 KB gz and the JS at 0.6 KB gz.
+< 80 KB JS) with the CSS at 11.3 KB gz and the JS at 0.6 KB gz.
 
 Reproduce any figure above with:
 

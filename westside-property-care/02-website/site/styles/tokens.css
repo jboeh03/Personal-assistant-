@@ -92,6 +92,11 @@
   --space-margin:  1.25rem;  /* 20px viewport side margin   */
   --space-control: 0.75rem;  /* inside buttons and inputs   */
 
+  /* Minimum interactive target. 44px is the WCAG 2.2 target-size floor —
+     this is an accessibility constant, not a taste value. Anything a
+     gloved hand taps in a driveway uses it. */
+  --tap-target:    2.75rem;
+
   /* --- Grid ------------------------------------------------------------- */
   --container:  77.5rem;  /* 1240px, 12 columns, 24px gutter */
   --measure:    68ch;     /* the reading column caps at 68 characters */

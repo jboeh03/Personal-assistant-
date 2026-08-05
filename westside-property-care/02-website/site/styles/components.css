@@ -99,7 +99,7 @@ body:has(#season-switch:checked) .season__label .season__to-green { display: inl
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  min-block-size: 2.75rem;
+  min-block-size: var(--tap-target);
   padding-inline: var(--space-tight);
   border: var(--hair) solid var(--rule);
   border-radius: var(--radius-stamp);
@@ -149,7 +149,7 @@ body:has(#season-switch:checked) .season__label .season__to-green { display: inl
 .nav__link {
   display: inline-flex;
   align-items: center;
-  min-block-size: 2.75rem;
+  min-block-size: var(--tap-target);
   color: var(--ink);
   font-size: var(--type-small);
   text-decoration: none;
@@ -237,7 +237,7 @@ body:has(#season-switch:checked) .season__label .season__to-green { display: inl
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-block-size: 2.75rem;
+  min-block-size: var(--tap-target);
   padding: var(--space-control) calc(var(--space-control) * 1.6);
   border: var(--hair) solid var(--copper);
   border-radius: var(--radius-control);
@@ -580,7 +580,7 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 .field input,
 .field textarea {
   inline-size: 100%;
-  min-block-size: 2.75rem;
+  min-block-size: var(--tap-target);
   margin-block-start: var(--space-tight);
   padding: var(--space-tight) var(--space-control);
   background-color: var(--paper);
@@ -618,7 +618,7 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   display: flex;
   align-items: flex-start;
   gap: var(--space-tight);
-  min-block-size: 2.75rem;
+  min-block-size: var(--tap-target);
   padding-block: var(--space-hair);
 }
 
@@ -701,7 +701,7 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 .foot__nav a {
   display: inline-flex;
   align-items: center;
-  min-block-size: 2.75rem;
+  min-block-size: var(--tap-target);
   font-size: var(--type-small);
 }
 
