@@ -24,6 +24,8 @@ html {
 
 body {
   margin: 0;
+  /* Ground = --paper. Its --mark (--ember, 3.31:1) is declared on :root in
+     tokens.css, one block above --paper itself. */
   background-color: var(--paper);
   color: var(--ink);
   font-family: var(--font-text);
@@ -172,8 +174,8 @@ em, i {
 /* --- Links — the ember ramp is a semantic monopoly on "act" ---------------
    A link is text, so it takes the TEXT-SIZE step of the ramp: --ember-deep,
    5.42:1 on --paper. --ember itself is 3.31:1 and is reserved for display
-   figures, the finding rule and the focus ring, none of which are body copy.
-   Choose the ember by its ground, never by taste (§2.4.2).
+   figures and for --mark's resolution on paper-side grounds, neither of which
+   is body copy. Choose the ember by its ground, never by taste (§2.4.2).
    -------------------------------------------------------------------------- */
 
 a {
@@ -191,19 +193,29 @@ a:hover { text-decoration-thickness: var(--hair-find); }
 a:active { color: var(--ink); }
 
 /* --- Focus — visible, in-brand, never removed ------------------------------
-   Keyboard users get the same margin marker the summary uses for a finding,
-   and after the re-baseline it is literally the same colour: a filled --ember
-   square in the rail at the row's baseline.
+   Keyboard users get the same marker the summary uses for a finding, because
+   it is the same thing: a finding is the sentence a customer says yes or no
+   to, and a focus ring is where a keyboard user's yes or no would land. One
+   meaning, one role — so both take var(--mark) and nothing else.
 
-   --ember is a PAPER-SIDE mark: 3.31:1 on --paper, which clears the 3:1
-   non-text floor (SC 1.4.11), and 2.89:1 on --paper-deep, which does not. The
-   rule enforced in the markup is that NOTHING FOCUSABLE SITS ON --paper-deep —
-   its only two surfaces are the summary facsimile and the image plates, and
-   neither contains a link.
+   WHAT USED TO BE WRITTEN HERE, AND WHY IT IS GONE. This comment claimed the
+   ring was safe because "nothing focusable sits on --paper-deep," verified
+   programmatically. That was true of the markup and it was never an
+   invariant: OFF SEASON ALIASES --wash TO --paper-deep, so a focusable inside
+   a hovered ledger row lands on that ground for four months of the year
+   without anyone editing a template. A hand-maintained markup habit is not a
+   substitute for a per-surface token. --mark holds without anyone remembering
+   the rule; the habit is still worth keeping, but nothing depends on it.
 
-   On the two reversed panels — the navy strip and the footer — the ring and
-   the marker are overridden to --paper. Any future reversed surface must do
-   the same. Full matrix in site-spec.md §9.4.
+   THE GROUND FOR A RING IS THE PARENT'S BACKGROUND, NOT THE ELEMENT'S FILL.
+   outline-offset is 3px, so the ring is drawn wholly outside the border box
+   with 3px of the parent's ground showing on the inner edge — both edges of
+   the ring touch the same colour. That is why an --ember ring is legitimate
+   around a solid --ember-deep .btn (1.64:1 between them, never adjacent) and
+   why a fill that belongs to an ANCESTOR is the case that matters: there the
+   ring really does land on the fill, which is what --wash-mark answers.
+
+   Per-surface --mark and the full matrix: site-spec.md §11.4.
    -------------------------------------------------------------------------- */
 
 /* Suppress the ring only where :focus-visible is understood and has already
@@ -212,7 +224,7 @@ a:active { color: var(--ink); }
 :focus:not(:focus-visible) { outline: none; }
 
 :focus-visible {
-  outline: var(--focus-width) solid var(--ember);
+  outline: var(--focus-width) solid var(--mark);
   outline-offset: var(--focus-offset);
   border-radius: var(--radius-flat);
   position: relative;
@@ -227,10 +239,19 @@ summary:focus-visible::before {
   inset-block-start: 0.42em;
   width: var(--focus-mark);
   height: var(--focus-mark);
-  background-color: var(--ember);
+  background-color: var(--mark);
 }
 
+/* The skip link is the clearest case of "check the ground, not the number."
+   It is a sibling of <header>, so it inherits the :root --mark — but it is
+   position: absolute at the top of the document, which means the surface it
+   actually appears on is the NAVY STATUS STRIP, every time, on every page. It
+   is also only ever visible while focused. --ember there is 3.64:1, a pass
+   nobody argued for; --paper is 12.05:1 and, at 5.42:1 against this element's
+   own --ember-deep fill, it is also the only thing making the control's
+   boundary perceivable against a navy panel it is 2.22:1 away from. */
 .skip {
+  --mark: var(--paper);
   position: absolute;
   inset-inline-start: var(--space-margin);
   inset-block-start: 0;

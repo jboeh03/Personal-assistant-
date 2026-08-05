@@ -80,7 +80,7 @@ dollar figure on GBP; the surface routes the membership conversation to a call o
 
 | Service name | Description | Price shown |
 |---|---|---|
-| Seasonal outdoor living membership | Twice-monthly care for a pool deck, patio, and outdoor kitchen on the west side, March through October, with a written report after every visit. Six properties, maximum. | **$279/month** — the one number, stated plainly, since GBP's services list is a fact sheet, not a page requiring the full section order in `messaging.md` §3 |
+| Seasonal outdoor living membership | Twice-monthly care for a pool deck, patio, and outdoor kitchen on the west side, March through October, with a written report after every visit. Six properties, maximum. | None shown — "call or message to see if a spot's open." The membership price needs the season and the exclusions alongside it to be said honestly (`messaging.md` §3's section order), and a bare structured-data price field has no room for either. |
 | Grill and outdoor kitchen deep clean | Burners, grates, flavorizer bars, interiors, and hoods — the full clean, not the routine wipe-down. | **$249+** |
 | Window well cleanout | Cleared out during a scheduled visit. | **$49+** |
 | Pressure washing | Patio, walkway, driveway, deck, siding, or fence. | Quoted after a look at the property |

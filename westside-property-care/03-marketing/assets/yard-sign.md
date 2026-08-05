@@ -3,19 +3,23 @@
 **Used by:** `neighborhood-campaign.md` §3.3, §6 · **Track:** B
 **Placeholders in this file:** `[PHONE]` — see `gtm-plan.md` §8 for the full registry
 
+> **Re-baselined 2026-08-05.** Name is **Westside Property Care 513**. Copy below is the verbatim
+> "Yard sign / hanger" short form from `brand-brief.md` §2.
+
 ---
 
 ## Copy
 
-> **Westside Property Care**
+> **Westside Property Care 513**
 >
-> Pool deck, patio, and outdoor kitchen care, twice a month. Six clients, one person.
+> Pool deck, patio, and outdoor kitchen care, twice a month, March through October. Six clients,
+> one person.
 >
 > `[PHONE]` · WPC513
 
-This is the verbatim short form from `brand-brief.md` §2 ("Yard sign / hanger" row), with the
-phone number and the WPC513 mark added per `visual-direction.md` §7 (truck door, yard sign, door
-hanger, and letterhead all carry the full lockup — wordmark, rule, WPC513 beneath it).
+This is the verbatim short form from `brand-brief.md` §2, with the phone number and the WPC513
+mark added per `visual-direction.md` §7.3 (truck door, yard sign, door hanger, and letterhead
+all carry the full lockup — wordmark, rule, small-caps line beneath it).
 
 ---
 
@@ -51,9 +55,9 @@ passive and permanent for as long as the client keeps it up.
 | Material | 4mm corrugated plastic (coroplast), UV-resistant, waterproof — standard for outdoor political- and real-estate-style signage and built to survive a full season outside |
 | Bleed | 0.25" on all sides as a safe default — vendor bleed requirements for coroplast range from 0.125" to 0.5"; confirm the exact figure with the chosen printer before finalizing the file, and use the more generous number if there's any doubt |
 | Mounting | Standard H-stake, oriented so the coroplast flutes run vertical (required for the stake to hold rigidly) — one stake is sufficient at this size |
-| Color | `--paper` ground, `--ink` text and rule, WPC513 set in Plex Mono per the mark spec in `visual-direction.md` §7 — no gradient, no photo background, nothing that reads as a real-estate sign template |
+| Color | `--paper` ground, `--ink` text and rule, `WPC 513` set in Plex Mono in `--ember-lift` on the mark's `--navy` square per the lockup spec in `visual-direction.md` §7.1 — no gradient, no photo background, nothing that reads as a real-estate sign template |
 | Print run | One per consenting client, ordered only after permission is confirmed — this is not a batch asset |
-| Typography | Wordmark set per `visual-direction.md` §7's lockup exactly — Fraunces 600 with `WONK 1` permitted here specifically (the one screen-and-print exception named in `visual-direction.md` §3.1, "the wordmark on the truck door and the yard sign") |
+| Typography | Wordmark set per `visual-direction.md` §7's lockup exactly — Fraunces 600 with `WONK 1` permitted here specifically (the one screen-and-print exception named in `visual-direction.md` §3.1: "the wordmark on the truck door and the yard sign") |
 
 ## Call to action
 

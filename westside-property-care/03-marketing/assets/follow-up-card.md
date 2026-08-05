@@ -3,6 +3,10 @@
 **Used by:** `neighborhood-campaign.md` §4.3, §6 · **Track:** B
 **Placeholders in this file:** `[PHONE]`, `[OWNER FIRST NAME]` — see `gtm-plan.md` §8 for the full registry
 
+> **Re-baselined 2026-08-05.** Name is **Westside Property Care 513**. No other content change —
+> this piece never carried a price or a season reference, so the four-configuration retirement
+> and the season change don't touch its copy.
+
 ---
 
 ## When this is used, and in which of its three forms
@@ -30,7 +34,7 @@ describing a conversation to someone who never had one.
 
 ### Variant 1A — the re-touch after a drop (no conversation happened)
 
-> **Westside Property Care**
+> **Westside Property Care 513**
 >
 > Left something at your door a little while back. {{slots_open}} of the six spots are still
 > open — if you've got a question, or the timing's better now, I'm at `[PHONE]`.
@@ -39,7 +43,7 @@ describing a conversation to someone who never had one.
 
 ### Variant 1B — the re-touch after a conversation
 
-> **Westside Property Care**
+> **Westside Property Care 513**
 >
 > It was good talking about your place. {{slots_open}} of the six spots are still open — if the
 > timing's better now, or you've got a question I didn't answer, I'm at `[PHONE]`.
@@ -48,7 +52,7 @@ describing a conversation to someone who never had one.
 
 ### Variant 2 — the thank-you (to an existing member, after a referral)
 
-> **Westside Property Care**
+> **Westside Property Care 513**
 >
 > Thanks for putting me in touch with your neighbor — that kind of thing is how this business
 > actually works, six clients at a time. Whether or not it turns into anything, I appreciate it.
@@ -59,14 +63,13 @@ describing a conversation to someone who never had one.
 
 ## Why no price on this piece
 
-Same reasoning as the door hanger, and the coordinator note this file was written under: a
-small-format piece like this converts better on a real reason to call than on a printed number,
-and it keeps the actual price conversation where it belongs — in the walkthrough, where he can
-qualify the property and build the number out loud (`ideal-client.md` §6, `pricing.md` §1). The
-one exception worth keeping in reserve: for a re-touch aimed at someone who explicitly said the
-membership wasn't the right fit, the phone script can offer the published project price instead
-("I can still do the grill for you, $249 and up") — that's a live conversation, not printed copy,
-so it isn't part of the fixed card text above.
+Same reasoning as the door hanger: a small-format piece like this converts better on a real
+reason to call than on a printed number, and it keeps the actual price conversation where it
+belongs — in the walkthrough, where he can qualify the property and give the number out loud
+(`ideal-client.md` §7). The one exception worth keeping in reserve: for a re-touch aimed at
+someone who explicitly said the membership wasn't the right fit, the phone script can offer the
+published project price instead ("I can still do the grill for you, $249 and up") — that's a
+live conversation, not printed copy, so it isn't part of the fixed card text above.
 
 ---
 
@@ -78,8 +81,8 @@ so it isn't part of the fixed card text above.
 | Bleed | 0.125" on all sides — design canvas at 4.25" × 6.25" |
 | Address-side margin (if mailed) | Keep all content at least 0.125" inside the trim on three sides, and the bottom 0.625"–0.75" of the address side clear of anything darker than light gray, to leave room for the USPS barcode zone |
 | Stock | 14pt gloss or matte postcard stock |
-| Color | `--paper` ground, `--ink` text, `--copper` on the phone number only |
-| Default delivery method | **Hand-delivered, not mailed**, consistent with the no-ad-spend model in `decisions.md` D-10 — for a re-touch on a street he's already walked, leaving the card at the door costs nothing but time. |
+| Color | `--paper` ground, `--ink` text, `--ember-deep` on the phone number only |
+| Default delivery method | **Hand-delivered, not mailed** — for a re-touch on a street he's already walked, leaving the card at the door costs nothing but time. |
 | Mailed option | Reserve postage for cases where hand delivery isn't practical (a referral thank-you to an existing member who lives outside the immediate walking pattern of a given pass), or for a warmer, more personal touch than a second doorknob drop |
 | Print run | Small batches, 25–50 at a time — this card is never distributed cold in volume, only as a targeted second touch |
 | Typography | Fraunces headline, Plex Sans body, per `visual-direction.md` §3 |

@@ -2,14 +2,13 @@
 
 > ## 🔶 CONDITIONAL — DO NOT RUN ANYTHING IN THIS FILE YET
 >
-> **Tri-State Grill Cleaning (TSGC) customer-list access is UNCONFIRMED.** `CANON.md` §9.2 flags
-> this explicitly, and `human-checklist.md` lists it under "Before the first customer" as a gate
-> that blocks this entire file. Nothing below may be sent, called, printed, or scheduled until
-> **every one of the following is true and someone has personally confirmed it, in writing, to
-> the owner**:
+> **Tri-State Grill Cleaning (TSGC) customer-list access is UNCONFIRMED.** `CANON.md` §10, item 5
+> flags this explicitly: "TSGC warm-list access is unconfirmed. Anything depending on it stays
+> CONDITIONAL." Nothing below may be sent, called, printed, or scheduled until **every one of the
+> following is true and someone has personally confirmed it, in writing, to the owner**:
 >
-> 1. **Permission to use the list.** TSGC and Westside Property Care are related but distinct —
->    the list was collected by one business for one purpose (grill cleaning), and this file
+> 1. **Permission to use the list.** TSGC and Westside Property Care 513 are related but distinct
+>    — the list was collected by one business for one purpose (grill cleaning), and this file
 >    proposes using it for a different business's different offer. The owner must have explicit
 >    permission to use the list this way, from whoever controls it, before a single name is
 >    contacted.
@@ -26,9 +25,9 @@
 >    - **SMS/text is the highest-risk channel in this file.** Under the TCPA, marketing text
 >      messages generally require **prior express written consent**, and a consent a TSGC customer
 >      gave to Tri-State Grill Cleaning does **not** automatically transfer to Westside Property
->      Care, a different business making a different offer. **Do not send a cold marketing text
->      to anyone on this list.** §5 below treats SMS strictly as an opt-in-only layer — used only
->      after someone has affirmatively asked to be texted, never as a first-touch channel.
+>      Care 513, a different business making a different offer. **Do not send a cold marketing
+>      text to anyone on this list.** §5 below treats SMS strictly as an opt-in-only layer — used
+>      only after someone has affirmatively asked to be texted, never as a first-touch channel.
 > 3. **A working opt-out mechanism on every channel**, honored promptly — same day where
 >    practical, and within any statutory window that applies.
 > 4. **Accurate sender identification on every message** — the real business name, the real phone
@@ -48,14 +47,23 @@
 ---
 
 **Owner:** `wpc-marketing` · **Status:** CONDITIONAL — see banner above
-**Reads from:** `CANON.md`, `00-model/*`, `01-brand/*` — never contradicts any of them
+**Reads from:** `CANON.md`, `00-model/*` (rewritten), `01-brand/*` (rewritten) — never contradicts any of them
+
+> **Re-baselined 2026-08-05.** Every price below is **$279/month, flat.** The old four-tier
+> segmentation ($229/$269/$289/$329) is gone along with the tiers themselves — the section that
+> used to explain "why the $269 configuration exists because of this list" no longer applies,
+> because there is nothing to explain: every property pays the same number regardless of what it
+> has. What survives from that section is the underlying insight about **who** is on this list,
+> restated in §2 below without the dead price math. Season is **March 1 – October 31**. Name is
+> **Westside Property Care 513 / WPC513**. Founding terms are the **pro-rated 2026 remainder plus
+> $279 locked through October 31, 2027**, for the **first 4 clients** — not "twelve months."
 
 ---
 
 ## 1. Why this is the highest-leverage channel, if it exists
 
-Every name on the TSGC list already cleared two of the three qualifying attributes in
-`ideal-client.md` §2 before he ever picks up the phone:
+Every name on the TSGC list already clears one, and often two, of the four qualifying attributes
+in `ideal-client.md` §2.2 before he ever picks up the phone:
 
 - **Attribute 1 — a pool, an outdoor kitchen, or both.** Every one of them has an outdoor
   kitchen. That's not an inference; it's the reason they hired Tri-State Grill Cleaning in the
@@ -64,81 +72,82 @@ Every name on the TSGC list already cleared two of the three qualifying attribut
   for a grill cleaning, which means they've already made the decision to outsource outdoor
   upkeep and already trust him personally to do it.
 
-All that's left to check is attribute 3 (the route tests) and geography. No other channel in
-this plan skips straight past the two hardest qualifying questions.
+All that's left to check is the time-fit test and the route tests, plus geography. No other
+channel in this plan skips straight past the two hardest qualifying questions.
 
 **This is also why the trust-building problem — the whole subject of `brand-brief.md` §5 —
 mostly doesn't apply to this list.** He's already been in these backyards. He doesn't need the
-Founding Member price lock to compensate for having no track record with these specific people;
-he has a track record with them. The pitch here is closer to Pair 9 in `voice.md` than to a cold
-first contact: qualify quickly, then get to the walkthrough.
+founding rate to compensate for having no track record with these specific people; he has a
+track record with them. The pitch here is closer to Pair 9 in `voice.md` than to a cold first
+contact: qualify quickly, then get to the walkthrough.
 
 ---
 
-## 2. Why the $269 configuration exists because of this list — say this explicitly
+## 2. Why this list is the best source of the single best client shape in the book
 
 This is not incidental context. It's the strategic reason this segment is the primary target,
-and it should be stated to the owner in exactly these terms:
+and it should be stated to the owner in exactly these terms.
 
 **Every TSGC customer has an outdoor kitchen. Not every TSGC customer has a pool.** That gap —
 kitchen without pool — is common in this specific population in a way it isn't in the general
-west-side homeowner population, because grills are everywhere and in-ground pools are not
-(`decisions.md` D-3: roughly 65–80% of U.S. households own an outdoor grill or smoker, against
-roughly 8% owning a pool of any kind and about 4.7% an in-ground pool specifically).
+west-side homeowner population, because grills are everywhere and in-ground pools are not:
+roughly 65–80% of U.S. households own an outdoor grill or smoker, against roughly 8% owning a
+pool of any kind and about 4.7% an in-ground pool specifically.
 
-That gap is the exact reason `pricing.md` §1 carries a fourth configuration. On **2026-08-05**
-the owner resolved an open question in this project (`decisions.md` D-3 / R-1) by deciding that
-Pool Care and Outdoor Kitchen Care are priced as **independent** add-ons — so a property with an
-outdoor kitchen and no pool prices at **$269/month**, not the $229 base it would have carried
-under the old rule. The reasoning recorded in `decisions.md` is that the first members are most
-likely to come off this exact list, and an outdoor-kitchen-without-pool property is plausibly the
-*most common* shape on it — not a rare edge case that the old rule was implicitly treating it as.
+**And under the flat price, an outdoor-kitchen-without-a-pool property is the single best client
+shape in the book** — not the runner-up to a pool property, the best one. `ideal-client.md` §2.4
+is explicit about why: $93.00 of revenue per on-site hour against $69.75 for a property with
+both, a 90-minute visit with real slack left in it, and every visit is standing next to a grill
+he already knows how to deep-clean for $249. Between the two attributes, **lead with the outdoor
+kitchen, not the pool** — it's the one this list is built entirely around, and it's the
+attribute Tri-State Grill Cleaning already has a trust relationship around.
 
 **In practice, this means:** the segment this file calls Tier 2 below (qualified geography,
-confirmed outdoor kitchen, pool unknown or absent) is expected to be the *largest* segment of the
-list, not a fallback behind the pool-owning Tier 1. Both tiers matter, and Tier 2 specifically
-exists as a real, correctly-priced customer — not a discount version of Tier 1.
+confirmed outdoor kitchen, pool unknown or absent) is expected to be the *largest* segment of
+the list, and it is not a fallback behind the pool-owning Tier 1 — under the flat price it's
+arguably the better lead, not the lesser one.
 
 ---
 
 ## 3. Segmentation
 
 Applied to the list once access is confirmed and the raw data is available. Build three tiers.
+Every tier pays the same **$279/month** — the tiers below sort by qualification and priority, not
+by price.
 
 ### Tier 1 — qualified geography, likely pool
 
 - Address falls inside Green Township, Oak Hills, upper Delhi, or Covedale (`ideal-client.md`
-  §3). Bridgetown addresses need the attribute check below regardless, per §3's conditional
-  rule — a Bridgetown TSGC customer only qualifies as Tier 1 or 2 on what the property actually
-  has, not the ZIP alone.
+  §3). Bridgetown addresses need the attribute check below regardless — a Bridgetown TSGC
+  customer only qualifies as Tier 1 or 2 on what the property actually has, not the ZIP alone.
 - A pool is visible in TSGC job notes, job photos, or is otherwise known — this is a genuine
-  question worth asking the owner directly: *of the homes you've cleaned grills at, how many have
-  pools?* (`decisions.md` R-1 — still worth asking even though the pricing question it originally
-  informed is resolved, because the answer calibrates how big Tier 1 actually is.)
-- **Likely configuration: $329 (pool and outdoor kitchen) or $289 (pool only, if the grill job was
-  incidental).** Highest priority — this is the best client type in the book
-  (`ideal-client.md` §2 — 1.44× a base-tier member on the same route time).
+  question worth asking the owner directly: *of the homes you've cleaned grills at, how many
+  have pools?* The answer calibrates how big Tier 1 actually is and feeds the book-composition
+  planning in `ideal-client.md` §2.3.
+- **Likely time-fit shape: pool and outdoor kitchen, or pool only.** Flag pool-and-kitchen
+  addresses specifically — `ideal-client.md` §2.3 caps the whole book at 2 of 6 with both
+  attributes, so these need extra care on route-day placement even before a price is discussed.
 
 ### Tier 2 — qualified geography, outdoor kitchen confirmed, pool unknown or absent
 
 - Same geography filter as Tier 1.
 - No pool confirmed or visible.
-- **Likely configuration: $269.** Per §2 above, this is expected to be the largest tier, and it
-  is not a lesser lead — it is priced correctly and it is plausibly the modal founding member.
+- **This is the single best client shape in the book** (§2 above) and is expected to be the
+  largest tier on the list. Not a lesser lead — plausibly the modal founding member.
 
 ### Tier 3 — outside qualified geography, or route-incompatible
 
 - Address falls in Westwood, Price Hill, Cheviot, or anywhere else outside the qualified
-  geography — or inside it, but far enough from home base and from any other qualified address on
-  the list to fail the 25-minute test on its own (`operating-model.md` §4).
-- **Not targeted by this campaign.** Per `ideal-client.md` §3, a targeted membership campaign
-  does not go to excluded areas even if the name is already a paying TSGC customer — that rule
-  doesn't bend because the relationship is warm. If someone from Tier 3 reaches out on their own
-  after hearing about the membership some other way, take the walkthrough; that's an exception,
-  not a reason to include them in the send list.
+  geography — or inside it, but far enough from home base and from any other qualified address
+  on the list to fail the 25-minute test on its own (`operating-model.md` §4).
+- **Not targeted by this campaign.** A targeted membership campaign does not go to excluded
+  areas even if the name is already a paying TSGC customer — that rule doesn't bend because the
+  relationship is warm. If someone from Tier 3 reaches out on their own after hearing about the
+  membership some other way, take the walkthrough; that's an exception, not a reason to include
+  them in the send list.
 - These names may still be worth a purely transactional touch for **project work** (a follow-up
-  grill cleaning, for instance) — but that's an ordinary TSGC or project-work contact, not part of
-  this membership campaign, and it is out of scope for this file.
+  grill cleaning, for instance) — but that's an ordinary TSGC or project-work contact, not part
+  of this membership campaign, and it is out of scope for this file.
 
 ### A fourth cut, applied within Tiers 1 and 2: recency and repeat business
 
@@ -152,9 +161,8 @@ Applied to the list once access is confirmed and the raw data is available. Buil
 ### Sizing note
 
 The actual size of Tier 1 versus Tier 2 is unknown until the real list is seen — this file can't
-invent a number, and `unit-economics.md` §1.1 already flags the founding-four client mix as an
-assumption, not a fact. Treat the split described in §2 as a working hypothesis to test against
-the first twenty or so real records, not a fixed ratio to plan around.
+invent a number. Treat the split described in §2 as a working hypothesis to test against the
+first twenty or so real records, not a fixed ratio to plan around.
 
 ---
 
@@ -186,26 +194,30 @@ just good practice.
 
 **Call script:**
 
-> This is `[OWNER FIRST NAME]` — I cleaned your grill a while back through Tri-State. I've started
-> something new on the same properties I already know: twice-a-month care for the pool deck,
-> patio, and outdoor kitchen, with a written report every time. Six properties total, and the
-> first four lock their price for twelve months.
+> This is `[OWNER FIRST NAME]` — I cleaned your grill a while back through Tri-State. I've
+> started something new on the same properties I already know: Westside Property Care 513 —
+> twice-a-month care for the pool deck, patio, and outdoor kitchen, March through October, with
+> a written report every time. Six properties total, and the first four lock their price through
+> next season.
 >
-> Two quick questions if you've got a minute — do you still have the pool, or is it just the
-> kitchen setup now? And is `[STREET NAME]` still the right address? If it sounds worth a look, I'd
-> come walk the property with you — about forty minutes, and I'll give you the number for your
-> place while I'm standing there. You don't have to decide anything that day.
+> Two quick questions if you've got a minute — do you have a pool, or is it just the kitchen
+> setup? And is `[STREET NAME]` still the right address? If it sounds worth a look, I'd come walk
+> the property with you — about forty minutes, and I'll give you the number for your place while
+> I'm standing there. It's $279 a month, same for every property. You don't have to decide
+> anything that day.
 
 **Letter (for names with no working phone number):**
 
 > `[OWNER FIRST NAME]` here — I cleaned your grill through Tri-State Grill Cleaning. I wanted to
-> let you know about something new: I now take care of the outdoor living areas of six properties
-> on the west side, twice a month, with a written report after every visit. Not lawn care, not
-> pool service — pool deck, patio, and the outdoor kitchen.
+> let you know about something new: Westside Property Care 513. I now take care of the outdoor
+> living areas of six properties on the west side, twice a month, March through October, with a
+> written report after every visit. Not lawn care, not pool service — pool deck, patio, and the
+> outdoor kitchen.
 >
 > If you're interested, call or text me at `[PHONE]` and I'll come walk the property with you —
-> about forty minutes, and I'll give you a number for your place while I'm there. The first four
-> members lock their price for twelve months.
+> about forty minutes, and I'll give you the number for your place while I'm there. It's $279 a
+> month, one number, same for every property. The first four members lock that rate through
+> October of next year.
 >
 > If you'd rather not hear from me about this, let me know and I'll take you off this list.
 
@@ -215,23 +227,25 @@ just good practice.
 > **Preview:** Same person who cleaned your grill — a new offer for the rest of the yard.
 >
 > `[OWNER FIRST NAME]` here. I cleaned your grill a while back through Tri-State Grill Cleaning,
-> and I wanted to let you know what I've started since: twice-a-month care for the outdoor living
-> area — pool deck, patio, and outdoor kitchen — on six properties on the west side, with a
-> written report the same day covering what I did and what I found.
+> and I wanted to let you know what I've started since: Westside Property Care 513 —
+> twice-a-month care for the outdoor living area — pool deck, patio, and outdoor kitchen — on six
+> properties on the west side, March through October, with a written report the same day
+> covering what I did and what I found.
 >
-> Not lawn care. Not pool service — I don't touch water chemistry. Everything I don't do is
+> Not lawn care. Not pool service — I don't guarantee your water. Everything I don't do is
 > written down before you'd ever sign anything.
 >
-> The first four members lock their price for twelve months from the day they start. What you'd
-> pay depends on what your property has; I'll walk it with you and build the number out loud —
-> about forty minutes.
+> **$279 a month. That's the whole price list** — same for a property with a pool and an outdoor
+> kitchen as for one with just the kitchen. The first four members lock that rate for the rest of
+> this season and all of next year. I'll walk the property with you and give you the number for
+> your place out loud — about forty minutes.
 >
 > If it's not the right time, I can still do the grill again — that's $249 and up, no membership
 > required.
 >
 > Reply, or call or text `[PHONE]`.
 >
-> — `[OWNER FIRST NAME]`, Westside Property Care · `[EMAIL]` · `[URL]`
+> — `[OWNER FIRST NAME]`, Westside Property Care 513 · `[EMAIL]` · `[URL]`
 >
 > *You're receiving this because you're a past Tri-State Grill Cleaning customer. To stop
 > receiving messages like this, reply "unsubscribe" or email `[EMAIL]` and I'll remove you —
@@ -239,27 +253,27 @@ just good practice.
 
 ### Step 3 (Day ~14, non-responders in Tier 1 and Tier 2 only) — short second touch
 
-> `[OWNER FIRST NAME]` again — following up on the note about the outdoor living membership.
+> `[OWNER FIRST NAME]` again — following up on the note about Westside Property Care 513.
 > {{founding_spots_filled}} of the four founding spots are filled, and the founding rate goes
 > away once the fourth is taken.
 >
-> If you want to see what your place would run, text me your cross street at `[PHONE]` and I'll
-> tell you honestly whether it fits the route yet.
+> If you want to see whether your place fits the route, text me your cross street at `[PHONE]`
+> and I'll tell you honestly.
 >
 > *Reply "stop" and I won't follow up again on this.*
 
 **`{{founding_spots_filled}}` is a dynamic token, not prose** — the real count of the four
 founding spots filled on the day this step actually sends, per `voice.md` §6.5: the real number,
-always, never a placeholder like "three of four" written as if it were already true. Add it to
-`gtm-plan.md` §8's dynamic-token table alongside `{{slots_open}}`.
+always, never a placeholder written as if it were already true. It's registered in
+`gtm-plan.md` §8 alongside `{{slots_open}}`.
 
 **If `{{founding_spots_filled}}` is 0 at send time, delete the entire first sentence** — the
-"No pressure, just a real number" framing plus the count — and open the message directly with
-the second paragraph instead: *"`[OWNER FIRST NAME]` again — following up on the note about the
-outdoor living membership. If you want to see what your place would run, text me your cross
-street at `[PHONE]` and I'll tell you honestly whether it fits the route yet."* A count of zero
-founding spots filled is not a proof point and saying so out loud undercuts the message it's
-supposed to support; the fix is to say nothing about the count that day, not to round it up.
+count and the "goes away once the fourth is taken" framing — and open the message directly with
+the second paragraph instead: *"`[OWNER FIRST NAME]` again — following up on the note about
+Westside Property Care 513. If you want to see whether your place fits the route, text me your
+cross street at `[PHONE]` and I'll tell you honestly."* A count of zero founding spots filled is
+not a proof point and saying so out loud undercuts the message it's supposed to support; the fix
+is to say nothing about the count that day, not to round it up.
 
 ### Step 4 — SMS, opt-in only
 
@@ -268,32 +282,34 @@ box on a reply form. Never sent cold to the list.
 
 **Opt-in confirmation (sent once, immediately after the opt-in action):**
 
-> This is `[OWNER FIRST NAME]` with Westside Property Care — confirming you'd like texts about the
-> outdoor property membership. Msg frequency varies. Reply STOP anytime to opt out.
+> This is `[OWNER FIRST NAME]` with Westside Property Care 513 — confirming you'd like texts
+> about the outdoor property membership. Msg frequency varies. Reply STOP anytime to opt out.
 
 **Follow-up SMS (only after confirmation above):**
 
-> Hey, it's `[OWNER FIRST NAME]`. The first four lock their price for twelve months because
-> they're taking a chance on someone with no track record. {{slots_open}} of the six are open.
-> Text me your cross street or call `[PHONE]`. Reply STOP to opt out.
+> Hey, it's `[OWNER FIRST NAME]`. $279 a month, one price. The first four lock that rate through
+> next season because they're taking a chance on someone with no track record.
+> {{slots_open}} of the six are open. Text me your cross street or call `[PHONE]`. Reply STOP to
+> opt out.
 
 ### Step 5 — Close-out once the founding four are filled
 
-Per `gtm-plan.md` §3, §5: **the founding-member framing stops the moment slot 4 is filled.**
+Per `gtm-plan.md` §3: **the founding-member framing stops the moment slot 4 is filled**, whether
+that happens before or after the 2026 season closes.
 
 - Any Tier 1/2 contact not yet reached gets a final, short message dropping the founding-rate
   language and offering one of two honest outcomes: the standard-rate conversation, if the
   property could plausibly fit slots 5 or 6 and passes the route tests once addresses are
   compared — or the waitlist and a project-work offer, per `voice.md` pair 7, if it can't.
 - **Do not keep running the founding-member script after the founding four are gone.** That would
-  be advertising a benefit that no longer exists, which fails `voice.md`'s truth checklist item 13
-  as directly as inventing a fake one would.
+  be advertising a benefit that no longer exists, which fails `voice.md`'s truth checklist item
+  13 as directly as inventing a fake one would.
 
 > **Close-out message (standard-rate version):**
 > `[OWNER FIRST NAME]` here — the four founding spots are filled, so this is the standard-rate
-> version of the same offer: twice-a-month outdoor living care, written report every visit. If
-> you're still interested, text your cross street to `[PHONE]` and I'll tell you honestly whether
-> it fits the route right now.
+> version of the same offer: Westside Property Care 513, twice-a-month outdoor living care,
+> written report every visit, $279 a month. If you're still interested, text your cross street to
+> `[PHONE]` and I'll tell you honestly whether it fits the route right now.
 
 > **Close-out message (waitlist version):**
 > `[OWNER FIRST NAME]` here — {{slots_open}} of the six are open and the route is built around
@@ -311,20 +327,18 @@ Per `gtm-plan.md` §3, §5: **the founding-member framing stops the moment slot 
   removed from every future step of this sequence** — not just the channel the opt-out arrived
   on. A person who texts STOP does not then receive an email next week.
 - **No one on this list who declines gets a second campaign disguised as a different offer.** If
-  they said no to the membership, that's the answer for the membership; a separate, honest project
-  offer (a future grill cleaning) is fine and is a different, ordinary business contact — not a
-  workaround.
+  they said no to the membership, that's the answer for the membership; a separate, honest
+  project offer (a future grill cleaning) is fine and is a different, ordinary business contact
+  — not a workaround.
 
 ---
 
 ## Related files
 
-- `gtm-plan.md` §3, §4, §5 — where Track A sits in the overall sequence, and the stop condition
+- `gtm-plan.md` §2, §3, §5 — where Track A sits in the overall sequence, and the stop condition
   this file's Step 5 implements
-- `00-model/decisions.md` D-3, R-1 — the full reasoning behind the $269 configuration this file
-  builds around
-- `00-model/pricing.md` §1, §2 — every price and the Founding Member terms referenced above
+- `00-model/pricing.md` §1, §2 — the one price and the Founding Member terms referenced above
 - `00-model/ideal-client.md` §2, §3 — the attributes and geography this segmentation applies
 - `01-brand/voice.md` — every template above is written to pass its audit checklist
-- `05-playbook/human-checklist.md` — "Before the first customer," where TSGC list confirmation is
-  logged as a launch gate
+- `01-brand/messaging.md` §6 — the lead-source table this file's approach follows for the TSGC
+  segment specifically

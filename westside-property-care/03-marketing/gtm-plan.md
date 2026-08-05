@@ -248,7 +248,7 @@ Targets here are planning assumptions, checkable and meant to be argued with, no
 | Contact every qualified-geography name on the list first, leading with the outdoor-kitchen segment. Because these people already have a paid relationship with him, expect a materially higher close rate than a cold approach — plan on needing to reach roughly 10–15 qualified names to land 2–4 signed members in the 2026 window, and recalibrate after the first five real conversations. | Track B alone carries the founding four. `ideal-client.md` §3 notes a few hundred qualifying homes exist across the whole geography — six is roughly a 2% conversion of that *full, uncontacted* population, but a door-hanger-to-walkthrough funnel converts far higher once someone is actually having the qualifying conversation. Plan on distributing 150–250 door hangers per pass (`neighborhood-campaign.md` §5) and running a walkthrough with every response, expecting to need on the order of 6–10 real walkthroughs to land 2–4 signed members in the 2026 window. Recalibrate after the first pass. |
 
 **Time horizon:** no fixed deadline is set on the founding rate itself, but the 2026 season
-closes October 31 — `ideal-client.md` §5.1's logic (no price fixes distance) applies to time too:
+closes October 31 — `ideal-client.md` §6.1's logic (no price fixes distance) applies to time too:
 a founding member signed in month four who fits the route is worth more than one signed in month
 one who doesn't. If Phase 1 is taking longer than expected, the diagnostic is
 `unit-economics.md` §4.2's own honest note: launch-stage revenue is expected to be low, and that
