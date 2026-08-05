@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Project work, membership or not — Westside Property Care</title>
-<meta name="description" content="Grill and outdoor kitchen deep clean from $249. Window well cleanout from $49. Pressure washing, gutters, drainage, and storm work quoted after I look at it. No membership needed.">
+<title>Grill cleaning and project work in Cincinnati — Westside Property Care</title>
+<meta name="description" content="Grill and outdoor kitchen deep clean from $249. Window well cleanout from $49. Everything else quoted after I look at it. No membership needed.">
 <link rel="canonical" href="[URL]/projects.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Project work, membership or not — Westside Property Care">
+<meta property="og:title" content="Grill cleaning and project work in Cincinnati — Westside Property Care">
 <meta property="og:description" content="Grill and outdoor kitchen deep clean from $249. Window well cleanout from $49. Everything else quoted after I look at it.">
 <meta property="og:url" content="[URL]/projects.html">
 </head>
@@ -72,16 +72,20 @@
             <h2 id="published-h">Two prices I can give you without looking</h2>
           </div>
 
-          <ul class="ledger">
-            <li class="ledger__row ledger__row--lead">
-              <span class="ledger__what">Grill and outdoor kitchen deep clean</span>
-              <span class="ledger__price"><span class="figure">$249+</span></span>
-            </li>
-            <li class="ledger__row">
-              <span class="ledger__what">Window well cleanout</span>
-              <span class="ledger__price"><span class="figure">$49+</span></span>
-            </li>
-          </ul>
+          <!-- Same component, same markup contract as the price ledger on
+               index.html and pricing.html: <dl>, one <div> per row, <dt> for
+               what it is and <dd> for the price. The pairing is what a screen
+               reader uses to attach the number to the job. -->
+          <dl class="ledger">
+            <div class="ledger__row ledger__row--lead">
+              <dt class="ledger__what">Grill and outdoor kitchen deep clean</dt>
+              <dd class="ledger__price"><span class="figure">$249+</span></dd>
+            </div>
+            <div class="ledger__row">
+              <dt class="ledger__what">Window well cleanout</dt>
+              <dd class="ledger__price"><span class="figure">$49+</span></dd>
+            </div>
+          </dl>
 
           <div class="ledger__terms measure">
             <p>The plus is doing real work in both. $249 is a standard grill. A full outdoor kitchen with a flat-top, a side burner, and stone counters is more, and I'll tell you what it is before I start.</p>
@@ -137,7 +141,7 @@
         <p class="rail">Estimates</p>
         <div class="entry__body measure">
           <h2 id="estimate-h">How an estimate works</h2>
-          <p>I come look at it, measure it, and photograph it. You get a number the same day or the next morning.</p>
+          <p>I come look at it, measure it, and photograph it. You get a number the same day or the next morning — and if it's after Thursday, it might be Monday.</p>
           <p>It's a flat price, not an hourly rate. If the job takes me longer than I planned, it still costs what I told you. Materials are separate, itemized, at cost plus 25% — you'll see the line on the estimate before the work starts and on the invoice after, never buried in the labor.</p>
           <p>Estimates are good for 30 days. That's a fact, not pressure.</p>
         </div>
@@ -150,8 +154,8 @@
       <div class="entry entry--last">
         <p class="rail">Members</p>
         <div class="entry__body measure">
-          <h2 id="members-h">Members don't get a discount. They get something better.</h2>
-          <p>Scheduling priority, and no trip minimum. A $49 window well is worth doing when I'm already standing in the yard on your route day. It isn't worth a dedicated drive when I'm not.</p>
+          <h2 id="members-h">Members don't get a discount. They get a $49 window well cleared on a day I'm already there.</h2>
+          <p>Scheduling priority, and no trip minimum. That second one is the whole difference: a small job is worth doing while I'm already standing in the yard on your route day, and it isn't worth a dedicated drive when I'm not.</p>
           <p>That's why the small stuff gets handled for members and doesn't for anybody else. It costs me nothing and it's worth more than ten percent off.</p>
           <p class="onward"><a href="pricing.html">What the membership costs, and what's in it</a></p>
         </div>

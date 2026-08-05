@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Westside Property Care — six properties, twice a month, written down every time</title>
-<meta name="description" content="Twice-monthly care for the outdoor living areas of six west-side Cincinnati homes — pool deck, patio, and outdoor kitchen — with a written report after every visit. Scope and price published.">
+<title>Westside Property Care — six properties, twice a month</title>
+<meta name="description" content="Twice-monthly outdoor living care for six west-side Cincinnati homes — pool deck, patio, outdoor kitchen. A written report every visit. Price published.">
 <link rel="canonical" href="[URL]/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/tokens.css">
@@ -14,6 +14,14 @@
 <meta property="og:title" content="Westside Property Care">
 <meta property="og:description" content="Six properties. Twice a month. Written down every time. Outdoor living care on the west side of Cincinnati.">
 <meta property="og:url" content="[URL]/">
+<!-- Structured data asserts only what the prose already asserts and 00-model/
+     supports. Where there is no honest value, the field is omitted rather than
+     filled — absent is not a defect, wrong is. In particular there is NO
+     openingHoursSpecification: he works 1.5–2 days a week, so Mon–Fri 08:00–17:00
+     would publish a staffed forty-hour week and Google would render it as
+     "Open · Closes 5 PM." That is the same false-availability defect as "within
+     24 hours" (voice.md §8 item 14a). Do not add it back. Full omissions table
+     in seo.md §3. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,16 +45,8 @@
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Green Township, Ohio" },
     { "@type": "Place", "name": "Oak Hills, Cincinnati, Ohio" },
-    { "@type": "Place", "name": "Delhi Township, Ohio" },
+    { "@type": "Place", "name": "Upper Delhi, Cincinnati, Ohio" },
     { "@type": "Place", "name": "Covedale, Cincinnati, Ohio" }
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "08:00",
-      "closes": "17:00"
-    }
   ],
   "makesOffer": [
     {
@@ -54,9 +54,8 @@
       "name": "Grill and outdoor kitchen deep clean",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "price": "249",
-        "priceCurrency": "USD",
         "minPrice": "249",
+        "priceCurrency": "USD",
         "valueAddedTaxIncluded": false
       }
     },
@@ -65,9 +64,8 @@
       "name": "Window well cleanout",
       "priceSpecification": {
         "@type": "PriceSpecification",
-        "price": "49",
-        "priceCurrency": "USD",
         "minPrice": "49",
+        "priceCurrency": "USD",
         "valueAddedTaxIncluded": false
       }
     }
@@ -163,9 +161,9 @@
     </div>
   </section>
 
-  <section class="section" aria-labelledby="scope-h visit-h">
+  <section class="section" aria-labelledby="scope-h">
     <div class="container">
-      <div class="entry">
+      <div class="entry entry--last">
         <p class="rail">Scope</p>
         <div class="entry__body measure">
           <h2 id="scope-h">The same person is on your property twice a month, and you get it in writing</h2>
@@ -173,7 +171,11 @@
           <p>There is no crew, no dispatcher, and no subcontractor. It is me, on your route day, on the part of the yard you actually sit in.</p>
         </div>
       </div>
+    </div>
+  </section>
 
+  <section class="section" aria-labelledby="visit-h">
+    <div class="container">
       <div class="entry entry--last">
         <p class="rail">The visit</p>
         <div class="entry__body measure">

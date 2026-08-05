@@ -1266,7 +1266,7 @@ Body:
 
 ```
 I come look at it, measure it, and photograph it. You get a number the same day or the next
-morning.
+morning — and if it's after Thursday, it might be Monday.
 
 It's a flat price, not an hourly rate. If the job takes me longer than I planned, it still costs
 what I told you. Materials are separate, itemized, at cost plus 25% — you'll see the line on the
@@ -1286,18 +1286,27 @@ MEMBERS
 H2:
 
 ```
-Members don't get a discount. They get something better.
+Members don't get a discount. They get a $49 window well cleared on a day I'm already there.
 ```
 
 Body:
 
 ```
-Scheduling priority, and no trip minimum. A $49 window well is worth doing when I'm already
-standing in the yard on your route day. It isn't worth a dedicated drive when I'm not.
+Scheduling priority, and no trip minimum. That second one is the whole difference: a small job is
+worth doing while I'm already standing in the yard on your route day, and it isn't worth a
+dedicated drive when I'm not.
 
 That's why the small stuff gets handled for members and doesn't for anybody else. It costs me
 nothing and it's worth more than ten percent off.
 ```
+
+**Why the headline changed.** It read *"Members don't get a discount. They get something
+better."* — a withheld benefit, and the body underneath it was doing all the work. Any service
+business in the country could publish that sentence, which is a straight failure of §8 item 30.
+The replacement names the object, locates it in time, and prices it (rules 2, 3, 4 in one line),
+and it can only be written by someone who is already going to be standing in that yard on a known
+day. Nothing in the body needed to change except its first sentence, which had been carrying the
+specificity the headline should have had.
 
 ### 4.6 The ask
 
@@ -1609,11 +1618,16 @@ Fields:
 
 ```
 Your name
+   Help text: Required.
 Phone — texting is fine
 Email
 Cross street
-   Help text: The nearest cross street is enough. I don't need your address yet.
+   Help text: Required. The nearest cross street is enough — I don't need your address yet.
 ```
+
+Both required fields carry the word in visible help text. Marking one and not the other is worse
+than marking neither, because the reader reasonably concludes the unmarked one is optional
+(SC 3.3.2).
 
 Fieldset legend:
 
@@ -1652,9 +1666,18 @@ Or text me — [PHONE]
 Under the form:
 
 ```
-I'll answer the same day or the next morning. Nothing gets sent to anybody else, there's no
-mailing list, and I won't follow up more than once if you don't reply.
+I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
+I'd rather tell you that than say "within 24 hours."
+
+Nothing gets sent to anybody else, there's no mailing list, and I won't follow up more than once
+if you don't reply.
 ```
+
+The reply commitment is the full one, with the failure case attached — the same wording as
+`thanks.html`, which `voice.md` §8 item 14b names as the reference. It previously ran here
+without the Thursday clause, which made it a smaller promise than the one the confirmation page
+makes about the same message. Two different answers to "when will he write back" is a defect
+even when both are optimistic.
 
 ### 6.3 Microcopy — errors and states
 
@@ -1664,16 +1687,39 @@ mailing list, and I won't follow up more than once if you don't reply.
 Required
 ```
 
+Carried on **both** required fields — name and cross street.
+
 **Native validation messages** are left to the browser. Where a hint helps, it is permanent help
 text, not an error:
 
 ```
+Your name
+   Required.
+
 Cross street
-   Required. The nearest cross street is enough.
+   Required. The nearest cross street is enough — I don't need your address yet.
 
 Phone — texting is fine
    Give me a phone or an email, whichever you'd rather I use.
 ```
+
+**Invalid-field sentences.** Written into the page on every load and revealed when the control is
+actually invalid — never injected, so there is no message on the site that is not in the markup
+and auditable here. They exist because the copper rule on an invalid field is colour on its own,
+and colour on its own is not information (SC 1.4.1).
+
+```
+Your name         →  I need a name so I know who I'm answering.        (apply.html)
+                     I need a name to write on the list.               (waitlist.html)
+
+Email             →  That doesn't look like an email address. Check it, or leave it blank and
+                     give me a phone number instead.
+
+Cross street      →  I need a cross street. The nearest one is enough.
+```
+
+First person, no "we," no "error," no "invalid," and each one says what he needs and why rather
+than what the field did wrong.
 
 **If the form can't send** (endpoint down, no JavaScript, offline):
 
@@ -1818,8 +1864,12 @@ A spot opening near you. Or a neighbor of yours with a pool or an outdoor kitche
 name — if two of you are on the same street, that's a cluster, and it changes the math
 completely.
 
-That second one is the fastest way onto the list in practice, and it's worth asking around.
+That second one is the fastest way up the list in practice, and it's worth asking around.
 ```
+
+It read "the fastest way **onto** the list," which contradicted the heading directly above it —
+the reader of this section is already on the list, and the whole section is about moving up it.
+Nothing about a neighbor adding their name gets anybody onto a list they are already on.
 
 ### 7.4 The form
 
@@ -1829,9 +1879,13 @@ Legend:
 Add your name
 ```
 
-Fields — same as `apply.html`, with the textarea relabelled:
+Fields — same as `apply.html`, including the required-field help and the invalid-field sentences
+in §6.3, with two strings that differ:
 
 ```
+Your name
+   Invalid: I need a name to write on the list.
+
 Anything you'd want handled in the meantime?
    Help text: Optional. Project work doesn't need a membership and doesn't need a slot.
 ```
@@ -1847,6 +1901,20 @@ Beside it:
 ```
 Or text me — [PHONE]
 ```
+
+Under the form:
+
+```
+I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and
+I'd rather tell you that than say "within 24 hours." I'll tell you honestly where you sit and
+what would have to happen.
+
+If this form doesn't go through, text me at [PHONE].
+```
+
+This form leaves a person waiting on him exactly the way `apply.html` does, so it carries the
+same reply commitment (`voice.md` §8 item 14b). It previously said only what he would tell them,
+never when.
 
 ### 7.5 Meanwhile
 
@@ -2097,6 +2165,23 @@ is wrong.
 
 ## 10. Audit — `01-brand/voice.md` §8, run against this deck
 
+**What the first pass covered, and what it did not.** Items 1–30 below were run against **prose
+only** — the words in this file. That is what "this deck" meant, and it is stated here because
+the pass returned thirty passes while two real defects were live on the site, both of them
+outside prose:
+
+- an `openingHoursSpecification` of Monday–Friday `08:00`–`17:00` in the `index.html` JSON-LD,
+  which is a false availability claim under item **14a** and would have rendered in Google as
+  "Open · Closes 5 PM" for a man who works 1.5–2 days a week;
+- a missing `text-transform` on `.figure` in `base.css`, so `MEMBERSHIP FULL` and
+  `6 OF 6 SPOTS OPEN` rendered in sentence case — a softer claim than the one approved, and a
+  break of item **32**.
+
+Both are fixed. Neither was findable by reading this file, because neither was in it. Items 31–34
+are the non-prose sweep and they are run against the **built site** — `site/*.html`,
+`site/styles/*.css`, `site/js/*.js`, `site/robots.txt` — not against this deck. Item 14 is
+restated below to cover structured data as well as sentences.
+
 | # | Check | Result |
 |---|---|---|
 | 1 | First person singular; no "our," "us," company-as-subject | Pass. The two "we"s that appear — "we'll walk it together on the first visit" — can only mean you-and-me |
@@ -2112,7 +2197,8 @@ is wrong.
 | 11 | Zero testimonials, review counts, ratings, years, certifications, licenses, awards | Pass |
 | 12 | Insurance and LLC not claimed | Pass — held in §9, unused |
 | 13 | Six-client cap stated with the real count; no urgency phrases | Pass — `6 OF 6 SPOTS OPEN` is the true number today |
-| 14 | No arrival time, time window, response window, or same-day promise | Pass — and the reason for the refusal is stated in About §5.5 |
+| 14a | **Availability — must be absent.** No arrival time, time window, response or turnaround commitment, or same-day promise, *in prose or in structured data* | Pass **now**. Prose was clean and the reason for the refusal is stated in About §5.5. The JSON-LD was not: `openingHoursSpecification` Mon–Fri 08:00–17:00 has been deleted from `index.html` and recorded in `seo.md` §3's omissions table, with an HTML comment above the block saying why it must not come back |
+| 14b | **Reply — must be present.** Every surface that leaves someone waiting says when he answers, in his own hours, with the failure case attached | Pass **now**, on all four: `thanks.html` (the reference wording), `apply.html` under the form, `waitlist.html` under the form, and `projects.html` on the estimate. `apply.html` and `projects.html` carried the promise without the after-Thursday clause and `waitlist.html` carried no timing at all; all three now use the reference construction |
 | 15 | No claim about pool water, chemistry, or clarity | Pass — the opposite is stated three times |
 | 16 | No implication of lawn or landscape service | Pass |
 | 17 | Exclusions present on every surface stating a price, and positioned above it | Pass — home §1.6 before §1.7; pricing §3.3 before §3.4 |
@@ -2128,7 +2214,19 @@ is wrong.
 | 27 | Street names only; no client address; no identifying house photo | Pass — and the image slots forbid it in `site-spec.md` §6 |
 | 28 | Exactly one ask per surface, naming the next step and how long it takes | Pass — "about forty minutes" appears with every walkthrough ask |
 | 29 | When full, the only ask is the waitlist plus the project offer | Pass — §8 |
-| 30 | Could a competitor with two hundred accounts and a call center publish this word for word? | **No.** "The fern on the north side dries out faster than the others, so I moved it two feet under the eave" cannot be written by a company that does not know the fern. |
+| 30 | Could a competitor with two hundred accounts and a call center publish this word for word? | **No** — with one line repaired. "The fern on the north side dries out faster than the others, so I moved it two feet under the eave" cannot be written by a company that does not know the fern. But the Projects members headline read *"Members don't get a discount. They get something better"* — a withheld-benefit tease anyone could publish, and it failed this item. Rewritten to name, locate, and price the thing: see §4.5 |
+
+### Items 31–34 — the non-prose surfaces
+
+Run against the built site, not against this file. Numbered 31–34 because `voice.md` §8 never
+renumbers and item 30 is written to be run last.
+
+| # | Check | Result |
+|---|---|---|
+| 31 | **Structured data** asserts only what the prose asserts and `00-model/` supports; where there is no honest value the field is omitted rather than filled | **Pass now — this is where the worst defect was.** `openingHoursSpecification` deleted (item 14a). `areaServed` said `Delhi Township, Ohio` while every other surface said *upper Delhi*, which is a machine-readable claim on an area the price does not fit — now `Upper Delhi, Cincinnati, Ohio`. `makesOffer` set `price` and `minPrice` to the same figure, asserting an exact price where the site publishes `$249+` and `$49+` — `price` dropped, `minPrice` kept. Still absent and still correct: no `aggregateRating`, no `review`, no `employee`, no `foundingDate`, no service area outside the four qualified ones, no price not in `pricing.md`. Full table in `seo.md` §3 |
+| 32 | **Rendered case** — the status stamps actually render in caps, `text-transform` present wherever the stylesheet carries that rule, no letterspaced lowercase | **Pass now.** `.figure` set the mono face, tracking, and tabular figures but no `text-transform`, so `MEMBERSHIP FULL` and `6 OF 6 SPOTS OPEN` rendered as "Membership full" and "6 of 6 spots open" — letterspaced lowercase, which `visual-direction.md` §3.4 bans outright, and a softer claim than the approved stamp. Second-order: `fonts/README.md` subsets Plex Mono to uppercase and digits only, so once the real face lands the lowercase would fall out of the subset mid-word. `text-transform: uppercase` added to `.figure` in `base.css` with the reason in a comment. `.stamp` and `.rail` already had it |
+| 33 | **Alt text and labels** name a specific object and locate it; button, `aria-label`, placeholder, and error text pass §6 and the person rules | Pass. There is no `alt` on the site yet because there is no photograph yet — every slot is a `<figure class="plate">` whose `figcaption` names the missing frame and its subject ("A pool deck mid-visit, standing height, my own equipment in frame"), and `site-spec.md` §6 carries the alt rule for the day they are shot. No `aria-label` on the site says anything but `Main` and `Footer`. No placeholders anywhere — every field has a real `<label>`. The new invalid-field sentences in §6.3 are first person and say what he needs, not what the field did |
+| 34 | **Titles, meta, and Open Graph** pass §6 in full — no banned phrases, no invented credentials, no urgency, sentence case | Pass. Checked across all ten pages plus the `og:` values. No "premier," "solutions," "professional," "licensed," "free estimate," "call now," or any §6.5 urgency phrase. Sentence case throughout, the business name being the only capitalised exception. `projects.html` gained `Cincinnati` in its `<title>`, which is geography rather than a keyword stuff, and its `og:title` was updated in step so the two agree. Seven descriptions were shortened so each one's closing differentiator survives truncation — the wording is in `seo.md` §2 and every price in them is verbatim from `pricing.md` |
 
 ---
 

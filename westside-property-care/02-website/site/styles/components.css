@@ -37,6 +37,11 @@
   text-decoration: none;
 }
 
+/* The wordmark is a link home. At --type-small its own box is about 16px
+   tall, which is under the 24px floor in SC 2.5.8, and inherited flex spacing
+   is not a target — the padding is. */
+a.mark { padding-block: var(--space-tight); }
+
 a.mark:hover { color: var(--season-accent); }
 
 .mark__short {
@@ -266,9 +271,12 @@ body:has(#season-switch:checked) .season__label .season__to-green { display: inl
   border-color: var(--ink);
 }
 
+/* --rule is 1.59:1 on --paper. It is the right colour for a separator nobody
+   has to find, and the wrong one for the only edge a button has — the label
+   is legible but the affordance is not (SC 1.4.11). --ink-muted is 5.97:1. */
 .btn--quiet {
   background-color: transparent;
-  border-color: var(--rule);
+  border-color: var(--ink-muted);
   color: var(--ink);
 }
 
@@ -577,6 +585,11 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   color: var(--ink-muted);
 }
 
+/* The field sits on the page ground, so the border is the only thing that
+   says "you can type here." --rule is 1.59:1 against --paper and leaves the
+   control with no perceivable boundary at rest, which fails SC 1.4.11 in both
+   seasons. --ink-muted is 5.97:1 and still reads as a hairline rather than a
+   box. */
 .field input,
 .field textarea {
   inline-size: 100%;
@@ -585,7 +598,7 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   padding: var(--space-tight) var(--space-control);
   background-color: var(--paper);
   color: var(--ink);
-  border: var(--hair) solid var(--rule);
+  border: var(--hair) solid var(--ink-muted);
   border-block-end-width: var(--hair-flag);
   border-radius: var(--radius-control);
   transition-property: border-color, background-color;
@@ -602,11 +615,44 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 .field input:hover,
 .field textarea:hover { border-color: var(--season-accent); }
 
+/* Invalid state is never colour alone (SC 1.4.1). The copper rule is the
+   glance-level signal; the sentence beneath it is the actual information.
+   :user-invalid carries it with no JavaScript at all.
+
+   The :user-invalid pair and the [aria-invalid] pair are kept as SEPARATE
+   rules on purpose, never grouped into one selector list: a browser that does
+   not know :user-invalid discards the entire list it appears in, which would
+   take the fallback down with it. Split, the old browser drops the first rule
+   and keeps the second. */
 .field input:user-invalid,
 .field textarea:user-invalid {
   border-color: var(--copper);
   background-color: var(--paper);
 }
+
+/* Set by js/forms.js. Progressive enhancement, and the path for browsers
+   without :user-invalid. */
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: var(--copper);
+  background-color: var(--paper);
+}
+
+/* Written into the page, not injected on failure — so the sentence is the
+   same one every time and there is no message the markup does not contain. */
+.field__error {
+  display: none;
+  margin-block-start: var(--space-hair);
+  font-size: var(--type-small);
+  line-height: var(--lh-small);
+  color: var(--copper);
+}
+
+.field input:user-invalid ~ .field__error,
+.field textarea:user-invalid ~ .field__error { display: block; }
+
+.field input[aria-invalid="true"] ~ .field__error,
+.field textarea[aria-invalid="true"] ~ .field__error { display: block; }
 
 .checks {
   display: grid;
@@ -622,10 +668,12 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   padding-block: var(--space-hair);
 }
 
+/* The row is 44px, but the box a finger actually lands on is the control's
+   own, so it carries the 24px SC 2.5.8 floor itself. */
 .check input {
-  inline-size: 1.25rem;
-  block-size: 1.25rem;
-  margin-block-start: 0.28em;
+  inline-size: var(--tap-min);
+  block-size: var(--tap-min);
+  margin-block-start: 0.1em;
   accent-color: var(--copper);
   flex: 0 0 auto;
 }
@@ -704,6 +752,17 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
   min-block-size: var(--tap-target);
   font-size: var(--type-small);
 }
+
+/* Focus, reversed. The global ring in base.css is --copper, which is a
+   paper-side colour: on the Green accent it computes to 2.01:1 and on the
+   Dormant accent to 1.20:1, so on this panel the ring is under the 3:1 floor
+   for a non-text indicator (SC 1.4.11) and in Dormant Season it is effectively
+   invisible. --paper is 10.40:1 on Green and 6.24:1 on Dormant. The rail
+   marker moves with it, because it is half of the same indicator. */
+.foot :focus-visible { outline-color: var(--paper); }
+
+.foot a:focus-visible::before,
+.foot button:focus-visible::before { background-color: var(--paper); }
 
 .foot__rule {
   margin-block: var(--space-block);

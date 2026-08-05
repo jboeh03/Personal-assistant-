@@ -58,23 +58,40 @@ Titles are written for a human scanning a result, not for a keyword tool. Senten
 
 Lengths are given because they are the one place a description gets silently truncated.
 
+**The length targets, and why they are what they are.** Titles aim at **≈60 characters** and
+descriptions at **≈155**. Google truncates on pixel width rather than character count, so these
+are approximations of a moving line — but the consequence of overshooting is specific and it is
+the reason every value below was shortened: **the last clause is the first casualty.** Each of
+these descriptions is written to close on the one thing a competitor would not publish, and a
+closing differentiator that gets cut has been written for nothing. Where a value still runs a
+little long, the load-bearing words are at the front.
+
+Character counts below are measured on the shipped files, not estimated.
+
 ### `index.html`
 
 | | |
 |---|---|
-| **Title** | `Westside Property Care — six properties, twice a month, written down every time` (78 ch) |
-| **Description** | `Twice-monthly care for the outdoor living areas of six west-side Cincinnati homes — pool deck, patio, and outdoor kitchen — with a written report after every visit. Scope and price published.` (191 ch) |
+| **Title** | `Westside Property Care — six properties, twice a month` (54 ch) |
+| **Description** | `Twice-monthly outdoor living care for six west-side Cincinnati homes — pool deck, patio, outdoor kitchen. A written report every visit. Price published.` (152 ch) |
 | **H1** | Six properties. Twice a month. Written down every time. |
 
 The description leads with what it is and where, then closes on the differentiator a competitor
-will not copy: the scope and the price are on the page rather than behind a form.
+will not copy: the price is on the page rather than behind a form.
+
+**The title is deliberately short**, because the one search this site genuinely has to win is
+the branded one — someone hears "Westside Property Care" over a fence and types it in that
+evening (§1). At 78 characters the previous title was long enough that Google would truncate it
+or silently rewrite it, and on the highest-value query available that is a bad trade for three
+extra words. The brand goes first and the two facts that survive are the two the business runs
+on.
 
 ### `whats-included.html`
 
 | | |
 |---|---|
-| **Title** | `What's included, and what isn't — Westside Property Care` (55 ch) |
-| **Description** | `The full scope of both seasons — Green Season April through October, Dormant Season November through March — and every exclusion, in the words they're written in the agreement.` (174 ch) |
+| **Title** | `What's included, and what isn't — Westside Property Care` (56 ch) |
+| **Description** | `The scope of both seasons — Green Season, April through October, and Dormant Season, November through March. Every exclusion, in the agreement's words.` (151 ch) |
 | **H1** | What's included, and what isn't |
 
 **This is the most important page in the site for search**, and not for the reason SEO people
@@ -86,7 +103,7 @@ competitor could not publish, because publishing your own exclusions is a costly
 | | |
 |---|---|
 | **Title** | `Pricing — Westside Property Care` (32 ch) |
-| **Description** | `What you pay depends on what your property has. A property with a pool is $289 a month; with a pool and an outdoor kitchen, $329. Two visits a month, the same price in January as in July.` (183 ch) |
+| **Description** | `What you pay depends on what your property has: $289 a month with a pool, $329 with a pool and an outdoor kitchen. The same price in January as in July.` (152 ch) |
 | **H1** | What you pay depends on what your property has |
 
 The description carries $289 and $329 and does not carry $229 — `CANON.md` §3, lead with the
@@ -97,20 +114,39 @@ a configuration does not break the sentence. It does not carry the module arithm
 
 | | |
 |---|---|
-| **Title** | `Project work, membership or not — Westside Property Care` (55 ch) |
-| **Description** | `Grill and outdoor kitchen deep clean from $249. Window well cleanout from $49. Pressure washing, gutters, drainage, and storm work quoted after I look at it. No membership needed.` (177 ch) |
+| **Title** | `Grill cleaning and project work in Cincinnati — Westside Property Care` (70 ch) |
+| **Description** | `Grill and outdoor kitchen deep clean from $249. Window well cleanout from $49. Everything else quoted after I look at it. No membership needed.` (143 ch) |
 | **H1** | Project work, membership or not |
 
 This is the page most likely to catch a genuine search, because "grill cleaning Cincinnati" is a
 thing people actually look for and it is a thing he actually does. It is also the page that
 converts a prospect who fails the route test into revenue.
 
+**Geography is added here, on this page only, and in one field.** The title previously carried
+no place name at all — neither did the description, the `h1`, or the lede — so the one page in
+the site with a plausible non-branded query was invisible to it. `Cincinnati` now sits in the
+`<title>`, which is the strongest of the three fields, and the `og:title` is kept in sync so the
+two do not disagree.
+
+Two things this deliberately is **not**:
+
+- **Not a new page.** No `/grill-cleaning-cincinnati` doorway. §1 is explicit that SEO must never
+  be allowed to add pages here, and one honest title beats a page farm.
+- **Not geography everywhere.** The description is not also stuffed with "west side" —
+  duplicating the same signal across every field on the page buys nothing and starts to read
+  like it was written for a crawler.
+
+At 70 characters the title will be truncated in some results. That is accepted rather than
+overlooked: the two words that matter, `Grill cleaning` and `Cincinnati`, sit inside the first
+44 characters, so what gets cut is the brand suffix — the part a reader can already see in the
+URL and the part Google frequently re-adds itself.
+
 ### `about.html`
 
 | | |
 |---|---|
-| **Title** | `This is new. I'd be starting with you. — Westside Property Care` (62 ch) |
-| **Description** | `A new one-person business on the west side of Cincinnati, out of a family grill-cleaning business. Six properties is the cap, the route decides who fits, and everything I don't do is published.` (191 ch) |
+| **Title** | `This is new. I'd be starting with you. — Westside Property Care` (63 ch) |
+| **Description** | `New, one person, west side of Cincinnati, out of a family grill-cleaning business. Six properties is the cap, and everything I don't do is published.` (149 ch) |
 | **H1** | This is new. I'd be starting with you. |
 
 A title that opens with the weakness is unusual in a result page, which is exactly why it earns
@@ -121,28 +157,45 @@ it is there.
 
 | | |
 |---|---|
-| **Title** | `Two questions, then I'll come look — Westside Property Care` (58 ch) |
-| **Description** | `Tell me what the property has and what your cross street is. If it fits the route, I'll walk the property with you, show you what isn't included, and give you the price standing there.` (180 ch) |
+| **Title** | `Two questions, then I'll come look — Westside Property Care` (59 ch) |
+| **Description** | `Tell me what the property has and your cross street. If it fits the route, I'll walk it with you and price it standing there. About forty minutes.` (146 ch) |
 | **H1** | Two questions, then I'll come look |
 
 ### `waitlist.html`
 
 | | |
 |---|---|
-| **Title** | `The waitlist is a real list — Westside Property Care` (51 ch) |
-| **Description** | `A written list with your street on it. When a spot opens it goes to whoever is closest to the route I'm already driving. Project work Tuesday through Thursday in the meantime.` (172 ch) |
+| **Title** | `The waitlist is a real list — Westside Property Care` (52 ch) |
+| **Description** | `A written list with your street on it. When a spot opens it goes to whoever is closest to the route I'm already driving. Project work in the meantime.` (150 ch) |
 | **H1** | The waitlist is a real list |
 
 ### Not indexed
 
 | Page | Treatment | Why |
 |---|---|---|
-| `membership-full.html` | `noindex` while it is the staging copy | It duplicates `index.html` and would split the one page that matters. The meta line is removed at the moment it *becomes* `index.html`. |
-| `thanks.html` | `noindex` | A form success page has no business in an index. |
-| `404.html` | `noindex` | — |
+| `membership-full.html` | `noindex` **only** | It duplicates `index.html` and would split the one page that matters. The meta line is removed at the moment it *becomes* `index.html`. |
+| `thanks.html` | `noindex` **only** | A form success page has no business in an index. |
+| `404.html` | `noindex` **only** | — |
 
-All three are also `Disallow`ed in `robots.txt`. `sitemap.xml` lists the seven real URLs and
-none of these.
+### `noindex`, never `Disallow` — and why they are not interchangeable
+
+**`robots.txt` allows everything.** All three pages above are kept out of the index by the meta
+tag alone, and `robots.txt` carries a comment saying so, so nobody re-adds the `Disallow` lines
+as a belt-and-braces improvement.
+
+They are not additive. They are in direct conflict:
+
+- A `Disallow`ed URL is **never fetched**, so the `noindex` on it is **never read**. The
+  instruction and the only channel that could deliver it cancel each other out.
+- Google may still index a blocked URL it finds linked, as a bare result with no title and no
+  description — which is the outcome the `noindex` existed to prevent, arrived at by the
+  mechanism meant to prevent it.
+- `membership-full.html` is the case where that actually bites. It is a near-duplicate of the
+  home page, so a bare, description-less result for it looks to a reader like an unexplained
+  second copy of the site.
+
+`404.html` was already handled correctly — `noindex`, no `Disallow` — and is the pattern the
+other two now follow. `sitemap.xml` lists the seven real URLs and none of these.
 
 ---
 
@@ -157,8 +210,9 @@ goes wrong.
 `LocalBusiness` is the general type. **`HomeAndConstructionBusiness`** is its direct subtype and
 is the correct one here — it inherits every property `LocalBusiness` has, so every consumer that
 understands `LocalBusiness` understands this, and it is more specific about what the business
-actually is. `LocalBusiness` itself is a subtype of `Organization` and of `Place`, which is why
-`address` and `openingHoursSpecification` are valid on it.
+actually is. `LocalBusiness` itself is a subtype of `Organization` and of `Place`, which is why `address` and
+`areaServed` are valid on it. (`openingHoursSpecification` is valid on it too, and is
+deliberately not used — see the omissions table below.)
 
 `HomeAndConstructionBusiness` has three subtypes — `Electrician`, `HVACBusiness`, `Plumber`,
 `RoofingContractor`, `HousePainter`, `Locksmith`, `MovingCompany`, `GeneralContractor` — and
@@ -190,10 +244,9 @@ structured data is exactly the wrong place to be loose. The parent type is the h
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Green Township, Ohio" },
     { "@type": "Place", "name": "Oak Hills, Cincinnati, Ohio" },
-    { "@type": "Place", "name": "Delhi Township, Ohio" },
+    { "@type": "Place", "name": "Upper Delhi, Cincinnati, Ohio" },
     { "@type": "Place", "name": "Covedale, Cincinnati, Ohio" }
   ],
-  "openingHoursSpecification": [ … ],
   "makesOffer": [ … ]
 }
 ```
@@ -212,8 +265,25 @@ structured data is exactly the wrong place to be loose. The parent type is the h
 | `currenciesAccepted` / `paymentAccepted` | Text | `USD` / `Credit card` — matches card-on-file in `pricing.md` §4 | Valid |
 | `address` | PostalAddress | Locality, region, country. **No street address on purpose** — see below | Valid |
 | `areaServed` | Text, Place, AdministrativeArea, or GeoShape | Four entries. Green Township is a real Ohio civil township, so `AdministrativeArea`; the other three are neighbourhoods and communities, so `Place` | Valid |
-| `openingHoursSpecification` | OpeningHoursSpecification | `dayOfWeek` as an array plus `opens`/`closes` in 24-hour `HH:MM` | Valid |
-| `makesOffer` | Offer | Two offers, each with a `PriceSpecification` carrying `price`, `minPrice`, and `priceCurrency` | Valid |
+| `makesOffer` | Offer | Two offers, each with a `PriceSpecification` carrying `minPrice` and `priceCurrency` and no `price` | Valid |
+
+### `areaServed` says the same thing the footer says
+
+The third entry reads **`Upper Delhi, Cincinnati, Ohio`**, not `Delhi Township, Ohio`. The
+narrowing is load-bearing, not cosmetic: `00-model/ideal-client.md` §3 qualifies *the top of the
+Delhi range only* — the higher-value streets — and explicitly not Delhi generally, whose median
+sits well below what a $289–$329 membership addresses. Every other surface already said "upper
+Delhi": the footer of all ten pages, the copy on `index.html` and `about.html`, §4 of this file,
+and the GBP service area in `03-marketing/google-business-profile.md` §2. The structured data was
+the one place that had quietly widened it to the whole township, which is a machine-readable
+claim to serve an area the route cannot and the price does not fit.
+
+**What is deliberately not done here:** no `GeoShape`, no `polygon`, no `circle` with a radius.
+The real boundary is not a shape — it is the 15-minute, 25-minute, and 5-hour route tests in
+`operating-model.md` §4, and a qualified property that is not near a cluster goes on the waitlist
+even at $329 (§4 below). Drawing a polygon would encode a precision that does not exist, would
+need maintaining every time the route changes, and would be exactly the over-engineering §1 says
+this site must not acquire. Four named places is the honest resolution.
 
 ### Deliberate omissions, each with a reason
 
@@ -222,6 +292,8 @@ any of them would be fabricated proof (`brand-brief.md` §4.4).
 
 | Omitted | Why |
 |---|---|
+| `openingHoursSpecification` | **Removed, and it must not come back.** The block previously declared Monday–Friday `08:00`–`17:00`. No prose on the site says that and it is not true: he works **1.5–2 days a week**, routine visits are the first and third Monday and Friday, and Tuesday through Thursday is project time (`CANON.md` §3). Published as structured data it is a machine-readable staffed forty-hour week, and Google renders it in the knowledge panel as "Open · Closes 5 PM" — a false availability claim identical in kind to "within 24 hours" and banned by the same rule (`voice.md` §8 item 14a, §6.4). `03-marketing/google-business-profile.md` §2 had already made the correct call for the profile — "by appointment / does not apply in the traditional sense" — and the site now agrees with it. There is no honest value for this field, so the field is absent. |
+| `price` inside `makesOffer` → `priceSpecification` | Both offers previously set `price` **and** `minPrice` to the same number, which asserts an exact price. Every other surface publishes these as **$249+** and **$49+** — starting prices, with the plus doing real work (`pricing.md` §5.1, and the `projects.html` copy that explains what the plus covers). `minPrice` alone is the honest shape and it is what the rest of the site says. |
 | `aggregateRating`, `review` | **No reviews exist.** This is the single most commonly faked property in local schema and it is the one that gets a manual action. It goes in when there are real reviews, with the real count. |
 | `image`, `logo` | No real photography exists yet (`CANON.md` §9.3). Pointing at a plate placeholder would be worse than omitting. **Add `image` the day frame 1 is shot** — it is the highest-value addition available. |
 | `sameAs` | Nothing to link to yet. **Add `[GBP_URL]` the moment the Google Business Profile is verified.** This is the second-highest-value addition. |
@@ -302,17 +374,37 @@ JSON-LD, the service agreement, the invoice, and every printed piece.
 | **Business type** | **Service-area business. Hide the address.** He works out of a vehicle on other people's property; there is no location a customer visits. |
 | **Service area** | The four qualified areas in §4. **Not "Cincinnati."** Setting the area to the whole metro produces unqualified inquiries from places the route cannot serve, and each one costs time he does not have. |
 
-### Category
+### Category — decided in `03-marketing/google-business-profile.md` §3, not here
 
-- **Primary:** the closest available to a twice-monthly outdoor-living property-care service.
-  Google's category list has no exact match; pick the nearest honest one and do not stack
-  unrelated categories to catch more searches.
-- **Do not add** "Pool Cleaning Service," "Lawn Care Service," or "Landscaper." All three are
-  things he explicitly does not do (`service-catalog.md` §4.1, §4.2). Adding them would generate
-  inquiries he has to decline and would contradict the exclusions published on his own site,
-  which is the one place his story has to be consistent.
-- **"Grill cleaning" or the nearest equivalent is a legitimate secondary**, because the deep
-  clean at $249+ is real work he really performs.
+**That file is the source of truth for the GBP categories and this one defers to it.** Whoever
+sits down to set the profile up must not find two answers.
+
+| | Category |
+|---|---|
+| **Primary** | **Property maintenance** |
+| **Secondary** | **Pressure washing service** |
+
+Two categories, and no third.
+
+**An earlier version of this file suggested "grill cleaning" as the secondary. That is
+withdrawn.** It was reasoning from the search — "grill cleaning Cincinnati" is a real query and
+the $249+ deep clean is real work — rather than from Google's actual taxonomy, which has no such
+category to select. `03-marketing/google-business-profile.md` §3 did the harder work of checking
+what can actually be chosen, and landed on **Pressure washing service**: a real, quoted offering
+(`pricing.md` §5.2, `service-catalog.md` §4.4), specific enough to catch a search that "property
+maintenance" alone would miss, and — unlike a category invented to fit a keyword — selectable.
+
+The grill deep clean is still published, in the two places it belongs: the **Services** list on
+the profile at **$249+** (that file §4, and the products list below), and the `<title>` of
+`projects.html` (§2). A service entry and a page title are where a specific offering is named.
+A category is not.
+
+**Do not add** "Pool Cleaning Service," "Lawn Care Service," "Landscaper," "Handyman," or "Home
+cleaning service." Every one is something he explicitly does not do
+(`service-catalog.md` §4.1, §4.2, §4.3, §4.9). Adding any would generate inquiries he has to
+decline and would contradict the exclusions published on his own site, which is the one place
+his story has to be consistent. The full reasoning, category by category, is in
+`03-marketing/google-business-profile.md` §3.
 
 ### Description
 
@@ -367,12 +459,12 @@ What is already true of the built site, so nobody re-does it.
 | `<title>` and `<meta name="description">` unique per page | Done — §2 |
 | `<link rel="canonical">` on every page | Done, `[URL]`-templated |
 | Open Graph title, description, type, and url | Done on all seven public pages |
-| `robots.txt` with a sitemap reference | Done |
+| `robots.txt` with a sitemap reference, and **no `Disallow` lines** | Done — the reasoning is in §2 |
 | `sitemap.xml` listing the seven real URLs | Done |
-| `noindex` on `thanks.html`, `404.html`, `membership-full.html` | Done — see the note in §2 |
+| `noindex` on `thanks.html`, `404.html`, `membership-full.html`, crawlable so it can be read | Done — see the note in §2 |
 | Semantic landmarks and descriptive link text | Done. No "click here" and no "learn more" anywhere — `voice.md` bans the latter as a CTA |
 | Mobile-first, no horizontal overflow | Done — `site-spec.md` §11 |
-| Fast: ~9.5 KB of gzipped CSS, ~0.6 KB of JS, no third-party request at all | Done — `site-spec.md` §9.2 |
+| Fast: 12.9 KB of gzipped CSS, 1.3 KB of JS, no third-party request at all | Done — `site-spec.md` §9.2 carries the measured figures |
 | Explicit dimensions on media so nothing shifts | Required when photos land; the plate placeholders already reserve their space by `aspect-ratio` |
 | Structured data | Done — §3 |
 | HTTPS and security headers | `_headers` ships ready; the host must apply it |

@@ -9,8 +9,8 @@
 # Note on script-src 'self' with no 'unsafe-inline': the JSON-LD block in
 # index.html is <script type="application/ld+json">, which is not a JavaScript
 # MIME type and is therefore not treated as an executable script block under
-# CSP3. It is not blocked. The one real script, js/season.js, is external and
-# same-origin.
+# CSP3. It is not blocked. The two real scripts, js/season.js and js/forms.js,
+# are both external and same-origin, so 'self' covers them.
 #
 # img-src allows data: for the inline paper-grain SVG and the plate ruling.
 # style-src is 'self' only — there is no inline <style> and no style= attribute

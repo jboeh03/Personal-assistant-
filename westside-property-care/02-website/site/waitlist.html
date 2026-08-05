@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The waitlist is a real list — Westside Property Care</title>
-<meta name="description" content="A written list with your street on it. When a spot opens it goes to whoever is closest to the route I'm already driving. Project work Tuesday through Thursday in the meantime.">
+<meta name="description" content="A written list with your street on it. When a spot opens it goes to whoever is closest to the route I'm already driving. Project work in the meantime.">
 <link rel="canonical" href="[URL]/waitlist.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/tokens.css">
@@ -104,7 +104,7 @@
         <div class="entry__body measure">
           <h2 id="up-h">Two things move you up</h2>
           <p>A spot opening near you. Or a neighbor of yours with a pool or an outdoor kitchen adding their name — if two of you are on the same street, that's a cluster, and it changes the math completely.</p>
-          <p>That second one is the fastest way onto the list in practice, and it's worth asking around.</p>
+          <p>That second one is the fastest way up the list in practice, and it's worth asking around.</p>
         </div>
       </div>
     </div>
@@ -131,9 +131,16 @@
             <fieldset>
               <legend>Your details</legend>
 
+              <!-- Required fields say so in visible text, in the same
+                   field__hint pattern the cross street uses. The error
+                   sentence beneath each one is in the markup on every page
+                   load and is revealed, not injected — so the invalid state
+                   is never carried by the copper rule alone. -->
               <div class="field">
                 <label for="name">Your name</label>
-                <input type="text" id="name" name="name" autocomplete="name" required>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-hint name-error">
+                <span class="field__hint" id="name-hint">Required.</span>
+                <span class="field__error" id="name-error">I need a name to write on the list.</span>
               </div>
 
               <div class="field">
@@ -144,13 +151,15 @@
 
               <div class="field">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email">
+                <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+                <span class="field__error" id="email-error">That doesn't look like an email address. Check it, or leave it blank and give me a phone number instead.</span>
               </div>
 
               <div class="field">
                 <label for="street">Cross street</label>
-                <input type="text" id="street" name="cross_street" autocomplete="address-line2" required aria-describedby="street-hint">
+                <input type="text" id="street" name="cross_street" autocomplete="address-line2" required aria-describedby="street-hint street-error">
                 <span class="field__hint" id="street-hint">Required, and on this form it's the whole point — the list is ordered by how close you are to the route.</span>
+                <span class="field__error" id="street-error">I need a cross street. The nearest one is enough.</span>
               </div>
             </fieldset>
 
@@ -182,7 +191,8 @@
           </form>
 
           <div class="measure">
-            <p class="small">I'll tell you honestly where you sit and what would have to happen. If this form doesn't go through, text me at <a href="sms:[PHONE]">[PHONE]</a>.</p>
+            <p class="small">I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and I'd rather tell you that than say "within 24 hours." I'll tell you honestly where you sit and what would have to happen.</p>
+            <p class="small">If this form doesn't go through, text me at <a href="sms:[PHONE]">[PHONE]</a>.</p>
           </div>
         </div>
       </div>
@@ -199,16 +209,18 @@
             <p>Tuesday through Thursday I'm doing projects and estimates whether you're a member or not.</p>
           </div>
 
-          <ul class="ledger">
-            <li class="ledger__row ledger__row--lead">
-              <span class="ledger__what">Grill and outdoor kitchen deep clean</span>
-              <span class="ledger__price"><span class="figure">$249+</span></span>
-            </li>
-            <li class="ledger__row">
-              <span class="ledger__what">Window well cleanout</span>
-              <span class="ledger__price"><span class="figure">$49+</span></span>
-            </li>
-          </ul>
+          <!-- Same markup contract as every other ledger on the site: <dl>,
+               one <div> per row, <dt> what it is, <dd> the price. -->
+          <dl class="ledger">
+            <div class="ledger__row ledger__row--lead">
+              <dt class="ledger__what">Grill and outdoor kitchen deep clean</dt>
+              <dd class="ledger__price"><span class="figure">$249+</span></dd>
+            </div>
+            <div class="ledger__row">
+              <dt class="ledger__what">Window well cleanout</dt>
+              <dd class="ledger__price"><span class="figure">$49+</span></dd>
+            </div>
+          </dl>
 
           <div class="ledger__terms measure">
             <p>Pressure washing, gutters, bed cleanout, drainage, storm work, and spring open or fall close all get quoted after I look at them. Flat number, materials itemized separately at cost plus 25%, good for 30 days.</p>
@@ -264,6 +276,11 @@
     <p class="foot__note">Two scheduled visits a month. The same price in January as in July.<br>This is a new business. I'd be starting with you.</p>
   </div>
 </footer>
+
+<!-- Progressive enhancement only: adds aria-invalid to a field the browser has
+     already decided is invalid. With this file blocked or absent the form still
+     validates, still blocks submission, and still shows its error sentence. -->
+<script src="js/forms.js"></script>
 
 </body>
 </html>

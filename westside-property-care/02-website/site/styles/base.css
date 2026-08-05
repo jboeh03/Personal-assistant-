@@ -152,12 +152,20 @@ em, i {
   color: var(--ink-muted);
 }
 
+/* The two status stamps — MEMBERSHIP FULL and the open-slot count — are
+   typographic objects set in caps, not phrases that happen to be shouted
+   (voice.md §7 item 2, visual-direction.md §3.4). The stylesheet is where
+   that rule is kept, so it is auditable here: without text-transform the
+   stamps render in sentence case, which is a softer claim than the one that
+   was approved, and the Plex Mono subset ships uppercase and digits only
+   (fonts/README.md), so lowercase would fall out of the subset mid-word. */
 .figure {
   font-family: var(--font-mono);
   font-weight: var(--wt-mono);
   font-size: var(--type-figure);
   line-height: var(--lh-flat);
   letter-spacing: var(--ls-mark);
+  text-transform: uppercase;
   font-variant-numeric: tabular-nums;
 }
 
@@ -180,6 +188,13 @@ a:active { color: var(--ink); }
 /* --- Focus — visible, in-brand, never removed ------------------------------
    Keyboard users get the same margin marker the service report uses for a
    finding: a filled copper square in the rail at the row's baseline.
+
+   Copper is a PAPER-SIDE colour (visual-direction.md §2.5 rule 2). Everything
+   below assumes a --paper or --paper-deep ground, which is true everywhere
+   except the reversed footer panel — there copper lands at 2.01:1 on the
+   Green accent and 1.20:1 on the Dormant one, so components.css §13 overrides
+   both the ring and the marker to --paper. Any future reversed surface must
+   do the same.
    -------------------------------------------------------------------------- */
 
 /* Suppress the ring only where :focus-visible is understood and has already

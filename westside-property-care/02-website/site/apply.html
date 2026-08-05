@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Two questions, then I'll come look — Westside Property Care</title>
-<meta name="description" content="Tell me what the property has and what your cross street is. If it fits the route, I'll walk the property with you, show you what isn't included, and give you the price standing there.">
+<meta name="description" content="Tell me what the property has and your cross street. If it fits the route, I'll walk it with you and price it standing there. About forty minutes.">
 <link rel="canonical" href="[URL]/apply.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/tokens.css">
@@ -102,9 +102,16 @@
             <fieldset>
               <legend>Your details</legend>
 
+              <!-- Required fields say so in visible text, in the same
+                   field__hint pattern the cross street uses. The error
+                   sentence beneath each one is in the markup on every page
+                   load and is revealed, not injected — so the invalid state
+                   is never carried by the copper rule alone. -->
               <div class="field">
                 <label for="name">Your name</label>
-                <input type="text" id="name" name="name" autocomplete="name" required>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-hint name-error">
+                <span class="field__hint" id="name-hint">Required.</span>
+                <span class="field__error" id="name-error">I need a name so I know who I'm answering.</span>
               </div>
 
               <div class="field">
@@ -115,13 +122,15 @@
 
               <div class="field">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email">
+                <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error">
+                <span class="field__error" id="email-error">That doesn't look like an email address. Check it, or leave it blank and give me a phone number instead.</span>
               </div>
 
               <div class="field">
                 <label for="street">Cross street</label>
-                <input type="text" id="street" name="cross_street" autocomplete="address-line2" required aria-describedby="street-hint">
+                <input type="text" id="street" name="cross_street" autocomplete="address-line2" required aria-describedby="street-hint street-error">
                 <span class="field__hint" id="street-hint">Required. The nearest cross street is enough — I don't need your address yet.</span>
+                <span class="field__error" id="street-error">I need a cross street. The nearest one is enough.</span>
               </div>
             </fieldset>
 
@@ -153,7 +162,8 @@
           </form>
 
           <div class="measure">
-            <p class="small">I'll answer the same day or the next morning. Nothing gets sent to anybody else, there's no mailing list, and I won't follow up more than once if you don't reply.</p>
+            <p class="small">I'll answer the same day or the next morning. If it's after Thursday, it might be Monday, and I'd rather tell you that than say "within 24 hours."</p>
+            <p class="small">Nothing gets sent to anybody else, there's no mailing list, and I won't follow up more than once if you don't reply.</p>
             <p class="small">If this form doesn't go through, text me at <a href="sms:[PHONE]">[PHONE]</a>. That works better than the form anyway.</p>
           </div>
         </div>
@@ -219,6 +229,11 @@
     <p class="foot__note">Two scheduled visits a month. The same price in January as in July.<br>This is a new business. I'd be starting with you.</p>
   </div>
 </footer>
+
+<!-- Progressive enhancement only: adds aria-invalid to a field the browser has
+     already decided is invalid. With this file blocked or absent the form still
+     validates, still blocks submission, and still shows its error sentence. -->
+<script src="js/forms.js"></script>
 
 </body>
 </html>

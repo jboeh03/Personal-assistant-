@@ -97,6 +97,11 @@
      gloved hand taps in a driveway uses it. */
   --tap-target:    2.75rem;
 
+  /* 24px is the WCAG 2.2 *minimum* target size (SC 2.5.8), as distinct from
+     the 44px comfortable target above. Used where a native control draws its
+     own box and cannot be padded out — the checkboxes. */
+  --tap-min:       1.5rem;
+
   /* --- Grid ------------------------------------------------------------- */
   --container:  77.5rem;  /* 1240px, 12 columns, 24px gutter */
   --measure:    68ch;     /* the reading column caps at 68 characters */

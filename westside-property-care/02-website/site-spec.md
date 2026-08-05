@@ -142,13 +142,13 @@ Fourteen components. There is no card among them, by direction
 | **Ledger entry** | Everywhere | Rail label (mono, uppercase) + measure block + `1px --rule` hairline beneath. No box, no fill at rest, no radius, no shadow. This is what replaces cards. |
 | **Rail label** | Every entry | `<p class="rail">` on mobile/tablet it sits *on* the rule above the entry; ≥1024px it moves into the left rail. Pure CSS, one markup order. |
 | **Figure line** | 3 files | `--type-figure` mono, tabular numerals. Two numbers only: the open-slot count and the monthly price. |
-| **Price ledger** | Home, Pricing | `<dl>` of four independent configuration rows. See §5. |
+| **Price ledger** | Home, Pricing, Projects, Waitlist | `<dl>` of independent rows, each a `<div>` wrapping a `<dt>`/`<dd>` pair. See §5. **One markup contract, everywhere it appears.** The two project ledgers were built as `<ul>/<li>/<span>`, which looks identical and tells a screen reader nothing about which number belongs to which job; they are now `<dl>` like the other two. |
 | **Report facsimile** | Home, What's included | Inset on `--paper-deep`, hairlines top and bottom, 0.9× body size, `--flag-ochre` margin rule on the finding. Set-piece #2 in the brief. |
 | **Exclusion list** | Home, What's included, Pricing | `<ul>` with a hanging mono `NOT` marker. Never styled as a "features" list — the marker is a strike-through rule, not a glyph (`voice.md` §6.7 bans ✓/✗ glyphs). |
 | **Plate** | 7 image slots | The empty ruled band that stands in for a photograph. See §6. |
 | **Season divider** | Once per page, in the bleed track | Inline SVG survey-tick line: 2,316 B raw, **403 B gzipped**, zero network requests. Ticks halve in length and every second one is dropped in Dormant Season, so the ornament gets sparser in winter. |
-| **Form** | Apply, Waitlist | Native validation, honeypot, no JS. See §7. |
-| **Footer** | Every page | Full nav, contact, the mark, the two published project prices, and the honest disclosure block. |
+| **Form** | Apply, Waitlist | Native validation, honeypot, visible `Required` on both required fields, a written-in error sentence per field. Works with JS off; `js/forms.js` adds `aria-invalid` and nothing else. See §7. |
+| **Footer** | Every page | Full nav, contact, the mark, the two published project prices, and the honest disclosure block. **The only reversed panel on the site**, and therefore the only place the copper focus ring is overridden to `--paper` — §9.4. |
 
 ---
 
@@ -258,9 +258,23 @@ with JavaScript disabled.
 | What isn't getting handled | `textarea` | no | This is where the first year of project work comes from (`ideal-client.md` §6, step 3) |
 | `company` | honeypot, `hidden` from users | — | Empty `label`, `tabindex="-1"`, `autocomplete="off"`, moved off-screen. `rules/web/security.md` prefers honeypots to CAPTCHA |
 
-- **Validation** is native (`required`, `type`, `pattern`). No JS validator. Invalid fields get
-  a `--copper` rule under the control on `:user-invalid`, never colour alone — the message text
-  is in the markup and permanently visible as help text, not injected on error.
+- **Required is stated in visible text.** Both required fields — name and cross street — carry
+  `Required` in a `field__hint`. Marking one and not the other is worse than marking neither,
+  because the reader concludes the unmarked field is optional (SC 3.3.2). No asterisk: an
+  asterisk is a symbol that needs a legend, and the word does not.
+- **Validation** is native (`required`, `type`). No JS validator, no JS gatekeeping submission.
+  An invalid field gets a `--copper` border **and** a sentence: every error string is written
+  into the markup on page load, hidden by default, and *revealed* by `:user-invalid` — never
+  injected. So the copper is the glance-level signal and the sentence is the information, which
+  is what keeps the state off colour alone (SC 1.4.1). Every sentence is in `copy-deck.md` §6.3
+  and is auditable against `voice.md` there, which would not be true of a string that only
+  existed in a script.
+- **`js/forms.js` is progressive enhancement and nothing else.** It adds `aria-invalid="true"` to
+  a field the browser has already judged invalid and removes it when the field becomes valid. It
+  contains no message text, does not touch submission, and does not validate anything itself.
+  With the file blocked or JavaScript off, the form still validates, still blocks submission, and
+  still shows the same sentence — the `[aria-invalid="true"]` selector in the stylesheet exists
+  as the fallback path for browsers that do not yet support `:user-invalid`, not as the primary.
 - **Success** is `thanks.html`, reached by the endpoint's redirect (`_next` / `_redirect`
   hidden field, both provided and commented).
 - **Failure** is the endpoint's own error page. Every form therefore also shows the phone number
@@ -313,7 +327,9 @@ site/
 │   ├── base.css             reset, landmarks, type, rail-and-measure grid, grain, motion
 │   └── components.css       the fourteen components in §4
 ├── js/
-│   └── season.js            sets the season switch from the date. Nothing else.
+│   ├── season.js            sets the season switch from the date. Nothing else.
+│   └── forms.js             adds aria-invalid to an invalid field. Nothing else.
+│                            Loaded only by apply.html and waitlist.html.
 ├── fonts/
 │   └── README.md            how to install the three webfonts (they are not in the repo)
 ├── favicon.svg
@@ -332,39 +348,50 @@ an approximation.
 
 | Asset | Raw | **Gzipped** | Budget | Result |
 |---|---|---|---|---|
-| `styles/tokens.css` | 7,304 B | **3,085 B** | — | |
-| `styles/base.css` | 10,091 B | **3,430 B** | — | |
-| `styles/components.css` | 21,546 B | **5,062 B** | — | |
-| **CSS total** | **38,941 B** | **11,577 B — 11.3 KB** | **< 30 KB gz** | **38% of budget** |
-| `js/season.js` | 1,148 B | **639 B — 0.6 KB** | **< 150 KB gz** | **0.4% of budget** |
+| `styles/tokens.css` | 7,548 B | **3,193 B** | — | |
+| `styles/base.css` | 11,056 B | **3,901 B** | — | |
+| `styles/components.css` | 24,451 B | **6,114 B** | — | |
+| **CSS total** | **43,055 B** | **13,208 B — 12.9 KB** | **< 30 KB gz** | **44% of budget** |
+| `js/season.js` | 1,148 B | **639 B** | — | |
+| `js/forms.js` | 1,415 B | **714 B** | — | |
+| **JS total** | **2,563 B** | **1,353 B — 1.3 KB** | **< 150 KB gz** | **0.9% of budget** |
 
 The CSS total is the **sum of the three files measured separately**, because each is its own
 HTTP response and is gzipped on its own. Concatenating them first and gzipping once gives
-10,044 B, which is a smaller and less honest number — nothing on this site is bundled, so that
-figure would describe a build that does not exist.
+11,733 B, which is a smaller and less honest number — nothing on this site is bundled, so that
+figure would describe a build that does not exist. The same applies to the two scripts, and
+`js/forms.js` is only requested by the two pages that have a form.
 
 Per page:
 
 | Page | Raw | Gzipped |
 |---|---|---|
-| `index.html` | 26,120 B | 7,374 B |
-| `whats-included.html` | 23,438 B | 7,000 B |
-| `membership-full.html` | 23,596 B | 6,784 B |
-| `pricing.html` | 20,366 B | 5,694 B |
-| `about.html` | 15,257 B | 4,593 B |
-| `waitlist.html` | 12,550 B | 3,661 B |
-| `apply.html` | 10,443 B | 3,268 B |
-| `projects.html` | 10,203 B | 3,264 B |
+| `index.html` | 26,493 B | 7,605 B |
+| `whats-included.html` | 23,411 B | 6,999 B |
+| `membership-full.html` | 23,706 B | 6,783 B |
+| `pricing.html` | 20,331 B | 5,687 B |
+| `about.html` | 15,213 B | 4,576 B |
+| `waitlist.html` | 14,032 B | 4,188 B |
+| `apply.html` | 11,739 B | 3,711 B |
+| `projects.html` | 10,606 B | 3,418 B |
 | `thanks.html` | 5,513 B | 1,904 B |
 | `404.html` | 3,147 B | 1,080 B |
 
-**The number that matters is the heaviest first load:** `index.html` (7,374 B) plus all three
-stylesheets (11,577 B) plus the script (639 B) = **19,590 B gzipped, 19.1 KB**, in five
-requests, with no font, no image, and no third-party anything. Every subsequent page is 1–7 KB,
-because the CSS and the JS are already cached.
+**The number that matters is the heaviest first load:** `index.html` (7,605 B) plus all three
+stylesheets (13,208 B) plus `season.js` (639 B) = **21,452 B gzipped, 21.0 KB**, in five
+requests, with no font, no image, and no third-party anything. `index.html` does not load
+`forms.js` — it has no form. The heaviest form page, `apply.html` cold, is 3,711 + 13,208 + 639
++ 714 = **18,272 B, 17.8 KB** in six requests. Every subsequent page is 1–7 KB, because the CSS
+and the JS are already cached.
 
 The site also clears the tighter **microsite** row in `rules/web/performance.md` (< 15 KB CSS,
-< 80 KB JS) with the CSS at 11.3 KB gz and the JS at 0.6 KB gz.
+< 80 KB JS) with the CSS at 12.9 KB gz and the JS at 1.3 KB gz.
+
+**What the accessibility work cost.** The CSS grew 1,631 B gzipped and the JS grew 714 B
+gzipped, and a large share of the CSS growth is comment — the reason each contrast fix exists is
+written next to it, so the next person does not undo it as tidying. That is 5.4% of the CSS
+budget and 0.5% of the JS budget spent on WCAG conformance, which is the right trade at any
+ratio.
 
 Reproduce any figure above with:
 
@@ -391,7 +418,9 @@ Only `transform` and `opacity` are animated. There is no keyframe animation that
   and the rail label translates 2px right.
 - **Focus** is `2px solid var(--copper)` at `3px` offset plus a filled 6px copper square drawn
   in the rail at the row's baseline — keyboard users get the same margin marker the report uses
-  for a finding. Focus is never removed and is never only a colour change.
+  for a finding. Focus is never removed and is never only a colour change. **On the reversed
+  footer panel the ring and the marker are `--paper`, not copper**, because copper is a
+  paper-side colour and lands at 2.01:1 / 1.20:1 on the season accent — see §9.4.
 - **Active** is `translateY(1px)` and the rule under the control goes to `--ink`. No scale, no
   bounce, no spring.
 - `prefers-reduced-motion: reduce` collapses all durations to `0.01ms` and renders hairlines at
@@ -414,46 +443,99 @@ Verified by reading the markup and computing contrast by hand — Playwright can
 so nothing below is claimed on the basis of an automated pass.
 
 - Real landmarks: `<header>`, `<nav aria-label="Main">`, `<main>`, `<section aria-labelledby>`,
-  `<footer>`. Every `<section>` has an `id`-bound heading. No `<div>` where an element exists.
+  `<footer>`. Every `<section>` has an `id`-bound heading, and **each `aria-labelledby` points at
+  exactly one heading** — a section that named two produced a run-on landmark name, so the two
+  entries it held are now two sections (`index.html` and `membership-full.html`, Scope and The
+  visit).
 - Skip link to `#main`, visible on focus, first in tab order.
 - One `<h1>` per page. Headings descend without skipping.
-- Focus is visible on every interactive element and meets 3:1 against both grounds.
+- Focus is visible on every interactive element. The ring is **`--copper` on paper-side grounds
+  and `--paper` on the reversed footer panel**, and both clear 3:1 in both seasons — see the
+  sweep below, which is where the footer defect was found.
 - The season switch is a real checkbox with a real `<label>`; it is reachable by keyboard,
   toggles with Space, and announces its state.
 - `aria-current="page"` on the active nav link.
-- Tap targets are ≥44px on nav links, buttons, and the season switch.
+- Tap targets: **≥44px** (`--tap-target`) on nav links, buttons, footer links, and the season
+  switch; **≥24px** (`--tap-min`, the SC 2.5.8 floor) on the two checkboxes, which draw their own
+  box and cannot be padded out. The header wordmark is a link and gets vertical padding for the
+  same reason — inherited flex spacing is not a target.
+- Both required fields carry the word "Required" in visible help text (SC 3.3.2), and the invalid
+  state carries a sentence as well as a colour (SC 1.4.1).
 - Decorative SVG (grain, season divider, plate ruling) is `aria-hidden="true"` or
   `role="presentation"`.
 - The grain layer is `pointer-events: none` and sits behind nothing interactive.
 
-**Contrast, computed by hand from the sRGB relative-luminance formula and checked against
-WCAG 2.2 AA (4.5:1 body text, 3:1 large text and meaningful non-text).** Every pair that
-actually occurs in the built markup, including hover fills:
+### The contrast sweep — every token against every ground, in both seasons
 
-| Foreground | On | Ratio | |
+**Computed by hand from the sRGB relative-luminance formula and checked against WCAG 2.2 AA:
+4.5:1 for body text, 3:1 for large text and for meaningful non-text (SC 1.4.11).**
+
+**This sweep replaces an earlier one that was wrong by omission.** The first pass listed only
+pairs it expected to occur, and it checked `--paper` and `--paper-deep` as grounds. It never
+checked **`--season-accent` as a ground at all** — which is exactly where the footer lives, on
+every one of the ten pages, with seven to nine focusable links in it. The result was a focus ring
+at 2.01:1 in Green Season and 1.20:1 in Dormant, where it is effectively invisible. The lesson is
+in the method, not the number: **sweep the matrix, not the list you thought of.** What follows is
+the full matrix.
+
+**Green Season.** Grounds across, foregrounds down.
+
+| | on `--paper` | on `--paper-deep` | on `--season-accent` |
 |---|---|---|---|
-| `--ink` | `--paper` | **14.53** | pass |
-| `--ink` | `--paper-deep` | **12.59** | pass |
-| `--ink-muted` | `--paper` | **5.97** | pass |
-| `--ink-muted` | `--paper-deep` | **5.17** | pass |
-| `--ink-muted` | `--wash-green` (hover fill) | **5.67** | pass |
-| `--copper` | `--paper` | **5.19** | pass |
-| `--copper` | `--wash-green` (hover fill) | **4.92** | pass |
-| `--paper` | `--copper` (button, MEMBERSHIP FULL stamp) | **5.19** | pass |
-| `--paper` | Green `--season-accent` (footer, button hover) | **10.40** | pass |
-| `--paper` | Dormant `--season-accent` | **6.24** | pass |
-| Green `--season-accent` | `--paper` (season stamp, slot count) | **10.40** | pass |
-| Dormant `--season-accent` | `--paper` | **6.24** | pass |
-| Green `--season-support` | `--paper` (the pool marker) | **5.47** | pass |
-| Green `--season-support` | `--wash-green` (hover fill) | **5.19** | pass |
-| Dormant `--season-support` | `--paper` (the freeze marker) | **4.95** | pass |
+| `--ink` | **14.53** | **12.59** | 1.40 |
+| `--ink-muted` | **5.97** | **5.17** | 1.74 |
+| `--rule` | 1.59 | 1.38 | **6.53** |
+| `--copper` | **5.19** | 4.49 | 2.01 |
+| `--flag-ochre` | 2.65 | 2.29 | **3.93** |
+| `--paper` | — | 1.15 | **10.40** |
+| `--paper-deep` | 1.15 | — | **9.01** |
+| `--season-accent` | **10.40** | **9.01** | — |
+| `--season-support` | **5.47** | 4.74 | 1.90 |
 
-### Three pairs that do not clear 4.5:1, and what was done about each
+On the Green hover fill `--wash-green`: `--ink` 13.79, `--ink-muted` 5.67, `--copper` 4.92,
+`--season-support` 5.19, `--season-accent` 9.87.
 
-These were found by computing rather than assuming, and each is designed around rather than
-waved through.
+**Dormant Season.** Only the two `--season-*` tokens change; every constant pair is identical to
+the table above and is repeated so the matrix can be read on its own.
 
-1. **`--copper` on `--paper-deep` = 4.49:1.** It misses AA for body text by a hundredth.
+| | on `--paper` | on `--paper-deep` | on `--season-accent` |
+|---|---|---|---|
+| `--ink` | **14.53** | **12.59** | 2.33 |
+| `--ink-muted` | **5.97** | **5.17** | 1.05 |
+| `--rule` | 1.59 | 1.38 | **3.92** |
+| `--copper` | **5.19** | 4.49 | 1.20 |
+| `--flag-ochre` | 2.65 | 2.29 | 2.36 |
+| `--paper` | — | 1.15 | **6.24** |
+| `--paper-deep` | 1.15 | — | **5.41** |
+| `--season-accent` | **6.24** | **5.41** | — |
+| `--season-support` | 4.95 | 4.29 | 1.26 |
+
+On the Dormant hover fill, which is `--paper-deep`: `--ink` 12.59, `--ink-muted` 5.17,
+`--copper` 4.49, `--season-support` 4.29, `--season-accent` 5.41.
+
+### What actually lands on the `--season-accent` ground
+
+The footer is the only reversed panel on the site. Everything in it:
+
+| Element | Foreground | Green | Dormant | |
+|---|---|---|---|---|
+| Wordmark, `WPC513`, headings, notes, project prices | `--paper` | 10.40 | 6.24 | pass |
+| Links (`--paper` with a `--paper` underline) | `--paper` | 10.40 | 6.24 | pass |
+| **Focus ring and rail marker — fixed** | `--paper` | **10.40** | **6.24** | pass |
+| ~~Focus ring and rail marker — as shipped before~~ | ~~`--copper`~~ | ~~2.01~~ | ~~1.20~~ | **fail** |
+| `.foot__rule` divider, `--paper` at 45% | — | — | — | decorative, no meaning of its own |
+
+The fix is one declaration pair in `components.css` §13 — `outline-color` and the `::before`
+marker's `background-color`, both to `--paper` — and `base.css` now carries a comment at the
+global focus rule saying that copper assumes a paper-side ground and that any future reversed
+surface must override it the same way.
+
+### Pairs that do not clear 4.5:1, and what was done about each
+
+Each is designed around rather than waved through. The first three were confirmed unchanged by
+review; the fourth and fifth are new entries for pairs the old sweep never reached.
+
+1. **`--copper` on `--paper-deep` = 4.49:1.** Misses AA for body text by a hundredth.
    **Rule enforced in the markup: copper never appears as text on a `--paper-deep` ground.**
    The two `--paper-deep` surfaces are the report facsimile and the image plates; verified
    programmatically that neither contains a single `<a>`. The `MEMBERSHIP FULL` stamp is
@@ -464,19 +546,43 @@ waved through.
    semantic level rather than by nudging a hex: **`.pool` carries the teal only in Green
    Season**, because in Dormant Season `--season-support` means freeze protection, not water
    — the brief's own palette rule. In Dormant it reverts to `inherit`, which is `--ink` at
-   12.59:1. The mirror class `.freeze` is live only in Dormant Season and appears only in
-   headings on `--paper` at 4.95:1. This is a case where the accessible fix and the correct
-   semantic reading turned out to be the same change.
+   12.59:1. This is a case where the accessible fix and the correct semantic reading turned out
+   to be the same change.
 
 3. **`--flag-ochre` on `--paper-deep` = 2.29:1.** Ochre is never text — it appears exactly once
    in the entire stylesheet, as `border-inline-start: 2px solid var(--flag-ochre)` on
    `.report__finding`. It is redundant emphasis on a block that is already labelled in text
    ("What I found") and already carries its price in the rail, so it is not a graphical object
-   required to understand the content and SC 1.4.11 does not apply to it. It is recorded here
-   rather than quietly omitted.
+   required to understand the content and SC 1.4.11 does not apply to it. Recorded rather than
+   quietly omitted.
 
-`--rule` at 1.7:1 on `--paper` is a decorative separator by design and never carries meaning
-alone; every entry it separates is also separated by whitespace and a heading.
+4. 🔶 **Dormant `--season-support` on `--paper` = 4.95:1 — passes, but it is the tightest pass on
+   the site.** This is the `.freeze` marker, live only in Dormant Season, and it appears only in
+   headings on the page ground. It clears 4.5:1 with 0.45 to spare, which is real margin in
+   arithmetic and thin margin in practice: the site currently renders in a **fallback** text face
+   (§9.5), and the day IBM Plex Sans is installed the stem weights, x-height, and rasterisation
+   all change. Nothing about the ratio changes — contrast is a colour computation, not a type one
+   — but perceived legibility at small sizes does. **Action when the real fonts land: look at a
+   `.freeze` heading in Dormant Season on a real screen.** If it reads thin, the fix is to darken
+   `--season-support` in the Dormant block, which is one hex in `tokens.css` and touches nothing
+   else. Do not fix it by making the text larger; the size is doing hierarchy work.
+
+5. **`--rule` on `--paper` = 1.59:1, and `--rule` on `--paper-deep` = 1.38:1.** The hairline is a
+   decorative separator and never carries meaning alone — every entry it separates is also
+   separated by whitespace and a heading. **But it is not acceptable as the only edge of a
+   control**, which is what it was on the form fields and on `.btn--quiet`: a boundary at 1.59:1
+   means the input has no perceivable edge at rest, and the button's label is legible while its
+   affordance is not. Both now use `--ink-muted` at 5.97:1. That introduces a fourth hairline
+   colour beyond the three in `visual-direction.md` §5.2 — deliberately, and only on controls: the
+   three-weight system governs the page's *separators*, and a control border is a different
+   object with a WCAG floor of its own. Form fields already distinguished themselves from the
+   hairline system with a 2px bottom edge, so the change reads as the same ledger underline,
+   darker.
+
+**Also verified as unchanged and still passing:** the focus ring against paper-side grounds
+(`--copper` at 5.19:1), the `.btn` reversal (`--paper` on `--copper`, 5.19:1), the `MEMBERSHIP
+FULL` stamp (same pair), and the season stamp and slot count (`--season-accent` on `--paper`,
+10.40 / 6.24).
 
 ### 9.5 Fonts — shipped state and the human action required
 
@@ -509,8 +615,11 @@ the brief, it is flagged rather than hidden, and it is reversible in one line.
   `frame-ancestors 'none'`, `base-uri 'self'`, and `form-action` pinned to `[FORM_ENDPOINT]`.
   `img-src` allows `data:` for the grain and the plates. `style-src` is `'self'` only — there is
   no inline `<style>` and no inline `style=` attribute anywhere in the site.
-- The one script is external, deferred, same-origin, and touches a single checkbox. There is no
-  `innerHTML`, no `eval`, no template interpolation, and no user input reaches the DOM.
+- Both scripts are external and same-origin, so `script-src 'self'` covers them with no nonce and
+  no `'unsafe-inline'`. `season.js` touches a single checkbox; `forms.js` sets and removes one
+  attribute on form controls. There is no `innerHTML`, no `eval`, no template interpolation, no
+  `document.write`, and **no user input reaches the DOM** — `forms.js` reads `el.validity.valid`
+  and writes a fixed attribute value, and never reads or echoes what was typed.
 - No third-party script, no analytics, no font CDN, no tag manager, no embed, no iframe.
 - Forms carry a honeypot; there is no state-changing endpoint on this origin to protect with a
   CSRF token, and rate limiting belongs to the form service.
@@ -530,7 +639,7 @@ record. Each row names the mechanism and where to look.
 | **3** | **Depth and layering** | Four mechanisms, none of them elevation: the **bleed track** (grid columns 11–12) runs the masthead plate off the right edge of the viewport past the container; the sticky status strip **overlaps** the masthead rule and is one of exactly two elements permitted a shadow; the report facsimile is **inset** on `--paper-deep` between two hairlines so it reads as a document reproduced on the page; and a fixed 4% fractal-noise grain multiplies over everything. |
 | **4** | **Typography with a real pairing strategy** | A display old-style serif against the IBM Plex superfamily — one type system plus a display face, not three unrelated fonts. Every axis is pinned rather than defaulted (`--display-axes: "opsz" 120, "SOFT" 0, "WONK" 0`), tracking and leading are specified per role, and `font-variant-numeric: tabular-nums` is set on every price, date, and count so the ledger columns do not shimmy. The mono is not decoration — it is what makes a price row read as a record instead of a pricing table. |
 | **5** | **Colour used semantically** | `--copper` is a **semantic monopoly on "act"**: if something is copper and is not a link, a button, or the MEMBERSHIP FULL stamp, it is a bug. `--season-support` teal appears **only where a pool does** — the pool row in the ledger, the pool lines in the Green Season scope, and nowhere else. `--flag-ochre` appears only on a *finding*, and never as text. And the entire palette flips on the calendar, so the page tells you which scope you are reading before you read a word. |
-| **6** | **Designed hover / focus / active states** | Hover on a ledger row makes **three coordinated changes on one gesture**: the row fills `--season-wash`, the hairline beneath thickens by `scaleY(2)` and takes the season accent, and the rail label translates 2px right. Focus draws a copper outline **plus a filled 6px copper square in the rail** — the same margin marker the report uses for a finding, so keyboard users get the brand's own notation. Active drops 1px and darkens the rule. |
+| **6** | **Designed hover / focus / active states** | Hover on a ledger row makes **three coordinated changes on one gesture**: the row fills `--season-wash`, the hairline beneath thickens by `scaleY(2)` and takes the season accent, and the rail label translates 2px right. Focus draws an outline **plus a filled 6px square in the rail** — the same margin marker the report uses for a finding, so keyboard users get the brand's own notation. Copper on paper-side grounds, `--paper` on the reversed footer, both above 3:1 in both seasons: the marker is a *designed* indicator, so it inverts with the panel rather than being dropped on it (§9.4). Active drops 1px and darkens the rule. |
 | **7** | **Grid-breaking editorial composition** | An asymmetric **rail-and-measure** page: 12 columns, but never twelve equal cells — the rail is 1–3, the measure is 4–10, and 11–12 are a live **bleed track**. The display headline starts flush with the rail, one column *left* of the body it introduces, so it visibly does not respect the grid the body respects. That single decision is what takes the page out of a centred content well. |
 | **8** | **Texture and atmosphere** | A 4% `feTurbulence` paper grain, generated as an inline data-URI SVG at **241 bytes** with **no network request**; a three-weight hairline system (`1px --rule` separator, `1px --ink` section boundary, `2px --flag-ochre` finding) that does more visual work than any image on the site; and a hand-set **survey-tick season divider** whose ticks halve and whose gaps double in Dormant Season, so the ornament itself gets sparser in winter. |
 
@@ -580,12 +689,24 @@ column off-screen.
 
 **Done here:**
 
-- Served with `python3 -m http.server` and every page fetched — all `200`, no missing asset.
-- Gzipped byte counts measured with `gzip -c <file> | wc -c` and recorded in §9.2.
-- Contrast ratios computed by hand from the sRGB relative-luminance formula; the copper /
-  `--paper-deep` near-miss in §9.4 was found this way and designed around.
+- Served with `python3 -m http.server` and every page and asset fetched — all `200`, including
+  `js/forms.js`, `robots.txt`, and `sitemap.xml`.
+- Gzipped byte counts measured with `gzip -c <file> | wc -c` and recorded in §9.2. Re-measured
+  after the accessibility work; the numbers in §9.2 are the current files, not the earlier ones.
+- **Contrast swept as a full matrix** — every token against `--paper`, `--paper-deep`, **and
+  `--season-accent`**, in both seasons, plus each season's hover fill, computed by hand from the
+  sRGB relative-luminance formula. The table is §9.4. An earlier pass checked a *list* of pairs
+  it expected rather than the matrix, never evaluated `--season-accent` as a ground, and so
+  missed a focus ring at 2.01:1 / 1.20:1 in the footer of all ten pages. Sweep the matrix.
 - Markup read against `rules/web/coding-style.md` for landmarks, heading order, and semantics.
-- Copy audited line by line against `01-brand/voice.md` §8, all thirty items.
+  Tag balance verified programmatically across all ten pages after the section split.
+- JSON-LD parsed with a JSON parser after editing, and re-checked property by property against
+  the schema.org type hierarchy — `seo.md` §3.
+- Copy audited against `01-brand/voice.md` §8. **Items 1–30 against the prose, items 31–34
+  against the built site** — the structured data, the rendered CSS case, the alt and label
+  strings, and the meta values. The prose pass alone returned thirty passes while two real
+  defects were live in non-prose surfaces; `copy-deck.md` §10 records both and now states its own
+  scope.
 - Every price traced to `00-model/pricing.md` — `$229 · $269 · $289 · $329 · $249+ · $49+`, and
   the two internal figures ($100/hr, $149 floor) confirmed absent.
 - `grep` for every banned phrase in `voice.md` §6.1–§6.7 across `site/` and `copy-deck.md`.
@@ -610,7 +731,12 @@ column off-screen.
    no agent can produce it. Priority order if he only does three: **IMG-05** (the finding),
    **IMG-03** (winter), **IMG-01** (the masthead).
 2. 🔶 **Supply `[PHONE]`, `[EMAIL]`, `[URL]`, `[FORM_ENDPOINT]`, `[GBP_URL]`** — §8.
-3. 🔶 **Install the three webfonts** — §9.5.
+3. 🔶 **Install the three webfonts** — §9.5. **And when they land, look at one thing:** a
+   `.freeze` heading in Dormant Season. It is `--season-support` on `--paper` at **4.95:1**,
+   which passes AA and is the narrowest pass on the site. The ratio will not change with the
+   font — contrast is a colour computation — but perceived weight will, and this is the one pair
+   worth a human eye rather than arithmetic. If it reads thin, darken `--season-support` in the
+   Dormant block of `tokens.css`. One hex, nothing else. §9.4, near-miss 4.
 4. 🔶 **Keep the slot count true.** §3.1. It is the most valuable element on the page precisely
    because it is a fact.
 5. 🔶 **Replace the report facsimile with a real redacted report** the day one exists. It ships
