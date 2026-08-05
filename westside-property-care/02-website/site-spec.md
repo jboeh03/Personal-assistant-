@@ -36,7 +36,7 @@ Three consequences that govern every decision below:
 
 ## 2. Page inventory
 
-Nine files. Six in the navigation. That is the whole site.
+Ten files. Six in the navigation. That is the whole site.
 
 | # | File | In nav | Purpose | Single conversion goal |
 |---|---|---|---|---|
@@ -49,6 +49,7 @@ Nine files. Six in the navigation. That is the whole site.
 | 7 | `waitlist.html` | — (contextual) | The waitlist, which exists in **both** states | Waitlist form submitted |
 | 8 | `membership-full.html` | — (state swap) | `index.html` in the MEMBERSHIP FULL state — the drop-in replacement home page | Reach `waitlist.html` |
 | 9 | `thanks.html` | — | Success state for both forms | Nothing. It ends. |
+| 10 | `404.html` | — | Wrong address. Points at the price and the phone number | Reach a real page |
 
 ### Why this shape and not another
 
@@ -133,7 +134,7 @@ Fourteen components. There is no card among them, by direction
 
 | Component | Where | Notes |
 |---|---|---|
-| **Status strip** | Every page, sticky ≥768px | Wordmark + `WPC513` left, season stamp + season switch right. The one element permitted a shadow, because it overlaps content (§4.4 of the brief). |
+| **Status strip** | Every page, sticky ≥768px | Wordmark + `WPC513` left, season stamp + season switch right. One of exactly two elements permitted a shadow, because it overlaps the content beneath it (§4.4 of the brief). The other is the bleeding masthead plate, for the same reason. |
 | **Season switch** | Status strip | A real `<input type="checkbox">` + `<label>`. Works with JS disabled via `body:has()`. `js/season.js` only sets its initial position from the date. |
 | **Primary nav** | Every page, under the strip | `<nav aria-label="Main">`, six links, `aria-current="page"`. Wraps on small screens; no hamburger, no JS. |
 | **Masthead** | Home, `membership-full` | Display headline breaking one column *left* of the measure, lede, the figure line, the ask, and the bleed-track plate. Replaces the banned centred hero. |
@@ -145,7 +146,7 @@ Fourteen components. There is no card among them, by direction
 | **Report facsimile** | Home, What's included | Inset on `--paper-deep`, hairlines top and bottom, 0.9× body size, `--flag-ochre` margin rule on the finding. Set-piece #2 in the brief. |
 | **Exclusion list** | Home, What's included, Pricing | `<ul>` with a hanging mono `NOT` marker. Never styled as a "features" list — the marker is a strike-through rule, not a glyph (`voice.md` §6.7 bans ✓/✗ glyphs). |
 | **Plate** | 7 image slots | The empty ruled band that stands in for a photograph. See §6. |
-| **Season divider** | Once per page, in the bleed track | Inline SVG survey-tick line, ~380 bytes. Ticks halve in length and gaps double in Dormant Season. |
+| **Season divider** | Once per page, in the bleed track | Inline SVG survey-tick line: 2,316 B raw, **403 B gzipped**, zero network requests. Ticks halve in length and every second one is dropped in Dormant Season, so the ornament gets sparser in winter. |
 | **Form** | Apply, Waitlist | Native validation, honeypot, no JS. See §7. |
 | **Footer** | Every page | Full nav, contact, the mark, the two published project prices, and the honest disclosure block. |
 
@@ -326,20 +327,53 @@ No framework, no bundler, no build step, no `npm install`, no dependency of any 
 
 ### 9.2 Measured budgets
 
-Measured with `gzip -c <file> | wc -c` on the shipped files. Not estimated.
+Measured with `gzip -c <file> | wc -c` on the shipped files. Not estimated, not rounded up from
+an approximation.
 
 | Asset | Raw | **Gzipped** | Budget | Result |
 |---|---|---|---|---|
-| `styles/tokens.css` | 5,616 B | **1,633 B** | — | |
-| `styles/base.css` | 8,932 B | **2,614 B** | — | |
-| `styles/components.css` | 16,214 B | **3,978 B** | — | |
-| **CSS total** | **30,762 B** | **8,225 B / 8.0 KB** | **< 30 KB gz** | **27% of budget** |
-| `js/season.js` | 1,318 B | **616 B / 0.6 KB** | **< 150 KB gz** | **0.4% of budget** |
-| Largest page (`index.html`) | 30,299 B | **7,940 B** | — | |
-| Whole site, all 10 pages + CSS + JS | 152,594 B | **44,536 B / 43.5 KB** | — | |
+| `styles/tokens.css` | 7,081 B | **2,979 B** | — | |
+| `styles/base.css` | 10,091 B | **3,430 B** | — | |
+| `styles/components.css` | 21,486 B | **5,056 B** | — | |
+| **CSS total** | **38,658 B** | **11,465 B — 11.2 KB** | **< 30 KB gz** | **37% of budget** |
+| `js/season.js` | 1,148 B | **639 B — 0.6 KB** | **< 150 KB gz** | **0.4% of budget** |
 
-The site also clears the tighter **microsite** row in `rules/web/performance.md`
-(< 15 KB CSS, < 80 KB JS) with the CSS at 8.0 KB gz and the JS at 0.6 KB gz.
+The CSS total is the **sum of the three files measured separately**, because each is its own
+HTTP response and is gzipped on its own. Concatenating them first and gzipping once gives
+10,044 B, which is a smaller and less honest number — nothing on this site is bundled, so that
+figure would describe a build that does not exist.
+
+Per page:
+
+| Page | Raw | Gzipped |
+|---|---|---|
+| `index.html` | 26,120 B | 7,374 B |
+| `whats-included.html` | 23,438 B | 7,000 B |
+| `membership-full.html` | 23,596 B | 6,784 B |
+| `pricing.html` | 20,366 B | 5,694 B |
+| `about.html` | 15,257 B | 4,593 B |
+| `waitlist.html` | 12,550 B | 3,661 B |
+| `apply.html` | 10,443 B | 3,268 B |
+| `projects.html` | 10,203 B | 3,264 B |
+| `thanks.html` | 5,513 B | 1,904 B |
+| `404.html` | 3,147 B | 1,080 B |
+
+**The number that matters is the heaviest first load:** `index.html` (7,374 B) plus all three
+stylesheets (11,465 B) plus the script (639 B) = **19,478 B gzipped, 19.0 KB**, in five
+requests, with no font, no image, and no third-party anything. Every subsequent page is 1–7 KB,
+because the CSS and the JS are already cached.
+
+The site also clears the tighter **microsite** row in `rules/web/performance.md` (< 15 KB CSS,
+< 80 KB JS) with the CSS at 11.2 KB gz and the JS at 0.6 KB gz.
+
+Reproduce any figure above with:
+
+```sh
+cd 02-website/site
+for f in styles/*.css js/*.js *.html; do
+  printf "%-24s raw %7s  gz %7s\n" "$f" "$(wc -c < "$f")" "$(gzip -c "$f" | wc -c)"
+done
+```
 
 **Fonts are not counted above because none ship.** See §9.5.
 
@@ -392,28 +426,57 @@ so nothing below is claimed on the basis of an automated pass.
   `role="presentation"`.
 - The grain layer is `pointer-events: none` and sits behind nothing interactive.
 
-**Contrast, computed against WCAG 2.2 AA (4.5:1 body, 3:1 large text and non-text):**
+**Contrast, computed by hand from the sRGB relative-luminance formula and checked against
+WCAG 2.2 AA (4.5:1 body text, 3:1 large text and meaningful non-text).** Every pair that
+actually occurs in the built markup, including hover fills:
 
-| Pair | Ratio | Needs | |
+| Foreground | On | Ratio | |
 |---|---|---|---|
-| `--ink` on `--paper` | 14.4:1 | 4.5 | pass |
-| `--ink` on `--paper-deep` | 12.6:1 | 4.5 | pass |
-| `--ink-muted` on `--paper` | 5.9:1 | 4.5 | pass |
-| `--ink-muted` on `--paper-deep` | 5.1:1 | 4.5 | pass |
-| `--copper` on `--paper` | 5.2:1 | 4.5 | pass |
-| `--copper` on `--wash-green` (hover) | 4.9:1 | 4.5 | pass |
-| `--paper` on `--copper` (button) | 5.2:1 | 4.5 | pass |
-| `--paper` on Green `--season-accent` | 10.3:1 | 4.5 | pass |
-| `--paper` on Dormant `--season-accent` | 5.4:1 | 4.5 | pass |
-| Green `--season-support` on `--paper` | 4.9:1 | 4.5 | pass |
-| Dormant `--season-support` on `--paper` | 4.9:1 | 4.5 | pass |
-| `--rule` hairline on `--paper` | 1.7:1 | — | decorative separator only, never carries meaning alone |
+| `--ink` | `--paper` | **14.53** | pass |
+| `--ink` | `--paper-deep` | **12.59** | pass |
+| `--ink-muted` | `--paper` | **5.97** | pass |
+| `--ink-muted` | `--paper-deep` | **5.17** | pass |
+| `--ink-muted` | `--wash-green` (hover fill) | **5.67** | pass |
+| `--copper` | `--paper` | **5.19** | pass |
+| `--copper` | `--wash-green` (hover fill) | **4.92** | pass |
+| `--paper` | `--copper` (button, MEMBERSHIP FULL stamp) | **5.19** | pass |
+| `--paper` | Green `--season-accent` (footer, button hover) | **10.40** | pass |
+| `--paper` | Dormant `--season-accent` | **6.24** | pass |
+| Green `--season-accent` | `--paper` (season stamp, slot count) | **10.40** | pass |
+| Dormant `--season-accent` | `--paper` | **6.24** | pass |
+| Green `--season-support` | `--paper` (the pool marker) | **5.47** | pass |
+| Green `--season-support` | `--wash-green` (hover fill) | **5.19** | pass |
+| Dormant `--season-support` | `--paper` (the freeze marker) | **4.95** | pass |
 
-**One rule enforced in CSS because it is a near-miss:** `--copper` on `--paper-deep` computes to
-**4.49:1** and fails AA for body text by a hundredth. Copper therefore never appears as small
-text on `--paper-deep` anywhere on the site. The report facsimile — the only `--paper-deep`
-ground with running text — contains no links and no copper text. The `MEMBERSHIP FULL` stamp is
-`--paper` reversed *out of* copper, not copper on a tint, so it is unaffected.
+### Three pairs that do not clear 4.5:1, and what was done about each
+
+These were found by computing rather than assuming, and each is designed around rather than
+waved through.
+
+1. **`--copper` on `--paper-deep` = 4.49:1.** It misses AA for body text by a hundredth.
+   **Rule enforced in the markup: copper never appears as text on a `--paper-deep` ground.**
+   The two `--paper-deep` surfaces are the report facsimile and the image plates; verified
+   programmatically that neither contains a single `<a>`. The `MEMBERSHIP FULL` stamp is
+   `--paper` reversed *out of* copper rather than copper on a tint, so it is unaffected.
+
+2. **Dormant `--season-support` on `--paper-deep` = 4.29:1.** This would have occurred on a
+   `.pool` marker inside a price-ledger row during hover in Dormant Season. Fixed at the
+   semantic level rather than by nudging a hex: **`.pool` carries the teal only in Green
+   Season**, because in Dormant Season `--season-support` means freeze protection, not water
+   — the brief's own palette rule. In Dormant it reverts to `inherit`, which is `--ink` at
+   12.59:1. The mirror class `.freeze` is live only in Dormant Season and appears only in
+   headings on `--paper` at 4.95:1. This is a case where the accessible fix and the correct
+   semantic reading turned out to be the same change.
+
+3. **`--flag-ochre` on `--paper-deep` = 2.29:1.** Ochre is never text — it appears exactly once
+   in the entire stylesheet, as `border-inline-start: 2px solid var(--flag-ochre)` on
+   `.report__finding`. It is redundant emphasis on a block that is already labelled in text
+   ("What I found") and already carries its price in the rail, so it is not a graphical object
+   required to understand the content and SC 1.4.11 does not apply to it. It is recorded here
+   rather than quietly omitted.
+
+`--rule` at 1.7:1 on `--paper` is a decorative separator by design and never carries meaning
+alone; every entry it separates is also separated by whitespace and a heading.
 
 ### 9.5 Fonts — shipped state and the human action required
 
@@ -469,7 +532,7 @@ record. Each row names the mechanism and where to look.
 | **5** | **Colour used semantically** | `--copper` is a **semantic monopoly on "act"**: if something is copper and is not a link, a button, or the MEMBERSHIP FULL stamp, it is a bug. `--season-support` teal appears **only where a pool does** — the pool row in the ledger, the pool lines in the Green Season scope, and nowhere else. `--flag-ochre` appears only on a *finding*, and never as text. And the entire palette flips on the calendar, so the page tells you which scope you are reading before you read a word. |
 | **6** | **Designed hover / focus / active states** | Hover on a ledger row makes **three coordinated changes on one gesture**: the row fills `--season-wash`, the hairline beneath thickens by `scaleY(2)` and takes the season accent, and the rail label translates 2px right. Focus draws a copper outline **plus a filled 6px copper square in the rail** — the same margin marker the report uses for a finding, so keyboard users get the brand's own notation. Active drops 1px and darkens the rule. |
 | **7** | **Grid-breaking editorial composition** | An asymmetric **rail-and-measure** page: 12 columns, but never twelve equal cells — the rail is 1–3, the measure is 4–10, and 11–12 are a live **bleed track**. The display headline starts flush with the rail, one column *left* of the body it introduces, so it visibly does not respect the grid the body respects. That single decision is what takes the page out of a centred content well. |
-| **8** | **Texture and atmosphere** | A 4% `feTurbulence` paper grain, generated as an inline data-URI SVG at ~300 bytes with **no network request**; a three-weight hairline system (`1px --rule` separator, `1px --ink` section boundary, `2px --flag-ochre` finding) that does more visual work than any image on the site; and a hand-set **survey-tick season divider** whose ticks halve and whose gaps double in Dormant Season, so the ornament itself gets sparser in winter. |
+| **8** | **Texture and atmosphere** | A 4% `feTurbulence` paper grain, generated as an inline data-URI SVG at **241 bytes** with **no network request**; a three-weight hairline system (`1px --rule` separator, `1px --ink` section boundary, `2px --flag-ochre` finding) that does more visual work than any image on the site; and a hand-set **survey-tick season divider** whose ticks halve and whose gaps double in Dormant Season, so the ornament itself gets sparser in winter. |
 
 **Not claimed, on the record:**
 
@@ -485,7 +548,7 @@ record. Each row names the mechanism and where to look.
 
 | Banned | Refused by |
 |---|---|
-| Default card grids with uniform spacing | **There are no cards.** `grep -c "card" styles/*.css` returns 0. Content units are ledger entries: rail label, measure, hairline. |
+| Default card grids with uniform spacing | **There are no cards.** `grep -i card styles/*.css` returns exactly two lines, both comments stating that there are none — there is no `.card` rule and no `class="card"` in any page. Content units are ledger entries: rail label, measure, hairline. |
 | Stock centred hero with a gradient blob | Left-aligned masthead, headline breaking the grid left, plate bleeding off the right edge, and a live open-slot count where the generic CTA would be. Gradients are banned outright and none appear. |
 | Unmodified library defaults | No library. Every font axis, tracking value, leading, gap, radius, and duration is a named token with a stated reason. |
 | Flat layouts with no layering | Bleed track, sticky overlap, inset facsimile, grain layer. |

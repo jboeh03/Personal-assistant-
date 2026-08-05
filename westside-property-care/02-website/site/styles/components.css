@@ -1,0 +1,779 @@
+/* ==========================================================================
+   Westside Property Care — components
+   Fourteen of them. There is no card among them, by direction.
+   Contains no literal colour, type size, space, radius, or duration.
+   ========================================================================== */
+
+/* --- 1. Status strip ------------------------------------------------------
+   One of exactly two elements permitted a shadow, because it physically
+   overlaps the content beneath it.
+   -------------------------------------------------------------------------- */
+
+.strip {
+  background-color: var(--paper);
+  box-shadow: var(--shadow-overlap);
+}
+
+.strip__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-tight) var(--space-gutter);
+  padding-block: var(--space-tight);
+}
+
+.mark {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-axes);
+  font-weight: var(--wt-display);
+  font-size: var(--type-small);
+  letter-spacing: var(--ls-mark);
+  line-height: var(--lh-flat);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a.mark:hover { color: var(--season-accent); }
+
+.mark__short {
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-rail);
+  letter-spacing: var(--ls-stamp);
+  color: var(--ink-muted);
+  border-inline-start: var(--hair) solid var(--rule);
+  padding-inline-start: 0.6em;
+}
+
+/* The full lockup: wordmark, the same hairline the whole system is built
+   from, then WPC513 sitting on the rule. Footer and print pieces only. */
+.mark--stacked {
+  display: block;
+  font-size: var(--type-h3);
+}
+
+.mark--stacked .mark__short {
+  display: block;
+  margin-block-start: var(--space-hair);
+  padding-block-start: var(--space-hair);
+  padding-inline-start: 0;
+  border-inline-start: 0;
+  border-block-start: var(--hair) solid currentColor;
+}
+
+@media (min-width: 48em) {
+  .strip-wrap {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 100;
+  }
+}
+
+/* --- 2. Season switch ----------------------------------------------------
+   A real checkbox and a real label, so the switch works with JavaScript
+   disabled. js/season.js only sets its opening position from the date.
+   -------------------------------------------------------------------------- */
+
+.season {
+  display: flex;
+  align-items: center;
+  gap: var(--space-tight);
+}
+
+.season__stamp { color: var(--season-accent); }
+
+.season__stamp--dormant,
+.season__label .season__to-green { display: none; }
+
+body:has(#season-switch:checked) .season__stamp--green,
+body:has(#season-switch:checked) .season__label .season__to-dormant { display: none; }
+
+body:has(#season-switch:checked) .season__stamp--dormant,
+body:has(#season-switch:checked) .season__label .season__to-green { display: inline; }
+
+.season__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-block-size: 2.75rem;
+  padding-inline: var(--space-tight);
+  border: var(--hair) solid var(--rule);
+  border-radius: var(--radius-stamp);
+  background-color: transparent;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-rail);
+  letter-spacing: var(--ls-rail);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition-property: background-color, color, border-color;
+  transition-duration: var(--dur-quick);
+  transition-timing-function: var(--ease-draw);
+}
+
+.season__label::before {
+  content: "";
+  inline-size: var(--focus-mark);
+  block-size: var(--focus-mark);
+  background-color: var(--season-accent);
+}
+
+.season__label:hover {
+  background-color: var(--season-wash);
+  color: var(--ink);
+  border-color: var(--season-accent);
+}
+
+.season__label:active { transform: translateY(1px); }
+
+#season-switch:focus-visible + .season__label {
+  outline: var(--focus-width) solid var(--copper);
+  outline-offset: var(--focus-offset);
+}
+
+/* --- 3. Navigation -------------------------------------------------------- */
+
+.nav { border-block-end: var(--hair) solid var(--rule); }
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-gutter);
+}
+
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  color: var(--ink);
+  font-size: var(--type-small);
+  text-decoration: none;
+  border-block-end: var(--hair-flag) solid transparent;
+  transition-property: color, border-color;
+  transition-duration: var(--dur-quick);
+  transition-timing-function: var(--ease-draw);
+}
+
+.nav__link:hover {
+  color: var(--season-accent);
+  border-block-end-color: var(--season-accent);
+}
+
+.nav__link[aria-current="page"] {
+  font-weight: var(--wt-strong);
+  border-block-end-color: var(--ink);
+}
+
+/* --- 4. Masthead ---------------------------------------------------------
+   What replaces the hero. Left-aligned, grid-breaking, and carrying live
+   data. The display headline starts flush with the rail — one column left of
+   the body it introduces — so it visibly does not respect the grid the body
+   respects. No gradient, no blob, no centred anything.
+   -------------------------------------------------------------------------- */
+
+.masthead { padding-block: var(--space-block) var(--space-section); }
+
+.masthead__grid { display: grid; gap: var(--space-block); }
+
+.masthead__head > * + * { margin-block-start: var(--space-entry); }
+
+.masthead h1 { max-width: 18ch; }
+
+@media (min-width: 64em) {
+  .masthead__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr);
+    align-items: end;
+    column-gap: var(--space-gutter);
+  }
+  /* The bleed track: columns 11-12 run past the container and off the right
+     edge of the viewport. main { overflow-x: clip } catches the overflow.
+     This is the second and last element on the site permitted a shadow, and
+     it gets one for the same reason the status strip does — it physically
+     overlaps something. */
+  .masthead__bleed {
+    margin-inline-end: calc(-1 * var(--bleed));
+    box-shadow: var(--shadow-overlap);
+  }
+}
+
+/* --- 5. The figure line, and the two enrolment stamps ---------------------
+   --type-figure exists for exactly two numbers: the open-slot count and the
+   monthly price. Set in mono at display size — a deliberate collision of
+   "data" and "headline" that makes the two facts the business turns on look
+   like readings rather than claims.
+   -------------------------------------------------------------------------- */
+
+.slots {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-row);
+  padding-block-start: var(--space-entry);
+  border-block-start: var(--hair) solid var(--ink);
+}
+
+.slots__count { color: var(--season-accent); }
+
+.slots__full {
+  align-self: flex-start;
+  padding: var(--space-tight) var(--space-control);
+  background-color: var(--copper);
+  color: var(--paper);
+  border: var(--hair) solid var(--copper);
+  border-radius: var(--radius-stamp);
+  /* A hairline box drawn around the stamp — an outline, not elevation, so the
+     two-shadow rule holds. */
+  outline: var(--hair) solid var(--copper);
+  outline-offset: var(--hair-flag);
+}
+
+/* --- 6. Buttons ----------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.75rem;
+  padding: var(--space-control) calc(var(--space-control) * 1.6);
+  border: var(--hair) solid var(--copper);
+  border-radius: var(--radius-control);
+  background-color: var(--copper);
+  color: var(--paper);
+  font-size: var(--type-body);
+  font-weight: var(--wt-strong);
+  line-height: var(--lh-h3);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-property: background-color, border-color, color, transform;
+  transition-duration: var(--dur-quick);
+  transition-timing-function: var(--ease-draw);
+}
+
+.btn:hover {
+  background-color: var(--season-accent);
+  border-color: var(--season-accent);
+  color: var(--paper);
+}
+
+.btn:active {
+  transform: translateY(1px);
+  background-color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn--quiet {
+  background-color: transparent;
+  border-color: var(--rule);
+  color: var(--ink);
+}
+
+.btn--quiet:hover {
+  background-color: var(--season-wash);
+  border-color: var(--season-accent);
+  color: var(--ink);
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-row) var(--space-gutter);
+  margin-block-start: var(--space-entry);
+}
+
+.cta__aside {
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-small);
+  color: var(--ink-muted);
+}
+
+/* A link that ends a block. No arrow glyph — the underline is the affordance. */
+.onward {
+  display: inline-block;
+  margin-block-start: var(--space-row);
+  font-weight: var(--wt-strong);
+}
+
+/* --- 7. The price ledger -------------------------------------------------
+   Not a pricing table and not four boxes. A ruled ledger of independent
+   configuration rows, each of the form [what the property has] - [price],
+   with a leader rule running between and the price on a tabular figure
+   column. Adding, removing, or repricing a row touches nothing else.
+   -------------------------------------------------------------------------- */
+
+.ledger { margin-block-start: var(--space-entry); }
+
+.ledger__row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-hair) var(--space-gutter);
+  padding-block: var(--space-entry);
+  padding-inline: var(--space-tight);
+  margin-inline: calc(-1 * var(--space-tight));
+  transition: background-color var(--dur-quick) var(--ease-draw);
+}
+
+.ledger__row::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  block-size: var(--hair);
+  background-color: var(--rule);
+  transform-origin: bottom center;
+  transition-property: transform, background-color;
+  transition-duration: var(--dur-quick);
+  transition-timing-function: var(--ease-draw);
+}
+
+/* $289 and $329 lead, and they close on a heavier ink rule. */
+.ledger__row--lead::after { background-color: var(--ink); }
+
+/* Three coordinated changes on one gesture: the row fills, the hairline
+   thickens and takes the season accent, the rail tag moves 2px right. */
+.ledger__row:hover { background-color: var(--season-wash); }
+.ledger__row:hover::after {
+  transform: scaleY(2);
+  background-color: var(--season-accent);
+}
+.ledger__row:hover .ledger__tag { transform: translateX(2px); }
+
+.ledger__what {
+  flex: 1 1 16rem;
+  display: flex;
+  align-items: baseline;
+  min-inline-size: 0;
+  font-size: var(--type-lede);
+  line-height: var(--lh-h3);
+}
+
+.ledger__what::after {
+  content: "";
+  flex: 1 1 var(--space-gutter);
+  min-inline-size: var(--space-gutter);
+  border-block-end: var(--hair) dotted var(--rule);
+  margin-inline: 0.6em;
+  transform: translateY(-0.3em);
+}
+
+.ledger__tag {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-inline-end: 0.8em;
+  padding-inline: 0.45em;
+  border: var(--hair) solid var(--rule);
+  border-radius: var(--radius-stamp);
+  color: var(--ink-muted);
+  transition: transform var(--dur-quick) var(--ease-draw);
+}
+
+/* The pool teal appears only where a pool does, and only in Green Season.
+   Using it as a generic accent would destroy the one place it carries
+   meaning — and in Dormant Season --season-support means freeze protection,
+   not water, so the pool marker reverts to ink rather than borrowing a colour
+   that says something else. That also keeps it above 4.5:1 on the Dormant
+   hover fill, where the ochre would land at 4.29:1. */
+.pool { color: var(--season-support); }
+body:has(#season-switch:checked) .pool { color: inherit; }
+
+/* The mirror of it: the freeze marker is live only in Dormant Season. */
+.freeze { color: inherit; }
+body:has(#season-switch:checked) .freeze { color: var(--season-support); }
+
+.ledger__price {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 0.45em;
+  margin-inline-start: auto;
+}
+
+.ledger__unit {
+  font-size: var(--type-small);
+  color: var(--ink-muted);
+}
+
+.ledger__terms {
+  margin-block-start: var(--space-entry);
+  max-width: var(--measure);
+}
+
+/* --- 8. The report facsimile ---------------------------------------------
+   A typeset service report reproduced on the page. Inset on --paper-deep,
+   hairlines top and bottom, 0.9x body size, so it reads as a document on the
+   page rather than a UI panel. It is the product demo, the voice demo, and
+   the proof of the promise in one object, and it sits above the price.
+   -------------------------------------------------------------------------- */
+
+.report { margin-block-start: var(--space-entry); }
+
+.report__head {
+  color: var(--ink-muted);
+  padding-block-end: var(--space-tight);
+}
+
+.report__sheet {
+  background-color: var(--paper-deep);
+  border-block: var(--hair) solid var(--ink);
+  padding: var(--space-block) var(--space-gutter);
+  font-size: 0.9em;
+}
+
+.report__sheet > * + * { margin-block-start: var(--space-entry); }
+
+.report__h {
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-rail);
+  letter-spacing: var(--ls-rail);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-block-end: var(--space-row);
+}
+
+/* A finding, and only a finding, gets the 2px ochre marker. */
+.report__finding {
+  display: grid;
+  gap: var(--space-row);
+  border-inline-start: var(--hair-flag) solid var(--flag-ochre);
+  padding-inline-start: var(--space-gutter);
+}
+
+.report__price {
+  font-size: var(--type-stamp);
+  letter-spacing: var(--ls-stamp);
+  color: var(--ink);
+}
+
+@media (min-width: 64em) {
+  .report__finding {
+    grid-template-columns: var(--rail-width) minmax(0, 1fr);
+    column-gap: var(--space-gutter);
+    align-items: start;
+  }
+  .report__price { text-align: end; }
+}
+
+.report__note { margin-block-start: var(--space-row); }
+
+/* --- 9. Exclusion list ---------------------------------------------------
+   Never styled as a features list, and never with a glyph. The marker is a
+   hanging mono label and a rule.
+   -------------------------------------------------------------------------- */
+
+.nots { margin-block-start: var(--space-entry); }
+
+.nots > li {
+  padding-block: var(--space-row) var(--space-entry);
+  border-block-start: var(--hair) solid var(--rule);
+}
+
+.nots > li:first-child { border-block-start-color: var(--ink); }
+
+.nots h3 { margin-block-end: var(--space-hair); }
+
+.nots p + p { margin-block-start: var(--space-row); }
+
+.nots--tight > li { padding-block-end: var(--space-row); }
+
+/* --- 10. Plate — the standing image slot ---------------------------------
+   No real photography exists yet, and stock photography is never a final
+   answer. Until each frame is shot, the slot ships as an empty ruled band
+   with a mono caption naming exactly what belongs there.
+   -------------------------------------------------------------------------- */
+
+.plate {
+  background-color: var(--paper-deep);
+  border-block: var(--hair) solid var(--rule);
+}
+
+.plate__rules {
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 3 / 2;
+  color: var(--rule);
+}
+
+.plate__cap {
+  display: block;
+  padding: var(--space-row) var(--space-tight);
+  border-block-start: var(--hair) solid var(--rule);
+  color: var(--ink-muted);
+}
+
+/* --- 11. Season divider --------------------------------------------------
+   The one ornamental element on the page, used once, in the bleed track. A
+   survey tick line, not a repeating pattern. In Dormant Season the ticks
+   halve in length and every second one is dropped, so the ornament itself
+   gets sparser in winter.
+   -------------------------------------------------------------------------- */
+
+.divider {
+  margin-block: var(--space-chapter);
+  color: var(--season-accent);
+}
+
+.divider__mark {
+  inline-size: 100%;
+  block-size: 1.25rem;
+}
+
+.divider__tick {
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+body:has(#season-switch:checked) .divider__tick { transform: scaleY(0.5); }
+body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: none; }
+
+@media (min-width: 64em) {
+  .divider { margin-inline-end: calc(-1 * var(--bleed)); }
+}
+
+/* --- 12. Forms ----------------------------------------------------------- */
+
+.form {
+  margin-block-start: var(--space-entry);
+  max-width: var(--measure);
+}
+
+.form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form legend {
+  padding: 0;
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-rail);
+  letter-spacing: var(--ls-rail);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.field { margin-block-start: var(--space-entry); }
+
+.field > label,
+.check > label {
+  display: block;
+  font-weight: var(--wt-strong);
+}
+
+.field__hint {
+  display: block;
+  margin-block-start: var(--space-hair);
+  font-size: var(--type-small);
+  line-height: var(--lh-small);
+  color: var(--ink-muted);
+}
+
+.field input,
+.field textarea {
+  inline-size: 100%;
+  min-block-size: 2.75rem;
+  margin-block-start: var(--space-tight);
+  padding: var(--space-tight) var(--space-control);
+  background-color: var(--paper);
+  color: var(--ink);
+  border: var(--hair) solid var(--rule);
+  border-block-end-width: var(--hair-flag);
+  border-radius: var(--radius-control);
+  transition-property: border-color, background-color;
+  transition-duration: var(--dur-quick);
+  transition-timing-function: var(--ease-draw);
+}
+
+.field textarea {
+  min-block-size: 7rem;
+  resize: vertical;
+  line-height: var(--lh-body);
+}
+
+.field input:hover,
+.field textarea:hover { border-color: var(--season-accent); }
+
+.field input:user-invalid,
+.field textarea:user-invalid {
+  border-color: var(--copper);
+  background-color: var(--paper);
+}
+
+.checks {
+  display: grid;
+  gap: var(--space-row);
+  margin-block-start: var(--space-tight);
+}
+
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-tight);
+  min-block-size: 2.75rem;
+  padding-block: var(--space-hair);
+}
+
+.check input {
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  margin-block-start: 0.28em;
+  accent-color: var(--copper);
+  flex: 0 0 auto;
+}
+
+.honeypot {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.form__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-row) var(--space-gutter);
+  margin-block-start: var(--space-block);
+  padding-block-start: var(--space-entry);
+  border-block-start: var(--hair) solid var(--ink);
+}
+
+/* --- 13. Footer ----------------------------------------------------------
+   A reversed panel. Copper is a paper-side colour and is unusable on the
+   season accent, so links here are --paper with an underline.
+   -------------------------------------------------------------------------- */
+
+.foot {
+  margin-block-start: var(--space-section);
+  padding-block: var(--space-block);
+  background-color: var(--season-accent);
+  color: var(--paper);
+}
+
+.foot__grid {
+  display: grid;
+  gap: var(--space-block);
+}
+
+.foot .mark,
+.foot a.mark:hover { color: var(--paper); }
+
+.foot .mark__short {
+  color: var(--paper);
+  border-inline-start-color: var(--paper);
+}
+
+.foot a {
+  color: var(--paper);
+  text-decoration-color: var(--paper);
+}
+
+.foot a:hover,
+.foot a:active { color: var(--paper); }
+
+.foot h2 {
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-rail);
+  letter-spacing: var(--ls-rail);
+  text-transform: uppercase;
+  line-height: var(--lh-small);
+  margin-block-end: var(--space-row);
+}
+
+.foot__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-row) var(--space-gutter);
+}
+
+.foot__nav a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  font-size: var(--type-small);
+}
+
+.foot__rule {
+  margin-block: var(--space-block);
+  border: 0;
+  border-block-start: var(--hair) solid var(--paper);
+  opacity: 0.45;
+}
+
+.foot__note {
+  font-size: var(--type-small);
+  line-height: var(--lh-small);
+}
+
+.foot__prices {
+  display: grid;
+  gap: var(--space-hair);
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-small);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 48em) {
+  .foot__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* --- 14. Page head -------------------------------------------------------- */
+
+.pagehead {
+  padding-block: var(--space-block) var(--space-section);
+  border-block-end: var(--hair) solid var(--ink);
+}
+
+.pagehead > * + * { margin-block-start: var(--space-entry); }
+
+.pagehead h1 { max-width: 16ch; }
+
+.pagehead .lede { max-width: var(--measure); }
+
+/* --- Utilities used by more than one component ---------------------------- */
+
+.pull {
+  margin-block-start: var(--space-block);
+  padding-inline-start: var(--space-gutter);
+  border-inline-start: var(--hair-flag) solid var(--season-accent);
+  font-size: var(--type-lede);
+  line-height: var(--lh-lede);
+  max-width: var(--measure);
+}
+
+.defs { margin-block-start: var(--space-entry); }
+
+.defs > div {
+  padding-block: var(--space-row) var(--space-entry);
+  border-block-start: var(--hair) solid var(--rule);
+}
+
+.defs dt {
+  font-family: var(--font-mono);
+  font-weight: var(--wt-mono);
+  font-size: var(--type-rail);
+  letter-spacing: var(--ls-rail);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-block-end: var(--space-hair);
+}
+
+.defs dd { margin: 0; }
+
+.list-plain > li {
+  padding-block: var(--space-row);
+  border-block-end: var(--hair) solid var(--rule);
+}

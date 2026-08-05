@@ -74,7 +74,6 @@ body::after {
 
 /* --- Typography ----------------------------------------------------------- */
 
-.display,
 h1 {
   font-family: var(--font-display);
   font-variation-settings: var(--display-axes);
@@ -183,7 +182,10 @@ a:active { color: var(--ink); }
    finding: a filled copper square in the rail at the row's baseline.
    -------------------------------------------------------------------------- */
 
-:focus { outline: none; }
+/* Suppress the ring only where :focus-visible is understood and has already
+   decided it is not wanted. A browser without :focus-visible keeps its own
+   default ring rather than losing focus indication entirely. */
+:focus:not(:focus-visible) { outline: none; }
 
 :focus-visible {
   outline: var(--focus-width) solid var(--copper);
@@ -254,11 +256,6 @@ main { overflow-x: clip; }
 
 .section + .section { padding-block-start: 0; }
 
-.section--tint {
-  background-color: var(--paper-deep);
-  margin-block: var(--space-block);
-}
-
 .measure { max-width: var(--measure); }
 
 /* An entry: rail label, measure block, a hairline beneath, and nothing else.
@@ -275,13 +272,9 @@ main { overflow-x: clip; }
 
 .entry--last { border-block-end: 0; }
 
-.entry--boundary { border-block-end-color: var(--ink); }
-
 .entry__body > * + * { margin-block-start: var(--space-row); }
 
 .entry__body > h3 { margin-block-start: var(--space-entry); }
-
-.block + .block { margin-block-start: var(--space-block); }
 
 @media (min-width: 64em) {
   .entry {
@@ -328,7 +321,6 @@ main { overflow-x: clip; }
       animation-timeline: view();
       animation-range: entry 8% cover 26%;
     }
-    .entry--boundary:not(.entry--last)::after { background-color: var(--ink); }
 
     .entry__body {
       animation: write-in var(--dur-base) var(--ease-draw) both;

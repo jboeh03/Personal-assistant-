@@ -120,18 +120,16 @@ Under it:
 All six spots are open. This is a new business and I'd be starting with you.
 ```
 
-Primary ask:
+Primary ask — the button, then the aside beside it:
 
 ```
 Text me your cross street
-[PHONE]
+
+[PHONE] · texting is fine
 ```
 
-Secondary line under the button:
-
-```
-Or fill in the form — it takes a minute and asks the two things I need to know.
-```
+The button goes to `apply.html`; the phone number in the aside is a live `sms:` link. Both are
+the same ask, offered two ways, because the form has no backend until `[FORM_ENDPOINT]` is set.
 
 **IMG-01** caption (plate state):
 
@@ -201,7 +199,7 @@ Same price both ways. What changes in November is the work, not the bill.
 Link:
 
 ```
-The full scope, both seasons, and everything that isn't in it →
+The full scope, both seasons, and everything that isn't in it
 ```
 
 ### 1.4 The report
@@ -377,7 +375,7 @@ what's in it.
 Link:
 
 ```
-The full list, in the words it's written in the agreement →
+The full list, in the words it's written in the agreement
 ```
 
 ### 1.7 The price
@@ -428,7 +426,7 @@ After four it's gone, and members five and six pay the standard rate.
 Link:
 
 ```
-Billing, cancellation, and the rest of the price page →
+Billing, cancellation, and the rest of the price page
 ```
 
 ### 1.8 Where I work
@@ -491,11 +489,10 @@ Button:
 Text me your cross street
 ```
 
-Under it:
+Beside it:
 
 ```
 [PHONE] · texting is fine
-Or use the form →
 ```
 
 ---
@@ -842,7 +839,7 @@ That's the whole list. If something you want isn't in it, I'll quote it — see 
 ### 2.7 The ask
 
 ```
-Now the price →
+Now the price
 ```
 
 ---
@@ -907,7 +904,7 @@ Half the value is the visits. The other half is that somebody is looking.
 Link:
 
 ```
-Everything that happens on a visit, both seasons →
+Everything that happens on a visit, both seasons
 ```
 
 ### 3.3 What's not included — above the price
@@ -936,7 +933,7 @@ Condensed list — same eight lines as home §1.6.
 Link:
 
 ```
-The full list, in the words it's written in the agreement →
+The full list, in the words it's written in the agreement
 ```
 
 **IMG-05** caption (plate state):
@@ -1084,7 +1081,7 @@ The price doesn't drop, because the value doesn't. It just looks like less.
 Link:
 
 ```
-Everything that happens November through March →
+Everything that happens November through March
 ```
 
 ### 3.8 Not discounted
@@ -1560,7 +1557,7 @@ The first month is the whole risk. If it's not right, tell me.
 ### 5.8 The ask
 
 ```
-Walk the property with me — about forty minutes →
+Walk the property with me — about forty minutes
 ```
 
 ---
@@ -1727,7 +1724,7 @@ and I'll still do project work for you in the meantime.
 Link:
 
 ```
-The waitlist, and how it actually works →
+The waitlist, and how it actually works
 ```
 
 ---
@@ -1758,6 +1755,18 @@ It's written down, it has your street on it, and when a spot opens it goes to wh
 closest to the route I'm already driving. Not to whoever asked first, and not to whoever pays
 the most.
 ```
+
+**ENROLMENT STATE — open.** Figure line, then the line that explains why a list exists while
+spots are still open:
+
+```
+6 OF 6 SPOTS OPEN
+
+Spots are open right now, so the list is for properties that aren't near either route cluster
+yet. That's a real reason to be on it, and it isn't a rejection.
+```
+
+**ENROLMENT STATE — full.** Replace the block above with the MEMBERSHIP FULL stamp from §8.1.
 
 ### 7.2 Why there's a list at all
 
@@ -1869,8 +1878,65 @@ good for 30 days.
 Link:
 
 ```
-Everything I do as a project →
+Everything I do as a project
 ```
+
+---
+
+## 7A. Two utility pages
+
+### `thanks.html` — the success state for both forms
+
+Rail stamp `RECEIVED`. H1 and lede are in §6.3. One further section, so the page is not a dead
+end:
+
+Rail stamp:
+
+```
+WHILE YOU WAIT
+```
+
+H2:
+
+```
+Worth reading before we talk
+```
+
+Body:
+
+```
+The two things people are most surprised by are what isn't included, and what happens in
+December. Both are on the site in full, and I'd rather you read them now than hear them from me
+in a driveway.
+```
+
+Two quiet buttons: `What's included, and what isn't` · `The price`.
+
+The waitlist success block from §6.3 sits above this one, under the rail stamp
+`IF YOU JOINED THE WAITLIST` and the heading `You're on the list`.
+
+### `404.html`
+
+Rail stamp:
+
+```
+NOT FOUND
+```
+
+H1:
+
+```
+There's nothing at this address
+```
+
+Body:
+
+```
+Six pages is the whole site, and they're all in the bar above. If you were looking for the
+price, it's on the pricing page and it's published.
+```
+
+Button `The price`, with `Or text me — [PHONE]` beside it. No apology, no joke, no illustration.
 
 ---
 

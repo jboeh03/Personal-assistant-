@@ -1,0 +1,55 @@
+# Security headers — Netlify / Cloudflare Pages format.
+# Apache and nginx equivalents are at the bottom of this file.
+#
+# Set [FORM_ENDPOINT] to the real form-service origin before launch, or the
+# forms will be blocked by form-action. Everything else is already correct for
+# a site with no third-party anything: no analytics, no font CDN, no tag
+# manager, no embeds, no iframes.
+#
+# Note on script-src 'self' with no 'unsafe-inline': the JSON-LD block in
+# index.html is <script type="application/ld+json">, which is not a JavaScript
+# MIME type and is therefore not treated as an executable script block under
+# CSP3. It is not blocked. The one real script, js/season.js, is external and
+# same-origin.
+#
+# img-src allows data: for the inline paper-grain SVG and the plate ruling.
+# style-src is 'self' only — there is no inline <style> and no style= attribute
+# anywhere on this site, by design.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action [FORM_ENDPOINT]; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+
+/styles/*
+  Cache-Control: public, max-age=604800
+
+/js/*
+  Cache-Control: public, max-age=604800
+
+/*.html
+  Cache-Control: public, max-age=600
+
+# ---------------------------------------------------------------------------
+# Apache (.htaccess)
+#
+#   Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action [FORM_ENDPOINT]; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
+#   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+#   Header always set X-Content-Type-Options "nosniff"
+#   Header always set X-Frame-Options "DENY"
+#   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+#   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+#
+# nginx
+#
+#   add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action [FORM_ENDPOINT]; frame-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests" always;
+#   add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+#   add_header X-Content-Type-Options "nosniff" always;
+#   add_header X-Frame-Options "DENY" always;
+#   add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+#   add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+# ---------------------------------------------------------------------------

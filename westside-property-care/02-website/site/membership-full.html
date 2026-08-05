@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ══════════════════════════════════════════════════════════════════════════
+     THIS IS THE HOME PAGE IN THE MEMBERSHIP FULL STATE.
+
+     It is a complete page, not a fragment, so switching states is a file copy
+     and not an edit:
+
+         cp index.html           membership-open.html   # keep the open state
+         cp membership-full.html index.html             # go full
+
+     To reopen a slot, copy membership-open.html back over index.html and
+     correct the count.
+
+     While this file is the staging copy it carries noindex so it does not
+     compete with index.html in search. DELETE THE ROBOTS META LINE BELOW
+     when this becomes index.html. See site-spec.md §3 and seo.md §6.
+     ══════════════════════════════════════════════════════════════════════════ -->
+<meta name="robots" content="noindex">
+<title>Membership full — Westside Property Care</title>
+<meta name="description" content="All six spots are taken. The waitlist is a written list ordered by how close you are to the route. Project work Tuesday through Thursday, membership or not.">
+<link rel="canonical" href="[URL]/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Membership full — Westside Property Care">
+<meta property="og:description" content="All six spots are taken. That's the actual cap, not a sales line.">
+<meta property="og:url" content="[URL]/">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the main content</a>
+
+<header class="strip-wrap">
+  <div class="strip">
+    <div class="container strip__inner">
+      <a class="mark" href="index.html">
+        <span>Westside Property Care</span>
+        <span class="mark__short">WPC513</span>
+      </a>
+      <div class="season">
+        <span class="stamp season__stamp season__stamp--green">Green Season · Apr–Oct</span>
+        <span class="stamp season__stamp season__stamp--dormant">Dormant Season · Nov–Mar</span>
+        <input type="checkbox" id="season-switch" class="visually-hidden">
+        <label class="season__label" for="season-switch">
+          <span class="season__to-dormant">See Dormant Season</span>
+          <span class="season__to-green">See Green Season</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <div class="container">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html" aria-current="page">Home</a></li>
+        <li><a class="nav__link" href="whats-included.html">What's included</a></li>
+        <li><a class="nav__link" href="pricing.html">Pricing</a></li>
+        <li><a class="nav__link" href="projects.html">Projects</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="waitlist.html">Waitlist</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script src="js/season.js"></script>
+
+<main id="main">
+
+  <section class="masthead" aria-labelledby="lead-h">
+    <div class="container masthead__grid">
+      <div class="masthead__head">
+        <p class="rail">Entry 01 · The whole thing</p>
+        <h1 id="lead-h">Six properties. Twice a month. Written down every time.</h1>
+        <p class="lede">I take care of the outdoor living areas of six homes on the west side — pool deck, patio, outdoor kitchen, and the hardscape and walks that serve them. Two scheduled visits a month, the same person every time, and a written report the same day covering what I did and what I found.</p>
+        <p class="lede">Not lawn care. Not pool service. Everything I don't do is on this page, above the price.</p>
+
+        <!-- ══════════════════════════════════════════════════════════════════
+             ENROLMENT STATE — full. The scarcity is a fact about the schedule,
+             not a device (00-model/operating-model.md §5). Never soften it,
+             never fake it, and never quietly take a seventh client because
+             someone was persistent.
+             ══════════════════════════════════════════════════════════════════ -->
+        <div class="slots">
+          <p class="figure slots__full">Membership full</p>
+          <p>All six spots are taken. That's the actual cap, not a sales line — six properties is twelve visits a month across four route days, and past that I'd be rushing somebody.</p>
+        </div>
+        <!-- ══ end enrolment state ══ -->
+
+        <div class="cta">
+          <a class="btn" href="waitlist.html">Add your name to the waitlist</a>
+          <span class="cta__aside">Or text me — <a href="sms:[PHONE]">[PHONE]</a></span>
+        </div>
+      </div>
+
+      <!-- PHOTO REQUIRED · IMG-01 · Frame 1.
+           A pool deck or patio mid-visit, shot standing, his own equipment in
+           frame. 3:2 landscape with dead space in the LEFT THIRD. No people,
+           no faces, nothing that identifies a client. -->
+      <figure class="plate masthead__bleed">
+        <svg class="plate__rules" viewBox="0 0 600 400" role="presentation" focusable="false">
+          <g stroke="currentColor" stroke-width="1" fill="none">
+            <line x1="0" y1="80" x2="600" y2="80"/>
+            <line x1="0" y1="160" x2="600" y2="160"/>
+            <line x1="0" y1="240" x2="600" y2="240"/>
+            <line x1="0" y1="320" x2="600" y2="320"/>
+          </g>
+        </svg>
+        <figcaption class="rail plate__cap">Photo required · Frame 1 · A pool deck mid-visit, standing height, my own equipment in frame</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cap-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">The cap</p>
+        <div class="entry__body measure">
+          <h2 id="cap-h">Why it stops at six</h2>
+          <p>Six properties is twelve visits a month, and routine visits happen only on Monday and Friday of weeks 1 and 3. That's four route days.</p>
+          <p>Past six I'd either add a fifth route day or start hurrying at one house to get to another. Never rushing a property is the rule the whole schedule is built to protect, so the cap isn't a number I picked to sound selective. It's what fits.</p>
+          <p>The empty time is part of what the six are paying for. It's what lets a rained-out Monday get moved without anybody being bumped, lets a property that needs an extra hour get one, and lets me be out on an estimate inside a couple of days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="scope-h visit-h">
+    <div class="container">
+      <div class="entry">
+        <p class="rail">Scope</p>
+        <div class="entry__body measure">
+          <h2 id="scope-h">The same person is on your property twice a month, and you get it in writing</h2>
+          <p>Twenty-four visits a year on six properties. That is few enough that I can hold all six in my head — which gate sticks, which window wells fill up, which pot on the north side dries out first.</p>
+          <p>There is no crew, no dispatcher, and no subcontractor. It is me, on your route day, on the part of the yard you actually sit in.</p>
+        </div>
+      </div>
+
+      <div class="entry entry--last">
+        <p class="rail">The visit</p>
+        <div class="entry__body measure">
+          <h2 id="visit-h">What actually happens on a visit</h2>
+          <p>I walk the property before I start and again before I leave. In between, I do what will make the biggest difference to the property that day — which is not the same list every time, and a visit in early April looks nothing like one in late August.</p>
+          <p><strong>April through October,</strong> that usually means skimming the pool and emptying both baskets, wiping down the furniture and the outdoor kitchen counters, emptying the grease tray, blowing the patio and the pool deck, hand-collecting leaves and sticks, watering the pots, and spot-treating the weeds coming up in the hardscape joints.</p>
+          <p><strong>November through March,</strong> it means the hose bibs, the disconnects, and the drain-downs; checking the downspouts from the ground; clearing storm debris; covering and securing the furniture and the grill; salting the patio and the walk; and the fullest exterior inspection of the year, because the leaves are down and everything is visible.</p>
+          <p>Same price both ways. What changes in November is the work, not the bill.</p>
+          <p class="onward"><a href="whats-included.html">The full scope, both seasons, and everything that isn't in it</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="record-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">The record</p>
+        <div class="entry__body">
+          <div class="measure">
+            <h2 id="record-h">Every visit ends in writing, the same day</h2>
+            <p>The report is the part you can check. It says what I did, where, and what I found — including the things that aren't mine to fix, and especially those.</p>
+            <p>If something on the property needs work, it gets named, located, and priced in the report. I'd rather tell you what a job costs than quietly fold it into a visit and have you think it was included.</p>
+          </div>
+
+          <figure class="report">
+            <p class="stamp report__head">WPC513 · Service report · Example · Monday, April 6</p>
+            <div class="report__sheet">
+              <p class="rail">Format only — not a client report</p>
+              <div>
+                <h3 class="report__h">What I did</h3>
+                <p>Pool skimmed, both baskets emptied. Wiped the six patio chairs and the table. Emptied the grease tray on the flat-top and wiped the counters. Blew the patio, the pool deck, and the walk — including under the pergola, where the mulberry is dropping hard right now. Pots watered. The fern on the north side dries out faster than the others, so I moved it two feet under the eave.</p>
+              </div>
+              <div class="report__finding">
+                <p class="rail report__price">$49</p>
+                <div>
+                  <h3 class="report__h">What I found</h3>
+                  <p>The two window wells on the south side are full — mostly last fall's leaves, about six inches deep, and there's water sitting in the west one. I can clear both on your next visit for $49. Say the word and I'll add it. If you'd rather leave them, that's fine and I'll stop mentioning it.</p>
+                </div>
+              </div>
+            </div>
+            <figcaption class="small report__note">This is the shape a report takes, not one from a client's property. When there is one I can share, a real report goes here with the address taken off.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="divider" aria-hidden="true">
+      <svg class="divider__mark" viewBox="0 0 1200 20" preserveAspectRatio="none" focusable="false">
+        <line x1="0" y1="19" x2="1200" y2="19" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/>
+        <g stroke="currentColor" stroke-width="1" fill="none">
+          <line class="divider__tick" x1="12" y1="19" x2="12" y2="4" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="61" y1="19" x2="61" y2="9" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="139" y1="19" x2="139" y2="3" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="188" y1="19" x2="188" y2="10" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="266" y1="19" x2="266" y2="5" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="322" y1="19" x2="322" y2="11" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="401" y1="19" x2="401" y2="4" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="449" y1="19" x2="449" y2="9" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="536" y1="19" x2="536" y2="3" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="588" y1="19" x2="588" y2="10" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="672" y1="19" x2="672" y2="5" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="731" y1="19" x2="731" y2="11" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="818" y1="19" x2="818" y2="4" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="869" y1="19" x2="869" y2="9" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="954" y1="19" x2="954" y2="3" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="1008" y1="19" x2="1008" y2="10" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="1094" y1="19" x2="1094" y2="5" vector-effect="non-scaling-stroke"/>
+          <line class="divider__tick" x1="1157" y1="19" x2="1157" y2="11" vector-effect="non-scaling-stroke"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="winter-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">Dormant Season · Nov–Mar</p>
+        <div class="entry__body measure">
+          <h2 id="winter-h">What happens in December</h2>
+          <p>Different work, same price.</p>
+          <p>November through March I'm doing the things that keep a hard freeze from costing you money: hose bibs shut off and drained, hoses disconnected and put away, and the outdoor kitchen water line drained — that's the one that splits. Covers on the furniture and the grill, and checked again after a big wind. Salt and ice on the patio, the pool deck, and the walk out to them. Storm debris cleared. Downspouts checked from the ground to see where they're discharging.</p>
+          <p>And it's the best look at your property all year, because the leaves are down and I can see everything. The March report comes with what the property needs in April and what each thing costs.</p>
+          <p>The price doesn't drop, because the value doesn't. It just looks like less.</p>
+          <p class="pull">The most useful thing I do all winter is notice something in December that would have been a burst pipe in February.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="nots-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">Not included</p>
+        <div class="entry__body measure">
+          <h2 id="nots-h">What I don't do</h2>
+          <p>This is the part most people put in the fine print. I'd rather you read it before you get to the price.</p>
+          <ul class="nots">
+            <li>
+              <h3>Not pool service</h3>
+              <p>I skim the surface, empty the <span class="pool">skimmer and pump baskets</span>, and clear the deck and the surround. I don't test the water, add chlorine, shock, or algaecide, vacuum, brush, backwash, or touch the filter, and I don't open or close the pool. If your water goes green in July, that isn't something I'm responsible for or able to fix.</p>
+            </li>
+            <li>
+              <h3>Not lawn care</h3>
+              <p>No mowing, trimming, edging, fertilizing, aerating, seeding, pruning, planting, mulching, or bed work. Weed treatment is spot treatment in the hardscape joints, the walkway cracks, and along the edges of the beds — not inside the beds.</p>
+            </li>
+            <li>
+              <h3>Not gutter cleaning</h3>
+              <p>Gutter cleaning means working off a ladder and I don't work off a ladder. On your visits I check the downspouts from the ground and tell you where they're discharging.</p>
+            </li>
+            <li>
+              <h3>Not a deep clean</h3>
+              <p>On a visit I empty the grease trap and the drip tray and wipe the exterior surfaces and the counters. Burners, grates, flavorizer bars, and interiors are a grill and outdoor kitchen deep clean, from $249.</p>
+            </li>
+            <li>
+              <h3>Not pressure washing</h3>
+              <p>Any surface, any time — that's quoted separately.</p>
+            </li>
+            <li>
+              <h3>Not snow</h3>
+              <p>I salt and clear ice on the patio, the pool deck, and the walk serving them, on scheduled visits. Not the driveway, not the public sidewalk, and not between visits.</p>
+            </li>
+            <li>
+              <h3>Not an emergency service</h3>
+              <p>There's no guaranteed response time and no promised arrival window. Tuesday through Thursday is held open for projects and urgent things, so they usually do get handled — I don't promise same-day.</p>
+            </li>
+            <li>
+              <h3>Not indoors</h3>
+              <p>No garages, basements, enclosed porches, or sunrooms. The membership is the outdoor living area, and we'll walk it together on the first visit and write down exactly what's in it.</p>
+            </li>
+          </ul>
+          <p class="onward"><a href="whats-included.html#nots">The full list, in the words it's written in the agreement</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="price-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">Price</p>
+        <div class="entry__body">
+          <div class="measure">
+            <h2 id="price-h">What you pay depends on what your property has</h2>
+            <p>It's one membership. What it costs is decided by what's in your backyard, so there's nothing to choose between — your property has a pool or it doesn't. The price doesn't move because the book is full, and it won't move when a spot opens.</p>
+          </div>
+
+          <!-- ══ PRICE LEDGER — identical to index.html. Rows are independent.
+               Every number is quoted from 00-model/pricing.md. ══ -->
+          <dl class="ledger">
+            <div class="ledger__row ledger__row--lead">
+              <dt class="ledger__what">A property with a <span class="pool">pool</span></dt>
+              <dd class="ledger__price"><span class="figure">$289</span> <span class="ledger__unit">a month</span></dd>
+            </div>
+            <div class="ledger__row ledger__row--lead">
+              <dt class="ledger__what">A property with a <span class="pool">pool</span> and an outdoor kitchen</dt>
+              <dd class="ledger__price"><span class="figure">$329</span> <span class="ledger__unit">a month</span></dd>
+            </div>
+            <div class="ledger__row">
+              <dt class="ledger__what">A property with an outdoor kitchen</dt>
+              <dd class="ledger__price"><span class="figure">$269</span> <span class="ledger__unit">a month</span></dd>
+            </div>
+            <div class="ledger__row">
+              <dt class="ledger__what"><span class="rail ledger__tag">Base</span>Property care on its own</dt>
+              <dd class="ledger__price"><span class="figure">$229</span> <span class="ledger__unit">a month</span></dd>
+            </div>
+          </dl>
+
+          <div class="ledger__terms">
+            <p>Two scheduled visits a month. The same price in January as in July. Card on file, charged on the 1st. Thirty days' notice to cancel, and there's no term.</p>
+            <!-- The Founding Member note is deliberately absent here. Four
+                 members have joined by definition in this state, so the rate
+                 is gone (00-model/pricing.md §2). Delete it from pricing.html
+                 at the same time. -->
+            <p class="onward"><a href="pricing.html">Billing, cancellation, and the rest of the price page</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ask-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">Next</p>
+        <div class="entry__body measure">
+          <h2 id="ask-h">The waitlist is a real list</h2>
+          <p>I keep it in writing with your street on it, because when a spot opens it goes to whoever is closest to the existing route. Add your name and I'll tell you honestly where you sit and what would have to happen.</p>
+          <p>Two things move you up: a spot opening near you, or a neighbor of yours with a pool adding their name. Two on one street is a cluster, and that changes the math.</p>
+          <p>In the meantime I do project work Tuesday through Thursday, membership or not: grill and outdoor kitchen deep cleans from $249, window wells from $49, and pressure washing quoted after I look at it.</p>
+          <div class="cta">
+            <a class="btn" href="waitlist.html">Add your name to the waitlist</a>
+            <span class="cta__aside">Or text me — <a href="sms:[PHONE]">[PHONE]</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div class="foot__grid">
+      <div>
+        <p class="mark mark--stacked">
+          <span>Westside Property Care</span>
+          <span class="mark__short">WPC513</span>
+        </p>
+        <p class="foot__note">Outdoor living care for six homes on the west side of Cincinnati. Green Township, Oak Hills, upper Delhi, and Covedale.</p>
+      </div>
+      <div>
+        <h2>Get hold of me</h2>
+        <p class="foot__note">
+          <a href="sms:[PHONE]">[PHONE]</a> · texting is fine<br>
+          <a href="mailto:[EMAIL]">[EMAIL]</a>
+        </p>
+      </div>
+      <div>
+        <h2>Project work, no membership needed</h2>
+        <div class="foot__prices">
+          <p>Grill and outdoor kitchen deep clean — $249+</p>
+          <p>Window well cleanout — $49+</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="foot__rule">
+
+    <nav class="foot__nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="whats-included.html">What's included</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="waitlist.html">Waitlist</a>
+    </nav>
+
+    <hr class="foot__rule">
+
+    <p class="foot__note">Two scheduled visits a month. The same price in January as in July.<br>Six properties is the cap. It is a schedule constraint, not a sales line.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The waitlist is a real list — Westside Property Care</title>
+<meta name="description" content="A written list with your street on it. When a spot opens it goes to whoever is closest to the route I'm already driving. Project work Tuesday through Thursday in the meantime.">
+<link rel="canonical" href="[URL]/waitlist.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The waitlist is a real list — Westside Property Care">
+<meta property="og:description" content="Written down, with your street on it. When a spot opens it goes to whoever is closest to the route.">
+<meta property="og:url" content="[URL]/waitlist.html">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the main content</a>
+
+<header class="strip-wrap">
+  <div class="strip">
+    <div class="container strip__inner">
+      <a class="mark" href="index.html">
+        <span>Westside Property Care</span>
+        <span class="mark__short">WPC513</span>
+      </a>
+      <div class="season">
+        <span class="stamp season__stamp season__stamp--green">Green Season · Apr–Oct</span>
+        <span class="stamp season__stamp season__stamp--dormant">Dormant Season · Nov–Mar</span>
+        <input type="checkbox" id="season-switch" class="visually-hidden">
+        <label class="season__label" for="season-switch">
+          <span class="season__to-dormant">See Dormant Season</span>
+          <span class="season__to-green">See Green Season</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Main">
+    <div class="container">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="whats-included.html">What's included</a></li>
+        <li><a class="nav__link" href="pricing.html">Pricing</a></li>
+        <li><a class="nav__link" href="projects.html">Projects</a></li>
+        <li><a class="nav__link" href="about.html">About</a></li>
+        <li><a class="nav__link" href="apply.html">Apply</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script src="js/season.js"></script>
+
+<main id="main">
+
+  <section class="pagehead" aria-labelledby="page-h">
+    <div class="container">
+      <p class="rail">Waitlist</p>
+      <h1 id="page-h">The waitlist is a real list</h1>
+      <p class="lede">It's written down, it has your street on it, and when a spot opens it goes to whoever is closest to the route I'm already driving. Not to whoever asked first, and not to whoever pays the most.</p>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           ENROLMENT STATE — the only block to edit when a slot opens or fills.
+           OPEN:  keep the line below as it is, with the true count.
+           FULL:  replace the whole <div class="slots"> with the MEMBERSHIP
+                  FULL stamp exactly as it appears in membership-full.html:
+                  <div class="slots">
+                    <p class="figure slots__full">Membership full</p>
+                    <p>All six spots are taken. That's the actual cap, not a
+                       sales line — six properties is twelve visits a month
+                       across four route days, and past that I'd be rushing
+                       somebody.</p>
+                  </div>
+           See site-spec.md §3.
+           ══════════════════════════════════════════════════════════════════ -->
+      <div class="slots">
+        <p class="figure slots__count">6 of 6 spots open</p>
+        <p>Spots are open right now, so the list is for properties that aren't near either route cluster yet. That's a real reason to be on it, and it isn't a rejection.</p>
+      </div>
+      <!-- ══ end enrolment state ══ -->
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="why-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">The mechanism</p>
+        <div class="entry__body measure">
+          <h2 id="why-h">Why there's a list at all</h2>
+          <p>Two reasons, and they're both about the route.</p>
+          <p>Six properties is twelve visits a month across four route days. When those six are taken, that's the cap — past it I'd be hurrying at one house to get to another, and that's the one thing the whole schedule is built to prevent.</p>
+          <p>And a property that isn't near one of the two clusters goes on the list even when a slot is open. A house twenty-five minutes out of position costs me the same unpaid drive twice a month for as long as they're a member, and no price fixes distance. That's true at $329, and it's true if you want to start Monday.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="up-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">What helps</p>
+        <div class="entry__body measure">
+          <h2 id="up-h">Two things move you up</h2>
+          <p>A spot opening near you. Or a neighbor of yours with a pool or an outdoor kitchen adding their name — if two of you are on the same street, that's a cluster, and it changes the math completely.</p>
+          <p>That second one is the fastest way onto the list in practice, and it's worth asking around.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="form-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">The form</p>
+        <div class="entry__body">
+          <h2 id="form-h" class="measure">Add your name</h2>
+
+          <form class="form" action="[FORM_ENDPOINT]" method="post">
+            <input type="hidden" name="_next" value="[URL]/thanks.html#waitlist">
+            <input type="hidden" name="_subject" value="Westside Property Care — waitlist">
+            <input type="hidden" name="list" value="waitlist">
+
+            <!-- Honeypot. Real people never see it and never fill it in. -->
+            <div class="honeypot" aria-hidden="true">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+            </div>
+
+            <fieldset>
+              <legend>Your details</legend>
+
+              <div class="field">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phone-hint">
+                <span class="field__hint" id="phone-hint">Texting is fine. Give me a phone or an email, whichever you'd rather I use.</span>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email">
+              </div>
+
+              <div class="field">
+                <label for="street">Cross street</label>
+                <input type="text" id="street" name="cross_street" autocomplete="address-line2" required aria-describedby="street-hint">
+                <span class="field__hint" id="street-hint">Required, and on this form it's the whole point — the list is ordered by how close you are to the route.</span>
+              </div>
+            </fieldset>
+
+            <fieldset class="field">
+              <legend>What does the property have?</legend>
+              <div class="checks">
+                <div class="check">
+                  <input type="checkbox" id="has-pool" name="pool" value="yes">
+                  <label for="has-pool">A pool</label>
+                </div>
+                <div class="check">
+                  <input type="checkbox" id="has-kitchen" name="outdoor_kitchen" value="yes">
+                  <label for="has-kitchen">An outdoor kitchen, a grill, or outdoor counters</label>
+                </div>
+              </div>
+              <span class="field__hint">Check either, both, or neither. Neither is a real answer and it's a real price.</span>
+            </fieldset>
+
+            <div class="field">
+              <label for="notes">Anything you'd want handled in the meantime?</label>
+              <textarea id="notes" name="notes" rows="5" aria-describedby="notes-hint"></textarea>
+              <span class="field__hint" id="notes-hint">Optional. Project work doesn't need a membership and doesn't need a slot.</span>
+            </div>
+
+            <div class="form__foot">
+              <button class="btn" type="submit">Add me to the waitlist</button>
+              <span class="cta__aside">Or text me — <a href="sms:[PHONE]">[PHONE]</a></span>
+            </div>
+          </form>
+
+          <div class="measure">
+            <p class="small">I'll tell you honestly where you sit and what would have to happen. If this form doesn't go through, text me at <a href="sms:[PHONE]">[PHONE]</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="meanwhile-h">
+    <div class="container">
+      <div class="entry entry--last">
+        <p class="rail">Meanwhile</p>
+        <div class="entry__body">
+          <div class="measure">
+            <h2 id="meanwhile-h">Project work doesn't need a slot</h2>
+            <p>Tuesday through Thursday I'm doing projects and estimates whether you're a member or not.</p>
+          </div>
+
+          <ul class="ledger">
+            <li class="ledger__row ledger__row--lead">
+              <span class="ledger__what">Grill and outdoor kitchen deep clean</span>
+              <span class="ledger__price"><span class="figure">$249+</span></span>
+            </li>
+            <li class="ledger__row">
+              <span class="ledger__what">Window well cleanout</span>
+              <span class="ledger__price"><span class="figure">$49+</span></span>
+            </li>
+          </ul>
+
+          <div class="ledger__terms measure">
+            <p>Pressure washing, gutters, bed cleanout, drainage, storm work, and spring open or fall close all get quoted after I look at them. Flat number, materials itemized separately at cost plus 25%, good for 30 days.</p>
+            <p class="onward"><a href="projects.html">Everything I do as a project</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="container">
+    <div class="foot__grid">
+      <div>
+        <p class="mark mark--stacked">
+          <span>Westside Property Care</span>
+          <span class="mark__short">WPC513</span>
+        </p>
+        <p class="foot__note">Outdoor living care for six homes on the west side of Cincinnati. Green Township, Oak Hills, upper Delhi, and Covedale.</p>
+      </div>
+      <div>
+        <h2>Get hold of me</h2>
+        <p class="foot__note">
+          <a href="sms:[PHONE]">[PHONE]</a> · texting is fine<br>
+          <a href="mailto:[EMAIL]">[EMAIL]</a>
+        </p>
+      </div>
+      <div>
+        <h2>Project work, no membership needed</h2>
+        <div class="foot__prices">
+          <p>Grill and outdoor kitchen deep clean — $249+</p>
+          <p>Window well cleanout — $49+</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="foot__rule">
+
+    <nav class="foot__nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="whats-included.html">What's included</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="apply.html">Apply</a>
+      <a href="waitlist.html">Waitlist</a>
+    </nav>
+
+    <hr class="foot__rule">
+
+    <p class="foot__note">Two scheduled visits a month. The same price in January as in July.<br>This is a new business. I'd be starting with you.</p>
+  </div>
+</footer>
+
+</body>
+</html>

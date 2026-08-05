@@ -96,7 +96,11 @@
   --container:  77.5rem;  /* 1240px, 12 columns, 24px gutter */
   --measure:    68ch;     /* the reading column caps at 68 characters */
   --rail-width: 11.5rem;
-  --bleed:      clamp(2rem, 8vw, 9rem);
+  /* The bleed track has to reach the right edge of the viewport at any width,
+     not a fixed distance past the container. Below 1240px this overshoots and
+     the plate is cropped hard by main { overflow-x: clip }, which is the
+     intent. */
+  --bleed: max(2rem, calc((100vw - var(--container)) / 2 + var(--space-gutter)));
 
   /* --- Radius — near zero, and meaningful where present ------------------ */
   --radius-flat:    0;    /* panels, plates, tables, entries — the default */
@@ -116,7 +120,6 @@
   --dur-base:  260ms;
   --dur-draw:  420ms;
   --ease-draw: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
 
   /* --- Focus — visible, in-brand, and never removed ---------------------- */
   --focus-width:  2px;
