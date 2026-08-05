@@ -18,6 +18,33 @@ from. If you read one file, read that one.
 | `04-operations/` | Service agreement, per-visit SOPs, service-report templates, property record, estimate templates, and the tooling/legal checklist. |
 | `05-playbook/` | The step-by-step execution sequence. Every step is a self-contained brief you can hand to a subagent, plus the human-only checklist with real lead times. |
 
+## Status
+
+All fourteen build steps are complete and reviewed. Four independent reviewers audited the
+work — build/rules, SEO, accessibility, and a voice audit against `01-brand/voice.md` — and
+every finding has been fixed and verified. `05-playbook/steps/step-15-16-review.md` records
+what each reviewer checked.
+
+Verified mechanically, not asserted:
+
+| Check | Result |
+|---|---|
+| `00-model/verify-unit-economics.py` | **159/159 assertions pass** |
+| Price drift across all directories | Clean — only the four membership prices and the published project prices |
+| Banned geography, forbidden metric, fabricated proof | Clean — every hit is a prohibition or an exclusion statement |
+| Site CSS / JS, gzipped | **13.2 KB / 1.4 KB** against 30 KB / 150 KB budgets |
+| Placeholders | All deliberate and registered; no TODO, TBD, or lorem anywhere |
+| Root Next.js app | Unaffected — excluded from its Vercel deploy and `tsconfig`, and this directory contains zero `.ts`/`.tsx` files |
+
+**What is not verified here:** no browser, Lighthouse, or axe run was possible in this
+environment. Every accessibility and performance claim comes from reading the markup and
+computing contrast by hand against the literal token values. `02-website/site-spec.md` §12
+says so explicitly rather than implying a pass. Run a real browser audit before launch.
+
+**Before this can take money,** work `05-playbook/human-checklist.md`. Insurance, a verified
+Google Business Profile, tested card-on-file billing, and at least one set of real
+photographs all gate the first paying customer, and none of them can be produced here.
+
 ## How to run it
 
 Open [`05-playbook/PLAYBOOK.md`](05-playbook/PLAYBOOK.md) and work the steps in order. Each
