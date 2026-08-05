@@ -46,8 +46,27 @@ next project gets found and recommended.
 | + Pool Care | **+$60/month** | Property has a pool |
 | + Outdoor Kitchen Care | **+$40/month** | Grill, flat-top, or outdoor counters |
 
-**The only three prices a customer ever sees: $229, $289, $329.**
+The add-ons are **independent** — either, both, or neither. That yields exactly four
+customer-facing configurations:
+
+| Property has | Price |
+|---|---|
+| Neither | **$229/month** |
+| Outdoor kitchen only | **$269/month** |
+| Pool only | **$289/month** |
+| Pool **and** outdoor kitchen | **$329/month** |
+
+**The only four prices a customer ever sees: $229, $269, $289, $329.**
 Billed monthly, same price year-round, card on file, auto-charged on the 1st.
+
+Never present this as a menu of four plans. It is one membership priced by what the property
+has: *base, plus the pool, plus the outdoor kitchen.* Say it that way everywhere.
+
+> **Decision note.** An earlier version of this file locked the card at three prices and sent
+> outdoor-kitchen-without-pool properties to $229. That was wrong: the first members are most
+> likely to come off the Tri-State Grill Cleaning customer list, where an outdoor kitchen and
+> no pool is plausibly the *most common* configuration, not an edge case. The owner resolved
+> this on 2026-08-05 in favour of the fourth price. See `00-model/decisions.md` D-3 / R-1.
 
 **Founding Member rate:** the first 4 clients lock their price for 12 months.
 

@@ -198,7 +198,7 @@ is preserved because it was the best number in the draft.
 membership revenue for the month ÷ route days worked that month
 ```
 
-At six clients: **$1,734 ÷ 4 = $434 per route day.**
+At six clients: **$1,734 ÷ 4 = $433.50 per route day.**
 **Target: $400 or better.**
 
 This number is the referee for every route decision. It goes up when the route is compact
