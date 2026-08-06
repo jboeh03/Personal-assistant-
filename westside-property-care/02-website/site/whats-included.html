@@ -44,7 +44,7 @@
              typed in caps here as well as being rendered in caps by
              .stamp with text-transform: uppercase. -->
         <span class="stamp season__stamp season__stamp--in">IN SEASON · MAR 1 – OCT 31</span>
-        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – FEB 28</span>
+        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – END OF FEB</span>
         <input type="checkbox" id="season-switch" class="visually-hidden">
         <label class="season__label" for="season-switch">
           <span class="season__to-off">See off season</span>
@@ -76,29 +76,34 @@
       <p class="rail">Scope · Mar 1 – Oct 31</p>
       <h1 id="page-h">What's included, and what isn't</h1>
       <p class="lede"><strong>Maintain everything. Deep-clean nothing unless it's specifically scheduled.</strong> That line is off the footer of the checklist I carry, and it does more scope protection than a page of exclusions.</p>
-      <p class="lede">Sixteen visits a season, March 1 through October 31. Two a month, up to two hours of on-site service each.</p>
+      <p class="lede">Sixteen visits a season, March 1 through October 31. Two a month, up to two hours of on-site service each, highest-priority maintenance items first. Completion of every possible task during every visit is not guaranteed, and unused service time does not roll over.</p>
       <!-- ══ THE SEASON STRIP — sixteen ticks ═══════════════════════════════
            Page furniture, not a chart. No axis, no scale, no tooltip, no
            percentage, and no animation — a strip that filled itself would turn
            a schedule into a countdown (visual-direction.md §4.5, §6).
-           THE ONLY THING TO EDIT AS THE SEASON MOVES: how many <li> carry
-           tick--done, and which one carries tick--now. Everything the graphic
-           says is also written in the caption, and the tick row is aria-hidden,
-           so nothing is carried by the drawing alone.
+           THE ONLY THING TO EDIT AS THE SEASON MOVES: which single <li> carries
+           tick--now. A PUBLIC STRIP DRAWS THE SHAPE OF THE SEASON, NOT A
+           DELIVERY RECORD — all sixteen ticks stay --rule and exactly one is
+           the --ember square. tick--done is --ink, which visual-direction.md
+           §4.5 defines as "a visit already delivered"; it is reserved for a
+           member's own record and must not appear on a public page.
+           Everything the graphic says is also written in the caption, and
+           the tick row is aria-hidden, so nothing is carried by the
+           drawing alone.
            ═══════════════════════════════════════════════════════════════════ -->
       <figure class="s16">
         <p class="rail s16__open">Next season opens March 1</p>
         <ol class="s16__ticks" aria-hidden="true">
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
           <li class="tick tick--now"></li>
           <li class="tick"></li>
           <li class="tick"></li>
@@ -109,7 +114,7 @@
         <p class="s16__months" aria-hidden="true"><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></p>
         <figcaption class="s16__cap">
           <span class="stamp">16 visits · Mar 1 – Oct 31</span>
-          <span class="s16__note s16__note--in">Two a month, March through October. Ten of the 2026 season's sixteen visit dates are already past — the season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</span>
+          <span class="s16__note s16__note--in">Two a month, March through October. The filled square is where the 2026 season sits now. The season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</span>
           <span class="s16__note s16__note--off">Nothing is scheduled November through February and nobody is billed for it. The next season opens <span class="opens">March 1</span> — sixteen visits, two a month.</span>
         </figcaption>
       </figure>
@@ -138,7 +143,7 @@
         <div class="entry__body">
           <div class="measure">
             <h2 id="visit-h">The eight parts of a visit</h2>
-            <p>This is the shape of the two hours, as applicable to your property. A property with no pool and no outdoor kitchen skips two of them, and that is a shorter visit rather than a cheaper one.</p>
+            <p>This is the shape of the two hours. A property with no pool and no outdoor kitchen skips two of them. The price is the same either way.</p>
           </div>
 
           <ul class="blocks">
@@ -199,7 +204,7 @@
             <line x1="0" y1="300" x2="600" y2="300"/>
           </g>
         </svg>
-        <figcaption class="rail plate__cap">Photo required · Frame 2 · My hands working — the skimmer net breaking the surface, or the grease tray coming out</figcaption>
+        <figcaption class="plate__cap">A photograph goes here. There aren't any yet — the real one is my hands working: the skimmer net breaking the surface, or the grease tray coming out of a flat-top.</figcaption>
       </figure>
 
         </div>
@@ -236,7 +241,7 @@
             <line x1="0" y1="300" x2="600" y2="300"/>
           </g>
         </svg>
-        <figcaption class="rail plate__cap">Photo required · Frame 5 · The equipment pad — salt cell display, pump baskets out, backwash valve. Caption it with the disclaimer, not with a competence claim.</figcaption>
+        <figcaption class="plate__cap">A photograph goes here. There aren't any yet — the real one is the equipment pad: the salt cell display, the pump baskets out, the backwash valve. Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment performance, or pool-system operation unless separately contracted.</figcaption>
       </figure>
 
         </div>
@@ -331,7 +336,7 @@
               <h3>Storms, and what "emergency" means</h3>
               <p>Included: clearing storm debris out of the outdoor living area on your next scheduled visit, by hand, within the volume limit above.</p>
               <p>Not included: any storm response needing a saw, a trailer, more than one trip, or more than your containers hold; tree or large-limb removal; and repair of structural or property damage.</p>
-              <p>This isn't an emergency service and there are no guaranteed response times. Tuesday through Thursday is held open partly for exactly this, so urgent things usually do get handled. That's a real benefit and it isn't a promise.</p>
+              <p>This isn't an emergency service and there are no guaranteed response times. Tuesday through Thursday is held open partly for exactly this, so urgent things usually do get handled. I don't promise same-day.</p>
             </li>
             <li>
               <h3>November through February</h3>

@@ -148,10 +148,26 @@ This is new. I'd be starting with you.
 > Not lawn care. Not pool service — I take care of the pool area but I don't guarantee the water.
 > Everything I don't do is on this page, above the price.
 
-**Note on what is deliberately absent here: the hours.** `CANON.md` §3 and `pricing.md` say the
-price and the cap must not appear in the same breath, because `$279 ÷ 4 hours` reads as an hourly
-rate and invites comparison with a handyman. The masthead states what stays maintained and the
-price. The cap appears where a boundary belongs — §1.7 below, and on What's included.
+**Note on what is deliberately absent here: the hours.** *(Corrected. The previous version of
+this note asserted a rule that does not exist and attributed it to two files that do not say it.
+It read: "`CANON.md` §3 and `pricing.md` say the price and the cap must not appear in the same
+breath." Neither does, and the note contradicted the page it documents.)*
+
+**There is no rule against the price and the cap appearing together — the required form puts them
+in one block.** `voice.md` §3, the hours-arithmetic rule, prints the approved wording as a single
+paragraph carrying the visits, the cap, both clauses, the no-rollover clause and `$279`.
+`messaging.md` §3's section order lists item 4 as *"The price, with the two-hour cap and both its
+clauses."* The shipped `.onefig` block at §1.8 does exactly that and is the model for every other
+surface.
+
+**What is actually banned is the division.** `$279 ÷ 4 hours` is an hourly rate and invites
+comparison with a handyman, so copy never performs it (`voice.md` §3). What `CANON.md` §3 says is
+narrower and different: *"Lead with what stays maintained; state the cap where a boundary
+belongs."*
+
+So the masthead is a sequencing decision, not a prohibition. It is the ten-second read, so it
+carries what stays maintained and the price; the cap arrives forty lines later at §1.8, in the
+one component that cannot state it without all five clauses. Both are correct.
 
 **Enrolment stamp — open:**
 

@@ -398,6 +398,13 @@ body:has(#season-switch:checked) .s16__open { display: block; }
   background-color: var(--rule);
 }
 
+/* RESERVED, AND NOT FOR A PUBLIC PAGE. --ink means "a visit already delivered"
+   (visual-direction.md §4.5). Ten of these shipped on four public pages while
+   the business had zero members, so the caption said "visit dates" — honest —
+   and the drawing said "ten visits done" — not. A public strip draws the
+   SHAPE OF THE SEASON: sixteen --rule ticks, with the current calendar
+   position as the one --ember square. This class is kept because the state is
+   real the day a member sees their own record, and it may only be used there. */
 .tick--done { background-color: var(--ink); }
 
 .tick--now {
@@ -405,8 +412,6 @@ body:has(#season-switch:checked) .s16__open { display: block; }
   block-size: var(--tick-sq);
   background-color: var(--ember);
 }
-
-body:has(#season-switch:checked) .tick--done { background-color: var(--rule); }
 
 body:has(#season-switch:checked) .tick--now {
   inline-size: var(--tick-w);
@@ -700,8 +705,19 @@ body:has(#season-switch:checked) .disclaim { border-block-start-color: var(--ink
 
 /* --- 12. Plate — the standing image slot ---------------------------------
    No real photography exists yet, and stock is never a final answer. Until
-   each frame is shot the slot ships as an empty ruled band with a mono caption
-   naming exactly what belongs there.
+   each frame is shot the slot ships as an empty ruled band with a caption
+   that tells a VISITOR what the real photograph has to show.
+
+   The caption is deliberately NOT .rail. It used to be, and .rail inherits
+   text-transform: uppercase, so the shot list a photographer would work from
+   rendered to customers in caps: "PHOTO REQUIRED · FRAME 3 · … DON'T CLEAN IT
+   BEFORE SHOOTING IT." Two separate defects in one string — a production note
+   published as copy, and letterspaced mono set on a sentence, which
+   visual-direction.md §3.4 bans and the Plex Mono subset cannot render (the
+   apostrophe is outside the shipped glyph set). The shot instruction now lives
+   only in the HTML comment above each figure and in site-spec.md §7, which is
+   where it always belonged. Sentence case, Plex Sans, --ink-muted at 5.4:1 on
+   the --paper-deep plate ground.
    -------------------------------------------------------------------------- */
 
 /* The second --paper-deep ground. No finding and nothing focusable on it
@@ -721,8 +737,12 @@ body:has(#season-switch:checked) .disclaim { border-block-start-color: var(--ink
 
 .plate__cap {
   display: block;
+  margin: 0;
+  max-inline-size: var(--measure);
   padding: var(--space-row) var(--space-tight);
   border-block-start: var(--hair) solid var(--rule);
+  font-size: var(--type-small);
+  line-height: var(--lh-small);
   color: var(--ink-muted);
 }
 

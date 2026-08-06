@@ -44,7 +44,7 @@
              typed in caps here as well as being rendered in caps by
              .stamp with text-transform: uppercase. -->
         <span class="stamp season__stamp season__stamp--in">IN SEASON · MAR 1 – OCT 31</span>
-        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – FEB 28</span>
+        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – END OF FEB</span>
         <input type="checkbox" id="season-switch" class="visually-hidden">
         <label class="season__label" for="season-switch">
           <span class="season__to-off">See off season</span>
@@ -80,24 +80,29 @@
            Page furniture, not a chart. No axis, no scale, no tooltip, no
            percentage, and no animation — a strip that filled itself would turn
            a schedule into a countdown (visual-direction.md §4.5, §6).
-           THE ONLY THING TO EDIT AS THE SEASON MOVES: how many <li> carry
-           tick--done, and which one carries tick--now. Everything the graphic
-           says is also written in the caption, and the tick row is aria-hidden,
-           so nothing is carried by the drawing alone.
+           THE ONLY THING TO EDIT AS THE SEASON MOVES: which single <li> carries
+           tick--now. A PUBLIC STRIP DRAWS THE SHAPE OF THE SEASON, NOT A
+           DELIVERY RECORD — all sixteen ticks stay --rule and exactly one is
+           the --ember square. tick--done is --ink, which visual-direction.md
+           §4.5 defines as "a visit already delivered"; it is reserved for a
+           member's own record and must not appear on a public page.
+           Everything the graphic says is also written in the caption, and
+           the tick row is aria-hidden, so nothing is carried by the
+           drawing alone.
            ═══════════════════════════════════════════════════════════════════ -->
       <figure class="s16">
         <p class="rail s16__open">Next season opens March 1</p>
         <ol class="s16__ticks" aria-hidden="true">
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
-          <li class="tick tick--done"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
+          <li class="tick"></li>
           <li class="tick tick--now"></li>
           <li class="tick"></li>
           <li class="tick"></li>
@@ -108,7 +113,7 @@
         <p class="s16__months" aria-hidden="true"><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></p>
         <figcaption class="s16__cap">
           <span class="stamp">16 visits · Mar 1 – Oct 31</span>
-          <span class="s16__note s16__note--in">Two a month, March through October. Ten of the 2026 season's sixteen visit dates are already past — the season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</span>
+          <span class="s16__note s16__note--in">Two a month, March through October. The filled square is where the 2026 season sits now. The season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</span>
           <span class="s16__note s16__note--off">Nothing is scheduled November through February and nobody is billed for it. The next season opens <span class="opens">March 1</span> — sixteen visits, two a month.</span>
         </figcaption>
       </figure>
@@ -195,7 +200,7 @@
             <line x1="0" y1="300" x2="600" y2="300"/>
           </g>
         </svg>
-        <figcaption class="rail plate__cap">Photo required · Frame 3 · A genuine finding — a window well packed with leaves, or a skimmer basket full. Don't clean it before shooting it.</figcaption>
+        <figcaption class="plate__cap">A photograph goes here. There aren't any yet — the real one is something I found and would rather you saw: a window well packed with leaves, or a skimmer basket lifted out full.</figcaption>
       </figure>
 
         </div>
@@ -243,12 +248,12 @@
   <section class="section" aria-labelledby="hour-h">
     <div class="container">
       <div class="entry entry--last">
-        <p class="rail">Per hour</p>
+        <p class="rail">The arithmetic</p>
         <div class="entry__body measure">
           <h2 id="hour-h">"That's more than a handyman"</h2>
           <p>You're right about the arithmetic, and I'd rather answer it than dodge it.</p>
           <p>A handyman's hour starts when you call him. You have to notice the problem, describe it, get on his schedule, and be home. Mine starts because it's the first Monday — I show up whether you noticed anything or not, and most of what I find, you hadn't. That's the thing you're actually buying.</p>
-          <p>The two hours is a ceiling, not a quota. It's there so the price can be one number: a property with a pool and an outdoor kitchen would take three hours to do everything, and a plain patio would take one, and I'd rather cap the time than charge you differently for owning a pool. So I spend those two hours on whatever makes the biggest difference that day, highest priority first, and I tell you what I didn't get to.</p>
+          <p>The two hours is a ceiling, not a quota. It's there so the price can be one number: a property with a pool and an outdoor kitchen would take three hours to do everything, and a plain patio would take one, and I'd rather cap the time than charge you differently for owning a pool. So I spend those two hours on whatever makes the biggest difference that day, highest priority first, and I tell you what I didn't get to. Completion of every possible task every visit isn't guaranteed — that's in the agreement in those words, because I'd rather you read it than find out.</p>
           <p>If what you want is hours, I'd honestly rather sell you a project. Those are flat-priced and you know exactly what you're getting for the money. The membership is a different thing. It's sixteen visits and a record.</p>
         </div>
       </div>
@@ -267,12 +272,12 @@
               <dd>Card on file, collected before the first visit. There's no exception to that one, and it isn't about you — a six-client business can't spend part of its month chasing an invoice.</dd>
             </div>
             <div>
-              <dt>When it's charged</dt>
+              <dt>When the card is charged</dt>
               <dd>Monthly, in advance, on the schedule we set at enrollment. Eight charges a season, March through October.</dd>
             </div>
             <div>
               <dt>November through February</dt>
-              <dd>No charge and no scheduled visits. The card stays on file and isn't charged. We'll confirm the next season in writing in February, before the first March route day.</dd>
+              <dd>No charge and no scheduled visits. The card stays on file and isn't charged. I'll confirm the next season in writing in February, before the first March route day.</dd>
             </div>
             <div>
               <dt>Starting mid-season</dt>
@@ -334,8 +339,8 @@
         <div class="entry__body measure">
           <h2 id="founding-h">Pro-rated 2026, and your rate locked for all of 2027</h2>
           <p>The season's already underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</p>
-          <p>That isn't a promotion and I'd rather not dress it up as one. It's what I'm giving the people who take a chance on a business with no track record, and a locked price through a full season is a fair thing to give them for it.</p>
-          <p>It covers the membership price only — not project work, not materials. The lock runs through the end of the 2027 season and it doesn't extend past it. It's a price guarantee, not a term you're stuck in: thirty days' written notice and you're done, either way.</p>
+          <p>That isn't a promotion — it's what I'm giving the people who take a chance on a business with no track record, and a locked price through a full season is a fair thing to give them for it.</p>
+          <p>It covers the membership price only — not project work, not materials. The lock runs through the end of the 2027 season and it doesn't extend past it. It's a price guarantee. Thirty days' written notice and you're done, either way.</p>
         </div>
       </div>
     </div>
@@ -347,7 +352,7 @@
         <p class="rail">Fixed</p>
         <div class="entry__body measure">
           <h2 id="fixed-h">What I don't discount</h2>
-          <p>The membership price. Project work for members. And the last slot.</p>
+          <p>The membership price, and project work for members.</p>
           <p>Members don't get a discount on projects. They get scheduling priority and no trip minimum, which is worth more — a $49 window well is worth doing when I'm already standing in the yard, and it isn't worth a dedicated trip when I'm not.</p>
           <p>If the number is more than you want to spend, that's a fair thing to say and it doesn't make this awkward. I'd still be glad to do the grill for you, and that's $249 and up with nothing committed.</p>
         </div>

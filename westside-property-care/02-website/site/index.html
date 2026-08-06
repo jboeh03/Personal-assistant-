@@ -120,7 +120,7 @@
              typed in caps here as well as being rendered in caps by
              .stamp with text-transform: uppercase. -->
         <span class="stamp season__stamp season__stamp--in">IN SEASON · MAR 1 – OCT 31</span>
-        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – FEB 28</span>
+        <span class="stamp season__stamp season__stamp--off">OFF SEASON · NOV 1 – END OF FEB</span>
         <input type="checkbox" id="season-switch" class="visually-hidden">
         <label class="season__label" for="season-switch">
           <span class="season__to-off">See off season</span>
@@ -178,24 +178,29 @@
              Page furniture, not a chart. No axis, no scale, no tooltip, no
              percentage, and no animation — a strip that filled itself would turn
              a schedule into a countdown (visual-direction.md §4.5, §6).
-             THE ONLY THING TO EDIT AS THE SEASON MOVES: how many <li> carry
-             tick--done, and which one carries tick--now. Everything the graphic
-             says is also written in the caption, and the tick row is aria-hidden,
-             so nothing is carried by the drawing alone.
+             THE ONLY THING TO EDIT AS THE SEASON MOVES: which single <li> carries
+             tick--now. A PUBLIC STRIP DRAWS THE SHAPE OF THE SEASON, NOT A
+             DELIVERY RECORD — all sixteen ticks stay --rule and exactly one is
+             the --ember square. tick--done is --ink, which visual-direction.md
+             §4.5 defines as "a visit already delivered"; it is reserved for a
+             member's own record and must not appear on a public page.
+             Everything the graphic says is also written in the caption, and
+             the tick row is aria-hidden, so nothing is carried by the
+             drawing alone.
              ═══════════════════════════════════════════════════════════════════ -->
         <figure class="s16">
           <p class="rail s16__open">Next season opens March 1</p>
           <ol class="s16__ticks" aria-hidden="true">
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
-            <li class="tick tick--done"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
+            <li class="tick"></li>
             <li class="tick tick--now"></li>
             <li class="tick"></li>
             <li class="tick"></li>
@@ -206,7 +211,7 @@
           <p class="s16__months" aria-hidden="true"><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></p>
           <figcaption class="s16__cap">
             <span class="stamp">16 visits · Mar 1 – Oct 31</span>
-            <span class="s16__note s16__note--in">Two a month, March through October. Ten of the 2026 season's sixteen visit dates are already past — the season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</span>
+            <span class="s16__note s16__note--in">Two a month, March through October. The filled square is where the 2026 season sits now. The season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.</span>
             <span class="s16__note s16__note--off">Nothing is scheduled November through February and nobody is billed for it. The next season opens <span class="opens">March 1</span> — sixteen visits, two a month.</span>
           </figcaption>
         </figure>
@@ -227,7 +232,7 @@
             <line x1="0" y1="300" x2="600" y2="300"/>
           </g>
         </svg>
-        <figcaption class="rail plate__cap">Photo required · Frame 1 · A pool deck mid-visit, standing height, my own equipment in frame</figcaption>
+        <figcaption class="plate__cap">A photograph goes here. There aren't any yet — the real one is a pool deck mid-visit, shot standing, with my own equipment still in the frame.</figcaption>
       </figure>
     </div>
   </section>
@@ -255,7 +260,7 @@
             <h2 id="scope-h">What actually happens on a visit</h2>
             <p><strong>Maintain everything. Deep-clean nothing unless it's specifically scheduled.</strong> That's the rule I work to, and it decides most of what follows.</p>
             <p>I walk the property before I start and again before I leave. In between I do what will make the biggest difference that day — which is not the same list every time, and a visit in early March with the cover just off looks nothing like one in late August.</p>
-            <p>Read the eight parts below as what the work is, not as a checklist that gets completed. Completion of every possible task during every visit is not guaranteed, and a checklist is something I'd fail the first week it rains.</p>
+            <p>Read the eight parts below as what the work is. Completion of every possible task during every visit is not guaranteed, and a checklist is something I'd fail the first week it rains.</p>
           </div>
 
           <ul class="blocks">
@@ -340,7 +345,7 @@
                 </div>
               </div>
             </div>
-            <figcaption class="small report__note">This is the shape a summary takes, not one from a client's property. There aren't any yet. When there is one, a real summary goes here with the address taken off.</figcaption>
+            <figcaption class="small report__note">This is the shape a summary takes. There aren't any yet. When there is one, a real summary goes here with the address taken off.</figcaption>
           </figure>
 
       <!-- PHOTO REQUIRED · IMG-04 · Frame 4.
@@ -355,7 +360,7 @@
             <line x1="0" y1="300" x2="600" y2="300"/>
           </g>
         </svg>
-        <figcaption class="rail plate__cap">Photo required · Frame 4 · A real service summary on a phone or printed on the tailgate, address obscured</figcaption>
+        <figcaption class="plate__cap">A photograph goes here. There aren't any yet — the real one is a service summary open on a phone, with the address taken off.</figcaption>
       </figure>
 
         </div>
@@ -510,7 +515,7 @@
         <div class="entry__body measure">
           <h2 id="route-h">Where I work, and why it's this narrow</h2>
           <p>Green Township, Oak Hills, upper Delhi, and Covedale.</p>
-          <p>The route is built around two clusters, and every property has to be close to another one I already take care of. That isn't a preference. Six properties is twelve visits a month across four route days, and a house twenty-five minutes out of position costs me the same drive twice a month for as long as they're a member.</p>
+          <p>The route is built around two clusters, and every property has to be close to another one I already take care of. Six properties is twelve visits a month, and routine visits only happen Monday and Friday. Past six I'd be rushing somebody — and a house twenty-five minutes out of position costs me the same drive twice a month for as long as they're a member.</p>
           <p>So location decides more than anything else does. If your street doesn't fit yet, I'll tell you that straight and put you on the waitlist, and I'll still do project work for you in the meantime.</p>
         </div>
       </div>
