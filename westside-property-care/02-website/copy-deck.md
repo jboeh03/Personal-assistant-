@@ -123,6 +123,55 @@ This is new. I'd be starting with you.
 > once. It was **substituted**, not removed, and the second paragraph carries the season and the
 > honest disclosure that used to sit beside it.
 
+### 0.4 Image-plate captions — seven slots, and they are customer copy
+
+No photograph exists yet, so every image slot ships as a ruled empty plate with a caption. **The
+caption is written to a visitor.** The shot instruction lives in the HTML comment above the figure
+and in `site-spec.md` §7, and it must never render.
+
+| Slot | Page | Caption |
+|---|---|---|
+| IMG-01 | Home, Membership full | A photograph goes here. There aren't any yet — the real one is a pool deck mid-visit, shot standing, with my own equipment still in the frame. |
+| IMG-02 | What's included | A photograph goes here. There aren't any yet — the real one is my hands working: the skimmer net breaking the surface, or the grease tray coming out of a flat-top. |
+| IMG-03 | Pricing | A photograph goes here. There aren't any yet — the real one is something I found and would rather you saw: a window well packed with leaves, or a skimmer basket lifted out full. |
+| IMG-04 | Home, Membership full | A photograph goes here. There aren't any yet — the real one is a service summary open on a phone, with the address taken off. |
+| IMG-05 | What's included | A photograph goes here. There aren't any yet — the real one is the equipment pad: the salt cell display, the pump baskets out, the backwash valve. **Westside Property Care 513 does not guarantee water chemistry, water clarity, equipment performance, or pool-system operation unless separately contracted.** |
+| IMG-06 | Projects | A photograph goes here. There aren't any yet — the real one is a grill or an outdoor kitchen in the same frame before and after, same position, same light, same day. |
+| IMG-07 | About | A photograph goes here. There aren't any yet — the real one is the mark on the truck door in daylight, with the equipment behind it. |
+
+> **These captions used to be the shot list, rendered in caps.** `.plate__cap` carried
+> `class="rail"`, which inherits `text-transform: uppercase`, so on seven pages a visitor read
+> `PHOTO REQUIRED · FRAME 3 · A GENUINE FINDING — … DON'T CLEAN IT BEFORE SHOOTING IT.` That is
+> him talking to himself, published as copy, in the treatment reserved for status stamps. It is
+> the exact failure `voice.md` §3's non-prose surface rule exists to catch: nobody wrote it *as*
+> copy, so nobody audited it *as* copy. **IMG-05's caption carries the pool disclaimer in full**
+> — it describes the equipment pad, and item 41 does not exempt captions.
+
+### 0.5 Rail labels — the marginalia, and the one constraint they carry
+
+The rail is the narrow left column of mono marginalia — one label per entry, rendered in caps by
+the stylesheet. **A rail label names the section a scanner is about to read, and a scanner reads
+it before the heading.** So it is copy, it is audited as copy, and it carries one extra
+constraint nothing else on the site does.
+
+**Plex Mono ships subset to uppercase, digits and `. , : · $ + — / ( )`** (`visual-direction.md`
+§3.1, `site/fonts/README.md`). Anything outside that set falls through to a different monospace
+face for that character alone — a face change inside a word. **Rail labels are therefore written
+without apostrophes and without question marks.** Four were rewritten for this:
+
+| Was | Now | Where |
+|---|---|---|
+| `IF IT DOESN'T FIT` | `ROUTE FIT` | Apply |
+| `WHAT I'M LIKE` | `TRUST` | About |
+| `WHEN IT'S CHARGED` | `WHEN THE CARD IS CHARGED` | Pricing, billing definition list |
+| `WHAT DOES THE PROPERTY HAVE?` | `WHAT THE PROPERTY HAS` | Apply and Waitlist, fieldset legend |
+
+And one was rewritten for a reason that has nothing to do with fonts:
+
+| Was | Now | Why |
+|---|---|---|
+| `PER HOUR` | `THE ARITHMETIC` | It sat on the handyman rebuttal on the pricing page. The rail names the section, so the label presented **$279 as a rate** before a word of the rebuttal was read — the one string in that section doing the opposite of the section's job, and a direct hit on `voice.md` §3's hours-arithmetic rule. The body below it was already correct. |
+
 ---
 
 ## 1. Home — `index.html`
@@ -188,7 +237,8 @@ Sixteen ticks, two per month, March through October, with the months beneath.
 **Caption, in season:**
 
 > Two a month, March through October. The filled square is where the 2026 season sits now. The
-> season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.
+> season's underway, so I'll pro-rate what's left of it. Anybody on the books before March 1, 2027
+> holds $279 through the end of the 2027 season.
 
 **The sixteen ticks are the shape of the season, not a delivery record.** All sixteen ship as
 `--rule`; exactly one, the current calendar position, is the `--ember` square. `--ink` ticks mean
@@ -473,9 +523,12 @@ Unused service time does not roll over
 > Card on file, charged on the schedule we set when you sign, March through October. Thirty days'
 > written notice to cancel, either of us, and there's no term.
 >
-> The season's already underway, so I'll pro-rate what's left of it and lock your rate for all of
-> next year. That isn't a promotion — it's what I'm giving the people who take a chance on a
-> business with no track record.
+> The season's already underway, so I'll pro-rate what's left of it. Your rate is then held at $279
+> through October 31, 2027, and that holds for anybody whose agreement is signed on or before
+> February 28, 2027.
+>
+> There's no limit on how many people that is. It could be all six. It isn't a promotion either —
+> it's what I'm giving the people who take a chance on a business with no track record.
 
 **Onward:** *Billing, cancellation, and the rest of the price page* → `pricing.html`
 
@@ -861,7 +914,7 @@ The single figure, identical to §1.8, then:
 | **PAYMENT** | Card on file, collected before the first visit. There's no exception to that one, and it isn't about you — a six-client business can't spend part of its month chasing an invoice. |
 | **WHEN THE CARD IS CHARGED** | Monthly, in advance, on the schedule we set at enrollment. Eight charges a season, March through October. |
 | **NOVEMBER THROUGH FEBRUARY** | No charge and no scheduled visits. The card stays on file and isn't charged. I'll confirm the next season in writing in February, before the first March route day. |
-| **STARTING MID-SEASON** | The season's already underway, so what's left of it is pro-rated — you pay for the visits you actually get, and I'll show you the number before you sign anything. |
+| **STARTING MID-SEASON** | The season's already underway, so what's left of it is pro-rated — you pay for the visits you actually get, and I'll show you the number before you sign anything. Signing on or before February 28, 2027 also holds your rate at $279 through the 2027 season. |
 | **IF A CARD FAILS** | Service runs through the current month. I need a working card before your next route day, and I'll tell you the date rather than the word "immediately." Past-due accounts may have scheduled service suspended until they're current. |
 | **CANCELLING** | Thirty days' written notice, either of us. Amounts already earned for completed service periods remain due. There's no term and no cancellation fee. |
 | **PROJECT WORK** | Invoiced when it's finished, charged to the card on file unless you'd rather arrange it differently. |
@@ -869,10 +922,17 @@ The single figure, identical to §1.8, then:
 
 ### 3.7 Founding terms
 
-> ## Pro-rated 2026, and your rate locked for all of 2027
+> ## Pro-rated 2026, and $279 held through the 2027 season
 >
-> The season's already underway, so I'll pro-rate what's left of it and lock your rate for all of
-> next year.
+> The season's already underway, so I'll pro-rate what's left of it. Your rate is then held at $279
+> through October 31, 2027.
+>
+> It holds for anybody whose agreement is signed on or before February 28, 2027 — the day before
+> the 2027 season opens. There's no limit on how many people that is, and it could be all six.
+> Agreements signed after that date don't carry the lock.
+>
+> It's the signature date that counts, not the start date. Sign in February for a March 1 start and
+> you're in.
 >
 > That isn't a promotion — it's what I'm giving the people who take a chance on a business with no
 > track record, and a locked price through a full season is a fair thing to give them for it.
@@ -881,9 +941,37 @@ The single figure, identical to §1.8, then:
 > end of the 2027 season and it doesn't extend past it. It's a price guarantee. Thirty days'
 > written notice and you're done, either way.
 
-> 🔶 **No cap is asserted.** `CANON.md` §3 says "clients signing now"; the stale `pricing.md` §2
-> says "the first 4." Until `wpc-strategist` resolves it the site says "clients signing now" and
-> never asserts a cap. If the answer is four, this section gains one sentence and nothing else.
+> ✅ **Resolved 2026-08-06, and the answer is a date.** `wpc-strategist` ruled the Founding Member
+> lock **date-bounded, not count-bounded**: any member whose **agreement is signed on or before
+> February 28, 2027** holds $279 through **October 31, 2027**, with **no cap on how many** — up to
+> the whole book of six (`00-model/pricing.md` §2, `decisions.md` **D-27**). *"The first four
+> clients"* is withdrawn and may not be reinstated on any surface. The site had never published a
+> count, so nothing had to be retracted; what it published was vague — *"lock your rate for all of
+> next year"* — and vague is what the dated form replaces.
+>
+> **Three details are load-bearing and all three are now on the page.**
+>
+> 1. **The test is the signature date**, not the effective date and not the first visit. A member
+>    who signs February 20 for a March 1 start qualifies, and the page says so in those words. It
+>    is also the only version of this term a member can verify on the face of their own document —
+>    the withdrawn checkbox asked them to take his word for a fact about other people's contracts.
+> 2. **There is no limit on how many hold it**, and the copy says that out loud. Saying it is not
+>    generosity; it is what stops the reader inferring a queue where none exists, which is exactly
+>    what a count would have manufactured.
+> 3. **The date is a fact, never a countdown.** *"Anybody on the books before March 1"* and
+>    *"agreements signed after that date don't carry the lock"* are statements about the term.
+>    *"Only three weeks left to lock your rate"* is `voice.md` §6.5's season-closing row wearing a
+>    date instead of a count, and it is banned in exactly the same way. No surface counts down to
+>    February 28, and the season strip does not mark it.
+>
+> **Any agreement already executed under the "first four" clause is honoured as written** — this
+> is a forward rule change, not a repricing of a signed contract. Nothing on the site says
+> otherwise, and nothing on the site should ever describe the lock as a discount: everyone pays
+> $279, and the lock is a guarantee against a future increase (`pricing.md` §2.5).
+>
+> 🔶 **Flagged upward.** `01-brand/messaging.md` §4 still carries the superseded instruction —
+> *"say 'clients signing now' and never assert a cap"* — with a flag pointing at the unresolved
+> question. D-27 answers it. That file is `wpc-brand`'s; this deck now leads it.
 
 ### 3.8 What I don't discount
 
@@ -1392,8 +1480,14 @@ The founding-terms paragraph is replaced by:
 
 > The price doesn't move because the book is full, and it won't move when a spot opens.
 
-Four members have joined by definition in this state, so the founding terms are gone. The single
-figure and the five clauses are **byte-identical** to the open state.
+**The reason is the slot, not the count.** An earlier version of this note said *"four members
+have joined by definition in this state, so the founding terms are gone"* — reasoning that only
+worked while the lock was capped at four. Under D-27 the lock is date-bounded, so it has not
+expired in this state at all; a waitlist name who signs in February 2027 for a spot that opened in
+January still holds $279 through the 2027 season. What is missing on this page is **the slot**.
+Quoting terms on a slot the `h1` says is taken is the same defect as §8.1a's caption leak, and the
+page must not do it in either place. The single figure and the five clauses are **byte-identical**
+to the open state.
 
 ### 8.4 The ask — replaces §1.10
 
@@ -1459,7 +1553,7 @@ structured data, the rendered CSS case, the `alt` and label strings, and the met
 
 | # | Item | Result |
 |---|---|---|
-| 1–3 | First person singular, reader as "you", no crew | **Pass.** Every `we` / `us` on the site was read by hand; each can only mean *you and me* — "we'll walk it together," "the schedule we set when you sign," "either of us," "one of us owns the water." Zero where "we" could be swapped for "the company." |
+| 1–3 | First person singular, reader as "you", no crew | **Pass, after one fix.** Every `we` / `us` on the site was read by hand; each can only mean *you and me* — "we'll walk it together," "the schedule we set when you sign," "either of us," "one of us owns the water." **One failed the swap test:** the billing list said *"We'll confirm the next season in writing in February,"* where "we" could only be the company, because confirming a season is something he does alone. Now "I'll." |
 | 4–5 | Named, located objects | **Pass.** Both baskets, the robot's debris container, the Inspect Cell light, the six patio chairs, the fern on the north side, the two window wells on the south side, the west one with water in it. |
 | 6 | Every finding carries a price or an honest "I'd have to look" | **Pass.** The facsimile finding is $49. Every quoted category says "quoted after I look at it." |
 | 7 | Unfalsifiable adjectives absent, including "military precision" | **Pass.** Grepped §6.3 in full. |
@@ -1467,33 +1561,34 @@ structured data, the rendered CSS case, the `alt` and label strings, and the met
 | 9, 10 | *Retired* | Superseded by 35 and 36. |
 | 11 | Zero testimonials, ratings, years, certifications, licences | **Pass.** The only "licensed" on the site is *"a licensed trade,"* referring work **out** to electricians and plumbers, which is not a claim about him. |
 | 12 | Insurance / LLC wording only if true | **Pass.** Neither appears. Both held in §9. |
-| 13 | The cap stated as the real number; no urgency | **Pass.** "6 of 6 spots open" is the true count today. Every phrase in §6.5 absent, including the new season-closing row. |
+| 13 | The cap stated as the real number; no urgency | **Pass, after two fixes.** "6 of 6 spots open" is the true count today. §6.5's season-closing row was being broken twice by non-prose: the strip caption counted the dates already gone — *"ten of the 2026 season's sixteen visit dates are already past"* — and the strip **drew** ten delivered visits for a business with zero members. Both are gone; sixteen `--rule` ticks and one `--ember` square remain. The founding-rate deadline is stated as a fact and never counted down to. |
 | 14a | No availability promise | **Pass.** No arrival time, no window, no SLA, no same-day. No `openingHoursSpecification` in the structured data. |
 | 14b | Reply commitment present where someone waits | **Pass.** Apply, Waitlist, Thanks and Projects all carry it. |
 | 15 | No claim about water, chemistry, clarity or equipment | **Pass.** |
 | 16 | No implied lawn or landscape service | **Pass.** Stated as an exclusion on four pages. |
 | 17 | Exclusions present and above the price | **Pass.** Home §1.7 before §1.8; Pricing §3.3 before §3.4. |
-| 18a | The cap travels with all its clauses | **Pass.** The five clauses ship as one indivisible component. |
+| 18a | The cap travels with all its clauses | **Pass, after two restorations.** The five clauses ship as one indivisible component wherever the `.onefig` block renders — but the cap also appears in prose, and prose does not inherit a component. Two places stated it bare: the What's included lede (*"up to two hours of on-site service each"* and nothing else) and the handyman rebuttal on Pricing, which had cut `messaging.md` §5.3's closing sentence — the one that turns the cap from a frame into a document the reader can check. Both restored, the second verbatim. |
 | 18b | No performance target | **Pass.** No "average visit length," no minutes-per-visit as a measure, nothing implying he aims to finish quickly. The checklist's eight time budgets are **not** published; the eight parts are published without their minute allowances, except the pool's "about thirty minutes," which is in the agreement the customer signs. |
 | 19a, 19b | No anchor list, no ranges, nothing before the look | **Pass.** The only range on the site is $121–142, attached to **full pool service with chemistry** — a referral fact about a product he does not sell. |
 | 20–22 | *Retired* | Superseded by 37–40. |
-| 23 | Zero exclamation marks, emoji, check glyphs | **Pass.** |
-| 24 | Sentence case; caps only on the stamps | **Pass.** `.stamp`, `.rail` and `.figure` all carry `text-transform: uppercase`, so the stamps render in caps and no lowercase is letterspaced. |
-| 25 | Every banned phrase in §6 absent | **Pass.** The one deliberate appearance is `"within 24 hours"`, quoted in order to refuse it. |
-| 26 | One em dash per paragraph; "twice a month"; a route day, not an hour | **Pass.** |
+| 23 | Zero exclamation marks, emoji, check glyphs | **Pass** on the site. This deck itself used a snowman to mark off-season copy; it is now `[OFF SEASON]`. Nothing customer-facing ever carried it, but a deck that models a banned move is a deck somebody pastes from. |
+| 24 | Sentence case; caps only on the stamps | **Pass, after the plate captions were pulled out of `.rail`.** `.stamp`, `.rail` and `.figure` carry `text-transform: uppercase`, which is correct for stamps and rail labels and was **wrong for a figcaption holding a sentence** — seven pages rendered a shot list in tracked caps. `.plate__cap` is now Plex Sans, sentence case, and inherits nothing from `.rail`. See §0.4. |
+| 25 | Every banned phrase in §6 absent | **Pass, after four cuts.** The one deliberate appearance is `"within 24 hours"`, quoted in order to refuse it. Removed: *"as applicable to your property"* (§6.6), *"and the last slot"* (§3, the one-price rule), *"ten percent off"* (a discount that does not exist), and *"not to whoever pays the most"* (implies a market in which somebody could). |
+| 26 | One em dash per paragraph; "twice a month"; a route day, not an hour | **Pass.** Re-checked on every paragraph this pass rewrote. |
+| 6.7 | "Not X, just Y" is a tic | **Fixed.** Roughly eighteen negation-then-assertion constructions were on the site and about six are approved copy — *"that's the actual cap, not a sales line"* (pair 7), *"a flat price, not an hourly rate"* and *"a fact, not pressure"* (pair 8), *"a ceiling, not a quota"* (`messaging.md` §5.3), *"a limit on what you're buying, not a limit on how carefully I work"* (pair 19), and the masthead's *"Not lawn care. Not pool service"* (`voice.md` §5.1). **Fourteen others were cut to bare assertion.** Individually each was defensible; at that density the site sounds like it is arguing with somebody who is not in the room. |
 | 27 | Street names only | **Pass.** No address anywhere, including the structured data. |
 | 28 | Exactly one ask per surface | **Pass.** |
 | 29 | Full state → waitlist plus project offer; off season → waitlist or walkthrough plus March 1 | **Pass.** §8.4 and §1.2 `[OFF SEASON]`. |
 | 31 | Structured data asserts only what the prose asserts | **Pass.** `seo.md` §3, property by property. `priceRange` is `$279 per month`. No hours, no rating, no review, no employee. |
 | 32 | Rendered case | **Pass.** The three stamps are typed in caps **and** rendered in caps. The stylesheet carries the rule and is auditable there. |
-| 33 | Alt text and labels | **Pass.** The seven image slots ship as plates with mono captions naming the missing frame; when photographs land, every alt string names the object and locates it, and **frame 5's alt and caption both carry the pool disclaimer**. No "we" and no bare "WPC" in any label, button or `aria-label`. |
+| 33 | Alt text and labels | **Pass, after the caption rewrite.** The seven image slots ship as plates whose captions are now addressed to a visitor rather than to a photographer — §0.4. **Frame 5's caption carries the pool disclaimer in full today**, not only in its future alt text, because it describes the equipment pad and item 41 does not exempt captions. When photographs land, every alt string names the object and locates it. No "we" and no bare "WPC" in any label, button or `aria-label`. |
 | 34 | Titles, meta and social | **Pass.** `seo.md` §2. |
 | 35 | One price, and only one | **Pass.** $279 is the only membership number. $229, $269, $289 and $329 are absent from prose, markup, JSON-LD, `og:` values, filenames and CSS. $249 appears **only** as the published grill deep-clean starting price. |
 | 36 | No tiers and no division | **Pass.** No "plans," "tiers," "packages," "options," "add-ons," "starting at" or "from" attached to the membership. $279 is never divided: `139.50` and `69.75` return zero hits. |
 | 37 | The season, stated | **Pass.** March 1 – October 31 and sixteen visits on all ten pages. "Year-round" appears only for project work, which is the one permitted use. |
 | 38 | The off season, stated honestly | **Pass.** No scheduled visits, no billing, next season opens March 1. The winter offering is named as separate, optional and outside the agreement — and is **not described**, because the file defining it does not exist yet. |
 | 39 | The cap's clauses | **Pass.** See 18a. |
-| 40 | No invented off-season revenue | **Pass.** No retainer, no winter membership, no rolled-over credit, no prepay discount, no annual rate, no referral credit, no last-slot price. The founding concession is a pro-rated 2026 remainder plus a locked 2027 rate — a term, not a discount — and is never framed as a promotion. |
+| 40 | No invented off-season revenue | **Pass.** No retainer, no winter membership, no rolled-over credit, no prepay discount, no annual rate, no referral credit, and **no last-slot price — the phrase *"and the last slot"* was on the pricing page and is gone**. The founding concession is a pro-rated 2026 remainder plus $279 held through October 31, 2027 for anyone signing on or before February 28, 2027 — a term, not a discount, uncapped in number, never framed as a promotion, and never counted down to. |
 | 41 | The pool disclaimer travels | **Pass.** It appears in the same block as **every** description of pool work: the eight parts (Home and What's included), the pool section, the exclusion list on three pages, the summary facsimile, the About "what this isn't" list, and the quoted-projects list. Frame 5's future alt text and caption both carry it. |
 | 42 | Name and roots | **Pass.** Full name on first reference on every surface; WPC513 thereafter; the bare three letters appear **nowhere** — not in prose, headings, alt text, slugs, filenames or structured data. `WPC 513` with a space exists only inside the logo lockup. The tagline is verbatim. Military service is "military roots" and nothing more. |
 | 30 | Could a competitor with two hundred accounts and a call centre publish this? | **No.** Not the six-property cap, not "I'll tell you which pool company your neighbours use," not "if the water is what keeps you up at night, have the pool company," not "you're not buying sixteen visits, you're buying the sixteenth one," and not a summary that names the fern on the north side. |

@@ -44,6 +44,36 @@
 > text pass on the site"* was wrong: the 11px pool rail tag at **4.62** is, and it passes by
 > **0.12**. No markup changed; the whole ruling landed in three stylesheets.
 
+> 🔁 **Amended 2026-08-06 after a voice audit, and the pattern is worth naming because it repeats.**
+> The prose came back strong. **Every defect worth fixing was in the non-prose layer** — the
+> surfaces `voice.md` §3 predicts a rework leaks into, and the ones nobody wrote *as* copy so
+> nobody audited *as* copy.
+>
+> - **A `class` attribute published a production note.** `.plate__cap` carried `class="rail"`,
+>   which inherits `text-transform: uppercase`, so seven pages rendered his shot list to visitors
+>   in tracked caps: `PHOTO REQUIRED · FRAME 3 · … DON'T CLEAN IT BEFORE SHOOTING IT.` §7.
+> - **A rail label argued against its own section.** `PER HOUR` sat on the handyman rebuttal,
+>   naming the unit and presenting $279 as a rate before a word of the answer was read. The body
+>   was already correct; the marginalia a scanner reads first was not.
+> - **A drawing made a claim the caption did not.** Ten `--ink` ticks — *"visits already
+>   delivered"* — on four public pages, for a business with zero members. §6.
+> - **A copy-paste leak offered terms on a slot that does not exist**, on the page whose `h1` says
+>   every slot is taken. §3.3.
+> - **A note in `copy-deck.md` asserted a rule that does not exist and misattributed it**, and was
+>   fixed first, because a wrong rule in the document other agents read is the only defect on the
+>   list that keeps producing new ones.
+>
+> Three findings are wider than the audit called them, and each is written up where it lands: the
+> apostrophe problem in `.rail` is one instance of a **mono subset smaller than the site**
+> (`site/fonts/README.md`); the season-strip caption's count of past dates was **banned scarcity in
+> prose while the ticks were the same thing in pixels**; and *"not X, just Y"* had reached
+> eighteen instances, of which fourteen were cut. **No accessibility affordance and no part of the
+> `--mark` structure was touched.** Bytes re-measured in full, §11.2.
+>
+> **Open item 7 is closed** by `wpc-strategist`'s D-27: the Founding Member lock is **date-bounded,
+> not count-bounded** — signed on or before **February 28, 2027**, held through **October 31,
+> 2027**, **no cap on how many**. §15.7.
+
 ---
 
 ## 1. What this site is for, and what it must not become
@@ -176,9 +206,9 @@ copy; the note to remove it is in `seo.md` §6.
 |---|---|---|
 | Masthead figure | `6 OF 6 SPOTS OPEN` in `--ember` | `MEMBERSHIP FULL`, `--paper` reversed out of `--ember-deep` in a hairline-boxed stamp |
 | Home ask | Text me your cross street → walkthrough | Add your name to the waitlist |
-| Added section | — | "Why it stops at six" — twelve visits, four route days, route proximity |
+| Added section | — | "Why it stops at six" — twelve visits, Monday and Friday only, route proximity |
 | Nav | Apply | Apply is swapped for Waitlist |
-| Founding-terms paragraph | Shown | Replaced by "the price doesn't move because the book is full" |
+| Founding-terms paragraph | Shown | Replaced by "the price doesn't move because the book is full." **The lock has not expired in this state** — it is date-bounded (§15.7) — but there is no slot to quote terms on, and the season-strip caption drops its second half for the same reason |
 | The price | Unchanged | Unchanged — $279 either way |
 
 ### 3.4 What changes between seasonal states
@@ -192,9 +222,9 @@ temperature, not shape.
 | `--season-ground` | `#0E2E52` navy | `#3A4E60` drained slate |
 | `--season-support` | `#1A6E6B` pool teal | `#1F6580` colder ice-blue, used only on the March 1 date |
 | `--wash` (row hover) | `#E4E8EE` cool | aliased to `--paper-deep`, warm |
-| Status stamp | `IN SEASON · MAR 1 – OCT 31` | `OFF SEASON · NOV 1 – FEB 28` |
-| Season strip | 10 delivered `--ink`, 1 current `--ember`, 5 remaining `--rule` | every tick `--rule`, the ember square on the first March tick, preceded by `NEXT SEASON OPENS MARCH 1` |
-| Season-strip caption | pro-rated remainder + 2027 lock | "nothing scheduled, nobody billed, next season opens March 1" |
+| Status stamp | `IN SEASON · MAR 1 – OCT 31` | `OFF SEASON · NOV 1 – END OF FEB` — **not `FEB 28`**, which is wrong in every leap year. `CANON.md` §3 and `visual-direction.md` §2.3 both say "end of February" |
+| Season strip | 16 `--rule`, the current calendar position an `--ember` square. **No `--ink` ticks on a public page** — see §6 | every tick `--rule`, the ember square on the first March tick, preceded by `NEXT SEASON OPENS MARCH 1` |
+| Season-strip caption | pro-rated remainder + the dated 2027 lock. **Not on `membership-full.html`**, which stops after "the filled square is where the 2026 season sits now" | "nothing scheduled, nobody billed, next season opens March 1" |
 | `.pool` teal | live | reverts to `--ink` — there is no pool work off season |
 | Season divider | full-length ticks | half-length, every second one dropped |
 
@@ -293,11 +323,21 @@ change.
 **Sixteen ticks**, two per month, March through October, with month abbreviations beneath in
 `--type-rail`, terminating in a mono label: `16 VISITS · MAR 1 – OCT 31`.
 
-| Tick state | Colour | Shape |
-|---|---|---|
-| Delivered | `--ink` | 2px × 14px bar |
-| Current / next | `--ember` — a literal, **not `var(--mark)`**; §4.5 exempts it as a position in a schedule rather than a decision. 3.31:1 on the `--paper` the strip always runs on. | 8px filled square |
-| Remaining | `--rule` | 2px × 14px bar |
+| Tick state | Colour | Shape | Where it may appear |
+|---|---|---|---|
+| Current / next | `--ember` — a literal, **not `var(--mark)`**; §4.5 exempts it as a position in a schedule rather than a decision. 3.31:1 on the `--paper` the strip always runs on. | 8px filled square | Exactly one per strip |
+| Every other date | `--rule` | 2px × 14px bar | The other fifteen |
+| Delivered | `--ink` | 2px × 14px bar | 🔶 **Reserved. Not a public-page state.** See below |
+
+**Why `tick--done` is not on any public page.** `visual-direction.md` §4.5 defines an `--ink`
+tick as *a visit already delivered*. Ten of them shipped on `index.html`, `pricing.html`,
+`whats-included.html` and `membership-full.html` while the book had **nobody in it**. The
+caption said "visit dates," which was honest; the drawing said "ten visits done," which was a
+claim about work performed for clients who do not exist — and a graphic is a claim
+(`voice.md` §3, the non-prose surface rule). A public strip now draws **the shape of the
+season**: sixteen `--rule` ticks and one `--ember` square at the current calendar position. The
+class survives in `components.css`, commented and unused, because the state is real the day a
+member looks at their own record — and that is the only place it may be used.
 
 Off season every tick drains to `--rule`, the ember square moves to the first March tick, and
 the strip is preceded by a `--season-support` block reading `NEXT SEASON OPENS MARCH 1`.
@@ -312,9 +352,14 @@ the strip is preceded by a `--season-support` block reading `NEXT SEASON OPENS M
 3. **Nothing is carried by the graphic alone.** The tick row is `aria-hidden="true"` and every
    fact it draws is written in the `<figcaption>` as real text — the season, the count, the
    dates, and the pro-ration.
-4. **It states the season, it does not sell it.** The caption says the 2026 season is ten visit
-   dates past, that the season is underway, and that what is left is pro-rated with a locked
-   2027 rate. It never says "only six left" and it never attaches a deadline to the date.
+4. **It states the season, it does not sell it.** The caption says where the square sits, that
+   the season is underway, that what is left is pro-rated, and that anybody on the books before
+   March 1, 2027 holds $279 through the 2027 season. It never says "only six left," it never
+   counts how many dates have gone, and it never counts down to February 28. **The count of dates
+   already past was cut**: "ten of the sixteen are already gone" is `voice.md` §6.5's
+   season-closing row with the arithmetic done for the reader, and the pro-ration sentence never
+   needed it. **On `membership-full.html` the caption stops after the second sentence**, because
+   pro-ration and a rate lock are terms on a slot and that page's `h1` says there is no slot.
 
 **One documented deviation from the brief.** §4.5 says the strip runs "into the bleed track."
 It does not: it spans the full container, which is already wider than the 68ch measure and
@@ -331,9 +376,36 @@ one carries `tick--now`. The markup comment says so at each of the four instance
 
 **No real photography exists** (`CANON.md` §10.6). **Stock photography is never a final answer**
 (`visual-direction.md` §8). Until the frames below are shot, each slot ships as a **plate**: an
-empty band on `--paper-deep` with hairlines top and bottom and a mono caption naming the missing
-frame. That is honest, it looks intentional, and the Field Ledger direction was chosen partly
-because it looks finished with zero images.
+empty band on `--paper-deep` with hairlines top and bottom and a caption. That is honest, it looks
+intentional, and the Field Ledger direction was chosen partly because it looks finished with zero
+images.
+
+### The caption is written to a visitor. The shot list is not.
+
+🔁 **Corrected.** The plate caption used to be the shot list, and it carried `class="rail"`, which
+inherits `text-transform: uppercase`. So on seven pages a visitor read this, in caps:
+
+> `PHOTO REQUIRED · FRAME 3 · A GENUINE FINDING — A WINDOW WELL PACKED WITH LEAVES… DON'T CLEAN IT
+> BEFORE SHOOTING IT.`
+
+That is an instruction from him to himself, published as copy, in the one typographic treatment
+the site reserves for status stamps. Three separate rules were broken by one class attribute:
+`voice.md` §3's non-prose surface rule (rendered case is copy), `visual-direction.md` §3.4 (no
+letterspaced lowercase — the sentence was set in tracked mono), and the shipped Plex Mono subset,
+which has no apostrophe, so `DON'T` would have changed face mid-word the day the font landed.
+
+**The contract now, and it has two halves that must not merge again:**
+
+| Where | Audience | Content |
+|---|---|---|
+| `<figcaption class="plate__cap">` | **A visitor.** Sentence case, Plex Sans, `--type-small`, `--ink-muted` at 5.4:1 on the plate's `--paper-deep` | *"A photograph goes here. There aren't any yet — the real one is …"* followed by what the real photograph has to show, in one clause a customer can read |
+| The HTML comment directly above the `<figure>` | **Him, with a phone, in a yard** | The full shot instruction: frame number, angle, what must be in shot, what must not, and the loading attributes to set. Unchanged |
+
+The caption is honest about the gap rather than hiding it, which is the same move the summary
+facsimile's *"format only — not a client summary"* makes one section up. **Frame 5's caption
+carries the pool disclaimer in full**, because it describes the equipment pad and `voice.md` §8
+item 41 requires the disclaimer in the same block as any description of pool work — caption
+included.
 
 Each slot in the markup carries an HTML comment naming the required shot.
 
@@ -371,8 +443,10 @@ Each slot in the markup carries an HTML comment naming the required shot.
 ### How to install a photograph
 
 Each plate is a `<figure class="plate">`. Replace the inline `<svg>` with an `<img>` carrying
-`width`, `height`, `alt` and `loading`; keep the `<figcaption>` and rewrite it to describe the
-photograph rather than to request one. Nothing in the CSS changes.
+`width`, `height`, `alt` and `loading`; keep the `<figcaption class="plate__cap">` and rewrite it
+to describe the photograph that is now there rather than the one that is missing. **Do not add
+`class="rail"` back** — that is the defect above, and the caption is a sentence, not a stamp.
+Nothing in the CSS changes.
 
 ---
 
@@ -502,27 +576,37 @@ No framework, no bundler, no build step, no `npm install`, no dependency of any 
 
 ### 11.2 Measured budgets
 
-**Measured with `gzip -c <file> | wc -c` on the shipped files after the `--mark` ruling.** Not
-estimated, not carried over from the previous pass, not rounded up from an approximation.
+**Measured with `gzip -c <file> | wc -c` on the shipped files after the 2026-08-06 voice-audit
+pass.** Not estimated, not carried over from a previous pass, not rounded up.
 
 | Asset | Raw | **Gzipped** | Budget | Result |
 |---|---|---|---|---|
-| `styles/tokens.css` | 12,895 B | **5,323 B** | — | |
-| `styles/base.css` | 12,710 B | **4,653 B** | — | |
-| `styles/components.css` | 34,142 B | **9,156 B** | — | |
-| **CSS total** | **59,747 B** | **19,132 B — 18.68 KB** | **< 30 KB gz** | **62% of budget** |
-| `js/season.js` | 1,334 B | **730 B** | — | |
-| `js/forms.js` | 1,415 B | **714 B** | — | |
+| `styles/tokens.css` | 12,895 B | **5,323 B** | — | unchanged |
+| `styles/base.css` | 12,710 B | **4,653 B** | — | unchanged |
+| `styles/components.css` | 35,483 B | **9,725 B** | — | +569 B gz |
+| **CSS total** | **61,088 B** | **19,701 B — 19.24 KB** | **< 30 KB gz** | **66% of budget** |
+| `js/season.js` | 1,334 B | **730 B** | — | unchanged |
+| `js/forms.js` | 1,415 B | **714 B** | — | unchanged |
 | **JS total** | **2,749 B** | **1,444 B — 1.41 KB** | **< 150 KB gz** | **0.96% of budget** |
 
-**What changed and why.** CSS went from 16,335 to 19,132 B gz, **+2,797 B**. The *code* went
-**down** — 6,605 B gz against 6,700 B before — because `--mark` deleted four override rules
-(`.strip :focus-visible`, `.strip …::before`, `.foot :focus-visible`, `.foot …::before`) and
-replaced them with three inherited declarations. **The whole increase is comment**, and it is the
-ruling itself: why the ring is measured against the parent's ground and not the element's fill,
-why `--wash` needs a mark that moves with it, and what the two sentences that shipped a 2.89:1
-rule and a 2.29:1 ring actually got wrong. That reasoning is the only thing standing between the
-next editor and re-pinning a mark to a literal hex, which is precisely how this defect got here.
+**No JavaScript was added or changed.** The site still works completely with JS disabled;
+`season.js` only picks the toggle's opening position from the date.
+
+**What changed and why.** CSS went from 19,132 to 19,701 B gz, **+569 B**, all of it in
+`components.css` and **all of it comment plus four declarations**. The code is 6,605 B gz,
+unchanged to the byte from the previous pass. What was added:
+
+- `.plate__cap` gains `margin`, `max-inline-size`, `font-size` and `line-height`, because it is no
+  longer borrowing them from `.rail`. That class was the defect: `.rail` sets
+  `text-transform: uppercase`, so a figcaption holding a sentence rendered a shot list in tracked
+  caps on seven pages. Four declarations replace one class attribute.
+- The comment above it, and the comment above `.tick--done`, both of which exist to stop the next
+  editor undoing the fix as tidying. `.tick--done` is now **unused and kept deliberately**; without
+  the comment, an unused rule is something a reasonable person deletes, and then the next person
+  needing a delivered-visit state re-invents it on a public page.
+
+One rule was **deleted**: `body:has(#season-switch:checked) .tick--done`, which was the
+off-season override for a state no public page carries any more.
 
 The CSS total is the **sum of the three files measured separately**, because each is its own
 HTTP response and is gzipped on its own. Concatenating them first and gzipping once gives a
@@ -530,44 +614,46 @@ smaller and less honest number — nothing here is bundled, so that figure would
 that does not exist. The same applies to the two scripts, and `js/forms.js` is only requested by
 the two pages that have a form.
 
-**Against the tighter microsite row: 18.68 KB versus 15 KB, and stated rather than hidden.**
-`visual-direction.md` §12.11 asks for ≤ 15 KB CSS. This build is **3.68 KB over**. Code-only —
-every comment stripped — the three stylesheets gzip to **6.45 KB**, so the overage and 8.9 KB
+**Against the tighter microsite row: 19.24 KB versus 15 KB, and stated rather than hidden.**
+`visual-direction.md` §12.11 asks for ≤ 15 KB CSS. This build is **4.24 KB over**. Code-only —
+every comment stripped — the three stylesheets gzip to **6.45 KB**, so the overage and 8.5 KB
 besides is *comment*: the contrast arithmetic beside each colour choice, the ground each ratio is
 computed against, and the reason each accessibility fix exists so the next person does not undo
 it as tidying. Three passes of condensing have gone through it, including one on this pass that
 merged four now-duplicated blocks. **The binding budget is `rules/web/performance.md`'s 30 KB
 landing-page row and this sits at 62% of it.** The choice is between deleting the reasoning and
 being over a stretch budget, and after a defect that was caused by one under-argued sentence, the
-reasoning wins. Minifying comments out at deploy recovers 12.23 KB gz and changes nothing else.
+reasoning wins. Minifying comments out at deploy recovers 12.79 KB gz and changes nothing else.
 
 Per page:
 
-| Page | Raw | Gzipped |
-|---|---|---|
-| `index.html` | 36,496 B | 10,141 B |
-| `membership-full.html` | 37,401 B | 10,451 B |
-| `whats-included.html` | 31,667 B | 9,162 B |
-| `pricing.html` | 25,811 B | 7,364 B |
-| `about.html` | 17,314 B | 5,234 B |
-| `waitlist.html` | 15,533 B | 4,735 B |
-| `apply.html` | 13,820 B | 4,437 B |
-| `projects.html` | 13,420 B | 4,359 B |
-| `thanks.html` | 7,815 B | 2,673 B |
-| `404.html` | 5,060 B | 1,672 B |
-| `favicon.svg` | 1,348 B | 804 B |
-| `apple-touch-icon.svg` | 1,358 B | 826 B |
-| `favicon-16.svg` | 866 B | 587 B |
+| Page | Raw | Gzipped | Change |
+|---|---|---|---|
+| `index.html` | 37,527 B | 10,598 B | +457 |
+| `membership-full.html` | 37,424 B | 10,441 B | −10 |
+| `whats-included.html` | 32,200 B | 9,291 B | +129 |
+| `pricing.html` | 26,697 B | 7,674 B | +310 |
+| `about.html` | 17,140 B | 5,179 B | −55 |
+| `waitlist.html` | 15,373 B | 4,665 B | −70 |
+| `apply.html` | 13,809 B | 4,432 B | −5 |
+| `projects.html` | 13,476 B | 4,380 B | +21 |
+| `thanks.html` | 7,819 B | 2,675 B | +2 |
+| `404.html` | 5,110 B | 1,701 B | +29 |
+| `favicon.svg` | 1,348 B | 804 B | — |
+| `apple-touch-icon.svg` | 1,358 B | 826 B | — |
+| `favicon-16.svg` | 866 B | 587 B | — |
 
-The HTML is byte-for-byte unchanged by this pass — **no markup was edited**; the ruling was
-implemented entirely in the three stylesheets.
+**Four pages got smaller.** Cutting fourteen "not X, just Y" constructions to bare assertion takes
+bytes out, and it takes them out of exactly the pages that were arguing hardest. The three that
+grew did so for content that had to be there: the restored cap clauses on What's included and
+Pricing, and the dated founding terms on Home and Pricing.
 
-**The number that matters is the heaviest first load:** `index.html` (10,141 B) plus all three
-stylesheets (19,132 B) plus `season.js` (730 B) plus one favicon (804 B) = **30,807 B gzipped,
-30.1 KB**, in six requests, with no font, no photograph and no third-party anything.
+**The number that matters is the heaviest first load:** `index.html` (10,598 B) plus all three
+stylesheets (19,701 B) plus `season.js` (730 B) plus one favicon (804 B) = **31,833 B gzipped,
+31.1 KB**, in six requests, with no font, no photograph and no third-party anything.
 `index.html` does not load `forms.js` — it has no form. The heaviest form page, `apply.html`
-cold, is 4,437 + 19,132 + 730 + 714 + 804 = **25,817 B, 25.2 KB** in seven requests. Every
-subsequent page is 1.6–10 KB, because the CSS, the JS and the icon are already cached.
+cold, is 4,432 + 19,701 + 730 + 714 + 804 = **26,381 B, 25.8 KB** in seven requests. Every
+subsequent page is 1.7–10.6 KB, because the CSS, the JS and the icon are already cached.
 
 Reproduce any figure above with:
 
@@ -979,6 +1065,26 @@ things: the **11px pool rail tag inside the summary facsimile** (the tightest te
 4.62:1, and it may not be made smaller or lighter) and the **season stamp in the navy strip**. If
 the stamp reads thin, move it to 14px — near-miss 4 above, and **not** the colour.
 
+🔶 **BLOCKING, added 2026-08-06 — the mono subset is smaller than the site, and installing the
+font is what makes that visible.** `visual-direction.md` §3.1 buys the third family with a
+promise: Plex Mono ships **uppercase, digits and `. , : · $ + — / ( )` only**, under 8 KB. CSS
+font matching is per-character, so any character inside the declared `unicode-range` whose glyph
+is missing falls through to the next family **for that character alone** — a face change inside a
+word. Nothing is wrong today because no font ships. Everything below fires the moment one does.
+
+Four strings were rewritten to fix it (§0.5 of `copy-deck.md`), and the declared `unicode-range`
+was narrowed from a block that claimed eleven characters the file does not contain. **What is
+left is a decision for `wpc-brand`, and it is either a change to §3.1's glyph list or a change to
+§3.1's list of surfaces mono is allowed on:**
+
+| Out of subset | Where | The question |
+|---|---|---|
+| **Lowercase a–z** | `.foot__line` (ten footers), `.foot__prices` (ten), `.cta__aside` (eleven) | None of the three is on §3.1's permitted list — logo wordmark, record stamps, rail labels, dates, route days, visit numbers, the price, the facsimile. Either they move to Plex Sans, or the subset grows by a full alphabet at roughly 3–4 KB, which spends the exception that paid for the third family. **Not decided here**: it is a visible typographic change and Playwright cannot launch, so it would be an unverifiable one. |
+| **En dash `–`** | Both season stamps, `SCOPE · MAR 1 – OCT 31`, `PROJECTS · TUE–THU`, `16 VISITS · MAR 1 – OCT 31` | `visual-direction.md` §3.1 lists the em dash and not the en dash — but §4.5 of the same file specifies the strip label **with an en dash**, and §2.3 writes the off-season range the same way. One of the two sentences is wrong and it is not this file's call. |
+| **Hyphen `-`** | `STARTING MID-SEASON`, and **every rendering of the phone number** once `[PHONE]` is replaced | Almost certainly an omission rather than a decision. The phone number makes it the most urgent of the three, at eleven occurrences. |
+
+The full write-up, with the exact `@font-face` block, is in `site/fonts/README.md`.
+
 ### 11.6 Security
 
 `rules/web/security.md`, applied to a static site with no server of its own.
@@ -1067,15 +1173,37 @@ is cosmetic rather than informational.
   directory root returned 200**, including the three favicons, `js/forms.js`, `robots.txt` and
   `sitemap.xml`.
 - Gzipped byte counts re-measured with `gzip -c <file> | wc -c` on the shipped files after the
-  `--mark` ruling and recorded in §11.2. **No HTML was edited on this pass**, so the per-page
-  figures are carried forward unchanged and verified as such.
+  2026-08-06 voice-audit pass and recorded in §11.2 — **every one of the eighteen assets, not a
+  carried-forward figure.** CSS 19,701 B gz against a 30 KB budget; JS 1,444 B gz against 150 KB
+  and unchanged, since no script was touched.
 - **Contrast recomputed from scratch as a full matrix** — every token against `--paper`,
   `--paper-deep`, `--wash` and `--season-ground`, in both seasonal states, from the sRGB
   relative-luminance formula, at four decimal places. §11.4. **Every published ratio in
   `visual-direction.md` §2 reproduces, including the six restated on 2026-08-05.** One two-decimal
   rounding disagreement (`5.4248`, published as `5.43`) is flagged rather than silently corrected.
-- Tag balance, heading order, single `<h1>`, and `aria-labelledby` target existence verified
-  programmatically across all ten pages: zero defects. Unchanged — the markup was not touched.
+- Tag balance, heading order, single `<h1>`, and `aria-labelledby` target existence re-verified
+  programmatically across all ten pages after every edit in this pass: zero defects. The skip
+  link, focus order, form labelling, `aria-describedby` wiring, honeypot, and the
+  written-into-the-page error sentences are untouched — **no accessibility affordance was
+  changed**, and `--mark` is exactly as the ruling left it.
+
+- **Copy edits verified by count, not by eye.** Every replacement in this pass was applied by a
+  script that declares in advance how many times a string must occur and across which files, and
+  aborts before writing if the count is wrong. Thirty-three rules across the ten pages, thirty-one
+  across `copy-deck.md`, all matched exactly. That is what makes "ten `tick--done` on four pages"
+  a checkable claim rather than a hopeful one.
+
+- **Mono subset conformance swept programmatically**, which is what turned one flagged apostrophe
+  into a complete answer. Every string that renders in Plex Mono — `.rail`, `.stamp`, `.figure`,
+  `.s16__months`, the lockup, `.report__h`, `.cta__aside`, `.foot__line`, `.foot__prices`,
+  `.defs dt`, `.form legend`, `.foot h2` — was extracted with a real HTML parser, uppercased where
+  the stylesheet uppercases it, and diffed against the shipped glyph set. **Every apostrophe and
+  question mark is gone.** What remains is enumerated, and every item is flagged in
+  `site/fonts/README.md` rather than silently accepted: lowercase on three surfaces `visual-
+  direction.md` §3.1 does not license for mono, the en dash, the hyphen, and the `[PLACEHOLDER]`
+  brackets. The declared `unicode-range` was also **narrowed to the actual glyph set** — it had
+  been claiming eleven characters the file does not contain, which is the mechanism by which an
+  apostrophe rendered in Consolas inside a Plex Mono word.
 - **Ground-based re-sweep, per §12.2.** For every coloured element, every surface it renders on
   was enumerated — including hover states, `:user-invalid`, and both seasons — and the worst one
   satisfied. Four defects fixed and one divergence flagged; all five are written up in §11.4.
@@ -1151,9 +1279,22 @@ is cosmetic rather than informational.
 6. 🔶 **Tell the insurer what he actually touches.** Vacuuming, backwashing and salt-cell checks
    are pool-system operation. `CANON.md` §10.3. This is a coverage question, not a scope one, and
    the site now publishes the heavier scope.
-7. 🔶 **Resolve whether the founding rate is capped at four members.** `CANON.md` §3 says "clients
-   signing now"; the stale `pricing.md` §2 says "the first 4." The site says **"clients signing
-   now"** and asserts no cap, which is the safe reading until `wpc-strategist` resolves it.
+7. ✅ **CLOSED 2026-08-06 — the founding rate is bounded by a date, not by a count.**
+   `wpc-strategist` ruled it: any member whose **agreement is signed on or before February 28,
+   2027** holds **$279 through October 31, 2027**, with **no cap on how many** — up to the whole
+   book of six (`00-model/pricing.md` §2, `decisions.md` **D-27**). *"The first four clients"* is
+   withdrawn. The site had never published a count, so nothing was retracted; what it published
+   was **vague** — *"lock your rate for all of next year"* — and every instance is now the dated
+   form. Three things the copy has to keep right, all of them on `pricing.html`: the test is the
+   **signature date**, not the effective date or the first visit; **there is no limit on how many**
+   hold it, said out loud so no reader infers a queue; and the date is stated as a **fact, never a
+   countdown**. *"Anybody on the books before March 1"* is a fact. *"Only three weeks left to lock
+   your rate"* is `voice.md` §6.5's season-closing row wearing a date instead of a count, and it is
+   banned identically — which is why **no surface counts down to February 28 and the season strip
+   does not mark it**. Agreements already executed under the withdrawn clause are honoured as
+   written. 🔶 **Still open for `wpc-brand`:** `messaging.md` §4 carries the superseded instruction
+   *"say 'clients signing now' and never assert a cap,"* flagged against a question D-27 has now
+   answered.
 8. 🔶 **Keep the slot count and the season strip true.** §3.1 and §6. They are the most valuable
    elements on the page precisely because they are facts.
 9. 🔶 **Replace the summary facsimile with a real redacted summary** the day one exists. It ships
