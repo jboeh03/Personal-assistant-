@@ -31,8 +31,8 @@ File naming, per `01-brand/brand-brief.md`: `WPC513 · PROPERTY [0#]`.
 | Route | [ A / B ] |
 | Route day | [ Monday / Friday ], twice each calendar month |
 | Membership price | **$279/month, flat** — `service-agreement.md` §1 |
-| Founding Member | [ Y / N ] — if Y, rate locked through **October 31, 2027** (pro-rated remainder of 2026 + full 2027 season) — `service-agreement.md` §2 |
-| Agreement signed | [ Y / N ] — date: |
+| Agreement signed | [ Y / N ] — **signature date:** |
+| Founding Member | **Derived from the signature date above — not tracked separately.** Signed on or before **February 28, 2027** → Founding Member, rate locked through **October 31, 2027** (pro-rated remainder of 2026 + full 2027 season). Signed after February 28, 2027 → standard rate, no lock. No limit on how many members qualify — `service-agreement.md` §2 |
 | Card on file | [ Y / N ] |
 
 ### 2. Access

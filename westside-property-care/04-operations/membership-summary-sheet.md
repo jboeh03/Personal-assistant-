@@ -15,8 +15,9 @@
 **$279 a month.** That's the whole price list — the same whether your property has a pool,
 an outdoor kitchen, both, or neither.
 
-[ ] **Founding Member** — this price is locked through **October 31, 2027**: the rest of this
-season, pro-rated, plus all of next season, at this rate. Per the full agreement §2.
+**Founding Member rate.** Sign on or before **February 28, 2027** and $279 is locked through
+**October 31, 2027** — the rest of this season, pro-rated, plus all of next season, at this
+rate, no matter how many other members have already signed. Per the full agreement §2.
 
 ## Sixteen visits. Six properties. Written down every time.
 

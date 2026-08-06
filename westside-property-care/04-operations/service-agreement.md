@@ -48,13 +48,22 @@ and no add-on price for either feature.
 
 ## 2. Founding Member rate
 
-[ ] **Founding Member.** $279 is locked for this Member through October 31, 2027 — covering the
-pro-rated remainder of the 2026 Service Season (§7, Billing) plus the entirety of the 2027
-Service Season (March 1 – October 31, 2027) — and will not increase during that span even if
-WPC513's standard pricing changes generally. The lock covers the membership price only; it
-does not cover project work or materials (§10). It does not extend into 2028 or any season
-after 2027. **The lock is a price guarantee, not a term commitment** — the cancellation terms
-in §8 apply the same as to any other member.
+**Founding Member status is set by one fact: the date this Member signs this agreement, entered
+under Signatures below.** Any Member who signs on or before **February 28, 2027** is a Founding
+Member. There is no limit on how many Members hold this rate — it applies whether this is the
+first service agreement WPC513 has signed or the sixth. The test is the **signature date**, not
+the effective date above and not the date of the first visit: a Member who signs in February
+2027 for a March 1 start still qualifies. A Member who signs after February 28, 2027 is not a
+Founding Member and pays WPC513's standard rate on standard terms; the remainder of this section
+does not apply to that Member.
+
+$279 is locked for this Member through October 31, 2027 — covering the pro-rated remainder of the
+2026 Service Season (§7, Billing) plus the entirety of the 2027 Service Season (March 1 –
+October 31, 2027) — and will not increase during that span even if WPC513's standard pricing
+changes generally. The lock covers the membership price only; it does not cover project work or
+materials (§10). It does not extend into 2028 or any season after 2027. **The lock is a price
+guarantee, not a term commitment** — the cancellation terms in §8 apply the same as to any other
+member.
 
 ## 3. Property changes
 
