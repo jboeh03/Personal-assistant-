@@ -11,6 +11,11 @@
 > pool section is rewritten because the pool scope changed materially: he now vacuums, brushes,
 > and backwashes, and the disclaimer has to travel with that real work, not with an exclusion
 > list that no longer describes what he does.
+>
+> **Amended 2026-08-06.** `decisions.md` **D-27** resolved the Founding Member rate to
+> **date-bounded, not count-bounded** — signed on or before **February 28, 2027**, no cap on the
+> number of members. The billing-and-terms paragraph below now states that date directly, and the
+> two/three print-variant plan collapses to one — see "One production variant" below.
 
 ---
 
@@ -92,9 +97,10 @@ cancellation, then the ask.
 > November through February. Thirty days' written notice to cancel, and there's no contract
 > term.
 >
-> **Clients signing now get the rest of this season pro-rated and their rate locked for all of
-> next year.** That isn't a promotion — it's what I'm giving the people who take a chance on a
-> business with no track record yet.
+> **Sign on or before February 28, 2027 and your rate is locked at $279 through October 31,
+> 2027.** That isn't a promotion — it's what I'm giving the people who take a chance on a
+> business with no track record yet. After February 28 it's the standard rate, which today is
+> the same number.
 
 > ### If you'd rather start smaller
 >
@@ -120,25 +126,36 @@ cancellation, then the ask.
 | Stock | 80lb–100lb text or cover weight, uncoated or matte — this is handed to one person at a time, not stacked in a rack, so print economics matter less than the piece feeling substantial in hand |
 | Color | `--paper` ground, `--ink` body text, `--ember-deep` used only for the single-figure price rule and the `[PHONE]` line, per `visual-direction.md` §2.4's single-action-color rule. **Never `--ember-lift` on this stock** — it fails contrast on paper at any size. |
 | Typography | Headline in Fraunces; section labels and the price in Plex Mono (tabular figures) per `visual-direction.md` §3.3; body in Plex Sans |
-| Print run | Low volume, ordered in batches of 25–50 — this is a walkthrough leave-behind, not a mass drop, and the Founding Member paragraph has to come out once the first four are signed (see below) |
+| Print run | Low volume, ordered in batches of 25–50 — this is a walkthrough leave-behind, not a mass drop. The Founding Member paragraph is accurate for every batch printed on or before February 28, 2027, regardless of how many slots are filled by then — no per-signing reprint required (see below) |
 
-## Two required production variants
+## One production variant
 
-**This piece changes shape as the book fills**, and it must not ship stale:
+**This piece needs exactly one version while the founding window is open, not the two or three a
+prior draft required.** Under the old "first four clients" rule, the Founding Member paragraph
+had to come out the moment a fourth signature landed — an event with no calendar warning, which
+meant either an unplanned reprint or shipping a stale claim. Under `pricing.md` §2 and
+`decisions.md` **D-27**, the founding rate is date-bounded, not count-bounded: the paragraph above
+reads exactly the same whether one slot is filled or five, because eligibility is the signature
+date, not a place in a queue. **The pre-founding/post-founding reprint problem this file used to
+carry disappears entirely** — that was the old count's cost showing up in a print order, and it
+is a real saving on a piece that gets reordered every 25–50 copies.
 
-1. **Pre-founding variant (current, above):** includes "clients signing now get the rest of this
-   season pro-rated and their rate locked for all of next year."
-2. **Post-founding variant:** 🔶 CONDITIONAL — `pricing.md` §2 says the founding rate disappears
-   "after the fourth client," but `messaging.md` §4 and `brand-brief.md` §4.2 both flag that count
-   as unresolved pending a `wpc-strategist` ruling. There is no confirmed cutoff to build this
-   variant against yet, so it does not exist as a print piece until one is confirmed. Once it is,
-   delete the Founding Member paragraph entirely and replace it with: *"There's no contract term.
-   [Members five and six, or whatever the confirmed count is] pay the same $279 on the same terms
-   as everyone after them."* Per `pricing.md` §2 and §8 — regardless of where the cutoff lands,
-   the founding rate is never extended quietly to close a slow slot 5 or 6.
-3. **Full-book variant, if slots 5 and 6 fill before this asset is retired:** replace the "Next
-   step" section with the MEMBERSHIP FULL language from `voice.md` pair 7 and the waitlist offer,
-   and stop distributing this piece to new prospects entirely — see `gtm-plan.md` §5.
+**One known reprint, on a known date.** After **February 28, 2027**, the Founding Member
+paragraph above stops being true and has to come out — but that date is fixed and known months in
+advance, not a surprise triggered by someone else's signature. Two straightforward options at
+that point, and either is fine:
+
+1. **Delete the paragraph** and print a plain version — nothing else on the page depends on it.
+2. **Replace it with one sentence:** *"There's no contract term. Everyone pays the same $279 on
+   the same terms."*
+
+**If slots 5 and 6 fill before February 28, 2027, they still qualify for the founding rate** —
+see `pricing.md` §2; there is no separate cutoff for later slots. **If the book fills entirely
+(slot 6 signed) before that date**, this piece stops going to new prospects regardless of the
+date — replace the "Next step" section with the MEMBERSHIP FULL language from `voice.md` pair 7
+and the waitlist offer, and stop distributing this piece to new prospects entirely
+(`gtm-plan.md` §5). That trigger is unchanged from before and is about the six-client cap, not
+the founding rate.
 
 ## Call to action
 
@@ -149,6 +166,9 @@ rather than a generic "learn more," which `voice.md`'s CTA rules ban outright.
 ## Before this prints
 
 - `[OWNER FIRST NAME]`, `[PHONE]`, `[EMAIL]`, and `[URL]` must all be real.
-- Confirm which of the three variants above matches the current state of the book before each
-  print batch — this is the one asset in the campaign most likely to go stale silently, because
-  its content (not just a slot count) changes as the book fills.
+- If the print date is on or before **February 28, 2027**, the copy above is correct as written.
+- If the print date is after February 28, 2027, use the single planned reprint described above
+  before ordering another batch — delete the Founding Member paragraph or replace it with the
+  one-sentence version.
+- If the book is already full (slot 6 signed) at the time of a print run, use the MEMBERSHIP FULL
+  variant of the "Next step" section instead, regardless of the date.

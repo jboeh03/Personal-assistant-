@@ -159,7 +159,7 @@ at zero incremental cost per lead. See that file for the copy and the permission
   every qualifying conversation from here forward — once there's a real client, the walkthrough
   conversation has something concrete to point at even without photography yet.
 
-### 4.3 Ongoing, through the founding four and into slots 5–6
+### 4.3 Ongoing, through the first four slots and into 5–6
 
 - Door-hanger passes continue at the pace `gtm-plan.md` §4 sets, always re-centered on the
   current route clusters, never widened back out to the full qualified geography once clusters

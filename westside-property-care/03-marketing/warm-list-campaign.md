@@ -56,11 +56,16 @@
 > has. What survives from that section is the underlying insight about **who** is on this list,
 > restated in §2 below without the dead price math. Season is **March 1 – October 31**. Name is
 > **Westside Property Care 513 / WPC513**. Founding terms are the **pro-rated 2026 remainder plus
-> $279 locked through October 31, 2027**, for **clients signing now** — not "twelve months." 🔶
-> **Whether the lock is capped at a specific number of clients is unresolved** — `pricing.md` §2
-> says "the first 4," but `messaging.md` §4 and `brand-brief.md` §4.2 both flag that number as
-> stale pending a `wpc-strategist` ruling. Until it lands, this file says "clients signing now"
-> and never a count. See the banner at the top of §5.
+> $279 locked through October 31, 2027**, for **clients signing now** — not "twelve months."
+>
+> **Amended 2026-08-06 — the founding-rate cap is resolved.** `decisions.md` **D-27**: the
+> Founding Member rate is **date-bounded, not count-bounded**. Anyone who signs on or before
+> **February 28, 2027** holds $279 through October 31, 2027 — no cap on how many members hold it.
+> *"The first 4 clients"* is withdrawn. **This file's "clients signing now" wording was the right
+> interim call and needs no rewrite** — it was accurate before the ruling and it stays accurate
+> after it, because everyone signing now falls inside the window. What changes below: every
+> reference to an unresolved or conditional client-count cap is resolved and removed, most
+> visibly in §5, Step 3 and Step 5.
 
 ---
 
@@ -276,10 +281,11 @@ filled, and the founding rate goes away once the fourth is taken." Tokenizing th
 *number* but not the *framing*: `voice.md` §6.5 bans the founding rate framed as a promotion and
 bans "while supplies last / only X left," and item 40 is explicit that the founding terms are a
 **term, not a discount** — they don't get sold with a countdown regardless of what the real number
-is. That's the same defect a prior audit already caught once in this exact template. The fix is
-structural: **open with the CTA, in every case**, the way this section already prescribed for a
-count of zero — that's now the only case. `{{founding_spots_filled}}` is retired from this file;
-see the token registry note in `gtm-plan.md` §8.
+is. That's the same defect a prior audit already caught once in this exact template. The fix was
+structural: **open with the CTA, in every case.** `decisions.md` **D-27** then removed the count
+itself — the founding rate is date-bounded, not member-bounded, so there is no number left to
+count even in principle. `{{founding_spots_filled}}` is retired from this file for good; see the
+token registry note in `gtm-plan.md` §8.
 
 ### Step 4 — SMS, opt-in only
 
@@ -299,39 +305,41 @@ box on a reply form. Never sent cold to the list.
 > locked for all of next year. {{slots_open}} of the six are open. Text me your cross street or
 > call `[PHONE]`. Reply STOP to opt out.
 
-### Step 5 — Close-out once the founding cohort is filled
+### Step 5 — Close-out, triggered by the calendar or by slot 6 filling, whichever comes first
 
-> 🔶 **CONDITIONAL, on top of this file's own banner.** This step's trigger — "the founding four
-> are filled" — assumes a client count (`pricing.md` §2's "first 4") that `messaging.md` §4 and
-> `brand-brief.md` §4.2 both flag as unresolved. **Do not run this step against a count of four**
-> until `wpc-strategist` rules on it. Until then, there is nothing to close out: the standing
-> offer in Steps 1–4 above ("clients signing now get the rest of this season pro-rated and their
-> rate locked for all of next year") already applies to every signing client with no count
-> attached, so there is no separate "standard rate" to switch a prospect to. If the ruling
-> confirms a real cap at a specific number, this step's mechanics below execute as written,
-> substituting the confirmed number for "four" throughout.
+**Two independent triggers, and either one ends the founding-rate framing for this campaign —
+this step is dated now, not triggered by a headcount:**
 
-Per `gtm-plan.md` §3 (also marked CONDITIONAL on the same ruling): **the founding-member framing
-stops the moment the confirmed founding cohort is filled**, whether that happens before or after
-the 2026 season closes.
+1. **February 28, 2027 arrives.** `pricing.md` §2 and `decisions.md` D-27: the founding rate
+   closes the day the 2027 season opens, for everyone, regardless of how many of the six slots
+   are filled at that point. This is a calendar fact he can know in advance, not a number to
+   watch for.
+2. **Slot 6 fills**, at any point before that date (`gtm-plan.md` §5). There's nothing left to
+   sell once the book is full, founding rate or not.
 
-- Any Tier 1/2 contact not yet reached gets a final, short message dropping the founding-rate
-  language and offering one of two honest outcomes: the standard-rate conversation, if the
-  property could plausibly fit slots 5 or 6 and passes the route tests once addresses are
-  compared — or the waitlist and a project-work offer, per `voice.md` pair 7, if it can't.
-- **Do not keep running the founding-member script after the founding cohort is gone.** That would
-  be advertising a benefit that no longer exists, which fails `voice.md`'s truth checklist item
-  13 as directly as inventing a fake one would.
+- **If trigger 1 fires first** (February 28, 2027 passes and a slot is still open): any Tier 1/2
+  contact not yet reached gets the standard-rate close-out below — dropping the founding-rate
+  language and offering the standard-rate conversation if the property still fits an open slot
+  and passes the route tests, or the waitlist and a project-work offer per `voice.md` pair 7 if
+  it can't.
+- **If trigger 2 fires first** (slot 6 signs before February 28, 2027): every remaining Tier 1/2
+  contact gets the waitlist close-out below instead — the standard-rate version doesn't apply,
+  because there is no slot left on any terms.
+- **Do not keep running the founding-member script past whichever trigger fires first.** That
+  would be advertising a benefit that no longer exists, which fails `voice.md`'s truth checklist
+  item 13 as directly as inventing a fake one would.
 
-> **Close-out message (standard-rate version):**
+> **Close-out message (standard-rate version — used once February 28, 2027 has passed and a slot
+> is still open):**
 > `[OWNER FIRST NAME]` here — following up on Westside Property Care 513: twice-a-month outdoor
 > living care, written report every visit, $279 a month. Sixteen visits a season, up to two hours
 > on site each — highest priority first, and completion of every possible task every visit isn't
-> guaranteed. Clients signing now get the rest of this season pro-rated and their rate locked for
-> all of next year. If you're still interested, text your cross street to `[PHONE]` and I'll tell
-> you honestly whether it fits the route right now.
+> guaranteed. The rate that was locked for anyone signing before the season opened has closed
+> now, but the price hasn't moved — it's still $279. If you're still interested, text your cross
+> street to `[PHONE]` and I'll tell you honestly whether it fits the route right now.
 
-> **Close-out message (waitlist version):**
+> **Close-out message (waitlist version — used once slot 6 has filled, or whenever a slot
+> genuinely isn't open):**
 > `[OWNER FIRST NAME]` here — {{slots_open}} of the six are open and the route is built around
 > two clusters at this point, so yours isn't near one yet. I'd still like to help; I keep a real
 > waitlist, and I still do grill and outdoor kitchen deep cleans (from $249) with no membership

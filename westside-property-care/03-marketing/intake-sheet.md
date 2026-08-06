@@ -107,7 +107,7 @@ engaged with, since not everyone in this sheet is a membership prospect:
 | Value | Meaning |
 |---|---|
 | `Membership` | The $279/month plan — the default for anyone who's had the full pitch |
-| `Founding` | Membership, and they're one of the first four — use alongside `Membership`, e.g. `Membership (Founding)` |
+| `Founding` | Membership, signed on or before **February 28, 2027** — check the actual signature date, not the slot number — use alongside `Membership`, e.g. `Membership (Founding)` |
 | `Project only` | Not interested in, or not qualified for, the membership, but a candidate for a grill deep clean, pressure washing, or another quoted job |
 | `Waitlist` | Qualified on attributes but off-route or the book is full |
 | `Winter service` | Interested in the proposed off-season offering only, once `winter-service.md` is approved and live — see that file |
@@ -159,9 +159,12 @@ it far more useful when filtering:
 - `REFERRAL — [existing client's first name, with their permission]` — per
   `neighborhood-campaign.md` §3.2, never write a referring client's name here without having
   asked them first.
-- `FOUNDING` — flags that this row, if signed, would occupy one of the first four founding slots.
-  Remove or update once the fourth founding slot is actually filled elsewhere, so this flag never
-  drifts out of sync with reality.
+- `FOUNDING` — flags that this row's **signature date** falls on or before **February 28, 2027**,
+  so the Founding Member rate applies (`pricing.md` §2, `decisions.md` D-27). **Derive it from the
+  Start Date column, not from a running count of signed members.** Set it once, at signing, from
+  the actual date on the agreement — it needs no manual retirement and never goes stale, because
+  there is no fourth-slot event or headcount to watch for. A row in slot 5 or 6 gets the same flag
+  as one in slot 1, provided the date qualifies.
 - Anything from the qualifying conversation worth remembering before the walkthrough — a
   disqualifier that almost fired, a specific thing they mentioned wanting handled
   (`ideal-client.md` §7, step 4 — "this is where the project work for the first season comes

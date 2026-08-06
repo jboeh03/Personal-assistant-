@@ -298,7 +298,7 @@ the full checklist at the point this is actually approved for a live surface.
 4. **Bandwidth.** `unit-economics.md` §4.2 already expects 2026 to be a thin launch year. Selling
    and delivering a new offering in the same season he's trying to sign his first members may not
    be the right sequencing — it may make more sense to launch this in the 2027–2028 off-season,
-   once the founding four are seated and the membership rhythm is established. That's his call,
+   once the first clients are seated and the membership rhythm is established. That's his call,
    not a marketing call.
 
 ---
