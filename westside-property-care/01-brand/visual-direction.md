@@ -46,6 +46,18 @@ item by item in §9 and §10
 > quietly stop describing the thing they govern, and neither fails loudly — the ratio still
 > reproduces, the font still loads. §3.1.1 turns the claim into a constraint so it cannot drift
 > again. **No hex, no size, and no face changes anywhere else in this file.**
+>
+> **And it recurred inside this very ruling before the day was out.** §3.1.1B's glyph table
+> shipped **ten rows summing to 48** beneath a heading that said 49 — the hyphen reached the
+> `--unicodes` command, the `unicode-range`, and the generated `fonts/README.md`, but never got a
+> row of its own, so the derived documents were more correct than their source. Corrected in
+> §3.1.1B, which now carries a Count column and a total row so it is arithmetic rather than an
+> assertion. **Three instances in two days, in three media — a ratio, a subset, and a table** —
+> is enough to state the general form: *a specification stops being true quietly, and it stays
+> internally consistent while it does.* All three passed every check that compared one part of
+> the spec to another part of the spec. So: **every check in this file is written against the
+> thing the spec describes — the ground an element renders on, the strings a component renders,
+> the rows a person reads — and never against another part of the spec.**
 
 ---
 
@@ -453,21 +465,47 @@ row is a change to this file, not a decision available to an implementer.
 **B. The glyphs. The subset contains exactly these, and the declared `unicode-range` matches it
 exactly:**
 
-| Group | Characters | Codepoints |
-|---|---|---|
-| Uppercase Latin | `A`–`Z` | `U+0041-005A` |
-| Digits | `0`–`9` | `U+0030-0039` |
-| Space | ` ` | `U+0020` |
-| Money and arithmetic | `$` `+` | `U+0024`, `U+002B` |
-| Sentence punctuation | `.` `,` `:` | `U+002E`, `U+002C`, `U+003A` |
-| Parentheses | `(` `)` | `U+0028-0029` |
-| Solidus | `/` | `U+002F` |
-| Separator | `·` | `U+00B7` |
-| Range | `–` | `U+2013` |
-| Aside | `—` | `U+2014` |
+| Group | Characters | Count | Codepoints |
+|---|---|---|---|
+| Uppercase Latin | `A`–`Z` | 26 | `U+0041-005A` |
+| Digits | `0`–`9` | 10 | `U+0030-0039` |
+| Space | ` ` | 1 | `U+0020` |
+| Money and arithmetic | `$` `+` | 2 | `U+0024`, `U+002B` |
+| Sentence punctuation | `.` `,` `:` | 3 | `U+002E`, `U+002C`, `U+003A` |
+| Parentheses | `(` `)` | 2 | `U+0028-0029` |
+| Solidus | `/` | 1 | `U+002F` |
+| **Compound and phone number** | **`-`** | **1** | **`U+002D`** |
+| Separator | `·` | 1 | `U+00B7` |
+| Range | `–` | 1 | `U+2013` |
+| Aside | `—` | 1 | `U+2014` |
+| | | **49** | |
 
-**49 glyphs.** No lowercase. No apostrophe, no quotation marks, no `?`, `!`, `%`, `&`, `#`, `[`,
-`]`, `*`, `;`, `<`, `>`, `=`, `@`, and no accented characters.
+26 + 10 + 1 + 2 + 3 + 2 + 1 + 1 + 1 + 1 + 1 = **49 glyphs.** No lowercase. No apostrophe, no
+quotation marks, no `?`, `!`, `%`, `&`, `#`, `[`, `]`, `*`, `;`, `<`, `>`, `=`, `@`, and no
+accented characters.
+
+> 🔁 **Corrected 2026-08-06, hours after this section was written, and it is the third instance
+> of the failure this file keeps naming.** The hyphen row above is new. The table shipped with
+> **ten rows summing to 48** while the count, the `--unicodes` command, and the `unicode-range`
+> below all said 49 — because `U+002D` was inside the contiguous `U+002B-003A` block and was
+> mentioned only in the prose *beneath* the table. Every derived artefact was correct; the
+> generated `fonts/README.md` shipped the hyphen, so **the derived document was more correct than
+> its source**, which is the wrong way round and is the whole defect.
+>
+> Nothing was visibly wrong, which is the point. Anyone regenerating the subset **from the table**
+> — which is what a human reads — produces 48 glyphs and silently drops `U+002D`, one of the two
+> codepoints this entire ruling exists to add, and the one carrying `MID-SEASON`. Same shape as
+> the ratio computed against a ground its element never renders on, and the glyph budget written
+> against the strings that existed: **a specification that agrees with its own machinery and not
+> with the thing a person will actually read off it.** Consistency between a count and a command
+> is not a check. The count and the *rows* have to agree.
+>
+> Two structural changes so it cannot recur. **The table now carries a Count column and a total
+> row**, so it is arithmetic rather than an assertion and disagreement is visible without leaving
+> the table. **And the four marks governed by the dash rule below — `-` `·` `–` `—` — are now
+> four consecutive rows**, so the rule and the table can be read against each other line by line.
+> The hyphen went missing precisely because it was the one mark in that rule with no row of its
+> own.
 
 **The subset command and the declared range, so `fonts/README.md` regenerates from this table
 rather than from a reading of it:**
@@ -481,10 +519,17 @@ unicode-range: U+0020, U+0024, U+0028-0029, U+002B-003A, U+0041-005A, U+00B7, U+
 ```
 
 `U+002B-003A` is contiguous and holds `+ , - . /`, the ten digits, and `:` — every character in
-it is wanted, so the range is compact **and** exact. It differs from the range currently in
-`fonts/README.md` by two codepoints and nothing else: **`U+002D` (hyphen) and `U+2013` (en
+it is wanted, so the range is compact **and** exact. It differs from the range that shipped
+before this ruling by two codepoints and nothing else: **`U+002D` (hyphen) and `U+2013` (en
 dash)** are added. Both were missing from the file's own glyph list while strings this file
 specifies required them.
+
+> **The table is the source; these two blocks are derived from it.** Compaction is what makes
+> them unreadable as a glyph list — `U+002B-003A` is seven characters wide and holds sixteen
+> glyphs, four of which have their own semantic rule. So the direction of regeneration is fixed:
+> **expand the range to a character list, diff it against the table rows, and confirm the total
+> matches the Count column.** Never the reverse. A range that is *set-equal* to a 48-row table is
+> a passing check on an incomplete table, which is exactly what happened here.
 
 **Which dash means what — this is a rule, not a preference:**
 
@@ -682,8 +727,9 @@ the font binaries — which is the point, because neither is available here.
 |---|---|---|
 | Invariant 1 | Every CSS rule containing `font-family: var(--font-mono)` also contains `text-transform: uppercase`. | A mono surface can hold lowercase. |
 | Invariant 2 | For each class on the §3.1.1A list, extract the rendered text of every element carrying it, uppercase it, and diff the character set against §3.1.1B. | A mono string contains a glyph the file does not hold. |
-| Invariant 3 | Expand the `unicode-range` in `styles/fonts.css` to a character list and compare it to §3.1.1B — they must be **equal**, not merely overlapping. | The range over-claims and a character silently falls back mid-string. |
+| Invariant 3 | Expand the `unicode-range` in `styles/fonts.css` to a character list and compare it to the **rows** of §3.1.1B — they must be **equal**, not merely overlapping. | The range over-claims and a character silently falls back mid-string. |
 | The list itself | Diff the set of classes setting `--font-mono` against §3.1.1A. | A component acquired mono without a ruling. |
+| **§3.1.1B's own arithmetic** | Sum the Count column and compare it to the total row, the `--unicodes` command, and the `unicode-range`. **All four must agree, and the table is what the other three are checked against.** | The table a human reads is smaller than the set the machinery ships, so anyone regenerating from the table silently drops a glyph. This is not hypothetical: it happened on 2026-08-06 and the missing glyph was the hyphen. |
 
 Run all four whenever a mono string changes, whenever a component gains `--font-mono`, and
 **before the font binaries are installed** — invariant 3 in particular is unfalsifiable while no
@@ -1376,6 +1422,13 @@ Non-negotiable when this direction is implemented:
     this contract exists to prevent**, in the same way that a surface gaining a
     `background-color` without a `--mark` is the bug §2.5 exists to prevent. Both are one
     declaration going missing next to another declaration that needed it.
+
+    🔁 **§3.1.1B's table is the source, and the subset is regenerated from the table, not from
+    the range.** Expand the `unicode-range` to a character list, diff it against the rows, and
+    confirm the total matches the Count column. The next person to touch the subset will read
+    the table, not the prose beneath it and not a compacted codepoint range — `U+002B-003A` is
+    sixteen glyphs wearing seven characters, and four of them carry their own semantic rule.
+    **A range that is set-equal to an incomplete table is a passing check on a wrong document.**
 
 ---
 
