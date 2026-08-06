@@ -14,12 +14,12 @@
    because it physically overlaps the content beneath it.
    -------------------------------------------------------------------------- */
 
-/* --mark sits in the same block as the background it answers to. §6 sanctions
-   --paper as the reversed-panel mark and it is the stronger one: 12.05:1 here
-   against --ember-lift's 4.88:1, and it does not have to change when the panel
-   does. This replaces the two ad-hoc :focus-visible overrides that used to sit
-   at the bottom of this component — same result, one declaration, and it now
-   covers the rail square and any focusable added later without a second edit. */
+/* --mark sits in the block that sets the background it answers to. §6
+   sanctions --paper as a reversed-panel mark and it is the stronger one:
+   12.05:1 against --ember-lift's 4.88:1. This replaces the two ad-hoc
+   :focus-visible overrides that used to sit at the foot of this component —
+   same result, one declaration, and it now covers the rail square and any
+   focusable added later without a second edit. */
 .strip {
   --mark: var(--paper);
   background-color: var(--navy);
@@ -81,16 +81,12 @@
   border-block-start: var(--hair) solid var(--paper);
 }
 
-/* The footer lockup is a <p>, not a second link to the page you are on, so it
-   resets the tap-target minimum the strip version needs.
-
-   And it is the KNOCKED-OUT single-colour variant (§7.3): the whole lockup in
-   --paper, wordmark included. The footer panel is --season-ground, which is
-   navy In Season but the drained slate Off Season, and --ember-lift is 3.06:1
-   on that slate — under AA for 12px type, and outside the rule that the mark
-   only ever sits on navy. Knocking it out in --paper is 12.05:1 In Season and
-   7.57:1 Off Season, and it is the variant the brief already allows where a
-   single colour is all that is available. */
+/* A <p>, not a second link to the page you are on, so it resets the strip
+   version's tap-target minimum — and it is the KNOCKED-OUT single-colour
+   lockup (§7.3), --paper throughout, wordmark included. The footer ground is
+   slate off season, where --ember-lift is 3.06:1: under AA for 12px type, and
+   outside the rule that the mark sits only on navy. --paper is 12.05 / 7.57
+   and is the variant the brief already allows for one-colour reproduction. */
 .lockup--foot {
   min-block-size: 0;
   margin-block-end: var(--space-row);
@@ -157,17 +153,20 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
   background-color: var(--ember-lift);
 }
 
+/* Two ground-sweep fixes, both on the same gesture. The border is the only
+   thing saying where this control ends, and setting it to the fill colour
+   dropped that boundary from --rule's 7.24:1 on navy to --ember-deep's
+   2.22:1 — the control got HARDER to locate on the gesture that targets it,
+   and SC 1.4.11 covers states, not just rest. The ::before square is
+   --ember-lift, 4.88:1 on navy at rest but 2.20:1 on the --ember-deep fill.
+   Both take --paper: 12.05:1 outward against navy, 5.42:1 inward against the
+   fill, and all four parts of the pill now move together. */
 .season__label:hover {
   background-color: var(--ember-deep);
-  border-color: var(--ember-deep);
+  border-color: var(--paper);
   color: var(--paper);
 }
 
-/* Found by the ground sweep: the square is --ember-lift, which is 4.88:1 on
-   the navy the label sits on at rest but 2.20:1 on the --ember-deep the label
-   fills with on hover — the one element on the site that got FAINTER on the
-   gesture meant to bring it forward. It takes the label's own text colour on
-   hover, 5.42:1, so all three parts of the control move together. */
 .season__label:hover::before { background-color: var(--paper); }
 
 .season__label:active { transform: translateY(1px); }
@@ -315,11 +314,10 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
   color: var(--ink);
 }
 
-/* A --wash fill, so it takes --wash-mark rather than the :root --ember. The
-   ring is outside this element's own box and therefore on --paper either way
-   (--ember, 3.31:1), but §6 says publish and satisfy the WORSE of the fill and
-   the gap where they differ, and off season the fill is --paper-deep where
-   --ember is 2.89:1. --wash-mark satisfies both readings at 5.42 / 4.74:1. */
+/* A --wash fill, so it takes --wash-mark, not the :root --ember. The ring is
+   outside this element's own box and so on --paper either way (3.31:1), but
+   §6 says satisfy the WORSE of fill and gap where they differ, and off season
+   the fill is --paper-deep at 2.89:1. --wash-mark clears both, 5.42 / 4.74. */
 .btn--quiet:hover {
   --mark: var(--wash-mark);
   background-color: var(--wash);
@@ -354,12 +352,12 @@ body:has(#season-switch:checked) .season__label .season__to-in { display: inline
    month, March through October. Delivered visits --ink, remaining --rule, the
    current one a filled --ember square (3.31:1, a legitimate non-text mark).
 
-   THIS SQUARE IS DELIBERATELY NOT var(--mark), per §4.5: it is a position in a
+   THE SQUARE IS DELIBERATELY NOT var(--mark), per §4.5: it is a position in a
    schedule, not a decision awaiting a yes or no, and --mark is a monopoly on
-   the latter only. The strip runs the measure and the bleed track, so it is on
-   --paper in both seasons and the literal --ember is correct here. If a build
-   ever insets it on a --paper-deep band the square goes to --ember-deep — a
-   contrast fix, not a promotion to --mark.
+   the latter. The strip runs the measure and the bleed track, so it is on
+   --paper in both seasons and the literal --ember is right here. Inset on a
+   --paper-deep band it would go --ember-deep — a contrast fix, not a
+   promotion to --mark.
 
    PAGE FURNITURE, NOT A CHART. No axis, no scale, no tooltip, no percentage,
    and NO ANIMATION — a strip that filled itself would turn a schedule into a
@@ -640,12 +638,11 @@ body:has(#season-switch:checked) .opens { color: var(--season-support); }
   padding-inline-start: var(--space-gutter);
 }
 
-/* The price is the number the customer says yes or no to, so §4.5 sets it in
-   the text step of the ramp: 4.74:1 on --paper-deep at --type-stamp 12px.
-   It is TEXT and takes --ember-deep by name, not var(--mark) — the two
-   coincide on this ground, which is the bonus §2.5 describes, and they must
-   not be welded together: if the sheet ever moved to --paper, --mark would be
-   --ember at 3.31:1, legal for the rule and illegal for 12px type. */
+/* The number the customer says yes or no to, so §4.5 sets it in the text step
+   of the ramp: 4.74:1 on --paper-deep at --type-stamp 12px. It is TEXT and so
+   takes --ember-deep BY NAME, not var(--mark). The two coincide on this
+   ground — the bonus §2.5 names — and must not be welded: on --paper, --mark
+   is --ember at 3.31, legal for the rule and illegal for 12px type. */
 .report__price {
   font-size: var(--type-stamp);
   letter-spacing: var(--ls-stamp);
@@ -910,16 +907,16 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 
 /* --- 15. Footer ----------------------------------------------------------
    A reversed panel on --season-ground: navy In Season, drained slate Off
-   Season. The ember ramp is a paper-side ink and unusable here, so links are
-   --paper with a --paper underline in both states — the brief's hard rule for
-   the Off Season panel, applied to both so there is one behaviour to audit.
+   Season — the one surface whose GROUND CHANGES UNDER IT with the calendar.
+   The ember ramp is a paper-side ink and unusable here, so links are --paper
+   with a --paper underline in both states (the brief's hard rule for the Off
+   Season panel, applied to both so there is one behaviour to audit), and
+   --mark is declared beside the background rather than beside the focus rule.
+   Navy and slate cannot share an ember step: --ember-lift is 4.88 then 3.06,
+   --ember is 3.64 then 2.29, a value §2.3 bans outright. --paper is 12.05
+   then 7.57 and is one declaration for both.
    -------------------------------------------------------------------------- */
 
-/* The one surface whose ground CHANGES UNDER IT with the calendar, which is
-   why --mark is declared beside the background rather than beside the focus
-   rule: navy and slate cannot share an ember step (--ember-lift is 4.88 then
-   3.06; --ember is 3.64 then 2.29, a value §2.3 bans outright), and --paper is
-   12.05 then 7.57 and is the same declaration in both. */
 .foot {
   --mark: var(--paper);
   margin-block-start: var(--space-section);
@@ -1014,14 +1011,13 @@ body:has(#season-switch:checked) .divider__tick:nth-of-type(even) { display: non
 
 /* --- Utilities used by more than one component --------------------------- */
 
-/* 🔶 FLAGGED to wpc-brand, not silently kept: this is a 2px LEFT MARGIN RULE,
-   the same weight and the same gesture as the finding rule, in --season-ground
-   rather than --mark. §5.2 enumerates two weights carrying four meanings and
-   this is a fifth. It is kept because colour is what carries the semantic here
-   — ember is the monopoly on "act" and navy is ink, so the two rules cannot be
-   confused — and because 12.05 / 7.57:1 on --paper passes non-text in both
-   seasons. Under-enumeration is how the --mark defect became possible, so it
-   is written down rather than left to be rediscovered. */
+/* 🔶 FLAGGED to wpc-brand rather than silently kept: a 2px LEFT MARGIN RULE,
+   the same weight and gesture as the finding rule, in --season-ground rather
+   than --mark. §5.2 enumerates two weights carrying four meanings; this is a
+   fifth. Kept because colour carries the semantic — ember is the monopoly on
+   "act", navy is ink — and because 12.05 / 7.57:1 on --paper passes non-text
+   in both seasons. Under-enumeration is how the --mark defect survived, so it
+   is written down instead of left to be rediscovered. */
 .pull {
   margin-block-start: var(--space-block);
   padding-inline-start: var(--space-gutter);

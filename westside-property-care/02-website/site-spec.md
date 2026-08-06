@@ -17,15 +17,32 @@
 >   `season.js`, the checkbox, the strip markup and the token structure are unchanged; the
 >   dates, the labels and the off-season copy are new.
 > - **The Field Ledger structure survived the palette swap intact.** The rail and measure, the
->   bleed track, the three-weight hairline system, the five uneven gaps, near-zero radius, the
->   two-shadow rule — none of it is colour-dependent. Only the ink changed.
+>   bleed track, the hairline system, the five uneven gaps, near-zero radius, the two-shadow
+>   rule — none of it is colour-dependent. Only the ink changed.
 > - **The accessibility work from the previous pass survived and was re-verified**, not
->   assumed. §9.4 records what was re-checked and what broke.
+>   assumed. §11.4 records what was re-checked and what broke.
 >
 > **Two things were rebuilt from scratch.** The four-row configuration ledger is deleted along
 > with the four prices in it, replaced by the single-figure set-piece (§5). And **the entire
-> contrast audit in §9.4 was recomputed from zero** against the new palette — the old ~90-line
+> contrast audit in §11.4 was recomputed from zero** against the new palette — the old ~90-line
 > matrix is void and none of its numbers were carried forward.
+
+> 🔁 **Amended 2026-08-05 after `wpc-brand`'s `--mark` ruling.** This build flagged a 2px finding
+> rule defended against a ground it never renders on. The ruling declined the one-line fix,
+> because **the same defect existed a second time, in the focus indicator, and neither agent had
+> found it** — the same mark pinned to the same literal `--ember`, putting a ring at 2.89:1 on
+> `--paper-deep` and 2.29:1 on the off-season slate.
+>
+> **The answer is a token, not a hex: `--mark`, declared per surface in the same block that sets
+> that surface's background.** The finding rule and the focus indicator both take `var(--mark)`
+> and nothing else. Implemented, and the ground-based re-sweep it mandates turned up **three more
+> defects nobody had flagged** — the skip link's ring, the season switch's hover, and the
+> `--wash` fill that becomes `--paper-deep` for four months of the year. All fixed. §11.4.
+>
+> **This file also retires two of its own claims.** *"Nothing focusable sits on `--paper-deep`"*
+> was true and was never an invariant, and *"`--ember-lift` on `--navy` at 4.88 is the tightest
+> text pass on the site"* was wrong: the 11px pool rail tag at **4.62** is, and it passes by
+> **0.12**. No markup changed; the whole ruling landed in three stylesheets.
 
 ---
 
@@ -207,7 +224,7 @@ Sixteen components. There is no card among them, by direction
 | **The season strip** | Home, `membership-full`, What's included, Pricing | Sixteen ticks. §6. |
 | **The single figure** | Home, `membership-full`, Pricing | The price, once per page, as one ruled line. §5. |
 | **Project price ledger** | Projects, Waitlist | `<dl>` of two rows — the two published *project* starting prices. **Not a membership price list.** |
-| **Summary facsimile** | Home, `membership-full` | Inset on `--paper-deep`, hairlines top and bottom, 0.9× body size, `--ember` margin rule on the finding, the pool disclaimer inside the same block. Set-piece 3. |
+| **Summary facsimile** | Home, `membership-full` | Inset on `--paper-deep`, hairlines top and bottom, 0.9× body size, a 2px `var(--mark)` margin rule on the finding (`--ember-deep` on this ground, 4.74:1) with its price in the rail in the same value, the pool disclaimer inside the same block. Set-piece 3. |
 | **Exclusion list** | Home, What's included, Pricing, About | `<ul>` with a hanging mono label and a rule. Never a features list; no ✓/✗ glyphs anywhere. |
 | **Plate** | 7 image slots | The empty ruled band that stands in for a photograph. §7. |
 | **Season divider** | Once per page, in the bleed track | Inline SVG survey-tick line. Ticks halve and every second one is dropped off season, so the ornament gets sparser when the business is closed. |
@@ -279,7 +296,7 @@ change.
 | Tick state | Colour | Shape |
 |---|---|---|
 | Delivered | `--ink` | 2px × 14px bar |
-| Current / next | `--ember` | 8px filled square |
+| Current / next | `--ember` — a literal, **not `var(--mark)`**; §4.5 exempts it as a position in a schedule rather than a decision. 3.31:1 on the `--paper` the strip always runs on. | 8px filled square |
 | Remaining | `--rule` | 2px × 14px bar |
 
 Off season every tick drains to `--rule`, the ember square moves to the first March tick, and
@@ -485,18 +502,27 @@ No framework, no bundler, no build step, no `npm install`, no dependency of any 
 
 ### 11.2 Measured budgets
 
-**Measured with `gzip -c <file> | wc -c` on the shipped files after the re-baseline.** Not
+**Measured with `gzip -c <file> | wc -c` on the shipped files after the `--mark` ruling.** Not
 estimated, not carried over from the previous pass, not rounded up from an approximation.
 
 | Asset | Raw | **Gzipped** | Budget | Result |
 |---|---|---|---|---|
-| `styles/tokens.css` | 10,453 B | **4,324 B** | — | |
-| `styles/base.css` | 11,455 B | **4,045 B** | — | |
-| `styles/components.css` | 31,221 B | **7,966 B** | — | |
-| **CSS total** | **53,129 B** | **16,335 B — 15.95 KB** | **< 30 KB gz** | **53% of budget** |
+| `styles/tokens.css` | 12,895 B | **5,323 B** | — | |
+| `styles/base.css` | 12,710 B | **4,653 B** | — | |
+| `styles/components.css` | 34,142 B | **9,156 B** | — | |
+| **CSS total** | **59,747 B** | **19,132 B — 18.68 KB** | **< 30 KB gz** | **62% of budget** |
 | `js/season.js` | 1,334 B | **730 B** | — | |
 | `js/forms.js` | 1,415 B | **714 B** | — | |
 | **JS total** | **2,749 B** | **1,444 B — 1.41 KB** | **< 150 KB gz** | **0.96% of budget** |
+
+**What changed and why.** CSS went from 16,335 to 19,132 B gz, **+2,797 B**. The *code* went
+**down** — 6,605 B gz against 6,700 B before — because `--mark` deleted four override rules
+(`.strip :focus-visible`, `.strip …::before`, `.foot :focus-visible`, `.foot …::before`) and
+replaced them with three inherited declarations. **The whole increase is comment**, and it is the
+ruling itself: why the ring is measured against the parent's ground and not the element's fill,
+why `--wash` needs a mark that moves with it, and what the two sentences that shipped a 2.89:1
+rule and a 2.29:1 ring actually got wrong. That reasoning is the only thing standing between the
+next editor and re-pinning a mark to a literal hex, which is precisely how this defect got here.
 
 The CSS total is the **sum of the three files measured separately**, because each is its own
 HTTP response and is gzipped on its own. Concatenating them first and gzipping once gives a
@@ -504,15 +530,16 @@ smaller and less honest number — nothing here is bundled, so that figure would
 that does not exist. The same applies to the two scripts, and `js/forms.js` is only requested by
 the two pages that have a form.
 
-**Against the tighter microsite row: 15.95 KB versus 15 KB, and stated rather than hidden.**
-`visual-direction.md` §12.11 asks for ≤ 15 KB CSS. This build is **0.95 KB over**. Code-only —
-every comment stripped — the three stylesheets gzip to **6.7 KB**, so the entire overage and
-about 9.6 KB besides is *comment*: the contrast arithmetic next to each colour choice, the
-reason each accessibility fix exists so the next person does not undo it as tidying, and the
-rule each component is enforcing. Two full passes of condensing took 1.4 KB out of it without
-losing a single reason. The remaining choice is between deleting the reasoning and being 0.95 KB
-over a stretch budget while sitting at 53% of the binding one, and the reasoning wins. If the
-overage ever matters, minifying comments out at deploy costs 9.6 KB gz and changes nothing else.
+**Against the tighter microsite row: 18.68 KB versus 15 KB, and stated rather than hidden.**
+`visual-direction.md` §12.11 asks for ≤ 15 KB CSS. This build is **3.68 KB over**. Code-only —
+every comment stripped — the three stylesheets gzip to **6.45 KB**, so the overage and 8.9 KB
+besides is *comment*: the contrast arithmetic beside each colour choice, the ground each ratio is
+computed against, and the reason each accessibility fix exists so the next person does not undo
+it as tidying. Three passes of condensing have gone through it, including one on this pass that
+merged four now-duplicated blocks. **The binding budget is `rules/web/performance.md`'s 30 KB
+landing-page row and this sits at 62% of it.** The choice is between deleting the reasoning and
+being over a stretch budget, and after a defect that was caused by one under-argued sentence, the
+reasoning wins. Minifying comments out at deploy recovers 12.23 KB gz and changes nothing else.
 
 Per page:
 
@@ -532,11 +559,14 @@ Per page:
 | `apple-touch-icon.svg` | 1,358 B | 826 B |
 | `favicon-16.svg` | 866 B | 587 B |
 
+The HTML is byte-for-byte unchanged by this pass — **no markup was edited**; the ruling was
+implemented entirely in the three stylesheets.
+
 **The number that matters is the heaviest first load:** `index.html` (10,141 B) plus all three
-stylesheets (16,335 B) plus `season.js` (730 B) plus one favicon (804 B) = **28,010 B gzipped,
-27.4 KB**, in six requests, with no font, no photograph and no third-party anything.
+stylesheets (19,132 B) plus `season.js` (730 B) plus one favicon (804 B) = **30,807 B gzipped,
+30.1 KB**, in six requests, with no font, no photograph and no third-party anything.
 `index.html` does not load `forms.js` — it has no form. The heaviest form page, `apply.html`
-cold, is 4,437 + 16,335 + 730 + 714 + 804 = **23,020 B, 22.5 KB** in seven requests. Every
+cold, is 4,437 + 19,132 + 730 + 714 + 804 = **25,817 B, 25.2 KB** in seven requests. Every
 subsequent page is 1.6–10 KB, because the CSS, the JS and the icon are already cached.
 
 Reproduce any figure above with:
@@ -562,10 +592,10 @@ Only `transform` and `opacity` are animated. There is no keyframe animation that
 - **Hover — three coordinated changes on one gesture:** the row fills `--wash`, the hairline
   beneath thickens via `scaleY(2)` and takes `--season-ground`, and the label translates 2px
   right.
-- **Focus** is `2px solid var(--ember)` at `3px` offset plus a filled 6px `--ember` square drawn
-  in the rail — keyboard users get the same margin marker the summary uses for a finding, which
-  after the re-baseline is literally the same colour. **On the two reversed panels the ring and
-  the marker are `--paper`** — see §11.4.
+- **Focus** is `2px solid var(--mark)` at `3px` offset plus a filled 6px `var(--mark)` square
+  drawn in the rail — keyboard users get the same marker the summary uses for a finding, resolved
+  to the step of the ember ramp the ground under it requires. **The ring takes `var(--mark)` and
+  nothing else, on every surface** — see §11.4.
 - **Active** is `translateY(1px)` and the rule under the control goes to `--ink`. No scale, no
   bounce, no spring.
 - **The season strip never animates.** No transition, no keyframe, no scroll timeline anywhere
@@ -608,7 +638,7 @@ so nothing below is claimed on the basis of an automated pass.
   draws is repeated as real text in its caption.
 - The grain layer is `pointer-events: none`.
 
-#### The matrix — recomputed from scratch, both seasons, three grounds
+#### The matrix — recomputed from scratch, both seasons, four grounds, two decimals
 
 **The previous ~90-line audit is void.** It was computed against oat / copper / green, and not
 one of its numbers survives a palette change. What follows was computed from zero with the sRGB
@@ -649,16 +679,190 @@ so that column is identical to the second one; it is repeated so the matrix read
 | `--paper` | — | 1.15 | 1.15 | **7.57** |
 | `--paper-deep` | 1.15 | — | — | **6.61** |
 
-#### Agreement with `visual-direction.md` §2
+#### Agreement with `visual-direction.md` §2 — including the newly published ratios
 
 The brief asks for an independent recomputation and for disagreements to be **flagged, not
-silently corrected**. **All 27 stated ratios in §2.1, §2.2 and §2.3 reproduce**, every one within
-0.05 of the published figure — the differences are rounding (`12.05` published as `12.0`,
-`15.08` as `15.1`). **There is no disagreement about a colour value.** The palette is correct as
-published.
+silently corrected**. Every ratio was recomputed from the hexes, not copied. **All of them
+reproduce.** The six values §2 published or restated on 2026-08-05 are checked here at four
+decimal places so the rounding is visible rather than assumed:
 
-There is **one disagreement about a placement**, and it is recorded in the next section as
-near-miss 1.
+| Published in `visual-direction.md` | Published | **Computed** | Agreement |
+|---|---|---|---|
+| `--ember` on `--wash` | 3.06 | **3.0603** | exact to 2 dp |
+| `--rule` on `--paper-deep` | 1.45 | **1.4535** | exact to 2 dp |
+| `--ink-muted` on `--wash` | 5.73 | **5.7336** | exact to 2 dp |
+| `--season-support` on `--wash` | 4.90 | **4.8976** | exact to 2 dp |
+| `--ember-deep` on `--paper-deep` (the new `--mark`) | 4.74 | **4.7355** | exact to 2 dp |
+| `--ember-lift` on off-season slate | 3.06 | **3.0628** | exact to 2 dp |
+| `--paper` on an `--ember-deep` fill | **5.43** | **5.4248** | 🔶 **disagree at 2 dp — see below** |
+
+🔶 **One flagged disagreement, and it is a rounding direction, not a colour.** `--paper` on
+`--ember-deep` computes to **5.4248**, which rounds to **5.42**, not 5.43. §2.1 states it as
+`5.43` twice — once for `--ember-deep` on `--paper` and once for the reverse, which is the same
+pair, so the same 0.01 is published twice. It changes nothing: the margin to 4.5:1 is 0.92 either
+way, well outside the 0.15 band where §2's rule 3 makes the second decimal load-bearing. **This
+build states 5.42 throughout.** Flagged rather than adjusted, per §12.2, and `wpc-brand` should
+decide which number the file carries rather than have two documents differ silently.
+
+Every other published figure reproduces within 0.005. **There is no disagreement about a colour
+value anywhere in the palette.**
+
+#### `--mark` as implemented (§2.5)
+
+`--mark` is never given a hex. **Every rule in the stylesheets that sets a `background-color`
+also sets `--mark` in the same block**, so a surface cannot acquire a ground without acquiring
+the mark that answers to it. Verified by grep: `var(--mark)` is the *only* colour in any
+`outline` or decision-mark `border`/fill on the site, and no `var(--ember*)` appears in one.
+
+| Surface | Declared on | Resolves to | Ratio, worst ground | Why |
+|---|---|---|---|---|
+| The page — `--paper` | `:root` (`tokens.css`) | `--ember` | **3.31** | Default. |
+| `--wash` row hover, In Season | `--wash-mark` on `:root` | `--ember` | **3.06** | Published in §2.5. |
+| `--wash` row hover, Off Season | `--wash-mark` in the season block | **`--ember-deep`** | **4.74** | `--wash` is aliased to `--paper-deep`; `--ember` is 2.89 there. |
+| `--paper-deep` — the summary facsimile | `.report__sheet` | **`--ember-deep`** | **4.74** | The finding rule's actual ground. |
+| `--paper-deep` — the image plates | `.plate` | **`--ember-deep`** | **4.74** | Same ground, no finding on it today. |
+| The navy status strip | `.strip` | **`--paper`** | **12.05** | §6's sanctioned reversed-panel option. |
+| The skip link, over the strip | `.skip` | **`--paper`** | **12.05** | It is not *inside* `.strip`; see sweep finding 1. |
+| The footer — navy or slate | `.foot` | **`--paper`** | **12.05 / 7.57** | Ground changes with the calendar; `--paper` is one declaration for both. |
+
+**Consumers — exactly two, as §2.5 requires.** The 2px finding rule
+(`.report__finding { border-inline-start: var(--hair-find) solid var(--mark) }`) and the focus
+indicator (`:focus-visible { outline: … var(--mark) }` plus the filled 6px rail square
+`background-color: var(--mark)`, and the switch's sibling ring). Nothing else takes it.
+
+**Two things `--mark` deliberately does not take over:**
+
+- **The season strip's current-visit square stays a literal `--ember`.** §4.5 exempts it by name:
+  it is a position in a schedule, not a decision awaiting a yes or no. The strip is on `--paper`
+  in both seasons, where `--ember` is 3.31. Written into `components.css` §7 so it is not
+  "fixed" later by someone pattern-matching on ember.
+- **The finding's price is `--ember-deep` by name, not `var(--mark)`.** It is *text*, so §2.4
+  rule 2 governs it, and on `--paper-deep` the two happen to resolve to the same hex — the bonus
+  §2.5 names. Welding them would break if the sheet ever moved to `--paper`, where `--mark` is
+  `--ember` at 3.31: legal for a rule, illegal for 12px type.
+
+#### What `--wash-mark` is, and why it is not a fourth accent
+
+`--wash` is the one ground in the system that is **itself a variable** — off season it is
+aliased to `--paper-deep` — so its mark has to be a variable too. `--wash-mark` is declared in
+the *same block* as `--wash`, in both season definitions, and resolves to `--ember` (3.06) in
+season and `--ember-deep` (4.74) off season. It adds no hex; it is §2.5's rule applied to a
+ground that moves. Without it, the one declaration that changes the ground — `--wash:
+var(--paper-deep)` — would silently move a correct mark onto a failing one, which is the exact
+failure mode §2.5 exists to end.
+
+#### The ground-based re-sweep — every coloured element, every surface it touches
+
+§12.2 now asks for the surfaces an element *renders on*, not the one it is associated with,
+**including hover states and both seasons**, with the worst one governing. Re-swept on that
+basis. Five things came out of it that the number-first audit had not.
+
+**1. The skip link's ring was measured against a ground it never touches — fixed.** `.skip` is a
+sibling of `<header>`, so it inherited the `:root` `--mark`, which is justified against `--paper`.
+But `.skip` is `position: absolute; inset-block-start: 0`, so the surface it actually appears on
+is **the navy status strip, on every page, every time** — and it is only ever visible while
+focused. `--ember` there is **3.64**, a pass nobody had argued for and 0.64 from failing. It now
+carries `--mark: var(--paper)`, **12.05** against the navy. That ring is also the only thing
+delineating the control: the skip link's own `--ember-deep` fill is **2.22** against the navy
+behind it, so without a `--paper` ring a focused skip link has no perceivable boundary. This is
+the same defect class as the finding rule, in a third place, and neither audit had found it.
+
+**2. The season switch got *harder* to see on hover — fixed, two declarations.** At rest the pill
+is a transparent box with a `--rule` border on navy (**7.24**) and a 6px `--ember-lift` square
+(**4.88**). On hover it fills `--ember-deep` — and both of those marks were left alone, so the
+border dropped to **2.22** against the fill it now matched, and the square dropped to **2.20**.
+The element designed to come forward on the gesture receded on it. SC 1.4.11 covers *states*, not
+just rest. Both now go to `--paper` on hover: **12.05** outward against the navy, **5.42** inward
+against the fill. All four parts of the control now move on one gesture instead of two moving and
+two disappearing.
+
+**3. `.btn--quiet` and `.ledger__row` fill with `--wash`, which is `--paper-deep` for four months
+— fixed structurally.** Both now take `--mark: var(--wash-mark)`. `.btn--quiet` is focusable
+today; `.ledger__row` is not, and that is exactly the invariant §6 says not to lean on.
+
+**4. The finding's price was `--ink`, and the brief specifies `--ember-deep` — corrected.**
+§4.5 set-piece 3 and §2.5's closing paragraph both say the price in the facsimile's rail is
+`--ember-deep`, so that "the mark and the figure it flags now match instead of nearly matching."
+It shipped as `--ink`. Now `--ember-deep`: **4.74** on `--paper-deep` at `--type-stamp` 12px,
+which needs 4.5. Passes by **0.24**.
+
+**5. 🔶 A fifth meaning on the 2px weight, flagged not fixed.** `.pull` — the pull quote — is a
+**2px left margin rule** in `--season-ground`: the same weight, the same position and the same
+gesture as the finding rule, in a different colour. §5.2 enumerates two weights carrying four
+meanings and this is a fifth. It is **kept**, because colour is what carries the semantic here
+(ember is the monopoly on "act", navy is ink) and because 12.05 / 7.57 on `--paper` clears
+non-text in both seasons — but it is written into the stylesheet and into this file rather than
+left uncounted. §5.2's own diagnosis is that under-enumeration is how the `--mark` defect
+survived, so the honest move is to count it and let `wpc-brand` rule.
+
+**For completeness, the other 2px edges on the site**, none of which is a page separator and none
+of which is a mark: the current-page nav underline (`--ink`, 15.08 on `--paper`), the input's
+heavier bottom border (`--ink-muted`, 6.20), the link-hover underline thickness, and the pool
+disclaimer rule (`--season-support`, 5.29 on `--paper` / 4.62 inside the facsimile — the sanctioned
+fourth meaning).
+
+#### The ring's ground is the parent's background, not the element's own fill
+
+This came up as a genuine ambiguity in §6 and it needs stating, because the site contains a case
+that decides it. §6 says that at `outline-offset: 3px` the ring sits outside the element's box,
+so *"where the two differ, publish and satisfy the worse of them."* Applied literally to a solid
+`.btn`, that is **impossible**: the button's fills are `--ember-deep` (rest), `--season-ground`
+(hover) and `--ink` (active), and no colour clears 3:1 against both a fill and the `--paper` gap —
+`--ember` is 3.31 on paper but 1.64 on the `--ember-deep` fill; `--paper` is 5.42 on the fill but
+1.00 in the paper gap. No step of the ramp and no palette value satisfies both.
+
+The resolution is that they are not both grounds. At a 3px offset the ring is drawn **wholly
+outside the border box, with 3px of the parent's background showing on its inner edge** — so both
+edges of the ring touch the same colour, the parent's. The fill is 3px away and never adjacent.
+§6's instruction is therefore about a fill belonging to an **ancestor** the ring lands *on* — the
+hovered ledger row it names — and that case is real and is what `--wash-mark` answers.
+
+**Both readings are satisfied anyway wherever it is cheap to do so.** `.btn--quiet:hover` takes
+`--wash-mark` even though its ring is on `--paper` either way, because `--ember-deep` clears both
+grounds (5.42 / 4.74) at no cost. Only the solid `.btn` depends on the reading, and there the
+literal reading has no solution. 🔶 **Flagged to `wpc-brand` as wording worth tightening in §6.**
+
+#### The tightest text pass on the site is the pool rail tag, not the season stamp
+
+🔁 **This corrects a claim this file made in the previous pass.** It said `--ember-lift` on
+`--navy` at 4.88 was the tightest text pass. It is not.
+
+| Element | Size | Ground | Ratio | Threshold | **Margin** |
+|---|---|---|---|---|---|
+| **Pool rail tag** — `<p class="rail pool">Pool · no guarantee</p>` | **11px** (`--type-rail`) | `--paper-deep`, inside the facsimile | **4.6201** | 4.5 | **+0.12** |
+| Finding price — `.report__price` | 12px (`--type-stamp`) | `--paper-deep` | **4.7355** | 4.5 | +0.24 |
+| Season stamp — `.season__stamp` | 12px (`--type-stamp`) | `--navy` | **4.8774** | 4.5 | +0.38 |
+
+**Two constraints follow, and both are now binding on this build:**
+
+- **`--season-support` may not be lightened.** The In Season teal `#1A6E6B` has 0.12 of headroom
+  and none of it is spare.
+- **Pool text may not go below 11px.** `--type-rail` is the floor for anything carrying
+  `--season-support`, and the rail tag is set at exactly it. If a pool row ever has to sit on a
+  ground darker than `--paper-deep`, the tag goes to `--ink` and the teal stays on the rule beside
+  it (`visual-direction.md` §2.2).
+
+Note that `--type-rail` is `0.6875rem` — an absolute value — so the facsimile's `font-size: 0.9em`
+does **not** shrink it. Verified: the tag renders at 11px inside the sheet, not 9.9px. If that
+`0.9em` were ever applied to the rail scale instead, the tightest text on the site would drop
+under AA.
+
+#### `WPC 513` is exempt as logotype; the season stamp beside it is not
+
+Both are `--ember-lift` on `--navy` at **4.8774**, and they are governed differently:
+
+- **`WPC 513` inside the lockup is logotype text.** WCAG 2.2 SC 1.4.3 exempts text that is part
+  of a logo or brand name from any contrast requirement. It is exempt at 4.88 and would be exempt
+  well below it. **This is not a licence to touch either colour** — it is his printed mark.
+- **The season stamp is not a logotype.** It is UI text at `--type-stamp` 12px, it needs 4.5, and
+  it has 4.8774 on its own margin of **+0.38**. It passes without borrowing the exemption.
+
+🔁 **This retires the previous pass's near-miss 4.** That item said: if the stamp reads thin once
+Plex Mono is installed, darken `--ember-lift` toward `--ember`. **That instruction is withdrawn.**
+Darkening `--ember-lift` is now forbidden by `visual-direction.md` §7.1 — the pass depends on both
+hexes staying exactly where they are, and §2.4 rule 7 already forbids brightening the ember or
+lightening the navy. **If the stamp needs more room, move the size to 14px, not the colour.**
+14px clears comfortably and 12px was doing hierarchy work that 14px can still do.
 
 #### What actually lands on each reversed ground
 
@@ -668,60 +872,72 @@ season and slate off season. Those are the only two reversed panels.
 | Element | Foreground | In Season | Off Season | |
 |---|---|---|---|---|
 | Strip: lockup mark, small caps, switch label | `--paper` on `--navy` | 12.05 | 12.05 | pass |
-| Strip: `WPC 513` and the season stamp | `--ember-lift` on `--navy` | 4.88 | 4.88 | pass — the tightest text pass on the site |
+| Strip: `WPC 513` (logotype, SC 1.4.3 exempt) and the season stamp (not exempt, passes anyway) | `--ember-lift` on `--navy` | 4.88 | 4.88 | pass — **not** the tightest text pass; see above |
 | Strip: switch border | `--rule` on `--navy` | 7.24 | 7.24 | pass (non-text) |
-| **Strip: focus ring and rail marker** | `--paper` | **12.05** | **12.05** | pass |
+| Strip: switch pill border, at rest | `--rule` on `--navy` | 7.24 | 7.24 | pass (non-text) |
+| **Strip: switch pill border and square, on hover** | `--paper` on `--ember-deep` | **5.42** | **5.42** | pass — **fixed this pass** |
+| ~~Strip: switch border on hover as `--ember-deep`~~ | ~~`--ember-deep` on `--navy`~~ | ~~2.22~~ | ~~2.22~~ | **failed — the control's boundary vanished on hover** |
+| ~~Strip: switch square on hover as `--ember-lift`~~ | ~~`--ember-lift` on `--ember-deep`~~ | ~~2.20~~ | ~~2.20~~ | **failed — same gesture** |
+| **Strip: focus ring and rail marker — `var(--mark)`** | `--paper` | **12.05** | **12.05** | pass |
+| **Skip link, over the strip: ring — `var(--mark)`** | `--paper` on `--navy` | **12.05** | **12.05** | pass — **fixed this pass** |
+| ~~Skip link ring as the inherited `:root` `--ember`~~ | ~~`--ember` on `--navy`~~ | ~~3.64~~ | ~~3.64~~ | **wrong ground — never renders on `--paper`** |
+| Skip link fill against the strip behind it | `--ember-deep` on `--navy` | 2.22 | 2.22 | boundary carried by the `--paper` ring, which is always present when it is visible |
 | Footer: all text, headings, notes, project prices, links | `--paper` | 12.05 | 7.57 | pass |
 | **Footer: lockup, knocked out entire** | `--paper` | **12.05** | **7.57** | pass — §8 |
 | ~~Footer: lockup wordmark as `--ember-lift`~~ | ~~`--ember-lift`~~ | ~~4.88~~ | ~~3.06~~ | **fail off season — fixed** |
-| **Footer: focus ring and rail marker** | `--paper` | **12.05** | **7.57** | pass |
+| **Footer: focus ring and rail marker — `var(--mark)`** | `--paper` | **12.05** | **7.57** | pass |
 | ~~Footer: focus ring as `--ember`~~ | ~~`--ember`~~ | ~~3.64~~ | ~~2.29~~ | **would fail off season** |
 | `.foot__rule` divider, `--paper` at 45% | — | — | — | decorative, no meaning of its own |
 
-**The footer focus ring was re-verified, not assumed.** It was a shipped critical defect once,
-the override was carried forward, and the palette then changed underneath it. Re-computed: on
-the In Season navy `--ember` would be **3.64:1**, which technically clears the 3:1 non-text
-floor — and on the Off Season slate it is **2.29:1**, which does not. A ring that works for
-eight months and disappears for four is a worse bug than one that never works, because nobody
-finds it. **The `--paper` override stays, and it is now correct in both states with margin.**
-Any future reversed surface must override it the same way; `base.css` carries that instruction
-at the global focus rule.
+**The two reversed rings are no longer overrides.** They were `.strip :focus-visible {
+outline-color: var(--paper) }` and `.foot :focus-visible { … }` plus two matching `::before`
+rules — the right instinct applied by hand, twice, to two of the three surfaces that needed it,
+and not to the third (`.skip`). All four rules are **deleted**. `.strip` and `.foot` now declare
+`--mark: var(--paper)` in the same block that sets their background, which §6 sanctions
+explicitly as the stronger reversed-panel option (12.05 against `--ember-lift`'s 4.88 on navy,
+7.57 against 3.06 on the off-season slate). The rail square follows automatically because it
+reads the same token, and **any focusable added to either panel later is covered without a second
+edit** — which is precisely what the hand-written version could not promise, and did not deliver
+for the skip link.
 
 #### Pairs that do not clear the threshold, and what was done about each
 
-1. 🔶 **`--ember` on `--paper-deep` = 2.89:1 — the finding rule, and this is the one disagreement
-   to flag to `wpc-brand`.** `visual-direction.md` §5.2 justifies the 2px finding rule with *"at
-   3.3:1 on `--paper` it clears the non-text contrast threshold, so it is a legitimate carrier of
-   meaning."* That is true on `--paper`. But §4.5 set-piece 3 places the summary facsimile — the
-   only place a finding rule exists — **on `--paper-deep`**, where the same colour is 2.89:1 and
-   misses the 3:1 floor by 0.11. The two sections disagree with each other, not with me.
-   **Shipped as specified, `--ember`, and flagged rather than adjusted**, on the argument that
-   SC 1.4.11 does not bind here: the finding block is already labelled in text ("What I found")
-   and already carries its price in the rail in mono, so the rule is redundant emphasis rather
-   than a graphic required to understand the content. **If `wpc-brand` disagrees, the fix is one
-   token** — `--ember-deep` on `--paper-deep` is 4.74:1 — and it is consistent with §2.4 rule 2,
-   *choose the ember by its ground*. It is one declaration in `components.css` §10.
-2. **`--ember` as the focus ring on `--paper-deep` = 2.89:1 — designed around, not waived.**
-   **Rule enforced in the markup: nothing focusable sits on a `--paper-deep` ground.** The only
-   two `--paper-deep` surfaces are the summary facsimile and the image plates; verified
-   programmatically that neither contains an `<a>`, `<button>`, `<input>`, `<select>`,
-   `<textarea>` or `<summary>` on any of the ten pages. On `--paper` the ring is 3.31:1 and on
-   the In Season `--wash` it is 3.06:1, both passing.
-3. **`--ember-lift` on the Off Season `--season-ground` = 3.06:1 — a real defect, found by this
-   sweep and fixed.** It would have put the footer lockup's wordmark below AA for four months of
-   the year. Fixed at the semantic level rather than by nudging a hex: the footer uses the
-   knocked-out single-colour lockup the brief already specifies for exactly this situation. §8.
-4. **`--ember-lift` on `--navy` = 4.88:1 — passes, and it is the tightest text pass on the
-   site.** It clears 4.5:1 by 0.38. It carries the wordmark and the season stamp at
-   `--type-stamp` (12px). Nothing about the ratio changes when the real fonts land — contrast is
-   a colour computation — but perceived weight at 12px does. 🔶 **Action when Plex Mono is
-   installed: look at the season stamp in the navy strip on a real screen.** If it reads thin,
-   the fix is to darken `--ember-lift` slightly toward `--ember`, which is one hex in
-   `tokens.css`. Do not fix it by making the stamp larger; the size is doing hierarchy work.
-5. **`--season-support` (pool teal) on `--paper-deep` = 4.62:1 — passes.** It occurs on the pool
-   rail tag inside the summary facsimile. Off season it does not occur at all: `.pool` reverts to
-   `inherit` (`--ink`, 13.16:1) because there is no pool work off season, so the accessible
-   answer and the correct semantic reading are the same change.
+1. ✅ **`--ember` on `--paper-deep` = 2.89:1 — the finding rule. Ruled on, and now fixed.** The
+   previous pass shipped this as specified and flagged it: §5.2 justified the 2px rule at 3.31 on
+   `--paper` while §4.5 puts the only finding in the system on `--paper-deep`. The argument
+   offered for keeping it — that the finding block already carries a text heading and a price, so
+   the rule is redundant emphasis and SC 1.4.11 does not bind — was **examined and declined on the
+   merits**, and correctly: it does not generalise to the focus ring, which is the identical mark
+   with nothing redundant beside it, and it would have made a colour value here silently dependent
+   on copy decisions owned by `voice.md`. **`.report__finding` now takes `var(--mark)`, which
+   `.report__sheet` resolves to `--ember-deep` for its own ground: 4.74:1.**
+2. ✅ **`--ember` as the focus ring on `--paper-deep` = 2.89:1, and on the off-season slate =
+   2.29:1 — the worse of the two bugs, and it was unflagged.** The previous pass answered this
+   with *"nothing focusable sits on a `--paper-deep` ground,"* verified programmatically across
+   all ten pages. **That verification was correct and the conclusion was not safe.** It was an
+   invariant maintained by hand, and the Off Season state breaks it without touching any markup:
+   `--wash` is aliased to `--paper-deep`, so a focusable inside a hovered ledger row lands on that
+   ground for four months of the year. The 2.29:1 on slate was worse still — a value §2.3's own
+   reversed list bans outright — and no markup habit addressed it at all. **The claim has been
+   removed from `base.css` and replaced with the reason it was unsafe**, so nobody rebuilds on it.
+   The ring now takes `var(--mark)` everywhere: 3.31 / 3.06 / 4.74 / 12.05 / 7.57 by ground.
+3. **`--ember-lift` on the Off Season `--season-ground` = 3.06:1 — a real defect, found by an
+   earlier sweep and fixed.** It would have put the footer lockup's wordmark below AA for four
+   months of the year. Fixed at the semantic level rather than by nudging a hex: the footer uses
+   the knocked-out single-colour lockup the brief already specifies for this situation. §8.
+4. **`--ember-lift` on `--navy` = 4.8774:1 — passes on its own margin of 0.38, and it is *not*
+   the tightest text pass on the site.** See the table above: the 11px pool rail tag at 4.6201 on
+   `--paper-deep` passes by 0.12 and is the real floor. The `--ember-lift` pair carries two
+   different things — `WPC 513`, which is exempt logotype text, and the season stamp, which is
+   not and does not need the exemption. 🔶 **Action when Plex Mono is installed: look at the
+   season stamp.** If it reads thin, **move the size to 14px. Do not touch the colour** — §7.1
+   forbids darkening `--ember-lift` and §2.4 rule 7 forbids brightening it or lightening the navy.
+5. **`--season-support` (pool teal) on `--paper-deep` = 4.6201:1 — passes by 0.12, and this is the
+   tightest text on the site.** The pool rail tag inside the summary facsimile, at 11px. **The
+   teal may not be lightened and pool text may not go below 11px** — both constraints are recorded
+   above and in `tokens.css`. Off season it does not occur at all: `.pool` reverts to `inherit`
+   (`--ink`, 13.16:1) because there is no pool work off season, so the accessible answer and the
+   correct semantic reading are the same change.
 6. **`--rule` on `--paper` = 1.67:1, on `--paper-deep` = 1.45:1.** The hairline is a decorative
    separator and never carries meaning alone — every entry it separates is also separated by
    whitespace and a heading. **But it is not acceptable as the only edge of a control**, which is
@@ -730,10 +946,20 @@ at the global focus rule.
    three-weight system governs the page's *separators*, and a control border is a different
    object with a WCAG floor of its own. Carried forward from the previous pass and re-verified
    against the new `--rule`.
-7. **`--ember` on `--paper` = 3.31:1 — passes for its only two uses.** Display figures at
-   `--type-figure`, whose minimum is 2rem (32px), clear the large-text threshold; and non-text
-   marks. It is never body copy anywhere on the site — links, prices in prose, error text and the
-   button ground all use `--ember-deep` at 5.42:1.
+7. **`--ember` on `--paper` = 3.31:1 — passes for its only three uses.** Display figures at
+   `--type-figure`, whose minimum is 2rem (32px), clear the large-text threshold; the season
+   strip's current-visit square, which §4.5 exempts from `--mark` by name; and `--mark`'s own
+   resolution on the paper ground. It is never body copy anywhere on the site — links, prices in
+   prose, error text and the button ground all use `--ember-deep` at 5.42:1.
+8. **`--ember` against an `--ember-deep` `.btn` fill = 1.64:1 — computed, and not a pair.** The
+   focus ring around a solid button never touches the button. `outline-offset: 3px` puts it wholly
+   outside the border box with 3px of `--paper` on its inner edge, so both of its edges are on
+   `--paper` at 3.31:1. Recorded because the number looks alarming out of context and someone will
+   compute it again; the reasoning is set out under *the ring's ground* above.
+9. **`--rule` on `--wash` = 1.54:1 — the dotted leader inside a hovered ledger row.** Structural,
+   like every other `--rule` hairline: it connects a job to its price, both of which are text at
+   13.95:1 on the same ground, and it carries nothing on its own. The row's meaningful hairline —
+   the one beneath it — goes to `--season-ground` on the same gesture, at 11.15:1.
 
 ### 11.5 Fonts — shipped state and the human action required
 
@@ -748,8 +974,10 @@ on Iowan Old Style or Palatino rather than on Times.
 **The site is complete and looks intentional as shipped.** Installing the real faces is a
 one-line change, documented in `site/fonts/README.md`. Budget when installed: ≈70 KB.
 
-🔶 **HUMAN ACTION.** Download the three families into `site/fonts/`. When they land, look at one
-thing: the season stamp in the navy strip. See near-miss 4 above.
+🔶 **HUMAN ACTION.** Download the three families into `site/fonts/`. When they land, look at two
+things: the **11px pool rail tag inside the summary facsimile** (the tightest text on the site,
+4.62:1, and it may not be made smaller or lighter) and the **season stamp in the navy strip**. If
+the stamp reads thin, move it to 14px — near-miss 4 above, and **not** the colour.
 
 ### 11.6 Security
 
@@ -781,10 +1009,10 @@ marked 🔁.
 | **2** | **Intentional spacing rhythm, not uniform padding** | Five non-interchangeable vertical gaps — `--space-row` 12px, `--space-entry` 24px, `--space-block` 32–56px, `--space-section` 64–160px, `--space-chapter` 96–256px — with a rule enforced in review that **no two adjacent levels of hierarchy may use the same gap.** Only the season divider gets `--space-chapter`, once per page. |
 | **3** | 🔁 **Depth and layering** | Five mechanisms, none of them elevation: the **bleed track** (grid columns 11–12) runs the masthead plate off the right edge past the container; the **navy status strip** now overlaps the masthead as a solid reversed band rather than a paper one, which is a stronger overlap than before; the summary facsimile is **inset** on `--paper-deep` between two hairlines; the season strip breaks out of the measure to the full container; and a fixed 4% fractal-noise grain multiplies over everything. |
 | **4** | **Typography with a real pairing strategy** | A display old-style serif against the IBM Plex superfamily — one type system plus a display face, not three unrelated fonts. Every axis pinned rather than defaulted (`"opsz" 120, "SOFT" 0, "WONK" 0`), tracking and leading specified per role, `tabular-nums` on every price, date and count so the ledger columns do not shimmy. The mono is what makes `$279` and `VISIT 07 OF 16` read as readings rather than claims. |
-| **5** | 🔁 **Colour used semantically** | The **ember ramp is a monopoly on "act"** — one colour, one meaning, three lightnesses chosen by ground: `--ember-deep` for text-size actions, `--ember` for display figures and non-text marks, `--ember-lift` only inside the navy strip. The retired ochre flag is folded into it, so the focus marker, the finding rule and the price a customer says yes or no to are now literally the same colour. `--season-support` teal appears **only where a pool does**, and has no off-season existence because there is no off-season pool work. And the whole palette flips on the calendar, so the page tells you whether the business is open before you read a word. |
+| **5** | 🔁 **Colour used semantically** | The **ember ramp is a monopoly on "act"** — one colour, one meaning, three lightnesses chosen by ground, and the choice is made by a **token rather than by an author**: `--mark` is the decision colour, declared per surface in the same block that sets that surface's background, so the finding rule and the focus ring resolve to the ramp step their ground requires without anyone remembering to. The retired ochre flag is folded into it, so the focus marker, the finding rule and the price a customer says yes or no to are the same value on the same ground. `--season-support` teal appears **only where a pool does**, and has no off-season existence because there is no off-season pool work. And the whole palette flips on the calendar, so the page tells you whether the business is open before you read a word. |
 | **6** | **Designed hover / focus / active states** | Hover makes **three coordinated changes on one gesture**: the row fills `--wash`, the hairline beneath thickens by `scaleY(2)` and takes `--season-ground`, and the label translates 2px right. Focus draws an outline **plus a filled 6px square in the rail** — the brand's own notation for a finding. It inverts to `--paper` on both reversed panels rather than being dropped on them. Active drops 1px and darkens the rule. |
 | **7** | 🔁 **Grid-breaking editorial composition** | An asymmetric **rail-and-measure** page: 12 columns, never twelve equal cells — rail 1–3, measure 4–10, 11–12 a live **bleed track**. The display headline starts flush with the rail, one column *left* of the body it introduces. **New: the sixteen-tick season strip breaks out of the 68ch measure to the full container**, so the one element that carries the argument is also the one that visibly refuses the reading column. |
-| **8** | **Texture and atmosphere** | A 4% `feTurbulence` paper grain as an inline data-URI with **no network request**; a three-weight hairline system (`1px --rule` separator, `1px --ink` boundary, `2px --ember` finding) doing more visual work than any image on the site; and the hand-set **survey-tick season divider**, whose ticks halve and whose gaps double off season, so the ornament itself gets sparser when the business is closed. |
+| **8** | **Texture and atmosphere** | A 4% `feTurbulence` paper grain as an inline data-URI with **no network request**; a **two-weight hairline system carrying four meanings** (`1px --rule` separator, `1px --ink` boundary, `2px var(--mark)` finding, `2px --season-support` pool disclaimer) doing more visual work than any image on the site; and the hand-set **survey-tick season divider**, whose ticks halve and whose gaps double off season, so the ornament itself gets sparser when the business is closed. |
 
 **Not claimed, on the record:**
 
@@ -835,21 +1063,40 @@ is cosmetic rather than informational.
 
 **Done here:**
 
-- Served with `python3 -m http.server` and every page and asset fetched — **all 21 URLs
-  returned 200**, including the three favicons, `js/forms.js`, `robots.txt` and `sitemap.xml`.
-- Gzipped byte counts measured with `gzip -c <file> | wc -c` on the shipped files after the
-  re-baseline and recorded in §11.2.
+- Served with `python3 -m http.server` and every page and asset fetched — **all 20 files plus the
+  directory root returned 200**, including the three favicons, `js/forms.js`, `robots.txt` and
+  `sitemap.xml`.
+- Gzipped byte counts re-measured with `gzip -c <file> | wc -c` on the shipped files after the
+  `--mark` ruling and recorded in §11.2. **No HTML was edited on this pass**, so the per-page
+  figures are carried forward unchanged and verified as such.
 - **Contrast recomputed from scratch as a full matrix** — every token against `--paper`,
-  `--paper-deep`, `--wash` and `--season-ground`, in both seasonal states, by hand from the sRGB
-  relative-luminance formula. §11.4. All 27 published ratios in `visual-direction.md` §2
-  reproduce; one placement disagreement is flagged rather than silently corrected.
+  `--paper-deep`, `--wash` and `--season-ground`, in both seasonal states, from the sRGB
+  relative-luminance formula, at four decimal places. §11.4. **Every published ratio in
+  `visual-direction.md` §2 reproduces, including the six restated on 2026-08-05.** One two-decimal
+  rounding disagreement (`5.4248`, published as `5.43`) is flagged rather than silently corrected.
 - Tag balance, heading order, single `<h1>`, and `aria-labelledby` target existence verified
-  programmatically across all ten pages: zero defects.
-- Verified programmatically that **no focusable element sits on a `--paper-deep` ground**, which
-  is the rule the `--ember` focus ring depends on.
-- Verified that **`--ember-lift` appears in exactly three rules**, all of them inside the navy
-  status strip, and that the footer overrides the one that would otherwise land on the Off Season
-  slate.
+  programmatically across all ten pages: zero defects. Unchanged — the markup was not touched.
+- **Ground-based re-sweep, per §12.2.** For every coloured element, every surface it renders on
+  was enumerated — including hover states, `:user-invalid`, and both seasons — and the worst one
+  satisfied. Four defects fixed and one divergence flagged; all five are written up in §11.4.
+- Verified by grep that **`var(--mark)` is the only colour appearing in an `outline` or in a
+  decision-mark `border`/fill anywhere in the site**, and that no `var(--ember)`,
+  `var(--ember-deep)` or `var(--ember-lift)` appears in one. **Thirteen non-text ember literals
+  remain**, every one of them a control, a status stamp, or the season strip's schedule square
+  that §4.5 exempts by name: `.skip`, `.season__label` and its square, `.slots__full` (×3),
+  `.btn` (×2), the two ticks, the two invalid-field borders, and the checkbox `accent-color`.
+  None is a decision mark and each was checked against its own ground.
+- Verified that **every rule that sets a `background-color` also sets `--mark`**, or is a control
+  whose ring lands on its parent's ground. **Eight surfaces declare it**: `:root`, the two
+  `--wash` hover fills, `.report__sheet`, `.plate`, `.strip`, `.skip` and `.foot`.
+- ~~Verified programmatically that no focusable element sits on a `--paper-deep` ground.~~ **This
+  check is retired as a safety argument.** It still passes, and it is still a good markup habit,
+  but the Off Season state aliases `--wash` to `--paper-deep` and can put a focusable on that
+  ground without any markup change, so nothing may depend on it. `--mark` replaces it.
+- Verified that **`--ember-lift` appears in exactly three rules** — `.lockup__word`,
+  `.season__stamp` and the switch's 6px square, all inside the navy status strip — that the
+  square's hover state now overrides itself to `--paper`, and that the footer uses the
+  knocked-out lockup rather than a wordmark that would land on the Off Season slate.
 - CSS class coverage swept both ways: **zero classes used in markup without a rule, and zero
   rules without a use.**
 - Token coverage swept both ways: **zero `var(--x)` references to an undefined token, and zero
@@ -912,10 +1159,25 @@ is cosmetic rather than informational.
 9. 🔶 **Replace the summary facsimile with a real redacted summary** the day one exists. It ships
    labelled "format only — not a client summary" because a sample built from imagination is
    forbidden. The label comes off when the summary is real.
-10. 🔶 **Install the three webfonts**, then look at the season stamp in the navy strip — §11.4
-    near-miss 4.
+10. 🔶 **Install the three webfonts**, then look at two things in Plex Mono: the **11px pool rail
+    tag inside the summary facsimile** and the **season stamp in the navy strip** — §11.4
+    near-miss 4 and 5. If either reads thin the answer is size, never colour. The pool teal may
+    not be lightened and pool text may not go below 11px; the stamp goes to 14px, not to a
+    different orange.
 11. 🔶 **Do not paste the insurance or LLC wording** until the policy is bound and the Articles
     are filed. Approved wording is held in `copy-deck.md` §9, unused.
+
+**Two items for `wpc-brand`, both flagged rather than resolved here** (§11.4):
+
+12. 🔶 **`--paper` on an `--ember-deep` fill computes to 5.4248, i.e. 5.42.** §2.1 publishes it
+    as **5.43**, twice. Nothing turns on it — the margin to 4.5 is 0.92 — but two documents should
+    not carry different numbers for the same pair.
+13. 🔶 **`.pull` is a fifth meaning on the 2px weight** — a left margin rule in `--season-ground`,
+    the same gesture as the finding rule in a different colour. Kept and enumerated rather than
+    silently changed, because §5.2's own diagnosis is that under-enumeration is what let the
+    `--mark` defect survive. And 🔶 **§6's "satisfy the worse of the fill and the gap" has no
+    solution for a solid button** and would benefit from saying that the ground for an element's
+    own ring is its parent's background.
 
 ---
 

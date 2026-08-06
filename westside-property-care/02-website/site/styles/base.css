@@ -198,22 +198,20 @@ a:active { color: var(--ink); }
    to, and a focus ring is where a keyboard user's yes or no would land. One
    meaning, one role — so both take var(--mark) and nothing else.
 
-   WHAT USED TO BE WRITTEN HERE, AND WHY IT IS GONE. This comment claimed the
+   WHAT USED TO BE WRITTEN HERE AND WHY IT IS GONE. This comment claimed the
    ring was safe because "nothing focusable sits on --paper-deep," verified
-   programmatically. That was true of the markup and it was never an
-   invariant: OFF SEASON ALIASES --wash TO --paper-deep, so a focusable inside
-   a hovered ledger row lands on that ground for four months of the year
-   without anyone editing a template. A hand-maintained markup habit is not a
-   substitute for a per-surface token. --mark holds without anyone remembering
-   the rule; the habit is still worth keeping, but nothing depends on it.
+   programmatically. True of the markup, never an invariant: OFF SEASON
+   ALIASES --wash TO --paper-deep, so a focusable in a hovered ledger row
+   lands on that ground for four months a year with no template edit. A
+   hand-kept markup habit is not a substitute for a per-surface token. Keep
+   the habit; do not let anything depend on it again.
 
-   THE GROUND FOR A RING IS THE PARENT'S BACKGROUND, NOT THE ELEMENT'S FILL.
-   outline-offset is 3px, so the ring is drawn wholly outside the border box
-   with 3px of the parent's ground showing on the inner edge — both edges of
-   the ring touch the same colour. That is why an --ember ring is legitimate
-   around a solid --ember-deep .btn (1.64:1 between them, never adjacent) and
-   why a fill that belongs to an ANCESTOR is the case that matters: there the
-   ring really does land on the fill, which is what --wash-mark answers.
+   THE GROUND FOR A RING IS THE PARENT'S BACKGROUND, NOT ITS OWN FILL. At
+   3px offset the ring is wholly outside the border box, with 3px of the
+   parent's ground on its inner edge — both edges touch one colour. That is
+   why an --ember ring is legitimate around a solid --ember-deep .btn (1.64:1
+   between them, never adjacent), and why an ANCESTOR's fill is the case that
+   bites: there the ring does land on the fill. See --wash-mark.
 
    Per-surface --mark and the full matrix: site-spec.md §11.4.
    -------------------------------------------------------------------------- */
@@ -242,14 +240,13 @@ summary:focus-visible::before {
   background-color: var(--mark);
 }
 
-/* The skip link is the clearest case of "check the ground, not the number."
-   It is a sibling of <header>, so it inherits the :root --mark — but it is
-   position: absolute at the top of the document, which means the surface it
-   actually appears on is the NAVY STATUS STRIP, every time, on every page. It
-   is also only ever visible while focused. --ember there is 3.64:1, a pass
-   nobody argued for; --paper is 12.05:1 and, at 5.42:1 against this element's
-   own --ember-deep fill, it is also the only thing making the control's
-   boundary perceivable against a navy panel it is 2.22:1 away from. */
+/* The clearest case of "check the ground, not the number." A sibling of
+   <header>, so it inherits the :root --mark — but it is position: absolute at
+   the top of the document, so the surface it renders on is the NAVY STRIP,
+   every time, on every page, and it is only ever visible while focused.
+   --ember there is 3.64:1, a pass nobody argued for. --paper is 12.05:1, and
+   at 5.42:1 against this element's own --ember-deep fill the ring is also the
+   only thing delineating a control the navy is 2.22:1 from. */
 .skip {
   --mark: var(--paper);
   position: absolute;

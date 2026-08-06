@@ -21,7 +21,8 @@
   color-scheme: light;
 
   /* --- Ground and ink — identical in both seasons ------------------------
-     Ratios recomputed by hand in site-spec.md §9.4, against a named ground. */
+     Ratios recomputed in site-spec.md §11.4 against every ground each colour
+     actually renders on, hover states and both seasons included. */
   --paper:      #F4F0E6;  /* page ground. Warm ledger stock, never white     */
   --paper-deep: #E7E1D3;  /* alternating band, insets, the facsimile ground  */
   --ink:        #141C26;  /* body, headlines, section rule  15.08:1 on paper */
@@ -44,26 +45,25 @@
                              season stamp in the navy strip. 4.88:1 on --navy ·
                              2.47:1 on --paper, hence BANNED on paper.      */
 
-  /* --- --mark: the decision colour, resolved by its GROUND ----------------
-     visual-direction.md §2.5. There are exactly two decision marks in this
-     system and they are the same thing: the 2px rule beside a finding, and
-     the focus indicator (ring + the filled square in the rail). Both take
-     var(--mark) AND NOTHING ELSE. A literal --ember in an outline, a border
-     or a decision fill is the bug this token exists to prevent — it shipped
-     twice, at 2.89:1 on --paper-deep and 2.29:1 on the off-season slate.
+  /* --- --mark: the decision colour, resolved by its GROUND (§2.5) ---------
+     Two decision marks exist and they are one thing: the 2px rule beside a
+     finding, and the focus indicator (ring + filled rail square). Both take
+     var(--mark) AND NOTHING ELSE. A literal --ember in an outline, border or
+     decision fill is the bug this token prevents — it shipped twice, at
+     2.89:1 on --paper-deep and 2.29:1 on the off-season slate.
 
-     --mark is never given a hex. Every surface that sets its own background
-     sets --mark IN THE SAME BLOCK, so the two cannot drift apart:
+     Never given a hex. Every surface that sets its own background sets
+     --mark IN THE SAME BLOCK, so the two cannot drift apart:
 
-       --paper          --ember       3.31:1   :root, below
-       --wash           --wash-mark   3.06:1   see the --wash pair
-       --paper-deep     --ember-deep  4.74:1   .report__sheet, .plate
-       --navy / slate   --paper      12.05 / 7.57:1   .strip, .foot, .skip
+       --paper         --ember       3.31   :root, below
+       --wash          --wash-mark   3.06   see the --wash pair
+       --paper-deep    --ember-deep  4.74   .report__sheet, .plate
+       --navy / slate  --paper      12.05 / 7.57   .strip, .foot, .skip
 
      The last row takes the --paper option §6 sanctions for reversed panels:
-     stronger than --ember-lift's 4.88 / 3.06 and it holds in both seasons.
-     A surface that gains a background-color and does not gain a --mark is a
-     defect, whether or not anything focusable sits on it today.             */
+     stronger than --ember-lift's 4.88 / 3.06, and one declaration for both
+     seasons. A surface that gains a background-color and not a --mark is a
+     defect, whether or not anything focusable sits on it today. */
   --mark: var(--ember);
 
   /* --- IN SEASON — March 1 through October 31 — the shipped default -----
@@ -76,12 +76,11 @@
                                  identity orange, so it cannot read as a mark
                                  or an action.  5.29:1 · 4.62:1              */
   --wash:           #E4E8EE;  /* row hover fill. A cool wash on warm stock   */
-  /* --wash is the one ground in the system that is ITSELF a variable — off
-     season it is aliased to --paper-deep — so its mark has to be a variable
-     too, declared in the same block, or the alias silently moves the ground
-     out from under a mark that was correct when it was written. That is the
-     §2.5 rule applied to a ground that moves. --ember is 3.06:1 on the cool
-     wash and 2.89:1 on --paper-deep, so the two states cannot share a hex. */
+  /* --wash is the one ground that is ITSELF a variable — off season it is
+     aliased to --paper-deep — so its mark must be a variable too, declared
+     beside it, or the alias moves the ground out from under a mark that was
+     right when it was written. §2.5 applied to a ground that moves. --ember
+     is 3.06 on the cool wash and 2.89 on --paper-deep: no shared hex. */
   --wash-mark:      var(--ember);   /* 3.06:1 on --wash */
 
   /* --- Type ---------------------------------------------------------------
@@ -234,9 +233,9 @@ body:has(#season-switch:checked) {
                                  Colder than navy — it reads as ice, not as
                                  brand.  5.71:1 on --paper                  */
   --wash:           var(--paper-deep);
-  /* The hover fill lands on --paper-deep for four months of the year without
-     anyone touching a template, and --ember is 2.89:1 there. This is the line
-     that makes "nothing focusable sits on --paper-deep" an invariant nobody
-     has to maintain by hand. */
+  /* The hover fill lands on --paper-deep for four months a year without
+     anyone touching a template, and --ember is 2.89:1 there. This line is
+     what makes "nothing focusable sits on --paper-deep" a claim nobody has
+     to keep true by hand. */
   --wash-mark:      var(--ember-deep);   /* 4.74:1 on --paper-deep */
 }
