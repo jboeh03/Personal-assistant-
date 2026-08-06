@@ -27,7 +27,7 @@ Property Care 513**.
 as "**Member**."
 
 **Effective date:** [ ] · **Service Season:** March 1 – October 31, 2026 ·
-**Assigned route day:** [ Monday / Friday ] of weeks 1 and 3 · **Route:** [ A / B ]
+**Assigned route day:** [ Monday / Friday ], twice each calendar month · **Route:** [ A / B ]
 
 ---
 
@@ -48,10 +48,7 @@ and no add-on price for either feature.
 
 ## 2. Founding Member rate
 
-[ ] **This Member is one of the first four members of Westside Property Care 513** and holds
-the Founding Member rate.
-
-If checked: **$279 is locked for this Member through October 31, 2027** — covering the
+[ ] **Founding Member.** $279 is locked for this Member through October 31, 2027 — covering the
 pro-rated remainder of the 2026 Service Season (§7, Billing) plus the entirety of the 2027
 Service Season (March 1 – October 31, 2027) — and will not increase during that span even if
 WPC513's standard pricing changes generally. The lock covers the membership price only; it
@@ -228,7 +225,7 @@ time. Arrival times may vary — see §11.
 | Term | |
 |---|---|
 | Payment method | Card on file, collected before the first visit. No exceptions. |
-| Charge date | Automatically on the 1st of each month, in advance, March through October. |
+| Charge date | Automatically on the schedule set at enrollment, in advance, March through October. |
 | Charges per season | Eight. No charge is raised in November, December, January, or February. |
 | Billing period | Calendar month; two scheduled visits fall within it. |
 | Starting after March 1 | The partial first month is billed by the visit: $279 ÷ 2 scheduled visits = **$139.50 per visit** received that month. Full monthly billing starts the next full calendar month. This is how a Member signing partway through the 2026 season, or any season, is billed. |

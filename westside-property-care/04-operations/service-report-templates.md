@@ -1,4 +1,4 @@
-# Service Report Templates
+# Service Summary Templates
 
 **Owner:** `wpc-ops` · **Status:** the single most important document in this business
 
@@ -7,18 +7,24 @@ day** as the visit — membership standard 5 (`operating-model.md` §8, rule 5).
 isn't written down didn't happen: it can't be quoted, it can't be followed up, and by the
 third visit neither party remembers it.
 
-**Every report below ends one of two ways, and never any other way:**
+**Every summary below ends one of two ways, and never any other way:**
 
 - A specific recommendation — named, located, priced, with the out ("say the word," "if
   you'd rather leave it, that's fine")
 - An explicit **"nothing needs attention right now"** plus a note of what was checked, so
   the visit still reads as an inspection and not as silence
 
-**On the header stamp.** `01-brand/voice.md` Pair 12 sets the record stamp — no glyph, no
-exclamation, no checkmark — and adds the visit count, which is the single highest-value
-addition to this format: **`VISIT 07 OF 16`** makes the season legible on every report and
-quietly does the work the old "same price in January as in July" argument used to do
-(`01-brand/messaging.md` §1).
+**On the header stamp.** `01-brand/voice.md` Pair 12 sets the record stamp as **SERVICE
+SUMMARY** — no glyph, no exclamation, no checkmark — and adds the visit count, which is the
+single highest-value addition to this format: **`VISIT 07 OF 16`** makes the season legible on
+every summary and quietly does the work the old "same price in January as in July" argument
+used to do (`01-brand/messaging.md` §1).
+
+**On the pool disclaimer.** `01-brand/voice.md` §3, item 41 requires all four nouns — water
+chemistry, water clarity, equipment performance, pool-system operation — in the **same block**
+as any description of pool work. Every template below that describes pool work carries a
+standing one-line footer above the sign-off. Skip it only on a template, like Template 4, that
+describes no work at all.
 
 **Voice rules that apply to every template below** (full checklist: `voice.md` §8):
 
@@ -34,10 +40,10 @@ quietly does the work the old "same price in January as in July" argument used t
 
 ---
 
-## The header, every report
+## The header, every summary
 
 ```
-WPC513 · SERVICE REPORT · {{address_short}} · VISIT {{visit_number}} OF 16 · [DAY, MONTH DATE]
+WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT {{visit_number}} OF 16 · [DAY, MONTH DATE]
 ```
 
 ---
@@ -47,7 +53,7 @@ WPC513 · SERVICE REPORT · {{address_short}} · VISIT {{visit_number}} OF 16 ·
 **When to use:** A normal in-season (March–October) visit. Nothing urgent, but something
 worth naming — this is the common case and the mechanism that pays for the business.
 
-> **WPC513 · SERVICE REPORT · {{address_short}} · VISIT 07 OF 16 · MONDAY, JUNE 8**
+> **WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 07 OF 16 · MONDAY, JUNE 8**
 >
 > Pool skimmed, both baskets emptied, steps brushed, vacuumed about twenty minutes. Wiped the
 > six patio chairs and the table. Emptied the grease tray on the flat-top and wiped the
@@ -60,6 +66,9 @@ worth naming — this is the common case and the mechanism that pays for the bus
 > mentioning it.
 >
 > Next visit: {{route_day}}, [date].
+>
+> On the pool I do the physical work only — no guarantee of water chemistry, water clarity,
+> equipment performance, or pool-system operation.
 >
 > {{owner}} · {{phone}} · WPC513
 
@@ -76,7 +85,7 @@ the mechanism `operating-model.md` §7.2 measures as project attach rate.
 finding that becomes a scheduled project, quoted separately, not done on the spot. Pair with
 `estimate-templates.md` for the follow-up estimate.
 
-> **WPC513 · SERVICE REPORT · {{address_short}} · VISIT 12 OF 16 · MONDAY, SEPTEMBER 14**
+> **WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 12 OF 16 · MONDAY, SEPTEMBER 14**
 >
 > Pool skimmed, both baskets emptied, backwashed since the pressure was up. Blew the patio,
 > the pool deck, and the walk. Wiped down the counters and emptied the grease tray.
@@ -89,13 +98,16 @@ finding that becomes a scheduled project, quoted separately, not done on the spo
 >
 > Next visit: {{route_day}}, [date].
 >
+> On the pool I do the physical work only — no guarantee of water chemistry, water clarity,
+> equipment performance, or pool-system operation.
+>
 > {{owner}} · {{phone}} · WPC513
 
-**Why there's no number in the report itself.** `pricing.md` §7, rule 1: never quote a flat
+**Why there's no number in the summary itself.** `pricing.md` §7, rule 1: never quote a flat
 number from memory in the driveway — walk it, measure it, send the number the same day or the
 next morning. The internal anchors in `pricing.md` §5.3 exist so he isn't starting from
 scratch once he's measured; they are not something to read aloud or narrow into a range
-before he's looked. The report names the finding and promises a flat number by a stated time;
+before he's looked. The summary names the finding and promises a flat number by a stated time;
 the estimate (see `estimate-templates.md`) is what actually carries the price.
 
 ---
@@ -106,7 +118,7 @@ the estimate (see `estimate-templates.md`) is what actually carries the price.
 When a property genuinely needs nothing, say so plainly, and say what was checked so the
 visit still reads as an inspection rather than a drive-by.
 
-> **WPC513 · SERVICE REPORT · {{address_short}} · VISIT 04 OF 16 · FRIDAY, JULY 25**
+> **WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 04 OF 16 · FRIDAY, JULY 24**
 >
 > Pool skimmed, both baskets emptied. Wiped the furniture and the outdoor kitchen counters,
 > emptied the grease tray. Blew the patio and the pool deck. Pots watered.
@@ -117,9 +129,12 @@ visit still reads as an inspection rather than a drive-by.
 >
 > Next visit: {{route_day}}, [date].
 >
+> On the pool I do the physical work only — no guarantee of water chemistry, water clarity,
+> equipment performance, or pool-system operation.
+>
 > {{owner}} · {{phone}} · WPC513
 
-**Why this still counts as a full report.** `voice.md` Pair 3 — "nothing found" is itself a
+**Why this still counts as a full summary.** `voice.md` Pair 3 — "nothing found" is itself a
 finding, as long as it names what was actually checked. A bare "everything looks great" is
 not a substitute; it's a receipt, and the whole business model runs on the difference
 (`CANON.md` §2).
@@ -129,13 +144,13 @@ not a substitute; it's a receipt, and the whole business model runs on the diffe
 ## Template 4 — Weather-rescheduled
 
 **When to use:** Sent *before* the scheduled visit, not after — as soon as it's clear the
-route day won't happen as planned. This is a schedule notice, not a service report; no work
+route day won't happen as planned. This is a schedule notice, not a service summary; no work
 has been performed yet, so there is nothing to report on the property itself.
 
-> **WPC513 · {{address_short}} · MONDAY, OCTOBER 20**
+> **WPC513 · {{address_short}} · MONDAY, OCTOBER 19**
 >
 > It's supposed to rain hard through Monday, and blowing the patio in that would just move
-> mud around. I'm moving you to Friday the 24th — same visit, same month, nothing changes on
+> mud around. I'm moving you to Friday the 23rd — same visit, same month, nothing changes on
 > the billing.
 >
 > {{owner}} · {{phone}} · WPC513
@@ -154,11 +169,11 @@ template is only the notice.
 the highest-leverage document in the business: it's the last thing a member reads before four
 months of silence, and it decides whether they come back on March 1
 (`operating-model.md` §3.2, §7.3). Never send it as a routine template with a season sign-off
-tacked on — it does three jobs a routine report doesn't: names what's being left for winter,
+tacked on — it does three jobs a routine summary doesn't: names what's being left for winter,
 states the gap plainly, and routes anything urgent to project work rather than implying it's
 covered.
 
-> **WPC513 · SERVICE REPORT · {{address_short}} · VISIT 16 OF 16 · FRIDAY, OCTOBER 30**
+> **WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 16 OF 16 · FRIDAY, OCTOBER 30**
 >
 > That's visit sixteen — the last scheduled one until March.
 >
@@ -177,11 +192,14 @@ covered.
 > before the holidays, pressure washing while the deck is empty — that's project work and I
 > do it year round. Just say so.
 >
+> On the pool I do the physical work only — no guarantee of water chemistry, water clarity,
+> equipment performance, or pool-system operation.
+>
 > {{owner}} · {{phone}} · WPC513
 
 **Why there's no "next visit" line.** Every other template ends with `Next visit:
 {{route_day}}, [date]` because the next visit is two weeks away. This one can't say that —
-the honest next date is four months out, so the report says so plainly instead of papering
+the honest next date is four months out, so the summary says so plainly instead of papering
 over it with the usual line. `voice.md` Pair 11 and `CANON.md` §4: the gap is a fact stated
 first, not a problem being managed.
 
@@ -189,7 +207,7 @@ first, not a problem being managed.
 
 ## The recommendation pattern, stated once
 
-Every "something found" moment in a report — small or large — follows the same four moves,
+Every "something found" moment in a summary — small or large — follows the same four moves,
 in order, per `voice.md` §2:
 
 1. **Name it.** The object, not the category. "The two window wells," not "some drainage
@@ -202,18 +220,18 @@ in order, per `voice.md` §2:
 
 This is the mechanism `CANON.md` §2 describes as the entire business model: the membership
 puts him on the property sixteen times a season, and every one of those visits is an
-inspection that can surface the next $49, $249, or $449 job. A report that skips this pattern
-is a receipt. A report that follows it is why the membership pays for itself and the project
-work is the actual income.
+inspection that can surface the next $49 add-on, the $249 deep clean, or a larger project
+priced after he's looked at it. A summary that skips this pattern is a receipt. A summary that
+follows it is why the membership pays for itself and the project work is the actual income.
 
 ## Related files
 
-- `visit-sop.md` — the visit each report documents
-- `property-record-template.md` — where every finding and every sent report gets logged
+- `visit-sop.md` — the visit each summary documents
+- `property-record-template.md` — where every finding and every sent summary gets logged
 - `estimate-templates.md` — the follow-up document once a recommendation turns into a quote
 - `01-brand/voice.md` §2, §4 (Pairs 1–3, 11, 12, 14) — the source patterns every template
   above is built from
 - `01-brand/messaging.md` §1 — the sixteenth-visit argument the last-visit-of-season template
   closes with
-- `00-model/operating-model.md` §7.2, §8 — why the report exists and what it's measured
+- `00-model/operating-model.md` §7.2, §8 — why the summary exists and what it's measured
   against

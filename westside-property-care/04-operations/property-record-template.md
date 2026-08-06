@@ -29,7 +29,7 @@ File naming, per `01-brand/brand-brief.md`: `WPC513 · PROPERTY [0#]`.
 | Email | |
 | Effective date | |
 | Route | [ A / B ] |
-| Route day | [ Monday / Friday ] of weeks 1 and 3 |
+| Route day | [ Monday / Friday ], twice each calendar month |
 | Membership price | **$279/month, flat** — `service-agreement.md` §1 |
 | Founding Member | [ Y / N ] — if Y, rate locked through **October 31, 2027** (pro-rated remainder of 2026 + full 2027 season) — `service-agreement.md` §2 |
 | Agreement signed | [ Y / N ] — date: |
