@@ -376,6 +376,17 @@ drift between two pages.
 WPC513 · SERVICE SUMMARY · VISIT 07 OF 16 · MONDAY, JUNE 15
 ```
 
+⚠️ **The real stamp carries an address slot, and that slot is constrained like
+the literal text around it.** The sent version reads
+`WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 07 OF 16 · MONDAY, JUNE 15`.
+This is a `.stamp`, so it is set in Plex Mono, and the shipped subset is 49
+glyphs with **no apostrophe** (`visual-direction.md` §3.1.1B). `O'BRIEN CT` and
+`ST. MARY'S LN` are ordinary west-side addresses and both break it — the
+apostrophe falls out of the font and renders in the fallback mono, changing face
+mid-word. **Strip or transliterate before the value reaches the stamp**:
+`OBRIEN CT`, `ST. MARYS LN`. This is invariant 2's blind spot, because an audit
+of the shipped files sees `{{address_short}}` and passes.
+
 > `FORMAT ONLY — NOT A CLIENT SUMMARY`
 >
 > **WHAT I DID**

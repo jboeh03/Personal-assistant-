@@ -74,6 +74,34 @@
 > not count-bounded** — signed on or before **February 28, 2027**, held through **October 31,
 > 2027**, **no cap on how many**. §15.7.
 
+> 🔁 **Amended 2026-08-06 after `wpc-brand`'s mono ruling, which is the second time an escalation
+> came back as a structural fix rather than a patch.** The audit above found three components set
+> in Plex Mono rendering in full lowercase, which no version of the subset has ever contained.
+> This build narrowed the declared `unicode-range` to the glyphs the file will actually hold,
+> blocked the font install, and escalated instead of moving them, because changing three
+> components' typeface across ten pages is a visible change and Playwright cannot launch.
+>
+> **The ruling declined the cheap fix.** Growing the subset by a lowercase alphabet costs 3–4 KB
+> and would have worked — and it was refused because **the subset is a guardrail, not a download
+> size.** The reason nobody had set a paragraph in mono is that they physically could not. Option
+> 3 would have fixed three components and left the mechanism that produced them intact.
+>
+> **`.foot__line`, `.foot__prices` and `.cta__aside` are now IBM Plex Sans** (§11.5). The third
+> one is not a two-line family swap: mono was the only thing separating the site's central claim
+> from the fine print beneath it, so that differentiation **moves from face to scale** — which is
+> where §12 quality #1 already claimed this system carries hierarchy. Face was a fourth mechanism,
+> smuggled in, and removing it makes that claim true where it had been slightly false.
+>
+> **This build could not have found the ruling's own blind spot, and it is worth naming.** The
+> record stamp contains `{{address_short}}`. `O'BRIEN CT` and `ST. MARY'S LN` are ordinary
+> west-side addresses and both carry an apostrophe the subset does not hold — **an audit of the
+> shipped files sees the token and passes.** Template slots inside a mono surface are constrained
+> exactly like the literal text around them. §10.1.
+>
+> All three invariants now verify by grep and pass. `site/fonts/README.md` is regenerated and
+> **the font install is unblocked.** No markup changed and no token changed; the whole ruling
+> landed in three CSS rules. Bytes re-measured in full, §11.2.
+
 ---
 
 ## 1. What this site is for, and what it must not become
@@ -535,6 +563,29 @@ Every placeholder in the built site, in one place. All are literal strings; find
 | `[FORM_ENDPOINT]` | The static-form service action URL | `apply.html`, `waitlist.html`, and the `form-action` directive in `_headers` |
 | `[GBP_URL]` | The Google Business Profile URL, for `sameAs` | Not yet placed — see `seo.md` §3 |
 
+`[PHONE]` was the riskiest of these while `.cta__aside` was set in mono — a US number is normally
+punctuated with a hyphen the subset did not hold, eleven times per site. The §3.1.3 move settled
+it structurally: `.cta__aside` is Plex Sans, so **every phone number on the site is now Plex Sans**
+and no placeholder above resolves into a mono surface. `[PHONE]` and `[EMAIL]` were also the only
+things putting `[` and `]` on screen inside mono, and they no longer do.
+
+### 10.1 One slot that is not on the list, and is the one to watch
+
+⚠️ **The record stamp's address slot.** The facsimile ships a literal date and visit number, but
+the *real* stamp Ryan sends is
+`WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 07 OF 16 · MONDAY, JUNE 15`. That is a
+`.stamp` — Plex Mono, 49 glyphs, **no apostrophe** (`visual-direction.md` §3.1.1B).
+
+**`O'BRIEN CT` and `ST. MARY'S LN` are ordinary west-side addresses and both break it.** The
+apostrophe falls out of the subset and renders in whatever mono the OS supplies, changing face in
+the middle of a word on a document whose whole job is looking like a record.
+
+**Template slots inside a mono surface are constrained exactly like the literal text around
+them.** Enforcement belongs where the value is produced — strip or transliterate before it reaches
+the stamp (`OBRIEN CT`, `ST. MARYS LN`) — not in a proofread. This is invariant 2's blind spot:
+an audit of the shipped files sees `{{address_short}}`, finds nothing wrong, and passes. It is
+noted here, beside the stamp in `copy-deck.md`, and in `site/fonts/README.md`.
+
 ---
 
 ## 11. Technical build
@@ -576,37 +627,52 @@ No framework, no bundler, no build step, no `npm install`, no dependency of any 
 
 ### 11.2 Measured budgets
 
-**Measured with `gzip -c <file> | wc -c` on the shipped files after the 2026-08-06 voice-audit
-pass.** Not estimated, not carried over from a previous pass, not rounded up.
+**Measured with `gzip -c <file> | wc -c` on the shipped files after the 2026-08-06 mono ruling
+(§11.5).** Not estimated, not carried over from a previous pass, not rounded up. Every figure in
+this section was re-measured after the three typeface moves landed, including the ones that did
+not change.
 
 | Asset | Raw | **Gzipped** | Budget | Result |
 |---|---|---|---|---|
 | `styles/tokens.css` | 12,895 B | **5,323 B** | — | unchanged |
 | `styles/base.css` | 12,710 B | **4,653 B** | — | unchanged |
-| `styles/components.css` | 35,483 B | **9,725 B** | — | +569 B gz |
-| **CSS total** | **61,088 B** | **19,701 B — 19.24 KB** | **< 30 KB gz** | **66% of budget** |
+| `styles/components.css` | 36,907 B | **10,293 B** | — | +563 B gz |
+| **CSS total** | **62,512 B** | **20,269 B — 19.79 KB** | **< 30 KB gz** | **66% of budget** |
 | `js/season.js` | 1,334 B | **730 B** | — | unchanged |
 | `js/forms.js` | 1,415 B | **714 B** | — | unchanged |
-| **JS total** | **2,749 B** | **1,444 B — 1.41 KB** | **< 150 KB gz** | **0.96% of budget** |
+| **JS total** | **2,749 B** | **1,444 B — 1.41 KB** | **< 150 KB gz** | **0.94% of budget** |
 
-**No JavaScript was added or changed.** The site still works completely with JS disabled;
-`season.js` only picks the toggle's opening position from the date.
+**No JavaScript was added or changed** by the mono ruling or by the pass before it. The site still
+works completely with JS disabled; `season.js` only picks the toggle's opening position from the
+date.
 
-**What changed and why.** CSS went from 19,132 to 19,701 B gz, **+569 B**, all of it in
-`components.css` and **all of it comment plus four declarations**. The code is 6,605 B gz,
-unchanged to the byte from the previous pass. What was added:
+**No HTML changed either**, which is the check that the ruling was applied as specified:
+§3.1.3 says "no markup change, no token change, no new token", and every page byte count in the
+table below is identical to the previous pass. `index.html` is 37,521 B raw / 10,595 B gz before
+and after.
 
-- `.plate__cap` gains `margin`, `max-inline-size`, `font-size` and `line-height`, because it is no
-  longer borrowing them from `.rail`. That class was the defect: `.rail` sets
-  `text-transform: uppercase`, so a figcaption holding a sentence rendered a shot list in tracked
-  caps on seven pages. Four declarations replace one class attribute.
-- The comment above it, and the comment above `.tick--done`, both of which exist to stop the next
-  editor undoing the fix as tidying. `.tick--done` is now **unused and kept deliberately**; without
-  the comment, an unused rule is something a reasonable person deletes, and then the next person
-  needing a delivered-visit state re-invents it on a public page.
+**What changed and why.** `components.css` went from 9,730 to 10,293 B gz, **+563 B**, and the
+direction of that number is worth reading carefully, because **the code got smaller and the
+comment got bigger.** Stripping `/* */` comments and gzipping the three stylesheets file-by-file
+gives **6,766 B**, down from 6,773 B — **−7 B of actual CSS**, because the three moves delete
+seven declarations and add four:
 
-One rule was **deleted**: `body:has(#season-switch:checked) .tick--done`, which was the
-off-season override for a state no public page carries any more.
+| Rule | Removed | Added |
+|---|---|---|
+| `.foot__prices` | `font-family`, `font-weight` | — |
+| `.cta__aside` | `font-family`, `font-weight` | `font-variant-numeric` |
+| `.foot__line` | `font-family`, `font-weight`, `font-variant-numeric` | `max-inline-size`, `font-weight`, and two size tokens swapped in place |
+
+All +563 B is the three comments explaining why, and they are load-bearing in the way §11.5's
+comments are: `.foot__line` in particular now looks like an arbitrary heading-sized paragraph in a
+footer, and the next editor to tidy it back down to `--type-small` would silently undo the
+hierarchy that replaced the typeface. `max-inline-size: var(--measure)` looks even more removable
+and is the one declaration that cannot go — without it the 76-character line runs the full footer
+width.
+
+The previous pass's comparable code-only figure was published as 6,605 B using a slightly
+different strip; the 6,773 → 6,766 comparison above applies **one** method to both the committed
+previous file and the current one, so the −7 B is a real delta rather than two methods differenced.
 
 The CSS total is the **sum of the three files measured separately**, because each is its own
 HTTP response and is gzipped on its own. Concatenating them first and gzipping once gives a
@@ -614,16 +680,16 @@ smaller and less honest number — nothing here is bundled, so that figure would
 that does not exist. The same applies to the two scripts, and `js/forms.js` is only requested by
 the two pages that have a form.
 
-**Against the tighter microsite row: 19.24 KB versus 15 KB, and stated rather than hidden.**
-`visual-direction.md` §12.11 asks for ≤ 15 KB CSS. This build is **4.24 KB over**. Code-only —
-every comment stripped — the three stylesheets gzip to **6.45 KB**, so the overage and 8.5 KB
-besides is *comment*: the contrast arithmetic beside each colour choice, the ground each ratio is
-computed against, and the reason each accessibility fix exists so the next person does not undo
-it as tidying. Three passes of condensing have gone through it, including one on this pass that
-merged four now-duplicated blocks. **The binding budget is `rules/web/performance.md`'s 30 KB
-landing-page row and this sits at 62% of it.** The choice is between deleting the reasoning and
-being over a stretch budget, and after a defect that was caused by one under-argued sentence, the
-reasoning wins. Minifying comments out at deploy recovers 12.79 KB gz and changes nothing else.
+**Against the tighter microsite row: 19.79 KB versus 15 KB, and stated rather than hidden.**
+`visual-direction.md` §12.11 asks for ≤ 15 KB CSS. This build is **4.79 KB over**. Code-only —
+every comment stripped — the three stylesheets gzip to **6,766 B, 6.61 KB**, so the overage and
+8.4 KB besides is *comment*: the contrast arithmetic beside each colour choice, the ground each
+ratio is computed against, and the reason each accessibility fix and each typeface exists, so the
+next person does not undo it as tidying. Three passes of condensing have gone through it.
+**The binding budget is `rules/web/performance.md`'s 30 KB landing-page row and this sits at 66%
+of it.** The choice is between deleting the reasoning and being over a stretch budget, and after
+two defects each caused by one under-argued line, the reasoning wins. Minifying comments out at
+deploy recovers **13,503 B — 13.19 KB** gz and changes nothing else.
 
 Per page:
 
@@ -649,10 +715,10 @@ grew did so for content that had to be there: the restored cap clauses on What's
 Pricing, and the dated founding terms on Home and Pricing.
 
 **The number that matters is the heaviest first load:** `index.html` (10,595 B) plus all three
-stylesheets (19,701 B) plus `season.js` (730 B) plus one favicon (804 B) = **31,830 B gzipped,
-31.1 KB**, in six requests, with no font, no photograph and no third-party anything.
+stylesheets (20,269 B) plus `season.js` (730 B) plus one favicon (804 B) = **32,398 B gzipped,
+31.64 KB**, in six requests, with no font, no photograph and no third-party anything.
 `index.html` does not load `forms.js` — it has no form. The heaviest form page, `apply.html`
-cold, is 4,432 + 19,701 + 730 + 714 + 804 = **26,381 B, 25.8 KB** in seven requests. Every
+cold, is 4,432 + 20,269 + 730 + 714 + 804 = **26,949 B, 26.32 KB** in seven requests. Every
 subsequent page is 1.7–10.6 KB, because the CSS, the JS and the icon are already cached.
 
 Reproduce any figure above with:
@@ -662,7 +728,17 @@ cd 02-website/site
 for f in styles/*.css js/*.js *.html *.svg; do
   printf "%-24s raw %7s  gz %7s\n" "$f" "$(wc -c < "$f")" "$(gzip -c "$f" | wc -c)"
 done
+
+# and the code-only CSS figure, one method applied per file and summed:
+for f in styles/*.css; do
+  perl -0pe 's{/\*.*?\*/}{}gs' "$f" | gzip -c | wc -c
+done
 ```
+
+`gzip` is level 6 by default and version-sensitive at the single-byte level; the figures above
+were taken with GNU gzip and a re-run may differ by a handful of bytes on a different build. That
+is noise against a 30 KB budget, but it is why a delta is always measured with one command across
+both files rather than against a published number.
 
 **Fonts are not counted above because none ship.** See §11.5.
 
@@ -1065,25 +1141,87 @@ things: the **11px pool rail tag inside the summary facsimile** (the tightest te
 4.62:1, and it may not be made smaller or lighter) and the **season stamp in the navy strip**. If
 the stamp reads thin, move it to 14px — near-miss 4 above, and **not** the colour.
 
-🔶 **BLOCKING, added 2026-08-06 — the mono subset is smaller than the site, and installing the
-font is what makes that visible.** `visual-direction.md` §3.1 buys the third family with a
-promise: Plex Mono ships **uppercase, digits and `. , : · $ + — / ( )` only**, under 8 KB. CSS
-font matching is per-character, so any character inside the declared `unicode-range` whose glyph
-is missing falls through to the next family **for that character alone** — a face change inside a
-word. Nothing is wrong today because no font ships. Everything below fires the moment one does.
+#### The mono install was blocked. It is not any more.
 
-Four strings were rewritten to fix it (§0.5 of `copy-deck.md`), and the declared `unicode-range`
-was narrowed from a block that claimed eleven characters the file does not contain. **What is
-left is a decision for `wpc-brand`, and it is either a change to §3.1's glyph list or a change to
-§3.1's list of surfaces mono is allowed on:**
+**The finding, 2026-08-05.** `visual-direction.md` §3.1 buys the third family with a promise:
+Plex Mono ships uppercase, digits and a short punctuation list only, under 8 KB. CSS font
+matching is per-character, so any character inside the declared `unicode-range` whose glyph is
+missing falls through to the next family **for that character alone** — a face change inside a
+word, invisible until the font installs. Three components — `.foot__line` (ten footers),
+`.foot__prices` (ten) and `.cta__aside` (eleven) — were set in mono and rendered in **full
+lowercase**, which no version of the subset has ever contained. Four strings were rewritten
+(§0.5 of `copy-deck.md`), the declared range was narrowed from a block claiming eleven characters
+the file does not hold, the install was blocked, and the rest was escalated rather than decided
+here, because moving three components' typeface on ten pages is a visible change and Playwright
+cannot launch.
 
-| Out of subset | Where | The question |
+**The ruling, 2026-08-06** (`visual-direction.md` §3.1.2). **Option 1: all three move to IBM Plex
+Sans. The permitted-surface list does not grow and the subset does not grow to hold lowercase.**
+Mono earns a third family by being the mark of a *reading*, and a sentence is not a reading;
+`Sixteen visits. Six properties. One person, and a written summary every time.` is the site's
+central **claim**, and setting a claim in the face reserved for measurements borrows the data
+face's authority for an argument. Growing the subset would have fixed three components and left
+the mechanism intact — the reason nobody had set a paragraph in mono is that they physically
+could not.
+
+**Applied in `styles/components.css`, per §3.1.3. No markup change, no token change, no new
+token:**
+
+| Rule | Change | Why that shape |
 |---|---|---|
-| **Lowercase a–z** | `.foot__line` (ten footers), `.foot__prices` (ten), `.cta__aside` (eleven) | None of the three is on §3.1's permitted list — logo wordmark, record stamps, rail labels, dates, route days, visit numbers, the price, the facsimile. Either they move to Plex Sans, or the subset grows by a full alphabet at roughly 3–4 KB, which spends the exception that paid for the third family. **Not decided here**: it is a visible typographic change and Playwright cannot launch, so it would be an unverifiable one. |
-| **En dash `–`** | Both season stamps, `SCOPE · MAR 1 – OCT 31`, `PROJECTS · TUE–THU`, `16 VISITS · MAR 1 – OCT 31` | `visual-direction.md` §3.1 lists the em dash and not the en dash — but §4.5 of the same file specifies the strip label **with an en dash**, and §2.3 writes the off-season range the same way. One of the two sentences is wrong and it is not this file's call. |
-| **Hyphen `-`** | `STARTING MID-SEASON`, and **every rendering of the phone number** once `[PHONE]` is replaced | Almost certainly an omission rather than a decision. The phone number makes it the most urgent of the three, at eleven occurrences. |
+| `.foot__prices` | Dropped `font-family` and `font-weight`. Kept the grid, `--type-small`, `tabular-nums`. | Becomes typographically identical to `.foot__note` in the neighbouring column, which is correct — they are the same kind of thing, and the mono `.foot h2` above each column is what distinguishes them. `$249+` is a price inside a sentence, not the one price figure §4.5 reserves the mono display treatment for. |
+| `.cta__aside` | Dropped `font-family` and `font-weight`. Kept `--type-small` and `--ink-muted`. **Added `tabular-nums`.** | The aside carries the phone number. `[PHONE]` rendered in mono here and nowhere else, so this disposes of the hyphen risk structurally rather than by glyph-patching: **every phone number on the site is now Plex Sans.** |
+| `.foot__line` | **Not a two-line family swap.** `--type-h3` / `--wt-strong` / `--lh-h3`, plus `max-inline-size: var(--measure)`. `tabular-nums` dropped, not carried over. | Mono was the only thing separating the site's central claim from the fine print directly beneath it, so the differentiation **moves from face to scale** — which is where §12 quality #1 already says this system carries hierarchy. Face was a fourth mechanism, smuggled in; removing it makes that claim true where it was slightly false. `max-inline-size` is **mandatory**: at `--type-h3` the 76-character line would run the full footer width, past the 68-character cap. `tabular-nums` was dead code — "Sixteen" and "Six" are words. **Not Fraunces**, which would give every page a second display element competing with its own `h2`s from inside a reversed panel; using a heading's size token does not make a `<p>` a heading. |
 
-The full write-up, with the exact `@font-face` block, is in `site/fonts/README.md`.
+**Why this was safe to apply without a browser.** All three axes run in the harmless direction.
+*Family:* all three already sat at `--type-small`, which §3.3 assigns to Plex Sans 400 — they
+were the only three places on the site where a size token was used with a face the scale table
+does not give it, so this is a **restoration**, not a new pairing. *Width:* Plex Mono is wider
+than Plex Sans at equal size, so every affected line gets **shorter**; nothing can newly overflow
+and the only components at risk — two grid cells and a flex aside — can only gain slack.
+*Neighbours:* `.foot__note` already renders the target treatment directly beside `.foot__prices`
+and beneath `.foot__line` on every page.
+
+**Contrast: nothing to recompute.** Colour and ground are untouched. `.foot__line` is `--paper`
+on `--season-ground` — **12.05:1** on navy, **7.57:1** on the off-season slate. The ratio is
+size-independent, and the size *increase* moves the line from "14px normal text needs 4.5:1" to a
+comfortable margin at 20px+.
+
+**The subset grew by two glyphs, not an alphabet:** `U+002D` (hyphen, for `MID-SEASON`, a genuine
+mono hyphen in `.defs dt`) and `U+2013` (en dash, for `MAR 1 – OCT 31` and the strip label, which
+`visual-direction.md` §2.3 and §4.5 specify with an en dash). ≈100 bytes — inside the rounding, so
+mono stays under 8 KB, the font total stays ≈70 KB, and the §3.1 exception paragraph holds
+verbatim. `site/fonts/README.md` is regenerated from §3.1.1B and the install is unblocked.
+
+#### The three invariants, verified 2026-08-06
+
+Each is checkable by reading files. None needs a browser and none needs the font binaries — which
+is the point, because neither is available here.
+
+| # | Invariant | Method | Result |
+|---|---|---|---|
+| **1** | Every rule setting `font-family: var(--font-mono)` also sets `text-transform: uppercase` | Comment-stripped parse of every declaration block in `tokens.css`, `base.css`, `components.css` | **PASS — 10 of 10.** `.stamp, .rail`, `.figure`, `.skip`, `.lockup__type`, `.season__label`, `.s16__months`, `.report__h`, `.form legend`, `.foot h2`, `.defs dt`. Zero mono rules without it. |
+| **2** | No mono string contains an out-of-set character **as rendered** | Extracted the text of all **220** elements carrying a §3.1.1A class across all ten pages, uppercased, diffed the character set against the 49 | **PASS — no offenders.** Includes the `[`/`]` case: `[PHONE]` and `[EMAIL]` lived only in `.cta__aside`, which is no longer mono. |
+| **3** | The declared `unicode-range` **equals** the shipped glyph set rather than exceeding it | Expanded the range to a codepoint list and compared it to the §3.1.1B table | **PASS — 49 == 49, set-equal.** `U+0020, U+0024, U+0028-0029, U+002B-003A, U+0041-005A, U+00B7, U+2013-2014`. |
+| — | The list itself: classes setting `--font-mono` diffed against §3.1.1A | Same parse as invariant 1 | **PASS.** Eleven classes across ten rules, covering all eight §3.1.1A rows exactly. No component holds mono without a row. |
+
+Invariant 1 is the load-bearing one: it converts "does the subset cover the content?" — a
+question needing every string on ten pages — into one grep. Content changes weekly; the rule list
+does not. Invariant 3's asymmetry is deliberate and only ever resolves one way: an unused glyph
+costs bytes, an over-claimed range costs a face change mid-word, so **when the two differ, shrink
+the range.**
+
+**One documentation note for `wpc-brand`, not a defect.** The §3.1.1B *table* has no explicit
+hyphen row — it reaches 48 rows, and the hyphen arrives only via the prose under the table
+("`U+002B-003A` … holds `+ , - . /`") and via the stated count of 49. Both the `--unicodes`
+command and the `unicode-range` include it and expand to exactly 49, so the spec is internally
+consistent and this file regenerated from the command as instructed. But anyone regenerating from
+the *table* alone would produce 48 glyphs and drop `U+002D` — which is one of the two the ruling
+exists to add. A `| Hyphen | `-` | U+002D |` row would close it; `site/fonts/README.md` already
+ships one.
+
+The full write-up, with the exact `@font-face` block and the subsetting command, is in
+`site/fonts/README.md`.
 
 ### 11.6 Security
 
@@ -1173,9 +1311,17 @@ is cosmetic rather than informational.
   directory root returned 200**, including the three favicons, `js/forms.js`, `robots.txt` and
   `sitemap.xml`.
 - Gzipped byte counts re-measured with `gzip -c <file> | wc -c` on the shipped files after the
-  2026-08-06 voice-audit pass and recorded in §11.2 — **every one of the eighteen assets, not a
-  carried-forward figure.** CSS 19,701 B gz against a 30 KB budget; JS 1,444 B gz against 150 KB
-  and unchanged, since no script was touched.
+  2026-08-06 mono ruling and recorded in §11.2 — **every one of the eighteen assets, not a
+  carried-forward figure.** CSS **20,269 B gz** against a 30 KB budget (66%); JS **1,444 B gz**
+  against 150 KB and unchanged, since no script was touched. Code-only CSS is **6,766 B**, which
+  is **7 B smaller** than before the ruling: the three typeface moves delete seven declarations
+  and add four, so the whole +563 B is the comment explaining why `.foot__line` is
+  heading-sized in a footer and why its `max-inline-size` may not be removed.
+- 🔁 **The mono contract's three invariants all pass** (§11.5): 10 of 10 mono rules carry
+  `text-transform: uppercase`; 220 mono-surface elements across ten pages contain no character
+  outside the 49-glyph subset as rendered; and the declared `unicode-range` is **set-equal** to
+  that subset rather than exceeding it. `site/fonts/README.md` is regenerated from
+  `visual-direction.md` §3.1.1B and **the mono install is no longer blocked.**
 - **Contrast recomputed from scratch as a full matrix** — every token against `--paper`,
   `--paper-deep`, `--wash` and `--season-ground`, in both seasonal states, from the sRGB
   relative-luminance formula, at four decimal places. §11.4. **Every published ratio in
@@ -1194,16 +1340,18 @@ is cosmetic rather than informational.
   a checkable claim rather than a hopeful one.
 
 - **Mono subset conformance swept programmatically**, which is what turned one flagged apostrophe
-  into a complete answer. Every string that renders in Plex Mono — `.rail`, `.stamp`, `.figure`,
-  `.s16__months`, the lockup, `.report__h`, `.cta__aside`, `.foot__line`, `.foot__prices`,
-  `.defs dt`, `.form legend`, `.foot h2` — was extracted with a real HTML parser, uppercased where
+  into a complete answer. Every string that renders in Plex Mono was extracted, uppercased where
   the stylesheet uppercases it, and diffed against the shipped glyph set. **Every apostrophe and
-  question mark is gone.** What remains is enumerated, and every item is flagged in
-  `site/fonts/README.md` rather than silently accepted: lowercase on three surfaces `visual-
-  direction.md` §3.1 does not license for mono, the en dash, the hyphen, and the `[PLACEHOLDER]`
-  brackets. The declared `unicode-range` was also **narrowed to the actual glyph set** — it had
-  been claiming eleven characters the file does not contain, which is the mechanism by which an
-  apostrophe rendered in Consolas inside a Plex Mono word.
+  question mark is gone**, four labels having been rewritten rather than the subset grown. The
+  declared `unicode-range` was **narrowed to the actual glyph set** — it had been claiming eleven
+  characters the file does not contain, which is the mechanism by which an apostrophe rendered in
+  Consolas inside a Plex Mono word. What the sweep could not settle — three lowercase surfaces
+  `visual-direction.md` §3.1 does not license for mono — was escalated rather than patched, and
+  🔁 **ruled on 2026-08-06: `.foot__line`, `.foot__prices` and `.cta__aside` are now Plex Sans**
+  (§11.5). The en dash and the hyphen joined the subset, the `[PLACEHOLDER]` brackets left mono
+  with `.cta__aside`, and **all three invariants now pass** — 10/10 mono rules carry
+  `text-transform: uppercase`, 220 mono elements hold no out-of-set character, and the declared
+  range is set-equal to the 49 shipped glyphs. The install is unblocked.
 - **Ground-based re-sweep, per §12.2.** For every coloured element, every surface it renders on
   was enumerated — including hover states, `:user-invalid`, and both seasons — and the worst one
   satisfied. Four defects fixed and one divergence flagged; all five are written up in §11.4.
@@ -1305,11 +1453,19 @@ is cosmetic rather than informational.
 9. 🔶 **Replace the summary facsimile with a real redacted summary** the day one exists. It ships
    labelled "format only — not a client summary" because a sample built from imagination is
    forbidden. The label comes off when the summary is real.
-10. 🔶 **Install the three webfonts**, then look at two things in Plex Mono: the **11px pool rail
-    tag inside the summary facsimile** and the **season stamp in the navy strip** — §11.4
-    near-miss 4 and 5. If either reads thin the answer is size, never colour. The pool teal may
-    not be lightened and pool text may not go below 11px; the stamp goes to 14px, not to a
-    different orange.
+10. 🔶 **Install the three webfonts.** This was blocked until 2026-08-06 and is not any more —
+    `site/fonts/README.md` carries the subsetting command, the exact `@font-face` block, and the
+    49-glyph contract. Subset the mono with the published `--unicodes` line rather than retyping
+    it from the glyph table. Then look at two things in Plex Mono: the **11px pool rail tag inside
+    the summary facsimile** and the **season stamp in the navy strip** — §11.4 near-miss 4 and 5.
+    If either reads thin the answer is size, never colour. The pool teal may not be lightened and
+    pool text may not go below 11px; the stamp goes to 14px, not to a different orange. And look
+    at the footer once: `.foot__line` is now the only heading-sized paragraph on the site and it
+    is deliberate (§11.5).
+10a. 🔶 **Tell whoever produces the real service summaries about the address slot.** The record
+    stamp is Plex Mono and the subset has no apostrophe, so `O'BRIEN CT` and `ST. MARY'S LN` — both
+    ordinary west-side addresses — break it mid-word. Strip or transliterate at the point the value
+    is produced: `OBRIEN CT`, `ST. MARYS LN`. §10.1.
 11. 🔶 **Do not paste the insurance or LLC wording** until the policy is bound and the Articles
     are filed. Approved wording is held in `copy-deck.md` §9, unused.
 

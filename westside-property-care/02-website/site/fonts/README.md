@@ -17,35 +17,56 @@ in `styles/tokens.css` were chosen for width and colour rather than
 availability, so a Fraunces failure lands on Iowan Old Style or Palatino — both
 sturdy old-style faces — and never on Times.
 
+> **This file is generated from `visual-direction.md` §3.1.1, never the other way
+> round.** Where the two disagree, §3.1.1 is right and this file is the defect.
+> Regenerated 2026-08-06 from §3.1.1B after the mono ruling (§3.1.2).
+
+---
+
+## The install is no longer blocked
+
+**It was, until 2026-08-06.** Three components — `.foot__line`, `.foot__prices`
+and `.cta__aside` — were set in mono and rendered in full lowercase, which no
+subset in this file has ever contained. `wpc-brand` ruled (`visual-direction.md`
+§3.1.2): **all three move to IBM Plex Sans. The permitted-surface list does not
+grow and the subset does not grow to hold lowercase.** Mono earns a third family
+by being the mark of a *reading*, and a sentence is not a reading.
+
+Those three moves are applied in `styles/components.css`. The subset grew by two
+glyphs — the **hyphen** and the **en dash**, roughly 100 bytes — which is inside
+the rounding on the 8 KB line below. Nothing here is waiting on a decision.
+
 ---
 
 ## Installing them
 
-**Read §"The mono subset is smaller than the site" below before step 1.** Two of
-the three faces install without thought. The mono does not, and the day it lands
-is the day a latent defect fires.
-
 1. Download from Google Fonts or the upstream repositories:
    - Fraunces — variable, `wght` 500–700, Latin subset, `opsz` axis retained
    - IBM Plex Sans — 400 and 600, Latin subset
-   - IBM Plex Mono — 500 only, subset to **uppercase, digits, and
-     `. , : · $ + — / ( )`**
-2. Convert to WOFF2 and drop the files in this directory.
-3. Add one line to the `<head>` of every page, **after** the three existing
+   - IBM Plex Mono — 500 only, subset with exactly the command below
+2. Subset the mono. This line is copied from `visual-direction.md` §3.1.1B and
+   must not be retyped from a reading of the glyph table:
+
+   ```
+   --unicodes=U+0020,U+0024,U+0028-0029,U+002B-003A,U+0041-005A,U+00B7,U+2013-2014
+   ```
+
+3. Convert to WOFF2 and drop the files in this directory.
+4. Add one line to the `<head>` of every page, **after** the three existing
    stylesheet links so the tokens are already defined:
 
    ```html
    <link rel="stylesheet" href="styles/fonts.css">
    ```
 
-4. Add one preload, on `index.html` only, and only for Plex Sans 400 — it is the
+5. Add one preload, on `index.html` only, and only for Plex Sans 400 — it is the
    single face needed for first paint:
 
    ```html
    <link rel="preload" href="fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
    ```
 
-5. Create `styles/fonts.css` with exactly this:
+6. Create `styles/fonts.css` with exactly this:
 
    ```css
    @font-face {
@@ -75,11 +96,11 @@ is the day a latent defect fires.
      font-weight: 500;
      font-style: normal;
      font-display: swap;
-     /* EXACTLY the shipped glyph set, and nothing wider. See the section below:
-        the previous range claimed U+0020-0029 and U+002B-002F, which is eleven
-        characters this file does not contain — including the apostrophe. */
-     unicode-range: U+0020, U+0024, U+0028-0029, U+002B-002C, U+002E-003A,
-                    U+0041-005A, U+00B7, U+2014;
+     /* EXACTLY the shipped glyph set, and nothing wider — this range and the
+        --unicodes line above expand to the same 49 codepoints. See invariant 3
+        below for why the asymmetry only ever runs one way. */
+     unicode-range: U+0020, U+0024, U+0028-0029, U+002B-003A,
+                    U+0041-005A, U+00B7, U+2013-2014;
    }
    ```
 
@@ -89,56 +110,130 @@ three families at the head of each stack, and `--display-axes` already pins
 
 ---
 
-## The mono subset is smaller than the site — resolve this before installing
+## The mono contract
 
-`visual-direction.md` §3.1 buys the third family with a promise: Plex Mono ships
-**uppercase, digits, and `. , : · $ + — / ( )` only**, one weight, under 8 KB.
-That promise is what makes a documented exception to the two-family rule in
-`performance.md` affordable, and it should be kept.
+Three things have to agree: **which surfaces are set in mono**, **which
+characters those surfaces render**, and **which glyphs the font file contains**.
+When any two drift apart the failure is silent — the page renders, the font
+loads, and one word changes face somewhere in a footer.
 
-**But the site sets more than that in mono today.** CSS font matching is
-per-character: if a character is inside the declared `unicode-range` and the
-glyph is missing from the file, the browser falls through to the next family in
-the stack **for that character only**. The result is a face change inside a
-word. Nothing is wrong today because no font ships; everything below fires the
-moment one does.
+### A. The surfaces
 
-**What was over-claimed.** The `unicode-range` above used to read
-`U+0020-0029, U+002B-002F, …`. That block claims `! " # % & '` and `-`, none of
-which are in the subset — so an apostrophe in a mono string was claimed by Plex
-Mono and rendered by Consolas. The range is now written to match the shipped
-glyph set exactly, so anything outside it falls back predictably instead of
-silently.
+Mono is permitted on these and nothing else (`visual-direction.md` §3.1.1A).
+Adding a row is a change to that file, not a decision available here.
 
-**Three defects were fixed by rewriting the copy**, because a mono label is a
-stamp and a stamp does not need an apostrophe:
+| # | Surface | Shipped as |
+|---|---|---|
+| 1 | The logo wordmark and the small-caps name inside the lockup | `.lockup__type` |
+| 2 | Record stamps — the summary header, the season stamps, `MEMBERSHIP FULL` | `.stamp` |
+| 3 | Marginal rail labels | `.rail` |
+| 4 | Dates, route days, month abbreviations under the season strip | `.rail`, `.s16__months` |
+| 5 | Visit numbers, the open-slot count, the price figure | `.figure` |
+| 6 | The facsimile's stamps, rail labels and figures — **not its prose** | `.report__h`, `.stamp`, `.rail` |
+| 7 | Field-set legends, definition terms, footer column headings | `.form legend`, `.defs dt`, `.foot h2` |
+| 8 | The season toggle and the skip link — stamps that happen to be controls | `.season__label`, `.skip` |
+
+**Anything not on this list is Plex Sans.**
+
+### B. The glyphs — 49, and the declared range matches exactly
+
+| Group | Characters | Codepoints |
+|---|---|---|
+| Uppercase Latin | `A`–`Z` | `U+0041-005A` |
+| Digits | `0`–`9` | `U+0030-0039` |
+| Space | ` ` | `U+0020` |
+| Money and arithmetic | `$` `+` | `U+0024`, `U+002B` |
+| Sentence punctuation | `.` `,` `:` | `U+002E`, `U+002C`, `U+003A` |
+| Hyphen | `-` | `U+002D` |
+| Parentheses | `(` `)` | `U+0028-0029` |
+| Solidus | `/` | `U+002F` |
+| Separator | `·` | `U+00B7` |
+| Range | `–` | `U+2013` |
+| Aside | `—` | `U+2014` |
+
+**No lowercase.** No apostrophe, no quotation marks, no `?`, `!`, `%`, `&`, `#`,
+`[`, `]`, `*`, `;`, `<`, `>`, `=`, `@`, and no accented characters.
+
+`U+002B-003A` is contiguous and holds `+ , - . /`, the ten digits and `:` —
+every character in it is wanted, so the range is compact **and** exact.
+
+### Which dash means what — a rule, not a preference
+
+- **`–` en dash is a range**, and only a range: `MAR 1 – OCT 31`,
+  `NOV 1 – END OF FEB`, `TUE–THU`, `BLOCK 1–8`. Spaced when either side contains
+  a space; closed up when both sides are single tokens.
+- **`-` hyphen joins a compound**: `MID-SEASON`. It is never a range and never a
+  dash in prose. It no longer punctuates a phone number in mono — see below.
+- **`·` middot separates the fields of one stamp**:
+  `WPC513 · SERVICE SUMMARY · VISIT 07 OF 16`. The default separator; reach for
+  it before either dash.
+- **`—` em dash is an aside inside a label**, and it survives in the subset for
+  exactly one shipped string — `FORMAT ONLY — NOT A CLIENT SUMMARY`, the caption
+  that keeps the facsimile honest. If that string is ever rewritten, the em dash
+  leaves the subset with it.
+
+### C. The three invariants
+
+Each is checkable by reading files. None needs a browser and none needs the font
+binaries — which is the point, because neither is available here. Run all three
+whenever a mono string changes, whenever a component gains `--font-mono`, and
+**before the binaries are installed**.
+
+1. **Every mono surface renders uppercase.** Every rule setting
+   `font-family: var(--font-mono)` also sets `text-transform: uppercase`. This is
+   the load-bearing one: it converts "does the subset cover the content?" — a
+   question needing every string on ten pages — into one grep. A mono rule
+   without `text-transform: uppercase` is a defect on sight.
+2. **No mono string contains an out-of-set character, as rendered** — after
+   `text-transform`, not as authored. Copy needing an apostrophe, a question mark
+   or an ampersand is prose, and prose does not go in mono. **Rewriting the label
+   is the fix, not growing the subset.** Four were already rewritten this way and
+   all four read better for it.
+3. **The declared `unicode-range` never exceeds the shipped glyph set.**
+   Asymmetric on purpose: a file holding an unused glyph costs bytes, which is a
+   budget problem. A range claiming a character the file lacks costs **a face
+   change inside a word**, which is a correctness problem, and it is invisible
+   until the font installs. When the two differ, **shrink the range** — never
+   widen it on the assumption the glyph is probably in there.
+
+### The blind spot an audit of shipped files cannot see
+
+**Template slots inside a mono surface are constrained exactly like the literal
+text around them.** The record stamp is
+
+```
+WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 07 OF 16 · MONDAY, JUNE 15
+```
+
+`O'BRIEN CT` and `ST. MARY'S LN` are ordinary west-side addresses and **both
+carry an apostrophe this subset does not hold.** An audit of the shipped files
+sees `{{address_short}}`, finds nothing wrong, and passes.
+
+Enforcement belongs where the value is produced, not in a proofread: **strip or
+transliterate the apostrophe before the value reaches the stamp** — `OBRIEN CT`,
+`ST. MARYS LN`. Whoever supplies real addresses needs to know this, so it is
+written here, in `site-spec.md` §10, and beside the stamp in `copy-deck.md`.
+
+### Labels rewritten rather than glyph-patched
 
 | Was | Now | Where |
 |---|---|---|
 | `IF IT DOESN'T FIT` | `ROUTE FIT` | `apply.html`, rail |
 | `WHAT I'M LIKE` | `TRUST` | `about.html`, rail |
 | `WHEN IT'S CHARGED` | `WHEN THE CARD IS CHARGED` | `pricing.html`, `.defs dt` |
+| `WHAT DOES THE PROPERTY HAVE?` | `WHAT THE PROPERTY HAS` | `apply.html`, `<legend>` |
 
-A fourth, `WHAT DOES THE PROPERTY HAVE?`, lost its question mark and became
-`WHAT THE PROPERTY HAS` — the glyph is out of subset, and a rhetorical-looking
-question rendered in caps was the wrong register for a fieldset legend anyway.
+A rhetorical-looking question rendered in caps was the wrong register for a
+fieldset legend anyway.
 
-### What is still outside the subset, and is flagged rather than fixed
+### What is no longer outstanding
 
-Each of these is a decision for `wpc-brand`, because the fix is either a change
-to §3.1's glyph list or a change to §3.1's list of surfaces mono is allowed on.
-**Do not install the mono until one of the two is chosen.**
-
-| Out-of-subset | Where it renders | Why it is not fixed here |
-|---|---|---|
-| **Lowercase a–z** | `.foot__line` (all ten footers), `.foot__prices` (all ten), `.cta__aside` (eleven) | These three are set in mono and are **not on §3.1's permitted list**, which is: the logo wordmark, record stamps, rail labels, dates, route days, visit numbers, the price, and the summary facsimile. Either they move to Plex Sans — a visible typographic change that cannot be checked here, since Playwright will not launch — or the subset grows by a full lowercase alphabet. The second costs roughly 3–4 KB and breaks the promise that paid for the third family. |
-| **En dash `–` (U+2013)** | Both season stamps, `SCOPE · MAR 1 – OCT 31`, `PROJECTS · TUE–THU`, `16 VISITS · MAR 1 – OCT 31` | §3.1 lists the em dash and not the en dash, but §4.5 of the same file specifies the strip label `16 VISITS · MAR 1 – OCT 31` **with an en dash**, and §2.3 writes the off-season range the same way. The file requires a glyph its own subset omits. One of the two sentences is wrong and it is not this file's call. |
-| **Hyphen `-` (U+002D)** | `STARTING MID-SEASON` (`pricing.html`, `.defs dt`) — and **every rendering of `[PHONE]`** the day a real number replaces the placeholder, since `.cta__aside` is mono and a US number is usually punctuated with one | Almost certainly an oversight in the glyph list rather than a decision. Flagged rather than dodged: mangling a clear label to route around a subsetting omission is the wrong trade for one glyph that degrades to a near-identical fallback. The phone number makes it the more urgent of the two, because it appears eleven times. |
-| **`[` `]`** | `[PHONE]`, `[EMAIL]` | Placeholders. They disappear at launch (`site-spec.md` §10) and need no glyph. Listed only so the audit script's output is fully accounted for. |
-
-Until this is resolved, the fallback chain does its job: `ui-monospace` on Apple,
-`Cascadia Mono` / `Consolas` on Windows, `Roboto Mono` on Android. The page is
-correct; it is the *consistency* of one line that is at risk, not its legibility.
+| Was flagged | Resolution |
+|---|---|
+| **Lowercase a–z** in `.foot__line`, `.foot__prices`, `.cta__aside` | Ruled 2026-08-06: all three move to **Plex Sans** (§3.1.2, §3.1.3). Applied in `components.css`. |
+| **En dash `–` (U+2013)** — both season stamps, `SCOPE · MAR 1 – OCT 31`, `16 VISITS · MAR 1 – OCT 31` | Added to the subset. The glyph list was the bug; the strings were right. |
+| **Hyphen `-` (U+002D)** — `MID-SEASON`, and every rendering of `[PHONE]` | Added to the subset for `MID-SEASON`, which is a genuine mono hyphen. The phone number is no longer a mono string at all: `[PHONE]` rendered in mono only in `.cta__aside`, so the eleven-per-site risk is gone rather than glyph-patched. |
+| **`[` `]`** — `[PHONE]`, `[EMAIL]` | Placeholders; they disappear at launch (`site-spec.md` §10) and both lived in `.cta__aside`, which is now Plex Sans. No glyph needed. |
 
 ---
 
@@ -148,16 +243,23 @@ correct; it is the *consistency* of one line that is at risk, not its legibility
 |---|---|
 | Fraunces variable, Latin subset, wght 500–700 | 28 KB |
 | IBM Plex Sans 400 + 600 | 34 KB |
-| IBM Plex Mono 500, subset | 8 KB |
+| IBM Plex Mono 500, 49-glyph subset | 8 KB |
 | **Total** | **≈ 70 KB** |
 
-Inside the microsite allowance in `.claude/rules/web/performance.md`.
+Inside the microsite allowance in `.claude/rules/web/performance.md`, and
+unchanged by the ruling — two glyphs is inside the rounding.
 
-## Two rules that do not bend
+## Three rules that do not bend
 
 - **`SOFT 0` and `WONK 0` everywhere on screen.** Fraunces is capable of being
   twee and must be prevented from it. `WONK 1` is permitted on exactly one
   element in the whole system — the wordmark on the truck door and the yard sign
   — and nowhere on the website.
+- **Mono sets labels and readings, never sentences.** The test: could this string
+  appear in the margin of a form, on a stamp, or in a meter reading? If it has a
+  subject and a verb and is making an argument, it is Plex Sans no matter how
+  ledger-ish it feels.
 - **Do not add a fourth family.** The mono is already a documented exception to
-  the two-family rule in `performance.md`, and it is paid for by subsetting.
+  the two-family rule in `performance.md`, and it is paid for by subsetting. The
+  subset is a guardrail, not just a download size: the reason nobody sets a
+  paragraph in mono is that they physically cannot.
