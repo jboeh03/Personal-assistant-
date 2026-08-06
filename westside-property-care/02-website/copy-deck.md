@@ -23,7 +23,7 @@ them.
 
 **Two enrolment states and two seasonal states are written.** §§1–7 are the **open-enrolment**
 state. §8 is **MEMBERSHIP FULL**, written as a complete page rather than a banner bolted onto
-the open one. The **OFF SEASON** copy is marked ⛄ wherever it appears and is reachable in every
+the open one. The **OFF SEASON** copy is marked `[OFF SEASON]` wherever it appears and is reachable
 state by the season toggle in the status strip.
 
 ---
@@ -52,7 +52,7 @@ first reference on every page and bare "WPC" never reaches an accessibility tree
 
 ```
 IN SEASON · MAR 1 – OCT 31
-OFF SEASON · NOV 1 – FEB 28
+OFF SEASON · NOV 1 – END OF FEB
 ```
 
 **Season toggle label.** One shows at a time, rendered uppercase by the stylesheet:
@@ -187,11 +187,19 @@ Sixteen ticks, two per month, March through October, with the months beneath.
 
 **Caption, in season:**
 
-> Two a month, March through October. Ten of the 2026 season's sixteen visit dates are already
-> past — the season's underway, so I'll pro-rate what's left of it and lock your rate for all of
-> next year.
+> Two a month, March through October. The filled square is where the 2026 season sits now. The
+> season's underway, so I'll pro-rate what's left of it and lock your rate for all of next year.
 
-⛄ **Caption, off season:**
+**The sixteen ticks are the shape of the season, not a delivery record.** All sixteen ship as
+`--rule`; exactly one, the current calendar position, is the `--ember` square. `--ink` ticks mean
+*visits already delivered* (`visual-direction.md` §4.5) and ten of them shipped on four public
+pages while the book had nobody in it — the caption said "visit dates," which was honest, and the
+drawing said "ten visits done," which was not. `tick--done` is reserved for a member's own record.
+
+**On the MEMBERSHIP FULL page the caption stops after the first two sentences.** Pro-ration and a
+rate lock are terms on a slot, and in that state there is no slot. See §8.1a.
+
+`[OFF SEASON]` **Caption, off season:**
 
 > **NEXT SEASON OPENS MARCH 1**
 >
@@ -200,7 +208,9 @@ Sixteen ticks, two per month, March through October, with the months beneath.
 
 **What this copy must never become:** "only six visits left," "last chance before the season
 ends," "sign before March or wait a year." The season ending is a fact; it is not a deadline he
-gets to use (`voice.md` §6.5).
+gets to use (`voice.md` §6.5). **The count of dates already past was cut for the same reason** —
+"ten of the sixteen are already gone" is §6.5's season-closing row with the arithmetic done for
+the reader, and the pro-ration sentence never needed it.
 
 ### 1.3 The argument — the sixteenth visit
 
@@ -231,7 +241,7 @@ gets to use (`voice.md` §6.5).
 > biggest difference that day — which is not the same list every time, and a visit in early March
 > with the cover just off looks nothing like one in late August.
 >
-> Read the eight parts below as what the work is, not as a checklist that gets completed.
+> Read the eight parts below as what the work is.
 > Completion of every possible task during every visit is not guaranteed, and a checklist is
 > something I'd fail the first week it rains.
 
@@ -339,7 +349,7 @@ WPC513 · SERVICE SUMMARY · VISIT 07 OF 16 · MONDAY, JUNE 15
 
 **Caption:**
 
-> This is the shape a summary takes, not one from a client's property. There aren't any yet. When
+> This is the shape a summary takes. There aren't any yet. When
 > there is one, a real summary goes here with the address taken off.
 
 > **`VISIT 07 OF 16` is the highest-value string in the facsimile.** It makes the season legible,
@@ -483,9 +493,9 @@ Unused service time does not roll over
 > Green Township, Oak Hills, upper Delhi, and Covedale.
 >
 > The route is built around two clusters, and every property has to be close to another one I
-> already take care of. That isn't a preference. Six properties is twelve visits a month across
-> four route days, and a house twenty-five minutes out of position costs me the same drive twice
-> a month for as long as they're a member.
+> already take care of. Six properties is twelve visits a month, and routine visits only happen
+> Monday and Friday. Past six I'd be rushing somebody — and a house twenty-five minutes out of
+> position costs me the same drive twice a month for as long as they're a member.
 >
 > So location decides more than anything else does. If your street doesn't fit yet, I'll tell you
 > that straight and put you on the waitlist, and I'll still do project work for you in the
@@ -521,7 +531,8 @@ Unused service time does not roll over
 > exclusions.
 >
 > Sixteen visits a season, March 1 through October 31. Two a month, up to two hours of on-site
-> service each.
+> service each, highest-priority maintenance items first. Completion of every possible task during
+> every visit is not guaranteed, and unused service time does not roll over.
 
 Followed by the season strip (§1.2).
 
@@ -557,8 +568,8 @@ Followed by the season strip (§1.2).
 
 > ## The eight parts of a visit
 >
-> This is the shape of the two hours, as applicable to your property. A property with no pool and
-> no outdoor kitchen skips two of them, and that is a shorter visit rather than a cheaper one.
+> This is the shape of the two hours. A property with no pool and no outdoor kitchen skips two of
+> them. The price is the same either way.
 
 Then the eight blocks, **identical to §1.4**.
 
@@ -680,8 +691,8 @@ Identical to §1.6.
 > containers hold; tree or large-limb removal; and repair of structural or property damage.
 >
 > This isn't an emergency service and there are no guaranteed response times. Tuesday through
-> Thursday is held open partly for exactly this, so urgent things usually do get handled. That's a
-> real benefit and it isn't a promise.
+> Thursday is held open partly for exactly this, so urgent things usually do get handled. I don't
+> promise same-day.
 
 **November through February**
 > The membership runs March 1 through October 31 only. During November, December, January, and
@@ -803,6 +814,8 @@ The single figure, identical to §1.8, then:
 
 ### 3.5 "That's more than a handyman"
 
+**Rail:** `The arithmetic`
+
 > ## "That's more than a handyman"
 >
 > You're right about the arithmetic, and I'd rather answer it than dodge it.
@@ -816,7 +829,9 @@ The single figure, identical to §1.8, then:
 > with a pool and an outdoor kitchen would take three hours to do everything, and a plain patio
 > would take one, and I'd rather cap the time than charge you differently for owning a pool. So I
 > spend those two hours on whatever makes the biggest difference that day, highest priority first,
-> and I tell you what I didn't get to.
+> and I tell you what I didn't get to. Completion of every possible task every visit isn't
+> guaranteed — that's in the agreement in those words, because I'd rather you read it than find
+> out.
 >
 > If what you want is hours, I'd honestly rather sell you a project. Those are flat-priced and you
 > know exactly what you're getting for the money. The membership is a different thing. It's sixteen
@@ -828,6 +843,15 @@ The single figure, identical to §1.8, then:
 > §3's hours-arithmetic rule permits conceding a reader's sum once and bans producing your own.
 > `$69.75` and `$139.50` do not appear anywhere on the site.
 
+> **Two things were wrong on this section and both were outside the prose.** The rail label read
+> `PER HOUR`, so the rendered marginalia named the unit and presented $279 as a rate before a word
+> of the rebuttal was read — a scanner reads the rail first, and the label is the one string on the
+> section that was doing the opposite of the section's job. And the closing clause of
+> `messaging.md` §5.3 had been cut: *"Completion of every possible task every visit isn't guaranteed
+> — that's in the agreement in those words, because I'd rather you read it than find out."* That is
+> the sentence that does the most work in this specific rebuttal, because it is the one place the
+> cap stops being a marketing frame and becomes a document the reader can check. Both restored.
+
 ### 3.6 Billing
 
 > ## How the money works
@@ -835,8 +859,8 @@ The single figure, identical to §1.8, then:
 | | |
 |---|---|
 | **PAYMENT** | Card on file, collected before the first visit. There's no exception to that one, and it isn't about you — a six-client business can't spend part of its month chasing an invoice. |
-| **WHEN IT'S CHARGED** | Monthly, in advance, on the schedule we set at enrollment. Eight charges a season, March through October. |
-| **NOVEMBER THROUGH FEBRUARY** | No charge and no scheduled visits. The card stays on file and isn't charged. We'll confirm the next season in writing in February, before the first March route day. |
+| **WHEN THE CARD IS CHARGED** | Monthly, in advance, on the schedule we set at enrollment. Eight charges a season, March through October. |
+| **NOVEMBER THROUGH FEBRUARY** | No charge and no scheduled visits. The card stays on file and isn't charged. I'll confirm the next season in writing in February, before the first March route day. |
 | **STARTING MID-SEASON** | The season's already underway, so what's left of it is pro-rated — you pay for the visits you actually get, and I'll show you the number before you sign anything. |
 | **IF A CARD FAILS** | Service runs through the current month. I need a working card before your next route day, and I'll tell you the date rather than the word "immediately." Past-due accounts may have scheduled service suspended until they're current. |
 | **CANCELLING** | Thirty days' written notice, either of us. Amounts already earned for completed service periods remain due. There's no term and no cancellation fee. |
@@ -850,13 +874,12 @@ The single figure, identical to §1.8, then:
 > The season's already underway, so I'll pro-rate what's left of it and lock your rate for all of
 > next year.
 >
-> That isn't a promotion and I'd rather not dress it up as one. It's what I'm giving the people
-> who take a chance on a business with no track record, and a locked price through a full season
-> is a fair thing to give them for it.
+> That isn't a promotion — it's what I'm giving the people who take a chance on a business with no
+> track record, and a locked price through a full season is a fair thing to give them for it.
 >
 > It covers the membership price only — not project work, not materials. The lock runs through the
-> end of the 2027 season and it doesn't extend past it. It's a price guarantee, not a term you're
-> stuck in: thirty days' written notice and you're done, either way.
+> end of the 2027 season and it doesn't extend past it. It's a price guarantee. Thirty days'
+> written notice and you're done, either way.
 
 > 🔶 **No cap is asserted.** `CANON.md` §3 says "clients signing now"; the stale `pricing.md` §2
 > says "the first 4." Until `wpc-strategist` resolves it the site says "clients signing now" and
@@ -866,7 +889,7 @@ The single figure, identical to §1.8, then:
 
 > ## What I don't discount
 >
-> The membership price. Project work for members. And the last slot.
+> The membership price, and project work for members.
 >
 > Members don't get a discount on projects. They get scheduling priority and no trip minimum,
 > which is worth more — a $49 window well is worth doing when I'm already standing in the yard,
@@ -974,7 +997,7 @@ Window well cleanout ·····························�
 > dedicated drive when I'm not.
 >
 > That's why the small stuff gets handled for members and doesn't for anybody else. It costs me
-> nothing and it's worth more than ten percent off.
+> nothing, and it's worth more than a discount would be.
 
 ### 4.6 The ask
 
@@ -1018,8 +1041,7 @@ Window well cleanout ·····························�
 > hadn't been wiped since May. The window wells were full. The skimmer basket hadn't been emptied
 > in a fortnight. Nobody was looking at any of it, because nobody had been hired to look.
 >
-> That's the job. Not a task you call about — a schedule, the whole outdoor living area, and a
-> written record.
+> That's the job: a schedule, the whole outdoor living area, and a written record.
 
 ### 5.3 The four words
 
@@ -1039,12 +1061,11 @@ Window well cleanout ·····························�
 
 > ## Six properties, and it's a real cap
 >
-> Six properties is twelve visits a month, and I do routine visits only on Monday and Friday.
-> That's four route days.
+> Six properties is twelve visits a month, and routine visits only happen Monday and Friday. Past
+> six I'd be rushing somebody.
 >
-> Past six I'd either be adding a fifth route day or hurrying at your house to get to somebody
-> else's, and I'm not doing the second one. So when the six are taken the site says MEMBERSHIP
-> FULL and I keep a waitlist, and that's a fact about the schedule rather than a sales line.
+> So when the six are taken the site says MEMBERSHIP FULL and I keep a waitlist. The cap is a fact
+> about the schedule.
 >
 > The empty time is part of what you're paying for. It's what lets a rained-out Monday get moved
 > without anybody being bumped, lets a property that needs an extra hour get one, and lets me be
@@ -1142,7 +1163,7 @@ Window well cleanout ·····························�
 | Kitchen | An outdoor kitchen, a grill, or outdoor counters | *(see fieldset hint)* |
 | Notes | What isn't getting handled right now? | Optional. The window wells, the patio nobody's washed since 2022, the skimmer basket you haven't looked in. This is usually the useful part. |
 
-**Fieldset legend:** `WHAT DOES THE PROPERTY HAVE?`
+**Fieldset legend:** `WHAT THE PROPERTY HAS`
 
 **Fieldset hint — rewritten, and the rewrite is load-bearing:**
 
@@ -1198,12 +1219,12 @@ Window well cleanout ·····························�
 > # The waitlist is a real list
 >
 > It's written down, it has your street on it, and when a spot opens it goes to whoever is closest
-> to the route I'm already driving. Not to whoever asked first, and not to whoever pays the most.
+> to the route I'm already driving.
 >
 > **6 of 6 spots open**
 >
 > Spots are open right now, so the list is for properties that aren't near either route cluster
-> yet. That's a real reason to be on it, and it isn't a rejection.
+> yet. That's a real reason to be on it.
 
 ### 7.2 Why there's a list at all
 
@@ -1211,9 +1232,9 @@ Window well cleanout ·····························�
 >
 > Two reasons, and they're both about the route.
 >
-> Six properties is twelve visits a month across four route days, and routine visits only happen
-> Monday and Friday. When those six are taken, that's the cap — past it I'd be hurrying at one
-> house to get to another, and that's the one thing the whole schedule is built to prevent.
+> Six properties is twelve visits a month, and routine visits only happen Monday and Friday. Past
+> six I'd be rushing somebody, and never rushing a property is the one thing the whole schedule is
+> built to protect.
 >
 > And a property that isn't near one of the two clusters goes on the list even when a slot is open.
 > A house twenty-five minutes out of position costs me the same unpaid drive twice a month for as
@@ -1306,13 +1327,17 @@ Window well cleanout ·····························�
 
 > # There's nothing at this address
 >
-> Six pages is the whole site, and they're all in the bar above. If you were looking for the price,
-> it's $279 a month and it's on the pricing page.
+> Everything the site has is in the bar above, and the waitlist is in the footer. If you were
+> looking for the price, it's $279 a month, March 1 through October 31, and it's on the pricing
+> page.
 >
 > [ The price ]  ·  Or text me — [PHONE]
 
-The 404 states the price in the body. A wrong-address page is still a surface, and the ten-second
-test still applies to it.
+The 404 states the price **and the season** in the body. A wrong-address page is still a surface,
+and the ten-second test still applies to it — so does `voice.md` §8 item 37, which is why the
+dates travel with the number here as everywhere else. It no longer counts the pages: there are
+ten, the nav shows six, the waitlist is footer-linked, and a number a reader can disprove by
+scrolling is worse than no number.
 
 ---
 
@@ -1334,16 +1359,28 @@ Three blocks change and one is added.
 The `h1`, the lede, the price line and the pool line are **unchanged**. Someone arriving in the
 full state still needs to know what this is before they need to know they cannot have it.
 
+### 8.1a The season strip — the caption is NOT the one from §1.2
+
+The strip itself is identical. The in-season caption is not:
+
+> Two a month, March through October. The filled square is where the 2026 season sits now.
+
+**It stops there.** The open-state caption continues *"the season's underway, so I'll pro-rate
+what's left of it and lock your rate for all of next year"* — which is a term offered on a slot,
+and on this page the `h1` says every slot is taken. Shipping the open-state caption here was a
+copy-paste leak, and it is the same defect as a "join now" button on a sold-out page: the ask and
+the state contradict each other in the same viewport. §8.3 already gets this right one section
+below, which is what made the leak easy to miss.
+
 ### 8.2 Why six — added section, directly after the masthead
 
 > ## Why it stops at six
 >
-> Six properties is twelve visits a month, and routine visits happen only on Monday and Friday.
-> That's four route days.
+> Six properties is twelve visits a month, and routine visits only happen Monday and Friday. Past
+> six I'd be rushing somebody.
 >
-> Past six I'd either add a fifth route day or start hurrying at one house to get to another. Never
-> rushing a property is the rule the whole schedule is built to protect, so the cap isn't a number
-> I picked to sound selective. It's what fits.
+> Never rushing a property is the rule the whole schedule is built to protect. The cap is what
+> fits.
 >
 > The empty time is part of what the six are paying for. It's what lets a rained-out Monday get
 > moved without anybody being bumped, lets a property that needs an extra hour get one, and lets me
@@ -1446,7 +1483,7 @@ structured data, the rendered CSS case, the `alt` and label strings, and the met
 | 26 | One em dash per paragraph; "twice a month"; a route day, not an hour | **Pass.** |
 | 27 | Street names only | **Pass.** No address anywhere, including the structured data. |
 | 28 | Exactly one ask per surface | **Pass.** |
-| 29 | Full state → waitlist plus project offer; off season → waitlist or walkthrough plus March 1 | **Pass.** §8.4 and §1.2 ⛄. |
+| 29 | Full state → waitlist plus project offer; off season → waitlist or walkthrough plus March 1 | **Pass.** §8.4 and §1.2 `[OFF SEASON]`. |
 | 31 | Structured data asserts only what the prose asserts | **Pass.** `seo.md` §3, property by property. `priceRange` is `$279 per month`. No hours, no rating, no review, no employee. |
 | 32 | Rendered case | **Pass.** The three stamps are typed in caps **and** rendered in caps. The stylesheet carries the rule and is auditable there. |
 | 33 | Alt text and labels | **Pass.** The seven image slots ship as plates with mono captions naming the missing frame; when photographs land, every alt string names the object and locates it, and **frame 5's alt and caption both carry the pool disclaimer**. No "we" and no bare "WPC" in any label, button or `aria-label`. |
