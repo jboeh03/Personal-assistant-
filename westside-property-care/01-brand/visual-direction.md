@@ -27,6 +27,25 @@ item by item in §9 and §10
 > ember ramp by its ground (§2.5).** The finding rule and the focus indicator both take it. §5.2
 > records the ruling and the argument it declined; the §2 preamble records the rule that stops it
 > recurring; §7.1 answers the `--ember-lift` flag. **No hex changed.**
+>
+> **Second ruling appended 2026-08-06, after `wpc-web` audited the mono subset against the strings
+> the site actually renders.** Three shipped components — `.foot__line`, `.foot__prices`,
+> `.cta__aside` — are set in IBM Plex Mono, in **lowercase**, on surfaces §3.1 never permitted,
+> and the subset that pays for the third family ships no lowercase. **They move to IBM Plex Sans.
+> The mono surface list does not grow and the subset does not grow to hold prose.** Separately,
+> the **hyphen** and the **en dash** are added to the subset — both are required by strings this
+> file itself specifies, and their absence was a live defect independent of the ruling. §3.1 now
+> carries a **mono contract** (§3.1.1) with three invariants, an audit (§3.1.4), and the
+> component-level instruction `wpc-web` applies (§3.1.3).
+>
+> **The failure class is the same one the contrast ruling above names, in a different medium.**
+> There it was a ratio computed against a ground its element never renders on. Here it is a glyph
+> budget written against the strings that existed when it was written, rather than against the
+> strings the components would render. **A subset is a claim about content, and it goes stale the
+> way a contrast ratio computed against the wrong ground does.** Both are specifications that
+> quietly stop describing the thing they govern, and neither fails loudly — the ratio still
+> reproduces, the font still loads. §3.1.1 turns the claim into a constraint so it cannot drift
+> again. **No hex, no size, and no face changes anywhere else in this file.**
 
 ---
 
@@ -343,7 +362,10 @@ if a proposed surface cannot carry any of the three, the surface is wrong, not t
 
 ## 3. Typography
 
-Unchanged by the re-baseline. The pairing was never colour-dependent.
+Unchanged by the re-baseline — the pairing was never colour-dependent. **Amended 2026-08-06 by
+the mono ruling** (§3.1.1–§3.1.4): the three faces, their sizes, and their axis settings are all
+exactly as they were; what changed is the enumeration of where the mono is allowed to go and
+which glyphs it ships.
 
 ### 3.1 The pairing
 
@@ -377,16 +399,295 @@ company, with true tabular lining figures and an unusually clear 1/l/I. It has c
 personality, which is what body copy about hose bibs needs.
 
 **Data — IBM Plex Mono** (IBM; SIL OFL). Same superfamily, so it is one type system plus a
-display face, not three unrelated fonts. Used **only** for: the logo wordmark, the record stamps,
-the marginal rail labels, dates, route days, visit numbers, the price, and the summary facsimile.
+display face, not three unrelated fonts. **What it is for, in one sentence: mono is how this
+system marks a reading.** It makes `$279` and `VISIT 07 OF 16` look like something measured and
+written down rather than something asserted. That is a semantic monopoly of exactly the kind
+§2.4 rule 1 gives the ember ramp, and it survives on the same terms — by being scarce. A mono
+that also sets sentences is not a data face, it is a third text face, and the exception below
+was never granted for one of those.
+
+The surfaces, the glyphs, and the three invariants that keep them in step are **§3.1.1**. The
+2026-08-06 ruling that produced them is **§3.1.2**, what `wpc-web` applies is **§3.1.3**, and the
+four checks that keep it from drifting again are **§3.1.4**.
 
 > **Exception noted against `.claude/rules/web/performance.md`** ("max two font families unless
 > there is a clear exception"). The exception is that the mono *is* the texture of the ledger —
 > it is what makes `$279` and `VISIT 07 OF 16` read as readings rather than as claims. It is paid
-> for by subsetting: Plex Mono ships **uppercase, digits, and `. , : · $ + — / ( )` only**, one
-> weight (500), which is under 8 KB WOFF2. Total font budget: Fraunces variable subset (Latin,
-> wght 500–700) ≈ 28 KB, Plex Sans 400/600 ≈ 34 KB, Plex Mono 500 subset ≈ 8 KB. **≈ 70 KB,
-> inside the microsite budget.** Preload Plex Sans 400 only.
+> for by subsetting: Plex Mono ships **uppercase, digits, and `. , : - – — / ( ) + $ ·` only**,
+> one weight (500), which is under 8 KB WOFF2. Total font budget: Fraunces variable subset
+> (Latin, wght 500–700) ≈ 28 KB, Plex Sans 400/600 ≈ 34 KB, Plex Mono 500 subset ≈ 8 KB.
+> **≈ 70 KB, inside the microsite budget.** Preload Plex Sans 400 only.
+>
+> 🔁 **Corrected 2026-08-06.** The glyph list previously read `. , : · $ + — / ( )`. It omitted
+> the **hyphen** and the **en dash**, both of which strings specified elsewhere in this file
+> require (§2.3, §4.1, §4.5). Two glyphs, roughly 100 bytes; the budget line above is unchanged
+> because the change is inside the rounding. **This paragraph is no longer the authoritative
+> glyph list — §3.1.1 is.** If the two ever disagree, §3.1.1 governs and this one is the bug.
+
+### 3.1.1 The mono contract
+
+Three things have to agree: **which surfaces are set in mono**, **which characters those surfaces
+render**, and **which glyphs the font file contains**. When any two of the three drift apart the
+failure is silent — the page still renders, the font still loads, and a single word changes face
+somewhere in a footer. All three are fixed here, in one place, so a change to one is visibly a
+change to the others.
+
+**A. The surfaces. Mono is permitted on these and nothing else:**
+
+| # | Surface | Shipped as |
+|---|---|---|
+| 1 | The logo wordmark and the small-caps name inside the lockup | `.lockup__type` |
+| 2 | Record stamps — the summary/invoice header, the season stamps, `MEMBERSHIP FULL` | `.stamp` |
+| 3 | Marginal rail labels | `.rail` |
+| 4 | Dates, route days, month abbreviations under the season strip | `.rail`, `.s16__months` |
+| 5 | Visit numbers, the open-slot count, the price figure | `.figure` |
+| 6 | The summary facsimile's **stamps, rail labels, and figures** — not its prose | `.report__h`, `.stamp`, `.rail` |
+| 7 | Field-set legends, definition terms, and footer column headings, which are rail labels wearing a different element | `.form legend`, `.defs dt`, `.foot h2` |
+| 8 | The season toggle and the skip link, which are stamps that happen to be controls | `.season__label`, `.skip` |
+
+Rows 6–8 were implicit in the old one-sentence list and are written out because the old sentence
+said "the summary facsimile," which reads as *all of it*. It is not all of it: the facsimile's
+body is the voice demo and it is Plex Sans. **Anything not on this list is Plex Sans.** Adding a
+row is a change to this file, not a decision available to an implementer.
+
+**B. The glyphs. The subset contains exactly these, and the declared `unicode-range` matches it
+exactly:**
+
+| Group | Characters | Codepoints |
+|---|---|---|
+| Uppercase Latin | `A`–`Z` | `U+0041-005A` |
+| Digits | `0`–`9` | `U+0030-0039` |
+| Space | ` ` | `U+0020` |
+| Money and arithmetic | `$` `+` | `U+0024`, `U+002B` |
+| Sentence punctuation | `.` `,` `:` | `U+002E`, `U+002C`, `U+003A` |
+| Parentheses | `(` `)` | `U+0028-0029` |
+| Solidus | `/` | `U+002F` |
+| Separator | `·` | `U+00B7` |
+| Range | `–` | `U+2013` |
+| Aside | `—` | `U+2014` |
+
+**49 glyphs.** No lowercase. No apostrophe, no quotation marks, no `?`, `!`, `%`, `&`, `#`, `[`,
+`]`, `*`, `;`, `<`, `>`, `=`, `@`, and no accented characters.
+
+**The subset command and the declared range, so `fonts/README.md` regenerates from this table
+rather than from a reading of it:**
+
+```
+--unicodes=U+0020,U+0024,U+0028-0029,U+002B-003A,U+0041-005A,U+00B7,U+2013-2014
+```
+
+```css
+unicode-range: U+0020, U+0024, U+0028-0029, U+002B-003A, U+0041-005A, U+00B7, U+2013-2014;
+```
+
+`U+002B-003A` is contiguous and holds `+ , - . /`, the ten digits, and `:` — every character in
+it is wanted, so the range is compact **and** exact. It differs from the range currently in
+`fonts/README.md` by two codepoints and nothing else: **`U+002D` (hyphen) and `U+2013` (en
+dash)** are added. Both were missing from the file's own glyph list while strings this file
+specifies required them.
+
+**Which dash means what — this is a rule, not a preference:**
+
+- **`–` en dash is a range**, and only a range: `MAR 1 – OCT 31`, `NOV 1 – END OF FEB`,
+  `TUE–THU`, `BLOCK 1–8`. Spaced when either side contains a space; closed up when both sides are
+  single tokens.
+- **`-` hyphen joins a compound or punctuates a phone number**: `MID-SEASON`, `513-555-0142`. It
+  is never a range and never a dash in prose.
+- **`·` middot separates the fields of one stamp**: `WPC513 · SERVICE SUMMARY · VISIT 07 OF 16`.
+  It is the default separator; reach for it before either dash.
+- **`—` em dash is an aside inside a label**, and it survives in the subset for exactly one
+  shipped string — `FORMAT ONLY — NOT A CLIENT SUMMARY`, the caption that keeps the facsimile
+  honest. It is never a range and never a separator. If that string is ever rewritten, the em
+  dash leaves the subset with it.
+
+**C. The three invariants.** Each is checkable without a browser and without the font file.
+
+1. **Every mono surface renders uppercase.** Every rule that sets `font-family: var(--font-mono)`
+   also sets `text-transform: uppercase`. Source copy stays sentence case — `voice.md` §3 and the
+   rendered-case checklist item own that, and CSS transforms the text before font matching, so
+   the rendered glyph is what the subset must hold. A mono rule without `text-transform:
+   uppercase` is a defect on sight, with no need to read the copy it will hold.
+2. **No mono string contains a character outside the §3.1.1B set, as rendered.** Not as authored —
+   as rendered, after `text-transform`. Copy that needs an apostrophe, a question mark, or an
+   ampersand is prose, and prose does not go in mono; rewriting the label is the fix, not growing
+   the subset. Three labels were already rewritten this way and they all read better for it
+   (`ROUTE FIT`, `TRUST`, `WHEN THE CARD IS CHARGED`).
+
+   **Templated values count, and they are the weak point.** The record stamp (§7.3) is
+   `WPC513 · SERVICE SUMMARY · {{address_short}} · VISIT 07 OF 16 · MONDAY, JUNE 15` — a mono
+   string with a hole in it that a real address fills at send time. `O'BRIEN CT` and
+   `ST. MARY'S LN` are ordinary west-side addresses and both carry an apostrophe the subset does
+   not hold. **Any template slot inside a mono surface is constrained to §3.1.1B like the literal
+   text around it**, and the enforcement belongs where the value is produced, not in a proofread:
+   strip or transliterate before it reaches the stamp. This is invariant 2's blind spot, because
+   an audit of the shipped files sees `{{address_short}}` and passes.
+3. **The declared `unicode-range` never exceeds the shipped glyph set.** This is the asymmetry
+   that matters: a file containing a glyph nobody uses costs bytes, which is a budget problem. A
+   `unicode-range` claiming a character the file lacks costs a **face change inside a word**,
+   which is a correctness problem, and it is invisible until the font installs. When the two
+   differ, shrink the range — never widen it on the assumption the glyph is probably in there.
+
+**Why invariant 1 is the load-bearing one.** It converts "does the subset cover the content?" —
+a question that needs every string on ten pages — into "does this CSS rule have a
+`text-transform`?", which is one grep. Content changes weekly; the rule list does not. Every mono
+surface in the shipped stylesheet already satisfies it except the three §3.1.3 moves, so this
+codifies existing practice rather than imposing new work.
+
+### 3.1.2 The 2026-08-06 ruling, and the two options declined
+
+**The finding.** `.foot__line` (the sixteenth-visit line, ten footers), `.foot__prices` (both
+project prices, ten footers), and `.cta__aside` (eleven "texting is fine" asides) are set in mono
+and render in full lowercase. All three are off the §3.1.1A list, and all three fall out of the
+subset the moment a real Plex Mono installs. `wpc-web` found them, narrowed the declared
+`unicode-range` to the glyphs the file will actually contain, blocked the install, and escalated
+rather than moving them. That was the right call in all four parts.
+
+**The ruling: option 1. All three move to IBM Plex Sans. The mono list does not grow and the
+subset does not grow to hold lowercase.** Details in §3.1.3.
+
+**Why, in one line:** mono earns a third family by being the mark of a reading, and a sentence is
+not a reading. `Sixteen visits. Six properties. One person, and a written summary every time.` is
+the site's central *claim*. Setting a claim in the face reserved for measurements is not a
+neutral typographic choice — it borrows the authority of the data face for an argument, which is
+the one thing the face is there to distinguish.
+
+**Option 2 / option 3 — grow the subset by a lowercase alphabet, with or without updating the
+permitted list — declined.** The argument for option 3 is honest and worth stating: it costs
+about 3–4 KB, it matches what shipped, and it ends the mismatch by moving the rule to the code
+instead of the code to the rule. Four reasons it loses anyway, in ascending order of weight:
+
+1. **It breaks a budget this file publishes.** Mono goes from ≈8 KB to ≈11–12 KB and the font
+   total from ≈70 KB to ≈73–74 KB, so §12.11's `≤ 70 KB fonts` would have to be edited too. A
+   ruling that quietly widens a stated budget to fit the thing that broke it is the same move as
+   rewriting a contrast justification to fit the ground the element landed on. §2's preamble
+   rule 2 already refuses that shape of answer for colour; it is not better here.
+2. **The bytes are not the real cost and I do not want the byte argument to carry this.** 3–4 KB
+   is affordable. Say the budget were doubled tomorrow — the answer would still be no.
+3. **It withdraws the argument that bought the exception.** `performance.md` allows two families.
+   The third was granted because it sets stamps and figures, not text. A mono with lowercase is a
+   text face by capability, and the next component that wants "a bit of ledger texture" has no
+   principle left to be refused with. The subset is a **guardrail**, not just a download size:
+   the reason nobody has set a paragraph in mono is that they physically could not.
+4. **It is the wrong direction of fix for a spec that outran its content.** The defect is that
+   the glyph budget stopped describing the site. There are two repairs — describe the site, or
+   make the site describable — and only the second stops the next one. Option 3 fixes these three
+   components and leaves the mechanism that produced them intact, so the fourth lowercase mono
+   component arrives with nothing standing in its way. §3.1.1's invariant 1 is what actually
+   closes it, and invariant 1 is unavailable under option 3, because a mono that ships lowercase
+   has no reason to insist on `text-transform`.
+
+**Does the third family still earn its place?** Yes, and the ruling is what keeps it earning it.
+Under option 1 the subset grows by two glyphs — the hyphen and the en dash, ≈100 bytes — so mono
+stays under 8 KB, the font total stays ≈70 KB, and the exception paragraph in §3.1 holds
+verbatim without a word being softened. Under option 2 or 3 the honest version of that paragraph
+would have had to read "a third *text* family, because three components wanted it," and that
+sentence does not justify anything. **The exception is renewed on its original terms.**
+
+**The visible cost, named rather than minimised.** Three components change face on ten pages and
+nobody here can open a browser (`CANON.md` §9). That is real, and it is why this was escalated
+rather than decided in `02-website/`. What makes it safe to apply blind is that the change runs
+in the harmless direction on all three axes:
+
+- **Family:** every one of the three sits at `--type-small`, which §3.3 already assigns to **Plex
+  Sans 400**. They were the only three places on the site where a size token was used with a face
+  the scale table does not give it. This is a *restoration* of the specified pairing, not a new
+  pairing that needs proving.
+- **Width:** Plex Mono is wider than Plex Sans at equal size, so every affected line gets
+  *shorter*. Nothing can overflow that did not already overflow, and the only components at risk
+  — two grid cells and a flex aside — can only gain slack.
+- **Neighbours:** `.foot__note` already renders Plex Sans at `--type-small` directly beside
+  `.foot__prices` and directly beneath `.foot__line` on every page. The target rendering is
+  already on screen next to the thing being changed.
+
+### 3.1.3 What moves, and to what
+
+Mechanical. Three rules in `02-website/site/styles/components.css`; no markup change, no token
+change, no new token.
+
+**1. `.foot__prices` — the two project prices.** Drop `font-family` and `font-weight`; keep the
+grid, the size, and the tabular figures.
+
+```css
+.foot__prices {
+  display: grid;
+  gap: var(--space-hair);
+  font-size: var(--type-small);
+  font-variant-numeric: tabular-nums;   /* §3.4 — every price stays tabular in Plex Sans */
+}
+```
+
+It becomes typographically identical to `.foot__note` in the neighbouring column, which is
+correct: they are the same kind of thing, and the mono `.foot h2` above each column is what
+distinguishes them. `$249+` does not need mono to read as a figure — it is a price inside a
+sentence, not §3.1.1A row 5's price figure, and §4.5 set-piece 1 reserves that treatment for
+`$279` alone.
+
+**2. `.cta__aside` — the eleven asides.** Drop `font-family` and `font-weight`; keep the size and
+the muted ink, add tabular figures for the phone number.
+
+```css
+.cta__aside {
+  font-size: var(--type-small);
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+```
+
+This also disposes of the hyphen's urgency independently of §3.1.1: `[PHONE]` renders in mono in
+`.cta__aside` and nowhere else, so after this move every phone number on the site is Plex Sans.
+The hyphen is still added to the subset — `MID-SEASON` in `.defs dt` is a genuine mono hyphen —
+but the eleven-times-per-site risk is gone rather than glyph-patched.
+
+**3. `.foot__line` — the sixteenth visit.** This one needs more than a family swap, and the
+reason is worth stating so it is not applied as a two-line diff.
+
+Mono was doing real work here: it is the only thing separating the site's central claim from the
+fine print immediately beneath it. Drop the face and keep everything else, and `.foot__line`
+becomes indistinguishable from `.foot__note`. **So the differentiation moves from face to
+scale**, which is where §9 quality #1 already says this system carries hierarchy — *"Hierarchy is
+carried by size, never by weight-plus-grey."* Face was a fourth mechanism, smuggled in, and its
+removal makes the claim in §9 true where it was previously slightly false.
+
+```css
+.foot__line {
+  max-inline-size: var(--measure);
+  font-size: var(--type-h3);        /* Plex Sans 600, 20 → 24px */
+  font-weight: var(--wt-strong);
+  line-height: var(--lh-h3);
+}
+```
+
+- `font-variant-numeric: tabular-nums` is **dropped**, not carried over. The string contains no
+  digits — "Sixteen" and "Six" are words. It was dead code and copying it forward would keep a
+  reader looking for the number it protects.
+- `max-inline-size: var(--measure)` is new and mandatory: at `--type-h3` the 76-character line
+  would otherwise run the full footer width, and §3.4's 68-character measure cap applies to it
+  like everything else.
+- `--type-h3` is the one text-face step above body, and its mobile floor (20px) is a size h3s
+  already render at across the site, so the smallest viewport carries no new risk.
+- **Not Fraunces.** A display face here would give every page a second display element, competing
+  with the page's own `h2`s from inside a reversed panel, and §3.1 restricts Fraunces to
+  headlines. This is a `<p>`; using a heading's *size token* does not make it a heading.
+- Colour and ground are untouched: `--paper` on `--season-ground`, **12.05:1** on navy and
+  **7.57:1** on the off-season slate. Both were already passing at 14px and both improve as a
+  proportion of nothing — the ratio is size-independent — but the size increase moves the line
+  from "14px normal text needs 4.5:1" to a comfortable margin at 20px+. Nothing to recompute.
+
+### 3.1.4 The audit that keeps this true
+
+Any of the three invariants can be checked by reading files. None needs a browser, and none needs
+the font binaries — which is the point, because neither is available here.
+
+| Check | Method | Fails when |
+|---|---|---|
+| Invariant 1 | Every CSS rule containing `font-family: var(--font-mono)` also contains `text-transform: uppercase`. | A mono surface can hold lowercase. |
+| Invariant 2 | For each class on the §3.1.1A list, extract the rendered text of every element carrying it, uppercase it, and diff the character set against §3.1.1B. | A mono string contains a glyph the file does not hold. |
+| Invariant 3 | Expand the `unicode-range` in `styles/fonts.css` to a character list and compare it to §3.1.1B — they must be **equal**, not merely overlapping. | The range over-claims and a character silently falls back mid-string. |
+| The list itself | Diff the set of classes setting `--font-mono` against §3.1.1A. | A component acquired mono without a ruling. |
+
+Run all four whenever a mono string changes, whenever a component gains `--font-mono`, and
+**before the font binaries are installed** — invariant 3 in particular is unfalsifiable while no
+font ships and becomes load-bearing the same hour one does.
 
 ### 3.2 Stacks, with fallbacks
 
@@ -437,6 +738,16 @@ on `--paper`, which is the one place it may be used as text.
 - **No italics for emphasis.** Emphasis is `--type-stamp` in the rail, or an `--ember` underline.
   Italic Fraunces is reserved for the season name in running text.
 - **No letterspaced lowercase, ever.** Tracking is positive only on uppercase mono.
+- 🔁 **Mono renders uppercase, always** (§3.1.1 invariant 1). Every rule that sets `--font-mono`
+  also sets `text-transform: uppercase`. This is not a style preference: the shipped Plex Mono
+  subset contains no lowercase, so a lowercase mono string breaks into two faces mid-word the day
+  the font installs. Copy stays sentence case in the source; CSS does the shouting, and it does it
+  before font matching. **If a label cannot survive being uppercased, it is prose and belongs in
+  Plex Sans.**
+- 🔁 **Mono sets labels and readings, never sentences.** The test: could this string appear in the
+  margin of a form, on a stamp, or in a meter reading? If it has a subject and a verb and is
+  making an argument, it is Plex Sans no matter how ledger-ish it feels. §3.1.2 is the ruling that
+  set this; §3.1.1A is the list it produced.
 - 🔁 **The three status stamps are IN SEASON, OFF SEASON, and MEMBERSHIP FULL.** GREEN SEASON and
   DORMANT SEASON are retired strings and must not survive in markup, CSS `content`, token names,
   filenames, or slugs (`voice.md` §3, the non-prose surface rule).
@@ -1055,6 +1366,17 @@ Non-negotiable when this direction is implemented:
 12. **Favicons ship as three separate files**, not one scaled SVG (§7.3). A scaled lockup at 16px
     is unreadable and reads as a smudge in a tab strip.
 
+13. 🔁 **The mono contract (§3.1.1) is binding, and its three invariants are checked before the
+    font binaries are installed, not after.** Mono is permitted on the §3.1.1A surfaces and
+    nowhere else; every mono rule carries `text-transform: uppercase`; the shipped glyph set is
+    §3.1.1B exactly; and the declared `unicode-range` **equals** that set rather than exceeding
+    it. `.foot__line`, `.foot__prices`, and `.cta__aside` move to Plex Sans per §3.1.3 — that is
+    a ruling, not a suggestion, and it is the precondition for installing the mono at all.
+    **A component that acquires `--font-mono` without a corresponding row in §3.1.1A is the bug
+    this contract exists to prevent**, in the same way that a surface gaining a
+    `background-color` without a `--mark` is the bug §2.5 exists to prevent. Both are one
+    declaration going missing next to another declaration that needed it.
+
 ---
 
 ## Related files
@@ -1068,3 +1390,6 @@ Non-negotiable when this direction is implemented:
 - `_source/2026-08-05-owner-decisions.md` §1 — the logo this palette and this mark come from
 - `.claude/rules/web/design-quality.md` — answered item by item in §9 and §10
 - `.claude/rules/web/performance.md` — the font-count exception in §3.1 and the budgets in §12
+- `02-website/site/fonts/README.md` — the install procedure and the `unicode-range` that §3.1.1B
+  governs. It is regenerated **from** §3.1.1, never the other way round; where the two disagree,
+  §3.1.1 is right and the README is the defect.
