@@ -1,6 +1,22 @@
-# WPC Stand-Up Playbook
+# WPC513 Stand-Up Playbook
 
-The step-by-step sequence for standing up Westside Property Care. Every step is a
+> ## ⚠️ Re-baselined 2026-08-05 — the build is done, the facts changed
+>
+> All fourteen steps ran, and then the owner shipped decisions that superseded parts of the
+> result: **one price ($279), a March–October season, a two-hour on-site cap, the
+> Westside Property Care 513 name, a heavier pool scope, and a navy-and-orange logo.**
+>
+> The whole project was reworked to match — see `00-model/decisions.md` from **D-18**.
+>
+> **The step briefs below still quote the old facts.** Their *method* is sound and worth
+> reusing; their *numbers* are not. Every brief carries a banner saying so. Take business
+> facts from [`../CANON.md`](../CANON.md) and `00-model/`, never from a step file.
+>
+> If you are picking this up fresh: read `CANON.md`, then
+> `_source/2026-08-05-owner-decisions.md`, then `00-model/decisions.md`. That is the whole
+> story in three files.
+
+The step-by-step sequence that stood up Westside Property Care 513. Every step is a
 **self-contained brief** — you can paste it to a subagent that has never seen this project
 and it will have everything it needs.
 

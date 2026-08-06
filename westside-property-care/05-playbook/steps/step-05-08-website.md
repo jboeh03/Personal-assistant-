@@ -1,3 +1,14 @@
+> ## ⚠️ SUPERSEDED FACTS — READ CANON FIRST
+>
+> **Re-baselined 2026-08-05.** This brief was written for the original build and still
+> quotes the model as it stood then. The owner has since shipped decisions that changed the
+> price, the season, the visit structure, the name, the pool scope, and the identity.
+>
+> **The method in this file is still good. The facts in it are not.**
+> Take the sequence, the acceptance criteria, and the constraints; take every business fact
+> from [`../../CANON.md`](../../CANON.md) and `00-model/`, which are authoritative. Reversals
+> and their reasoning are in `00-model/decisions.md` from D-18 onward.
+
 # Steps 05–08 — The website
 
 **Agent:** `wpc-web` · **Depends on:** Step 04 · **Parallel with:** Steps 09–11, Steps 12–14

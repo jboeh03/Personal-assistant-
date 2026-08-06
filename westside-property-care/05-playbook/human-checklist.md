@@ -39,7 +39,14 @@ is real. It matters more than the website's search ranking.
 
 - [ ] Get quotes for $1M general liability — he is on other people's property, near pools,
       handling their equipment
-- [ ] Ask specifically about pool-adjacent work and whether it's excluded
+- [ ] **Tell the carrier exactly what he now does to the pool.** This changed and it matters.
+      The scope he is publishing includes **vacuuming, brushing, emptying the skimmer and pump
+      baskets and the auto-vacuum canister, backwashing, and reading salt-cell and system
+      indicators.** That is pool-*system* operation. The earlier version of this business
+      excluded nearly all of it, so a quote given against the old description does not cover
+      the new one. See `00-model/decisions.md` R-6 — it is marked as blocking the first paid
+      visit for this reason.
+- [ ] Ask specifically whether backwashing and salt-cell work are excluded, in writing
 - [ ] Confirm whether the vehicle needs commercial auto coverage
 - [ ] Policy in force — date: ______ — carrier: ______
 
@@ -54,7 +61,12 @@ is real. It matters more than the website's search ranking.
 ### 5. Payment processing
 - [ ] Stripe account (or Jobber / Housecall Pro if he wants scheduling and invoicing
       bundled — see `04-operations/tooling.md` for the tradeoff)
-- [ ] Set up the three membership prices as recurring products: **$229 / $289 / $329**
+- [ ] Set up **one** recurring product: **$279/month**. There is no tier and no add-on price.
+- [ ] Set the billing schedule to the **March–October season only** — eight charges a year,
+      not twelve. Confirm the subscription pauses automatically on November 1 rather than
+      relying on him to remember.
+- [ ] For anyone signing mid-season, the first month pro-rates **by the visit at $139.50** —
+      see `04-operations/service-agreement.md` §7.
 - [ ] Confirm card-on-file with automatic charge on the 1st actually works before selling it
 
 **Card on file is not optional.** Without it, "recurring revenue" is just invoices he has to
