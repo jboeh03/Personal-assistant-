@@ -190,6 +190,7 @@ snow or ice service, and no membership charge (`service-catalog.md` §4.8).
 | **Late November** | One written touch: the season-end property report — what was done, what was found, what next season needs, with prices. |
 | **Mid-January** | One written touch. A note, a photo of something he noticed driving past, a heads-up about a spring price. Something a person wrote. |
 | **February, in writing** | **Re-enrolment confirmed before March 1.** Not on the first route day. See §7.3. |
+| **February 28, 2027** | **The Founding Member window closes** (`pricing.md` §2). Any prospect still deciding signs by this date or pays the standard rate. Existing members are unaffected — their lock already runs to October 31, 2027. |
 | **Whenever** | Off-season project work — grill deep cleans, gutters, storm callouts — is quoted and billed normally (`pricing.md` §5). |
 
 **Two touches and a written re-enrolment across four months is the minimum, and it exists for
@@ -197,6 +198,12 @@ one reason:** industry evidence on seasonal service businesses is that customers
 they feel undervalued or **simply forget to renew between seasons**, and that annual-contract
 operators retain **10–20% more customers** than seasonal-billing operators. He has chosen
 seasonal billing. The touches are how he buys that back. `decisions.md` **D-18(b)**.
+
+**One date, two jobs — this is worth noticing.** The re-enrolment deadline and the Founding
+Member window close on the same day, because both answer the same question: *who is on the
+books before the season starts?* February 2027 is therefore a single push with two lists —
+**existing members to confirm** and **open slots to fill** — and it ends on the last day of
+the month. Nothing else in the calendar needs remembering. `decisions.md` **D-27**.
 
 ---
 

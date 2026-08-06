@@ -60,8 +60,8 @@ Directly beneath it, in body text, the season and the cap — both required clau
 the cap wherever it's stated (`voice.md` §8 item 39):
 
 > Two visits a month, March 1 through October 31 — sixteen visits a season. Up to two hours on
-> site each visit, highest priority first; not every task gets to every visit, and unused time
-> doesn't roll over.
+> site each visit, highest priority first; completion of every possible task every visit isn't
+> guaranteed, and unused time doesn't roll over.
 
 **Never divide $279 by anything on this page.** No per-hour, per-visit, or per-week figure
 appears near the price (`voice.md` §3, the hours-arithmetic rule).
@@ -71,8 +71,8 @@ appears near the price (`voice.md` §3, the hours-arithmetic rule).
 Exactly the three headings he specified, each with one line of what it means and the pool
 disclaimer traveling with the pool line, in the same block, per `voice.md` §8 item 41:
 
-> **Pool** — Skimmed, brushed, vacuumed, both baskets emptied, backwashed and checked. I don't
-> guarantee the water.
+> **Pool** — Skimmed, brushed, vacuumed, both baskets emptied, backwashed and checked. No
+> guarantee of water chemistry, water clarity, equipment performance, or pool-system operation.
 >
 > **Outdoor Kitchen** — Counters and grill exterior wiped, grease tray emptied. Deep cleans
 > quoted separately, from $249.
@@ -84,7 +84,7 @@ disclaimer traveling with the pool line, in the same block, per `voice.md` §8 i
 "who it's for" clause of the 10-second test without adding a sixth element, since it's part of
 the services block rather than a separate section:
 
-> For homes with a pool, an outdoor kitchen, or both. Six properties only.
+> For homes with a pool, an outdoor kitchen, both, or neither. Six properties only.
 
 ### 5. Website + Request Service CTA
 
@@ -119,17 +119,17 @@ in `voice.md` and `gtm-plan.md` §8 exists to keep honest.
 >
 > **$279 a month.** That's the whole price list.
 > Two visits a month, March 1 through October 31 — sixteen visits a season. Up to two hours on
-> site each visit, highest priority first; not every task gets to every visit, and unused time
-> doesn't roll over.
+> site each visit, highest priority first; completion of every possible task every visit isn't
+> guaranteed, and unused time doesn't roll over.
 >
-> **Pool** — Skimmed, brushed, vacuumed, both baskets emptied, backwashed and checked. I don't
-> guarantee the water.
+> **Pool** — Skimmed, brushed, vacuumed, both baskets emptied, backwashed and checked. No
+> guarantee of water chemistry, water clarity, equipment performance, or pool-system operation.
 > **Outdoor Kitchen** — Counters and grill exterior wiped, grease tray emptied. Deep cleans
 > quoted separately, from $249.
 > **Exterior** — Patio and furniture wiped down, debris cleared, trash cans emptied, walkways
 > swept.
 >
-> For homes with a pool, an outdoor kitchen, or both. Six properties only.
+> For homes with a pool, an outdoor kitchen, both, or neither. Six properties only.
 >
 > **{{slots_open}} of the six spots are open.**
 > Request service at `[URL]`, or call or text `[PHONE]`.

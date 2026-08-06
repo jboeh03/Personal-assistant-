@@ -43,7 +43,7 @@ makes that literal.
 | **2026 realistic target** | **2 members** — the honest expectation for a mid-August launch, not a shortfall | `unit-economics.md` §4.2 |
 | Season | March 1 – October 31, 16 visits, 2/month, up to 2 hrs each, no rollover | `pricing.md` §3, `CANON.md` §3 |
 | Price | **$279/month. One number.** No tiers, no configurations, never divided by hours or visits | `pricing.md` §1, `voice.md` §3 (one-price rule) |
-| Founding Member rate | **First 4 clients** — pro-rated remainder of 2026 plus $279 locked through **October 31, 2027** | `pricing.md` §2 |
+| Founding Member rate | 🔶 **CONDITIONAL on client count** — pro-rated 2026 remainder plus $279 locked through **October 31, 2027**, for clients signing now. `pricing.md` §2 says this is capped at "the first 4," but `messaging.md` §4 and `brand-brief.md` §4.2 both flag that cap as unresolved, pending a `wpc-strategist` ruling. See the CONDITIONAL banner at the top of §3. | `pricing.md` §2 (stale on the four-client cap) |
 | Qualified geography | Green Township (incl. conditional Bridgetown), Oak Hills, upper Delhi, Covedale | `ideal-client.md` §3 |
 | Explicitly excluded geography | Westwood, Price Hill, Cheviot — no copy, no targeting | `ideal-client.md` §3 |
 | Route-selection order | Clients 1–2 anchor two clusters; 3–4 attach to an anchor; 5–6 are the compactness test | `ideal-client.md` §4 |
@@ -146,6 +146,20 @@ right now than it will be in April.
 
 ## 3. Sequence
 
+> ## 🔶 CONDITIONAL — the "founding four" phase-gate below rests on an unresolved fact
+>
+> Every phase boundary in this section — Phase 1 ending at "four," the checkpoint between Phase 1
+> and Phase 2, and Phase 2's "no Founding Member rate" — is built on **the first 4 clients**
+> locking the founding rate, per `pricing.md` §2. **`01-brand/messaging.md` §4 and
+> `01-brand/brand-brief.md` §4.2 both flag that exact number as unresolved:** `CANON.md` §3 and §4
+> say "clients signing now," `pricing.md` §2 says "the first 4," and the two disagree. Until
+> `wpc-strategist` rules on which is correct, **treat every "four" in this section as a
+> placeholder**, not a confirmed gate, and do not tell a prospect, a member, or a printed piece
+> that a specific count of founding spots exists (`warm-list-campaign.md` §5 carries the matching
+> flag). If the ruling reinstates a real cap at four, this section's phase boundaries execute
+> exactly as written below. If it resolves differently, substitute the confirmed number
+> throughout before this plan runs.
+
 ### Phase 0 — before any outreach
 
 These block everything downstream and have real lead times. They are not marketing tasks, but
@@ -163,13 +177,14 @@ this plan cannot start without them:
 - Confirm whether the TSGC list can be used — this single answer decides whether Phase 1 opens
   with Track A or with Track B alone.
 
-### Phase 1 — the founding four (slots 1–4)
+### Phase 1 — the founding four (slots 1–4) 🔶 CONDITIONAL, see banner above
 
 **The window: mid-August through October 31, 2026 — ten route days, three billed months
 (`operating-model.md` §3.1) — and it continues into the March 2027 selling window if the
-founding four aren't full by then.** There is no deadline on the founding rate other than "the
-first four clients," so a prospect signed in April 2027 as client 3 still gets the founding
-terms if slots 1–4 aren't already spoken for.
+founding cohort isn't full by then.** There is no deadline on the founding terms other than
+however many clients turn out to qualify once `wpc-strategist` rules on the cap, so a prospect
+signed in April 2027 as client 3 still gets the founding terms if the cohort (whatever its
+confirmed size turns out to be) isn't already spoken for.
 
 1. **If Track A is confirmed:** run the founding-member sequence in `warm-list-campaign.md`
    against the qualified-geography segment of the list first. Track B starts in parallel, but at
@@ -197,8 +212,10 @@ the stretch case, not the baseline.
 
 ### Checkpoint — before opening slots 5 and 6
 
-**Do not proceed to Phase 2 automatically.** Once four members are signed — whether that happens
-in 2026 or carries into spring 2027 — stop and look at what actually happened before continuing:
+**Do not proceed to Phase 2 automatically.** Once the founding cohort is signed — four, per the
+current unconfirmed figure, or whatever count the pending `wpc-strategist` ruling settles on —
+whether that happens in 2026 or carries into spring 2027, stop and look at what actually happened
+before continuing:
 
 - Are the four route-compatible with each other (two real clusters, or four scattered points)?
 - Is revenue per route day tracking toward the `operating-model.md` §7.1 target of $400 (model
@@ -222,10 +239,13 @@ loses every time they conflict.
 - **Sourced from referrals and the waitlist first.** A neighbor of an existing member, or a
   waitlisted prospect who now has a qualifying neighbor, is the best lead type in the business
   (`ideal-client.md` §2.4, §4).
-- **No Founding Member rate.** `pricing.md` §2 — it disappears after the fourth client, on
-  purpose. Do not extend it to close a slow slot 5 or 6. If a closing concession is genuinely
-  needed, it's scheduling priority, a free first project, or an extra visit in the first month —
-  never a lower monthly number (`pricing.md` §8).
+- **No Founding Member rate for slots 5 and 6, once the founding cohort is confirmed closed.** 🔶
+  CONDITIONAL on the same unresolved cap flagged at the top of this section — `pricing.md` §2
+  says this disappears "after the fourth client," but `messaging.md` §4 and `brand-brief.md` §4.2
+  mark that count stale. Regardless of where the ruling lands, do not extend the founding terms
+  to close a slow slot 5 or 6 once the founding cohort (whatever its confirmed size) is closed. If
+  a closing concession is genuinely needed, it's scheduling priority, a free first project, or an
+  extra visit in the first month — never a lower monthly number (`pricing.md` §8).
 - **Track B continues at the same targeted pace**, now aimed specifically at the two established
   clusters rather than the wider qualified geography.
 - **Track A, if it's still running,** shifts from founding-member framing to standard-rate
@@ -283,7 +303,7 @@ on file and a signed agreement. Not six inquiries. Not six people on a waitlist.
 | Item | Action |
 |---|---|
 | Neighborhood door-hanger, flyer, and yard-sign distribution (Track B) | **Stops entirely.** No more prints, no more drops. |
-| Warm-list founding-member sequence (Track A) | **Stops entirely**, if it hasn't already — it should have stopped once the founding four filled (§3). Any remaining names on the list get nothing further from this campaign. |
+| Warm-list founding-member sequence (Track A) | **Stops entirely**, if it hasn't already — it should have stopped once the founding cohort filled (§3; 🔶 the "four" in that trigger is CONDITIONAL, see the banner there). Any remaining names on the list get nothing further from this campaign. |
 | Site / GBP open-slot indicator | Changes to **MEMBERSHIP FULL**, stated plainly, per `voice.md` pair 7 — the mechanism explained, never softened. |
 | Google Business Profile | **Stays live and stays maintained** (`google-business-profile.md` §7). It isn't a demand-generation channel to begin with, so it has nothing to turn off — it keeps closing people who search his name and routes them to the waitlist and to project work. |
 | Referral capture | **Never stops.** It's how a cancelled slot gets refilled later, and it costs nothing (`operating-model.md` §7.4 targets at least one referral-sourced inquiry per quarter, indefinitely). |
@@ -361,7 +381,7 @@ examples" — rather than inventing a second system.
 | Token | What it means | Why it's dynamic |
 |---|---|---|
 | `{{slots_open}}` | How many of the six spots are open right now | Changes every time a member signs — this is why print pieces run in small batches (`neighborhood-campaign.md` §5) rather than one large run |
-| `{{founding_spots_filled}}` | How many of the first 4 (founding) spots are filled right now, as opposed to `{{slots_open}}`'s count of all 6 | Used only in `warm-list-campaign.md` §5, Step 3, where the founding-rate framing is the actual send-time fact, never a hardcoded guess. If the true value is 0, the sentence that would use it is deleted rather than sent as "0 of 4 filled." |
+| `{{founding_spots_filled}}` | **Retired.** Previously counted how many of "the first 4" founding spots were filled, for `warm-list-campaign.md` §5, Step 3. That template opened with the count framed as a countdown ("goes away once the fourth is taken") — `voice.md` §6.5 and item 40 ban that framing outright regardless of whether the number is real, because the founding terms are a **term, not a discount**, and the four-client cap itself is unresolved (see the CONDITIONAL banner at the top of §3 above). Tokenizing the count fixed the number but not the framing, so the fix was structural, not a better token: Step 3 now opens with the CTA in every case. This token is no longer used anywhere in `03-marketing/`. |
 | `{{route_day}}` | A specific client's assigned route day (first/third Monday or first/third Friday) | Per-client, assigned at signing |
 | `{{address_short}}` | Street name only, no house number, no client name | Per-client, used in the service report system, not in `03-marketing/` |
 

@@ -56,7 +56,11 @@
 > has. What survives from that section is the underlying insight about **who** is on this list,
 > restated in §2 below without the dead price math. Season is **March 1 – October 31**. Name is
 > **Westside Property Care 513 / WPC513**. Founding terms are the **pro-rated 2026 remainder plus
-> $279 locked through October 31, 2027**, for the **first 4 clients** — not "twelve months."
+> $279 locked through October 31, 2027**, for **clients signing now** — not "twelve months." 🔶
+> **Whether the lock is capped at a specific number of clients is unresolved** — `pricing.md` §2
+> says "the first 4," but `messaging.md` §4 and `brand-brief.md` §4.2 both flag that number as
+> stale pending a `wpc-strategist` ruling. Until it lands, this file says "clients signing now"
+> and never a count. See the banner at the top of §5.
 
 ---
 
@@ -197,14 +201,15 @@ just good practice.
 > This is `[OWNER FIRST NAME]` — I cleaned your grill a while back through Tri-State. I've
 > started something new on the same properties I already know: Westside Property Care 513 —
 > twice-a-month care for the pool deck, patio, and outdoor kitchen, March through October, with
-> a written report every time. Six properties total, and the first four lock their price through
-> next season.
+> a written report every time. Six properties total. Clients signing now get the rest of this
+> season pro-rated and their rate locked for all of next year.
 >
 > Two quick questions if you've got a minute — do you have a pool, or is it just the kitchen
 > setup? And is `[STREET NAME]` still the right address? If it sounds worth a look, I'd come walk
 > the property with you — about forty minutes, and I'll give you the number for your place while
-> I'm standing there. It's $279 a month, same for every property. You don't have to decide
-> anything that day.
+> I'm standing there. It's $279 a month, same for every property. Sixteen visits a season, up to
+> two hours on site each — highest priority first, and completion of every possible task every
+> visit isn't guaranteed. You don't have to decide anything that day.
 
 **Letter (for names with no working phone number):**
 
@@ -216,8 +221,10 @@ just good practice.
 >
 > If you're interested, call or text me at `[PHONE]` and I'll come walk the property with you —
 > about forty minutes, and I'll give you the number for your place while I'm there. It's $279 a
-> month, one number, same for every property. The first four members lock that rate through
-> October of next year.
+> month, one number, same for every property. Sixteen visits a season, up to two hours on site
+> each — highest priority first, and completion of every possible task every visit isn't
+> guaranteed. Clients signing now get the rest of this season pro-rated and their rate locked for
+> all of next year.
 >
 > If you'd rather not hear from me about this, let me know and I'll take you off this list.
 
@@ -232,13 +239,17 @@ just good practice.
 > properties on the west side, March through October, with a written report the same day
 > covering what I did and what I found.
 >
-> Not lawn care. Not pool service — I don't guarantee your water. Everything I don't do is
-> written down before you'd ever sign anything.
+> Not lawn care. On the pool, I skim, brush, vacuum, empty both baskets, backwash when the system
+> wants it, and check the salt reading and the equipment lights — but no guarantee of water
+> chemistry, water clarity, equipment performance, or pool-system operation. Everything I don't
+> do is written down before you'd ever sign anything.
 >
 > **$279 a month. That's the whole price list** — same for a property with a pool and an outdoor
-> kitchen as for one with just the kitchen. The first four members lock that rate for the rest of
-> this season and all of next year. I'll walk the property with you and give you the number for
-> your place out loud — about forty minutes.
+> kitchen as for one with just the kitchen. Sixteen visits a season, up to two hours on site each
+> — highest priority first, and completion of every possible task every visit isn't guaranteed.
+> Clients signing now get the rest of this season pro-rated and their rate locked for all of next
+> year. I'll walk the property with you and give you the number for your place out loud — about
+> forty minutes.
 >
 > If it's not the right time, I can still do the grill again — that's $249 and up, no membership
 > required.
@@ -253,27 +264,22 @@ just good practice.
 
 ### Step 3 (Day ~14, non-responders in Tier 1 and Tier 2 only) — short second touch
 
-> `[OWNER FIRST NAME]` again — following up on the note about Westside Property Care 513.
-> {{founding_spots_filled}} of the four founding spots are filled, and the founding rate goes
-> away once the fourth is taken.
->
-> If you want to see whether your place fits the route, text me your cross street at `[PHONE]`
-> and I'll tell you honestly.
+> `[OWNER FIRST NAME]` again — following up on the note about Westside Property Care 513. If you
+> want to see whether your place fits the route, text me your cross street at `[PHONE]` and I'll
+> tell you honestly.
 >
 > *Reply "stop" and I won't follow up again on this.*
 
-**`{{founding_spots_filled}}` is a dynamic token, not prose** — the real count of the four
-founding spots filled on the day this step actually sends, per `voice.md` §6.5: the real number,
-always, never a placeholder written as if it were already true. It's registered in
-`gtm-plan.md` §8 alongside `{{slots_open}}`.
-
-**If `{{founding_spots_filled}}` is 0 at send time, delete the entire first sentence** — the
-count and the "goes away once the fourth is taken" framing — and open the message directly with
-the second paragraph instead: *"`[OWNER FIRST NAME]` again — following up on the note about
-Westside Property Care 513. If you want to see whether your place fits the route, text me your
-cross street at `[PHONE]` and I'll tell you honestly."* A count of zero founding spots filled is
-not a proof point and saying so out loud undercuts the message it's supposed to support; the fix
-is to say nothing about the count that day, not to round it up.
+**No founding-count claim opens this message, ever — this is a correction, not a refinement.** A
+prior version of this template led with "{{founding_spots_filled}} of the four founding spots are
+filled, and the founding rate goes away once the fourth is taken." Tokenizing the count fixed the
+*number* but not the *framing*: `voice.md` §6.5 bans the founding rate framed as a promotion and
+bans "while supplies last / only X left," and item 40 is explicit that the founding terms are a
+**term, not a discount** — they don't get sold with a countdown regardless of what the real number
+is. That's the same defect a prior audit already caught once in this exact template. The fix is
+structural: **open with the CTA, in every case**, the way this section already prescribed for a
+count of zero — that's now the only case. `{{founding_spots_filled}}` is retired from this file;
+see the token registry note in `gtm-plan.md` §8.
 
 ### Step 4 — SMS, opt-in only
 
@@ -287,29 +293,43 @@ box on a reply form. Never sent cold to the list.
 
 **Follow-up SMS (only after confirmation above):**
 
-> Hey, it's `[OWNER FIRST NAME]`. $279 a month, one price. The first four lock that rate through
-> next season because they're taking a chance on someone with no track record.
-> {{slots_open}} of the six are open. Text me your cross street or call `[PHONE]`. Reply STOP to
-> opt out.
+> Hey, it's `[OWNER FIRST NAME]`. $279 a month, one price. Sixteen visits a season, up to two
+> hours on site each — highest priority first, and completion of every possible task every visit
+> isn't guaranteed. Clients signing now get the rest of this season pro-rated and their rate
+> locked for all of next year. {{slots_open}} of the six are open. Text me your cross street or
+> call `[PHONE]`. Reply STOP to opt out.
 
-### Step 5 — Close-out once the founding four are filled
+### Step 5 — Close-out once the founding cohort is filled
 
-Per `gtm-plan.md` §3: **the founding-member framing stops the moment slot 4 is filled**, whether
-that happens before or after the 2026 season closes.
+> 🔶 **CONDITIONAL, on top of this file's own banner.** This step's trigger — "the founding four
+> are filled" — assumes a client count (`pricing.md` §2's "first 4") that `messaging.md` §4 and
+> `brand-brief.md` §4.2 both flag as unresolved. **Do not run this step against a count of four**
+> until `wpc-strategist` rules on it. Until then, there is nothing to close out: the standing
+> offer in Steps 1–4 above ("clients signing now get the rest of this season pro-rated and their
+> rate locked for all of next year") already applies to every signing client with no count
+> attached, so there is no separate "standard rate" to switch a prospect to. If the ruling
+> confirms a real cap at a specific number, this step's mechanics below execute as written,
+> substituting the confirmed number for "four" throughout.
+
+Per `gtm-plan.md` §3 (also marked CONDITIONAL on the same ruling): **the founding-member framing
+stops the moment the confirmed founding cohort is filled**, whether that happens before or after
+the 2026 season closes.
 
 - Any Tier 1/2 contact not yet reached gets a final, short message dropping the founding-rate
   language and offering one of two honest outcomes: the standard-rate conversation, if the
   property could plausibly fit slots 5 or 6 and passes the route tests once addresses are
   compared — or the waitlist and a project-work offer, per `voice.md` pair 7, if it can't.
-- **Do not keep running the founding-member script after the founding four are gone.** That would
+- **Do not keep running the founding-member script after the founding cohort is gone.** That would
   be advertising a benefit that no longer exists, which fails `voice.md`'s truth checklist item
   13 as directly as inventing a fake one would.
 
 > **Close-out message (standard-rate version):**
-> `[OWNER FIRST NAME]` here — the four founding spots are filled, so this is the standard-rate
-> version of the same offer: Westside Property Care 513, twice-a-month outdoor living care,
-> written report every visit, $279 a month. If you're still interested, text your cross street to
-> `[PHONE]` and I'll tell you honestly whether it fits the route right now.
+> `[OWNER FIRST NAME]` here — following up on Westside Property Care 513: twice-a-month outdoor
+> living care, written report every visit, $279 a month. Sixteen visits a season, up to two hours
+> on site each — highest priority first, and completion of every possible task every visit isn't
+> guaranteed. Clients signing now get the rest of this season pro-rated and their rate locked for
+> all of next year. If you're still interested, text your cross street to `[PHONE]` and I'll tell
+> you honestly whether it fits the route right now.
 
 > **Close-out message (waitlist version):**
 > `[OWNER FIRST NAME]` here — {{slots_open}} of the six are open and the route is built around

@@ -36,8 +36,8 @@ describing a conversation to someone who never had one.
 
 > **Westside Property Care 513**
 >
-> Left something at your door a little while back. {{slots_open}} of the six spots are still
-> open — if you've got a question, or the timing's better now, I'm at `[PHONE]`.
+> Left something at your door a little while back. {{slots_open}} of the six spots are open — if
+> you've got a question, or the timing's better now, I'm at `[PHONE]`.
 >
 > `[OWNER FIRST NAME]` · WPC513
 
@@ -45,7 +45,7 @@ describing a conversation to someone who never had one.
 
 > **Westside Property Care 513**
 >
-> It was good talking about your place. {{slots_open}} of the six spots are still open — if the
+> It was good talking about your place. {{slots_open}} of the six spots are open — if the
 > timing's better now, or you've got a question I didn't answer, I'm at `[PHONE]`.
 >
 > `[OWNER FIRST NAME]` · WPC513

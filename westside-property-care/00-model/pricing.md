@@ -10,6 +10,11 @@ document is wrong.** Never invent a price. Quote this page verbatim.
 > flat price** billed across an **eight-month season**. The four attribute-based
 > configurations are dead and may not appear anywhere outside `_source/` and the marked
 > history blocks in `decisions.md`. See **D-19**.
+>
+> **Amended 2026-08-06 — §2 only.** The Founding Member rate is **date-bounded, not
+> count-bounded**: anyone signing on or before **February 28, 2027**, with **no cap on the
+> number of members**. *"The first 4 clients"* is withdrawn from this file and from every
+> document downstream of it. See **D-27**. **No price changed.**
 
 ---
 
@@ -66,23 +71,156 @@ what's-included page — not next to the price. `unit-economics.md` §9.4 has th
 
 ## 2. Founding Member rate
 
-**The first 4 clients lock $279 for the remainder of the 2026 season and all of the 2027
-season.**
+**Any member who signs on or before February 28, 2027 holds $279 through October 31, 2027.
+There is no cap on how many members hold it.**
 
-- The lock covers the **membership price only** — not project work and not materials.
-- It runs through **October 31, 2027**. It does not extend into 2028.
-- It is a real commitment and it is stated in the service agreement. It is also the strongest
-  close available before there is a portfolio of finished work to point at: he is asking the
-  first four people to take a chance on a business with no track record, and a locked price
-  through a full season is a fair thing to give them for it.
-- **After four members, the Founding rate is gone.** Members 5 and 6 pay the standard rate on
-  standard terms. Do not extend it quietly to fill the last two slots — see §8.
+> **Ruled 2026-08-06. This replaces "the first 4 clients," which is withdrawn.** The lock's
+> price, its end date, and what it covers are all unchanged. **Only the eligibility test
+> changed: from a count of members to a date.** The full reasoning, and what it would take to
+> reinstate a count, is `decisions.md` **D-27**. Read it before anyone puts a number back.
+
+### 2.1 The rule — the four lines that have to be right
+
+| | |
+|---|---|
+| **Who qualifies** | Any member whose **signature date on the service agreement is on or before February 28, 2027** — the day before the 2027 season opens. |
+| **How many** | **No limit.** Up to the whole book of six. If six sign before March 1, 2027, six are Founding Members. |
+| **What is locked** | The **membership price only** — $279 a month. Not project work, not materials, not disposal. |
+| **Until when** | **October 31, 2027.** A fixed calendar date, not a rolling twelve or fourteen months. It does not extend into 2028. |
+
+**Use the signature date, not the effective date and not the first visit.** A member who
+signs on February 20, 2027 for a March 1 start qualifies. Writing "Effective date: March 1,
+2027" on that agreement must not disqualify them, which is exactly the trap a
+first-visit or effective-date test would set. The signature date is on the face of every
+signed agreement, it cannot drift, and the member can check it themselves.
+
+**After February 28, 2027 there is no Founding rate.** A member who signs during the 2027
+season pays the standard rate on standard terms. *(The standard rate is $279. Unless and
+until that changes, nothing separates the two groups in dollars — see §2.4.)*
+
+**Any agreement already executed under the "first four" clause is honoured exactly as
+written.** This is a rule change going forward, not a repricing of a signed contract.
+
+### 2.2 Why a date and not a count
+
+Five reasons, in the order they matter.
+
+1. **A count hands the lock to whoever happens to be fourth, not to whoever took the risk.**
+   The concession exists because someone is signing a business with no completed season
+   behind it. That is a fact about *when* they sign, not about *where they land in a queue*.
+   Under a count, a client signing in June 2027 — walking past a yard that has visibly been
+   maintained all spring — still collects the founding lock if they happen to be number four.
+   Under a date, they do not, and the person who signed in the dark in January does. **The
+   date pays for the thing the concession is actually compensating.**
+
+2. **Four is not scarcity when the honest forecast is two.** `unit-economics.md` §4.2 says
+   plainly that two members is the realistic 2026 outcome. A cap that will not bind in 2026
+   is not a constraint; it is a sentence in an email implying competitive pressure that does
+   not exist. `CANON.md` §3 is unambiguous: *the scarcity is real, never fake it, never soften
+   it.* **The real scarcity is six slots, forever.** That number is true, it is already the
+   product (`CANON.md` §4), and it does not need a second, softer number standing in front of
+   it.
+
+3. **"First four" is not defensible to members five and six, and they will meet.** Six
+   premium properties on the west side of one township is a small enough world that the
+   members will run into each other — at a block party, over a fence, at the same pool-supply
+   counter. The one thing this business says about price is *one number, same for every
+   property* (§1, agreement §1, §3). A count-based lock reintroduces a two-price book through
+   the back door and defends it with **"you were slower."** That is the least defensible
+   version of a price difference: it is not about the property, not about the work, and not
+   about anything the later member could have known. The grandfathered-pricing literature
+   names the exact failure — the passenger who paid more, eating the same peanuts, on the
+   same flight ([Tier](https://blog.tier.run/pros-and-cons-of-grandfathering-a-users-pricing)).
+   A date at least answers *"the rate was locked for anyone on the books before the season
+   opened; you signed in June."* That is a fact, not a ranking of neighbours.
+
+4. **A signed instrument should not contain a term the counterparty cannot verify.** The
+   agreement's current form is a checkbox asserting *"This Member is one of the first four
+   members."* The member cannot check that. They have to take his word for a fact about other
+   people's contracts, and the box can be wrong at signing — through a miscount, a
+   simultaneous close, or a member who cancels in the first month. A date is checkable on the
+   face of the document by the person signing it. **That is what belongs in a contract.**
+
+5. **A date costs him nothing to administer; a count costs him a running tally in five
+   places.** The count needs a live number in the agreement, in a send-time email token, in a
+   printed leave-behind with two variants, in an intake flag, and in a phase gate. Every one
+   of those can go stale between Monday and Thursday. **The date can be printed and forgotten.**
+   For a one-person business this is not a small consideration.
+
+**Date-bounded windows are also the ordinary mechanism in this trade** — the retention
+literature for lawn and landscape operators describes early-confirmation incentives tied to a
+date, not to a headcount
+([Arborgold](https://arborgold.com/blog/build-your-business/how-to-keep-lawn-care-customers-happy/)).
+
+**Why February 28 and not the end of the 2026 season.** Marketing effort in a seasonal
+business belongs in **January–March**, aimed at the March 1 start (`decisions.md` D-10). A
+window that closed on October 31, 2026 would tell every prospect in that push that they had
+already missed something, which is the opposite of what the push needs. February 28 gives the
+winter campaign an honest deadline and one line that is true without embellishment:
+
+> **The founding rate closes the day the season opens.**
+
+### 2.3 What the lock actually protects — say this precisely
+
+The lock is worth exactly one thing: **$279 for the eight billed months of the 2027 season,
+guaranteed.** The 2026 half of the "founding terms" is not a concession at all — a pro-rated
+partial month (§3.2) is simply correct billing, and the 2026 rate is $279 for everyone
+regardless.
+
+That has a consequence worth understanding, because it is what finally settles the question:
+**the benefit is identical for everyone in the window.** A member who signs in September 2026
+and a member who signs in February 2027 both get the same eight protected months and the same
+October 31, 2027 end date. It does not decay, so a count cannot even be justified as a rough
+proxy for "who waited longest." **Rationing an identical benefit by arrival order is
+arbitrary. Rationing it by whether you committed before the protected season began is not.**
 
 **What the lock is really buying, and he should know this.** In a seasonal business the
 Founding lock is not primarily a discount. It is a **re-enrolment device**: it gives the
 person who signs in August 2026 a stated, written reason to come back on March 1, 2027, at a
 moment when four months of silence have gone by. That is the single biggest risk in the model
-(`decisions.md` **D-18(b)**), and the lock is the cheapest available answer to it.
+(`decisions.md` **D-18(b)**), and the lock is the cheapest available answer to it. **Under the
+date rule it does that job for the whole winter cohort instead of the first four of them** —
+which is the cohort that carries the risk.
+
+### 2.4 What it costs — and today the answer is nothing
+
+**There is no 2027 price increase planned.** `unit-economics.md` §5.1 models all six clients
+at $279 in 2027, locked or not. **So the modelled cost of the Founding lock is $0**, under
+this rule and under the old one.
+
+The lock only ever costs anything if the standard rate is raised for 2027. If that happens,
+the exposure is sized in `unit-economics.md` **§7.6**: at most **$320** more than the "first
+four" rule would have cost — **1.6% of the target-case net** — and on the honest two-member
+forecast the date rule is the **cheaper** of the two, because it stops handing the lock to
+people who join mid-2027 with nothing left to risk.
+
+**The rule that follows:** if he ever intends to raise the membership price for 2027, that
+decision belongs **before** the winter signing window, not after it. A rate rise decided in
+April 2027 is a rate rise that applies to almost nobody.
+
+### 2.5 What this does not authorise
+
+- **It is not a discount and it must never be sold as one.** Everyone pays $279. The lock is a
+  guarantee against a future increase, and §8 is unchanged: **the membership price is never
+  discounted**, and the last slot least of all.
+- **It does not create an exception path.** A prospect who signs on March 5, 2027 does not get
+  the founding lock because they nearly made it. The date is the date. If a closing concession
+  is genuinely needed after the window shuts, §8 lists the three that are allowed — scheduling
+  priority, a free first project, an extra visit in the first month — and a lower monthly
+  number is not among them.
+- **It does not extend the book.** Six is still six (`CANON.md` §3). The founding window
+  governs price, not capacity.
+
+### 2.6 How to say it
+
+> *"The season's already running, so I'll pro-rate what's left of it. And your rate is locked
+> at $279 through the end of next season — that holds for anybody who's on the books before
+> March 1. After that it's the standard rate. I'm not running a promotion; that's what I'm
+> giving the people who take a chance on somebody with no track record."*
+
+**Never** say "one of the first four," "only four spots at this price," or any count. That
+assertion is withdrawn. Customer-facing wording is `01-brand/`'s and `03-marketing/`'s to
+finalise; the substance above is the constraint they work inside.
 
 ---
 
@@ -322,6 +460,9 @@ the hours are underestimated or the job shouldn't be taken.
   the scope after it. See `ideal-client.md` §6.3.
 - **The last slot.** Filling slot 6 at a discount permanently lowers the ceiling of the whole
   book, because that member sets the reference price for every referral they send.
+  *(This is unaffected by §2. A member who fills slot 6 in January 2027 gets the Founding lock
+  by rule and still pays $279 — the same number as everyone else. A lock is not a discount.
+  What is banned is a **lower monthly number**, and §2 never produces one.)*
 - **Project work for members.** See §5.3 — they get priority and no trip minimum instead.
 - **Re-enrolment.** A returning member pays $279. Do not invent a loyalty rate; the answer to
   a member who hesitates in February is a **conversation**, not a discount.
@@ -340,7 +481,7 @@ concession is permanent and visible to every referral; a one-time concession is 
 | Membership, per season | $279 × 8 = **$2,232** |
 | Membership, per visit (pro-ration only) | **$139.50** |
 | Membership, November–February | **Not offered. Not billed.** |
-| Founding Member rate | First 4 clients, $279 locked through **Oct 31, 2027** |
+| Founding Member rate | **Signed on or before Feb 28, 2027** — $279 locked through **Oct 31, 2027**. No member-count cap. |
 | Grill & outdoor kitchen deep clean | **$249+** *(project price — not the membership price)* |
 | Window well cleanout | **$49+** |
 | All other project categories | Quoted — §5.2 |
@@ -356,4 +497,5 @@ concession is permanent and visible to every referral; a one-time concession is 
 - `service-catalog.md` — what $279 buys, and the exclusions that protect it
 - `ideal-client.md` — how property attributes select clients now that they no longer price them
 - `unit-economics.md` — what $279 produces at 4, 6, and 8 clients across 2026 and 2027
-- `decisions.md` — **D-19** (the flat price), **D-20** (the season), **D-18** (the memo)
+- `decisions.md` — **D-19** (the flat price), **D-20** (the season), **D-18** (the memo),
+  **D-27** (the Founding Member eligibility ruling behind §2)

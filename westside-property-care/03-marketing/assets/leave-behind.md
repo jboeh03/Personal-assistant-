@@ -39,7 +39,7 @@ cancellation, then the ask.
 >
 > I walk the property before I start and again before I leave. In between, I do what will make
 > the biggest difference to the property that day — which isn't the same list every visit. A
-> visit in early March looks nothing like one in late August, and both are complete visits.
+> visit in early March looks nothing like one in late August, and both are full visits.
 >
 > That usually means skimming the pool, brushing the steps and corners, vacuuming for up to about
 > thirty minutes, emptying both baskets, backwashing if the system wants it, and checking the
@@ -92,9 +92,9 @@ cancellation, then the ask.
 > November through February. Thirty days' written notice to cancel, and there's no contract
 > term.
 >
-> **The first four members get the rest of this season pro-rated, and $279 locked through
-> October 31 next year.** That isn't a promotion — it's what I'm giving the people who take a
-> chance on a business with no track record yet.
+> **Clients signing now get the rest of this season pro-rated and their rate locked for all of
+> next year.** That isn't a promotion — it's what I'm giving the people who take a chance on a
+> business with no track record yet.
 
 > ### If you'd rather start smaller
 >
@@ -126,12 +126,16 @@ cancellation, then the ask.
 
 **This piece changes shape as the book fills**, and it must not ship stale:
 
-1. **Pre-founding variant (current, above):** includes "the first four get the rest of this
-   season pro-rated, and $279 locked through October 31 next year."
-2. **Post-founding variant:** delete the Founding Member paragraph entirely and replace it with:
-   *"There's no contract term. Members five and six pay the same $279 on the same terms as
-   everyone after them."* Per `pricing.md` §2 and §8 — the founding rate is never extended
-   quietly to close a slow slot 5 or 6.
+1. **Pre-founding variant (current, above):** includes "clients signing now get the rest of this
+   season pro-rated and their rate locked for all of next year."
+2. **Post-founding variant:** 🔶 CONDITIONAL — `pricing.md` §2 says the founding rate disappears
+   "after the fourth client," but `messaging.md` §4 and `brand-brief.md` §4.2 both flag that count
+   as unresolved pending a `wpc-strategist` ruling. There is no confirmed cutoff to build this
+   variant against yet, so it does not exist as a print piece until one is confirmed. Once it is,
+   delete the Founding Member paragraph entirely and replace it with: *"There's no contract term.
+   [Members five and six, or whatever the confirmed count is] pay the same $279 on the same terms
+   as everyone after them."* Per `pricing.md` §2 and §8 — regardless of where the cutoff lands,
+   the founding rate is never extended quietly to close a slow slot 5 or 6.
 3. **Full-book variant, if slots 5 and 6 fill before this asset is retired:** replace the "Next
    step" section with the MEMBERSHIP FULL language from `voice.md` pair 7 and the waitlist offer,
    and stop distributing this piece to new prospects entirely — see `gtm-plan.md` §5.

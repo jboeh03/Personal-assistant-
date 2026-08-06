@@ -11,6 +11,11 @@ The previous version of this script verified a twelve-month, four-price model
 that no longer exists. Roughly 150 of its 159 assertions were dead. It was
 rewritten, not patched.
 
+EXTENDED 2026-08-06 for decisions.md D-27: the Founding Member rate is now
+date-bounded (signed on or before 2027-02-28), not capped at four members.
+No existing check changed. The W-block at the end of section 7 is new and
+covers unit-economics.md section 7.6.
+
 Run:  python3 verify-unit-economics.py
 Each check prints PASS/FAIL. Exit code 1 if any check fails.
 """
@@ -501,6 +506,58 @@ off_cost = rd(off_hrs * r2(R6["net"] / R6["hrs"]))
 chk("Z33 off-route unpaid drive hrs/season", off_hrs, 8.0)
 chk("Z34 off-route margin destroyed", off_cost, 346)
 chk("Z35 off-route % of client revenue", round(100 * off_cost / 2232, 1), 15.5)
+
+# 7.6 the Founding Member lock  (added 2026-08-06 with decisions.md D-27)
+# D-27: eligibility is a DATE (signed on or before 2027-02-28), not a member count.
+# The lock protects the 2027 season only - 8 billed months, identical for every
+# member inside the window.
+BOOK_CAP = 6                          # CANON section 3, hard cap
+FOUNDING_WINDOW_CLOSES = "2027-02-28"  # D-27
+SEASON_2027_OPENS = "2027-03-01"      # L2
+FOUNDING_MEMBER_CAP = None            # D-27: there is no member-count cap
+LOCK_MONTHS = SEASON_MONTHS           # the lock bites on the 2027 season only
+
+# A31: no 2027 price increase is modelled, so the lock is a $0 line
+chk("W01 A31 - Scenario B prices all six at $279 in 2027",
+    R6["mem"], PRICE * SEASON_MONTHS * BOOK_CAP)
+chk("W02 modelled cost of the Founding lock",
+    R6["mem"] - PRICE * SEASON_MONTHS * BOOK_CAP, 0)
+
+
+def lock_exposure(members, delta, months=LOCK_MONTHS):
+    """Revenue forgone if the 2027 standard rate were set `delta` above $279."""
+    return members * delta * months
+
+
+chk("W03 exposure, 1 locked member, +$10/mo", lock_exposure(1, 10), 80)
+chk("W04 exposure, 1 locked member, +$20/mo", lock_exposure(1, 20), 160)
+chk("W05 exposure, whole book locked, +$10/mo", lock_exposure(BOOK_CAP, 10), 480)
+chk("W06 exposure, whole book locked, +$20/mo", lock_exposure(BOOK_CAP, 20), 960)
+
+# case 1 - stretch case: all six sign inside the window. Only members 5 and 6 are
+# treated differently by D-27 and the withdrawn "first 4" rule.
+DIFFERENTLY_TREATED = BOOK_CAP - 4
+chk("W07 members the two rules treat differently", DIFFERENTLY_TREATED, 2)
+chk("W08 D-27 cost vs 'first 4', +$10/mo", lock_exposure(DIFFERENTLY_TREATED, 10), 160)
+chk("W09 D-27 max cost vs 'first 4', +$20/mo", lock_exposure(DIFFERENTLY_TREATED, 20), 320)
+D27_MAX = lock_exposure(DIFFERENTLY_TREATED, 20)
+chk("W10 D-27 max cost as % of 6c net", round(100 * D27_MAX / R6["net"], 1), 1.6)
+chk("W11 D-27 max cost as % of 6c membership", round(100 * D27_MAX / R6["mem"], 1), 2.4)
+chk("W12 D-27 max cost in non-member jobs", round(D27_MAX / NM_VALUE, 2), 1.28)
+
+# case 2 - honest forecast (section 4.2): two members by Oct 31 2026; members 3-6
+# sign during the 2027 season. Illustration: 3 and 4 start May 1 and are billed 6
+# of the 8 season months. Under "first 4" they would have been locked; under D-27
+# they are not.
+chk("W13 'first 4' cost on the honest forecast, +$20/mo, 6 billed months",
+    lock_exposure(2, 20, months=6), 240)
+
+# guards - the mechanism itself
+chk("W14 founding window closes before the 2027 season opens",
+    1 if FOUNDING_WINDOW_CLOSES < SEASON_2027_OPENS else 0, 1)
+chk("W15 founding eligibility carries no member-count cap",
+    1 if FOUNDING_MEMBER_CAP is None else 0, 1)
+chk("W16 the lock protects the 8-month 2027 season", LOCK_MONTHS, 8)
 
 # ===================================================================
 # CASH FLOW (section 8)

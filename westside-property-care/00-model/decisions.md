@@ -21,6 +21,7 @@ edits its own history is not a traceability log.
 | **D-18** | **The memo to the owner** — what his decisions cost, what needs attention, what he got right |
 | **D-19 – D-24** | The six locked facts he changed on 2026-08-05 |
 | **D-25 – D-26** | What had to be re-derived downstream of those six |
+| **D-27** | **The Founding Member eligibility ruling, 2026-08-06** — a date, not a count |
 | **R-1 – R-9** | Recommendations — open and closed |
 
 ### Status board
@@ -53,6 +54,7 @@ edits its own history is not a traceability log.
 | D-24 | Attributes select clients, not prices | 🆕 **Derived** |
 | D-25 | Route structure re-derived | 🆕 **Derived** |
 | D-26 | Metrics recalibrated | 🆕 **Derived** |
+| **D-27** | **Founding rate: "first 4 clients" → signed on or before Feb 28, 2027** | 🆕 **Ruled 2026-08-06** |
 
 ---
 
@@ -763,6 +765,12 @@ owner's. See **R-7**.
 October 31, 2027** — the remainder of 2026 plus a full 2027. Its real job in a seasonal
 business is **re-enrolment**, not discount. `pricing.md` §2.
 
+> ⚠ **The words "the first 4 clients" in the paragraph above are superseded by D-27
+> (2026-08-06).** Eligibility is now a date — signed on or before **February 28, 2027** — with
+> **no member-count cap**. Everything else in that sentence stands: $279, through October 31,
+> 2027, re-enrolment rather than discount. **The rest of D-19 is untouched.** This is a
+> partial supersession of one clause, not a reversal of the decision.
+
 *Locked in `CANON.md` §3. Implemented in `pricing.md` §1. Costed in **D-18(a)**.*
 
 ---
@@ -1049,6 +1057,197 @@ business: **it works at six clients with the project engine running, and not oth
 
 ---
 
+## 🆕 D-27 · The Founding rate: **"the first 4 clients" → anyone signing before the 2027 season opens**
+
+**Ruled 2026-08-06 by `wpc-strategist`.** Supersedes the "first 4 clients" clause inside
+**D-19**. **No price, no date, and no duration changed — only the eligibility test.**
+
+### What it said
+
+`pricing.md` §2, and every document downstream of it:
+
+> **The first 4 clients lock $279 for the remainder of the 2026 season and all of the 2027
+> season.** […] **After four members, the Founding rate is gone.** Members 5 and 6 pay the
+> standard rate on standard terms.
+
+By 2026-08-06 that assertion had propagated into a **signed instrument**
+(`04-operations/service-agreement.md` §2, as a checkbox reading *"This Member is one of the
+first four members"*), five send-ready templates in `03-marketing/warm-list-campaign.md`, a
+printed leave-behind, and an entire phase-gate structure in `03-marketing/gtm-plan.md` §3.
+`01-brand/messaging.md` §4 and `01-brand/brand-brief.md` §4.2 had already flagged it as stale
+and instructed copy to say *"clients signing now"* pending this ruling.
+
+### What it says now
+
+> **Any member who signs a service agreement on or before February 28, 2027 holds $279
+> through October 31, 2027. There is no cap on how many members hold it — up to the whole
+> book of six.**
+
+- **The test is the signature date on the agreement.** Not the effective date, not the first
+  visit. A member signing February 20, 2027 for a March 1 start qualifies.
+- **After February 28, 2027 there is no Founding rate.** The window closes the day the season
+  opens.
+- **Everything else is unchanged:** $279, membership price only, through October 31, 2027, not
+  into 2028, a price guarantee and not a term commitment.
+- **Any agreement already executed under the "first four" clause is honoured as written.**
+
+*Implemented in `pricing.md` §2. Costed in `unit-economics.md` §7.6 and A31.*
+
+### Why the question was genuinely open, and not a drafting slip
+
+The cap was set when the model was **year-round with four attribute-based prices**, and the
+lock ran **twelve months**. Under the shipped model it is a different instrument in four ways,
+and each one weakens the count:
+
+| | When "first 4" was written | Under the shipped model |
+|---|---|---|
+| What the lock protects | a **tier** — the property's own configuration | **one flat number**, $279, against a future increase |
+| How long | 12 months | **~14 calendar months** across a four-month gap — but only **8 billed months**, all of them in 2027 |
+| Who it competes with | members on other tiers, whose prices differ for a visible reason | **members on the identical price**, whose only difference would be arrival order |
+| Whether the cap binds | plausible under a year-round sell | **`unit-economics.md` §4.2 forecasts two members in 2026** |
+
+### The reasoning, in the order it decided the question
+
+**1. A count pays for arrival order; the concession is compensating risk, and risk is a date.**
+The founding rate exists because someone is signing a business with no completed season behind
+it. Under a count, a client signing in **June 2027** — walking past a property he has visibly
+maintained all spring — still collects the lock if they happen to be number four.
+`03-marketing/gtm-plan.md` §3 had already noticed this and written it down as a feature: *"a
+prospect signed in April 2027 as client 3 still gets the founding rate."* **That is the count
+mechanism failing, not the count mechanism working.** It decouples from the thing it is paying
+for the moment signing is slow — and the honest forecast says signing will be slow.
+
+**2. Four is not scarcity when the forecast is two.** `CANON.md` §3: *the scarcity is real,
+never fake it, never soften it.* A cap that will not bind in 2026 is not a constraint; it is a
+sentence in an email implying competitive pressure that does not exist. **The real scarcity is
+six slots, forever** — it is already the product (`CANON.md` §4), it is already load-bearing in
+the copy, and it does not need a second, softer number standing in front of it. Worse, the two
+numbers actively interfere: a prospect told *"six slots ever, and only four at this rate"* has
+been handed two ceilings and will believe neither.
+
+**3. "First four" is not defensible to members five and six, and they will meet.** Six premium
+properties on the west side of one township is a small enough world that the members will run
+into each other. The single strongest thing this business says about price is **one number,
+same for every property** (`pricing.md` §1, agreement §1 and §3). A count-based lock
+reintroduces a two-price book through the back door and defends it with *"you were slower"* —
+which is not about the property, not about the work, and not about anything the later member
+could have known or done. The grandfathered-pricing literature names this failure exactly: the
+passenger who paid more, eating the same peanuts, on the same flight
+([Tier](https://blog.tier.run/pros-and-cons-of-grandfathering-a-users-pricing)); and legacy
+price tiers are widely described as operational debt that compounds quietly inside contracts
+and billing ([Paddle](https://www.paddle.com/blog/legacy-pricing)). A date at least gives him a
+true sentence to say out loud: *"the rate was locked for anyone on the books before the season
+opened."*
+
+**4. A signed instrument should not contain a term the counterparty cannot verify.** The
+agreement's checkbox — *"This Member is one of the first four members"* — asserts a fact about
+**other people's contracts**. The member cannot check it; they have to take his word. It can
+also be wrong at signing, through a miscount, two closes in the same week, or a member who
+cancels in month one and vacates a founding slot nobody can reassign cleanly. **A date is
+checkable on the face of the document by the person signing it.** For a solo operator with no
+back office, that difference is the whole argument on its own.
+
+**5. A date costs nothing to administer; a count costs a running tally in five places.** The
+count needs a live number in the agreement, in the `{{founding_spots_filled}}` send-time token
+(`warm-list-campaign.md` §5), in a printed leave-behind with a pre- and post-founding variant,
+in the intake sheet's `FOUNDING` flag, and in the gtm phase gate. Every one of those can go
+stale between Monday and Thursday, and the printed one cannot be corrected at all once it is at
+a kitchen table. **The date can be printed and forgotten.**
+
+**Supporting evidence that the date is the ordinary mechanism in this trade**, rather than a
+clever exception: retention writing for lawn and landscape operators describes
+early-confirmation incentives tied to **a date by which the client confirms**, not to a
+headcount ([Arborgold](https://arborgold.com/blog/build-your-business/how-to-keep-lawn-care-customers-happy/)).
+
+### Why February 28, 2027 specifically
+
+Three candidate lines were considered.
+
+| Candidate | Why not / why yes |
+|---|---|
+| **October 31, 2026** — "founding = you were a member in 2026" | **Rejected.** Tighter and more romantic, but it kills the winter signing window. D-10 puts marketing effort in **January–March**, aimed at the March 1 start. A window that closed in October tells every prospect in that push they already missed it — the opposite of what the push needs. |
+| **February 28, 2027** — the day before the season opens | **Chosen.** It separates exactly the two populations that differ: people who committed before there was a completed season to look at, and people who signed into a season already visibly running. It also gives the January–March campaign an honest deadline that reinforces the correct marketing calendar instead of fighting it. |
+| **Mid-2027 or "the founding cohort," undefined** | **Rejected.** An undefined cohort in a signed contract is worse than either rule: it lets him decide after the fact who counts. Eligibility in an instrument has to be objectively determinable at signing. |
+
+**The line it produces, and it needs no embellishment:**
+
+> **The founding rate closes the day the season opens.**
+
+### What settled it, once the arithmetic was in
+
+The lock's entire economic content is **$279 for the eight billed months of the 2027 season.**
+The 2026 half of the "founding terms" is not a concession at all — pro-rating a partial month
+(`pricing.md` §3.2) is just correct billing, and the 2026 rate is $279 for everybody.
+
+So **the benefit is identical for every member inside the window.** A September 2026 signer and
+a February 2027 signer get the same eight protected months and the same October 31, 2027 end
+date. It does not decay with time. **A count cannot even be justified as a rough proxy for
+"who waited longest," because nobody is waiting for anything that shrinks.** Rationing an
+identical benefit by arrival order is arbitrary. Rationing it by whether you committed before
+the protected season began is not.
+
+### What it costs — the arithmetic, in full
+
+`unit-economics.md` **§7.6** carries this with the checks; the short version:
+
+**Nothing, today.** Scenario B prices all six members at $279 in 2027 (now stated explicitly as
+assumption **A31**, which was previously implicit and made the lock look free by accident). The
+modelled cost of the Founding lock is **$0** — under this rule and under the old one.
+
+**If the 2027 rate were ever raised by Δ per month**, only two members can ever be treated
+differently by the two rules — the fifth and the sixth, and only if they sign inside the
+window:
+
+```
+Stretch case, all six inside the window:   2 × Δ × 8 months
+   Δ = $20  →  $320    ← the most D-27 can ever cost
+   $320 ÷ $19,887 net  =  1.6%      $320 ÷ $250 per job  =  1.28 non-member jobs
+
+Honest forecast (2 members by Oct 2026; members 3-6 sign during the 2027 season):
+   "first 4" locks members 3 and 4 as well, who signed with nothing left to risk
+   2 × Δ × 6 billed months,  Δ = $20  →  $240  in D-27's favour
+```
+
+**On the forecast the model actually carries, the date rule is the cheaper of the two.** The
+maximum it can cost is smaller than a single step in **A7**, the load-bearing assumption on the
+page. **D-27 is therefore not a financial decision** — it was made on fairness, contract
+quality, and honest scarcity, and the arithmetic only confirms nothing was traded to get them.
+
+**One operating consequence follows, and it is the only one:** if the membership price is ever
+going to rise for 2027, **that decision has to be made before February 28, 2027.** A rate rise
+decided in April 2027 applies to almost nobody. That is not an argument for raising the price;
+it is an argument for deciding on purpose rather than by default.
+
+### What this ruling does *not* do
+
+- **It does not touch the price.** $279, unchanged, everywhere.
+- **It does not touch the cap.** Six is still six. The window governs price, not capacity.
+- **It does not create a discount.** Everyone pays $279. `pricing.md` §8 is intact, including
+  the ban on a last-slot price — a member who fills slot 6 in January 2027 gets the lock by
+  rule and still pays the same number as everyone else.
+- **It does not create an exception path.** A prospect who signs March 5, 2027 does not get the
+  lock for nearly making it.
+- **It does not move a single figure in `unit-economics.md`.** Two additions (A31 and §7.6),
+  no revisions.
+
+### What has to change downstream — for the owning agents, not for `00-model/`
+
+| File | What it says | What it needs |
+|---|---|---|
+| `04-operations/service-agreement.md` §2 | Checkbox: *"This Member is one of the first four members"* | **Replace the checkbox with a standing clause** stating the date test. It should read as a term of the agreement, not a fact the member has to accept on trust. §2's second paragraph (the lock's scope and end date) is correct as written and should survive verbatim. Same for the §11 sentence referencing the Founding Member price. |
+| `03-marketing/warm-list-campaign.md` §5 | Five templates asserting "the first four" | Replace with the date. **`{{founding_spots_filled}}` becomes unnecessary** — the token, its zero-count deletion rule, and Step 5's "close-out once the founding four are filled" all have nothing left to count. The close-out step is now dated, not triggered. |
+| `03-marketing/assets/leave-behind.md` | "The first four members get…" plus a two-variant print plan | One variant, with a date. **The pre/post-founding reprint problem disappears** — that was the count's cost showing up in a print order. |
+| `03-marketing/gtm-plan.md` §3 | Phase gate: "Phase 1 — the founding four (slots 1–4)" and "no deadline on the founding rate other than the first four clients" | The phase gate is now **February 28, 2027**, not slot 4. The line *"a prospect signed in April 2027 as client 3 still gets the founding rate"* is now false. §5's `{{founding_spots_filled}}` token definition goes with it. |
+| `03-marketing/intake-sheet.md` | `FOUNDING` flag "one of the first four founding slots" | The flag now means *signed inside the window*, and no longer needs manual retirement when a fourth slot fills. |
+| `01-brand/messaging.md` §4 · `01-brand/brand-brief.md` §4.2 | 🔶 flagged unresolved; copy says "clients signing now" | **"Clients signing now" was the right call and stays correct** — under D-27 anyone signing now is eligible. The flag can be cleared and the deadline stated as a fact, never as a countdown (`voice.md`'s ban on promotional framing is unaffected). |
+| `02-website/copy-deck.md` §3.7 · `site-spec.md` open item 7 | Interim "clients signing now"; open item asks for this ruling | Item 7 is answered. The MEMBERSHIP-FULL state's replacement paragraph is unaffected. |
+| `05-playbook/human-checklist.md` | "Decide who the first four Founding Members are" | Now: decide the route-compatible book. Founding status follows from the signing date automatically. |
+
+**`00-model/` cannot fix any of these — they are outside this lane.** Flagged for the
+orchestrator alongside **R-9**.
+
+---
+
 ## Recommendations
 
 ### Closed
@@ -1094,20 +1293,45 @@ block 8 corroborates it more strongly than anything did before. Both stay marked
 **Ask him:** *"Your rule 4 got cut off at 'don't quietly absorb projects into the' — was that
 'the membership'? And do you remember what rule 5 was?"*
 
-#### 🔶 R-4 · The Founding rate now has a second job — make sure it does it
+#### ✅ R-4 · The Founding rate now has a second job — **RESOLVED by D-27, 2026-08-06**
 
-`pricing.md` §2 locks $279 for the first 4 clients through **October 31, 2027**, and it
-disappears after that.
+> **Resolved.** The eligibility question this recommendation was circling — *"how do we stop
+> the lock being used as a closing discount for slots 5 and 6?"* — was answered by removing the
+> premise. Under **D-27** the lock is not rationed by slot at all. It is date-bounded, it is not
+> a discount, and there is nothing left to extend quietly. The original text is kept below.
 
-**The recommendation has changed.** Previously this was a note about not extending the lock to
-close slots 5 and 6 — **that still stands**; a discount to fill the last slot permanently lowers
-the reference price for every referral that member sends. If a concession is needed for slot 6,
-give **scheduling priority, a free first project, or an extra visit** — never a lower number.
+**What R-4 said** *(text at the time of the ruling)*:
 
-**What is new:** in a seasonal business the lock is primarily a **re-enrolment device**, not a
-discount. It gives the August-2026 signer a written reason to come back on March 1, 2027. **Make
-sure it is presented that way** — "your price is locked through next season" is a returning-
-customer argument, and it is the cheapest one available against the risk in D-18(b).
+> `pricing.md` §2 locks $279 for the first 4 clients through **October 31, 2027**, and it
+> disappears after that.
+>
+> **The recommendation has changed.** Previously this was a note about not extending the lock to
+> close slots 5 and 6 — **that still stands**; a discount to fill the last slot permanently
+> lowers the reference price for every referral that member sends. If a concession is needed for
+> slot 6, give **scheduling priority, a free first project, or an extra visit** — never a lower
+> number.
+>
+> **What is new:** in a seasonal business the lock is primarily a **re-enrolment device**, not a
+> discount. It gives the August-2026 signer a written reason to come back on March 1, 2027.
+> **Make sure it is presented that way** — "your price is locked through next season" is a
+> returning-customer argument, and it is the cheapest one available against the risk in D-18(b).
+
+**What survives, unchanged and still binding:**
+
+1. **The membership price is never discounted, and the last slot least of all.** `pricing.md`
+   §8. D-27 does not weaken this by one word — a member who fills slot 6 inside the window pays
+   **$279**, the same number as everyone else. A guarantee against a future increase is not a
+   lower price.
+2. **The three allowed closing concessions** — scheduling priority, a free first project, an
+   extra visit in the first month. Never a lower monthly number.
+3. **Present the lock as a re-enrolment device, not a promotion.** This is now *more* true, not
+   less: under D-27 it does that job for the entire winter cohort rather than the first four of
+   them, and the winter cohort is precisely the group carrying the D-18(b) risk.
+
+**What changed:** the worry that the lock would be *stretched* to close slots 5 and 6 is gone,
+because there is nothing to stretch. The replacement worry is smaller, dated, and named in
+`unit-economics.md` §7.6: **if the 2027 price is ever going to move, decide it before February
+28, 2027.**
 
 #### 🔶 R-5 · Numbers to verify with real quotes before launch — **STILL OPEN AND NOW LARGER**
 
@@ -1175,6 +1399,7 @@ owned by other agents:
 | **"There is no icon and there will not be one"** | There is one, and it is finished. **D-23** |
 | **"WPC" alone in customer-facing copy** | **WPC513**, or the full name. **D-23** |
 | **Any snow, ice, or freeze-protection service inside the membership** | Deleted. **D-20** |
+| **"The first four," "the founding four," "four founding spots," or any member count attached to the Founding rate** — including the `{{founding_spots_filled}}` token, the leave-behind's two print variants, the gtm-plan slot-4 phase gate, and the checkbox in the signed agreement | Eligibility is a **date**: signed on or before **February 28, 2027**, no count. **D-27**, with the full downstream list in that entry |
 
 **`00-model/` cannot fix these — they are outside this lane.** Flagged for the orchestrator.
 
@@ -1183,10 +1408,10 @@ owned by other agents:
 ## Related files
 
 - `operating-model.md` — D-1, D-2, D-5, D-12, D-13, D-21, D-25, D-26
-- `pricing.md` — D-14, D-15, D-19, D-20
+- `pricing.md` — D-14, D-15, D-19, D-20, **D-27**
 - `service-catalog.md` — D-11, D-20, D-22
 - `ideal-client.md` — D-9, D-10, D-13, D-24
-- `unit-economics.md` — D-4, D-6, D-17, D-18, D-24, D-25, D-26
+- `unit-economics.md` — D-4, D-6, D-17, D-18, D-24, D-25, D-26, **D-27** (A31 and §7.6)
 - `verify-unit-economics.py` — mechanical check of every figure in `unit-economics.md`
 - `CANON.md` — carries the 2026-08-05 re-baseline note and the open items in §10
 - `_source/brother-draft-4-client-model.md` — the original draft

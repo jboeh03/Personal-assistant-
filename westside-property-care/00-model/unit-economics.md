@@ -13,6 +13,11 @@ priced in `pricing.md`, or numbered below and explicitly labelled an assumption.
 > price, the year is eight months long, and the visit is two hours with a heavier pool
 > scope. Roughly 700 of the previous 792 lines were invalid. This page was rebuilt from the
 > locked facts up, not patched. See `decisions.md` **D-18** through **D-26**.
+>
+> **Amended 2026-08-06 (D-27).** Two additions, **no existing figure moved**: assumption
+> **A31** (no 2027 membership price increase) is now stated instead of implied, and **§7.6**
+> sizes what the Founding Member lock costs under the new date-bounded rule. Every scenario
+> total, hour count, and per-hour figure on this page is unchanged.
 
 ---
 
@@ -203,6 +208,12 @@ argue with.
 | **A8** | Non-member jobs, **off season** (Nov–Feb) | **4 jobs**, all book sizes | Grill deep cleans before the holidays, a gutter job, a storm callout. Deliberately small. Independent of book size because members are not being visited. **Assumption.** |
 | **A9** | Non-member jobs, **2026 partial season** (11 weeks) | **8 jobs**, all book sizes | ≈0.75/wk. He is new in 2026 regardless of how many members he has signed. **Assumption.** |
 | **A10** | Average non-member project value | **$250** | Anchored on the $249 grill deep clean, the most likely first job from a Tri-State Grill Cleaning referral. **Assumption.** |
+| **A31** | **No membership price increase for the 2027 season** — every client, Founding-locked or not, is modelled at **$279** in Scenario B | **$279 in 2027** | Added 2026-08-06 with **D-27**. It was previously implicit in §5.1 and never stated, which made the Founding lock look free by accident rather than by assumption. Nothing in `CANON.md` or the agreement proposes a 2027 increase. **Assumption**, and the only one the Founding lock depends on — sized in **§7.6**. |
+
+*Assumption numbers are append-only.* **A31** sits at the end of the revenue block rather than
+in sequence because renumbering A1–A30 would silently break every reference to them in
+`decisions.md`, `operating-model.md`, and `verify-unit-economics.py`. New assumptions take the
+next unused number wherever they belong topically.
 
 ### 3.3 Time assumptions
 
@@ -712,6 +723,92 @@ $346 ÷ $2,232                            =  15.5% of that client's entire membe
 Under a flat price this is **15.5% for every client** — there is no longer a cheaper tier
 where it hurts more. It is simply a sixth of the client's revenue, gone before he unloads a
 tool. `ideal-client.md` §6.1 is the disqualifier this pays for.
+
+### 7.6 The Founding lock is a $0 line in this model — and what would change that
+
+**Added 2026-08-06 with `decisions.md` D-27.** The Founding Member rate is now **date-bounded,
+not count-bounded**: any member signing on or before **February 28, 2027** holds $279 through
+**October 31, 2027**, with **no cap on how many members hold it** (`pricing.md` §2). This
+section exists because the previous "first 4 clients" rule was never costed anywhere on this
+page, which made it look free rather than assumed.
+
+**Under A31 the lock costs nothing at all.** Scenario B already prices every member at $279 in
+2027, locked or not:
+
+```
+§5.1 as modelled     6 members × $279 × 8 months   =  $13,392
+The same book, all six Founding-locked at $279     =  $13,392
+                                                      -------
+MODELLED COST OF THE FOUNDING LOCK                 =       $0
+```
+
+That is true of the withdrawn rule as well. **The lock has a cost only if A31 breaks** — that
+is, only if the standard membership rate is ever set above $279 for the 2027 season.
+
+**Sizing the exposure if A31 breaks.** For a monthly increase of Δ above $279, a locked member
+forgoes `Δ × 8` over the 2027 season:
+
+| Increase above $279 | Per locked member, one season | Whole book of six locked |
+|---|---|---|
+| **+$10 / month** | 10 × 8 = **$80** | 6 × $80 = **$480** |
+| **+$20 / month** | 20 × 8 = **$160** | 6 × $160 = **$960** |
+
+> **Δ is an increment, not a price.** The membership price is **$279** (`pricing.md` §1) and
+> nothing on this page proposes changing it. $10 and $20 are used here only to put a scale on
+> an exposure.
+
+**What D-27 costs against the rule it replaced.** Only two members can ever be treated
+differently by the two rules — the fifth and the sixth — and only if they sign inside the
+window.
+
+**Case 1 — the stretch case: all six on the books before March 1, 2027.**
+
+```
+"first 4"  →  4 members locked at $279; members 5 and 6 pay the raised rate
+D-27       →  6 members locked at $279
+Difference =  2 members × Δ × 8 months
+
+Δ = $10    →  2 × 10 × 8   =   $160
+Δ = $20    →  2 × 20 × 8   =   $320    ← the most D-27 can ever cost
+
+$320 ÷ $19,887 net (§5.4)         =  1.6% of the target-case year
+$320 ÷ $13,392 membership (§5.1)  =  2.4% of membership revenue
+$320 ÷ $250 per non-member job    =  1.28 jobs (A10)
+```
+
+**Case 2 — the honest forecast (§4.2): two members by October 31, 2026, and members 3–6 sign
+during the 2027 season.**
+
+```
+D-27       →  2 members locked — the winter cohort. Members 3-6 pay the standard rate.
+"first 4"  →  4 members locked — including members 3 and 4, who signed into a
+              season already visibly running
+
+Illustration (assumption): members 3 and 4 start May 1, 2027 and are billed
+6 of the 8 season months.
+
+Difference =  2 members × Δ × 6 months
+Δ = $20    →  2 × 20 × 6   =   $240    in D-27's favour
+```
+
+**On the forecast this page actually carries, the date rule is the cheaper of the two.** The
+count rule's real cost is that it keeps paying out after the risk it was compensating has
+passed: a client signing in June 2027, walking past a property he has maintained all spring,
+would still collect a founding lock under "first 4" if they happened to be number four.
+
+**The whole question is worth at most $320, in a scenario that is not planned.** That is about
+one and a quarter non-member jobs — smaller than a single step in **A7**, which is the
+load-bearing assumption on this page (§7.4). **D-27 is therefore not a financial decision.** It
+was made on fairness, contract quality, and honest scarcity, and the arithmetic simply confirms
+that nothing is being traded away to make it.
+
+**One operating consequence, and it is the only one:**
+
+> **If the membership price is ever going to rise for 2027, that decision has to be made
+> before the window closes on February 28, 2027 — not after.** A rate rise decided in April
+> 2027 applies to almost nobody, because by then most of the book is locked. This is not an
+> argument for raising the price. It is an argument for deciding on purpose rather than by
+> default.
 
 ---
 

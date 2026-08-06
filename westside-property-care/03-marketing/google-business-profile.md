@@ -102,14 +102,20 @@ lead order in `messaging.md` §3's GBP row.
 >
 > I take care of properties in Green Township, Oak Hills, upper Delhi, and Covedale. This is not
 > a lawn service — I don't mow. And it's not a pool service in the way you'd hire one: I skim,
-> brush, vacuum, and check the equipment, but I don't guarantee your water chemistry or clarity.
+> brush, vacuum, and check the equipment, but no guarantee of water chemistry, water clarity,
+> equipment performance, or pool-system operation.
 >
-> $279 a month. That's the whole price list. I also do grill and outdoor kitchen deep cleans
-> from $249, and window well cleanouts from $49 during a scheduled visit. Call or text
-> `[PHONE]`.
+> $279 a month. That's the whole price list — up to two hours on site each visit, highest
+> priority first. I also do grill and outdoor kitchen deep cleans from $249, and window well
+> cleanouts from $49 during a scheduled visit. Call or text `[PHONE]`.
 
-(Character count comes in under 750 with the placeholder resolved to a real number; recount once
-`[PHONE]` is filled in.)
+(This revision adds the full four-noun pool disclaimer, per `voice.md` §8 item 41, and states the
+two-hour cap alongside the price, per `voice.md` §8 item 39 — both were missing from the prior
+draft and both are required wherever pool work or the cap is described. These additions use most
+of the headroom the prior ~600-character draft had under the 750 limit. **Count the exact
+character total with `[PHONE]` resolved to the real number before publishing** — if it comes in
+over 750, trim from the geography sentence in the second paragraph first, never from the pool
+disclaimer or the cap clause.)
 
 ---
 

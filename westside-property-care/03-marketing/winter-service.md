@@ -77,10 +77,12 @@ existing ones to a new season:
   pool deck — never the driveway and never the public sidewalk.
 - **No ladder, no roof, above roof line.** Same rule as `service-catalog.md` §4.4. Gutter and
   downspout work under this proposal is ground-level clearing and a discharge check, same as the
-  membership's own gutter boundary — not a from-the-ladder cleaning. (Full ladder-based gutter
-  cleaning already exists as a separate, published-anchor **project** — `pricing.md` §5.3,
-  from $179 single-story / $249 two-story — and stays available as an upsell quoted separately,
-  not folded into this package.)
+  membership's own gutter boundary — not a from-the-ladder cleaning. Full ladder-based gutter
+  cleaning is a separate project, quoted after he looks at it. It is not a published price —
+  `pricing.md` §5.3 lists single-story and two-story figures as **internal quoting anchors only**,
+  and `voice.md` §3's anchor-leak rule names "gutters from $179" as its own literal example of a
+  banned leak. It stays available as an upsell, quoted separately after an on-site look, not
+  folded into this package and never quoted as a range or a starting price.
 - **No pool work of any kind.** The task list this proposal is built from doesn't include the
   pool, and that's deliberate — it keeps this offering out of the insurance question already
   open for the membership's pool scope (`CANON.md` §10.3) and out of the pool-company comparison
@@ -220,6 +222,13 @@ mistaken for a way to buy the membership on the cheap:
 | Visits | 16 | 2, or 1 |
 | On-site hours | Up to 32 (at the 2-hr ceiling) | 3.25, or 2.25 |
 | Scope | Full outdoor living area, including pool care | Six named items, no pool, ground-level only |
+
+**This table is internal only and must never be copied onto a customer-facing surface as-is.**
+Putting the membership's season price and its season hours in adjacent cells is exactly the
+value-comparison shape `voice.md` §8 item 36 bans — divide $2,232 by 32 hours and the table hands
+a reader (or a future editor lifting a row from it) the hourly-rate framing the hours-arithmetic
+rule exists to prevent. It exists here to prove the winter package can't be mistaken for a
+cut-rate membership, not as a draft for any page, flyer, or listing.
 
 At roughly a sixth to an eighth of the membership's season price and a fraction of its scope,
 this cannot read as a way to sell around the season boundary — it reads as what it is: a small,
