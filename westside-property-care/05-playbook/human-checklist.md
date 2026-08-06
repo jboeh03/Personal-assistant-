@@ -110,7 +110,14 @@ Real before/afters are worth more than any copy on the site. See the image slots
 
 - [ ] Have an attorney or the insurance carrier read `04-operations/service-agreement.md`.
       It is written in plain language and is not legal advice.
-- [ ] Decide who the first four Founding Members are and confirm they're route-compatible
+- [ ] Build the route-compatible book — **founding status follows from the signing date, so
+      there is no list to pick.** Anyone signing on or before **February 28, 2027** holds $279
+      through October 31, 2027, up to the whole book of six (`00-model/decisions.md` D-27).
+      Choose clients on route fit and property fit, not on arrival order.
+- [ ] **Decide before February 28, 2027 whether the 2027 price is changing.** A rise decided
+      in April 2027 applies to almost nobody, because the window will have closed. This is not
+      an argument for raising it — it is an argument for deciding on purpose rather than by
+      default.
       (`00-model/ideal-client.md` has the selection criteria)
 - [ ] Confirm whether the Tri-State Grill Cleaning customer list can be used for outreach —
       **this gates the highest-leverage marketing channel** and

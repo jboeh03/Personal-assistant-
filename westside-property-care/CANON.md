@@ -59,6 +59,16 @@ the same as a property with neither.
 - **$249 is not a price in this business.** It appeared on an early flyer draft and is
   withdrawn. It also collides with the published `$249+` grill deep-clean project price.
 
+**Founding Member rate — dated, not counted.** Anyone who **signs on or before February 28,
+2027** holds $279 through **October 31, 2027**. There is **no cap on how many** hold it, up
+to the whole book of six. The test is the **signature date**, not the effective date or the
+first visit. Agreements already executed under the withdrawn "first four" clause are honoured
+as written. See `00-model/decisions.md` **D-27**.
+
+State the deadline as a **fact, never a countdown.** "The rate is locked for anyone on the
+books before the season opens" is a fact. "Only three weeks left" is banned urgency wearing a
+date instead of a count.
+
 > **Superseded.** An earlier version of this file specified four attribute-based
 > configurations — $229 / $269 / $289 / $329, derived from a base plus a pool module and an
 > outdoor-kitchen module. **All four are dead.** None may appear anywhere outside `_source/`.
@@ -260,8 +270,9 @@ from `00-model/pricing.md` verbatim.
 2. **His agreement is headed 2027.** Re-dated to a 2026 start with pro-ration — confirm.
 3. **The insurer needs to know what he actually touches.** Vacuuming, backwashing, and
    salt-cell checks are pool-system operation, and the old exclusion said he did none of it.
-4. **The 4-visit-of-5 membership standards 4–5** were reconstructed from a truncated source
-   and remain unconfirmed.
+4. **Membership standards 4–5** were reconstructed from a truncated source and remain
+   unconfirmed.
+   *(Closed 2026-08-06 — the Founding Member cap. Ruled date-bounded, D-27.)*
 5. **TSGC warm-list access is unconfirmed.** Anything depending on it stays **CONDITIONAL**.
 6. **No real photography exists.** Never specify stock photos as a final answer — mark image
    slots with what the real photo must show.
