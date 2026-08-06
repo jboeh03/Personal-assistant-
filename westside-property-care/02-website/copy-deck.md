@@ -523,11 +523,11 @@ Unused service time does not roll over
 > Card on file, charged on the schedule we set when you sign, March through October. Thirty days'
 > written notice to cancel, either of us, and there's no term.
 >
-> The season's already underway, so I'll pro-rate what's left of it. Your rate is then held at $279
-> through October 31, 2027, and that holds for anybody whose agreement is signed on or before
+> The season's already underway, so I'll pro-rate what's left of it. Your rate is then locked at
+> $279 through October 31, 2027 — that's for anybody whose agreement is signed on or before
 > February 28, 2027.
 >
-> There's no limit on how many people that is. It could be all six. It isn't a promotion either —
+> There's no limit on how many people that is. It could be all six. And it isn't a promotion —
 > it's what I'm giving the people who take a chance on a business with no track record.
 
 **Onward:** *Billing, cancellation, and the rest of the price page* → `pricing.html`
@@ -924,8 +924,8 @@ The single figure, identical to §1.8, then:
 
 > ## Pro-rated 2026, and $279 held through the 2027 season
 >
-> The season's already underway, so I'll pro-rate what's left of it. Your rate is then held at $279
-> through October 31, 2027.
+> The season's already underway, so I'll pro-rate what's left of it. Your rate is then locked at
+> $279 through October 31, 2027.
 >
 > It holds for anybody whose agreement is signed on or before February 28, 2027 — the day before
 > the 2027 season opens. There's no limit on how many people that is, and it could be all six.

@@ -629,10 +629,10 @@ Per page:
 
 | Page | Raw | Gzipped | Change |
 |---|---|---|---|
-| `index.html` | 37,527 B | 10,598 B | +457 |
+| `index.html` | 37,521 B | 10,595 B | +454 |
 | `membership-full.html` | 37,424 B | 10,441 B | −10 |
 | `whats-included.html` | 32,200 B | 9,291 B | +129 |
-| `pricing.html` | 26,697 B | 7,674 B | +310 |
+| `pricing.html` | 26,699 B | 7,676 B | +312 |
 | `about.html` | 17,140 B | 5,179 B | −55 |
 | `waitlist.html` | 15,373 B | 4,665 B | −70 |
 | `apply.html` | 13,809 B | 4,432 B | −5 |
@@ -648,8 +648,8 @@ bytes out, and it takes them out of exactly the pages that were arguing hardest.
 grew did so for content that had to be there: the restored cap clauses on What's included and
 Pricing, and the dated founding terms on Home and Pricing.
 
-**The number that matters is the heaviest first load:** `index.html` (10,598 B) plus all three
-stylesheets (19,701 B) plus `season.js` (730 B) plus one favicon (804 B) = **31,833 B gzipped,
+**The number that matters is the heaviest first load:** `index.html` (10,595 B) plus all three
+stylesheets (19,701 B) plus `season.js` (730 B) plus one favicon (804 B) = **31,830 B gzipped,
 31.1 KB**, in six requests, with no font, no photograph and no third-party anything.
 `index.html` does not load `forms.js` — it has no form. The heaviest form page, `apply.html`
 cold, is 4,432 + 19,701 + 730 + 714 + 804 = **26,381 B, 25.8 KB** in seven requests. Every
@@ -1225,8 +1225,13 @@ is cosmetic rather than informational.
   `.season__stamp` and the switch's 6px square, all inside the navy status strip — that the
   square's hover state now overrides itself to `--paper`, and that the footer uses the
   knocked-out lockup rather than a wordmark that would land on the Off Season slate.
-- CSS class coverage swept both ways: **zero classes used in markup without a rule, and zero
-  rules without a use.**
+- CSS class coverage swept both ways: **zero classes used in markup without a rule**, and **one
+  rule without a use — `.tick--done`, deliberately.** It is the only exception in the stylesheet
+  and it is commented as one. An `--ink` tick means *a visit already delivered*; the state is real
+  the day a member reads their own record and it may not appear on a public page before then. An
+  unused rule is normally something to delete, which is exactly why it carries a comment saying
+  why it is not: without one, the next person needing a delivered-visit state re-invents it, and
+  re-invents it on `index.html`.
 - Token coverage swept both ways: **zero `var(--x)` references to an undefined token, and zero
   defined tokens with no reference.** Exactly one colour literal exists outside `tokens.css` — it
   does not; it was moved into `tokens.css` as `--img-edge` during this pass.
