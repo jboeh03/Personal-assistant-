@@ -40,3 +40,20 @@
 4. It isn't even a good post-closing offset: the evidence disappears with the repair.
 
 **RECOMMENDATION (the hedge, ~30 minutes):** Before repairs begin — (a) have the roofer photograph and note the creased shingles in writing during the estimate ("wind-creased, functional damage") so the option is preserved if major hidden wind damage surfaces; (b) one phone call to the sellers' insurance *agent* (a question, not a filed claim) to confirm wind/hail deductible structure and ACV/RCV status. If, against expectation, it's flat-$500 + RCV and the roofer scopes a slope replacement, revisit. Otherwise: pay for the repair, close on 08/28, don't look back.
+
+---
+
+## ADDENDUM (2026-08-07, after policy intake) — the hedge is LIVE
+
+Declarations reviewed (Erie ErieSecure Home, 12/07/25–12/07/26):
+
+- **Section I deductible: $1,000 FLAT** — no percentage wind/hail deductible on the declarations. The §2 "percentage deductible kills the claim" concern does NOT apply. (EVIDENCE — policy declarations)
+- **Guaranteed Replacement Cost** dwelling coverage (est. replacement cost ~$524.5K): covered losses settle at replacement cost without depreciation once repaired — the ACV-depreciation concern in §3 does not apply either, subject to policy conditions. (EVIDENCE)
+- **Roof installed 2014** (composite/asphalt) — ~12 years old, well inside the ~20-year age threshold where insurers balk. (EVIDENCE)
+- **Siding & Roofing Restoration endorsement up to $10,000** — an Erie matching-style endorsement relevant if replacement shingles/siding can't match. Note the endorsement text: "Hail losses must be reported within one year from the date" (verify the wind reporting window in form ES01524/UFD909). (EVIDENCE, form text partially reviewed)
+
+**Revised conclusion (INFERENCE):** Net-recovery math flips positive: if the roofer scopes the wind-creased shingles + associated repairs at $2.5–7.5K, a covered wind claim could recover most of it minus $1,000 — and the matching/restoration endorsement adds headroom if shingle matching forces broader work. The claim is still **not a pre-closing remedy** (Ohio's 15/21/10-day claim clock vs. the 08/24 repair deadline; open-claim disclosure friction) — the deal strategy is unchanged. What changes: the **hedge is now worth executing deliberately, not casually**:
+
+1. **Before any repair:** roofer documents in writing + photos "wind-creased shingles, functional wind damage" with date; keep the 08/04 inspection report (independent third-party evidence) with it.
+2. **Monday call to Brodbeck Porter (513-624-0900):** frame as a coverage question, not a claim notice; confirm wind reporting window and whether a post-repair claim with pre-repair documentation is viable (some carriers accept documented-then-repaired losses; get the answer in writing if possible).
+3. Decide on filing AFTER the response is delivered and repairs are scheduled — sale first, offset second. If a claim is filed, disclosure obligations to the buyers may attach; ask Amy/attorney first. (RECOMMENDATION)
