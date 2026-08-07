@@ -1,43 +1,70 @@
-# Net-Proceeds Scenarios — Concession Cost Deltas by Option
+# Net-Proceeds Scenarios — Banded Model (v2, post-intake)
 
 > ⚠️ **Strategy analysis, not legal advice — review with your agent and an Ohio attorney before signing.**
->
-> **Personal financial inputs pending intake — this table shows CONCESSION COST DELTAS per option, not absolute net proceeds.** When payoff/lien/commission bands land in [data/finance-context.md](../data/finance-context.md), regenerate via `/deal-memo net-proceeds`.
 
-**as_of:** 2026-08-07 · Sale price $585,000 · Options modeled against the **ALL-IN ask band ~$3,800–$10,200, most likely ~$5,500–$7,700** (EVIDENCE/INFERENCE composite — [findings.json](../data/findings.json) bundle note).
+**as_of:** 2026-08-07 · Supersedes the v1 "concession-deltas-only" file. Payoff band, split rule, and insurance intake landed in [data/finance-context.md](../data/finance-context.md); this is now a real (banded) net-proceeds model. Liens/debts upload and commission % remain **PENDING** — regenerate via `/deal-memo net-proceeds` when they land.
 
-## 1. Known fixed costs of closing (identical across options (a)–(e); irrelevant only under (f)/termination)
+## 1. Inputs
 
-| Item | Amount / band | Label |
-|---|---|---|
-| Seller-paid settlement charges in base contract | $0 | EVIDENCE — contract §4 / DEAL_BRIEF ("Seller-paid settlement charges in base contract: none") |
-| Transfer/conveyance fees, deed prep, seller-side title settlement fees, discharge of liens/encumbrances needed for marketable title | Seller pays; $ amounts pending title quote + payoff intake | EVIDENCE (obligation, contract §23) / amounts PENDING |
-| Hamilton County conveyance fee on $585,000 | **~$1,755–$2,340** ($3–$4 per $1,000: $1/1,000 state-mandated + county conveyance & permissive fee reported at $3.00/1,000; sources are ambiguous on whether the $3 includes the state $1 — confirm exact total with the [Hamilton County Auditor's calculator](https://www.hamiltoncountyauditor.org/transfercalciii/)) + **$0.50/parcel** transfer fee (1 parcel) | EVIDENCE (rate structure — [Hamilton County Auditor](https://www.hamiltoncountyauditor.org/textonly/transferfee.asp), [HomeLight Hamilton County transfer tax](https://www.homelight.com/blog/hamilton-county-transfer-tax/)) / INFERENCE (exact total within band) |
-| Property tax proration — Ohio bills a year in arrears; **long proration**, seller pays taxes through closing | Accrued-but-unbilled taxes credited to buyers at closing; $ pending county duplicate. Scale anchor only: Anderson Twp median effective ~2.14%/yr → a through-08/28 long proration plausibly runs in the low-five-figures territory on a $585K valuation | EVIDENCE (method, contract §21; rate — [Ownwell Anderson Township](https://www.ownwell.com/trends/ohio/hamilton-county/anderson-township)) / INFERENCE (magnitude; NOT a computed figure — needs actual assessed value + tax duplicate) |
-| Earnest money $10,000 | Applies to price at closing (not a cost) | EVIDENCE — contract §3 / finance-context.md |
-| Listing-side commission | PENDING intake (structure unknown) | — |
+| # | Input | Band / value | Label |
+|---|---|---|---|
+| 1 | Sale price | **$585,000** | EVIDENCE — contract / [DEAL_BRIEF.md](../DEAL_BRIEF.md) |
+| 2 | Mortgage payoff (Rocket Mortgage, sole known mortgage lien) | **$300,000–$325,000** | EVIDENCE (banded) — payoff statement dated 08/06/26; rate 2.750%; [finance-context.md](../data/finance-context.md) |
+| 3 | Listing-side total commission | **5–6% = $29,250–$35,100** | INFERENCE — typical total-commission band; **pending Amy's confirmation** of the actual structure (incl. any buyer-side amount per §7(c)) |
+| 4 | Hamilton County conveyance fee | **$1,755–$2,340** ($3–$4 per $1,000 on $585K; sources ambiguous on whether the $3 county rate includes the $1 state rate) **+ $0.50/parcel** (1 parcel) | EVIDENCE (rate structure, Hamilton County Auditor) / INFERENCE (exact total within band) — as previously cited in v1 |
+| 5 | Deed prep + seller-side title settlement fees | **~$500–$1,500** | INFERENCE — typical Ohio seller-side title/deed charges; §23 obligation is EVIDENCE; actual quote pending from Fidelity Land Title |
+| 6 | Property tax proration (Ohio **long proration**, §21 — seller pays through closing) | Annual tax **~$8.6K/yr band** (county tax ~$4,317 semi-annual per escrow schedule); Jan 1–Aug 28 ≈ 240/365 of the year → **~$5,000–$6,000 charge** | INFERENCE — **assumption:** Ohio bills a year in arrears and the escrow account has paid all bills issued to date, so the closing charge is the accrued-but-unbilled Jan 1→08/28/26 portion credited to buyers. If a billed installment is unpaid at closing it adds on top — confirm against the county duplicate at title |
+| 7 | Other liens / personal debts payable from proceeds | **PENDING upload** — model excludes; any property lien required for marketable title reduces the bands below dollar-for-dollar | PENDING |
+| 8 | Split rule | **50/50** | EVIDENCE — confirmed by Jeff, per finance-context.md; subject to counsel/separation agreement |
+| 9 | Earnest money $10,000 | Applies to price at closing — buyer-side funds, **not** a seller deduction | EVIDENCE — contract §3 |
 
-## 2. Concession cost deltas by option
+> **Payoff statement is STALE.** The 08/06/26 statement was good through 08/06. A **fresh payoff good through 08/28+ (ideally into early September)** must be ordered before closing. Daily interest accrues at **~$25/day** (band) — 08/06→08/28 adds roughly **$550** of interest, which sits comfortably inside the $300–325K band used here. The **~$4K escrow balance** refunds to sellers separately ~20 business days after payoff — **excluded from closing math**, counted as a post-closing inflow (Section 4).
 
-"Per-spouse" column uses a **placeholder 50/50 split rule** (INFERENCE — actual split rule pending intake in finance-context.md; counsel may direct otherwise).
+## 2. Baseline net proceeds BEFORE any Defect Notice concession
 
-| Option | Gross concession cost band | Cash-at-close timing effect | Execution-risk cost (qualitative) | Per-spouse Δ @ placeholder 50/50 |
+The math (best case uses the low end of every deduction; worst case the high end):
+
+```
+Best case:  $585,000 − $300,000 (payoff) − $29,250 (5%) − $1,756 (conveyance)
+            − $500 (deed/title) − $5,000 (tax proration)          = $248,494
+Worst case: $585,000 − $325,000 (payoff) − $35,100 (6%) − $2,341 (conveyance)
+            − $1,500 (deed/title) − $6,000 (tax proration)        = $215,059
+```
+
+| Baseline (pre-concession, pre-liens-pending) | Band |
+|---|---|
+| **Net to sellers (joint)** | **~$215.1K – $248.5K** |
+| **Per spouse @ 50/50** | **~$107.5K – $124.2K** |
+
+Label: INFERENCE composite built on the EVIDENCE/INFERENCE inputs above. The ~$33K width is driven mostly by the payoff band (±$25K) and the commission band (±$5.9K) — both narrow with one document each (fresh payoff statement; Amy's commission confirmation).
+
+## 3. Net proceeds by response branch
+
+Concession bands trace to [findings.json](../data/findings.json) (all-in ask ~$3,800–$10,200, most likely ~$5,500–$7,700) and [COUNCIL_VERDICT.md](COUNCIL_VERDICT.md) ($5,500 Branch-A credit; ~$7,500 pure-(d)).
+
+| Branch | Concession band | Net to sellers (joint) | Per spouse @ 50/50 | Cash-timing notes |
 |---|---|---|---|---|
-| **(a) Agree to all** | $3,800–$10,200 (most likely $5,500–$7,700) — EVIDENCE bands / INFERENCE composite | Paid **pre-closing out of pocket** (contractor invoices due before proceeds exist) — INFERENCE; liquidity check needed | HIGH: RS-2 hidden decking can pierce the high end ("not a ceiling"); unfinished item at 08/25 re-inspection = leverage handed to buyers — EVIDENCE/INFERENCE, [costs-roofing.md](../research/costs-roofing.md) | −$1,900 to −$5,100 each (most likely −$2,750 to −$3,850) |
-| **(b) As amended** (scope caps on RS-2/RS-6) | $3,800–$9,000; amendments trim the top of the band — INFERENCE on EVIDENCE bands | Same pre-closing out-of-pocket profile as (a) | MEDIUM-HIGH: same schedule race; ambiguity risk reduced by initialed scope language; 2-day Settlement fuse added — EVIDENCE (§15(c)) | −$1,900 to −$4,500 each |
-| **(c) Price reduction** | ~$6,000–$8,000 (must exceed buyers' perceived cost to win a yes; only ~10% reaches buyer as cash at 90% LTV, so an efficient number skews high) — INFERENCE per [contract-timeline-analysis.md](../research/contract-timeline-analysis.md) §3 | Reduces gross at closing; **$0 pre-closing cash needed**; also trims conveyance fee ~$3–4 per $1,000 reduced (de minimis) — EVIDENCE (fee is price-based) | LOW: underwriting-proof, no contractors, no re-inspection scope; risk is acceptance, not execution | −$3,000 to −$4,000 each |
-| **(d) Closing-cost credit** | ~$5,500–$7,700 sized to the all-in ask; double-capped by buyers' **actual** settlement charges + prepaids and the 6% IPC cap (≈$35,100 headroom, so only the actual-costs cap binds) — EVIDENCE (caps) / INFERENCE (sizing) | Deducted from proceeds **at closing**; $0 pre-closing cash | LOW: routine lender treatment; residual risk = credit oversized vs. buyers' actual costs (wasted dollars) — verify via buyers' agent | −$2,750 to −$3,850 each |
-| **(e) Escrowed contractor funds** | Final cost = licensed bids (~$3,800–$10,200 scope), but **1.2×–1.5× of bids withheld from proceeds** → ~$4,600–$15,300 held at Fidelity until completion sign-off (Form 1004D/442) — EVIDENCE (sizing rules) / INFERENCE (applied) | **Worst timing profile:** $5K–$15K of proceeds tied up past closing, released only on completion verification — collides with payoff/lien settlement needs during separation — INFERENCE | HIGH (structural): written lender approval required; rejection can land 08/21–08/25, too late to pivot; "safety/soundness" carve-out may capture RS-2 — EVIDENCE/INFERENCE | Tie-up of −$2,300 to −$7,650 each until release; final cost −$1,900 to −$5,100 each |
-| **(f) Refuse all** | $0 concession — EVIDENCE (form) | No closing occurs on rejection → **no proceeds at all in 2026 base case** | SEVERE: auto-termination 08/12; BATNA **−$20,000 to −$45,000** vs. closing plus **−$5,000 to −$13,000 carry** (2–3.5 mo. at ~$2,500–$3,500/mo); $10K earnest frozen at Fidelity pending mutual Release/court order; full ORC 5302.30 disclosure on relist — EVIDENCE/INFERENCE, [market-batna.md](../research/market-batna.md) | −$12,500 to −$29,000 each (BATNA midpoint math) |
-| **H1: radon now + roof escrow** | Radon $1,000–$2,000 cash pre-closing + roof/gutter bids ($2,800–$8,300) escrowed at 1.2–1.5× → ~$3,400–$12,450 held — EVIDENCE bands / INFERENCE sizing | Small pre-closing outlay (radon); mid-size escrow tie-up past closing | MEDIUM: escrow leg carries (e)'s lender-veto risk — mitigated by conditioning the counter on written lender approval inside the Settlement Period — INFERENCE | Final cost −$1,900 to −$5,150 each; plus temporary tie-up −$1,700 to −$6,225 each |
-| **H2: radon now + roof credit** ⭐ ranked #1 | Radon $1,000–$2,000 pre-closing + credit ~$2,800–$8,300 (most likely ~$4,000–$5,700) → **total ~$3,800–$10,300, most likely ~$5,000–$7,700** — EVIDENCE bands / INFERENCE composite | Only radon (~$1–2K) needed pre-closing; credit deducted at closing; **nothing tied up after closing** | LOW: radon fits pre-08/25 with 3–7 days margin (licensed ODH installer, retest <4.0); credit is routine IPC; RS-2 surprise risk transfers to buyers — EVIDENCE/INFERENCE | −$1,900 to −$5,150 each (most likely −$2,500 to −$3,850) |
+| **A — radon performed + $5,500 credit** (H2) | Radon ~$1,000–$2,000 pre-closing **+** $5,500 credit = **$6,500–$7,500** | **~$207.6K – $242.0K** | **~$103.8K – $121.0K** | Only the radon $1–2K is out-of-pocket before closing (installer invoice); the $5,500 deducts from proceeds at the closing table. Nothing tied up after closing. |
+| **B — (b)-amended, perform all work** | **$3,800–$10,200**, most likely **$5,500–$7,700** | Full band **~$204.9K – $244.7K**; most-likely **~$207.4K – $243.0K** | Full band **~$102.4K – $122.3K** | **Worst pre-closing liquidity profile:** contractor invoices ($4–10K) are typically due before proceeds exist on 08/28 — confirm which spouse fronts what, or whether contractors will invoice at/through closing. RS-2 hidden decking can pierce the top of the band once the roof is opened. |
+| **C — pure (d) credit, $7,500 all-in** | **$7,500** flat | **~$207.6K – $241.0K** | **~$103.8K – $120.5K** | $0 pre-closing cash; entire concession deducts at closing. Cleanest timing of any branch. Capped by buyers' actual settlement charges + prepaids (verify with their lender). |
+| **Silence → deemed-(a)** (do not do this) | **~$5,500–$10,000+** and the band is **not a ceiling** | ~$205.1K – $243.0K *on paper* | ~$102.5K – $121.5K *on paper* | All work pre-closing out-of-pocket at the buyers' written scope with zero negotiated caps; any unfinished item at the 08/25 re-inspection hands leverage back to the buyers. The paper band excludes this execution risk — treat deemed-(a) as strictly dominated by an intentional Branch B. |
 
-## 3. Reading the table
+Reading it: the three deliberate branches land within ~$1–3K of each other at the midpoints — **the branch choice is about risk allocation and cash timing, not headline dollars.** A (Branch A/C) credit shifts scope-surprise risk to buyers and needs little or no pre-closing cash; Branch B keeps sellers on the hook for surprises and needs $4–10K fronted, but carries zero §15 auto-termination risk if delivered as acceptance-of-repairs.
 
-- **Cheapest expected concession:** (a)/(b)/H2 all center near the same ~$5,500–$7,700 most-likely zone; the differentiators are *who bears scope-surprise risk* (sellers under (a)/(b); buyers under (d)/H2) and *when cash moves* (pre-closing out-of-pocket under (a)/(b); at-closing deduction under (c)/(d)/H2; post-closing tie-up under (e)/H1). INFERENCE.
-- **Every negotiated option beats (f) by roughly 2×–8× its own cost.** The BATNA gap (−$20K to −$45K plus carry) is the controlling number in this file. EVIDENCE/INFERENCE — market-batna.md.
-- **Liquidity flag for intake:** options (a)/(b)/H1/H2 need $1K–$10K of pre-closing cash from sellers whose proceeds arrive 08/28; confirm which spouse fronts what, and whether Amy's network invoices at/after closing. INFERENCE — resolve at finance intake.
-- Fixed §23/§21 items in Section 1 are common-mode: they change *absolute* net proceeds but not the *ranking* of options — except (f), under which none of them are incurred in 2026 and far worse costs are. INFERENCE.
+## 4. Post-closing inflows (excluded from closing math above)
+
+| Inflow | Band | Label / conditions |
+|---|---|---|
+| Rocket Mortgage escrow refund | **~$4K band**, ~20 business days after payoff | EVIDENCE (band, finance-context.md) — arrives after closing; agree in advance how a joint refund check is split 50/50 |
+| Erie wind-claim offset (RS-1 wind-creased shingles) | **Up to the roof-repair cost minus the $1,000 flat deductible** — e.g., a $2.5–7.5K covered scope could return ~$1.5–6.5K; the $10K Siding & Roofing Restoration endorsement adds headroom if matching forces broader work | INFERENCE — **conditional on** (i) wind damage documented in writing + photos **BEFORE any repair**, (ii) coverage confirmation from Erie (agent: Brodbeck Porter, 513-624-0900), (iii) adjuster not attributing the damage to the RS-2 maintenance picture. Post-closing offset **only** — never delays the Defect Notice response or the repairs. See [insurance-angle.md](../research/insurance-angle.md) addendum. |
+
+## 5. What narrows these bands
+
+1. **Fresh Rocket payoff good through 08/28+** (order now; statement in hand is stale as of 08/06; ~$25/day interest).
+2. **Commission % from Amy** (converts input #3 from INFERENCE to EVIDENCE; ±$5.9K of band width).
+3. **Liens/debts upload** (input #7 — currently a silent $0 in this model).
+4. **Fidelity title quote** (inputs #4–#5) and the county tax duplicate (input #6).
+5. **First real contractor quote** — supersedes every repair band per findings.json.
 
 ---
-*Regeneration trigger: any edit to [data/finance-context.md](../data/finance-context.md) bands (payoff, liens, commission, split rule, wind deductible) → rerun `/deal-memo net-proceeds`. First real contractor quote supersedes all repair bands per findings.json.*
+*Inputs: [finance-context.md](../data/finance-context.md) · [findings.json](../data/findings.json) · [DEAL_BRIEF.md](../DEAL_BRIEF.md) · [COUNCIL_VERDICT.md](COUNCIL_VERDICT.md) · [insurance-angle.md](../research/insurance-angle.md). Regeneration trigger: any change to finance-context bands → `/deal-memo net-proceeds`.*
