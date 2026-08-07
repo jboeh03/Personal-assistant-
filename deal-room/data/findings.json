@@ -8,11 +8,19 @@
       "description": "Front lower roof shingles loose/lifted, creased as though wind-bent",
       "status": "in-ask",
       "requested_remedy": "Roofing contractor to repair/secure all loose or lifted roof coverings prior to closing",
-      "cost_low_usd": null,
-      "cost_high_usd": null,
-      "cost_confidence": null,
-      "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "cost_low_usd": 350,
+      "cost_high_usd": 1500,
+      "cost_confidence": "cited",
+      "sources": [
+        "https://www.angi.com/articles/cost-to-repair-asphalt-shingles.htm",
+        "https://www.homeadvisor.com/cost/roofing/asphalt-shingle-roof-repair",
+        "https://www.nerdwallet.com/home-ownership/home-improvement/learn/cost-to-replace-roof-shingles"
+      ],
+      "options": {
+        "contractor": "Roofing company replaces creased/lifted shingles on front lower slope; $350-$1,500; 0.5 crew-day; notice names 'roofing contractor' so this is the required path",
+        "agent_as_contractor": "Technically capable; HIGH documentation risk - notice specifies roofing contractor and requires receipts at re-inspection; not recommended",
+        "diy": "Not viable - creased shingles need replacement and the notice requires a professional"
+      },
       "insurance_relevant": true,
       "notes": "Wind-crease language may support a homeowner's insurance wind-damage claim (offset, not pre-closing remedy)"
     },
@@ -22,11 +30,19 @@
       "description": "Roof sheathing weak/buckled in >=3 locations on left main upper roof, shingles lifting; visible from attic",
       "status": "in-ask",
       "requested_remedy": "Repair affected sheathing and restore roof covering attachment",
-      "cost_low_usd": null,
-      "cost_high_usd": null,
-      "cost_confidence": null,
-      "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "cost_low_usd": 800,
+      "cost_high_usd": 2500,
+      "cost_confidence": "inferred",
+      "sources": [
+        "https://homeguide.com/costs/cost-to-replace-roof-decking",
+        "https://www.angi.com/articles/roof-sheathing-cost.htm",
+        "https://myhomepros.com/roofing/how-much-does-it-cost-to-replace-roof-decking/"
+      ],
+      "options": {
+        "contractor": "Roofer opens affected areas, replaces est. 3-6 sheets ($100-$150/sheet installed) plus tear-off/re-shingle of 1-2 squares; hidden-damage upside risk once opened",
+        "agent_as_contractor": "Same documentation risk as RS-1; structural-adjacent scope makes roofing-company receipts even more important",
+        "diy": "Not viable"
+      },
       "insurance_relevant": false,
       "notes": "Inspector: commonly reconciled at failure or re-roof; buyers asked for repair now"
     },
@@ -36,11 +52,19 @@
       "description": "Kick-out flashings missing at wall/gutter transitions; dark wall staining indicates water flow",
       "status": "in-ask",
       "requested_remedy": "Install missing flashing and kick-out flashing to direct water into gutters",
-      "cost_low_usd": null,
-      "cost_high_usd": null,
-      "cost_confidence": null,
-      "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "cost_low_usd": 500,
+      "cost_high_usd": 1600,
+      "cost_confidence": "inferred",
+      "sources": [
+        "https://www.roofingtalk.com/threads/retro-fitting-kick-out-flashing-how-hard-is-it-to-diy.11931/",
+        "https://www.justanswer.com/home-improvement/nu86u-cost-install-flashing-home.html",
+        "https://homeguide.com/costs/roof-flashing-repair-cost"
+      ],
+      "options": {
+        "contractor": "Retrofit kick-outs at 2-4 wall/gutter transitions; $250-$400/location standalone, lower bundled; can exceed band if siding must be rebuilt",
+        "agent_as_contractor": "Marginally more defensible than RS-1/RS-2 but still under the 'roofing contractor' clause; not recommended",
+        "diy": "Materials $10-$32/unit and physically DIY-able, but fails the notice's professional requirement"
+      },
       "insurance_relevant": false,
       "notes": ""
     },
@@ -50,11 +74,22 @@
       "description": "Gutters/downspouts clogged in multiple areas; fasteners and hanger supports loose",
       "status": "in-ask",
       "requested_remedy": "Clean all gutters/downspouts, repair/secure fasteners and hangers, re-pitch as needed",
-      "cost_low_usd": null,
-      "cost_high_usd": null,
-      "cost_confidence": null,
-      "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "cost_low_usd": 250,
+      "cost_high_usd": 700,
+      "cost_confidence": "cited",
+      "sources": [
+        "https://www.homeblue.com/gutter-cleaning/cincinnati-oh-gutter-cleaning-cost.htm",
+        "https://www.homeyou.com/oh/gutter-cleaning-cincinnati-costs",
+        "https://homeguide.com/costs/gutter-cleaning-cost",
+        "https://homeguide.com/costs/gutter-repair-cost",
+        "https://www.angi.com/articles/cost-of-gutter-repair.htm",
+        "https://www.homeadvisor.com/cost/gutters/repair-gutters-and-downspouts"
+      ],
+      "options": {
+        "contractor": "Cleaning $70-275 + fastener/hanger repair $150-650; bundle with the roofer already on site",
+        "agent_as_contractor": "Feasible - no trade license required for gutter work; produces the required invoice/receipt",
+        "diy": "Technically trivial but likely fails the notice's 'qualified professional' + receipts requirement (INFERENCE)"
+      },
       "insurance_relevant": false,
       "notes": "Most DIY-viable item, but notice says qualified professional for agreed corrections"
     },
@@ -64,11 +99,19 @@
       "description": "Gutters sloped incorrectly, preventing proper drainage",
       "status": "in-ask",
       "requested_remedy": "Correct gutter/downspout slope for proper flow away from structure",
-      "cost_low_usd": null,
-      "cost_high_usd": null,
-      "cost_confidence": null,
-      "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "cost_low_usd": 75,
+      "cost_high_usd": 300,
+      "cost_confidence": "cited",
+      "sources": [
+        "https://homeguide.com/costs/gutter-repair-cost",
+        "https://www.fixr.com/costs/gutter-repair",
+        "https://www.baroofings.com/blogs/sagging-gutters/"
+      ],
+      "options": {
+        "contractor": "Re-pitch/slope correction $75-300; usually absorbed into RS-4 re-hang scope",
+        "agent_as_contractor": "Feasible, same caveats as RS-4",
+        "diy": "Feasible but same notice-compliance tension as RS-4"
+      },
       "insurance_relevant": false,
       "notes": "Overlaps RS-4 scope; likely priced together"
     },
@@ -78,11 +121,20 @@
       "description": "Concrete chimney crown/cap damaged; water penetrating chimney/brick",
       "status": "in-ask",
       "requested_remedy": "Repair/replace chimney crown/cap and correct flashing",
-      "cost_low_usd": null,
-      "cost_high_usd": null,
-      "cost_confidence": null,
-      "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "cost_low_usd": 350,
+      "cost_high_usd": 3500,
+      "cost_confidence": "cited",
+      "sources": [
+        "https://homeguide.com/costs/cost-to-repair-replace-chimney-crown",
+        "https://www.homeadvisor.com/cost/heating-and-cooling/chimney-repair",
+        "https://www.forbes.com/home-improvement/roofing/chimney-crown-repair-replacement-cost/",
+        "https://www.angi.com/articles/how-much-should-it-cost-replace-flashing-around-chimney.htm"
+      ],
+      "options": {
+        "contractor": "Repair path (partial crown rebuild + flashing reseal) $350-$1,400; full replacement + flashing $1,500-$3,500; may need chimney/masonry company - get scope agreed in writing",
+        "agent_as_contractor": "Crown work is masonry - a chimney company receipt is the clean answer; not recommended",
+        "diy": "Not viable"
+      },
       "insurance_relevant": false,
       "notes": ""
     },
@@ -92,11 +144,19 @@
       "description": "Rear upper wood siding loose near roofline",
       "status": "in-ask",
       "requested_remedy": "Repair or replace damaged siding near roofline",
-      "cost_low_usd": null,
-      "cost_high_usd": null,
-      "cost_confidence": null,
-      "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "cost_low_usd": 150,
+      "cost_high_usd": 750,
+      "cost_confidence": "inferred",
+      "sources": [
+        "https://www.angi.com/articles/cost-to-repair-wood-siding.htm",
+        "https://www.homeadvisor.com/cost/siding/wood-siding-repair",
+        "https://homeguide.com/costs/siding-repair-cost"
+      ],
+      "options": {
+        "contractor": "Re-secure/replace small siding section near roofline; $150-$600 bundled with roof job, up to $750 standalone",
+        "agent_as_contractor": "Most defensible item for the agent-contractor - siding arguably falls outside the 'roofing contractor' clause; confirm buyers will accept the receipt",
+        "diy": "Physically trivial but notice requires professional completion"
+      },
       "insurance_relevant": false,
       "notes": "Bundled into the roof-package ask"
     },
@@ -106,18 +166,107 @@
       "description": "48-hr basement CRM test: EPA protocol average 13.6 pCi/L (action level 4.0)",
       "status": "in-ask",
       "requested_remedy": "Mitigate radon if level at or over 4.0 (triggered)",
+      "cost_low_usd": 1000,
+      "cost_high_usd": 2000,
+      "cost_confidence": "cited",
+      "sources": [
+        "https://radonmitigationcincinnati.com/radon-mitigation-cost/",
+        "https://radonresources.com/ohio/cincinnati/",
+        "https://www.angi.com/articles/how-much-does-it-cost-remove-radon-gas.htm",
+        "https://www.forbes.com/home-improvement/home/radon-mitigation-system-cost-guide/",
+        "https://homeguide.com/costs/radon-mitigation-cost",
+        "https://odh.ohio.gov/know-our-programs/radon-education-and-licensing-program/radon-licensing",
+        "http://codes.ohio.gov/orc/3723.02",
+        "https://standards.aarst.org/MAH-2019/6/"
+      ],
+      "options": {
+        "contractor": "ONLY option - Ohio requires ODH-licensed radon mitigation contractor (ORC 3723.02). ASD system, 1-day install; 13.6 pCi/L below the ~20 design-escalation threshold, expect $1,000-1,800",
+        "agent_as_contractor": "Not feasible unless agent holds an ODH radon mitigation license",
+        "diy": "Not feasible for notice compliance - licensure required"
+      },
+      "insurance_relevant": false,
+      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection"
+    },
+    {
+      "id": "SS-1",
+      "area": "structure",
+      "description": "Foundation cracks w/ movement, multi-layer patches, exterior crack to roofline; PE evaluation recommended",
+      "status": "waived",
+      "requested_remedy": null,
       "cost_low_usd": null,
       "cost_high_usd": null,
       "cost_confidence": null,
       "sources": [],
-      "options": { "contractor": null, "agent_as_contractor": null, "diy": null },
+      "options": null,
       "insurance_relevant": false,
-      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection"
+      "notes": "Now-known: disclosure obligation on any relist"
     },
-    { "id": "SS-1", "area": "structure", "description": "Foundation cracks w/ movement, multi-layer patches, exterior crack to roofline; PE evaluation recommended", "status": "waived", "requested_remedy": null, "cost_low_usd": null, "cost_high_usd": null, "cost_confidence": null, "sources": [], "options": null, "insurance_relevant": false, "notes": "Now-known: disclosure obligation on any relist" },
-    { "id": "SS-2", "area": "structure", "description": "Basement perimeter water-entry signs, extent undetermined", "status": "waived", "requested_remedy": null, "cost_low_usd": null, "cost_high_usd": null, "cost_confidence": null, "sources": [], "options": null, "insurance_relevant": false, "notes": "Now-known: disclosure obligation on any relist" },
-    { "id": "ES-1", "area": "electrical", "description": "Wadsworth main distribution panel antiquated; 30+ yr breakers; replacement likely on repair", "status": "waived", "requested_remedy": null, "cost_low_usd": null, "cost_high_usd": null, "cost_confidence": null, "sources": [], "options": null, "insurance_relevant": false, "notes": "Now-known: disclosure obligation on any relist" },
-    { "id": "HCSFA-1", "area": "hvac", "description": "Furnace aged beyond common design life; budget replacement", "status": "waived", "requested_remedy": null, "cost_low_usd": null, "cost_high_usd": null, "cost_confidence": null, "sources": [], "options": null, "insurance_relevant": false, "notes": "Now-known: disclosure obligation on any relist" },
-    { "id": "ECNI-1", "area": "environmental", "description": "Rodent signs (waste at basement fireplace mantle); exterminator assessment recommended", "status": "waived", "requested_remedy": null, "cost_low_usd": null, "cost_high_usd": null, "cost_confidence": null, "sources": [], "options": null, "insurance_relevant": false, "notes": "Now-known: disclosure consideration on any relist" }
-  ]
+    {
+      "id": "SS-2",
+      "area": "structure",
+      "description": "Basement perimeter water-entry signs, extent undetermined",
+      "status": "waived",
+      "requested_remedy": null,
+      "cost_low_usd": null,
+      "cost_high_usd": null,
+      "cost_confidence": null,
+      "sources": [],
+      "options": null,
+      "insurance_relevant": false,
+      "notes": "Now-known: disclosure obligation on any relist"
+    },
+    {
+      "id": "ES-1",
+      "area": "electrical",
+      "description": "Wadsworth main distribution panel antiquated; 30+ yr breakers; replacement likely on repair",
+      "status": "waived",
+      "requested_remedy": null,
+      "cost_low_usd": null,
+      "cost_high_usd": null,
+      "cost_confidence": null,
+      "sources": [],
+      "options": null,
+      "insurance_relevant": false,
+      "notes": "Now-known: disclosure obligation on any relist"
+    },
+    {
+      "id": "HCSFA-1",
+      "area": "hvac",
+      "description": "Furnace aged beyond common design life; budget replacement",
+      "status": "waived",
+      "requested_remedy": null,
+      "cost_low_usd": null,
+      "cost_high_usd": null,
+      "cost_confidence": null,
+      "sources": [],
+      "options": null,
+      "insurance_relevant": false,
+      "notes": "Now-known: disclosure obligation on any relist"
+    },
+    {
+      "id": "ECNI-1",
+      "area": "environmental",
+      "description": "Rodent signs (waste at basement fireplace mantle); exterminator assessment recommended",
+      "status": "waived",
+      "requested_remedy": null,
+      "cost_low_usd": null,
+      "cost_high_usd": null,
+      "cost_confidence": null,
+      "sources": [],
+      "options": null,
+      "insurance_relevant": false,
+      "notes": "Now-known: disclosure consideration on any relist"
+    }
+  ],
+  "bundle": {
+    "scope": "RS-1+RS-2+RS-3+RS-6+EG-2 as one bundled roofing job (excl. gutters/radon)",
+    "total_low_usd": 2500,
+    "total_high_usd": 7500,
+    "most_likely_usd_range": [
+      3500,
+      5000
+    ],
+    "cost_confidence": "inferred",
+    "notes": "Composite of per-item cited bands adjusted for single-mobilization bundling; add ~$300-$800 for gutters (RS-4/RS-5) riding along and $1,000-$2,000 radon separately. ALL-IN ask (roof pkg + gutters + radon): ~$3,800-$10,200; most likely ~$5,500-$7,700. Chimney may add a second trade. First real Cincinnati quote supersedes."
+  }
 }
