@@ -1,0 +1,14 @@
+{
+  "closing_date": "2026-08-28",
+  "timezone": "America/New_York",
+  "milestones": [
+    { "id": "defect-response", "date": "2026-08-10", "desc": "Seller response to Defect Notice due (Consideration Period, 3 calendar days from 08/07 delivery). SILENCE = DEEMED AGREEMENT TO ALL REQUESTED REPAIRS.", "critical": true, "status": "open" },
+    { "id": "settlement-period-end", "date": "2026-08-12", "desc": "If seller counters (options b-f): 2-day Settlement Period ends; no mutual signed agreement = contract auto-terminates.", "conditional": true, "status": "conditional" },
+    { "id": "conditional-approval", "date": "2026-08-21", "desc": "Buyer conditional loan approval due (~21 days from acceptance). Confirm with Amy.", "critical": false, "status": "open" },
+    { "id": "repairs-complete", "date": "2026-08-24", "desc": "Target: all agreed repairs complete, receipts/warranties/work orders assembled for buyer re-inspection.", "critical": false, "status": "open" },
+    { "id": "clear-to-close", "date": "2026-08-25", "desc": "Lender clear-to-close due (3 days before closing per contract 4(d)).", "critical": false, "status": "open" },
+    { "id": "re-inspection", "date": "2026-08-25", "desc": "Buyer re-inspection of completed repairs (3 days prior to closing per Defect Notice); provide work orders, warranties, receipts, proof of payment.", "critical": false, "status": "open" },
+    { "id": "walk-through", "date": "2026-08-26", "desc": "Buyer walk-through (within 48 hours prior to closing, contract section 11).", "critical": false, "status": "open" },
+    { "id": "closing", "date": "2026-08-28", "desc": "Closing at Fidelity Land Title; possession at closing. Verify wiring instructions BY PHONE with title company (wire-fraud warning, contract section 33).", "critical": true, "status": "open" }
+  ]
+}
