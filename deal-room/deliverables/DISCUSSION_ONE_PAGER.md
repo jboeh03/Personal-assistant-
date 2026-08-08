@@ -1,5 +1,7 @@
 # ONE-PAGER — Defect Notice Decision, 6840 Stonington Rd
 
+**UPDATED 2026-08-08: credit suggestions re-sized to the v2 house-specific repair estimate (see [REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md)); dollar blanks remain the humans' call.**
+
 > ⚠️ **Strategy analysis, not legal advice — review with your agent and an Ohio attorney before signing.**
 
 ## THE CLOCK
@@ -16,13 +18,13 @@ One phone call Saturday decides the branch: **Amy calls Zach West** — do the b
 
 | Zach says… | We deliver Monday |
 |---|---|
-| Money is fine | Radon fixed pre-closing (licensed, retest <4.0) + **$5,500** credit for roof/gutters — option (d) + amendment |
+| Money is fine | Radon fixed pre-closing (licensed, retest <4.0) + **~$8,500** credit for roof/gutters — option (d) + amendment |
 | They want repairs done | **(b)-amended**: we do everything, with scope pinned (RS-2 three locations; licensed radon) — zero termination risk |
-| Call ambiguous / doesn't happen | **(b)-amended** (safe default) · If radon can't be booked by Mon → pure credit **~$7,500** |
+| Call ambiguous / doesn't happen | **(b)-amended** (safe default) · If radon can't be booked by Mon → pure credit **~$10,500** |
 
 ## THE NUMBERS
 
-- **Their ask, all-in:** ~$3,800–$10,200; most likely **$5,500–$7,700** (roof pkg $2,500–$7,500 + gutters $300–$800 + radon $1,000–$2,000)
+- **Their ask, all-in (v2 house-specific):** **~$4,350 low / $7,900–$12,900 most likely / $18,300 high — rational cap ~$26K** (both roof tails firing → negotiate a re-roof, never stack repairs; see [REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md))
 - **Walking away (BATNA):** **−$12K to −$30K** vs. closing, **plus $5K–$13K carry**, through a separation, with full disclosure on relist
 - **The floor:** even silence (= all repairs, ~$5.5–10K worst case) still beats walking. Every branch on this page wins; only delay loses.
 
@@ -47,5 +49,5 @@ One phone call Saturday decides the branch: **Amy calls Zach West** — do the b
 
 ## WHAT JEFF & OLIVIA MUST DO
 
-- **Saturday alignment call:** agree on the branch logic and the numbers ($5,500 / $7,500) before the gate result lands
+- **Saturday alignment call:** agree on the branch logic and the numbers (~$8,500 / ~$10,500) before the gate result lands
 - **Be signable Sunday:** e-signature packet ready by noon; both signatures done Sunday — phone + e-sign only, no meeting needed

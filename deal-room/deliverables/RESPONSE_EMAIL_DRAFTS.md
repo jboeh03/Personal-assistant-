@@ -2,7 +2,9 @@
 
 > ⚠️ **Strategy analysis, not legal advice — review with your agent and an Ohio attorney before signing.**
 
-**as_of:** 2026-08-07 · Every draft below is **DRAFT — FOR AMY'S REVIEW AND SENDING; do not send verbatim without her sign-off.** Use exactly ONE branch email, matching the branch Jeff & Olivia choose. The form + amendment language itself lives in [DRAFT_RESPONSE_LANGUAGE.md](DRAFT_RESPONSE_LANGUAGE.md); these emails only transmit the signed response. Dollar figures trace to [COUNCIL_VERDICT.md](COUNCIL_VERDICT.md) and [findings.json](../data/findings.json).
+**UPDATED 2026-08-08: credit suggestions re-sized to the v2 house-specific repair estimate (see [REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md)); dollar blanks remain the humans' call.**
+
+**as_of:** 2026-08-07 · Every draft below is **DRAFT — FOR AMY'S REVIEW AND SENDING; do not send verbatim without her sign-off.** Use exactly ONE branch email, matching the branch Jeff & Olivia choose. The form + amendment language itself lives in [DRAFT_RESPONSE_LANGUAGE.md](DRAFT_RESPONSE_LANGUAGE.md); these emails only transmit the signed response. Dollar figures trace to [REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md) (v2) and [findings.json](../data/findings.json).
 
 ---
 
@@ -18,7 +20,7 @@
 
 ---
 
-## Branch A — Amy → Zach West: option (d) $5,500 credit + radon amendment
+## Branch A — Amy → Zach West: option (d) $8,500 credit + radon amendment
 
 **DRAFT — FOR AMY'S REVIEW AND SENDING**
 
@@ -30,7 +32,7 @@
 >
 > **Radon (performed by sellers):** an active soil-depressurization system installed before closing by an ODH-licensed radon mitigation contractor, with a post-mitigation retest below 4.0 pCi/L. Work order, receipt, warranty, and retest result will be in your clients' hands at or before re-inspection.
 >
-> **Roof/gutter/chimney/siding items (RS-1 through RS-6, EG-2):** in lieu of pre-closing repairs, the sellers offer a **$5,500 credit** toward your clients' settlement charges at closing (option (d), per the attached initialed amendment). Your clients keep full control of contractor, scope, and timing — no rushed August repair on a house they're about to own.
+> **Roof/gutter/chimney/siding items (RS-1 through RS-6, EG-2):** in lieu of pre-closing repairs, the sellers offer an **$8,500 credit** toward your clients' settlement charges at closing (option (d), per the attached initialed amendment). Your clients keep full control of contractor, scope, and timing — no rushed August repair on a house they're about to own.
 >
 > Given the 2-day Settlement Period, **please have your clients countersign by end of day Wednesday, August 12.** Happy to walk the loan officer through the credit. Please confirm receipt.
 >
@@ -58,7 +60,7 @@
 
 ---
 
-## Branch C — Amy → Zach West: pure option (d), $7,500 all-in credit
+## Branch C — Amy → Zach West: pure option (d), $10,500 all-in credit
 
 **DRAFT — FOR AMY'S REVIEW AND SENDING**
 
@@ -66,7 +68,7 @@
 >
 > Zach — attached is the sellers' signed response to the Defect Notice.
 >
-> To give your clients maximum flexibility and keep the 08/28 closing rock-solid, the sellers offer a **$7,500 credit** toward your clients' settlement charges and prepaids at closing (option (d)), **in lieu of all corrections requested** — the roof package (RS-1 through RS-6, EG-2) and radon mitigation.
+> To give your clients maximum flexibility and keep the 08/28 closing rock-solid, the sellers offer a **$10,500 credit** toward your clients' settlement charges and prepaids at closing (option (d)), **in lieu of all corrections requested** — the roof package (RS-1 through RS-6, EG-2) and radon mitigation.
 >
 > Why this works well for your buyers: they choose their own contractors on their own schedule, the radon system gets installed by the licensed firm *they* pick with no re-test time pressure, and nothing about the closing date is at risk from August contractor availability. The credit lands directly against their cash-to-close; happy to connect with their loan officer to confirm fit against their actual settlement charges.
 >
@@ -85,4 +87,4 @@
 - [ ] Log the delivery and receipt confirmation via `/deal-log`.
 
 ---
-*Sources: [DRAFT_RESPONSE_LANGUAGE.md](DRAFT_RESPONSE_LANGUAGE.md) (form/amendment text) · [RESPONSE_MEMO.md](RESPONSE_MEMO.md) (branch logic, deadline mechanics) · [COUNCIL_VERDICT.md](COUNCIL_VERDICT.md) ($5,500 / $7,500 figures) · [findings.json](../data/findings.json) (cost bands).*
+*Sources: [DRAFT_RESPONSE_LANGUAGE.md](DRAFT_RESPONSE_LANGUAGE.md) (form/amendment text) · [RESPONSE_MEMO.md](RESPONSE_MEMO.md) (branch logic, deadline mechanics) · [REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md) ($8,500 / $10,500 v2 figures — supersede the COUNCIL_VERDICT $5,500 / $7,500) · [findings.json](../data/findings.json) (cost bands).*

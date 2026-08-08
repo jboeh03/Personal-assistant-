@@ -5,6 +5,15 @@
 **as_of:** 2026-08-07 · Prepared by deal-strategist, incorporating the **council-adjusted verdict** ([COUNCIL_VERDICT.md](COUNCIL_VERDICT.md)), which supersedes the plain H2-first ranking in [OPTIONS_ANALYSIS.md](OPTIONS_ANALYSIS.md).
 **For:** Jeff & Olivia Boeh (sellers) and Amy Broghamer (listing agent, eXp).
 
+## UPDATE 2026-08-08 (v2 estimates)
+
+The house-specific re-estimate ([REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md)) supersedes every cost band below. What changes:
+
+- **New all-in bands for the buyers' ask:** **~$4,350 low / ~$7,900–$12,900 most likely / ~$18,300 high, rational cap ~$26,000** (past that point a full Cincinnati re-roof at ~$11–18K beats stacking repairs). The old ~$3,800–$10,200 / most-likely $5,500–$7,700 figures are retired. Drivers: 2-story access premiums, chimney crown *replacement* (not sealing), gutter pricing scaled to actual footage, radon complications from the basement's known cracks/water signs, and brick walls making kick-out flashing a masonry job.
+- **Revised credit suggestions:** Branch A (radon performed + credit for roof/chimney/gutters) moves **$5,500 → ~$8,500**; Branch C (pure (d), everything as credit) moves **$7,500 → ~$10,500**. Both remain blanks for Jeff, Olivia, and Amy to confirm; [DRAFT_RESPONSE_LANGUAGE.md](DRAFT_RESPONSE_LANGUAGE.md) and [RESPONSE_EMAIL_DRAFTS.md](RESPONSE_EMAIL_DRAFTS.md) are updated to match.
+- **Strategic shift — Branch B got relatively MORE attractive.** The gated ladder and its logic stand unchanged, but the higher credit numbers tilt the economics toward doing the work: (i) the low-end upside is real — if quotes come in soft, the whole ask can cost ~$4.4K, well under any credit a buyer would accept at the new sizes; (ii) the Erie insurance offset (flat $1,000 deductible, replacement-cost coverage, young 2014 roof) only works when the sellers **perform** the roof work — a credit forfeits it. Photograph the creased shingles before any repair.
+- **Consequence: real roofer and chimney quotes before Monday are now the highest-value action available.** One real quote resolves the Branch B vs. A/C economics, re-sizes the credit if needed, and outranks every research band in this room. Amy's network calls (3+ roofers, 3+ chimney companies) should start Saturday morning regardless of which branch the gate call points to.
+
 ## 1. Situation in five lines
 
 1. Buyers (Sipniewskis — over-ask $585K, $10K earnest, $10K appraisal-gap, owner-occupants) delivered a Defect Notice 08/07 asking for two things: the roof package (RS-1, RS-2, RS-3, RS-4, RS-5, RS-6, EG-2) fixed by a roofing contractor pre-closing, and radon mitigation (test came back 13.6 pCi/L vs. the 4.0 action level).
