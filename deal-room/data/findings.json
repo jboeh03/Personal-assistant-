@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-07",
+  "as_of": "2026-08-08",
   "notes": "cost_low_usd/cost_high_usd are filled ONLY from cited research (see sources[]). null = not yet researched or no reliable source. cost_confidence: cited | inferred | unverified | null.",
   "findings": [
     {
@@ -8,13 +8,17 @@
       "description": "Front lower roof shingles loose/lifted, creased as though wind-bent",
       "status": "in-ask",
       "requested_remedy": "Roofing contractor to repair/secure all loose or lifted roof coverings prior to closing",
-      "cost_low_usd": 350,
-      "cost_high_usd": 1500,
-      "cost_confidence": "cited",
+      "cost_low_usd": 400,
+      "cost_high_usd": 1800,
+      "cost_confidence": "inferred",
       "sources": [
         "https://www.angi.com/articles/cost-to-repair-asphalt-shingles.htm",
         "https://www.homeadvisor.com/cost/roofing/asphalt-shingle-roof-repair",
-        "https://www.nerdwallet.com/home-ownership/home-improvement/learn/cost-to-replace-roof-shingles"
+        "https://www.nerdwallet.com/home-ownership/home-improvement/learn/cost-to-replace-roof-shingles",
+        "https://skroofingandconstruction.com/why-cant-i-find-a-color-match-for-my-3-tab-asphalt-shingle-repair/",
+        "https://mattermind.blog/discontinued-shingle-colours-guide",
+        "https://homeguide.com/costs/architectural-shingles-cost",
+        "https://roofrevivers.com/blog/roof-replacement-cost-in-2026-what-you-ll-actually-pay-by-location-and-material"
       ],
       "options": {
         "contractor": "Roofing company replaces creased/lifted shingles on front lower slope; $350-$1,500; 0.5 crew-day; notice names 'roofing contractor' so this is the required path",
@@ -22,7 +26,9 @@
         "diy": "Not viable - creased shingles need replacement and the notice requires a professional"
       },
       "insurance_relevant": true,
-      "notes": "Wind-crease language may support a homeowner's insurance wind-damage claim (offset, not pre-closing remedy)"
+      "notes": "Wind-crease language may support a homeowner's insurance wind-damage claim (offset, not pre-closing remedy) | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "surprise_ceiling_usd": 6000,
+      "ceiling_trigger": "2014 colorway confirmed discontinued (supplier/ITEL) AND buyers reject closest-match patch at re-inspection -> re-shingle front lower slope (4-7 sq @ $450-700/sq)"
     },
     {
       "id": "RS-2",
@@ -30,13 +36,16 @@
       "description": "Roof sheathing weak/buckled in >=3 locations on left main upper roof, shingles lifting; visible from attic",
       "status": "in-ask",
       "requested_remedy": "Repair affected sheathing and restore roof covering attachment",
-      "cost_low_usd": 800,
-      "cost_high_usd": 2500,
+      "cost_low_usd": 1000,
+      "cost_high_usd": 5500,
       "cost_confidence": "inferred",
       "sources": [
         "https://homeguide.com/costs/cost-to-replace-roof-decking",
         "https://www.angi.com/articles/roof-sheathing-cost.htm",
-        "https://myhomepros.com/roofing/how-much-does-it-cost-to-replace-roof-decking/"
+        "https://myhomepros.com/roofing/how-much-does-it-cost-to-replace-roof-decking/",
+        "https://skroofingandconstruction.com/roof-decking-replacement-cost/",
+        "https://www.iko.com/na/blog/rotted-roof-deck-how-to-replace-roof-sheathing/",
+        "https://artisanqualityroofing.com/rotted-roof-sheathing/"
       ],
       "options": {
         "contractor": "Roofer opens affected areas, replaces est. 3-6 sheets ($100-$150/sheet installed) plus tear-off/re-shingle of 1-2 squares; hidden-damage upside risk once opened",
@@ -44,7 +53,9 @@
         "diy": "Not viable"
       },
       "insurance_relevant": false,
-      "notes": "Inspector: commonly reconciled at failure or re-roof; buyers asked for repair now"
+      "notes": "Inspector: commonly reconciled at failure or re-roof; buyers asked for repair now | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "surprise_ceiling_usd": 11000,
+      "ceiling_trigger": "Tear-off reveals moisture spread beyond ~6 sheets, or roofer declines spot-repair and bids re-deck + re-shingle of the slope (6-10 sq); tiers a $1-3K / b $2.5-5.5K / c $4.5-11K"
     },
     {
       "id": "RS-3",
@@ -52,13 +63,15 @@
       "description": "Kick-out flashings missing at wall/gutter transitions; dark wall staining indicates water flow",
       "status": "in-ask",
       "requested_remedy": "Install missing flashing and kick-out flashing to direct water into gutters",
-      "cost_low_usd": 500,
-      "cost_high_usd": 1600,
+      "cost_low_usd": 700,
+      "cost_high_usd": 2200,
       "cost_confidence": "inferred",
       "sources": [
         "https://www.roofingtalk.com/threads/retro-fitting-kick-out-flashing-how-hard-is-it-to-diy.11931/",
         "https://www.justanswer.com/home-improvement/nu86u-cost-install-flashing-home.html",
-        "https://homeguide.com/costs/roof-flashing-repair-cost"
+        "https://homeguide.com/costs/roof-flashing-repair-cost",
+        "https://copper.org/applications/architecture/arch_dhb/arch-details/flashings_copings/counterflashing.php",
+        "https://www.professionalroofing.net/Articles/Anatomy-of-a-regleted-counterflashing--11-01-2022/5129"
       ],
       "options": {
         "contractor": "Retrofit kick-outs at 2-4 wall/gutter transitions; $250-$400/location standalone, lower bundled; can exceed band if siding must be rebuilt",
@@ -66,7 +79,9 @@
         "diy": "Materials $10-$32/unit and physically DIY-able, but fails the notice's professional requirement"
       },
       "insurance_relevant": false,
-      "notes": ""
+      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "surprise_ceiling_usd": 2800,
+      "ceiling_trigger": "All 2-4 locations brick-abutting (reglet counterflashing ground into mortar @ $25-45/LF) + stained-wall remediation"
     },
     {
       "id": "RS-4",
@@ -74,16 +89,17 @@
       "description": "Gutters/downspouts clogged in multiple areas; fasteners and hanger supports loose",
       "status": "in-ask",
       "requested_remedy": "Clean all gutters/downspouts, repair/secure fasteners and hangers, re-pitch as needed",
-      "cost_low_usd": 250,
-      "cost_high_usd": 700,
-      "cost_confidence": "cited",
+      "cost_low_usd": 350,
+      "cost_high_usd": 1800,
+      "cost_confidence": "inferred",
       "sources": [
         "https://www.homeblue.com/gutter-cleaning/cincinnati-oh-gutter-cleaning-cost.htm",
         "https://www.homeyou.com/oh/gutter-cleaning-cincinnati-costs",
         "https://homeguide.com/costs/gutter-cleaning-cost",
         "https://homeguide.com/costs/gutter-repair-cost",
         "https://www.angi.com/articles/cost-of-gutter-repair.htm",
-        "https://www.homeadvisor.com/cost/gutters/repair-gutters-and-downspouts"
+        "https://www.homeadvisor.com/cost/gutters/repair-gutters-and-downspouts",
+        "deal-room/research/costs-gutters-radon-v2.md"
       ],
       "options": {
         "contractor": "Cleaning $70-275 + fastener/hanger repair $150-650; bundle with the roofer already on site",
@@ -91,7 +107,9 @@
         "diy": "Technically trivial but likely fails the notice's 'qualified professional' + receipts requirement (INFERENCE)"
       },
       "insurance_relevant": false,
-      "notes": "Most DIY-viable item, but notice says qualified professional for agreed corrections"
+      "notes": "Most DIY-viable item, but notice says qualified professional for agreed corrections | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "surprise_ceiling_usd": 3500,
+      "ceiling_trigger": "Rotted fascia found behind failed hangers (20-60 LF @ $15-25/LF Cincinnati adds $300-1,500)"
     },
     {
       "id": "RS-5",
@@ -113,7 +131,7 @@
         "diy": "Feasible but same notice-compliance tension as RS-4"
       },
       "insurance_relevant": false,
-      "notes": "Overlaps RS-4 scope; likely priced together"
+      "notes": "Overlaps RS-4 scope; likely priced together | v2: priced inside RS-4 combined band ($350-1,800 likely $600-1,100 for both)"
     },
     {
       "id": "RS-6",
@@ -121,14 +139,15 @@
       "description": "Concrete chimney crown/cap damaged; water penetrating chimney/brick",
       "status": "in-ask",
       "requested_remedy": "Repair/replace chimney crown/cap and correct flashing",
-      "cost_low_usd": 350,
-      "cost_high_usd": 3500,
-      "cost_confidence": "cited",
+      "cost_low_usd": 700,
+      "cost_high_usd": 4500,
+      "cost_confidence": "inferred",
       "sources": [
         "https://homeguide.com/costs/cost-to-repair-replace-chimney-crown",
         "https://www.homeadvisor.com/cost/heating-and-cooling/chimney-repair",
         "https://www.forbes.com/home-improvement/roofing/chimney-crown-repair-replacement-cost/",
-        "https://www.angi.com/articles/how-much-should-it-cost-replace-flashing-around-chimney.htm"
+        "https://www.angi.com/articles/how-much-should-it-cost-replace-flashing-around-chimney.htm",
+        "deal-room/research/costs-chimney-v2.md"
       ],
       "options": {
         "contractor": "Repair path (partial crown rebuild + flashing reseal) $350-$1,400; full replacement + flashing $1,500-$3,500; may need chimney/masonry company - get scope agreed in writing",
@@ -136,7 +155,9 @@
         "diy": "Not viable"
       },
       "insurance_relevant": false,
-      "notes": ""
+      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "surprise_ceiling_usd": 8000,
+      "ceiling_trigger": "Top 2-4 brick courses need rebuild once crew is up (tier c $2.5-6K) or extensive upper-chimney rebuild (tier d $5-8K); likely tier b full form-and-pour crown + flashing $1.6-4K"
     },
     {
       "id": "EG-2",
@@ -144,8 +165,8 @@
       "description": "Rear upper wood siding loose near roofline",
       "status": "in-ask",
       "requested_remedy": "Repair or replace damaged siding near roofline",
-      "cost_low_usd": 150,
-      "cost_high_usd": 750,
+      "cost_low_usd": 200,
+      "cost_high_usd": 900,
       "cost_confidence": "inferred",
       "sources": [
         "https://www.angi.com/articles/cost-to-repair-wood-siding.htm",
@@ -158,7 +179,9 @@
         "diy": "Physically trivial but notice requires professional completion"
       },
       "insurance_relevant": false,
-      "notes": "Bundled into the roof-package ask"
+      "notes": "Bundled into the roof-package ask | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "surprise_ceiling_usd": 1200,
+      "ceiling_trigger": "Rot found behind loose siding at 2-story eave; staging required"
     },
     {
       "id": "RADON",
@@ -167,7 +190,7 @@
       "status": "in-ask",
       "requested_remedy": "Mitigate radon if level at or over 4.0 (triggered)",
       "cost_low_usd": 1000,
-      "cost_high_usd": 2000,
+      "cost_high_usd": 2500,
       "cost_confidence": "cited",
       "sources": [
         "https://radonmitigationcincinnati.com/radon-mitigation-cost/",
@@ -177,7 +200,8 @@
         "https://homeguide.com/costs/radon-mitigation-cost",
         "https://odh.ohio.gov/know-our-programs/radon-education-and-licensing-program/radon-licensing",
         "http://codes.ohio.gov/orc/3723.02",
-        "https://standards.aarst.org/MAH-2019/6/"
+        "https://standards.aarst.org/MAH-2019/6/",
+        "deal-room/research/costs-gutters-radon-v2.md"
       ],
       "options": {
         "contractor": "ONLY option - Ohio requires ODH-licensed radon mitigation contractor (ORC 3723.02). ASD system, 1-day install; 13.6 pCi/L below the ~20 design-escalation threshold, expect $1,000-1,800",
@@ -185,7 +209,9 @@
         "diy": "Not feasible for notice compliance - licensure required"
       },
       "insurance_relevant": false,
-      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection"
+      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "surprise_ceiling_usd": 3500,
+      "ceiling_trigger": "SS-1/SS-2 complications: second suction point +$300-1,500, crack sealing +$100-500, drain-tile variant $900-1,800"
     },
     {
       "id": "SS-1",
@@ -259,14 +285,54 @@
     }
   ],
   "bundle": {
-    "scope": "RS-1+RS-2+RS-3+RS-6+EG-2 as one bundled roofing job (excl. gutters/radon)",
-    "total_low_usd": 2500,
-    "total_high_usd": 7500,
-    "most_likely_usd_range": [
-      3500,
-      5000
-    ],
-    "cost_confidence": "inferred",
-    "notes": "Composite of per-item cited bands adjusted for single-mobilization bundling; add ~$300-$800 for gutters (RS-4/RS-5) riding along and $1,000-$2,000 radon separately. ALL-IN ask (roof pkg + gutters + radon): ~$3,800-$10,200; most likely ~$5,500-$7,700. Chimney may add a second trade. First real Cincinnati quote supersedes."
+    "scope": "ALL-IN ask: roof pkg (RS-1/2/3 + EG-2) + chimney RS-6 + gutters RS-4/5 + RADON",
+    "roof_4item": {
+      "low": 2300,
+      "likely": [
+        4000,
+        6500
+      ],
+      "high": 9500,
+      "ceiling": 18000,
+      "ceiling_note": "capped by full Cincinnati re-roof ~$11-18K; fires only if matching fails AND sheathing spreads"
+    },
+    "chimney": {
+      "low": 700,
+      "likely": [
+        2000,
+        3500
+      ],
+      "high": 4500,
+      "ceiling": 8000
+    },
+    "gutters": {
+      "low": 350,
+      "likely": [
+        600,
+        1100
+      ],
+      "high": 1800,
+      "ceiling": 3500
+    },
+    "radon": {
+      "low": 1000,
+      "likely": [
+        1300,
+        1800
+      ],
+      "high": 2500,
+      "ceiling": 3500
+    },
+    "all_in": {
+      "low": 4350,
+      "likely": [
+        7900,
+        12900
+      ],
+      "high": 18300,
+      "rational_ceiling": 26000,
+      "note": "v2 2026-08-08. Prior estimate ($5.5-7.7K likely) was too low: 2-story premiums, chimney crown replacement tier, footage-scaled gutters, radon complications. Rational ceiling ~$26K (re-roof cap + chimney d + gutters/radon ceilings), NOT the $33K sum of item ceilings. First real quotes supersede. RIPPLE: Branch A credit guidance moves $5,500 -> $8,500 blank; pure (d) $7,500 -> $10,500 blank."
+    },
+    "cost_confidence": "inferred"
   }
 }
