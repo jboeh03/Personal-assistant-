@@ -18,7 +18,7 @@ export default async function TimelinePage() {
       {/* Milestones */}
       <Card className="p-5">
         <SectionTitle>Milestones</SectionTitle>
-        <ol className="relative space-y-4 border-l border-[#e7e1d5] pl-4 dark:border-[#2b3234]">
+        <ol className="relative space-y-4 border-l border-[#e5e9ec] pl-4 dark:border-[#22303c]">
           {milestones.map((m) => {
             const d = daysUntil(m.date, tz);
             const passed = d < 0 || m.status === "done";
@@ -27,24 +27,24 @@ export default async function TimelinePage() {
               <li key={m.id} className="relative">
                 <span
                   className={
-                    "absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full ring-2 ring-[#faf8f3] dark:ring-[#14181a] " +
+                    "absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full ring-2 ring-[#ffffff] dark:ring-[#0d141c] " +
                     (m.status === "done"
-                      ? "bg-emerald-500"
+                      ? "bg-[#003a70]"
                       : critical
-                        ? "bg-rose-500"
-                        : "bg-[#8a5a2b]")
+                        ? "bg-[#b91c1c]"
+                        : "bg-[#003a70]")
                   }
                 />
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-sm font-medium text-[#1f3a3d] dark:text-[#e8eae4]">
+                  <span className="text-sm font-medium text-[#101820] dark:text-[#eef4f8]">
                     {fmtDate(m.date)}
                   </span>
                   {!passed ? (
-                    <Pill cls="bg-[#efeae0] text-[#8a5a2b] dark:bg-[#232a2c] dark:text-[#d1a06a]">
+                    <Pill cls="bg-[#f4f6f8] text-[#003a70] dark:bg-[#182530] dark:text-[#c6dae7]">
                       {relativeDays(d)}
                     </Pill>
                   ) : m.status === "done" ? (
-                    <Pill cls="bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                    <Pill cls="bg-[#c6dae7] text-[#003a70] dark:bg-[#16283a] dark:text-[#c6dae7]">
                       done
                     </Pill>
                   ) : (
@@ -71,7 +71,7 @@ export default async function TimelinePage() {
           {events.map((e, i) => (
             <li
               key={i}
-              className="border-l-2 border-[#efeae0] pl-3 dark:border-[#232a2c]"
+              className="border-l-2 border-[#f4f6f8] pl-3 dark:border-[#182530]"
             >
               <div className="flex items-center gap-2">
                 <span className="text-xs tabular-nums text-neutral-400">

@@ -33,7 +33,7 @@ export default async function DocumentsPage() {
         </div>
 
         {docs.length ? (
-          <ul className="mt-4 divide-y divide-[#efeae0] dark:divide-[#232a2c]">
+          <ul className="mt-4 divide-y divide-[#f4f6f8] dark:divide-[#182530]">
             {docs.map((d) => (
               <li
                 key={d.id}
@@ -43,9 +43,9 @@ export default async function DocumentsPage() {
                   href={d.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[#8a5a2b] hover:underline dark:text-[#d1a06a]"
+                  className="text-[#003a70] hover:underline dark:text-[#c6dae7]"
                 >
-                  📎 {d.label}
+                  {d.label}
                 </a>
                 <span className="text-xs text-neutral-400">
                   {new Date(d.uploadedAt).toLocaleDateString()}
@@ -72,9 +72,9 @@ export default async function DocumentsPage() {
                   href={r.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[#8a5a2b] hover:underline dark:text-[#d1a06a]"
+                  className="text-[#003a70] hover:underline dark:text-[#c6dae7]"
                 >
-                  📑 {r.label}
+                  {r.label}
                 </a>
               </li>
             ))}
@@ -92,7 +92,7 @@ export default async function DocumentsPage() {
           {KEY_DOCS.map((d) => (
             <li
               key={d.name}
-              className="flex items-center justify-between gap-2 rounded-lg border border-[#efeae0] px-3 py-2 text-sm dark:border-[#232a2c]"
+              className="flex items-center justify-between gap-2 rounded-lg border border-[#f4f6f8] px-3 py-2 text-sm dark:border-[#182530]"
             >
               <span className="text-neutral-700 dark:text-neutral-300">
                 {d.name}

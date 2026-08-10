@@ -83,7 +83,7 @@ export default async function Dashboard() {
           className={
             "p-5 " +
             (responseDays !== null && responseDays <= 1
-              ? "ring-2 ring-rose-400/70 dark:ring-rose-500/50"
+              ? "ring-2 ring-[#b91c1c]/60"
               : "")
           }
         >
@@ -106,7 +106,7 @@ export default async function Dashboard() {
           <SectionTitle>What&rsquo;s next</SectionTitle>
           {next ? (
             <div>
-              <div className="text-sm font-medium text-[#1f3a3d] dark:text-[#e8eae4]">
+              <div className="text-sm font-medium text-[#101820] dark:text-[#eef4f8]">
                 {fmtDate(next.m.date)} · {relativeDays(next.d)}
               </div>
               <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
@@ -145,7 +145,7 @@ export default async function Dashboard() {
                 <div className="text-[11px] font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
                   {c.key}
                 </div>
-                <div className="text-sm font-semibold tabular-nums text-[#1f3a3d] dark:text-[#e8eae4]">
+                <div className="text-sm font-semibold tabular-nums text-[#101820] dark:text-[#eef4f8]">
                   {c.band?.likely
                     ? fmtBand(c.band.likely[0], c.band.likely[1])
                     : "—"}
@@ -184,7 +184,7 @@ export default async function Dashboard() {
           </div>
           <Link
             href="/deals/repairs"
-            className="mt-4 inline-block text-sm font-medium text-[#8a5a2b] hover:underline dark:text-[#d1a06a]"
+            className="mt-4 inline-block text-sm font-medium text-[#003a70] hover:underline dark:text-[#c6dae7]"
           >
             Open repair tracker →
           </Link>
@@ -207,7 +207,7 @@ export default async function Dashboard() {
           </ol>
           <Link
             href="/deals/timeline"
-            className="mt-4 inline-block text-sm font-medium text-[#8a5a2b] hover:underline dark:text-[#d1a06a]"
+            className="mt-4 inline-block text-sm font-medium text-[#003a70] hover:underline dark:text-[#c6dae7]"
           >
             Full timeline →
           </Link>

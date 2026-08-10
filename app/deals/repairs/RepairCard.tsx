@@ -16,7 +16,7 @@ import {
 import { UploadButton } from "../UploadButton";
 
 const selectCls =
-  "rounded-md border border-[#d9d1c1] bg-white px-2 py-1 text-xs text-neutral-800 dark:border-[#333c3e] dark:bg-[#161b1d] dark:text-neutral-200";
+  "rounded-md border border-[#e5e9ec] bg-white px-2 py-1 text-xs text-neutral-800 dark:border-[#2a3a48] dark:bg-[#0f1720] dark:text-neutral-200";
 
 export function RepairCard({
   finding,
@@ -52,15 +52,15 @@ export function RepairCard({
   }
 
   return (
-    <div className="rounded-xl border border-[#e7e1d5] bg-white p-4 shadow-sm dark:border-[#2b3234] dark:bg-[#1b2022]">
+    <div className="rounded-xl border border-[#e5e9ec] bg-white p-4 shadow-sm dark:border-[#22303c] dark:bg-[#111a24]">
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div>
           <div className="flex items-center gap-2">
-            <span className="rounded bg-[#efeae0] px-1.5 py-0.5 text-[11px] font-semibold text-[#8a5a2b] dark:bg-[#232a2c] dark:text-[#d1a06a]">
+            <span className="rounded bg-[#f4f6f8] px-1.5 py-0.5 text-[11px] font-semibold text-[#003a70] dark:bg-[#182530] dark:text-[#c6dae7]">
               {finding.id}
             </span>
-            <h3 className="text-sm font-semibold text-[#1f3a3d] dark:text-[#e8eae4]">
+            <h3 className="text-sm font-semibold text-[#101820] dark:text-[#eef4f8]">
               {findingName(finding.id)}
             </h3>
           </div>
@@ -93,7 +93,7 @@ export function RepairCard({
           </span>
         ) : null}
         {finding.actual_quote_usd ? (
-          <span className="text-emerald-700 dark:text-emerald-400">
+          <span className="font-medium text-[#003a70] dark:text-[#c6dae7]">
             Quote {fmtUsd(finding.actual_quote_usd)}
           </span>
         ) : null}
@@ -108,7 +108,7 @@ export function RepairCard({
       </div>
 
       {finding.diy_progress ? (
-        <p className="mt-2 rounded-md bg-emerald-50 px-2 py-1 text-xs text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+        <p className="mt-2 rounded-md border-l-2 border-[#5e8ab4] bg-[#eef4f8] px-2 py-1 text-xs text-[#326295] dark:bg-[#16283a] dark:text-[#c6dae7]">
           {finding.diy_progress}
         </p>
       ) : null}
@@ -174,7 +174,7 @@ export function RepairCard({
                 href={p.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative block h-16 w-16 overflow-hidden rounded-md border border-[#e7e1d5] dark:border-[#2b3234]"
+                className="group relative block h-16 w-16 overflow-hidden rounded-md border border-[#e5e9ec] dark:border-[#22303c]"
                 title={`${p.kind} · ${p.label ?? ""}`}
               >
                 <Image
@@ -208,9 +208,11 @@ export function RepairCard({
                   href={r.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-[#8a5a2b] hover:underline dark:text-[#d1a06a]"
+                  className="text-[#003a70] hover:underline dark:text-[#c6dae7]"
                 >
-                  {r.kind === "warranty" ? "📄 Warranty" : "🧾 Receipt"} —{" "}
+                  <span className="mr-1 rounded bg-[#f4f6f8] px-1 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#5b6770] dark:bg-[#182530] dark:text-[#98a4ae]">
+                    {r.kind === "warranty" ? "Warranty" : "Receipt"}
+                  </span>
                   {r.label}
                 </a>
               </li>
@@ -221,7 +223,7 @@ export function RepairCard({
 
       {/* Activity */}
       {finding.activity && finding.activity.length ? (
-        <ul className="mt-3 space-y-1 border-t border-[#efeae0] pt-2 dark:border-[#232a2c]">
+        <ul className="mt-3 space-y-1 border-t border-[#f4f6f8] pt-2 dark:border-[#182530]">
           {finding.activity.map((a, i) => (
             <li key={i} className="text-xs text-neutral-500 dark:text-neutral-400">
               <span className="tabular-nums">

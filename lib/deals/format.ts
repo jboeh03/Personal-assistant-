@@ -53,20 +53,21 @@ export interface Badge {
   cls: string; // background + text classes
 }
 
+// Deepening-blue progression, on the Codex Homes palette.
 export function workStatusBadge(s: WorkStatus | undefined): Badge {
   switch (s) {
     case "done":
-      return { label: "Done", cls: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300" };
+      return { label: "Done", cls: "bg-[#003a70] text-white dark:bg-[#003a70] dark:text-[#c6dae7]" };
     case "in_progress":
-      return { label: "In progress", cls: "bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300" };
+      return { label: "In progress", cls: "bg-[#5e8ab4] text-white" };
     case "scheduled":
-      return { label: "Scheduled", cls: "bg-violet-100 text-violet-800 dark:bg-violet-950 dark:text-violet-300" };
+      return { label: "Scheduled", cls: "bg-[#326295] text-white" };
     case "agreed":
-      return { label: "Agreed", cls: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300" };
+      return { label: "Agreed", cls: "bg-[#dbe7f1] text-[#326295] dark:bg-[#1c3145] dark:text-[#9dc0dd]" };
     case "quoted":
-      return { label: "Quoted", cls: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300" };
+      return { label: "Quoted", cls: "bg-[#c6dae7] text-[#003a70] dark:bg-[#16283a] dark:text-[#c6dae7]" };
     default:
-      return { label: "Not started", cls: "bg-neutral-200 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300" };
+      return { label: "Not started", cls: "bg-[#f4f6f8] text-[#5b6770] dark:bg-[#182530] dark:text-[#98a4ae]" };
   }
 }
 
@@ -106,11 +107,11 @@ export function confidenceBadge(c: CostConfidence): Badge | null {
   if (!c) return null;
   switch (c) {
     case "cited":
-      return { label: "cited", cls: "bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400" };
+      return { label: "cited", cls: "bg-[#eef4f8] text-[#003a70] dark:bg-[#16283a] dark:text-[#c6dae7]" };
     case "inferred":
-      return { label: "inferred", cls: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-400" };
+      return { label: "inferred", cls: "bg-[#f4f6f8] text-[#5b6770] dark:bg-[#182530] dark:text-[#98a4ae]" };
     default:
-      return { label: "unverified", cls: "bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400" };
+      return { label: "unverified", cls: "bg-[#f4f6f8] text-[#98a4ae] dark:bg-[#182530] dark:text-[#98a4ae]" };
   }
 }
 

@@ -12,3 +12,13 @@ body {
 body {
   @apply bg-neutral-50 text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100;
 }
+
+/* ---- Deal Cockpit (Codex Homes brand) — scoped so it never touches /chat ---- */
+.deal-shell {
+  font-family: var(--font-jost), ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+.deal-shell .font-display {
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.012em;
+  font-weight: 400;
+}

@@ -117,6 +117,21 @@ export interface MediaItem {
   uploadedAt: string; // ISO
 }
 
+export type TodoStatus = "open" | "in_progress" | "blocked" | "done";
+
+export interface Todo {
+  id: string;
+  title: string;
+  detail?: string;
+  assignee?: string; // display name
+  assigneeEmail?: string;
+  status: TodoStatus;
+  due?: string; // YYYY-MM-DD
+  findingId?: string | null;
+  createdAt: string; // ISO
+  createdBy?: string;
+}
+
 export interface DealMeta {
   address: string;
   city: string;

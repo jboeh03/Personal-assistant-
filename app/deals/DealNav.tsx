@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const TABS = [
   { href: "/deals", label: "Dashboard" },
   { href: "/deals/repairs", label: "Repairs" },
+  { href: "/deals/todos", label: "To-Do" },
   { href: "/deals/documents", label: "Documents" },
   { href: "/deals/timeline", label: "Timeline" },
 ];
@@ -24,8 +25,8 @@ export function DealNav() {
             className={
               "rounded-lg px-3 py-1.5 text-sm font-medium transition " +
               (active
-                ? "bg-[#1f3a3d] text-white dark:bg-[#cfe0d6] dark:text-[#14181a]"
-                : "text-neutral-600 hover:bg-[#efeae0] dark:text-neutral-300 dark:hover:bg-[#232a2c]")
+                ? "bg-[#101820] text-white dark:bg-[#c6dae7] dark:text-[#0d141c]"
+                : "text-neutral-600 hover:bg-[#f4f6f8] dark:text-neutral-300 dark:hover:bg-[#182530]")
             }
           >
             {t.label}

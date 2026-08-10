@@ -13,7 +13,7 @@ export function Card({
   return (
     <div
       className={
-        "rounded-xl border border-[#e7e1d5] bg-white/90 shadow-sm dark:border-[#2b3234] dark:bg-[#1b2022] " +
+        "rounded-xl border border-[#e5e9ec] bg-white/90 shadow-sm dark:border-[#22303c] dark:bg-[#111a24] " +
         className
       }
     >
@@ -31,7 +31,7 @@ export function SectionTitle({
 }) {
   return (
     <div className="mb-3 flex items-baseline justify-between gap-3">
-      <h2 className="text-sm font-semibold uppercase tracking-wide text-[#1f3a3d] dark:text-[#cfe0d6]">
+      <h2 className="text-sm font-semibold uppercase tracking-wide text-[#101820] dark:text-[#c6dae7]">
         {children}
       </h2>
       {hint ? (
@@ -76,10 +76,10 @@ export function Stat({
   danger?: boolean;
 }) {
   const valueCls = danger
-    ? "text-rose-600 dark:text-rose-400"
+    ? "text-[#b91c1c] dark:text-[#e06666]"
     : accent
-      ? "text-[#8a5a2b] dark:text-[#d1a06a]"
-      : "text-[#1f3a3d] dark:text-[#e8eae4]";
+      ? "text-[#003a70] dark:text-[#c6dae7]"
+      : "text-[#101820] dark:text-[#eef4f8]";
   return (
     <div>
       <div className="text-[11px] font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
@@ -109,7 +109,7 @@ export function ProgressBar({
     <div className="flex items-center gap-3">
       <div className="h-2 flex-1 overflow-hidden rounded-full bg-neutral-200 dark:bg-neutral-800">
         <div
-          className="h-full rounded-full bg-[#3f7d63] transition-all"
+          className="h-full rounded-full bg-[#326295] transition-all"
           style={{ width: `${pct}%` }}
         />
       </div>

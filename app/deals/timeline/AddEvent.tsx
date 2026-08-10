@@ -25,7 +25,7 @@ export function AddEvent() {
   return (
     <div className="flex gap-2">
       <input
-        className="flex-1 rounded-lg border border-[#d9d1c1] bg-white px-3 py-2 text-sm outline-none focus:border-[#8a5a2b] dark:border-[#333c3e] dark:bg-[#161b1d]"
+        className="flex-1 rounded-lg border border-[#e5e9ec] bg-white px-3 py-2 text-sm outline-none focus:border-[#003a70] dark:border-[#2a3a48] dark:bg-[#0f1720]"
         placeholder="Log an update… (e.g. 'roofer quote in — $4,200')"
         value={text}
         disabled={pending}
@@ -35,7 +35,7 @@ export function AddEvent() {
       <button
         onClick={submit}
         disabled={pending || !text.trim()}
-        className="rounded-lg bg-[#1f3a3d] px-4 py-2 text-sm font-medium text-white disabled:opacity-50 dark:bg-[#cfe0d6] dark:text-[#14181a]"
+        className="rounded-lg bg-[#101820] px-4 py-2 text-sm font-medium text-white disabled:opacity-50 dark:bg-[#c6dae7] dark:text-[#0d141c]"
       >
         {pending ? "Saving…" : "Log"}
       </button>

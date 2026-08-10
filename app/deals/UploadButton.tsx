@@ -40,11 +40,11 @@ export function UploadButton({
   return (
     <label
       className={
-        "inline-flex cursor-pointer items-center gap-1 rounded-md border border-[#d9d1c1] px-2 py-1 text-xs font-medium text-neutral-700 transition hover:bg-[#efeae0] dark:border-[#333c3e] dark:text-neutral-300 dark:hover:bg-[#232a2c] " +
+        "inline-flex cursor-pointer items-center gap-1 rounded-md border border-[#e5e9ec] px-2 py-1 text-xs font-medium text-neutral-700 transition hover:bg-[#f4f6f8] dark:border-[#2a3a48] dark:text-neutral-300 dark:hover:bg-[#182530] " +
         (busy ? "opacity-50" : "")
       }
     >
-      <span aria-hidden>＋</span>
+      <span aria-hidden className="text-[#98a4ae]">+</span>
       {busy ? "Uploading…" : label}
       <input
         ref={ref}

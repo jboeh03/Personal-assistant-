@@ -219,10 +219,18 @@
         "diy": "Not feasible for notice compliance - licensure required"
       },
       "insurance_relevant": false,
-      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ACTUAL QUOTE 2026-08-10: ~$1,500 via Zach's installer, install available week of 08/17 - mid-band of researched $1,300-1,800, validates estimate. Confirm ODH license + post-mitigation retest <4.0 included.",
+      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ACTUAL QUOTE 2026-08-10: ~$1,500 via Zach's installer, install available week of 08/17 - mid-band of researched $1,300-1,800, validates estimate. Confirm ODH license + post-mitigation retest <4.0 included. | QUOTE 08/10: Velocity $1,400, all 3 riders satisfied (ODH-licensed, retest included, guarantee <4.0).",
       "surprise_ceiling_usd": 3500,
       "ceiling_trigger": "SS-1/SS-2 complications: second suction point +$300-1,500, crack sealing +$100-500, drain-tile variant $900-1,800",
-      "actual_quote_usd": 1500
+      "actual_quote_usd": 1400,
+      "work_status": "quoted",
+      "assignee": "contractor",
+      "activity": [
+        {
+          "at": "2026-08-10T16:07:18.898565",
+          "text": "Velocity Radon Mitigation proposal: $1,400 net at install (~$67/yr to run). ODH RC-360, Specialist Joe Noppert RS-580. Sub-slab suction via existing sump. Independent 3rd-party post-mitigation retest INCLUDED. Lifetime transferable guarantee <=3.9 pCi/L; 5-yr transferable fan warranty. Install available next week."
+        }
+      ]
     },
     {
       "id": "SS-1",

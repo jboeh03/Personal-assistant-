@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ca5f088e-03c2-49a3-9b26-18b33295f841",
+    "title": "Deliver signed Defect Notice response to buyers",
+    "detail": "Response due Wed 8/12 EOD \u2014 silence = deemed agreement to all repairs.",
+    "assignee": "Zach West",
+    "assigneeEmail": "zrwest10@gmail.com",
+    "status": "in_progress",
+    "due": "2026-08-12",
+    "findingId": null,
+    "createdAt": "2026-08-10T16:30:09.679537",
+    "createdBy": "Jeff"
+  },
+  {
+    "id": "31d60212-d073-4d0f-8198-f00e5335af3d",
+    "title": "Both sellers sign the response packet (Jeff + Olivia)",
+    "detail": null,
+    "assignee": "Jeff & Olivia",
+    "assigneeEmail": null,
+    "status": "open",
+    "due": "2026-08-12",
+    "findingId": null,
+    "createdAt": "2026-08-10T16:30:09.679618",
+    "createdBy": "Jeff"
+  },
+  {
+    "id": "fd937513-785c-47f1-b905-3fffe8cacf29",
+    "title": "Book Velocity radon install for next week ($1,400)",
+    "detail": "ODH-licensed, retest included, guarantee <4.0 \u2014 confirm on scheduling.",
+    "assignee": "Zach West",
+    "assigneeEmail": "zrwest10@gmail.com",
+    "status": "open",
+    "due": "2026-08-14",
+    "findingId": "RADON",
+    "createdAt": "2026-08-10T16:30:09.679638",
+    "createdBy": "Jeff"
+  },
+  {
+    "id": "e0c1c515-23ee-4a2a-8733-1941d184e760",
+    "title": "Get roof + chimney quotes (replace estimates)",
+    "detail": "One real quote re-sizes the whole decision. Ask if 2014 shingle color is still made.",
+    "assignee": "Zach West",
+    "assigneeEmail": "zrwest10@gmail.com",
+    "status": "in_progress",
+    "due": null,
+    "findingId": null,
+    "createdAt": "2026-08-10T16:30:09.679655",
+    "createdBy": "Jeff"
+  },
+  {
+    "id": "20e887e3-04bc-47ab-8321-b607dd7ebcb0",
+    "title": "Fix gutter slope + re-secure downspouts (pro, for receipt)",
+    "detail": "Cleaning done by Jeff; the notice still needs a qualified pro's invoice.",
+    "assignee": null,
+    "assigneeEmail": null,
+    "status": "open",
+    "due": null,
+    "findingId": "RS-5",
+    "createdAt": "2026-08-10T16:30:09.679672",
+    "createdBy": "Jeff"
+  },
+  {
+    "id": "b1f2b32a-6080-42ed-a226-337277097176",
+    "title": "Photograph wind-creased shingles BEFORE any repair",
+    "detail": "Preserves the Erie wind-claim option ($1,000 flat deductible).",
+    "assignee": "Jeff",
+    "assigneeEmail": null,
+    "status": "open",
+    "due": null,
+    "findingId": "RS-1",
+    "createdAt": "2026-08-10T16:30:09.679688",
+    "createdBy": "Jeff"
+  },
+  {
+    "id": "804f3c4a-e7d8-4619-b340-4ee6cedcf6d9",
+    "title": "Order fresh mortgage payoff good through 8/28+",
+    "detail": null,
+    "assignee": "Jeff",
+    "assigneeEmail": null,
+    "status": "open",
+    "due": "2026-08-24",
+    "findingId": null,
+    "createdAt": "2026-08-10T16:30:09.679704",
+    "createdBy": "Jeff"
+  }
+]
