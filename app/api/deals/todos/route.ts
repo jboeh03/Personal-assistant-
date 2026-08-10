@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
+import { READ_ONLY_MESSAGE, canEdit } from "@/lib/deals/mode";
 import { randomUUID } from "node:crypto";
 import { addTodo, updateTodo } from "@/lib/deals/store";
 import type { Todo, TodoStatus } from "@/lib/deals/types";
 
 export async function POST(request: Request) {
+  if (!canEdit) {
+    return NextResponse.json({ error: READ_ONLY_MESSAGE }, { status: 503 });
+  }
   let body: Partial<Todo>;
   try {
     body = (await request.json()) as Partial<Todo>;
@@ -31,6 +35,9 @@ export async function POST(request: Request) {
 }
 
 export async function PATCH(request: Request) {
+  if (!canEdit) {
+    return NextResponse.json({ error: READ_ONLY_MESSAGE }, { status: 503 });
+  }
   let body: { id?: string } & Partial<Todo>;
   try {
     body = (await request.json()) as { id?: string } & Partial<Todo>;

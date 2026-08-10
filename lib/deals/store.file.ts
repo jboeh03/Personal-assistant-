@@ -14,6 +14,7 @@ import type {
   Finding,
   MediaItem,
   Milestone,
+  Todo,
   WorkStatus,
 } from "./types";
 

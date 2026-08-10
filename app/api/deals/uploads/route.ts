@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { READ_ONLY_MESSAGE, canEdit } from "@/lib/deals/mode";
 import { randomUUID } from "node:crypto";
 import { addMedia, saveUpload } from "@/lib/deals/store";
 import type { MediaItem, MediaKind } from "@/lib/deals/types";
@@ -16,6 +17,9 @@ function safeName(name: string): string {
 }
 
 export async function POST(request: Request) {
+  if (!canEdit) {
+    return NextResponse.json({ error: READ_ONLY_MESSAGE }, { status: 503 });
+  }
   const form = await request.formData();
   const file = form.get("file");
   const kind = String(form.get("kind") ?? "") as MediaKind;

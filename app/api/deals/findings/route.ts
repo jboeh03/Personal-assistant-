@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { READ_ONLY_MESSAGE, canEdit } from "@/lib/deals/mode";
 import { addFindingActivity, updateFinding } from "@/lib/deals/store";
 import type { Assignee, WorkStatus } from "@/lib/deals/types";
 
@@ -11,6 +12,9 @@ interface PatchBody {
 }
 
 export async function PATCH(request: Request) {
+  if (!canEdit) {
+    return NextResponse.json({ error: READ_ONLY_MESSAGE }, { status: 503 });
+  }
   let body: PatchBody;
   try {
     body = (await request.json()) as PatchBody;

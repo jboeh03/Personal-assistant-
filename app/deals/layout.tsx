@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { Fraunces, Jost } from "next/font/google";
 import { getDeal } from "@/lib/deals/store";
+import { canEdit } from "@/lib/deals/mode";
 import { DealNav } from "./DealNav";
 
 const fraunces = Fraunces({
@@ -69,6 +70,14 @@ export default async function DealsLayout({
           </p>
         </div>
       </header>
+      {!canEdit ? (
+        <div className="border-b border-[#e5e9ec] bg-[#eef4f8] dark:border-[#22303c] dark:bg-[#16283a]">
+          <p className="mx-auto max-w-5xl px-5 py-2 text-xs text-[#003a70] dark:text-[#c6dae7]">
+            View-only preview — everything here is current. Editing turns on
+            once the shared database is connected.
+          </p>
+        </div>
+      ) : null}
       <main className="mx-auto max-w-5xl px-5 py-6">{children}</main>
       <footer className="mx-auto max-w-5xl px-5 pb-8 pt-2 text-[11px] text-[#98a4ae]">
         Internal working tool · figures are estimates, not legal or financial

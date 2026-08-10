@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
+import { READ_ONLY_MESSAGE, canEdit } from "@/lib/deals/mode";
 import { addEvent } from "@/lib/deals/store";
 
 export async function POST(request: Request) {
+  if (!canEdit) {
+    return NextResponse.json({ error: READ_ONLY_MESSAGE }, { status: 503 });
+  }
   let body: { text?: string; source?: string };
   try {
     body = (await request.json()) as { text?: string; source?: string };
