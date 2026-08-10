@@ -14,9 +14,9 @@
 
 ## THE DECISION
 
-One phone call Saturday decides the branch: **Amy calls Zach West** — do the buyers want money or the repairs done?
+One phone call Saturday decides the branch: **Zach calls Amy Broghamer** — do the buyers want money or the repairs done?
 
-| Zach says… | We deliver Monday |
+| Amy says… | We deliver Monday |
 |---|---|
 | Money is fine | Radon fixed pre-closing (licensed, retest <4.0) + **~$8,500** credit for roof/gutters — option (d) + amendment |
 | They want repairs done | **(b)-amended**: we do everything, with scope pinned (RS-2 three locations; licensed radon) — zero termination risk |
@@ -42,7 +42,7 @@ One phone call Saturday decides the branch: **Amy calls Zach West** — do the b
 
 ## WHAT WE NEED FROM AMY
 
-- **The Saturday call to Zach** (the gate) — plus lender confirmation the credit fits buyers' actual closing costs
+- **The Saturday call to Amy** (the gate) — plus lender confirmation the credit fits buyers' actual closing costs
 - Form prep + amendment drafting from [DRAFT_RESPONSE_LANGUAGE.md](DRAFT_RESPONSE_LANGUAGE.md); deliver Monday **afternoon**
 - **One real roofer quote ASAP** — it supersedes every research band above
 - Radon installer numbers from her network (2–3 ODH-licensed firms to call Saturday)

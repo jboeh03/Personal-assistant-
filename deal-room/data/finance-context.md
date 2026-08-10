@@ -15,14 +15,14 @@
 | Other liens on the property / personal debts from proceeds | | ☐ **pending upload** |
 | Proceeds split rule between sellers | **50/50 (confirmed by Jeff)** — subject to counsel/separation agreement | ✅ confirmed |
 | Homeowner's insurance | **Erie Insurance (ErieSecure Home), agent Brodbeck Porter Ins Agy, Cincinnati (513-624-0900).** Policy period 12/07/25–12/07/26. **Section I deductible: $1,000 FLAT** (no percentage wind/hail deductible found on declarations). Dwelling: **Guaranteed Replacement Cost** (est. replacement cost ~$524.5K). **Roof installed 2014** (composite/asphalt). Endorsement: **Siding & Roofing Restoration coverage up to $10,000**. Hazard premium $2,700/yr paid from escrow (next due 12/07/26). | ✅ received |
-| Listing-side commission structure (total %, incl. any buyer-side amount) | | ☐ **pending — ask Amy** |
+| Listing-side commission structure (total %, incl. any buyer-side amount) | | ☐ **pending — ask Zach** |
 
 ## Known deal-fixed items (EVIDENCE, from contract & docs)
 
 - Sale price $585,000; earnest $10K applies at closing; base contract seller-paid settlement charges: none
 - Seller pays at closing (§23): transfer/conveyance fees, deed prep, seller-side title settlement fees, discharge of liens required for marketable title
 - §21 long proration: seller pays property taxes through closing (county tax ~$4,317 semi-annual per escrow schedule → ~$8.6K/yr band)
-- Buyer's brokerage compensation per §7(c): see executed contract; confirm net effect with Amy
+- Buyer's brokerage compensation per §7(c): see executed contract; confirm net effect with Zach
 
 ## Insurance strategic note (see research/insurance-angle.md addendum)
 

@@ -2,7 +2,7 @@
 
 > ⚠️ **Informational analysis only — not legal, tax, or financial advice.** All contract
 > interpretations and response decisions must be reviewed with the listing agent
-> (Amy Broghamer, eXp) and, where material, an Ohio real estate attorney.
+> (Zach West, eXp) and, where material, an Ohio real estate attorney.
 
 **Deal state:** `AWAITING_SELLER_RESPONSE` (Defect Notice delivered 08/07/2026 — response due by end of **08/10/2026**)
 
@@ -20,8 +20,8 @@
 |---|---|
 | Sellers | Jeffrey V Boeh & Olivia M Boeh (separating; both aligned on closing on time) |
 | Buyers | Robert & Catherine Sipniewski (owner-occupants) |
-| Listing agent | Amy Broghamer — eXp Realty, amy@amybsells.com, 513-377-3637 |
-| Buyers' agent | Zach West — AMP Realty, zrwest10@gmail.com, 513-532-6692 |
+| Listing agent | Zach West — AMP Realty, zrwest10@gmail.com, 513-532-6692 |
+| Buyers' agent | Amy Broghamer — eXp Realty, amy@amybsells.com, 513-377-3637 |
 | Title | Fidelity Land Title |
 | Inspector | AA Home Inspection (Darrin Bachman), report 08/04/26 |
 
@@ -80,7 +80,7 @@ Any of (b)–(f) ends the Consideration Period and starts the 2-day Settlement P
 ## Constraints & context
 
 - Sale needs to close: sellers separating; personal debt/liens to clear from proceeds (bands in [data/finance-context.md](data/finance-context.md))
-- Amy (or a trusted agent-contractor who flips houses) may be able to perform/coordinate repairs — cost and *who satisfies "qualified professional"* matters
+- Zach (or a trusted agent-contractor who flips houses) may be able to perform/coordinate repairs — cost and *who satisfies "qualified professional"* matters
 - Insurance angle: RS-1 describes shingles "creased as though wind-bent" — possible homeowner's wind-damage claim as a cost offset (see research/insurance-angle.md)
 - If this deal dies, all now-known defects (including waived items) carry Ohio disclosure obligations on relist — BATNA is weaker than "just relist"
 

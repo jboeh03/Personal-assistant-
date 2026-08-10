@@ -1,14 +1,14 @@
-# Ideas to Discuss with Zach West (Buyers' Agent) — Informal, Not a Gate
+# Ideas to Discuss with Amy Broghamer (Buyers' Agent) — Informal, Not a Gate
 
 > ⚠️ **Strategy analysis, not legal advice — review with your agent and an Ohio attorney before signing.**
 
-**as_of:** 2026-08-07 · For Amy Broghamer's use whenever she connects with Zach (Saturday if convenient — **the call is no longer a decision gate**; the response branch will be chosen by Jeff & Olivia regardless). These are conversation ideas, not a script or a precondition.
+**as_of:** 2026-08-07 · For Zach West's use whenever she connects with Amy (Saturday if convenient — **the call is no longer a decision gate**; the response branch will be chosen by Jeff & Olivia regardless). These are conversation ideas, not a script or a precondition.
 
 ## 1. Frame
 
 Sellers are cooperative and deal-affirming. They intend to respond **well before the Monday 08/10 deadline**, they want the Sipniewskis in the house on 08/28, and every item in the Defect Notice will be addressed one way or another. This call is just to make the response land as an easy yes.
 
-## 2. Temperature-check questions (Amy can ask these verbatim)
+## 2. Temperature-check questions (Zach can ask these verbatim)
 
 - "If the sellers offered money in lieu of some of the repairs, is that something your clients would even consider — or do they really want the work done before closing?"
 - "Would your buyers value a credit at their closing table? Do they have closing costs and prepaids a seller credit would actually help with?"
@@ -16,7 +16,7 @@ Sellers are cooperative and deal-affirming. They intend to respond **well before
 - "How does their lender handle seller credits — do you know their actual closing-cost total, so a credit isn't sized past what they can use?"
 - "If the sellers did the radon mitigation themselves — licensed contractor, retest under 4.0 — and offered a credit for the roof package, would your clients accept that split?"
 
-## 3. Reassurances Amy can offer
+## 3. Reassurances Zach can offer
 
 - **Radon:** sellers will use an **ODH-licensed** mitigation contractor, with a **post-mitigation retest below 4.0 pCi/L before the re-inspection**, receipts and warranty provided. Installers are already being sourced.
 - **Roof package:** quotes are being gathered now; if the repairs branch is chosen, work is targeted **complete by 08/24** — ahead of the ~08/25 re-inspection.
@@ -32,7 +32,7 @@ Sellers are cooperative and deal-affirming. They intend to respond **well before
 
 ## 5. Listen-fors (these pick the branch)
 
-| If Zach says… | It points to… |
+| If Amy says… | It points to… |
 |---|---|
 | "They just want it fixed" / "they don't want a project on day one" | **Branch B** — (b)-amended, perform all the work |
 | "They're flexible" / "cash works" / "they'd love help with closing costs" | **Branch A** — radon performed + $5,500 credit |

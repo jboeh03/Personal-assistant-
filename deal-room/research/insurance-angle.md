@@ -56,4 +56,4 @@ Declarations reviewed (Erie ErieSecure Home, 12/07/25–12/07/26):
 
 1. **Before any repair:** roofer documents in writing + photos "wind-creased shingles, functional wind damage" with date; keep the 08/04 inspection report (independent third-party evidence) with it.
 2. **Monday call to Brodbeck Porter (513-624-0900):** frame as a coverage question, not a claim notice; confirm wind reporting window and whether a post-repair claim with pre-repair documentation is viable (some carriers accept documented-then-repaired losses; get the answer in writing if possible).
-3. Decide on filing AFTER the response is delivered and repairs are scheduled — sale first, offset second. If a claim is filed, disclosure obligations to the buyers may attach; ask Amy/attorney first. (RECOMMENDATION)
+3. Decide on filing AFTER the response is delivered and repairs are scheduled — sale first, offset second. If a claim is filed, disclosure obligations to the buyers may attach; ask Zach/attorney first. (RECOMMENDATION)

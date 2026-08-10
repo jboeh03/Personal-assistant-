@@ -50,8 +50,8 @@ The credit figures in the earlier drafts were sized off the old bands and are no
 
 | Draft | Old suggested figure | Revised suggestion | Basis |
 |---|---|---|---|
-| Branch A (radon done by us + credit for roof/chimney/gutters) | $5,500 | **~$8,500** (blank for humans/Amy) | Top of new most-likely for roof pkg + chimney + gutters ($6,600–$11,100); mid-point stance |
+| Branch A (radon done by us + credit for roof/chimney/gutters) | $5,500 | **~$8,500** (blank for humans/Zach) | Top of new most-likely for roof pkg + chimney + gutters ($6,600–$11,100); mid-point stance |
 | Branch C (pure credit, everything) | $7,500 | **~$10,500** (blank) | Adds radon likely band |
 | Branch B (we do the work) | n/a | unchanged structurally | Now carries higher expected cost ($7.9–12.9K) but also the insurance offset and the low-end upside (~$4.4K) if quotes come in soft |
 
-Strategic read (INFERENCE): the higher numbers make **Branch B relatively more attractive than before** — if real quotes land near the lows, doing the work costs less than the credit a buyer would accept, and the Erie wind-claim offset only works on the do-the-work path. Conversely a credit at ~$8,500–$10,500 buys certainty against the $18K+ tails. **Real quotes are now the single most valuable thing Amy can get before Monday.** All three response email drafts still work — only the dollar blanks change.
+Strategic read (INFERENCE): the higher numbers make **Branch B relatively more attractive than before** — if real quotes land near the lows, doing the work costs less than the credit a buyer would accept, and the Erie wind-claim offset only works on the do-the-work path. Conversely a credit at ~$8,500–$10,500 buys certainty against the $18K+ tails. **Real quotes are now the single most valuable thing Zach can get before Monday.** All three response email drafts still work — only the dollar blanks change.

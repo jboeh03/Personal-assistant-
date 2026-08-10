@@ -10,7 +10,7 @@
 |---|---|---|---|
 | 1 | Sale price | **$585,000** | EVIDENCE — contract / [DEAL_BRIEF.md](../DEAL_BRIEF.md) |
 | 2 | Mortgage payoff (Rocket Mortgage, sole known mortgage lien) | **$300,000–$325,000** | EVIDENCE (banded) — payoff statement dated 08/06/26; rate 2.750%; [finance-context.md](../data/finance-context.md) |
-| 3 | Listing-side total commission | **5–6% = $29,250–$35,100** | INFERENCE — typical total-commission band; **pending Amy's confirmation** of the actual structure (incl. any buyer-side amount per §7(c)) |
+| 3 | Listing-side total commission | **5–6% = $29,250–$35,100** | INFERENCE — typical total-commission band; **pending Zach's confirmation** of the actual structure (incl. any buyer-side amount per §7(c)) |
 | 4 | Hamilton County conveyance fee | **$1,755–$2,340** ($3–$4 per $1,000 on $585K; sources ambiguous on whether the $3 county rate includes the $1 state rate) **+ $0.50/parcel** (1 parcel) | EVIDENCE (rate structure, Hamilton County Auditor) / INFERENCE (exact total within band) — as previously cited in v1 |
 | 5 | Deed prep + seller-side title settlement fees | **~$500–$1,500** | INFERENCE — typical Ohio seller-side title/deed charges; §23 obligation is EVIDENCE; actual quote pending from Fidelity Land Title |
 | 6 | Property tax proration (Ohio **long proration**, §21 — seller pays through closing) | Annual tax **~$8.6K/yr band** (county tax ~$4,317 semi-annual per escrow schedule); Jan 1–Aug 28 ≈ 240/365 of the year → **~$5,000–$6,000 charge** | INFERENCE — **assumption:** Ohio bills a year in arrears and the escrow account has paid all bills issued to date, so the closing charge is the accrued-but-unbilled Jan 1→08/28/26 portion credited to buyers. If a billed installment is unpaid at closing it adds on top — confirm against the county duplicate at title |
@@ -36,7 +36,7 @@ Worst case: $585,000 − $325,000 (payoff) − $35,100 (6%) − $2,341 (conveyan
 | **Net to sellers (joint)** | **~$215.1K – $248.5K** |
 | **Per spouse @ 50/50** | **~$107.5K – $124.2K** |
 
-Label: INFERENCE composite built on the EVIDENCE/INFERENCE inputs above. The ~$33K width is driven mostly by the payoff band (±$25K) and the commission band (±$5.9K) — both narrow with one document each (fresh payoff statement; Amy's commission confirmation).
+Label: INFERENCE composite built on the EVIDENCE/INFERENCE inputs above. The ~$33K width is driven mostly by the payoff band (±$25K) and the commission band (±$5.9K) — both narrow with one document each (fresh payoff statement; Zach's commission confirmation).
 
 ## 3. Net proceeds by response branch
 
@@ -61,7 +61,7 @@ Reading it: the three deliberate branches land within ~$1–3K of each other at 
 ## 5. What narrows these bands
 
 1. **Fresh Rocket payoff good through 08/28+** (order now; statement in hand is stale as of 08/06; ~$25/day interest).
-2. **Commission % from Amy** (converts input #3 from INFERENCE to EVIDENCE; ±$5.9K of band width).
+2. **Commission % from Zach** (converts input #3 from INFERENCE to EVIDENCE; ±$5.9K of band width).
 3. **Liens/debts upload** (input #7 — currently a silent $0 in this model).
 4. **Fidelity title quote** (inputs #4–#5) and the county tax duplicate (input #6).
 5. **First real contractor quote** — supersedes every repair band per findings.json.

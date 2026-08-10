@@ -4,7 +4,7 @@
 
 **UPDATED 2026-08-08: credit suggestions re-sized to the v2 house-specific repair estimate (see [REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md)); dollar blanks remain the humans' call.**
 
-**as_of:** 2026-08-07 · Fill-in text for Amy to adapt to the Defect Notice response form. One block per branch of the gated ladder in [RESPONSE_MEMO.md](RESPONSE_MEMO.md) — **use exactly one branch**, chosen by the Saturday Amy↔Zach call. Dollar blanks are for Jeff & Olivia to confirm on the Saturday alignment call; suggested figures trace to the deal-room cost research. All modifications must be **in writing and signed by all parties** (§28) — nothing below is agreed until it is signed.
+**as_of:** 2026-08-07 · Fill-in text for Zach to adapt to the Defect Notice response form. One block per branch of the gated ladder in [RESPONSE_MEMO.md](RESPONSE_MEMO.md) — **use exactly one branch**, chosen by the Saturday Zach↔Amy call. Dollar blanks are for Jeff & Olivia to confirm on the Saturday alignment call; suggested figures trace to the deal-room cost research. All modifications must be **in writing and signed by all parties** (§28) — nothing below is agreed until it is signed.
 
 ---
 
@@ -20,7 +20,7 @@
 
 > "Notwithstanding the foregoing, Seller shall, prior to Closing and at Seller's expense, have an active radon mitigation system installed by a radon mitigation contractor licensed by the Ohio Department of Health, with a post-mitigation radon test result below 4.0 pCi/L, and shall provide the work order, receipt, warranty, and post-mitigation test result to Buyer at or before the re-inspection provided for in the Defect Notice. The closing-cost payment stated in item (d) above is accepted by Buyer in lieu of, and in full satisfaction of, the corrections requested for items RS-1 through RS-6 and EG-2 (roof, flashing, gutters, chimney, and siding items) in Buyer's Defect Notice."
 
-*Blanks for the humans: the (d) dollar amount. Note for Amy: keep the (d) framing as "settlement charges and/or other fees" — not "repair credit" — per the contract analyst's underwriting guidance.*
+*Blanks for the humans: the (d) dollar amount. Note for Zach: keep the (d) framing as "settlement charges and/or other fees" — not "repair credit" — per the contract analyst's underwriting guidance.*
 
 ---
 
@@ -32,7 +32,7 @@
 
 > "Seller agrees to complete the corrections requested in Buyer's Defect Notice, as amended and clarified as follows: (1) Item RS-2 is limited to repair of the affected sheathing at the three locations identified in the inspection report and restoration of roof covering attachment at those locations. (2) Radon mitigation shall be performed by a radon mitigation contractor licensed by the Ohio Department of Health, with a post-mitigation radon test result below 4.0 pCi/L provided at or before re-inspection. (3) All work shall be completed in a professional, workmanlike manner by professionals qualified to make the agreed corrections, with work orders, receipts, and warranties provided at re-inspection as stated in the Defect Notice. Seller will target completion of all corrections by August 24, 2026."
 
-*No dollar blanks in this branch. Note for Amy: the RS-2 sentence is the one that matters — without it, "repair affected sheathing" is open-ended once the roof is opened. Contractor calls (3+ roofers) must start Saturday for the 08/24 target to hold.*
+*No dollar blanks in this branch. Note for Zach: the RS-2 sentence is the one that matters — without it, "repair affected sheathing" is open-ended once the roof is opened. Contractor calls (3+ roofers) must start Saturday for the 08/24 target to hold.*
 
 ---
 
@@ -44,7 +44,7 @@
 
 > (d) Seller offers to pay Buyer's settlement charges and/or other fees at Closing in an amount up to **$______** *(suggest **$10,500** — sized inside the v2 house-specific all-in most-likely band ($7,900–$12,900, [REPAIR_ESTIMATE.md](REPAIR_ESTIMATE.md)), priced for a fast yes)*, in lieu of all corrections requested in Buyer's Defect Notice, including items RS-1 through RS-6, EG-2, and radon mitigation. Buyer shall assume responsibility for any corrections Buyer elects to make.
 
-*Blanks for the humans: the (d) dollar amount. Note for Amy: confirm with Zach/lender that the amount fits inside the buyers' actual settlement charges + prepaids (the 6% IPC cap ≈ $35,100 is not the binding limit; their actual costs are).*
+*Blanks for the humans: the (d) dollar amount. Note for Zach: confirm with Amy/lender that the amount fits inside the buyers' actual settlement charges + prepaids (the 6% IPC cap ≈ $35,100 is not the binding limit; their actual costs are).*
 
 ---
 

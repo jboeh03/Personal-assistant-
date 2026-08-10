@@ -1,6 +1,6 @@
 # The Stonington Sale — Where Things Stand, in Plain English
 
-> ⚠️ **Informational only — not legal advice. We review everything with Amy (our agent) and, where needed, an Ohio attorney before signing.**
+> ⚠️ **Informational only — not legal advice. We review everything with Zach (our agent) and, where needed, an Ohio attorney before signing.**
 
 *Prepared 2026-08-08. Every number in here comes straight from the deal-room research files — nothing is guessed. If a real contractor quote arrives, it beats everything in this report.*
 
@@ -169,9 +169,9 @@ The response form gives us three realistic paths. All three are good; they diffe
 **Branch C — pure credit for everything.** Roughly **$10,500** toward their closing costs, covering the whole list including radon. Nothing to schedule, nothing to re-inspect, zero out-of-pocket before closing.
 *Why it's safe:* it's the cleanest possible closing — there is literally nothing left to argue about at the walk-through. It's the fallback if the radon install can't be booked in time.
 
-**The recommendation (from the full strategy review):** don't pick blind — **Amy calls Zach (the buyers' agent) first**, ideally Saturday, and simply asks whether his clients would rather have money or have the repairs done. Their answer picks the branch:
+**The recommendation (from the full strategy review):** don't pick blind — **Zach calls Amy (the buyers' agent) first**, ideally Saturday, and simply asks whether his clients would rather have money or have the repairs done. Their answer picks the branch:
 
-| What Zach says | We send Monday |
+| What Amy says | We send Monday |
 |---|---|
 | "Money works for them" | **Branch A** (radon done by us + ~$8,500 credit) — or C if that fits better |
 | "They want the repairs done" | **Branch B** — safe default, no contract fuse |
@@ -186,10 +186,10 @@ And the one iron rule above all of it: **never let Monday pass without answering
 
 Short list. Everything can be done by phone and e-signature — no meetings needed.
 
-- [ ] **Pick the branch together** (after Amy reports back on the Zach call).
-- [ ] **Agree the dollar figure** if it's a credit branch (~$8,500 Branch A / ~$10,500 Branch C are the researched suggestions — the final number is ours to set with Amy).
-- [ ] **Both of us sign the response packet Sunday** — Amy will have it ready; e-signature is fine and legally valid.
-- [ ] **Amy delivers it Monday afternoon** and gets written confirmation of receipt.
+- [ ] **Pick the branch together** (after Zach reports back on the Amy call).
+- [ ] **Agree the dollar figure** if it's a credit branch (~$8,500 Branch A / ~$10,500 Branch C are the researched suggestions — the final number is ours to set with Zach).
+- [ ] **Both of us sign the response packet Sunday** — Zach will have it ready; e-signature is fine and legally valid.
+- [ ] **Zach delivers it Monday afternoon** and gets written confirmation of receipt.
 
 That's it. Answer well on Monday, and the hardest part of this sale is behind us — with committed buyers, protected deposits, and 18 days to closing.
 

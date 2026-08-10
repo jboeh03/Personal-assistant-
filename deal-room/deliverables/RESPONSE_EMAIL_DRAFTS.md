@@ -8,25 +8,25 @@
 
 ---
 
-## 0. Transmittal note — Jeff & Olivia → Amy
+## 0. Transmittal note — Jeff & Olivia → Zach
 
 **DRAFT — FOR AMY'S REVIEW AND SENDING** *(sellers send this one)*
 
 > **Subject:** Stonington — our Defect Notice decision
 >
-> Amy — we've decided to respond with **[Branch A / B / C — see attached summary]**. Please prepare the Defect Notice response form and amendment per the draft language we shared, and circulate for both of our e-signatures by Sunday noon so it's fully signed before delivery Monday. We'd like it delivered Monday afternoon. Call either of us with any concerns about the language or the numbers before you finalize.
+> Zach — we've decided to respond with **[Branch A / B / C — see attached summary]**. Please prepare the Defect Notice response form and amendment per the draft language we shared, and circulate for both of our e-signatures by Sunday noon so it's fully signed before delivery Monday. We'd like it delivered Monday afternoon. Call either of us with any concerns about the language or the numbers before you finalize.
 >
 > Thanks — Jeff & Olivia
 
 ---
 
-## Branch A — Amy → Zach West: option (d) $8,500 credit + radon amendment
+## Branch A — Zach → Amy Broghamer: option (d) $8,500 credit + radon amendment
 
 **DRAFT — FOR AMY'S REVIEW AND SENDING**
 
 > **Subject:** 6840 Stonington Rd — Sellers' signed Defect Notice response (attached)
 >
-> Zach — attached is the sellers' signed response to your clients' Defect Notice, delivered within the Consideration Period.
+> Amy — attached is the sellers' signed response to your clients' Defect Notice, delivered within the Consideration Period.
 >
 > The sellers are committed to a smooth 08/28 closing, and they've structured this to be the fastest, cleanest path to your clients' move-in:
 >
@@ -36,17 +36,17 @@
 >
 > Given the 2-day Settlement Period, **please have your clients countersign by end of day Wednesday, August 12.** Happy to walk the loan officer through the credit. Please confirm receipt.
 >
-> Amy Broghamer, eXp Realty
+> Zach West, AMP Realty
 
 ---
 
-## Branch B — Amy → Zach West: option (b)-amended, sellers perform all work
+## Branch B — Zach → Amy Broghamer: option (b)-amended, sellers perform all work
 
 **DRAFT — FOR AMY'S REVIEW AND SENDING**
 
 > **Subject:** 6840 Stonington Rd — Sellers' signed Defect Notice response: all corrections agreed (attached)
 >
-> Zach — attached is the sellers' signed response: they **agree to complete every correction requested** in the Defect Notice, under option (b) with a short initialed amendment that simply pins down execution:
+> Amy — attached is the sellers' signed response: they **agree to complete every correction requested** in the Defect Notice, under option (b) with a short initialed amendment that simply pins down execution:
 >
 > 1. RS-2 sheathing work covers the three locations identified in the inspection report, with roof covering re-secured at those locations.
 > 2. Radon mitigation by an **ODH-licensed contractor**, with a post-mitigation retest **below 4.0 pCi/L** provided at or before re-inspection.
@@ -56,17 +56,17 @@
 >
 > Please confirm receipt.
 >
-> Amy Broghamer, eXp Realty
+> Zach West, AMP Realty
 
 ---
 
-## Branch C — Amy → Zach West: pure option (d), $10,500 all-in credit
+## Branch C — Zach → Amy Broghamer: pure option (d), $10,500 all-in credit
 
 **DRAFT — FOR AMY'S REVIEW AND SENDING**
 
 > **Subject:** 6840 Stonington Rd — Sellers' signed Defect Notice response (attached)
 >
-> Zach — attached is the sellers' signed response to the Defect Notice.
+> Amy — attached is the sellers' signed response to the Defect Notice.
 >
 > To give your clients maximum flexibility and keep the 08/28 closing rock-solid, the sellers offer a **$10,500 credit** toward your clients' settlement charges and prepaids at closing (option (d)), **in lieu of all corrections requested** — the roof package (RS-1 through RS-6, EG-2) and radon mitigation.
 >
@@ -74,7 +74,7 @@
 >
 > Given the 2-day Settlement Period, **please have your clients countersign by end of day Wednesday, August 12.** Please confirm receipt.
 >
-> Amy Broghamer, eXp Realty
+> Zach West, AMP Realty
 
 ---
 
@@ -82,7 +82,7 @@
 
 - [ ] **Both sellers sign the response + amendment BEFORE anything is sent** — target Sunday 08/09; nothing goes out with one signature.
 - [ ] Deliver **Monday 08/10 afternoon** (electronic delivery is valid under the contract) — not Sunday (starts the 2-day fuse early), not 11 PM Monday.
-- [ ] **Confirm delivery receipt in writing** from Zach the same day.
+- [ ] **Confirm delivery receipt in writing** from Amy the same day.
 - [ ] Calendar the Settlement Period end: **Wednesday 08/12, end of day** — countersignature must be in hand by then on any (b)/(d) counter.
 - [ ] Log the delivery and receipt confirmation via `/deal-log`.
 

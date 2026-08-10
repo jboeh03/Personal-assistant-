@@ -3,7 +3,7 @@
 **Prepared by:** deal-market-analyst · **As of:** 2026-08-07 (research date; underlying market data dates labeled per item)
 **Question:** What is the sellers' realistic best alternative if the $585,000 contract with the Sipniewskis auto-terminates after a failed Defect Notice negotiation (~08/12)?
 
-> Informational analysis only — not legal, tax, or financial advice. Review with Amy Broghamer (eXp) and, where material, an Ohio real estate attorney.
+> Informational analysis only — not legal, tax, or financial advice. Review with Zach West (eXp) and, where material, an Ohio real estate attorney.
 
 ---
 

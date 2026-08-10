@@ -9,7 +9,7 @@
 
 All three voices agree on the frame, and it changes the recommendation from a fixed pick to a **gated sequence**:
 
-1. **The Saturday call decides, not the matrix.** The single most decision-relevant, obtainable-before-Sunday item is a free ~10-minute call: **Amy temperature-checks Zach West (buyers' agent) on money-in-lieu vs. seller-performed repairs.** Every voice independently converged here. H2 is only the right opener if that call confirms the buyers will take a credit; the buyers *literally wrote* "Seller to have roofing contractor … prior to closing," and countering their stated preference on its weakest evidentiary leg is the plan's biggest exposure (Skeptic, Critic).
+1. **The Saturday call decides, not the matrix.** The single most decision-relevant, obtainable-before-Sunday item is a free ~10-minute call: **Zach temperature-checks Amy Broghamer (buyers' agent) on money-in-lieu vs. seller-performed repairs.** Every voice independently converged here. H2 is only the right opener if that call confirms the buyers will take a credit; the buyers *literally wrote* "Seller to have roofing contractor … prior to closing," and countering their stated preference on its weakest evidentiary leg is the plan's biggest exposure (Skeptic, Critic).
 2. **If buyers signal "we want the repairs done":** open with **(b)-amended** — agree to perform everything, with a one-sentence initialed amendment that (i) pins the RS-2 sheathing scope ("repair affected sheathing at the three identified locations"), (ii) commits radon to an ODH-licensed contractor with retest <4.0 before re-inspection, and (iii) receipts per the notice. Acceptance-of-repairs paths carry **zero auto-termination risk** — §15 ends on acceptance; every counter, including H2, hands the buyers a 08/12 walk-away option (Critic's decisive point).
 3. **If buyers signal money is fine:** deliver **H2** — initialed amendment: radon mitigation pre-closing (licensed, retest <4.0) + **$5,500** closing-cost credit in lieu of the roof/gutter package via option-(d) mechanics (top of the researched roof+gutter most-likely band; a credit is a cap, not a bid — no quotes needed on a weekend) (Pragmatist).
 4. **Mechanics regardless of branch:** both sellers aligned by phone Saturday, e-signature packet ready Sunday noon (separating co-sellers never need to share a room), deliver **Monday afternoon** — not 11 PM; the Settlement Period (ends 08/12) is for signatures and lender confirmation only, never live negotiation.
@@ -30,7 +30,7 @@ All three voices agree on the frame, and it changes the recommendation from a fi
 
 ## Recommendation (council-adjusted ladder)
 
-| Gate result (Amy ↔ Zach, Sat 08/08) | Opener to deliver Mon 08/10 |
+| Gate result (Zach ↔ Amy, Sat 08/08) | Opener to deliver Mon 08/10 |
 |---|---|
 | Buyers fine with money-in-lieu | **H2**: radon pre-closing (licensed, retest <4.0) + $5,500 credit, option-(d) mechanics, initialed amendment |
 | Buyers want repairs performed | **(b)-amended**: agree to all work; amendment pins RS-2 scope + radon licensure/retest; start contractor calls immediately |
