@@ -37,6 +37,7 @@ export async function updateSession(request: NextRequest) {
     path.startsWith("/login") ||
     path.startsWith("/auth") ||
     path.startsWith("/api") ||
+    path.startsWith("/deals") || // internal deal cockpit — single-user MVP, ungated for now
     path.startsWith("/_next") ||
     path === "/favicon.ico";
 

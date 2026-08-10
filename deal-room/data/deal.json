@@ -1,0 +1,18 @@
+{
+  "address": "6840 Stonington Rd",
+  "city": "Cincinnati (Anderson Township)",
+  "state": "OH",
+  "zip": "45230",
+  "parcel": "500-0344-0036-00",
+  "price": 585000,
+  "earnest": 10000,
+  "appraisalGapCover": 10000,
+  "closingDate": "2026-08-28",
+  "timezone": "America/New_York",
+  "dealState": "AWAITING_SELLER_RESPONSE",
+  "sellers": "Jeffrey & Olivia Boeh",
+  "buyers": "Robert & Catherine Sipniewski",
+  "listingAgent": "Zach West (AMP Realty)",
+  "buyersAgent": "Amy Broghamer (eXp Realty)",
+  "title": "Fidelity Land Title"
+}
