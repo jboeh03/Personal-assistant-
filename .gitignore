@@ -38,3 +38,4 @@ Desktop.ini
 # Deal cockpit uploaded files (binaries; metadata lives in deal-room/data/media-index.json)
 /public/deal-uploads/*
 !/public/deal-uploads/.gitkeep
+.vercel
