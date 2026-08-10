@@ -5,7 +5,7 @@
     {
       "id": "defect-response",
       "date": "2026-08-12",
-      "desc": "EXTENDED per addendum (reported by Jeff 08/10; VERIFY fully signed by both parties - unsigned means original 08/10 deadline stood): Seller response to Defect Notice due Wed 08/12 EOD. Silence = deemed agreement to all requested repairs.",
+      "desc": "VERIFIED EXTENDED (signed addendum #1, executed 8/9/2026, both parties): Seller response to Defect Notice due Wed 08/12 EOD. Silence = deemed agreement to all requested repairs.",
       "critical": true,
       "status": "open"
     },
