@@ -109,7 +109,8 @@
       "insurance_relevant": false,
       "notes": "Most DIY-viable item, but notice says qualified professional for agreed corrections | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
       "surprise_ceiling_usd": 3500,
-      "ceiling_trigger": "Rotted fascia found behind failed hangers (20-60 LF @ $15-25/LF Cincinnati adds $300-1,500)"
+      "ceiling_trigger": "Rotted fascia found behind failed hangers (20-60 LF @ $15-25/LF Cincinnati adds $300-1,500)",
+      "diy_progress": "2026-08-12: Jeff cleaned gutters + blew out downspouts himself. Slope/re-pitch (RS-5) and downspout re-secure still outstanding. NOTE: DIY cleaning does not produce the contractor receipt the Defect Notice requires; a qualified pro still needs to do (and invoice) the re-pitch/re-secure for re-inspection compliance."
     },
     {
       "id": "RS-5",
@@ -131,7 +132,8 @@
         "diy": "Feasible but same notice-compliance tension as RS-4"
       },
       "insurance_relevant": false,
-      "notes": "Overlaps RS-4 scope; likely priced together | v2: priced inside RS-4 combined band ($350-1,800 likely $600-1,100 for both)"
+      "notes": "Overlaps RS-4 scope; likely priced together | v2: priced inside RS-4 combined band ($350-1,800 likely $600-1,100 for both)",
+      "diy_progress": "2026-08-12: gutters cleaned by Jeff; slope correction still needed by a pro for the required receipt."
     },
     {
       "id": "RS-6",
