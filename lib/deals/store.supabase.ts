@@ -7,7 +7,7 @@
 //   deal_journal(id, at, source, body)
 //   storage bucket: deal-uploads (public)
 
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { SUPABASE_ANON_KEY, SUPABASE_URL } from "@/lib/supabase/config";
 import type {
   Bundle,
@@ -19,14 +19,28 @@ import type {
   Todo,
 } from "./types";
 
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-  auth: { persistSession: false },
-});
+// Lazily constructed: this module is imported by the store dispatcher even
+// when the file backend is active, and createClient() throws on an empty URL.
+let _sb: SupabaseClient | null = null;
+
+function db(): SupabaseClient {
+  if (!_sb) {
+    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+      throw new Error(
+        "Supabase backend selected but NEXT_PUBLIC_SUPABASE_URL / _ANON_KEY are not set.",
+      );
+    }
+    _sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { persistSession: false },
+    });
+  }
+  return _sb;
+}
 
 const BUCKET = "deal-uploads";
 
 async function stateDoc<T>(key: string, fallback: T): Promise<T> {
-  const { data } = await sb
+  const { data } = await db()
     .from("deal_state")
     .select("value")
     .eq("key", key)
@@ -35,7 +49,7 @@ async function stateDoc<T>(key: string, fallback: T): Promise<T> {
 }
 
 async function putStateDoc(key: string, value: unknown): Promise<void> {
-  await sb.from("deal_state").upsert({ key, value }, { onConflict: "key" });
+  await db().from("deal_state").upsert({ key, value }, { onConflict: "key" });
 }
 
 // ---- Deal meta ----
@@ -123,29 +137,30 @@ export async function getMilestones(): Promise<Milestone[]> {
 // ---- Journal ----
 
 export async function getEvents(limit?: number): Promise<DealEvent[]> {
-  let q = sb
+  let q = db()
     .from("deal_journal")
     .select("at, source, body")
     .order("at", { ascending: false });
   if (typeof limit === "number") q = q.limit(limit);
   const { data } = await q;
-  return (data ?? []).map((r) => ({
-    date: new Date(r.at as string).toLocaleDateString("en-CA", {
+  const rows = (data ?? []) as { at: string; source: string; body: string }[];
+  return rows.map((r) => ({
+    date: new Date(r.at).toLocaleDateString("en-CA", {
       timeZone: "America/New_York",
     }),
-    source: r.source as string,
-    text: r.body as string,
+    source: r.source,
+    text: r.body,
   }));
 }
 
 export async function addEvent(text: string, source = "human"): Promise<void> {
-  await sb.from("deal_journal").insert({ source, body: text });
+  await db().from("deal_journal").insert({ source, body: text });
 }
 
 // ---- Media ----
 
 export async function getMedia(): Promise<MediaItem[]> {
-  const { data } = await sb
+  const { data } = await db()
     .from("deal_media")
     .select("*")
     .order("uploaded_at", { ascending: true });
@@ -163,7 +178,7 @@ export async function getMedia(): Promise<MediaItem[]> {
 }
 
 export async function addMedia(item: MediaItem): Promise<void> {
-  await sb.from("deal_media").insert({
+  await db().from("deal_media").insert({
     id: item.id,
     kind: item.kind,
     finding_id: item.findingId ?? null,
@@ -182,8 +197,8 @@ export async function saveUpload(
   filename: string,
 ): Promise<{ url: string; abspath: string }> {
   const objectPath = `${subdir}/${filename}`;
-  await sb.storage.from(BUCKET).upload(objectPath, bytes, { upsert: true });
-  const { data } = sb.storage.from(BUCKET).getPublicUrl(objectPath);
+  await db().storage.from(BUCKET).upload(objectPath, bytes, { upsert: true });
+  const { data } = db().storage.from(BUCKET).getPublicUrl(objectPath);
   return { url: data.publicUrl, abspath: objectPath };
 }
 
