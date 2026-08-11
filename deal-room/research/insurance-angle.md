@@ -57,3 +57,25 @@ Declarations reviewed (Erie ErieSecure Home, 12/07/25–12/07/26):
 1. **Before any repair:** roofer documents in writing + photos "wind-creased shingles, functional wind damage" with date; keep the 08/04 inspection report (independent third-party evidence) with it.
 2. **Monday call to Brodbeck Porter (513-624-0900):** frame as a coverage question, not a claim notice; confirm wind reporting window and whether a post-repair claim with pre-repair documentation is viable (some carriers accept documented-then-repaired losses; get the answer in writing if possible).
 3. Decide on filing AFTER the response is delivered and repairs are scheduled — sale first, offset second. If a claim is filed, disclosure obligations to the buyers may attach; ask Zach/attorney first. (RECOMMENDATION)
+
+---
+
+## ADDENDUM 2 (2026-08-10, from comms recon) — a prior denial changes the odds
+
+**EVIDENCE (imessage, 08/05):** when the buyers' side asked whether any roof
+repairs had been done, the answer was **no repairs ever**, and **an adjuster
+came out at one point and it was not covered**.
+
+**INFERENCE — this cuts against the claim thesis.** The ADDENDUM above upgraded
+the hedge to "live" on policy structure alone (flat $1,000 deductible,
+guaranteed replacement cost, 2014 roof). A prior inspection-and-denial on this
+same roof is a material headwind: the carrier has already looked at it once and
+declined, which makes a "maintenance / pre-existing condition" characterization
+more likely the second time — exactly the denial path flagged in §1.
+
+**Net position:** the hedge is still worth its 30 minutes (photograph the
+wind-creased shingles before any repair; ask Brodbeck Porter as a coverage
+*question*, not a filed claim) — but it should carry **less weight in the
+branch decision** than Addendum 1 implied. Do not let an expected insurance
+recovery tip the choice toward performing the roof work; treat any recovery as
+upside, not as budget.

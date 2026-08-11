@@ -82,5 +82,65 @@
     "findingId": null,
     "createdAt": "2026-08-10T16:30:09.679704",
     "createdBy": "Jeff"
+  },
+  {
+    "id": "c13b32d3-4cad-4144-9086-119bbcef0e8e",
+    "title": "Sign the Velocity radon proposal + arrange payment",
+    "detail": "Zach confirmed signature needed. $1,400; Olivia planning to Venmo. Install lined up for next week.",
+    "assignee": "Jeff & Olivia",
+    "assigneeEmail": null,
+    "status": "open",
+    "due": "2026-08-11",
+    "findingId": null,
+    "createdAt": "2026-08-10T21:34:05.477454",
+    "createdBy": "comms-recon"
+  },
+  {
+    "id": "c24b99e2-0c10-4bb2-8d1f-5ed97d5009d5",
+    "title": "Get Jon's roof/chimney estimate from Zach",
+    "detail": "Sent to Jon 08/07, still outstanding. This number decides the Wednesday branch \u2014 chase it today.",
+    "assignee": "Zach West",
+    "assigneeEmail": "zrwest10@gmail.com",
+    "status": "in_progress",
+    "due": "2026-08-11",
+    "findingId": null,
+    "createdAt": "2026-08-10T21:34:05.477955",
+    "createdBy": "comms-recon"
+  },
+  {
+    "id": "e96a77ca-d6b1-42b1-b2c4-ddf01dac1b9d",
+    "title": "Carneys: pay invoice + obtain AC warranty paperwork for transfer",
+    "detail": "Buyers' agent asked about warranty transfer. Carneys' numbers are out of service; Olivia delivering a check; Zach seeing Carney 08/11.",
+    "assignee": "Zach West",
+    "assigneeEmail": "zrwest10@gmail.com",
+    "status": "open",
+    "due": "2026-08-11",
+    "findingId": null,
+    "createdAt": "2026-08-10T21:34:05.477992",
+    "createdBy": "comms-recon"
+  },
+  {
+    "id": "052ee74e-8aaf-43b6-b3f7-a2caec0c2d0f",
+    "title": "Send Olivia homeowner's insurance info / where to get her own coverage quote",
+    "detail": "She asked 08/10.",
+    "assignee": "Jeff",
+    "assigneeEmail": null,
+    "status": "open",
+    "due": "2026-08-11",
+    "findingId": null,
+    "createdAt": "2026-08-10T21:34:05.478022",
+    "createdBy": "comms-recon"
+  },
+  {
+    "id": "190eff79-6fae-480f-a797-3fbe7c8430b3",
+    "title": "Confirm with Brodbeck Porter whether the prior denied roof adjuster visit affects a new wind claim",
+    "detail": "Prior adjuster came out; not covered. Ask as a coverage question, not a filed claim.",
+    "assignee": "Jeff",
+    "assigneeEmail": null,
+    "status": "open",
+    "due": null,
+    "findingId": null,
+    "createdAt": "2026-08-10T21:34:05.478049",
+    "createdBy": "comms-recon"
   }
 ]
