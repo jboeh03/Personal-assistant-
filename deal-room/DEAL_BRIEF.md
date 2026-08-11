@@ -4,7 +4,7 @@
 > interpretations and response decisions must be reviewed with the listing agent
 > (Zach West, eXp) and, where material, an Ohio real estate attorney.
 
-**Deal state:** `AWAITING_SELLER_RESPONSE` (Defect Notice delivered 08/07/2026 — response due by end of **08/10/2026**)
+**Deal state:** `AWAITING_SELLER_RESPONSE` (Defect Notice delivered 08/07/2026 — response due by end of **08/12/2026**, extended by signed Addendum #1 executed 08/09)
 
 ## Property & price
 
@@ -37,8 +37,8 @@ Conventional, fixed, ≤90% LTV, 30-year, prevailing rates. Qualification letter
 | 08/04 | Home inspection | done |
 | 08/05–08/07 | Radon test (avg **13.6 pCi/L**) | done |
 | 08/07 | **Defect Notice delivered** (buyers signed 2:47/2:59 PM EDT) → Inspection Period ended, Consideration Period started | done |
-| **08/10** | **Seller response due (3-day Consideration Period, §15(b)). NO RESPONSE = DEEMED AGREEMENT TO ALL REQUESTED REPAIRS.** | ⏳ OPEN |
-| 08/11–08/12 | If seller counters: 2-day Settlement Period. No signed agreement by end = **contract auto-terminates** | conditional |
+| **08/12** | **Seller response due — EXTENDED per signed Addendum #1 (orig. 08/10). §15(b): NO RESPONSE = DEEMED AGREEMENT TO ALL REQUESTED REPAIRS.** | ⏳ OPEN |
+| 08/13–08/14 | If seller counters: 2-day Settlement Period. No signed agreement by end = **contract auto-terminates** | conditional |
 | ~08/21 | Buyer conditional loan approval due | pending |
 | ~08/24 | Target: agreed repairs complete + receipts assembled | pending |
 | ~08/25 | Lender clear-to-close; buyer re-inspection of repairs (3 days before closing per Defect Notice) | pending |

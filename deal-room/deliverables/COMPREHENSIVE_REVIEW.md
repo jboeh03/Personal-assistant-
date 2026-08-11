@@ -2,7 +2,7 @@
 
 > ⚠️ **Informational summary — not legal, tax, or financial advice.** We review every contract decision with our agent (Zach West, AMP Realty) and, where it matters, an Ohio real estate attorney before signing anything.
 
-**Prepared for Olivia · Updated Wednesday, August 12, 2026**
+**Prepared for Olivia · Updated Monday, August 10, 2026**
 **Property:** 6840 Stonington Rd, Cincinnati OH 45230 · **Sale price:** $585,000 · **Closing:** August 28, 2026
 
 ---
@@ -13,7 +13,7 @@ We sold the house for **$585,000** to a committed couple (the Sipniewskis). They
 
 The whole repair list most likely costs **$7,900–$12,900**. Walking away would cost us far more — roughly **$12,000–$30,000** less in a resale, plus months of carrying the house. So this is about *how* we say yes, not whether. We have three clean ways to do it, and real quotes are now coming in that make the choice concrete.
 
-**Newest updates:** the radon quote came back at **~$1,500** (right on our estimate) with an installer available next week; Jeff cleaned the gutters and blew out the downspouts himself over the weekend; and roof/chimney ballpark pricing is still being gathered by Zach.
+**Newest updates:** the radon proposal came in at **$1,400 firm** from Velocity Radon Mitigation — $100 *under* our low estimate, with an installer available next week; Jeff cleaned the gutters and blew out the downspouts himself; and roof/chimney ballpark pricing is still being gathered by Zach.
 
 ---
 
@@ -27,7 +27,7 @@ The whole repair list most likely costs **$7,900–$12,900**. Walking away would
 | **Aug 7** | Buyers delivered their **Defect Notice** — the formal "please fix these things" list. This started a short clock for our response. |
 | **Aug 8–10** | We built out the full analysis: what each item really costs for *our* house, what our options are, what the numbers look like, and what makes deals like this fall apart. |
 | **Aug 9** | Signed **extension addendum** — both sides agreed to move our response deadline to **Wednesday, Aug 12**, giving us time to gather real contractor quotes. |
-| **Aug 10–12** | Radon quote in ($1,500). Gutter cleaning done by Jeff. Roof/chimney quotes pending. |
+| **Aug 10** | Radon quote in — **$1,400 firm** (Velocity). Gutter cleaning done by Jeff. Roof/chimney quotes pending. |
 
 Behind the scenes, we (with the help of the assistant) built a complete "deal room" — every document read and organized, every repair independently priced against our exact house, the contract deadlines mapped out, and the market/finances modeled. The full library is listed at the end.
 
@@ -60,13 +60,13 @@ Eight items, all on one theme — **keeping water out of the house** — plus th
 | **Kick-out flashing** (RS-3) | Small metal piece that steers roof runoff into the gutter instead of down the wall — missing in spots | **$1,200–$1,800** | $2,800 if all spots are on brick (harder) | Quote pending |
 | **Loose siding** (EG-2) | A section of wood siding near the back roofline came loose | **$300–$600** | $1,200 if rot behind it | Quote pending |
 | **Chimney crown** (RS-6) | The concrete "lid" on the chimney is damaged and letting water in | **$2,000–$3,500** | $8,000 if top bricks need rebuilding / two crowns | Quote pending |
-| **Gutters** (RS-4/RS-5) | Clogged, some loose brackets, wrong slope | **$600–$1,100** | $3,500 if rotted board behind the gutters | **Jeff cleaned + blew out downspouts ✅; slope/re-secure still needs a pro** |
-| **Radon system** (RADON) | A sealed pipe + fan that vents the gas from under the basement | **$1,300–$1,800** | $3,500 if the basement needs a second suction point | **Quoted ~$1,500 ✅; installer available next week** |
+| **Gutters** (RS-4/RS-5) | Clogged, some loose brackets, wrong slope | **$600–$1,100** | $3,500 if rotted board behind the gutters | **Cleaned by Jeff; slope/re-secure still needs a pro** |
+| **Radon system** (RADON) | A sealed pipe + fan that vents the gas from under the basement | **$1,300–$1,800** | $3,500 if the basement needs a second suction point | **QUOTED $1,400 firm; install available next week** |
 | **EVERYTHING** | | **~$7,900–$12,900** | ~$18,300 (capped ~$26K) | |
 
 **Two important notes on the gutters and radon:**
 - **Gutters:** Jeff's cleaning is real progress and saves time, but the buyers' notice requires the work be done by "a qualified professional" with a **receipt** for their re-inspection. So the leftover slope/re-secure work still needs a pro's invoice — the DIY cleaning just makes their job smaller.
-- **Radon:** the $1,500 quote is exactly mid-range. Two things to confirm when booking: the installer is **Ohio-licensed** (required by law), and a **retest below 4.0** is included afterward. Install early next week → retest result in hand well before the ~Aug 25 re-inspection.
+- **Radon:** the $1,400 proposal already satisfies everything we wanted. Velocity is **Ohio-licensed** (ODH RC-360), an **independent third-party retest is included**, and they guarantee the level stays **below 3.9 for life** — a warranty that transfers to the buyers. Install early next week puts the retest result in hand well before the ~Aug 25 re-inspection.
 
 **And what they did NOT ask for:** the scarier-sounding inspection findings — foundation cracks, an older electrical panel, an aging furnace — the buyers **waived all of them**. That's the behavior of people who want the house, not an exit. It's the most reassuring fact in the whole file.
 
