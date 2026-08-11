@@ -79,3 +79,10 @@ wind-creased shingles before any repair; ask Brodbeck Porter as a coverage
 branch decision** than Addendum 1 implied. Do not let an expected insurance
 recovery tip the choice toward performing the roof work; treat any recovery as
 upside, not as budget.
+
+---
+
+## ADDENDUM 2 (2026-08-11, after comms intake) — hedge DOWNGRADED
+
+- **EVIDENCE (comms, 08/05):** No roof repairs have ever been done, and a **prior adjuster visit on this roof resulted in NO coverage**. A previous denial is a significant headwind: carriers keep claim/inspection history (CLUE), and a re-filed wind claim on the same roof invites the same "pre-existing/maintenance" characterization — now with a paper trail supporting it.
+- **REVISED CONCLUSION (INFERENCE):** The wind-claim offset drops from "live, worth executing deliberately" to **"long shot — do not count it in any branch math."** The free hedge steps (photograph creased shingles before repair; one no-claim question to Brodbeck Porter about what the prior visit was and whether it was formally denied vs. never filed) remain worth doing, but no branch should be preferred because of expected insurance recovery. Branch B's case now rests on its own merits (zero termination risk, low-end cost upside) without the insurance kicker.
