@@ -42,3 +42,7 @@ Desktop.ini
 
 # Deal-room private originals (exact personal figures — never committed)
 deal-room/source/private/
+
+# Deal monitor runtime logs (local-only churn; JOURNAL.md is the committed record)
+deal-room/log/monitor*.log
+deal-room/log/monitor-latest.md
