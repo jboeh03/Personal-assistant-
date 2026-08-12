@@ -27,3 +27,6 @@ export const getReports = impl.getReports;
 export const getTodos = impl.getTodos;
 export const addTodo = impl.addTodo;
 export const updateTodo = impl.updateTodo;
+export const getSignatures = impl.getSignatures;
+export const addSignature = impl.addSignature;
+export const updateSignature = impl.updateSignature;

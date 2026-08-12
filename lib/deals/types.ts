@@ -132,6 +132,45 @@ export interface Todo {
   createdBy?: string;
 }
 
+// ---- E-signature requests (DocuSeal-backed) ----
+
+export type SignatureRequestStatus =
+  | "pending"
+  | "completed"
+  | "declined"
+  | "archived";
+
+export type SignerStatus = "awaiting" | "opened" | "completed" | "declined";
+
+export interface SignatureSigner {
+  /** DocuSeal role name, e.g. "Seller 1". */
+  role: string;
+  name: string;
+  email: string;
+  status: SignerStatus;
+  /** DocuSeal submitter id — needed for reminders. */
+  docusealSubmitterId?: number | null;
+  /** Hosted signing link (opens in a new tab). */
+  signUrl?: string | null;
+  signedAt?: string | null; // ISO
+}
+
+export interface SignatureRequest {
+  id: string;
+  title: string;
+  status: SignatureRequestStatus;
+  docusealTemplateId?: number | null;
+  docusealSubmissionId?: number | null;
+  /** Ordered: signers[0] signs first. */
+  signers: SignatureSigner[];
+  /** Original (pre-signature) upload in storage — reference only, not a vault row. */
+  sourceUrl?: string | null;
+  /** deal_media.id of the signed PDF once filed to the vault. */
+  signedMediaId?: string | null;
+  createdAt: string; // ISO
+  completedAt?: string | null;
+}
+
 export interface DealMeta {
   address: string;
   city: string;

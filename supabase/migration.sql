@@ -52,3 +52,25 @@ drop policy if exists "deal-uploads update" on storage.objects;
 create policy "deal-uploads read"   on storage.objects for select to anon, authenticated using (bucket_id = 'deal-uploads');
 create policy "deal-uploads write"  on storage.objects for insert to anon, authenticated with check (bucket_id = 'deal-uploads');
 create policy "deal-uploads update" on storage.objects for update to anon, authenticated using (bucket_id = 'deal-uploads');
+
+-- ── E-signature requests (DocuSeal-backed) — added 2026-08-12 ────────────────
+-- Run this block in the Supabase SQL editor if the table doesn't exist yet.
+
+create table if not exists deal_signatures (
+  id                      uuid primary key,
+  title                   text not null,
+  status                  text not null default 'pending',
+  docuseal_template_id    integer,
+  docuseal_submission_id  integer,
+  signers                 jsonb not null default '[]'::jsonb,
+  source_url              text,
+  signed_media_id         uuid,
+  created_at              timestamptz not null default now(),
+  completed_at            timestamptz
+);
+
+alter table deal_signatures enable row level security;
+
+drop policy if exists "deal_signatures rw" on deal_signatures;
+create policy "deal_signatures rw" on deal_signatures
+  for all to anon, authenticated using (true) with check (true);

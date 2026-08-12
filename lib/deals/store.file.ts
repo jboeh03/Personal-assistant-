@@ -14,6 +14,7 @@ import type {
   Finding,
   MediaItem,
   Milestone,
+  SignatureRequest,
   Todo,
   WorkStatus,
 } from "./types";
@@ -26,6 +27,7 @@ const MILESTONES = path.join(DATA, "milestones.json");
 const DEAL = path.join(DATA, "deal.json");
 const MEDIA = path.join(DATA, "media-index.json");
 const TODOS = path.join(DATA, "todos.json");
+const SIGNATURES = path.join(DATA, "signatures.json");
 const JOURNAL = path.join(DEAL_ROOM, "log", "JOURNAL.md");
 const UPLOAD_DIR = path.join(ROOT, "public", "deal-uploads");
 
@@ -211,6 +213,32 @@ export async function getReports(): Promise<
       label: labels[f] ?? f.replace(/\.pdf$/, ""),
       url: `/api/deals/report/${encodeURIComponent(f)}`,
     }));
+}
+
+// ---- Signature requests ----
+
+export async function getSignatures(): Promise<SignatureRequest[]> {
+  const items = await readJson<SignatureRequest[]>(SIGNATURES, []);
+  // Newest first, matching the Supabase ordering.
+  return [...items].sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+}
+
+export async function addSignature(item: SignatureRequest): Promise<void> {
+  const items = await readJson<SignatureRequest[]>(SIGNATURES, []);
+  items.push(item);
+  await writeJson(SIGNATURES, items);
+}
+
+export async function updateSignature(
+  id: string,
+  patch: Partial<SignatureRequest>,
+): Promise<SignatureRequest | null> {
+  const items = await readJson<SignatureRequest[]>(SIGNATURES, []);
+  const idx = items.findIndex((s) => s.id === id);
+  if (idx === -1) return null;
+  items[idx] = { ...items[idx], ...patch };
+  await writeJson(SIGNATURES, items);
+  return items[idx];
 }
 
 // ---- To-dos ----

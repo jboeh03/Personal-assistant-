@@ -16,6 +16,7 @@ import type {
   Finding,
   MediaItem,
   Milestone,
+  SignatureRequest,
   Todo,
 } from "./types";
 
@@ -208,6 +209,86 @@ export async function getReports(): Promise<
   // On Vercel the deliverable PDFs live in Storage as media (kind=document);
   // surface them from the documents view instead.
   return [];
+}
+
+// ---- Signature requests (deal_signatures) ----
+
+interface SignatureRow {
+  id: string;
+  title: string;
+  status: SignatureRequest["status"];
+  docuseal_template_id: number | null;
+  docuseal_submission_id: number | null;
+  signers: SignatureRequest["signers"];
+  source_url: string | null;
+  signed_media_id: string | null;
+  created_at: string;
+  completed_at: string | null;
+}
+
+function fromSignatureRow(r: SignatureRow): SignatureRequest {
+  return {
+    id: r.id,
+    title: r.title,
+    status: r.status,
+    docusealTemplateId: r.docuseal_template_id,
+    docusealSubmissionId: r.docuseal_submission_id,
+    signers: r.signers ?? [],
+    sourceUrl: r.source_url,
+    signedMediaId: r.signed_media_id,
+    createdAt: r.created_at,
+    completedAt: r.completed_at,
+  };
+}
+
+export async function getSignatures(): Promise<SignatureRequest[]> {
+  const { data, error } = await db()
+    .from("deal_signatures")
+    .select("*")
+    .order("created_at", { ascending: false });
+  // Table may not exist yet (migration pending) — degrade to empty.
+  if (error) return [];
+  return ((data ?? []) as SignatureRow[]).map(fromSignatureRow);
+}
+
+export async function addSignature(item: SignatureRequest): Promise<void> {
+  await db().from("deal_signatures").insert({
+    id: item.id,
+    title: item.title,
+    status: item.status,
+    docuseal_template_id: item.docusealTemplateId ?? null,
+    docuseal_submission_id: item.docusealSubmissionId ?? null,
+    signers: item.signers,
+    source_url: item.sourceUrl ?? null,
+    signed_media_id: item.signedMediaId ?? null,
+    created_at: item.createdAt,
+    completed_at: item.completedAt ?? null,
+  });
+}
+
+export async function updateSignature(
+  id: string,
+  patch: Partial<SignatureRequest>,
+): Promise<SignatureRequest | null> {
+  const row: Record<string, unknown> = {};
+  if (patch.status !== undefined) row.status = patch.status;
+  if (patch.signers !== undefined) row.signers = patch.signers;
+  if (patch.docusealTemplateId !== undefined)
+    row.docuseal_template_id = patch.docusealTemplateId;
+  if (patch.docusealSubmissionId !== undefined)
+    row.docuseal_submission_id = patch.docusealSubmissionId;
+  if (patch.sourceUrl !== undefined) row.source_url = patch.sourceUrl;
+  if (patch.signedMediaId !== undefined)
+    row.signed_media_id = patch.signedMediaId;
+  if (patch.completedAt !== undefined) row.completed_at = patch.completedAt;
+  const { data, error } = await db()
+    .from("deal_signatures")
+    .update(row)
+    .eq("id", id)
+    .select()
+    .maybeSingle();
+  if (error || !data) return null;
+  return fromSignatureRow(data as SignatureRow);
 }
 
 // ---- To-dos (deal_state key 'todos') ----
