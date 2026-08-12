@@ -22,12 +22,14 @@
 | Buyers | Robert & Catherine Sipniewski (owner-occupants) |
 | Listing agent | Zach West — AMP Realty, zrwest10@gmail.com, 513-532-6692 |
 | Buyers' agent | Amy Broghamer — eXp Realty, amy@amybsells.com, 513-377-3637 |
-| Title | Fidelity Land Title |
+| Title | Fidelity Land Title (contact: Jackie McGuire) — commitment underwritten by Stewart Title Guaranty |
 | Inspector | AA Home Inspection (Darrin Bachman), report 08/04/26 |
 
 ## Financing (buyers)
 
 Conventional, fixed, ≤90% LTV, 30-year, prevailing rates. Qualification letter provided; loan application within 4 days of acceptance; **conditional approval due within 21 days of acceptance (~08/21)**; clear-to-close 3 days before closing (~08/25).
+
+Title commitment Sch B-I (recv'd 08/11) confirms the buyers' loan: **$510,000 with CrossCountry Mortgage** (≈87% LTV, inside the cap) — their lender ordering title is a positive signal on the ~08/21 milestone. Closing requirements include the sellers' mortgage payoff and **six judgment-lien releases (banded in [data/finance-context.md](data/finance-context.md)) paid from proceeds** — payoff letters being ordered via title.
 
 ## Timeline
 
@@ -37,6 +39,7 @@ Conventional, fixed, ≤90% LTV, 30-year, prevailing rates. Qualification letter
 | 08/04 | Home inspection | done |
 | 08/05–08/07 | Radon test (avg **13.6 pCi/L**) | done |
 | 08/07 | **Defect Notice delivered** (buyers signed 2:47/2:59 PM EDT) → Inspection Period ended, Consideration Period started | done |
+| 08/11 | Title commitment Schedule B-I received (requirements incl. lien payoff list; buyers' $510K loan confirmed) | done |
 | **08/12** | **Seller response due — EXTENDED per signed Addendum #1 (orig. 08/10). §15(b): NO RESPONSE = DEEMED AGREEMENT TO ALL REQUESTED REPAIRS.** | ⏳ OPEN |
 | 08/13–08/14 | If seller counters: 2-day Settlement Period. No signed agreement by end = **contract auto-terminates** | conditional |
 | ~08/21 | Buyer conditional loan approval due | pending |

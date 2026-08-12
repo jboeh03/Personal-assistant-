@@ -39,3 +39,6 @@ Desktop.ini
 /public/deal-uploads/*
 !/public/deal-uploads/.gitkeep
 .vercel
+
+# Deal-room private originals (exact personal figures — never committed)
+deal-room/source/private/
