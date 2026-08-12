@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-08",
+  "as_of": "2026-08-12",
   "notes": "cost_low_usd/cost_high_usd are filled ONLY from cited research (see sources[]). null = not yet researched or no reliable source. cost_confidence: cited | inferred | unverified | null.",
   "findings": [
     {
@@ -26,9 +26,13 @@
         "diy": "Not viable - creased shingles need replacement and the notice requires a professional"
       },
       "insurance_relevant": true,
-      "notes": "Wind-crease language may support a homeowner's insurance wind-damage claim (offset, not pre-closing remedy) | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | COMMS 08/05: no roof repairs ever done; a prior insurance adjuster visit was NOT covered \u2014 a previous denial is a headwind for the wind claim. Verify with the agent before counting on it.",
+      "notes": "Wind-crease language may support a homeowner's insurance wind-damage claim (offset, not pre-closing remedy) | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | COMMS 08/05: no roof repairs ever done; a prior insurance adjuster visit was NOT covered \u2014 a previous denial is a headwind for the wind claim. Verify with the agent before counting on it. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 6000,
-      "ceiling_trigger": "2014 colorway confirmed discontinued (supplier/ITEL) AND buyers reject closest-match patch at re-inspection -> re-shingle front lower slope (4-7 sq @ $450-700/sq)"
+      "ceiling_trigger": "2014 colorway confirmed discontinued (supplier/ITEL) AND buyers reject closest-match patch at re-inspection -> re-shingle front lower slope (4-7 sq @ $450-700/sq)",
+      "actual_quote_usd": 448,
+      "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
+      "quote_date": "2026-08-12",
+      "response_status": "credit-in-lieu-pending-terms"
     },
     {
       "id": "RS-2",
@@ -53,9 +57,13 @@
         "diy": "Not viable"
       },
       "insurance_relevant": false,
-      "notes": "Inspector: commonly reconciled at failure or re-roof; buyers asked for repair now | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "notes": "Inspector: commonly reconciled at failure or re-roof; buyers asked for repair now | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 11000,
-      "ceiling_trigger": "Tear-off reveals moisture spread beyond ~6 sheets, or roofer declines spot-repair and bids re-deck + re-shingle of the slope (6-10 sq); tiers a $1-3K / b $2.5-5.5K / c $4.5-11K"
+      "ceiling_trigger": "Tear-off reveals moisture spread beyond ~6 sheets, or roofer declines spot-repair and bids re-deck + re-shingle of the slope (6-10 sq); tiers a $1-3K / b $2.5-5.5K / c $4.5-11K",
+      "actual_quote_usd": 1755,
+      "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
+      "quote_date": "2026-08-12",
+      "response_status": "credit-in-lieu-pending-terms"
     },
     {
       "id": "RS-3",
@@ -79,9 +87,13 @@
         "diy": "Materials $10-$32/unit and physically DIY-able, but fails the notice's professional requirement"
       },
       "insurance_relevant": false,
-      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 2800,
-      "ceiling_trigger": "All 2-4 locations brick-abutting (reglet counterflashing ground into mortar @ $25-45/LF) + stained-wall remediation"
+      "ceiling_trigger": "All 2-4 locations brick-abutting (reglet counterflashing ground into mortar @ $25-45/LF) + stained-wall remediation",
+      "actual_quote_usd": 825,
+      "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
+      "quote_date": "2026-08-12",
+      "response_status": "credit-in-lieu-pending-terms"
     },
     {
       "id": "RS-4",
@@ -110,7 +122,7 @@
       "notes": "Most DIY-viable item, but notice says qualified professional for agreed corrections | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
       "surprise_ceiling_usd": 3500,
       "ceiling_trigger": "Rotted fascia found behind failed hangers (20-60 LF @ $15-25/LF Cincinnati adds $300-1,500)",
-      "diy_progress": "2026-08-12: Jeff cleaned gutters + blew out downspouts himself. Slope/re-pitch (RS-5) and downspout re-secure still outstanding. NOTE: DIY cleaning does not produce the contractor receipt the Defect Notice requires; a qualified pro still needs to do (and invoice) the re-pitch/re-secure for re-inspection compliance.",
+      "diy_progress": "2026-08-12: Jeff cleaned gutters + blew out downspouts himself. Slope/re-pitch (RS-5) and downspout re-secure still outstanding. NOTE: DIY cleaning does not produce the contractor receipt the Defect Notice requires; a qualified pro still needs to do (and invoice) the re-pitch/re-secure for re-inspection compliance. ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item instead — DIY work already done may be moot if the credit path is finalized.",
       "work_status": "in_progress",
       "assignee": "diy",
       "activity": [
@@ -118,7 +130,11 @@
           "at": "2026-08-10T19:55:09.055Z",
           "text": "Cleaned gutters + blew out downspouts (Jeff)"
         }
-      ]
+      ],
+      "actual_quote_usd": 445,
+      "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
+      "quote_date": "2026-08-12",
+      "response_status": "credit-in-lieu-pending-terms"
     },
     {
       "id": "RS-5",
@@ -140,8 +156,12 @@
         "diy": "Feasible but same notice-compliance tension as RS-4"
       },
       "insurance_relevant": false,
-      "notes": "Overlaps RS-4 scope; likely priced together | v2: priced inside RS-4 combined band ($350-1,800 likely $600-1,100 for both)",
-      "diy_progress": "2026-08-12: gutters cleaned by Jeff; slope correction still needed by a pro for the required receipt."
+      "notes": "Overlaps RS-4 scope; likely priced together | v2: priced inside RS-4 combined band ($350-1,800 likely $600-1,100 for both) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
+      "diy_progress": "2026-08-12: gutters cleaned by Jeff; slope correction still needed by a pro for the required receipt.",
+      "actual_quote_usd": 295,
+      "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
+      "quote_date": "2026-08-12",
+      "response_status": "credit-in-lieu-pending-terms"
     },
     {
       "id": "RS-6",
@@ -165,9 +185,13 @@
         "diy": "Not viable"
       },
       "insurance_relevant": false,
-      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 8000,
-      "ceiling_trigger": "Top 2-4 brick courses need rebuild once crew is up (tier c $2.5-6K) or extensive upper-chimney rebuild (tier d $5-8K); likely tier b full form-and-pour crown + flashing $1.6-4K"
+      "ceiling_trigger": "Top 2-4 brick courses need rebuild once crew is up (tier c $2.5-6K) or extensive upper-chimney rebuild (tier d $5-8K); likely tier b full form-and-pour crown + flashing $1.6-4K",
+      "actual_quote_usd": 2188,
+      "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
+      "quote_date": "2026-08-12",
+      "response_status": "credit-in-lieu-pending-terms"
     },
     {
       "id": "EG-2",
@@ -189,9 +213,13 @@
         "diy": "Physically trivial but notice requires professional completion"
       },
       "insurance_relevant": false,
-      "notes": "Bundled into the roof-package ask | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "notes": "Bundled into the roof-package ask | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 1200,
-      "ceiling_trigger": "Rot found behind loose siding at 2-story eave; staging required"
+      "ceiling_trigger": "Rot found behind loose siding at 2-story eave; staging required",
+      "actual_quote_usd": 369,
+      "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
+      "quote_date": "2026-08-12",
+      "response_status": "credit-in-lieu-pending-terms"
     },
     {
       "id": "RADON",
@@ -219,11 +247,12 @@
         "diy": "Not feasible for notice compliance - licensure required"
       },
       "insurance_relevant": false,
-      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ACTUAL QUOTE 2026-08-10: ~$1,400 via Zach's installer, install available week of 08/17 - mid-band of researched $1,300-1,800, validates estimate. Confirm ODH license + post-mitigation retest <4.0 included. | QUOTE 08/10: Velocity $1,400, all 3 riders satisfied (ODH-licensed, retest included, guarantee <4.0).",
+      "notes": "Sub-slab depressurization typical; check ODH licensure requirement and post-mitigation retest timing vs 08/25 re-inspection | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ACTUAL QUOTE 2026-08-10: ~$1,400 via Zach's installer, install available week of 08/17 - mid-band of researched $1,300-1,800, validates estimate. Confirm ODH license + post-mitigation retest <4.0 included. | QUOTE 08/10: Velocity $1,400, all 3 riders satisfied (ODH-licensed, retest included, guarantee <4.0). | ADDENDUM #2 (08/12): Jeff signed unconditional agreement to install (Option a) — formalizes this as agreed, not just quoted. Still needs Olivia + buyer countersignature.",
       "surprise_ceiling_usd": 3500,
       "ceiling_trigger": "SS-1/SS-2 complications: second suction point +$300-1,500, crack sealing +$100-500, drain-tile variant $900-1,800",
       "actual_quote_usd": 1400,
-      "work_status": "quoted",
+      "work_status": "agreed-pending-countersignature",
+      "response_status": "agreed-option-a",
       "assignee": "contractor",
       "activity": [
         {
@@ -350,7 +379,7 @@
       ],
       "high": 18300,
       "rational_ceiling": 26000,
-      "note": "v2 2026-08-08. Prior estimate ($5.5-7.7K likely) was too low: 2-story premiums, chimney crown replacement tier, footage-scaled gutters, radon complications. Rational ceiling ~$26K (re-roof cap + chimney d + gutters/radon ceilings), NOT the $33K sum of item ceilings. First real quotes supersede. RIPPLE: Branch A credit guidance moves $5,500 -> $8,500 blank; pure (d) $7,500 -> $10,500 blank."
+      "note": "v2 2026-08-08. Prior estimate ($5.5-7.7K likely) was too low: 2-story premiums, chimney crown replacement tier, footage-scaled gutters, radon complications. Rational ceiling ~$26K (re-roof cap + chimney d + gutters/radon ceilings), NOT the $33K sum of item ceilings. First real quotes supersede. RIPPLE: Branch A credit guidance moves $5,500 -> $8,500 blank; pure (d) $7,500 -> $10,500 blank. ACTUAL QUOTE 08/12: Tecta America priced all 7 roof/gutter items (RS-1/2/3/4/5/6 + EG-2) at $6,325 total — below the $7.9-12.9K 'likely' band. Addendum #2 (signed by Jeff 08/12) offers a closing-cost credit in lieu of repairs, dollar cap unconfirmed (see DEAL_BRIEF) but $6,325 is the plausible source figure."
     },
     "cost_confidence": "inferred"
   }

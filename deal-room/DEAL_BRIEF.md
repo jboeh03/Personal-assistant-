@@ -4,7 +4,7 @@
 > interpretations and response decisions must be reviewed with the listing agent
 > (Zach West, eXp) and, where material, an Ohio real estate attorney.
 
-**Deal state:** `AWAITING_SELLER_RESPONSE` (Defect Notice delivered 08/07/2026 — response due by end of **08/12/2026**, extended by signed Addendum #1 executed 08/09)
+**Deal state:** `RESPONSE_SIGNED_AWAITING_COUNTERSIGNATURES` (Jeff signed Addendum #2 — the seller response — 08/12/2026 1:35pm EDT, on the response-due date. Still needs Olivia's signature + buyers' countersignature to bind, and has an unresolved dollar-figure gap — see below.)
 
 ## Property & price
 
@@ -40,8 +40,8 @@ Title commitment Sch B-I (recv'd 08/11) confirms the buyers' loan: **$510,000 wi
 | 08/05–08/07 | Radon test (avg **13.6 pCi/L**) | done |
 | 08/07 | **Defect Notice delivered** (buyers signed 2:47/2:59 PM EDT) → Inspection Period ended, Consideration Period started | done |
 | 08/11 | Title commitment Schedule B-I received (requirements incl. lien payoff list; buyers' $510K loan confirmed) | done |
-| **08/12** | **Seller response due — EXTENDED per signed Addendum #1 (orig. 08/10). §15(b): NO RESPONSE = DEEMED AGREEMENT TO ALL REQUESTED REPAIRS.** | ⏳ OPEN |
-| 08/13–08/14 | If seller counters: 2-day Settlement Period. No signed agreement by end = **contract auto-terminates** | conditional |
+| **08/12** | **Seller response: Addendum #2 signed by Jeff 1:35pm EDT** — Option (a) radon + Option (d)-style credit in lieu of RS-1/RS-2/RS-3/RS-4/RS-5/RS-6/EG-2. Olivia + buyers still need to sign; dollar-cap figure unresolved (see below). | ⚠️ PARTIALLY DONE |
+| 08/12–08/14 | 2-day Settlement Period (counteroffer starts it). **No mutual signed agreement by end = contract auto-terminates.** | ⏳ OPEN |
 | ~08/21 | Buyer conditional loan approval due | pending |
 | ~08/24 | Target: agreed repairs complete + receipts assembled | pending |
 | ~08/25 | Lender clear-to-close; buyer re-inspection of repairs (3 days before closing per Defect Notice) | pending |
@@ -79,6 +79,18 @@ Read: committed, reasonable buyers who want the house, not a renegotiation play.
 | (f) | Refuse all corrections | Counteroffer; buyer accepting = waives listed items |
 
 Any of (b)–(f) ends the Consideration Period and starts the 2-day Settlement Period. **If no mutual signed agreement by end of Settlement Period, the contract automatically terminates.**
+
+## Seller's response — Addendum #2 (signed 08/12)
+
+Jeff signed a hybrid response, 1:35pm EDT on the response-due date:
+
+1. **Radon** — Option (a): unconditional agreement to install the radon mitigation system (Velocity Radon, ~$1,400, already quoted — see [data/findings.json](data/findings.json)).
+2. **Roof package** (RS-1, RS-2, RS-3, RS-4, RS-5, RS-6, EG-2) — Option (d)-style: seller pays buyer's actual settlement charges/closing costs at Closing, in lieu of performing the repairs, "in an amount not to exceed $____."
+
+**⚠️ Two open items before this is a complete, filed response:**
+
+- **The dollar cap is blank/truncated in the signed PDF** — the "not to exceed $" line cuts off with no figure entered (confirmed by both the PDF text layer and the rendered page — see [source/addendum-2-response-2026-08-12.md](source/addendum-2-response-2026-08-12.md)). The same-day Tecta America roofing quote (Mike Morris, 513-615-7239) totals **$6,325.00** for exactly these line items (RS-1 $448 / RS-2 $1,755 / EG-2 $369 / RS-3 $825 / RS-4 $445 / RS-5 $295 / RS-6 $2,188) and is the likely intended figure, but this is **unconfirmed** — needs a direct answer from Jeff or a corrected/reissued addendum before Olivia or the buyers sign.
+- **Only Jeff has signed.** Olivia and both buyers (Robert & Catherine Sipniewski) still need to countersign for this to be a binding mutual agreement within the Settlement Period (ends ~08/14).
 
 ## Constraints & context
 

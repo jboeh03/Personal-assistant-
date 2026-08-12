@@ -5,16 +5,23 @@
     {
       "id": "defect-response",
       "date": "2026-08-12",
-      "desc": "VERIFIED EXTENDED (signed addendum #1, executed 8/9/2026, both parties): Seller response to Defect Notice due Wed 08/12 EOD. Silence = deemed agreement to all requested repairs.",
+      "desc": "Seller responded: Addendum #2 signed by Jeff 1:35pm EDT — radon (Option a, agreed) + closing-cost credit in lieu of RS-1/2/3/4/5/6 + EG-2 (Option d-style). Dollar cap on the credit is blank/truncated in the signed PDF (needs Jeff to confirm before Olivia/buyers sign — likely ~$6,325 per same-day Tecta America quote, unconfirmed).",
+      "critical": true,
+      "status": "responded-pending-countersignatures"
+    },
+    {
+      "id": "addendum-2-countersignatures",
+      "date": "2026-08-13",
+      "desc": "Olivia's signature + buyers' (Robert & Catherine Sipniewski) countersignature on Addendum #2 still needed to make the response binding. Fix the blank dollar-cap line first.",
       "critical": true,
       "status": "open"
     },
     {
       "id": "settlement-period-end",
       "date": "2026-08-14",
-      "desc": "If seller counters on 08/12: 2-day Settlement Period ends ~Fri 08/14; no mutual signed agreement = contract auto-terminates.",
-      "conditional": true,
-      "status": "conditional"
+      "desc": "2-day Settlement Period (started by the 08/12 counter) ends ~Fri 08/14; no mutual signed agreement = contract auto-terminates.",
+      "conditional": false,
+      "status": "open"
     },
     {
       "id": "conditional-approval",
