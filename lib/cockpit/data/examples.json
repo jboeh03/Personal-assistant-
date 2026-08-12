@@ -1,0 +1,82 @@
+{
+  "note": "Assistant-authored generic->specific transformation pairs in Jeff's outlaw-country/Americana idiom. These teach the anti-cliche MOVE, not fixed phrasings. None are quoted from any existing song. cowriter.py renders a rotating subset (~6) into the {craft_examples} block for the draft and revise steps. 'Study the move, do not copy the words.'",
+  "transformations": [
+    {
+      "technique": "one-true-detail-beats-the-big-feeling",
+      "generic": "I'm so lonely now that you are gone",
+      "specific": "Still set two cups out every mornin' / dump one down the drain",
+      "why": "Trades a stated emotion for an observable habit that proves it"
+    },
+    {
+      "technique": "concrete-noun-and-proper-name",
+      "generic": "I drove around in my old car all night",
+      "specific": "Rolled the '92 down Route 7 'til the gas light come on",
+      "why": "Exact make, road number, and a real consequence ground it in a real world"
+    },
+    {
+      "technique": "show-the-evidence-dont-state-the-verdict",
+      "generic": "My daddy's getting old and it makes me sad",
+      "specific": "He asks about the weather twice / I answer twice, don't say a word about it",
+      "why": "The decline and the son's grief are shown through behavior, never named"
+    },
+    {
+      "technique": "telling-juxtaposition",
+      "generic": "Everything reminds me that our marriage fell apart",
+      "specific": "The nursery's still that yellow we picked out / door stays shut now",
+      "why": "Two images collide \u2014 hope and loss \u2014 with no line explaining the contrast"
+    },
+    {
+      "technique": "resist-the-first-image",
+      "generic": "I drowned my sorrows in a bottle of whiskey",
+      "specific": "Poured the good bourbon out for the dog to smell / couldn't do it myself",
+      "why": "Sidesteps the whiskey-drowning cliche for a stranger, truer image of restraint"
+    },
+    {
+      "technique": "restraint-at-the-peak",
+      "generic": "My heart is shattered into a million pieces tonight",
+      "specific": "So that's it then. / Okay. / I'll get the boys on Sunday",
+      "why": "Plainest possible words at the emotional peak hit harder than ornate ones"
+    },
+    {
+      "technique": "verbs-over-adjectives",
+      "generic": "The sad old screen door was hanging there",
+      "specific": "Screen door slaps twice and settles / like it's got somethin' to say",
+      "why": "A precise verb animates the image; the adjectives were doing nothing"
+    },
+    {
+      "technique": "sensory-grounding-smell-and-touch",
+      "generic": "I still think about her all the time",
+      "specific": "Her side of the truck still smells like drugstore vanilla",
+      "why": "Smell fires memory harder than sight; the detail is oddly specific and true"
+    },
+    {
+      "technique": "the-turn-recontextualize",
+      "generic": "I've been sober for a year and it's been really hard",
+      "specific": "Three hundred sixty-five days dry \u2014 / and not one of 'em I did for me",
+      "why": "The second line turns the whole brag into something sadder and truer"
+    },
+    {
+      "technique": "compression-jump-cut",
+      "generic": "I got in my truck and then I drove to the river where we used to go and I sat there",
+      "specific": "Keys. River. Same bend. / Sat 'til the frogs started up",
+      "why": "Memory-style jump cuts trust the listener and move faster than connective tissue"
+    },
+    {
+      "technique": "paradox-of-specificity",
+      "generic": "We just grew apart over time, you know how it goes",
+      "specific": "It was the Tuesday you didn't laugh at the thing you always laugh at",
+      "why": "The hyper-specific moment lets any listener map their own version onto it"
+    },
+    {
+      "technique": "vernacular-localism",
+      "generic": "I'm from a small town by the river in the country",
+      "specific": "Raised where the Ohio backs up in the bottoms every spring",
+      "why": "Regional, place-specific phrasing beats the neutral national description"
+    }
+  ],
+  "voice_anchors": {
+    "status": "OPTIONAL \u2014 empty until Jeff greenlights it",
+    "note": "If approved, drop 4-8 of Jeff's OWN strongest catalog lines here as positive voice-target anchors (his IP, safe). These would be rendered ahead of the transformations as 'this is the target voice' exemplars. Leave empty to keep the bank purely technique-teaching.",
+    "lines": []
+  }
+}
