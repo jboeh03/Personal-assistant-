@@ -2,7 +2,7 @@
 
 > ⚠️ **Strategy analysis, not legal advice — review with your agent and an Ohio attorney before signing.**
 
-**as_of:** 2026-08-11 · Supersedes v2. **The liens/debts input has landed**: title commitment Sch B-I (recv'd 08/11) requires six judgment liens — face total **$60–70K band**, each "plus additional costs" — paid from proceeds at closing and released. That drops every joint band below by ~$60–70K vs v2. Commission % remains **PENDING** — regenerate via `/deal-memo net-proceeds` when it lands.
+**as_of:** 2026-08-11 (v3.1) · Supersedes v2. **The liens/debts input has landed**: title commitment Sch B-I (recv'd 08/11) requires six judgment liens — face total **$60–70K band**, each "plus additional costs" — paid from proceeds at closing and released. That drops every joint band below by ~$60–70K vs v2. **Allocation confirmed by Jeff (08/11): the judgments are borne entirely by Jeff's share** — per-spouse columns are now asymmetric (concessions still assumed shared 50/50). Subject to counsel/separation agreement. Commission % remains **PENDING** — regenerate via `/deal-memo net-proceeds` when it lands.
 
 ## 1. Inputs
 
@@ -14,7 +14,7 @@
 | 4 | Hamilton County conveyance fee | **$1,755–$2,340** ($3–$4 per $1,000 on $585K; sources ambiguous on whether the $3 county rate includes the $1 state rate) **+ $0.50/parcel** (1 parcel) | EVIDENCE (rate structure, Hamilton County Auditor) / INFERENCE (exact total within band) — as previously cited in v1 |
 | 5 | Deed prep + seller-side title settlement fees | **~$500–$1,500** | INFERENCE — typical Ohio seller-side title/deed charges; §23 obligation is EVIDENCE; actual quote pending from Fidelity Land Title |
 | 6 | Property tax proration (Ohio **long proration**, §21 — seller pays through closing) | Annual tax **~$8.6K/yr band** (county tax ~$4,317 semi-annual per escrow schedule); Jan 1–Aug 28 ≈ 240/365 of the year → **~$5,000–$6,000 charge** | INFERENCE — **assumption:** Ohio bills a year in arrears and the escrow account has paid all bills issued to date, so the closing charge is the accrued-but-unbilled Jan 1→08/28/26 portion credited to buyers. If a billed installment is unpaid at closing it adds on top — confirm against the county duplicate at title |
-| 7 | Judgment liens payable from proceeds (six certificates of judgment attached to one seller) | **$60,000–$70,000 band** — face total in band; "plus additional costs" means statutory post-judgment interest + court costs land on top (band's upper headroom absorbs moderate accrual; exact payoff letters good through 08/28+ pending via title co). **Allocation between sellers is a counsel/separation-agreement matter — this model shows the joint impact only; the 50/50 per-spouse column assumes all deductions shared.** | EVIDENCE (banded) — title commitment Sch B-I, [source extract](../source/title-commitment-schb1-2026-08-11.md) |
+| 7 | Judgment liens payable from proceeds (six certificates of judgment, Jeff's) | **$60,000–$70,000 band** — face total in band; "plus additional costs" means statutory post-judgment interest + court costs land on top (band's upper headroom absorbs moderate accrual; exact payoff letters good through 08/28+ pending via title co). **Allocation: borne entirely by Jeff's share (confirmed by Jeff 08/11; subject to counsel/separation agreement).** | EVIDENCE (banded) — title commitment Sch B-I, [source extract](../source/title-commitment-schb1-2026-08-11.md) |
 | 8 | Split rule | **50/50** | EVIDENCE — confirmed by Jeff, per finance-context.md; subject to counsel/separation agreement |
 | 9 | Earnest money $10,000 | Applies to price at closing — buyer-side funds, **not** a seller deduction | EVIDENCE — contract §3 |
 
@@ -25,22 +25,27 @@
 The math (best case uses the low end of every deduction; worst case the high end):
 
 ```
+Shared deductions (joint):
 Best case:  $585,000 − $300,000 (payoff) − $29,250 (5%) − $1,756 (conveyance)
-            − $500 (deed/title) − $5,000 (tax proration)
-            − $60,000 (judgment liens, low band)                  = $188,494
+            − $500 (deed/title) − $5,000 (tax proration)          = $248,494
 Worst case: $585,000 − $325,000 (payoff) − $35,100 (6%) − $2,341 (conveyance)
-            − $1,500 (deed/title) − $6,000 (tax proration)
-            − $70,000 (judgment liens, high band)                 = $145,059
+            − $1,500 (deed/title) − $6,000 (tax proration)        = $215,059
+
+Split 50/50, then judgments ($60–70K band) off Jeff's half:
+Jeff best:   $248,494 / 2 − $60,000 = $64,247
+Jeff worst:  $215,059 / 2 − $70,000 = $37,530
 ```
 
 | Baseline (pre-concession) | Band |
 |---|---|
-| **Net to sellers (joint)** | **~$145.1K – $188.5K** |
-| **Per spouse @ 50/50 (if all deductions shared — see input #7 note)** | **~$72.5K – $94.2K** |
+| **Net to sellers (joint, after judgments)** | **~$145.1K – $188.5K** |
+| **Olivia @ 50/50 of shared-deduction net** | **~$107.5K – $124.2K** |
+| **Jeff @ 50/50 minus judgments** | **~$37.5K – $64.2K** |
 
-> v2→v3 delta: the six judgment liens move the joint band down from ~$215.1–248.5K by
-> the $60–70K band. Lien allocation between sellers is out of scope here (counsel /
-> separation agreement).
+> v3.1 delta: judgments allocated entirely to Jeff's share (confirmed 08/11). Joint
+> band unchanged from v3; Olivia's side returns to the v2 band; Jeff's side absorbs
+> the full $60–70K. Every dollar of post-judgment interest/costs above face also
+> lands on Jeff's side — exact payoff letters matter most to him.
 
 Label: INFERENCE composite built on the EVIDENCE/INFERENCE inputs above. The ~$33K width is driven mostly by the payoff band (±$25K) and the commission band (±$5.9K) — both narrow with one document each (fresh payoff statement; Zach's commission confirmation).
 
@@ -48,12 +53,12 @@ Label: INFERENCE composite built on the EVIDENCE/INFERENCE inputs above. The ~$3
 
 Concession bands trace to [findings.json](../data/findings.json) (all-in ask ~$3,800–$10,200, most likely ~$5,500–$7,700) and [COUNCIL_VERDICT.md](COUNCIL_VERDICT.md) ($5,500 Branch-A credit; ~$7,500 pure-(d)).
 
-| Branch | Concession band | Net to sellers (joint) | Per spouse @ 50/50 | Cash-timing notes |
-|---|---|---|---|---|
-| **A — radon performed + $5,500 credit** (H2) | Radon ~$1,000–$2,000 pre-closing **+** $5,500 credit = **$6,500–$7,500** | **~$137.6K – $182.0K** | **~$68.8K – $91.0K** | Only the radon $1–2K is out-of-pocket before closing (installer invoice); the $5,500 deducts from proceeds at the closing table. Nothing tied up after closing. |
-| **B — (b)-amended, perform all work** | **$3,800–$10,200**, most likely **$5,500–$7,700** | Full band **~$134.9K – $184.7K**; most-likely **~$137.4K – $183.0K** | Full band **~$67.5K – $92.4K** | **Worst pre-closing liquidity profile:** contractor invoices ($4–10K) are typically due before proceeds exist on 08/28 — confirm which spouse fronts what, or whether contractors will invoice at/through closing. RS-2 hidden decking can pierce the top of the band once the roof is opened. |
-| **C — pure (d) credit, $7,500 all-in** | **$7,500** flat | **~$137.6K – $181.0K** | **~$68.8K – $90.5K** | $0 pre-closing cash; entire concession deducts at closing. Cleanest timing of any branch. Capped by buyers' actual settlement charges + prepaids (verify with their lender). |
-| **Silence → deemed-(a)** (do not do this) | **~$5,500–$10,000+** and the band is **not a ceiling** | ~$135.1K – $183.0K *on paper* | ~$67.5K – $91.5K *on paper* | All work pre-closing out-of-pocket at the buyers' written scope with zero negotiated caps; any unfinished item at the 08/25 re-inspection hands leverage back to the buyers. The paper band excludes this execution risk — treat deemed-(a) as strictly dominated by an intentional Branch B. |
+| Branch | Concession band | Net to sellers (joint) | Olivia (50/50 of shared net) | Jeff (50/50 minus judgments) | Cash-timing notes |
+|---|---|---|---|---|---|
+| **A — radon performed + $5,500 credit** (H2) | Radon ~$1,000–$2,000 pre-closing **+** $5,500 credit = **$6,500–$7,500** | **~$137.6K – $182.0K** | **~$103.8K – $121.0K** | **~$33.8K – $61.0K** | Only the radon $1–2K is out-of-pocket before closing (installer invoice); the $5,500 deducts from proceeds at the closing table. Nothing tied up after closing. |
+| **B — (b)-amended, perform all work** | **$3,800–$10,200**, most likely **$5,500–$7,700** | Full band **~$134.9K – $184.7K**; most-likely **~$137.4K – $183.0K** | Full band **~$102.4K – $122.3K** | Full band **~$32.4K – $62.3K** | **Worst pre-closing liquidity profile:** contractor invoices ($4–10K) are typically due before proceeds exist on 08/28 — confirm which spouse fronts what, or whether contractors will invoice at/through closing. RS-2 hidden decking can pierce the top of the band once the roof is opened. |
+| **C — pure (d) credit, $7,500 all-in** | **$7,500** flat | **~$137.6K – $181.0K** | **~$103.8K – $120.5K** | **~$33.8K – $60.5K** | $0 pre-closing cash; entire concession deducts at closing. Cleanest timing of any branch. Capped by buyers' actual settlement charges + prepaids (verify with their lender). |
+| **Silence → deemed-(a)** (do not do this) | **~$5,500–$10,000+** and the band is **not a ceiling** | ~$135.1K – $183.0K *on paper* | ~$102.5K – $121.5K *on paper* | ~$32.5K – $61.5K *on paper* | All work pre-closing out-of-pocket at the buyers' written scope with zero negotiated caps; any unfinished item at the 08/25 re-inspection hands leverage back to the buyers. The paper band excludes this execution risk — treat deemed-(a) as strictly dominated by an intentional Branch B. |
 
 Reading it: the three deliberate branches land within ~$1–3K of each other at the midpoints — **the branch choice is about risk allocation and cash timing, not headline dollars.** A (Branch A/C) credit shifts scope-surprise risk to buyers and needs little or no pre-closing cash; Branch B keeps sellers on the hook for surprises and needs $4–10K fronted, but carries zero §15 auto-termination risk if delivered as acceptance-of-repairs.
 
