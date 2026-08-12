@@ -10,7 +10,7 @@
       "requested_remedy": "Roofing contractor to repair/secure all loose or lifted roof coverings prior to closing",
       "cost_low_usd": 400,
       "cost_high_usd": 1800,
-      "cost_confidence": "inferred",
+      "cost_confidence": "quoted",
       "sources": [
         "https://www.angi.com/articles/cost-to-repair-asphalt-shingles.htm",
         "https://www.homeadvisor.com/cost/roofing/asphalt-shingle-roof-repair",
@@ -26,7 +26,7 @@
         "diy": "Not viable - creased shingles need replacement and the notice requires a professional"
       },
       "insurance_relevant": true,
-      "notes": "Wind-crease language may support a homeowner's insurance wind-damage claim (offset, not pre-closing remedy) | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | COMMS 08/05: no roof repairs ever done; a prior insurance adjuster visit was NOT covered \u2014 a previous denial is a headwind for the wind claim. Verify with the agent before counting on it. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
+      "notes": "Wind-crease language may support a homeowner's insurance wind-damage claim (offset, not pre-closing remedy) | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | COMMS 08/05: no roof repairs ever done; a prior insurance adjuster visit was NOT covered \u2014 a previous denial is a headwind for the wind claim. Verify with the agent before counting on it. | FIRM QUOTE 2026-08-12: $448 (Mike Morris, Tecta America Zero Co., Cincinnati, 513-615-7239) per Defect Notice line items. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 6000,
       "ceiling_trigger": "2014 colorway confirmed discontinued (supplier/ITEL) AND buyers reject closest-match patch at re-inspection -> re-shingle front lower slope (4-7 sq @ $450-700/sq)",
       "actual_quote_usd": 448,
@@ -42,7 +42,7 @@
       "requested_remedy": "Repair affected sheathing and restore roof covering attachment",
       "cost_low_usd": 1000,
       "cost_high_usd": 5500,
-      "cost_confidence": "inferred",
+      "cost_confidence": "quoted",
       "sources": [
         "https://homeguide.com/costs/cost-to-replace-roof-decking",
         "https://www.angi.com/articles/roof-sheathing-cost.htm",
@@ -57,7 +57,7 @@
         "diy": "Not viable"
       },
       "insurance_relevant": false,
-      "notes": "Inspector: commonly reconciled at failure or re-roof; buyers asked for repair now | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
+      "notes": "Inspector: commonly reconciled at failure or re-roof; buyers asked for repair now | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | FIRM QUOTE 2026-08-12: $1,755 (Mike Morris, Tecta America Zero Co., Cincinnati, 513-615-7239) per Defect Notice line items. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 11000,
       "ceiling_trigger": "Tear-off reveals moisture spread beyond ~6 sheets, or roofer declines spot-repair and bids re-deck + re-shingle of the slope (6-10 sq); tiers a $1-3K / b $2.5-5.5K / c $4.5-11K",
       "actual_quote_usd": 1755,
@@ -73,7 +73,7 @@
       "requested_remedy": "Install missing flashing and kick-out flashing to direct water into gutters",
       "cost_low_usd": 700,
       "cost_high_usd": 2200,
-      "cost_confidence": "inferred",
+      "cost_confidence": "quoted",
       "sources": [
         "https://www.roofingtalk.com/threads/retro-fitting-kick-out-flashing-how-hard-is-it-to-diy.11931/",
         "https://www.justanswer.com/home-improvement/nu86u-cost-install-flashing-home.html",
@@ -87,7 +87,7 @@
         "diy": "Materials $10-$32/unit and physically DIY-able, but fails the notice's professional requirement"
       },
       "insurance_relevant": false,
-      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
+      "notes": "| v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | FIRM QUOTE 2026-08-12: $825 (Mike Morris, Tecta America Zero Co., Cincinnati, 513-615-7239) per Defect Notice line items. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 2800,
       "ceiling_trigger": "All 2-4 locations brick-abutting (reglet counterflashing ground into mortar @ $25-45/LF) + stained-wall remediation",
       "actual_quote_usd": 825,
@@ -103,7 +103,7 @@
       "requested_remedy": "Clean all gutters/downspouts, repair/secure fasteners and hangers, re-pitch as needed",
       "cost_low_usd": 350,
       "cost_high_usd": 1800,
-      "cost_confidence": "inferred",
+      "cost_confidence": "quoted",
       "sources": [
         "https://www.homeblue.com/gutter-cleaning/cincinnati-oh-gutter-cleaning-cost.htm",
         "https://www.homeyou.com/oh/gutter-cleaning-cincinnati-costs",
@@ -119,7 +119,7 @@
         "diy": "Technically trivial but likely fails the notice's 'qualified professional' + receipts requirement (INFERENCE)"
       },
       "insurance_relevant": false,
-      "notes": "Most DIY-viable item, but notice says qualified professional for agreed corrections | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced)",
+      "notes": "Most DIY-viable item, but notice says qualified professional for agreed corrections | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | FIRM QUOTE 2026-08-12: $445 (Mike Morris, Tecta America Zero Co., Cincinnati, 513-615-7239) per Defect Notice line items.",
       "surprise_ceiling_usd": 3500,
       "ceiling_trigger": "Rotted fascia found behind failed hangers (20-60 LF @ $15-25/LF Cincinnati adds $300-1,500)",
       "diy_progress": "2026-08-12: Jeff cleaned gutters + blew out downspouts himself. Slope/re-pitch (RS-5) and downspout re-secure still outstanding. NOTE: DIY cleaning does not produce the contractor receipt the Defect Notice requires; a qualified pro still needs to do (and invoice) the re-pitch/re-secure for re-inspection compliance. ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item instead — DIY work already done may be moot if the credit path is finalized.",
@@ -144,7 +144,7 @@
       "requested_remedy": "Correct gutter/downspout slope for proper flow away from structure",
       "cost_low_usd": 75,
       "cost_high_usd": 300,
-      "cost_confidence": "cited",
+      "cost_confidence": "quoted",
       "sources": [
         "https://homeguide.com/costs/gutter-repair-cost",
         "https://www.fixr.com/costs/gutter-repair",
@@ -156,7 +156,7 @@
         "diy": "Feasible but same notice-compliance tension as RS-4"
       },
       "insurance_relevant": false,
-      "notes": "Overlaps RS-4 scope; likely priced together | v2: priced inside RS-4 combined band ($350-1,800 likely $600-1,100 for both) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
+      "notes": "Overlaps RS-4 scope; likely priced together | v2: priced inside RS-4 combined band ($350-1,800 likely $600-1,100 for both) | FIRM QUOTE 2026-08-12: $295 (Mike Morris, Tecta America Zero Co., Cincinnati, 513-615-7239) per Defect Notice line items. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "diy_progress": "2026-08-12: gutters cleaned by Jeff; slope correction still needed by a pro for the required receipt.",
       "actual_quote_usd": 295,
       "quote_source": "Tecta America Zero Co. (Mike Morris, 513-615-7239) via Zach West text",
@@ -171,7 +171,7 @@
       "requested_remedy": "Repair/replace chimney crown/cap and correct flashing",
       "cost_low_usd": 700,
       "cost_high_usd": 4500,
-      "cost_confidence": "inferred",
+      "cost_confidence": "quoted",
       "sources": [
         "https://homeguide.com/costs/cost-to-repair-replace-chimney-crown",
         "https://www.homeadvisor.com/cost/heating-and-cooling/chimney-repair",
@@ -185,7 +185,7 @@
         "diy": "Not viable"
       },
       "insurance_relevant": false,
-      "notes": " | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
+      "notes": "| v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | FIRM QUOTE 2026-08-12: $2,188 (Mike Morris, Tecta America Zero Co., Cincinnati, 513-615-7239) per Defect Notice line items. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 8000,
       "ceiling_trigger": "Top 2-4 brick courses need rebuild once crew is up (tier c $2.5-6K) or extensive upper-chimney rebuild (tier d $5-8K); likely tier b full form-and-pour crown + flashing $1.6-4K",
       "actual_quote_usd": 2188,
@@ -201,7 +201,7 @@
       "requested_remedy": "Repair or replace damaged siding near roofline",
       "cost_low_usd": 200,
       "cost_high_usd": 900,
-      "cost_confidence": "inferred",
+      "cost_confidence": "quoted",
       "sources": [
         "https://www.angi.com/articles/cost-to-repair-wood-siding.htm",
         "https://www.homeadvisor.com/cost/siding/wood-siding-repair",
@@ -213,7 +213,7 @@
         "diy": "Physically trivial but notice requires professional completion"
       },
       "insurance_relevant": false,
-      "notes": "Bundled into the roof-package ask | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
+      "notes": "Bundled into the roof-package ask | v2 house-specific re-estimate 2026-08-08 (2-story premiums, matching/hidden-damage/masonry scenarios priced) | FIRM QUOTE 2026-08-12: $369 (Mike Morris, Tecta America Zero Co., Cincinnati, 513-615-7239) per Defect Notice line items. | ADDENDUM #2 (08/12): seller offered a closing-cost credit in lieu of performing this item; see response_status.",
       "surprise_ceiling_usd": 1200,
       "ceiling_trigger": "Rot found behind loose siding at 2-story eave; staging required",
       "actual_quote_usd": 369,
@@ -381,6 +381,9 @@
       "rational_ceiling": 26000,
       "note": "v2 2026-08-08. Prior estimate ($5.5-7.7K likely) was too low: 2-story premiums, chimney crown replacement tier, footage-scaled gutters, radon complications. Rational ceiling ~$26K (re-roof cap + chimney d + gutters/radon ceilings), NOT the $33K sum of item ceilings. First real quotes supersede. RIPPLE: Branch A credit guidance moves $5,500 -> $8,500 blank; pure (d) $7,500 -> $10,500 blank. ACTUAL QUOTE 08/12: Tecta America priced all 7 roof/gutter items (RS-1/2/3/4/5/6 + EG-2) at $6,325 total — below the $7.9-12.9K 'likely' band. Addendum #2 (signed by Jeff 08/12) offers a closing-cost credit in lieu of repairs, dollar cap unconfirmed (see DEAL_BRIEF) but $6,325 is the plausible source figure."
     },
-    "cost_confidence": "inferred"
+    "cost_confidence": "inferred",
+    "actual_quote_roof_gutters_usd": 6325,
+    "actual_quote_all_in_usd": 7725,
+    "notes": "QUOTED 2026-08-12: Tecta America roof+gutter package $6,325 (RS-1 448, RS-2 1755, EG-2 369, RS-3 825, RS-4 445, RS-5 295, RS-6 2188) + Velocity radon $1,400 = $7,725 ALL-IN. Lands at the low end of the researched $7,900-12,900 most-likely band; every item inside its predicted range. Research bands superseded by this quote."
   }
 }
