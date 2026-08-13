@@ -1,4 +1,16 @@
-# Addendum #2 — re-issue request (drafts, 2026-08-13)
+# ~~Addendum #2 — re-issue request~~ — **WITHDRAWN 2026-08-13**
+
+> **DO NOT SEND ANY OF THIS.** The premise was wrong. The executed copy
+> (`source/addendum-2-FULLY-EXECUTED-2026-08-12.pdf`) shows the full sentence including
+> "in an amount not to exceed $6325" — the clipping I found was an artifact of rendering
+> the *unflattened* DocuSign form, not a defect in the document. Addendum #2 was fully
+> executed by all four parties on 08/12. Nothing needs re-issuing.
+>
+> The one residual note ("EG-2-6" doesn't name RS-3/4/5/6) is LOW risk and should NOT be
+> handled with an Addendum #3 — see `deliverables/CLOSING_RUNWAY.md`. Kept below only as a
+> record of the reasoning.
+
+---
 
 > Informational only, not legal advice. **Drafts — nothing sent.** Time-sensitive: the
 > Settlement Period ends ~08/14; the buyers have not signed yet, so fixing this now costs

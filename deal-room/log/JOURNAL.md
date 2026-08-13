@@ -90,3 +90,55 @@ Addendum #3 fallback, pushback responses). Hard rule in the draft: do not let th
 past 08/14 — a binding imperfect agreement beats §15(c) auto-termination.
 
 **Nothing sent.** Drafts only.
+
+---
+
+## 2026-08-13 (PM) — Addendum #2 FULLY EXECUTED; my clipping finding was wrong
+
+**Input:** Jeff uploaded `69186e68-Defect_Notice_1.pdf` (misleading filename — it is
+Addendum #2, not the Defect Notice) plus Zach's note: buyers likely have no appraisal and
+already have clear-to-close.
+
+**Provenance:** PDF metadata — Author `amy322` (Amy Broghamer, buyers' agent), Producer
+"Canva; modified using iText 7.1.16 (Dotloop, Inc)", ModDate 08/13 13:34Z. dotloop
+signature verification `dtlp.us/juL1-Qus4-vgQZ`. Body is a raster layer, so text extraction
+returns only the dotloop stamps — had to render at scale 6 to read the terms.
+
+**EXECUTED. All four signatures, all 08/12/2026:**
+| Party | Time (EDT) |
+|---|---|
+| Olivia Boeh | 3:06pm |
+| Jeffrey Boeh | 3:15pm |
+| Robert Sipniewski | 9:20pm (dotloop 7RJ5-JXEO-O6ZP-MG7Z) |
+| Catherine Sipniewski | 10:33pm (dotloop CE7J-OT0E-CY1T-E64D) |
+
+Settlement Period satisfied inside the window. §15(c) auto-termination risk **gone**.
+
+**CORRECTION — my HIGH "the cap is clipped off the page" finding was wrong.** The executed
+copy renders the complete sentence: *"…any other fees allowed by Buyer's lender in an amount
+not to exceed $6325."* Verified by cropping the terms block at 6x. The clipping I saw came
+from `pypdfium2` rendering the *unflattened* v2 form — AcroForm appearance streams clip at
+the field box — not from the document. Lesson recorded: **never diagnose a document defect
+from a form-field render; confirm against the flattened/executed copy.**
+`deliverables/ADDENDUM2_FIX_REQUEST.md` marked WITHDRAWN, nothing was sent.
+
+**Residual (LOW, monitor only):** "RS-1, RS-2, EG-2-6" still doesn't name RS-3/4/5/6
+($3,753 of the credit). Recommendation is now **do not open an Addendum #3** — reopening an
+executed contract with a cruising buyer costs more risk than it removes. A confirming email
+Zach→Amy is the right weight. Tecta itemization is the extrinsic evidence.
+
+**Deal economics final:** $585,000 price intact, resolution = $6,325 credit + ~$1,400–1,500
+radon ≈ $7,725–7,825 all-in. No price reduction.
+
+**On "done deal":** appraisal waiver at ~87% LTV owner-occupied is plausible and would kill
+the gap risk outright; CTC on day 13 is fast but possible. Two cautions logged — CTC is
+revocable on re-verification, and the credit post-dates the CTC so the lender file/CD must
+be updated. $6,325 = 1.1% of price, inside any IPC tier; a seller-credit CD revision does
+not restart the 3-day clock. Written confirmation requested from Amy via Zach.
+
+**Phase change:** defect-notice phase CLOSED → closing runway. Rewrote `milestones.json`
+(repairs-complete → radon-mitigation 08/21; new critical `payoff-letters` 08/20). Wrote
+`deliverables/CLOSING_RUNWAY.md`. **Top remaining risk is now seller-side: six judgment-lien
+payoffs + fresh mortgage payoff good through 08/28**, not anything the buyers do.
+
+**Nothing sent.** Drafts and analysis only.

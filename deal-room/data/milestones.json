@@ -5,36 +5,43 @@
     {
       "id": "defect-response",
       "date": "2026-08-12",
-      "desc": "Seller responded: Addendum #2 (v2 envelope) signed by BOTH sellers 08/12 (Olivia 3:06pm EDT, Jeff 3:15pm EDT) \u2014 radon (Option a) + closing-cost credit in lieu of RS-1/RS-2/EG-2/RS-3/RS-4/RS-5/RS-6, cap $6,325 (confirmed in form data 08/13).",
+      "desc": "Addendum #2 FULLY EXECUTED 08/12/2026 by all four parties (Olivia 3:06pm, Jeff 3:15pm, Robert Sipniewski 9:20pm, Catherine Sipniewski 10:33pm EDT). Radon = Option (a) unconditional; $6,325 closing-cost credit in lieu of RS-1/RS-2/EG-2/RS-3/RS-4/RS-5/RS-6. dotloop dtlp.us/juL1-Qus4-vgQZ.",
       "critical": true,
-      "status": "seller-side-executed"
+      "status": "complete"
     },
     {
       "id": "addendum-2-countersignatures",
       "date": "2026-08-13",
-      "desc": "Buyers' (Robert & Catherine Sipniewski) countersignature is the ONLY thing outstanding. Before they sign: re-issue with re-typed terms \u2014 the $6,325 cap and the words 'actual'/'discount points' are clipped off the visible page, and 'EG-2-6' fails to name RS-3/4/5/6 ($3,753 of the credit).",
+      "desc": "Buyers countersigned 08/12 evening. Settlement Period satisfied; no auto-termination risk.",
       "critical": true,
-      "status": "open"
+      "status": "complete"
     },
     {
       "id": "settlement-period-end",
       "date": "2026-08-14",
-      "desc": "2-day Settlement Period (started by the 08/12 counter) ends ~Fri 08/14; no mutual signed agreement = contract auto-terminates.",
+      "desc": "Settlement Period satisfied by mutual signature 08/12 \u2014 cleared without reaching the deadline.",
       "conditional": false,
+      "status": "complete"
+    },
+    {
+      "id": "payoff-letters",
+      "date": "2026-08-20",
+      "desc": "HIGHEST REMAINING SELLER RISK. Order via Fidelity Land Title: fresh Rocket Mortgage payoff good through 08/28+, plus payoff figures AND release commitments for all six judgment liens (bands in data/finance-context.md). Judgment-lien payoffs and releases are the slowest item in a Cincinnati closing file and are entirely on the seller side.",
+      "critical": true,
       "status": "open"
     },
     {
       "id": "conditional-approval",
       "date": "2026-08-21",
-      "desc": "Buyer conditional loan approval due (~21 days from acceptance). Confirm with Amy.",
+      "desc": "Zach reports buyers already have CLEAR TO CLOSE and likely an appraisal waiver (08/13, unconfirmed). ACTION: get written confirmation from Amy of (a) appraisal waived, (b) CTC issued + date, (c) lender has Addendum #2 and the $6,325 credit is on the Closing Disclosure.",
       "critical": false,
-      "status": "open"
+      "status": "likely-complete-verify"
     },
     {
-      "id": "repairs-complete",
-      "date": "2026-08-24",
-      "desc": "Target: all agreed repairs complete + receipts (window compressed by extension: agreement ~08/12 -> ~12 days to complete before re-inspection).",
-      "critical": false,
+      "id": "radon-mitigation",
+      "date": "2026-08-21",
+      "desc": "ONLY remaining seller performance obligation: radon mitigation system installed (Velocity, ~$1,400-1,500; Jeff reported it lined up for the week of 08/17). Need installation receipt + warranty, and confirm whether buyers expect a POST-MITIGATION RETEST showing <4.0 pCi/L \u2014 the Defect Notice said 'mitigate if the level is at or over 4.0' and a retest is the normal proof.",
+      "critical": true,
       "status": "open"
     },
     {
@@ -47,7 +54,7 @@
     {
       "id": "re-inspection",
       "date": "2026-08-25",
-      "desc": "Buyer re-inspection of completed repairs (3 days prior to closing per Defect Notice); provide work orders, warranties, receipts, proof of payment.",
+      "desc": "Buyer re-inspection 3 days prior to closing per Defect Notice. Scope is now RADON ONLY (all roof/gutter/chimney items were bought out by the $6,325 credit). Provide radon work order, warranty, receipt, proof of payment, and post-mitigation test result if obtained.",
       "critical": false,
       "status": "open"
     },

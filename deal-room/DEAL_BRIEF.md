@@ -4,7 +4,7 @@
 > interpretations and response decisions must be reviewed with the listing agent
 > (Zach West, eXp) and, where material, an Ohio real estate attorney.
 
-**Deal state:** `SELLER-SIDE_FULLY_EXECUTED_AWAITING_BUYER_COUNTERSIGNATURE` (Addendum #2 v2 signed by **both** sellers 08/12 — Olivia 3:06pm EDT, Jeff 3:15pm EDT. Only the two buyers' signatures remain. **Before they sign, the addendum wording needs a fix: the $6,325 cap is typed into the form data but clipped off the visible page** — see below.)
+**Deal state:** `ADDENDUM_2_FULLY_EXECUTED — CLOSING RUNWAY` (all four parties signed 08/12/2026: Olivia 3:06pm, Jeff 3:15pm, Robert Sipniewski 9:20pm, Catherine Sipniewski 10:33pm EDT. Executed copy: [source/addendum-2-FULLY-EXECUTED-2026-08-12.pdf](source/addendum-2-FULLY-EXECUTED-2026-08-12.pdf), dotloop verification `dtlp.us/juL1-Qus4-vgQZ`. Settlement Period satisfied — **no auto-termination risk.** Defect-notice phase is closed. Remaining seller obligation: **radon mitigation only.**)
 
 ## Property & price
 
@@ -40,8 +40,9 @@ Title commitment Sch B-I (recv'd 08/11) confirms the buyers' loan: **$510,000 wi
 | 08/05–08/07 | Radon test (avg **13.6 pCi/L**) | done |
 | 08/07 | **Defect Notice delivered** (buyers signed 2:47/2:59 PM EDT) → Inspection Period ended, Consideration Period started | done |
 | 08/11 | Title commitment Schedule B-I received (requirements incl. lien payoff list; buyers' $510K loan confirmed) | done |
-| **08/12** | **Seller response: Addendum #2 (v2 envelope) signed by BOTH sellers** — Olivia 3:06pm EDT, Jeff 3:15pm EDT. Option (a) radon + Option (d)-style credit **capped at $6,325** in lieu of RS-1/RS-2/RS-3/RS-4/RS-5/RS-6/EG-2. Buyers still need to sign; wording defects flagged below. | ⚠️ SELLER SIDE DONE |
-| 08/12–08/14 | 2-day Settlement Period (counteroffer starts it). **No mutual signed agreement by end = contract auto-terminates.** | ⏳ OPEN |
+| **08/12** | **Addendum #2 FULLY EXECUTED** — Olivia 3:06pm, Jeff 3:15pm, Robert Sipniewski 9:20pm, Catherine Sipniewski 10:33pm EDT. Option (a) radon + Option (d)-style credit **capped at $6,325** in lieu of RS-1/RS-2/EG-2/RS-3/RS-4/RS-5/RS-6. | ✅ DONE |
+| 08/12–08/14 | 2-day Settlement Period — **satisfied by mutual signature on 08/12.** No auto-termination risk. | ✅ CLEARED |
+| ~08/13 | Zach reports buyers have **clear-to-close** and likely an **appraisal waiver** (unconfirmed — get in writing from Amy) | ⚠️ VERIFY |
 | ~08/21 | Buyer conditional loan approval due | pending |
 | ~08/24 | Target: agreed repairs complete + receipts assembled | pending |
 | ~08/25 | Lender clear-to-close; buyer re-inspection of repairs (3 days before closing per Defect Notice) | pending |
@@ -87,17 +88,25 @@ Jeff signed a hybrid response, 1:35pm EDT on the response-due date:
 1. **Radon** — Option (a): unconditional agreement to install the radon mitigation system (Velocity Radon, ~$1,400, already quoted — see [data/findings.json](data/findings.json)).
 2. **Roof package** (RS-1, RS-2, RS-3, RS-4, RS-5, RS-6, EG-2) — Option (d)-style: seller pays buyer's actual settlement charges/closing costs at Closing, in lieu of performing the repairs, "in an amount not to exceed $____."
 
-**Resolved 08/13 (v2 envelope, `source/addendum-2-response-2026-08-12-v2-unflattened.pdf`):**
+**CLOSED 08/13 — executed copy received (`source/addendum-2-FULLY-EXECUTED-2026-08-12.pdf`):**
 
-- ✅ **The cap IS $6,325.** The live AcroForm field reads "…in an amount not to exceed $6325". Matches the Tecta America quote total ($448+$1,755+$369+$825+$445+$295+$2,188) and the $6,325 Jeff typed in the 10:52am group chat.
-- ✅ **Both sellers have signed** — Olivia 08/12 3:06pm EDT, Jeff 08/12 3:15pm EDT. Only the buyers remain.
-- ✅ **Credit-vs-repair gut-check closes clean:** the earlier "doing the repairs may be cheaper" note assumed an $8,500 credit. At the actual $6,325 cap, the credit route is *cheaper* than the $7,725 self-perform all-in. No reason to reopen.
+- ✅ **All four signatures, all dated 08/12** — inside the Settlement Period. Binding.
+- ✅ **The cap is $6,325 and it is fully legible on the executed page.** The earlier "the cap is clipped off the page" finding was **wrong** — it was an artifact of rendering the unflattened DocuSign form, whose field appearance streams clip at the field box. The dotloop-executed copy shows the complete sentence: *"…any other fees allowed by Buyer's lender in an amount not to exceed $6325."* No re-issue is needed; `deliverables/ADDENDUM2_FIX_REQUEST.md` is withdrawn.
+- ✅ **Credit-vs-repair gut-check closes clean:** the earlier "doing the repairs may be cheaper" note assumed an $8,500 credit. At the actual $6,325 cap the credit route is *cheaper* than the $7,725 self-perform all-in.
 
-**⚠️ Two wording defects to fix before the buyers sign** (details + suggested replacement text in [source/addendum-2-response-2026-08-12.md](source/addendum-2-response-2026-08-12.md)):
+**Total seller cost of the defect resolution: $6,325 credit + ~$1,400–1,500 radon ≈ $7,725–7,825.**
 
-- **HIGH — the cap is invisible on the page.** Every long line overflows its field width and clips at the right margin. The rendered document ends the operative sentence at "…in an amount **not**". The $6,325 is in the file's data but not in what a signer, lender, or court reads. As printed/flattened it reads as an **uncapped** promise to pay the buyer's settlement charges. ("pay **actual**" and "discount **points**" are also lost.)
-- **MEDIUM-HIGH — "RS-1, RS-2, EG-2-6" doesn't name the items.** The package is RS-1, RS-2, EG-2, RS-3, RS-4, RS-5, RS-6. "EG-2-6" reads as a range that doesn't exist (EG-1/EG-5 were waived; there is no EG-3/4/6). Leaves room to argue RS-3/4/5/6 — **$3,753 of the $6,325** — weren't covered and are still owed as repairs.
-- **Fix costs nothing:** the buyers haven't signed, so re-issuing with re-typed lines loses no ground. If they sign first, correct via a short Addendum #3 (§28: modifications invalid unless written and signed by all parties).
+**⚠️ One residual wording note — do NOT reopen the contract over it (LOW risk, monitor only):**
+
+"In lieu of completing **RS-1, RS-2, EG-2-6**…" doesn't cleanly name the package, which is
+RS-1, RS-2, EG-2, RS-3, RS-4, RS-5, RS-6. Read literally, "EG-2-6" is a range that doesn't
+exist (EG-1/EG-5 were waived; there is no EG-3/4/6), leaving theoretical room to argue
+RS-3/RS-4/RS-5/RS-6 — $3,753 of the credit — weren't covered and are still owed as repairs.
+**Recommendation: do not open an Addendum #3.** Reopening an executed agreement with a
+cruising buyer to fix a phrase costs more risk than it removes. Instead: have Zach send Amy
+one confirming email stating the credit covers all seven items — a paper trail without a
+contract change. The Tecta itemization ($6,325 = exactly those seven items) is the
+extrinsic evidence if it is ever raised.
 
 ## Constraints & context
 
