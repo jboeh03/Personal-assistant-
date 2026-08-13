@@ -4,7 +4,7 @@
 > interpretations and response decisions must be reviewed with the listing agent
 > (Zach West, eXp) and, where material, an Ohio real estate attorney.
 
-**Deal state:** `RESPONSE_SIGNED_AWAITING_COUNTERSIGNATURES` (Jeff signed Addendum #2 — the seller response — 08/12/2026 1:35pm EDT, on the response-due date. Still needs Olivia's signature + buyers' countersignature to bind, and has an unresolved dollar-figure gap — see below.)
+**Deal state:** `SELLER-SIDE_FULLY_EXECUTED_AWAITING_BUYER_COUNTERSIGNATURE` (Addendum #2 v2 signed by **both** sellers 08/12 — Olivia 3:06pm EDT, Jeff 3:15pm EDT. Only the two buyers' signatures remain. **Before they sign, the addendum wording needs a fix: the $6,325 cap is typed into the form data but clipped off the visible page** — see below.)
 
 ## Property & price
 
@@ -40,7 +40,7 @@ Title commitment Sch B-I (recv'd 08/11) confirms the buyers' loan: **$510,000 wi
 | 08/05–08/07 | Radon test (avg **13.6 pCi/L**) | done |
 | 08/07 | **Defect Notice delivered** (buyers signed 2:47/2:59 PM EDT) → Inspection Period ended, Consideration Period started | done |
 | 08/11 | Title commitment Schedule B-I received (requirements incl. lien payoff list; buyers' $510K loan confirmed) | done |
-| **08/12** | **Seller response: Addendum #2 signed by Jeff 1:35pm EDT** — Option (a) radon + Option (d)-style credit in lieu of RS-1/RS-2/RS-3/RS-4/RS-5/RS-6/EG-2. Olivia + buyers still need to sign; dollar-cap figure unresolved (see below). | ⚠️ PARTIALLY DONE |
+| **08/12** | **Seller response: Addendum #2 (v2 envelope) signed by BOTH sellers** — Olivia 3:06pm EDT, Jeff 3:15pm EDT. Option (a) radon + Option (d)-style credit **capped at $6,325** in lieu of RS-1/RS-2/RS-3/RS-4/RS-5/RS-6/EG-2. Buyers still need to sign; wording defects flagged below. | ⚠️ SELLER SIDE DONE |
 | 08/12–08/14 | 2-day Settlement Period (counteroffer starts it). **No mutual signed agreement by end = contract auto-terminates.** | ⏳ OPEN |
 | ~08/21 | Buyer conditional loan approval due | pending |
 | ~08/24 | Target: agreed repairs complete + receipts assembled | pending |
@@ -87,11 +87,17 @@ Jeff signed a hybrid response, 1:35pm EDT on the response-due date:
 1. **Radon** — Option (a): unconditional agreement to install the radon mitigation system (Velocity Radon, ~$1,400, already quoted — see [data/findings.json](data/findings.json)).
 2. **Roof package** (RS-1, RS-2, RS-3, RS-4, RS-5, RS-6, EG-2) — Option (d)-style: seller pays buyer's actual settlement charges/closing costs at Closing, in lieu of performing the repairs, "in an amount not to exceed $____."
 
-**⚠️ Two open items before this is a complete, filed response:**
+**Resolved 08/13 (v2 envelope, `source/addendum-2-response-2026-08-12-v2-unflattened.pdf`):**
 
-- **The dollar cap is blank/truncated in the signed PDF** — the "not to exceed $" line cuts off with no figure entered (confirmed by both the PDF text layer and the rendered page — see [source/addendum-2-response-2026-08-12.md](source/addendum-2-response-2026-08-12.md)). The same-day Tecta America roofing quote (Mike Morris, 513-615-7239) totals **$6,325.00** for exactly these line items (RS-1 $448 / RS-2 $1,755 / EG-2 $369 / RS-3 $825 / RS-4 $445 / RS-5 $295 / RS-6 $2,188). **Corroborated by group chat 10:52-11:01am the same morning** (Jeff/Olivia/Zach): Jeff computed and typed the precise $6,325 in the thread (vs. Zach's rounder ~$6,500), and the group agreed on the credit approach — strong evidence $6,325 was the intended figure. Still, the signed PDF itself doesn't show a number — **confirm with Jeff and, if it's really blank, get it fixed via a corrected/reissued addendum before Olivia or the buyers sign.**
-- **Only Jeff has formally (DocuSign) signed.** Olivia gave informal agreement in the group chat the same morning ("Sounds good to me"), but she and both buyers (Robert & Catherine Sipniewski) still need to countersign the actual addendum for this to be a binding mutual agreement within the Settlement Period (ends ~08/14).
-- **Worth flagging to Jeff:** a firm, itemized contractor quote came in same-day at $7,725 all-in (repairs + radon) — *below* the $8,500 Branch A credit figure the earlier research recommended. Doing the actual repairs may now be marginally cheaper than the credit route Jeff signed for, per a parallel analysis logged 10:55am (see JOURNAL). Not a reason to unwind the signed response, but worth a conscious gut-check before Olivia/buyers countersign.
+- ✅ **The cap IS $6,325.** The live AcroForm field reads "…in an amount not to exceed $6325". Matches the Tecta America quote total ($448+$1,755+$369+$825+$445+$295+$2,188) and the $6,325 Jeff typed in the 10:52am group chat.
+- ✅ **Both sellers have signed** — Olivia 08/12 3:06pm EDT, Jeff 08/12 3:15pm EDT. Only the buyers remain.
+- ✅ **Credit-vs-repair gut-check closes clean:** the earlier "doing the repairs may be cheaper" note assumed an $8,500 credit. At the actual $6,325 cap, the credit route is *cheaper* than the $7,725 self-perform all-in. No reason to reopen.
+
+**⚠️ Two wording defects to fix before the buyers sign** (details + suggested replacement text in [source/addendum-2-response-2026-08-12.md](source/addendum-2-response-2026-08-12.md)):
+
+- **HIGH — the cap is invisible on the page.** Every long line overflows its field width and clips at the right margin. The rendered document ends the operative sentence at "…in an amount **not**". The $6,325 is in the file's data but not in what a signer, lender, or court reads. As printed/flattened it reads as an **uncapped** promise to pay the buyer's settlement charges. ("pay **actual**" and "discount **points**" are also lost.)
+- **MEDIUM-HIGH — "RS-1, RS-2, EG-2-6" doesn't name the items.** The package is RS-1, RS-2, EG-2, RS-3, RS-4, RS-5, RS-6. "EG-2-6" reads as a range that doesn't exist (EG-1/EG-5 were waived; there is no EG-3/4/6). Leaves room to argue RS-3/4/5/6 — **$3,753 of the $6,325** — weren't covered and are still owed as repairs.
+- **Fix costs nothing:** the buyers haven't signed, so re-issuing with re-typed lines loses no ground. If they sign first, correct via a short Addendum #3 (§28: modifications invalid unless written and signed by all parties).
 
 ## Constraints & context
 

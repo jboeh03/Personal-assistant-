@@ -5,14 +5,14 @@
     {
       "id": "defect-response",
       "date": "2026-08-12",
-      "desc": "Seller responded: Addendum #2 signed by Jeff 1:35pm EDT — radon (Option a, agreed) + closing-cost credit in lieu of RS-1/2/3/4/5/6 + EG-2 (Option d-style). Dollar cap on the credit is blank/truncated in the signed PDF (needs Jeff to confirm before Olivia/buyers sign — likely ~$6,325 per same-day Tecta America quote, unconfirmed).",
+      "desc": "Seller responded: Addendum #2 (v2 envelope) signed by BOTH sellers 08/12 (Olivia 3:06pm EDT, Jeff 3:15pm EDT) \u2014 radon (Option a) + closing-cost credit in lieu of RS-1/RS-2/EG-2/RS-3/RS-4/RS-5/RS-6, cap $6,325 (confirmed in form data 08/13).",
       "critical": true,
-      "status": "responded-pending-countersignatures"
+      "status": "seller-side-executed"
     },
     {
       "id": "addendum-2-countersignatures",
       "date": "2026-08-13",
-      "desc": "Olivia's signature + buyers' (Robert & Catherine Sipniewski) countersignature on Addendum #2 still needed to make the response binding. Fix the blank dollar-cap line first.",
+      "desc": "Buyers' (Robert & Catherine Sipniewski) countersignature is the ONLY thing outstanding. Before they sign: re-issue with re-typed terms \u2014 the $6,325 cap and the words 'actual'/'discount points' are clipped off the visible page, and 'EG-2-6' fails to name RS-3/4/5/6 ($3,753 of the credit).",
       "critical": true,
       "status": "open"
     },

@@ -46,3 +46,47 @@ Sources: human (Jeff/Olivia/Amy), trigger (scheduled check), agent (deal-room wo
 - 2026-08-12 10:52-11:01 ET — [comms] Group chat (Jeff/Olivia/Zach) reached live consensus right after the roofer quote came in: Zach's rough total was ~$6,500; Jeff computed the precise $6,325 + $1,400 radon; Zach recommended the credit route ("their agent's recommended guy... if I were them I'd just take the money and put it towards a new roof"); Olivia: "Sounds good to me... I vote the path of least resistance"; Jeff: "Definitely my vote." **This corroborates $6,325 as the intended dollar-cap figure for Addendum #2** (the precise number Jeff typed in chat, not Zach's rounder ~$6,500) and shows Olivia already gave informal agreement to the credit-in-lieu approach before Jeff signed — lowers the risk on the countersignature open item, though the formal DocuSign signature is still outstanding. (src: imessage group, 2026-08-12)
 - 2026-08-12 14:20 ET — [agent] Comms pass run (group iMessage + Gmail inbox). iMessage: reviewed through current; entry above is the only new deal-relevant thread since the 08/10 21:35 comms batch. Gmail: BLOCKED — connector is still authorized for jeff@cincygrillcleaning.com (business inbox), not jeffvboeh@gmail.com; no Stonington-relevant correspondence reachable. Same blocker noted 2026-08-10 20:10, unresolved.
 - 2026-08-13 08:21 ET — [trigger] Daily check: state RESPONSE_SIGNED_AWAITING_COUNTERSIGNATURES. TWO MILESTONES INSIDE 48H: addendum-2 countersignatures due TODAY (08/13) and settlement-period-end TOMORROW (08/14) — no mutual signed agreement by 08/14 EOD = contract AUTO-TERMINATES (s.15(c)). AT RISK x2: (1) Olivia + both buyers have NOT countersigned (only Jeff, 08/12 1:35pm); (2) the credit's "not to exceed $___" cap is still BLANK on the signed addendum — corroborated intent is $6,325 (Jeff's own figure in the 10:52 group chat) but unconfirmed on the document. Both must resolve today: confirm/insert the figure, then get all three signatures back inside the Settlement Period. Radon (option (a)) is unconditional and unaffected.
+
+---
+
+## 2026-08-13 — Addendum #2 v2 envelope decoded: cap confirmed $6,325, both sellers signed, NEW wording defect found
+
+**Input:** Jeff uploaded `2caa445b-Attachment1.pdf` (no message).
+
+**What it is:** a *second* DocuSign envelope for Addendum #2 (E9D8839E…D6AD), created
+08/12 3:26pm EDT — distinct from the 1:31pm envelope already in `source/`
+(734194BB…0AC9, md5 differs). Stored as
+`source/addendum-2-response-2026-08-12-v2-unflattened.pdf` + PNG render.
+
+**Method note / correction:** first pass read this as a blank RAGC template, because
+`extract_text()` returns only the page's static template text — the v2 file keeps live
+AcroForm fields whose values live in annotation appearance streams. `pypdf.get_fields()`
+recovers them; `pypdfium2` render with `may_draw_forms=True` shows what a human sees.
+The gap between those two outputs is the whole finding.
+
+**Resolved (two open AT RISK items from this morning):**
+1. ✅ **Cap = $6,325.** Field value: "…any other fees allowed by Buyer's lender in an
+   amount not to exceed $6325". Triangulates with the Tecta America itemized total
+   ($6,325.00) and Jeff's own 10:52am group-chat figure.
+2. ✅ **Both sellers signed** — Olivia 08/12 3:06pm EDT, Jeff 08/12 3:15pm EDT. Only the
+   two buyers remain. Earlier "Olivia hasn't signed" escalation is superseded.
+
+**New finding — HIGH:** the typed terms overflow their field widths and **clip at the right
+margin**. The rendered page ends the operative sentence at "…in an amount **not**". Also
+lost: "pay **actual**", "discount **points**". The $6,325 exists in the data and NOT on the
+document. DocuSign flattens on completion (v1 already is flattened), so the clipped text
+becomes permanent — as printed it reads as an **uncapped** closing-cost obligation.
+
+**New finding — MEDIUM-HIGH:** "RS-1, RS-2, EG-2-6" doesn't name the package. The ask is
+RS-1, RS-2, EG-2, RS-3, RS-4, RS-5, RS-6; "EG-2-6" is a range that doesn't exist (EG-1 and
+EG-5 were waived, no EG-3/4/6). Argument space over RS-3/4/5/6 = **$3,753 of $6,325**.
+
+**Also closed:** the credit-vs-repair gut-check. That flip assumed an $8,500 credit; at the
+actual $6,325 cap the credit is cheaper than $7,725 self-perform. No reason to reopen.
+
+**Action:** buyers have NOT signed → re-issuing costs nothing. Drafted
+`deliverables/ADDENDUM2_FIX_REQUEST.md` (text to Zach, replacement term language,
+Addendum #3 fallback, pushback responses). Hard rule in the draft: do not let the fix slip
+past 08/14 — a binding imperfect agreement beats §15(c) auto-termination.
+
+**Nothing sent.** Drafts only.
