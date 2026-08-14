@@ -142,3 +142,5 @@ not restart the 3-day clock. Written confirmation requested from Amy via Zach.
 payoffs + fresh mortgage payoff good through 08/28**, not anything the buyers do.
 
 **Nothing sent.** Drafts and analysis only.
+
+**2026-08-14 status:** Day 14 to closing. All milestones dated on/before today are COMPLETE (defect-response, countersignatures, settlement-period-end) — nothing AT RISK by date, nothing due within 48h. Next open: payoff-letters 08/20 (6d, critical, seller-side) and radon-mitigation 08/21 (7d, critical). WATCH: no journal confirmation yet that (a) Fidelity was called to order the mortgage + six judgment-lien payoffs, (b) radon install has a firm date, or (c) Amy confirmed appraisal-waiver/CTC/credit-on-CD in writing — all three were recommended 08/13 PM. Deal state unchanged: ADDENDUM_2_FULLY_EXECUTED — CLOSING RUNWAY. Read-only check; nothing sent.
