@@ -185,3 +185,27 @@ and `deal-room-daily-status` (trig_01M6MrFfxeJp5z1No5rVrpA4) plus the spent mile
 get removed.
 
 **Nothing sent.** Read, analyze, checklist, log.
+
+**2026-08-28 16:01 EDT — closing-day alarm, no CLOSED entry yet.** Grep of this journal
+finds no CLOSED or TERMINATED record. **This is an absence of information, not evidence the
+closing failed** — the alarm fired at 4:00pm on a Friday, closings routinely finish late in
+the day, and this session has had no inbound data since 08/13. Triggers therefore NOT
+deleted and DEAL_BRIEF state NOT changed; both wait on Jeff's confirmation.
+
+*Last known blocker (as of 08/18, now 10 days stale and unverifiable):* payoff-letters was
+flagged AT RISK for lack of a logged confirmation that Fidelity had ordered the fresh Rocket
+payoff and the six judgment-lien payoffs/releases — that flag was withdrawn 08/28 as
+unprovable in either direction. No other open item was ever flagged; the contract itself has
+been clean since Addendum #2 was fully executed 08/12.
+
+*Contract note (verified against source, not assumed):* the closing-date paragraph in §23
+(`source/contract-to-purchase.md` L492-496) provides that where **both parties are
+proceeding in good faith** and Closing cannot occur **due to an occurrence or circumstance
+outside the direct control of either party**, the Closing date **is extended up to 7 calendar
+days**, and Possession/Occupancy extends by the same number of days unless otherwise agreed.
+That would put an outside date at ~09/04. Two cautions: the trigger to that clause is
+circumstances outside either party's control — a slow lien-release response may or may not
+qualify — and this is informational only. **Verify applicability with Zach and an Ohio real
+estate attorney before relying on it.**
+
+*Awaiting from Jeff:* did it close? Nothing sent.
