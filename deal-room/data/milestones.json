@@ -28,49 +28,49 @@
       "date": "2026-08-20",
       "desc": "HIGHEST REMAINING SELLER RISK. Order via Fidelity Land Title: fresh Rocket Mortgage payoff good through 08/28+, plus payoff figures AND release commitments for all six judgment liens (bands in data/finance-context.md). Judgment-lien payoffs and releases are the slowest item in a Cincinnati closing file and are entirely on the seller side. [AT RISK as of 08/18: no confirmation logged that the orders were placed on 08/17 as planned. 2 days to the 08/20 target. Next step: call Jackie McGuire at Fidelity today and confirm all seven are in motion; if any of the six judgment creditors has not responded, ask title to escalate and identify the slowest.]",
       "critical": true,
-      "status": "AT-RISK"
+      "status": "UNVERIFIED \u2014 no deal-room data 08/19-08/27 (session idle; date passed without evidence either way)"
     },
     {
       "id": "conditional-approval",
       "date": "2026-08-21",
       "desc": "Zach reports buyers already have CLEAR TO CLOSE and likely an appraisal waiver (08/13, unconfirmed). ACTION: get written confirmation from Amy of (a) appraisal waived, (b) CTC issued + date, (c) lender has Addendum #2 and the $6,325 credit is on the Closing Disclosure.",
       "critical": false,
-      "status": "likely-complete-verify"
+      "status": "UNVERIFIED \u2014 no deal-room data 08/19-08/27 (session idle; date passed without evidence either way)"
     },
     {
       "id": "radon-mitigation",
       "date": "2026-08-21",
       "desc": "ONLY remaining seller performance obligation: radon mitigation system installed (Velocity, ~$1,400-1,500; Jeff reported it lined up for the week of 08/17). Need installation receipt + warranty, and confirm whether buyers expect a POST-MITIGATION RETEST showing <4.0 pCi/L \u2014 the Defect Notice said 'mitigate if the level is at or over 4.0' and a retest is the normal proof.",
       "critical": true,
-      "status": "open"
+      "status": "UNVERIFIED \u2014 no deal-room data 08/19-08/27 (session idle; date passed without evidence either way)"
     },
     {
       "id": "clear-to-close",
       "date": "2026-08-25",
       "desc": "Lender clear-to-close due (3 days before closing per contract 4(d)).",
       "critical": false,
-      "status": "open"
+      "status": "UNVERIFIED \u2014 no deal-room data 08/19-08/27 (session idle; date passed without evidence either way)"
     },
     {
       "id": "re-inspection",
       "date": "2026-08-25",
       "desc": "Buyer re-inspection 3 days prior to closing per Defect Notice. Scope is now RADON ONLY (all roof/gutter/chimney items were bought out by the $6,325 credit). Provide radon work order, warranty, receipt, proof of payment, and post-mitigation test result if obtained.",
       "critical": false,
-      "status": "open"
+      "status": "UNVERIFIED \u2014 no deal-room data 08/19-08/27 (session idle; date passed without evidence either way)"
     },
     {
       "id": "walk-through",
       "date": "2026-08-26",
       "desc": "Buyer walk-through (within 48 hours prior to closing, contract section 11).",
       "critical": false,
-      "status": "open"
+      "status": "UNVERIFIED \u2014 no deal-room data 08/19-08/27 (session idle; date passed without evidence either way)"
     },
     {
       "id": "closing",
       "date": "2026-08-28",
       "desc": "Closing at Fidelity Land Title; possession at closing. Verify wiring instructions BY PHONE with title company (wire-fraud warning, contract section 33).",
       "critical": true,
-      "status": "open"
+      "status": "TODAY 2026-08-28"
     }
   ]
 }

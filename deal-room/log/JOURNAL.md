@@ -152,3 +152,36 @@ payoffs + fresh mortgage payoff good through 08/28**, not anything the buyers do
 **2026-08-17 status:** Day 11 to closing. **Action day** — first business day since the executed addendum. No new documents, messages, or events logged over the weekend; nothing AT RISK by date yet (payoff-letters 08/20 is 3d/4 business days out). Today's trip-wire stands: if the Fidelity payoff orders (Rocket payoff good through 08/28+ AND figures + release commitments for all six judgment liens) are not placed by EOD today, payoff-letters gets flagged AT RISK on the 08/18 check. Also due today: firm radon install date from Velocity (must land before the 08/25 re-inspection, ideally with a post-mitigation retest <4.0 pCi/L), and written confirmation via Zach from Amy on appraisal-waiver / CTC date / $6,325 credit on the CD. Deal state unchanged: ADDENDUM_2_FULLY_EXECUTED — CLOSING RUNWAY. Read-only check; nothing sent.
 
 **2026-08-18 status:** Day 10 to closing. ⚠️ **payoff-letters flagged AT RISK** — the 08/17 trip-wire fired: no confirmation logged that the Fidelity payoff orders were placed yesterday (absence of a log entry, not proof the calls didn't happen — Jeff may have acted without reporting). Target date 08/20 is now 2 days out and **inside the 48h window**, so its checklist is surfaced today. Radon-mitigation (08/21, critical) still has no firm install date logged, 3d out — WATCH, not yet at risk. Conditional-approval still unverified in writing. No new documents, messages, or events since 08/13. Deal state unchanged: ADDENDUM_2_FULLY_EXECUTED — CLOSING RUNWAY. Read-only check; nothing sent.
+
+## 2026-08-28 — CLOSING DAY · catch-up after a 10-day data gap
+
+**⚠️ Blind spot, stated plainly:** this session was idle from 08/18 to 08/28. Eleven
+scheduled trigger firings queued unread and were read together this morning, including the
+T-5 repairs alarm (08/23), the re-inspection prep alarm (08/24), and the walk-through /
+closing-logistics alarm (08/25). **No new documents, messages, or events were received in
+that window**, so the deal room has no evidence about what actually happened between 08/19
+and 08/27. Those alarms are now moot — the dates they guarded have passed.
+
+**Milestone statuses corrected for honesty:** payoff-letters, conditional-approval,
+radon-mitigation, clear-to-close, re-inspection, and walk-through are all reset from
+open/AT-RISK to **UNVERIFIED — no deal-room data 08/19-08/27**. The 08/18 AT RISK flag on
+payoff-letters is withdrawn as unprovable in either direction; it was based on an absent log
+entry, and ten days of absent log entries prove nothing. In all likelihood these completed
+normally and simply were not reported here.
+
+**Today is the closing**, 08/28, at Fidelity Land Title. Wrote
+`deliverables/CLOSING_DAY.md`: ID/keys/docs to bring, the settlement-statement line-item
+check ($6,325 credit, mortgage + six lien payoffs, §23 charges, §21 long proration,
+commission), post-closing items (escrow refund ~20 business days, Erie cancellation
+effective today), and the wire-fraud phone-verification warning under §33 — the single
+irreversible risk of the day.
+
+**Deal as last known:** $585,000 price intact, Addendum #2 fully executed 08/12 by all four
+parties, total defect resolution ≈ $7,725-7,825.
+
+**Triggers NOT deleted** — the journal does not show CLOSED or TERMINATED, only that today
+is the closing date. Once Jeff confirms the closing happened, the wrap-up entry gets written
+and `deal-room-daily-status` (trig_01M6MrFfxeJp5z1No5rVrpA4) plus the spent milestone alarms
+get removed.
+
+**Nothing sent.** Read, analyze, checklist, log.
