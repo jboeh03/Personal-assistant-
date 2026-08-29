@@ -209,3 +209,5 @@ qualify — and this is informational only. **Verify applicability with Zach and
 estate attorney before relying on it.**
 
 *Awaiting from Jeff:* did it close? Nothing sent.
+
+**2026-08-29 status:** Day after the scheduled closing. No inbound data — no confirmation, no settlement statement, no documents. Journal still shows no CLOSED or TERMINATED entry, so the daily trigger is retained and DEAL_BRIEF state is unchanged. All milestones remain UNVERIFIED; nothing new can be flagged AT RISK because nothing new is known. **Note on the loop itself: the daily check is now producing no information — it has had no inbound data since 08/13 and cannot advance the deal on its own. Recommend pausing `deal-room-daily-status` until Jeff confirms the outcome**, at which point either the wrap-up entry gets written and all deal-room triggers are deleted, or the room reopens against a new closing date (§23 allows up to 7 calendar days where both parties act in good faith and the cause is outside either party's control — applicability to be verified with Zach/counsel). Nothing sent.
