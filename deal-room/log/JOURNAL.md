@@ -219,3 +219,5 @@ estate attorney before relying on it.**
 **2026-09-01 status:** Four days past closing. No inbound data; no CLOSED/TERMINATED entry; nothing deleted, nothing changed. Fifth consecutive empty check. Awaiting Jeff. Nothing sent.
 
 **2026-09-02 status:** Five days past closing. No inbound data; no CLOSED/TERMINATED entry; nothing deleted, nothing changed. Sixth consecutive empty check. **One date worth noting:** if the closing did NOT occur on 08/28 and §23's good-faith extension applies, its 7-calendar-day outside limit lands ~Fri 09/04 — two days out. That is a conditional, unverified observation (no evidence the closing was missed, and applicability of §23 is for Zach/counsel to determine), but it is the last contractual date on the board. Awaiting Jeff. Nothing sent.
+
+**2026-09-03 status:** Six days past closing. No inbound data; no CLOSED/TERMINATED entry; nothing deleted, nothing changed. Seventh consecutive empty check. Conditional §23 outside date (~09/04) is tomorrow. Awaiting Jeff. Nothing sent.
