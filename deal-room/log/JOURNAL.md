@@ -225,3 +225,5 @@ estate attorney before relying on it.**
 **2026-09-04 status:** One week past the scheduled closing, and the last date on the board — the conditional §23 7-calendar-day outside limit — is today. No inbound data; no CLOSED/TERMINATED entry; nothing deleted, nothing changed. Eighth consecutive empty check. From here the deal room has no remaining contractual dates to track and cannot produce new signal without input: **every future daily firing will be a no-op.** Standing recommendation unchanged — delete `deal-room-daily-status` (trig_01M6MrFfxeJp5z1No5rVrpA4) and the spent `deal-alarm-*` routines; the room stays on disk as a complete archive and can be reopened on a word from Jeff. Nothing sent.
 
 **2026-09-05 status:** Ninth consecutive empty check. No inbound data, no contractual dates remaining, nothing to flag. Deal room is a closed archive awaiting one word from Jeff; the daily routine is now a pure no-op. Nothing sent.
+
+**2026-09-06 status:** Tenth consecutive empty check. No inbound data, no dates, nothing to flag. No-op. Nothing sent.
