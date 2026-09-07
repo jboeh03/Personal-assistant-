@@ -227,3 +227,7 @@ estate attorney before relying on it.**
 **2026-09-05 status:** Ninth consecutive empty check. No inbound data, no contractual dates remaining, nothing to flag. Deal room is a closed archive awaiting one word from Jeff; the daily routine is now a pure no-op. Nothing sent.
 
 **2026-09-06 status:** Tenth consecutive empty check. No inbound data, no dates, nothing to flag. No-op. Nothing sent.
+
+**2026-09-07 status:** Twelfth consecutive empty check. No inbound deal data, no dates, nothing to flag.
+
+*Infrastructure note (not a deal event):* this check initially failed — `deal-room/` was missing from the working tree. Cause: the container was reprovisioned 09/04 and checked out an older commit (3c1e6ac, "Add Google OAuth sign-in") under the same branch name without fetching, so the local branch sat 12 commits behind origin. **No work was lost** — `origin/claude/real-estate-agent-team-ay3wdr` still carried every deal-room commit through 2ba455d (47 deal-room files intact). Verified the local commit was a strict ancestor of origin, then fast-forwarded (`git merge --ff-only`); no force-push, no history rewrite, nothing discarded. Deal room fully restored. Nothing sent.
