@@ -44,4 +44,4 @@ Everything here must be true — this is the user's real voice, not a persona.
 
 (Short debriefs: match, what happened, what was learned)
 
-- **Kathryn, 31 (Hinge, 2026-09):** Opened on her "I can beat you in a game of… H-O-R-S-E" prompt with a playful challenge + granny-shot bit. Her hooks: H-O-R-S-E, karaoke "Wide Open Spaces" (shared country/concert interests), dog (mentioned twice), Bengals/Kentucky/Reds. She's long-term/monogamy/kids-forward. Planned lateral moves: dog's name, concert stakes on the H-O-R-S-E bet. Ask-out targets: park hoop to settle H-O-R-S-E, country show, Reds game. Awaiting reply.
+- **Kathryn, 31 (Hinge, 2026-09):** Opened on her "I can beat you in a game of… H-O-R-S-E" prompt with a playful challenge + granny-shot bit. Her hooks: H-O-R-S-E, karaoke "Wide Open Spaces" (shared country/concert interests), dog (mentioned twice), Bengals/Kentucky/Reds. She's long-term/monogamy/kids-forward. Planned lateral moves: dog's name, concert stakes on the H-O-R-S-E bet. Ask-out targets: park hoop to settle H-O-R-S-E, country show, Reds game. Opener sent 2026-09-09 ("Fair warning: devastating left-handed granny shot" version); awaiting reply.
