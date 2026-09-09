@@ -14,6 +14,7 @@ Everything here must be true — this is the user's real voice, not a persona.
 
 - Default register: playful-confident — leads with banter and light trash talk, comfortable escalating a joke (chose the "challenge accepted" H-O-R-S-E opener over warmer/straighter variants, 2026-09)
 - Punctuation habits: (exclamation points? lowercase? emoji — which ones?)
+- Style habits observed: extends a bit with a real-life action beat rather than a static punchline (swapped "top of key is officially defended" for "Heading to the gym now to perfect it.."); uses ".." as casual trailing punctuation
 - Words/phrases I actually use:
 - Things I would never say:
 - Message length: short — 2-3 casual sentences max; rejected a longer 4-beat draft as "not like me" (2026-09). No stacked clauses, no summarizing what she said back to her.
