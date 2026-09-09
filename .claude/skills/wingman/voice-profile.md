@@ -16,7 +16,7 @@ Everything here must be true — this is the user's real voice, not a persona.
 - Punctuation habits: (exclamation points? lowercase? emoji — which ones?)
 - Words/phrases I actually use:
 - Things I would never say:
-- Message length: (one-liners vs. paragraphs)
+- Message length: short — 2-3 casual sentences max; rejected a longer 4-beat draft as "not like me" (2026-09). No stacked clauses, no summarizing what she said back to her.
 
 ## Interests I can speak to honestly
 
@@ -45,4 +45,4 @@ Everything here must be true — this is the user's real voice, not a persona.
 (Short debriefs: match, what happened, what was learned)
 
 - **Kathryn, 31 (Hinge, 2026-09):** Opened on her "I can beat you in a game of… H-O-R-S-E" prompt with a playful challenge + granny-shot bit. Her hooks: H-O-R-S-E, karaoke "Wide Open Spaces" (shared country/concert interests), dog (mentioned twice), Bengals/Kentucky/Reds. She's long-term/monogamy/kids-forward. Planned lateral moves: dog's name, concert stakes on the H-O-R-S-E bet. Ask-out targets: park hoop to settle H-O-R-S-E, country show, Reds game. Opener sent 2026-09-09 ("Fair warning: devastating left-handed granny shot" version); awaiting reply.
-- **T (Hinge, matched 6/29/26):** User opened 6/29 on her leaf tattoo + the 236-mile distance question. She replied 9/9 (~2 months later): tattoo is a John Lennon quote, matching sun/moon/star with her sister and best friend; from Canton, lives in Dayton. Reply drafted 9/9: light "worth the wait" jab + "which of the three are you?" + noted Dayton is workable distance. Her hooks: the tattoo trio story, Canton→Dayton, music (Lennon). Distance is real but shrunk — she lives ~1hr from Cincy.
+- **T (Hinge, matched 6/29/26):** User opened 6/29 on her leaf tattoo + the 236-mile distance question. She replied 9/9 (~2 months later): tattoo is a John Lennon quote, matching sun/moon/star with her sister and best friend; from Canton, lives in Dayton. Her tattoo is the moon (visible in pics — don't ask which she is). First draft rejected: too long, and asked a question the photo answers. Final reply 9/9: short 3-beat — story beats "liked the look of it," "you won the draft, moon's the best," "who got stuck with the star?" Her hooks: tattoo trio story (sister + best friend), Canton→Dayton, Lennon. Distance shrunk to ~1hr from Cincy.
