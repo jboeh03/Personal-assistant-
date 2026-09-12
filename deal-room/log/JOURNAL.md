@@ -241,3 +241,77 @@ estate attorney before relying on it.**
 **2026-09-11 status:** Sixteenth consecutive empty check. No inbound deal data since 08/13. No-op. Nothing sent.
 
 **2026-09-12 status:** Seventeenth consecutive empty check. No inbound deal data since 08/13. No-op. Nothing sent.
+
+---
+
+## 2026-09-12 — ✅ CLOSED. Final wrap-up.
+
+**Jeff confirmed the sale of 6840 Stonington Rd closed.** Deal state set to `CLOSED`;
+`deal-room-daily-status` (trig_01M6MrFfxeJp5z1No5rVrpA4) deleted. The four `deal-alarm-*`
+routines were one-shots that already spent themselves. **Nothing is monitoring this deal
+room any more.**
+
+### Outcome
+
+| | |
+|---|---|
+| Sale price | **$585,000** — over asking, **no price reduction at any point** |
+| Inspection resolution | $6,325 buyer closing-cost credit + radon mitigation (~$1,400–1,500) |
+| Total cost of the defect fight | **≈ $7,725–7,825** |
+| Original wave-1 estimate | $5,500–7,700 |
+| Revised house-specific estimate (after Jeff challenged it) | $7,900–12,900 likely |
+| Firm contractor quote that settled it | $6,325 (Tecta America, itemized across all seven roof/gutter/chimney items) |
+| Contract | Survived the inspection phase intact; Addendum #2 executed by all four parties 08/12, two days inside the Settlement Period |
+
+### What the deal room got right
+
+- **Read the buyers correctly.** Over-ask offer, $10K earnest, $10K appraisal-gap coverage,
+  and a Defect Notice that consciously waived foundation/panel/HVAC — assessed early as
+  committed buyers rather than a renegotiation play. That read held all the way through.
+- **Named the real risk.** ~70% of dead residential deals die in the inspection/repair
+  dispute; the strategy was built around exiting that phase fast rather than winning it.
+- **Caught the §15 mechanics.** Deemed acceptance and the 2-day Settlement Period
+  auto-termination were flagged before they could bite. The response landed 08/12 with room
+  to spare.
+- **Corrected its own numbers under challenge.** Jeff pushed back on the wave-1 estimate as
+  too low; the re-estimate against the actual house (2,619 sq ft, ~26 squares, 1974 masonry
+  chimney) roughly doubled the chimney line and raised the band — and the firm quote landed
+  at the bottom of the revised range, not the original one. The challenge was right.
+
+### What it got wrong, recorded plainly
+
+- **The "$6,325 cap is clipped off the page" finding (08/13) was wrong.** It came from
+  rendering the *unflattened* DocuSign form, whose AcroForm appearance streams clip at the
+  field box. The executed dotloop copy shows the full sentence. A re-issue request had been
+  drafted and was withdrawn before anything was sent. **Rule recorded: never diagnose a
+  document defect from a form-field render; confirm against the flattened/executed copy.**
+- **Agent roles were reversed across 17 files** until Jeff corrected it — Zach West is the
+  *listing* (seller's) agent, Amy Broghamer the buyers'. Fixed, then a double-swap bug in the
+  fix required a second pass.
+- **The 08/18 AT RISK flag on payoff-letters was unprovable**, based on an absent log entry
+  rather than evidence, and was withdrawn on 08/28.
+- **The tracking loop outlived its usefulness.** Seventeen consecutive empty daily checks ran
+  from 08/28 to 09/12 with no inbound data. It was flagged as a no-op from 08/29 onward but
+  kept firing because its own stop condition required a CLOSED entry that only Jeff could
+  supply. A loop whose exit depends on information it cannot obtain will not exit itself.
+
+### Never verified
+
+No settlement statement or closing documents reached this session, so the exact closing
+date, final net proceeds, commission percentage, the six judgment-lien payoff figures, and
+the radon retest result are **not recorded here**. Jeff's confirmation is the record. The
+banded financial context in `data/finance-context.md` remains banded and was never
+reconciled against actuals.
+
+### Archive contents
+
+`DEAL_BRIEF.md` · `data/` (findings, milestones, house-facts, banded finance context) ·
+`research/` (9 files: roofing v1/v2, chimney, gutters+radon v1/v2, contract timeline, market
+BATNA, insurance angle, why-sales-fall-through) · `deliverables/` (16 files incl.
+OPTIONS_ANALYSIS, COUNCIL_VERDICT, REPAIR_ESTIMATE, OLIVIA_REPORT, CLOSING_RUNWAY,
+CLOSING_DAY, two PDFs) · `source/` (contract, defect notice, inspection findings, both
+addenda incl. the fully-executed copy + render, title commitment, radon proposal, roofer
+quote) · this journal.
+
+**Congratulations, Jeff.** Closed on time, at full price, with the debt cleared from
+proceeds. Nothing further is scheduled.

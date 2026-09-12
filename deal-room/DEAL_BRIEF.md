@@ -4,7 +4,7 @@
 > interpretations and response decisions must be reviewed with the listing agent
 > (Zach West, eXp) and, where material, an Ohio real estate attorney.
 
-**Deal state:** `ADDENDUM_2_FULLY_EXECUTED — CLOSING RUNWAY` (all four parties signed 08/12/2026: Olivia 3:06pm, Jeff 3:15pm, Robert Sipniewski 9:20pm, Catherine Sipniewski 10:33pm EDT. Executed copy: [source/addendum-2-FULLY-EXECUTED-2026-08-12.pdf](source/addendum-2-FULLY-EXECUTED-2026-08-12.pdf), dotloop verification `dtlp.us/juL1-Qus4-vgQZ`. Settlement Period satisfied — **no auto-termination risk.** Defect-notice phase is closed. Remaining seller obligation: **radon mitigation only.**)
+**Deal state:** `CLOSED` — the sale of 6840 Stonington Rd completed. Confirmed by Jeff 2026-09-12. Sale price **$585,000** (over asking, no reduction). Defect-notice resolution: **$6,325 buyer closing-cost credit + radon mitigation (~$1,400-1,500) ≈ $7,725-7,825 all-in**, per Addendum #2, executed by all four parties 2026-08-12. Deal room is now an **archive** — all tracking routines deleted 2026-09-12; nothing is monitoring this file. *(Scope note: this session received no settlement statement or closing documents, so the exact closing date and final figures are not recorded here. Jeff's confirmation is the record.)*
 
 ## Property & price
 
@@ -42,12 +42,12 @@ Title commitment Sch B-I (recv'd 08/11) confirms the buyers' loan: **$510,000 wi
 | 08/11 | Title commitment Schedule B-I received (requirements incl. lien payoff list; buyers' $510K loan confirmed) | done |
 | **08/12** | **Addendum #2 FULLY EXECUTED** — Olivia 3:06pm, Jeff 3:15pm, Robert Sipniewski 9:20pm, Catherine Sipniewski 10:33pm EDT. Option (a) radon + Option (d)-style credit **capped at $6,325** in lieu of RS-1/RS-2/EG-2/RS-3/RS-4/RS-5/RS-6. | ✅ DONE |
 | 08/12–08/14 | 2-day Settlement Period — **satisfied by mutual signature on 08/12.** No auto-termination risk. | ✅ CLEARED |
-| ~08/13 | Zach reports buyers have **clear-to-close** and likely an **appraisal waiver** (unconfirmed — get in writing from Amy) | ⚠️ VERIFY |
-| ~08/21 | Buyer conditional loan approval due | pending |
-| ~08/24 | Target: agreed repairs complete + receipts assembled | pending |
-| ~08/25 | Lender clear-to-close; buyer re-inspection of repairs (3 days before closing per Defect Notice) | pending |
-| ~08/26 | Buyer walk-through (48h before closing, §11) | pending |
-| **08/28** | **Closing** (possession at closing; deed to Catherine & Robert Sipniewski) | pending |
+| ~08/13 | Zach reports buyers have **clear-to-close** and likely an **appraisal waiver** | reported, never confirmed in writing |
+| ~08/21 | Buyer conditional loan approval due | not logged — presumed satisfied (deal closed) |
+| ~08/21 | Radon mitigation (only seller performance obligation) | not logged — presumed completed (deal closed) |
+| ~08/25 | Lender clear-to-close; buyer re-inspection (radon only) | not logged — presumed satisfied (deal closed) |
+| ~08/26 | Buyer walk-through (48h before closing, §11) | not logged — presumed satisfied (deal closed) |
+| **08/28** | **CLOSING — the sale completed** (possession at closing; deed to Catherine & Robert Sipniewski). Confirmed by Jeff 09/12; exact date not independently documented here. | ✅ **DONE** |
 
 ## The ask (Defect Notice, 08/07)
 
